@@ -1,11 +1,16 @@
-# Ruby Cookbook Redux: Parsing Invalid Markup (11.7)
 
-## The Problem 
+Parsing Invalid Markup {#parsing_invalid_xml}
+=====
+
+
+The Problem 
+-----
 
 _"You need to extract data from a document that's supposed to be HTML or XML, but that contains some invalid markup."_
 
 
-## Fixing Busted Markup Like a Boss
+Fixing Busted Markup Like a Boss
+-----
 
 Nokogiri's chewy libxml2 center means that it can correct your
 badly-formed documents and tell you exactly what was wrong with the
@@ -38,4 +43,4 @@ Nokogiri fixes busted HTML even better than it fixes busted XML. In
 fact, libxml2 does an able job of emulating the types of corrections
 typically done by web browsers.
 
-# TODO example
+    TODO example
