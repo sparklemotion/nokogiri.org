@@ -1,4 +1,4 @@
-# Chapter 0: Installing Nokogiri
+# Installing Nokogiri
 
 Because Nokogiri needs to be [compiled][] and [dynamically linked][]
 against both [libxml2][] and [libxslt][], it has gained a

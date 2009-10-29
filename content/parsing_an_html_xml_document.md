@@ -1,4 +1,4 @@
-# Chapter 1: Parsing an HTML / XML Document
+# Parsing an HTML / XML Document
 
 ## From a String
 
