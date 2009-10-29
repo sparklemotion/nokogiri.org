@@ -18,7 +18,9 @@ chapters.
 
 Note that you don't need to read the file into a string variable. Nokogiri will do this for you.
 
-    doc = Nokogiri::XML(File.open("blossom.xml"))
+    f = File.open("blossom.xml")
+    doc = Nokogiri::XML(f)
+    f.close
 
 Clever Nokogiri! With the time you just saved, approach enlightenment by meditating on [this koan][].
 
