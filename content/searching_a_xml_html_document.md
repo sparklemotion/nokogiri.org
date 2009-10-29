@@ -38,3 +38,7 @@ the shortcuts `at_css` and `at_xpath` instead of having to access the
 first element of a NodeSet.
 
 ~~~ ruby assets/search-single-results.rb
+
+## Namespaces
+
+TODO

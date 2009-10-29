@@ -38,7 +38,7 @@ def sub_inline_ruby!(content)
     raise "Could not find asset #{file}" unless File.exists?(file)
 
     out = IO.popen("xmpfilter -a --cd content/assets/ #{file}", "r").read
-    out.gsub!(/^.*:startdoc:[^\n]*/m, '')
+    out.gsub!(/^.*:startdoc:[^\n]*/m, '').gsub!(/\\n/,"\n")
     out.gsub!(/^/,'    ').chomp!
   end
 end
