@@ -8,10 +8,7 @@ unless maruku_version >= "0.6.0"
   raise "ERROR: you need maruku >= 0.6.0 installed to generate the nokogiri cookbook"
 end
 
-task :default => :html
-
-desc "Compile an html version of the book"
-task :html do
+def file_list
   files = File.read("content/toc").split("\n")
   files.collect! {|file| file.downcase.downcase.gsub(/[\W ]/,"_") }
   files.collect! {|file| File.join("content", "#{file}.md")}
@@ -23,7 +20,18 @@ task :html do
       false
     end
   end
+end
+
+def run(cmd)
+  puts "=> #{cmd}"
+  system(cmd) || raise("command failed: #{cmd}")
+end
+
+task :default => :html
+
+desc "Compile an html version of the book"
+task :html do
+  files = file_list
   cmd = "cat #{files.join(' ')} | maruku > nokogiri-cookbook.html"
-  puts cmd
-  system cmd
+  run cmd
 end
