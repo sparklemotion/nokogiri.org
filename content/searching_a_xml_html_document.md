@@ -1,5 +1,7 @@
 # Searching an HTML / XML Document
 
+## Basic Searching
+
 Let's suppose you have the following document:
 
     # shows.xml
@@ -73,3 +75,12 @@ Notably, you can even use CSS queries in an XML document!
 
 CSS queries are often the easiest and most succinct way to express
 what you're looking for, so don't be afraid to use them!
+
+## Single Results
+
+If you know you're going to get only a single result back, you can use
+the shortcuts `at_css` and `at_xpath` instead of having to access the
+first element of a NodeSet.
+
+    doc.css("dramas name")[0]  # => <name>The A-Team</name>
+    doc.at_css("dramas name")  # => <name>The A-Team</name>
