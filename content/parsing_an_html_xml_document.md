@@ -32,7 +32,7 @@ I understand that there may be some HTML documents available on the
 World Wide Web.
 
     require 'open-uri'
-    doc = Nokogiri::XML(open("http://www.threescompany.com/"))
+    doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
 
 ## Parse Options
 

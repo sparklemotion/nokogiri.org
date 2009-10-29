@@ -41,4 +41,58 @@ first element of a NodeSet.
 
 ## Namespaces
 
-TODO
+Just like our Ruby code, XML can suffer from name collisions.  For example,
+an autoparts dealer can sell tires and so can a bike dealer.  Both of them
+may use a "tire" tag to describe the tires they sell.  However, we need to be
+able to tell the difference between a *car tire* and a *bike tire*.  This is
+where namespaces come to the rescue.
+
+Namespaces associate tags with a unique URL.  Let's take a look at the autoparts
+store's XML versus the bike stores:
+
+Alice's Autoparts:
+
+~~~ inline assets/autoparts.xml
+
+Bob's Bikeshop:
+
+~~~ inline assets/bikeshop.xml
+
+Since the URLs are unique, we can associate our query with a URL and get only
+the tires belonging to *that* url:
+
+~~~ ruby assets/search-xpath-namespace-verbose.rb
+
+To make this namespace registration a bit easier, nokogiri will automatically
+register any namespaces it finds on the root node *for you*.  Nokogiri will
+associate the name in the declaration with the supplied URL.  If we stick to
+this naming convention, we can shorten up our code.
+
+Let's take this atom feed for example:
+
+~~~ inline assets/atom.xml
+
+If we stick to the convention, we can grab all title tags like this
+
+~~~ ruby assets/search-atom-xpath-title.rb
+
+Don't be fooled though.  You *do not* have to use XPath to get the benefits of
+namespaces.  CSS selectors can be used as well.  CSS just uses the pipe symbol
+to indicate a namespace search.
+
+Let's see the previous search rewritten to use CSS:
+
+~~~ ruby assets/search-atom-css-title.rb
+
+When using CSS, if the namespace is called "xmlns", you can even omit the
+namespace name.  That means your CSS will reduce to:
+
+~~~ ruby assets/search-atom-css-short-title.rb
+
+Dealing with namespaces is a broad topic.  If you need more examples, be sure
+to check out [this blog post][1] or send an email to the [mailing list][2], and
+we can help out.
+
+  [1]: http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/
+  [2]: http://groups.google.com/group/nokogiri-talk
+
