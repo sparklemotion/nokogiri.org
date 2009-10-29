@@ -12,8 +12,17 @@ task :default => :html
 
 desc "Compile an html version of the book"
 task :html do
-  files = File.read("content/toc").split
-  files.collect! {|file| File.join("content", file)}
+  files = File.read("content/toc").split("\n")
+  files.collect! {|file| file.downcase.downcase.gsub(/[\W ]/,"_") }
+  files.collect! {|file| File.join("content", "#{file}.md")}
+  files = files.select do |file|
+    if File.exists? file
+      true
+    else
+      puts "WARNING: file #{file} does not exist!"
+      false
+    end
+  end
   cmd = "cat #{files.join(' ')} | maruku > nokogiri-cookbook.html"
   puts cmd
   system cmd
