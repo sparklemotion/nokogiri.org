@@ -45,7 +45,7 @@ most commonly-used options are:
 * `NOBLANKS` - Remove blank nodes
 * `NOENT` - Substitute entities
 * `NOERROR` - Suppress error reports
-* `STRICT` - Strict parsing
+* `STRICT` - Strict parsing; raise an error when parsing malformed documents
 
 Here's how they are used:
 

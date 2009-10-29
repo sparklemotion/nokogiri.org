@@ -4,74 +4,29 @@
 
 Let's suppose you have the following document:
 
-    # shows.xml
-    <root>
-      <sitcoms>
-        <sitcom>
-          <name>Married with Children</name>
-          <characters>
-            <character>Al Bundy</character>
-            <character>Bud Bundy</character>
-            <character>Marcy Darcy</character>
-          </characters>
-        </sitcom>
-        <sitcom>
-          <name>Perfect Strangers</name>
-          <characters>
-            <character>Larry Appleton</character>
-            <character>Balki Bartokomous</character>
-          </characters>
-        </sitcom>
-      </sitcoms>
-      <dramas>
-        <drama>
-          <name>The A-Team</name>
-          <characters>
-            <character>John "Hannibal" Smith</character>
-            <character>Templeton "Face" Peck</character>
-            <character>"B.A." Baracus</character>
-            <character>"Howling Mad" Murdock</character>
-          </characters>
-        </drama>
-      <dramas>
-    </root>
+~~~ inline assets/shows.xml
 
 Let's further suppose that you want a list of all the characters in
 all the shows in this document.
 
-    doc = Nokogiri::XML(File.open("shows.xml"))
-    characters = doc.xpath("//character")
-    # => <character>Al Bundy</character>
-         <character>Bud Bundy</character>
-         <character>Marcy Darcy</character>
-         <character>Larry Appleton</character>
-         <character>Balki Bartokomous</character>
-         <character>John "Hannibal" Smith</character>
-         <character>Templeton "Face" Peck</character>
-         <character>"B.A." Baracus</character>
-         <character>"Howling Mad" Murdock</character>
+~~~ ruby assets/search-setup.rb
+~~~ ruby assets/search-xpath-characters.rb
 
 The variable `characters` is actually a [NodeSet][], which acts very much
 like an array, and contains matching nodes from the document.
 
   [NodeSet]: http://nokogiri.org/Nokogiri/XML/NodeSet.html
 
-    characters[0]  # => <character>Al Bundy</character>
+~~~ ruby assets/search-xpath-characters-first.rb
 
 You can use any XPath or CSS query you like (see the chapter on XPath
 and CSS syntax for more information).
 
-    doc.xpath("//dramas//character")
-    # => <character>John "Hannibal" Smith</character>
-         <character>Templeton "Face" Peck</character>
-         <character>"B.A." Baracus</character>
-         <character>"Howling Mad" Murdock</character>
+~~~ ruby assets/search-xpath-characters-drama.rb
 
 Notably, you can even use CSS queries in an XML document!
 
-    doc.css("sitcoms name")
-    # => <name>Married with Children</name>
-         <name>Perfect Strangers</name>
+~~~ ruby assets/search-css-name-sitcoms.rb
 
 CSS queries are often the easiest and most succinct way to express
 what you're looking for, so don't be afraid to use them!
@@ -82,5 +37,4 @@ If you know you're going to get only a single result back, you can use
 the shortcuts `at_css` and `at_xpath` instead of having to access the
 first element of a NodeSet.
 
-    doc.css("dramas name")[0]  # => <name>The A-Team</name>
-    doc.at_css("dramas name")  # => <name>The A-Team</name>
+~~~ ruby assets/search-single-results.rb
