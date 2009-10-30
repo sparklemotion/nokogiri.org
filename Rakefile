@@ -23,9 +23,9 @@ end
 
 def sub_inline_docs!(content)
   content.gsub!(/^~~~ inline (.*)/) do |match|
-    print "(I)"
     file = "content/#{$1}"
     raise "Could not find asset #{file}" unless File.exists?(file)
+    puts "inline file: #{file}"
 
     ("# #{File.basename(file)}\n" + File.read(file)).gsub!(/^/,'    ')
   end
@@ -33,12 +33,13 @@ end
 
 def sub_inline_ruby!(content)
   content.gsub!(/^~~~ ruby (.*)/) do |match|
-    print "(R)"
     file = "content/#{$1}"
     raise "Could not find asset #{file}" unless File.exists?(file)
+    puts "ruby file: #{file}"
 
     out = IO.popen("xmpfilter -a --cd content/assets/ #{file}", "r").read
-    out.gsub!(/^.*:startdoc:[^\n]*/m, '').gsub!(/\\n/,"\n")
+    out.gsub!(/^.*:startdoc:[^\n]*/m, '') if out =~ /:startdoc:/
+    out.gsub!(/\\n/,"\n")
     out.gsub!(/^/,'    ').chomp!
   end
 end
