@@ -48,7 +48,6 @@ def sub_inline_ruby!(content)
 end
 
 def slurp_file(markdown_file)
-  puts "processing: #{markdown_file}"
   content = File.read(markdown_file)
   sub_inline_docs! content
   sub_inline_ruby! content
@@ -60,13 +59,25 @@ task :default => :html
 desc "Compile an html version of the book"
 task :html do
   STDOUT.sync = true
-  files = markdown_file_list
+  FileUtils.mkdir_p "docs"
+  output_filenames = []
 
-  pages = files.collect { |markdown_file| slurp_file(markdown_file) }
-  content = pages.join("\n")
-
-  IO.popen("maruku > nokogiri-cookbook.html", "w") do |f|
-    f.write content
+  markdown_file_list.each do |markdown_filename|
+    output_filename = File.join("docs", File.basename(markdown_filename).gsub(/\.md$/, ".html"))
+    output_filenames << output_filename
+    if FileUtils.uptodate?(output_filename, markdown_filename)
+      puts "(#{output_filename} is up to date with #{markdown_filename})"
+    else
+      puts "writing to #{output_filename} from #{markdown_filename} ..."
+      IO.popen("maruku > #{output_filename}", "w") do |f|
+        f.write slurp_file(markdown_filename)
+      end
+    end
   end
-  puts
+
+  system "> docs/cookbook.html"
+  output_filenames.each do |fn|
+    system "cat #{fn} >> docs/cookbook.html"
+  end
+  puts "complete doc is docs/cookbook.html"
 end
