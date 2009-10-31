@@ -1,1 +1,3 @@
-@doc.css('title') # get a list of title tags
+require 'search-atom-setup'
+# :startdoc:
+@doc.css('title') # =>

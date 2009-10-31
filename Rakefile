@@ -2,7 +2,7 @@ require 'rubygems'
 gem 'rcodetools'
 gem 'maruku', '>= 0.6.0'
 
-def file_list
+def markdown_file_list
   files = File.read("content/toc").split("\n")
   files.collect! {|file| file.downcase.downcase.gsub(/[\W ]/,"_") }
   files.collect! {|file| File.join("content", "#{file}.md")}
@@ -21,27 +21,38 @@ def run(cmd)
   system(cmd) || raise("command failed: #{cmd}")
 end
 
-def sub_inline_docs!(content)
-  content.gsub!(/^~~~ inline (.*)/) do |match|
-    file = "content/#{$1}"
-    raise "Could not find asset #{file}" unless File.exists?(file)
-    puts "inline file: #{file}"
+def sub_do(tag, content, &block)
+  content.gsub!(/^~~~ #{tag} (.*)/) do |match|
+    asset_name = "content/#{$1}"    
+    raise "Could not find asset #{asset_name}" unless File.exists?(asset_name)
+    puts "  #{tag} file: #{asset_name}"
 
-    ("# #{File.basename(file)}\n" + File.read(file)).gsub!(/^/,'    ')
+    yield(asset_name).gsub!(/^/,'    ')
+  end
+end
+
+def sub_inline_docs!(content)
+  sub_do('inline', content) do |asset_name|
+    "[#{File.basename(asset_name)}]\n" + File.read(asset_name)
   end
 end
 
 def sub_inline_ruby!(content)
-  content.gsub!(/^~~~ ruby (.*)/) do |match|
-    file = "content/#{$1}"
-    raise "Could not find asset #{file}" unless File.exists?(file)
-    puts "ruby file: #{file}"
-
-    out = IO.popen("xmpfilter -a --cd content/assets/ #{file}", "r").read
-    out.gsub!(/^.*:startdoc:[^\n]*/m, '') if out =~ /:startdoc:/
-    out.gsub!(/\\n/,"\n")
-    out.gsub!(/^/,'    ').chomp!
+  sub_do('ruby', content) do |asset_name|
+    output = IO.popen("xmpfilter -a --cd content/assets/ #{asset_name}", "r").read
+    output.gsub!(/^.*:startdoc:[^\n]*/m, '') if output =~ /:startdoc:/
+    output.gsub!(/^.*:nodoc:.*$\n?/, '')
+    output.gsub!(/\\n/,"\n# ")
+    output.chomp!
   end
+end
+
+def slurp_file(markdown_file)
+  puts "processing: #{markdown_file}"
+  content = File.read(markdown_file)
+  sub_inline_docs! content
+  sub_inline_ruby! content
+  content
 end
 
 task :default => :html
@@ -49,14 +60,11 @@ task :default => :html
 desc "Compile an html version of the book"
 task :html do
   STDOUT.sync = true
-  files = file_list
+  files = markdown_file_list
 
-  content = files.collect do |file|
-    puts file
-    File.read(file)
-  end.join("\n")
-  sub_inline_docs! content
-  sub_inline_ruby! content
+  pages = files.collect { |markdown_file| slurp_file(markdown_file) }
+  content = pages.join("\n")
+
   IO.popen("maruku > nokogiri-cookbook.html", "w") do |f|
     f.write content
   end

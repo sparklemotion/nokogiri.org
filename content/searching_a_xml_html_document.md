@@ -12,8 +12,9 @@ all the shows in this document.
 ~~~ ruby assets/search-setup.rb
 ~~~ ruby assets/search-xpath-characters.rb
 
-The variable `characters` is actually a [NodeSet][], which acts very much
-like an array, and contains matching nodes from the document.
+The `Node` methods `xpath` and `css` actually return a [NodeSet][],
+which acts very much like an array, and contains matching nodes from
+the document.
 
   [NodeSet]: http://nokogiri.org/Nokogiri/XML/NodeSet.html
 
@@ -50,13 +51,7 @@ where namespaces come to the rescue.
 Namespaces associate tags with a unique URL.  Let's take a look at the autoparts
 store's XML versus the bike stores:
 
-Alice's Autoparts:
-
-~~~ inline assets/autoparts.xml
-
-Bob's Bikeshop:
-
-~~~ inline assets/bikeshop.xml
+~~~ inline assets/parts.xml
 
 Since the URLs are unique, we can associate our query with a URL and get only
 the tires belonging to *that* url:

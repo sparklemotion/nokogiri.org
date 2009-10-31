@@ -1,1 +1,4 @@
-@doc.css('xmlns|title') # get a list of title tags
+require 'search-atom-setup'
+# :startdoc:
+@doc.css('xmlns|title') # =>
+
