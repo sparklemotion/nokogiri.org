@@ -10,10 +10,14 @@ def markdown_file_list
     if File.exists? file
       true
     else
-      puts "WARNING: file #{file} does not exist!"
+      STDERR.puts "WARNING: file #{file} does not exist!"
       false
     end
   end
+end
+
+def format_output_filename(markdown_filename)
+  File.join("docs", File.basename(markdown_filename).gsub(/\.md$/, ".html"))
 end
 
 def run(cmd)
@@ -63,7 +67,7 @@ task :html do
   output_filenames = []
 
   markdown_file_list.each do |markdown_filename|
-    output_filename = File.join("docs", File.basename(markdown_filename).gsub(/\.md$/, ".html"))
+    output_filename = format_output_filename(markdown_filename)
     output_filenames << output_filename
     if FileUtils.uptodate?(output_filename, markdown_filename)
       puts "(#{output_filename} is up to date with #{markdown_filename})"
@@ -80,4 +84,10 @@ task :html do
     system "cat #{fn} >> docs/cookbook.html"
   end
   puts "complete doc is docs/cookbook.html"
+end
+
+
+desc "Describe the cookbook in YAML"
+task :describe do
+  puts markdown_file_list.collect { |f| format_output_filename(f) }.to_yaml
 end
