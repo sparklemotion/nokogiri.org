@@ -7,6 +7,7 @@ Ensuring well-formed markup
 Validating against a schema
 Data Extraction
 XPath and CSS syntax
+String Encoding
 Sanitizing HTML (advertising for Loofah)
 Scraping Feeds (advertising for Feedzirra)
 View testing (advertising for Elementor)

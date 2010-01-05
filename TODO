@@ -1,0 +1,21 @@
+# -*- org -*-
+#+TODO: TODO(t) IN-PROGRESS(p) DONE(d)
+
+* Chapters:
+*** DONE Installing Nokogiri
+*** DONE Parsing an HTML/XML document
+*** DONE Searching a XML/HTML document
+*** DONE Modifying an HTML/XML document
+*** TODO Building an HTML/XML document
+*** IN-PROGRESS Ensuring well-formed markup
+*** TODO Validating against a schema
+*** TODO Data Extraction
+*** TODO XPath and CSS syntax
+*** IN-PROGRESS String Encoding
+*** TODO Sanitizing HTML (advertising for Loofah)
+*** TODO Scraping Feeds (advertising for Feedzirra)
+*** TODO View testing (advertising for Elementor)
+*** TODO Scraping web pages (advertising for Mechanize)
+*** IN-PROGRESS More Resources
+* Link to other resources
+*** railscasts for nokogiri and mechanize
