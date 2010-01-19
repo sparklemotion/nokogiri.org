@@ -49,7 +49,7 @@ As John Barnette once said, "Isn't package management convenient? :)"
 
 Easy peasy:
 
-    sudo yum install -y libxml2 libmxl2-devel libxslt libxslt-devel
+    sudo yum install -y libxml2 libxml2-devel libxslt libxslt-devel
     sudo gem install nokogiri
 
 ## Nonstandard libxml2 / libxslt installations
