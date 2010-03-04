@@ -27,7 +27,7 @@ really quite buggy. We here at Nokogiri HQ advise *strongly* that you
   [released Nov 2004]: http://mail.gnome.org/archives/xml/2004-November/msg00074.html
   [do not use this version]: http://github.com/tenderlove/nokogiri/blob/master/lib/nokogiri/version_warning.rb#L2
 
-Thankfully, Snow Leopard sensibly comes packaged with libxml 2.7.3.
+Sensibly, Snow Leopard comes packaged with libxml 2.7.3.
 
 ## Ubuntu / Debian
 

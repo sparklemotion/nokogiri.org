@@ -49,7 +49,7 @@ Nokogiri into "strict" parsing mode, in which it will raise an
 exception at the first sign of malformedness:
 
     begin
-      bad_doc = Nokogiri::XML(badly_formed) { |config| config.options = Nokogiri::XML::ParseOptions::STRICT }
+      bad_doc = Nokogiri::XML(badly_formed) { |config| config.strict }
     rescue Nokogiri::XML::SyntaxError => e
       puts "caught exception: #{e}"
     end
