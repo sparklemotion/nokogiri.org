@@ -47,10 +47,29 @@ As John Barnette once said, "Isn't package management convenient? :)"
 
 ## Red Hat / CentOS
 
-Easy peasy:
+In theory, this is easy peasy:
 
     sudo yum install -y libxml2 libxml2-devel libxslt libxslt-devel
     sudo gem install nokogiri
+
+In practice, though, CentOS 5 (and RHEL5) come installed with libxml 2.6.26
+which, while not as offensively out-of-date as Mac Leopard, is still
+pretty damn old ([released June 2006][]) and has [known][] [issues][].
+
+If you're affected by any known bugs or are seeing odd behavior, you
+may want to consider uninstalling the RPMs for libxml2 and libxslt,
+and building them from source.
+
+  [released June 2006]: http://mail.gnome.org/archives/xml/2006-June/msg00043.html
+  [known]: http://github.com/tenderlove/nokogiri/issues#issue/243
+  [issues]: http://github.com/tenderlove/nokogiri/issues#issue/122
+
+ 1. run `sudo yum remove -y libxml2 libxml2-devel libxslt libxslt-devel`
+ 2. download the most recent libxml2 and libxslt from [ftp://xmlsoft.org/libxml2/](ftp://xmlsoft.org/libxml2/)
+ 3. run `config ; make ; sudo make install`
+ 4. run `sudo gem install nokogiri`
+
+Good luck.
 
 ## Nonstandard libxml2 / libxslt installations
 
