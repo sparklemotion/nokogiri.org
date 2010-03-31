@@ -64,7 +64,7 @@ and building them from source.
   [known]: http://github.com/tenderlove/nokogiri/issues#issue/243
   [issues]: http://github.com/tenderlove/nokogiri/issues#issue/122
 
- 1. `sudo yum remove -y libxml2 libxml2-devel libxslt libxslt-devel`
+ 1. `sudo yum remove -y libxml2-devel libxslt-devel`
  2. download the most recent libxml2 and libxslt from [ftp://xmlsoft.org/libxml2/](ftp://xmlsoft.org/libxml2/)
  3. `./configure ; make ; sudo make install`
  4. `sudo gem install nokogiri`
