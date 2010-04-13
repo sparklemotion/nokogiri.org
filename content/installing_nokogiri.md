@@ -43,6 +43,11 @@ install everything you might need:
     sudo apt-get install libxslt-dev libxml2-dev
     sudo gem install nokogiri
 
+Although, if you're using Hardy (8.04) or earlier, you'll need to install slightly different packages:
+
+    # nokogiri requirements for Hardy (8.04) and earlier
+    sudo apt-get install libxslt1-dev libxml2-dev
+
 As John Barnette once said, "Isn't package management convenient? :)"
 
 ## Red Hat / CentOS
