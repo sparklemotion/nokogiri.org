@@ -72,9 +72,9 @@ and building them from source.
  1. `sudo yum remove -y libxml2-devel libxslt-devel`
  2. download the most recent libxml2 and libxslt from [ftp://xmlsoft.org/libxml2/](ftp://xmlsoft.org/libxml2/)
  3. `./configure ; make ; sudo make install`
- 4. `sudo gem install nokogiri`
+ 4. `sudo gem install nokogiri -- --with-xml2-lib=/usr/local/lib --with-xml2-include=/usr/local/include/libxml2 --with-xslt-lib=/usr/local/lib --with-xslt-include=/usr/local/include/libxslt`
 
-Good luck.
+Or, you know, whatever directories into which you installed libxml and libxslt. Good luck.
 
 ## Nonstandard libxml2 / libxslt installations
 
