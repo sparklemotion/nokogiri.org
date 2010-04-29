@@ -87,8 +87,10 @@ install` command to grease the wheels:
 
 Or, you can specify include and library directories separately:
 
-    gem install nokogiri -- --with-xml2-include=/sw/include/libxml2 --with-xml2-lib=/sw/lib \
-      --with-xslt-dir=/sw
+    gem install nokogiri -- --with-xml2-lib=/home/joe/builds/lib \
+                            --with-xml2-include=/home/joe/builds/include/libxml2 \
+                            --with-xslt-lib=/home/joe/builds/lib \
+                            --with-xslt-include=/home/joe/builds/include/libxslt
 
 ## Windows
 
