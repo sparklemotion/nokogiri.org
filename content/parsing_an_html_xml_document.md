@@ -59,3 +59,27 @@ Or
       config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NOENT
     end
 
+## Encoding
+
+Strings are always stored as UTF-8 internally.  Methods that return
+text values will always return UTF-8 encoded strings.  Methods that
+return XML (like to_xml, to_html and inner_html) will return a string
+encoded like the source document.
+
+**WARNING**
+
+Some documents declare one particular encoding, but use a different
+one. So, which encoding should the parser choose?
+
+Remember that data is just a stream of bytes. Only us humans add
+meaning to that stream. Any particular set of bytes could be valid
+characters in multiple encodings, so detecting encoding with 100%
+accuracy is not possible. libxml2 does its best, but it can't be right
+100% of the time.
+
+If you want Nokogiri to handle the document encoding properly, your
+best bet is to explicitly set the encoding.  Here is an example of
+explicitly setting the encoding to EUC-JP on the parser:
+
+    doc = Nokogiri.XML('<foo><bar /><foo>', nil, 'EUC-JP')
+
