@@ -56,30 +56,30 @@ So you say you've got a bug. That's great! We always want to increase
 the yummy candy-coated goodness of Nokogiri, so if you've got a bug,
 we want to hear about it.
 
+We track boogs on [Github Issues][gi], which notifies the maintainers
+every time a new ticket is created.
+
 ### What's In a Bug Report?
 
-Whoa, do we have strong opinions on this topic. Come closer, child,
-and I'll tell you a story.
+Whoa, do we have strong opinions on this topic. The two most important
+things that a bug report needs to contain are:
 
 1. Example code that reproduces the __observed__ behavior.
 2. An explanation of what the __expected__ behavior is.
 
 ### That's it?
 
-Yes, that's it. You'd be surprised how many people don't bother with
-providing either.
+Yes, that's it.
 
-If you're a solid Rubyist, you should be able to provide a short,
-self-contained script that reproduces and demonstrates the
+If you're a solid Rubyist, you should be able to provide a **short,
+self-contained script** that reproduces and demonstrates the
 behavior. [Here's a great example.][issue-with-sample]
 
-If you want to go above-and-beyond, and earn the eternal favor of the
-maintainers, you could even write a failing unit test that meets both
-criteria in one fell swoop. [Like this guy.][issue-with-test]
-
-If you'd like to see your name in lights (or really, just in the
-commit log), you can even submit your failing test case as a pull
-request from a forked Github repository. We would love you forever.
+If you want to go above-and-beyond, impress the judge from the Czech
+Republic, and prove to everyone you went to high school with that
+you're better than them, you could even write a **failing unit test**
+that meets both criteria in one fell swoop. [Like this
+guy.][issue-with-test]
 
 ## Summary
 
