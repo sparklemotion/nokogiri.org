@@ -64,6 +64,11 @@ end
 
 task :default => :html
 
+desc "Remove all generated files"
+task :clean do
+  FileUtils.rm_rf output_directory
+end
+
 desc "Compile an html version of the book"
 task :html do
   STDOUT.sync = true

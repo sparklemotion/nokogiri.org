@@ -2,14 +2,6 @@ Installing Nokogiri
 Parsing an HTML/XML document
 Searching a XML/HTML document
 Modifying an HTML/XML document
-Building an HTML/XML document
 Ensuring well-formed markup
-Validating against a schema
-Data Extraction
-XPath and CSS syntax
-Sanitizing HTML (advertising for Loofah)
-Scraping Feeds (advertising for Feedzirra)
-View testing (advertising for Elementor)
-Scraping web pages (advertising for Mechanize)
 Getting Help
 More Resources
