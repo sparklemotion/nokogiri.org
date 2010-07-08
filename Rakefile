@@ -16,8 +16,12 @@ def markdown_file_list
   end
 end
 
+def output_directory
+  "html"
+end
+
 def format_output_filename(markdown_filename)
-  File.join("docs", File.basename(markdown_filename).gsub(/\.md$/, ".html"))
+  File.join(output_directory, File.basename(markdown_filename).gsub(/\.md$/, ".html"))
 end
 
 def run(cmd)
@@ -63,7 +67,7 @@ task :default => :html
 desc "Compile an html version of the book"
 task :html do
   STDOUT.sync = true
-  FileUtils.mkdir_p "docs"
+  FileUtils.mkdir_p output_directory
   output_filenames = []
 
   markdown_file_list.each do |markdown_filename|
@@ -79,11 +83,12 @@ task :html do
     end
   end
 
-  system "> docs/tutorials.html"
+  all_tutorials = "#{output_directory}/all_tutorials.html"
+  system "> #{all_tutorials}"
   output_filenames.each do |fn|
-    system "cat #{fn} >> docs/tutorials.html"
+    system "cat #{fn} >> #{all_tutorials}"
   end
-  puts "complete doc is docs/tutorials.html"
+  puts "complete doc is #{all_tutorials}"
 end
 
 
