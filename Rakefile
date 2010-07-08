@@ -79,15 +79,15 @@ task :html do
     end
   end
 
-  system "> docs/cookbook.html"
+  system "> docs/tutorials.html"
   output_filenames.each do |fn|
-    system "cat #{fn} >> docs/cookbook.html"
+    system "cat #{fn} >> docs/tutorials.html"
   end
-  puts "complete doc is docs/cookbook.html"
+  puts "complete doc is docs/tutorials.html"
 end
 
 
-desc "Describe the cookbook in YAML"
+desc "Describe the tutorials in YAML"
 task :describe do
   puts markdown_file_list.collect { |f| format_output_filename(f) }.to_yaml
 end
