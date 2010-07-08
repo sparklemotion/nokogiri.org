@@ -49,11 +49,11 @@ editor](http://www.gnu.org/software/emacs/) can use the right mode).
 So, if you want to inline any blockquoted content, create a file in
 `content/assets` and reference it from the markdown file like so:
 
-    Some plain text.
+    Here's some XML for your entertainment:
 
     ~~~ inline assets/shows.xml
 
-    Some more text
+    And here's some ruby:
 
     ~~~ inline assets/search-setup.rb
 
@@ -74,11 +74,9 @@ of running the code in `<filename>` through
 So, if you want to inline ruby code and its output, create a file in
 `content/assets` and reference it from the markdown file like so:
 
-    Some plain text
+    Here's some ruby along with its stdout:
 
     ~~~ ruby assets/search-xpath-characters-first.rb
-
-    Some more text
 
 ### Conventions
 
