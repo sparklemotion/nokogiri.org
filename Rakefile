@@ -48,6 +48,7 @@ end
 def sub_inline_ruby!(content)
   sub_do('ruby', content) do |asset_name|
     output = IO.popen("xmpfilter -a --cd content/assets/ #{asset_name}", "r").read
+    raise "Error running inline ruby:\n#{output}" if output =~ /Error/
     output.gsub!(/^.*:startdoc:[^\n]*/m, '') if output =~ /:startdoc:/
     output.gsub!(/^.*:nodoc:.*$\n?/, '')
     output.gsub!(/\\n/,"\n# ")
