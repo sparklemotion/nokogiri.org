@@ -35,3 +35,12 @@ But you could also arrange it next to other nodes:
 If you wanted to wrap new HTML around each node in a Nodeset, here's an example of how to do it:
 
 ~~~ ruby assets/modify-wrap.rb
+
+## Adding a Processing Instruction (like &lt;?xml-stylesheet?&gt;)
+
+If you want to add a processing instruction (a.k.a. "PI node"), like
+an xml-stylesheet declaration, you should first create the node using
+`Nokogiri::XML::ProcessingInstruction.new` and then add it to the
+document as a previous-sibling of the root node:
+
+~~~ ruby assets/modify-processing-instructions.rb
