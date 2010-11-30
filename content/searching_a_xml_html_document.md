@@ -91,3 +91,22 @@ we can help out.
   [1]: http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/
   [2]: http://groups.google.com/group/nokogiri-talk
 
+## Slop
+
+Maybe you want a more interactive (read: sloppy) way to access nodes
+and attributes. If you like what [XmlSimple][3] does, then you'll
+probably like Nokogiri's Slop mode.
+
+  [3]: http://xml-simple.rubyforge.org/
+
+Slop mode allows you to violate the Law of Demeter with extreme
+prejudice, by using `#method_missing` to introspect on a node's child tags.
+
+~~~ ruby assets/search-slop.rb
+
+Aww yeah. Can you feel the spirit of [@jbarnette][jbarnette] and
+[@nakajima][nakajima] flowing through you? That's the power of the
+*slop*.
+
+  [jbarnette]: http://twitter.com/jbarnette
+  [nakajima]: http://twitter.com/nakajima
