@@ -28,9 +28,9 @@ Effect"](http://en.wikipedia.org/wiki/The_Philosophy_of_Composition).
 
 ## How Do I Edit and View My Changes?
 
-1. `gem install maruku rcodetools`
+1. `bundle install`
 2. Edit markdown files in the `content/` directory.
-3. `rake html`
+3. `bundle exec rake html`
 
 ### New Chapters
 
