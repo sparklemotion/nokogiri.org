@@ -35,6 +35,7 @@ packages, so Read On, True Believer!
 
     # the rest of this snippet assumes installation of libxml 2.7.7. YMMV.
     brew install libxml2
+    brew link libxml2
     
     # install libxslt from source
     wget ftp://xmlsoft.org/libxml2/libxslt-1.1.26.tar.gz
@@ -45,9 +46,7 @@ packages, so Read On, True Believer!
     make
     sudo make install
     
-    gem install nokogiri -- --with-xml2-include=/usr/local/Cellar/libxml2/2.7.7/include/libxml2 \
-                            --with-xml2-lib=/usr/local/Cellar/libxml2/2.7.7/lib \
-                            --with-xslt-dir=/usr/local/Cellar/libxslt/1.1.26
+    gem install nokogiri -- --with-xslt-dir=/usr/local/Cellar/libxslt/1.1.26
     
 ## Ubuntu / Debian
 
@@ -100,9 +99,14 @@ Then install nokogiri specifying the libxml2 and libxslt install directories:
     sudo gem install nokogiri -- --with-xml2-lib=/usr/local/lib \
                                  --with-xml2-include=/usr/local/include/libxml2 \
                                  --with-xslt-lib=/usr/local/lib \
-                                 --with-xslt-include=/usr/local/include/libxslt
+                                 --with-xslt-include=/usr/local/include
 
-Or, you know, whatever directories into which you installed libxml and libxslt. Good luck.
+(Note that, by default, libxslt header files are installed into the
+root include directory, but libxml2 header files are installed into a
+subdirectory thereof named `libxml2`.)
+
+Or, you know, whatever directories into which you installed libxml and
+libxslt. Good luck.
 
 ## Nonstandard libxml2 / libxslt installations
 
@@ -119,7 +123,11 @@ Or, you can specify include and library directories separately:
     gem install nokogiri -- --with-xml2-lib=/home/joe/builds/lib \
                             --with-xml2-include=/home/joe/builds/include/libxml2 \
                             --with-xslt-lib=/home/joe/builds/lib \
-                            --with-xslt-include=/home/joe/builds/include/libxslt
+                            --with-xslt-include=/home/joe/builds/include
+
+Note that, by default, libxslt header files are installed into the
+root include directory, but libxml2 header files are installed into a
+subdirectory thereof named `libxml2`.
 
 ## Windows
 
