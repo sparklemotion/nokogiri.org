@@ -31,6 +31,7 @@ Effect"](http://en.wikipedia.org/wiki/The_Philosophy_of_Composition).
 1. `bundle install`
 2. Edit markdown files in the `content/` directory.
 3. `bundle exec rake html`
+4. View generated HTML in the `html/` directory.
 
 ### New Chapters
 
