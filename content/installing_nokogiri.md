@@ -73,14 +73,25 @@ As [John Barnette once said][package-management], "Isn't package management conv
 
 ## Red Hat / CentOS
 
-In theory, this is easy peasy:
+The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
+[EPEL][] repository which contains a prebuilt nokogiri package. To use it,
+install the appropriate [epel-release][] package for your OS, then run:
 
-    sudo yum install -y libxml2 libxml2-devel libxslt libxslt-devel
-    sudo gem install nokogiri
+    sudo yum install -y rubygem-nokogiri
 
-In practice, though, CentOS 5 (and RHEL5) come installed with libxml 2.6.26
-which, while not as offensively out-of-date as Mac Leopard, is still
-pretty damn old ([released June 2006][]) and has [known][] [issues][].
+  [EPEL]: http://fedoraproject.org/wiki/EPEL
+  [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
+
+To install using gem install is somewhat more complicated because of the age of
+the packages available from the central repositories. If you have rubygems
+installed, you may be able to install nokogiri via `gem install`. If you run
+intro problems, try installing these packages as well.
+
+    sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+
+CentOS 5 (and RHEL5) come installed with libxml 2.6.26 which, while not as
+offensively out-of-date as Mac Leopard, is still pretty damn old ([released
+June 2006][]) and has [known][] [issues][].
 
 If you're affected by any known bugs or are seeing odd behavior, you
 may want to consider uninstalling the RPMs for libxml2 and libxslt,
