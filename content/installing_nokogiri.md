@@ -31,6 +31,10 @@ packages, so Read On, True Believer!
     sudo port install libxml2 libxslt
     sudo gem install nokogiri
 
+And if you have problems, try:
+
+    sudo port upgrade outdated
+
 ### homebrew
 
     # the rest of this snippet assumes installation of libxml 2.7.7. YMMV.
