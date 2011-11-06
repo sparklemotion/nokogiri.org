@@ -35,7 +35,13 @@ And if you have problems, try:
 
     sudo port upgrade outdated
 
-### homebrew
+### homebrew 0.8 or later
+
+    brew install libxml2 libxslt
+    brew link libxml2 libxslt
+    gem install nokogiri
+    
+## homebrew 0.7 or earlier
 
     # the rest of this snippet assumes installation of libxml 2.7.7. YMMV.
     brew install libxml2
@@ -51,7 +57,8 @@ And if you have problems, try:
     sudo make install
     
     gem install nokogiri -- --with-xslt-dir=/usr/local/Cellar/libxslt/1.1.26
-    
+
+
 ## Ubuntu / Debian
 
 Ubuntu doesn't come with the Ruby development packages that are
