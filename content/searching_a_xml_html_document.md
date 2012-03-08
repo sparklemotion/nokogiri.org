@@ -88,8 +88,15 @@ Dealing with namespaces is a broad topic.  If you need more examples, be sure
 to check out [this blog post][1] or send an email to the [mailing list][2], and
 we can help out.
 
+If you have an XML document with namespaces, but would prefer to ignore the
+namespaces and query it as if there were no namespaces, you can call 
+[remove_namespaces][] on a nokogiri Document to remove all namespaces.
+Of course, if the document had nodes with the same names but different
+namespaces, they will now be ambiguous. 
+
   [1]: http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/
   [2]: http://groups.google.com/group/nokogiri-talk
+  [remove_namespaces]: http://nokogiri.org/Nokogiri/XML/Document.html#method-i-remove_namespaces-21
 
 ## Slop[^1]
 
