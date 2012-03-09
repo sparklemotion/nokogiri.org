@@ -88,11 +88,17 @@ Dealing with namespaces is a broad topic.  If you need more examples, be sure
 to check out [this blog post][1] or send an email to the [mailing list][2], and
 we can help out.
 
-If you have an XML document with namespaces, but would prefer to ignore the
-namespaces and query it as if there were no namespaces, you can call 
-[remove_namespaces][] on a nokogiri Document to remove all namespaces.
-Of course, if the document had nodes with the same names but different
-namespaces, they will now be ambiguous. 
+
+## But I'm Lazy and Don't Want to Deal With Namespaces!
+
+Lazy == Efficient, so no judgements. :)
+
+If you have an XML document with namespaces, but would prefer to
+ignore them entirely (and query as if Tim Bray had never invented
+them), then you can call [remove_namespaces][] on an XML::Document to
+remove all namespaces. Of course, if the document had nodes with the
+same names but different namespaces, they will now be ambiguous. But
+you're lazy! You don't care!
 
   [1]: http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/
   [2]: http://groups.google.com/group/nokogiri-talk
