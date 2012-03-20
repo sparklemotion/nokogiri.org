@@ -37,8 +37,8 @@ And if you have problems, try:
 
 ### homebrew 0.8 or later
 
-    brew install libxml2 libxslt
-    brew link libxml2 libxslt
+    brew install libxml2 libxslt libiconv
+    brew link libxml2 libxslt libiconv
     gem install nokogiri
     
 ## homebrew 0.7 or earlier
