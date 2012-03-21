@@ -11,6 +11,30 @@ reputation for being complicated to install.
 
 Let's wrassle this little myth to the ground, shall we?
 
+## Ubuntu / Debian
+
+Ubuntu doesn't come with the Ruby development packages that are
+required for building gems with C extensions. Here are the commands to
+install everything you might need:
+
+    # ruby developer packages
+    sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
+    sudo apt-get install libreadline-ruby1.8 libruby1.8 libopenssl-ruby
+
+    # nokogiri requirements
+    sudo apt-get install libxslt-dev libxml2-dev
+    sudo gem install nokogiri
+
+Although, if you're using Hardy (8.04) or earlier, you'll need to install slightly different packages:
+
+    # nokogiri requirements for Hardy (8.04) and earlier
+    sudo apt-get install libxslt1-dev libxml2-dev
+
+As [John Barnette once said][package-management], "Isn't package management convenient? :)"
+
+  [package-management]: http://rubyforge.org/pipermail/nokogiri-talk/2009-March/000181.html
+
+
 ## Mac OS X
 
 Please note that Leopard comes bundled with libxml 2.6.16. Someone in
@@ -35,13 +59,44 @@ And if you have problems, try:
 
     sudo port upgrade outdated
 
-### homebrew 0.8 or later
+### homebrew 0.9
+
+Apparently some people have had problems getting libiconv to install
+under homebrew 0.9 (see [issue #442](https://github.com/tenderlove/nokogiri/issues/442)).
+Here's what reportedly works:
+
+    brew install libxml2 libxslt
+    brew link libxml2 libxslt
+    
+Then install libiconv from source:
+
+    wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz
+    tar xvfz libiconv-1.13.1.tar.gz
+    cd libiconv-1.13.1
+    ./configure --prefix=/usr/local/Cellar/libiconv/1.13.1
+    make
+    sudo make install
+    
+Then (finally) install nokogiri:
+
+    gem install nokogiri -- --with-xml2-include=/usr/local/Cellar/libxml2/2.7.8/include/libxml2 \
+                            --with-xml2-lib=/usr/local/Cellar/libxml2/2.7.8/lib \
+                            --with-xslt-dir=/usr/local/Cellar/libxslt/1.1.26 \
+                            --with-iconv-include=/usr/local/Cellar/libiconv/1.13.1/include \
+                            --with-iconv-lib=/usr/local/Cellar/libiconv/1.13.1/lib
+
+Well played, homebrew. That certainly was "the easiest and most
+flexible way to install the UNIX tools Apple didn't include with OS
+X." </sarcasm>
+
+
+### homebrew 0.8
 
     brew install libxml2 libxslt libiconv
     brew link libxml2 libxslt libiconv
     gem install nokogiri
     
-## homebrew 0.7 or earlier
+## homebrew 0.7
 
     # the rest of this snippet assumes installation of libxml 2.7.7. YMMV.
     brew install libxml2
@@ -58,29 +113,6 @@ And if you have problems, try:
     
     gem install nokogiri -- --with-xslt-dir=/usr/local/Cellar/libxslt/1.1.26
 
-
-## Ubuntu / Debian
-
-Ubuntu doesn't come with the Ruby development packages that are
-required for building gems with C extensions. Here are the commands to
-install everything you might need:
-
-    # ruby developer packages
-    sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
-    sudo apt-get install libreadline-ruby1.8 libruby1.8 libopenssl-ruby
-
-    # nokogiri requirements
-    sudo apt-get install libxslt-dev libxml2-dev
-    sudo gem install nokogiri
-
-Although, if you're using Hardy (8.04) or earlier, you'll need to install slightly different packages:
-
-    # nokogiri requirements for Hardy (8.04) and earlier
-    sudo apt-get install libxslt1-dev libxml2-dev
-
-As [John Barnette once said][package-management], "Isn't package management convenient? :)"
-
-  [package-management]: http://rubyforge.org/pipermail/nokogiri-talk/2009-March/000181.html
 
 ## Red Hat / CentOS
 
