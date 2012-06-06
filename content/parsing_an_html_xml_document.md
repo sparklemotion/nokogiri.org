@@ -46,17 +46,18 @@ most commonly-used options are:
 * `NOENT` - Substitute entities
 * `NOERROR` - Suppress error reports
 * `STRICT` - Strict parsing; raise an error when parsing malformed documents
+* `NONET` - Prevent any network connections during parsing. Recommended for parsing untrusted documents.
 
 Here's how they are used:
 
     doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-      config.strict.noent
+      config.strict.nonet
     end
 
 Or
 
     doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-      config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NOENT
+      config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NONET
     end
 
 ## Encoding
