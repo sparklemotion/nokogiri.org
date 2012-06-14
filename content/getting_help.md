@@ -94,5 +94,5 @@ Thanks so much for reading this page! You're a good person, and Nokogiri loves y
 
   [nt]: http://groups.google.com/group/nokogiri-talk
   [gi]: http://github.com/tenderlove/nokogiri/issues
-  [issue-with-sample]: http://github.com/tenderlove/nokogiri/issues/issue/158
-  [issue-with-test]: http://github.com/tenderlove/nokogiri/issues/issue/240
+  [issue-with-sample]: http://github.com/tenderlove/nokogiri/issues/158
+  [issue-with-test]: https://github.com/tenderlove/nokogiri/issues/695
