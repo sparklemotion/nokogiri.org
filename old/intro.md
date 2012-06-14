@@ -51,7 +51,7 @@ don't have to tell you, as you are a handsome/beautiful genius)
 [performs well in benchmarks][xml-truth], supports XPath and CSS
 queries and has lots of other nice features.
 
-  [xml-truth]: http://github.com/tenderlove/xml_truth
+  [xml-truth]: http://github.com/sparklemotion/xml_truth
 
 Then it hit me: _The world needs a Nokogiri Cookbook!_ I'll generate
 some useful documentation, unicorns and rainbows will frolic together,

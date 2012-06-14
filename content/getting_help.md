@@ -93,6 +93,6 @@ To sum up the rules:
 Thanks so much for reading this page! You're a good person, and Nokogiri loves you.
 
   [nt]: http://groups.google.com/group/nokogiri-talk
-  [gi]: http://github.com/tenderlove/nokogiri/issues
-  [issue-with-sample]: http://github.com/tenderlove/nokogiri/issues/158
-  [issue-with-test]: https://github.com/tenderlove/nokogiri/issues/695
+  [gi]: http://github.com/sparklemotion/nokogiri/issues
+  [issue-with-sample]: http://github.com/sparklemotion/nokogiri/issues/158
+  [issue-with-test]: https://github.com/sparklemotion/nokogiri/issues/695

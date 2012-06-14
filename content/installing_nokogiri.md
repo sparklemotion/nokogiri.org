@@ -44,7 +44,7 @@ clearly somebody's idea of a bad joke. 2.6.16 was [released Nov
 *strongly* that you [do not use this version][].
 
   [released Nov 2004]: http://mail.gnome.org/archives/xml/2004-November/msg00074.html
-  [do not use this version]: http://github.com/tenderlove/nokogiri/blob/master/lib/nokogiri/version_warning.rb#L2
+  [do not use this version]: http://github.com/sparklemotion/nokogiri/blob/master/lib/nokogiri/version_warning.rb#L2
 
 Sensibly, Snow Leopard comes packaged with libxml 2.7.3, but you're
 probably using either macports or homebrew to manage your dev
@@ -62,7 +62,7 @@ And if you have problems, try:
 ### homebrew 0.9
 
 Apparently some people have had problems getting libiconv to install
-under homebrew 0.9 (see [issue #442](https://github.com/tenderlove/nokogiri/issues/442)).
+under homebrew 0.9 (see [issue #442](https://github.com/sparklemotion/nokogiri/issues/442)).
 Here's what reportedly works:
 
     brew install libxml2 libxslt
@@ -141,8 +141,8 @@ may want to consider uninstalling the RPMs for libxml2 and libxslt,
 and building them from source.
 
   [released June 2006]: http://mail.gnome.org/archives/xml/2006-June/msg00043.html
-  [known]: http://github.com/tenderlove/nokogiri/issues#issue/243
-  [issues]: http://github.com/tenderlove/nokogiri/issues#issue/122
+  [known]: http://github.com/sparklemotion/nokogiri/issues#issue/243
+  [issues]: http://github.com/sparklemotion/nokogiri/issues#issue/122
 
  1. `sudo yum remove -y libxml2-devel libxslt-devel`
  2. download the most recent libxml2 and libxslt from [ftp://xmlsoft.org/libxml2/](ftp://xmlsoft.org/libxml2/)
