@@ -76,6 +76,9 @@ Then install libiconv from source:
     ./configure --prefix=/usr/local/Cellar/libiconv/1.13.1
     make
     sudo make install
+
+If using Mountain Lion with Homebrew 0.9, it's been [reported](https://github.com/sparklemotion/nokogiri/issues/442#issuecomment-7978408) that you may also need to use gcc 4.2:
+    sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
     
 Then (finally) install nokogiri:
 
