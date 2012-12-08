@@ -11,7 +11,7 @@ You could start by emailing
 [nokogiri-talk](http://groups.google.com/group/nokogiri-talk).
 
 Or, if you're feeling antisocial, you could just open a [Github
-Issue](http://github.com/flavorjones/nokogiri.org-tutorials/issues).
+Issue](http://github.com/sparklemotion/nokogiri.org-tutorials/issues).
 
 
 ## How Do I Contribute Documentation?
