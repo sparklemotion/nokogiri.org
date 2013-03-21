@@ -9,7 +9,7 @@ inside `<p>` tags, and putting content into an `<img>` tag.
 Nokogiri corrects bad markup [like a boss][], similarly to how a browser
 would before rendering.
 
-  [like a boss]: http://www.youtube.com/watch?v=UTiA1DtB1xk
+  [like a boss]: http://knowyourmeme.com/memes/like-a-boss
 
     badly_formed = <<-EOXML
     <root>
