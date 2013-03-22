@@ -100,5 +100,6 @@ end
 
 desc "Describe the tutorials in YAML"
 task :describe do
+  require 'yaml'
   puts markdown_file_list.collect { |f| format_output_filename(f) }.to_yaml
 end
