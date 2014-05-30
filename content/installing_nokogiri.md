@@ -132,6 +132,43 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 (Many thanks to @allaire and others for helping verify this!)
 
 
+## FreeBSD
+
+FreeBSD needs libxml2, libxslt, and iconv locations specified.
+They are installed to /usr/local/lib
+
+```sh
+gem install nokogiri -- \
+    --use-system-libraries \
+    --with-xml2-lib=/usr/local/lib \
+    --with-xml2-include=/usr/local/include/libxml2/libxml \
+    --with-xslt-lib=/usr/local/lib \
+    --with-xslt-include=/usr/local/include/libxslt \
+    --with-iconv-lib=/usr/local/lib \
+    --with-iconv-include=/usr/local/include
+```
+
+### Bundler on FreeBSD
+
+If you install nokogiri through bundler on FreeBSD, you need to
+configure the above options through bundler.
+
+```sh
+bundle config build.nokogiri \
+       --use-system-libraries \
+       --with-xml2-lib=/usr/local/lib \
+       --with-xml2-include=/usr/local/include/libxml2/libxml \
+       --with-xslt-lib=/usr/local/lib \
+       --with-xslt-include=/usr/local/include/libxslt \
+       --with-iconv-lib=/usr/local/lib \
+       --with-iconv-include=/usr/local/include
+```
+
+There is a bug (bundler/bundler#3053) in bundler that causes the options
+to be sent improperly, resulting in a `Syntax error: Unterminated quoted string` error.
+The workaround is to edit your `.bundle/config` file,
+remove the quotes around the options, and place all the options on a single line.
+
 ### Other OS X tips
 
 * Make sure ruby is compiled with the latest clang compiler.
@@ -141,7 +178,6 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 
 If you have any other issues, please file an issue (preferably a new
 one, read [Getting Help][] for details) and pull in @zenspider.
-
 
 ## Using Your System Libraries
 
