@@ -44,8 +44,8 @@ chapter. `toc` is an ordered list.
 Lines starting with `~~~ inline <filename>` are replaced by the file contents in a blockquote.
 
 It's recommended to place anything that's not text into a separate
-asset file (so my [bitchin'
-editor](http://www.gnu.org/software/emacs/) can use the right mode).
+asset file (so my [bitchin' editor](http://www.gnu.org/software/emacs/)
+can use the right mode).
 
 So, if you want to inline any blockquoted content, create a file in
 `content/assets` and reference it from the markdown file like so:
