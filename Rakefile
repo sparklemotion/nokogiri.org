@@ -47,7 +47,7 @@ end
 
 def sub_inline_ruby!(content)
   sub_do('ruby', content) do |asset_name|
-    output = IO.popen("xmpfilter -a --cd content/assets/ -I. #{asset_name}", "r").read
+    output = IO.popen("bundle exec xmpfilter -a --cd content/assets/ -I. #{asset_name}", "r").read
     raise "Error running inline ruby:\n#{output}" if output =~ /Error/
     output.gsub!(/^.*:startdoc:[^\n]*/m, '') if output =~ /:startdoc:/
     output.gsub!(/^.*:nodoc:.*$\n?/, '')
@@ -84,7 +84,9 @@ task :html do
     else
       begin
         puts "writing to #{output_filename} from #{markdown_filename} ..."
-        IO.popen("maruku > #{output_filename}", "w") do |f|
+        FileUtils.rm_f output_filename
+        File.open(output_filename, "w") { |f| f.write "<meta charset='utf-8'>" }
+        IO.popen("maruku >> #{output_filename}", "w") do |f|
           f.write slurp_file(markdown_filename)
         end
       rescue Exception => e
