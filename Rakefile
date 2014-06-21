@@ -47,7 +47,7 @@ end
 
 def sub_inline_ruby!(content)
   sub_do('ruby', content) do |asset_name|
-    output = IO.popen("xmpfilter -a --cd content/assets/ #{asset_name}", "r").read
+    output = IO.popen("xmpfilter -a --cd content/assets/ -I. #{asset_name}", "r").read
     raise "Error running inline ruby:\n#{output}" if output =~ /Error/
     output.gsub!(/^.*:startdoc:[^\n]*/m, '') if output =~ /:startdoc:/
     output.gsub!(/^.*:nodoc:.*$\n?/, '')
@@ -79,12 +79,17 @@ task :html do
   markdown_file_list.each do |markdown_filename|
     output_filename = format_output_filename(markdown_filename)
     output_filenames << output_filename
-    if FileUtils.uptodate?(output_filename, markdown_filename)
+    if FileUtils.uptodate?(output_filename, Array(markdown_filename))
       puts "(#{output_filename} is up to date with #{markdown_filename})"
     else
-      puts "writing to #{output_filename} from #{markdown_filename} ..."
-      IO.popen("maruku > #{output_filename}", "w") do |f|
-        f.write slurp_file(markdown_filename)
+      begin
+        puts "writing to #{output_filename} from #{markdown_filename} ..."
+        IO.popen("maruku > #{output_filename}", "w") do |f|
+          f.write slurp_file(markdown_filename)
+        end
+      rescue Exception => e
+        FileUtils.rm output_filename
+        raise e
       end
     end
   end
