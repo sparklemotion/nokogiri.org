@@ -37,6 +37,57 @@ As [John Barnette once said][package-management], "Isn't package management conv
 
 ## Mac OS X
 
+Most developers are using homebrew to manage their packages these
+days. If you are, you're in luck:
+
+### homebrew 0.9.5+
+
+Things pretty much Just Work™ these days. To use nokogiri with its
+vendored libxml2 and libxslt you only need to install libiconv:
+
+    gem install nokogiri
+
+### Troubleshooting
+
+If you have problems mentioning libiconv missing that looks something like this:
+
+    Installing nokogiri (1.6.2.1) Building nokogiri using packaged libraries.
+
+    Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /usr/local/rvm/rubies/ruby-2.0.0-p0/bin/ruby extconf.rb
+    Building nokogiri using packaged libraries.
+    checking for iconv.h... yes
+    checking for iconv_open() in iconv.h... no
+    checking for iconv_open() in -liconv... no
+    checking for libiconv_open() in iconv.h... no
+    checking for libiconv_open() in -liconv... no
+    -----
+    libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
+    -----
+    *** extconf.rb failed ***
+
+Then you are probably missing the right developer tools. This is a really easy fix:
+
+    brew unlink gcc-4.2      # you might not need this step
+    gem uninstall nokogiri
+    xcode-select --install
+    gem install nokogiri
+
+This is verified working on OSX 10.9 w/ xcode's clang compiler.
+
+Many thanks to @allaire and others for helping verify this.
+
+### Other tips:
+
+* Make sure ruby is compiled with the latest clang compiler.
+* Ruby is no longer dependent upon gcc-4.2.
+* Binary gems and ruby really should be compiled with the same compiler/environment.
+* If you have multiple versions of xcode installed, make sure you use the right xcode-select.
+
+If you have any other issues, please file an issue (preferably a new
+one) and pull in @zenspider.
+
 ## Red Hat / CentOS
 
 The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
