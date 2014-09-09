@@ -273,12 +273,10 @@ Aww yeah. Can you feel the spirit of [@jbarnette][jbarnette] and
 [@nakajima][nakajima] flowing through you? That's the power of the
 *slop*.<sup>4</sup>
 
-```
-  1: Don't use this.
-  2: This may or may not be a backhanded compliment.
-  3: No, really, don't use this. If you use it, don't report bugs.
-  4: You've been warned!
-```
+1. Don't use this.
+2. This may or may not be a backhanded compliment.
+3. No, really, don't use this. If you use it, don't report bugs.
+4. You've been warned!
 
   [jbarnette]: http://twitter.com/jbarnette
   [nakajima]: http://twitter.com/nakajima
