@@ -104,26 +104,26 @@ you're lazy! You don't care!
   [2]: http://groups.google.com/group/nokogiri-talk
   [remove_namespaces]: http://nokogiri.org/Nokogiri/XML/Document.html#method-i-remove_namespaces-21
 
-## Slop[^1]
+## Slop<sup>1</sup>
 
 Maybe you want a more interactive (read: sloppy) way to access nodes
 and attributes. If you like what [XmlSimple][3] does, then you'll
-probably like Nokogiri's Slop mode.[^2]
+probably like Nokogiri's Slop mode.<sup>2</sup>
 
   [3]: http://xml-simple.rubyforge.org/
 
 Slop mode allows you to violate the Law of Demeter with extreme
-prejudice, by using `#method_missing` to introspect on a node's child tags. [^3]
+prejudice, by using `#method_missing` to introspect on a node's child tags. <sup>3</sup>
 
 ~~~ ruby assets/search-slop.rb
 
 Aww yeah. Can you feel the spirit of [@jbarnette][jbarnette] and
 [@nakajima][nakajima] flowing through you? That's the power of the
-*slop*.[^4]
+*slop*.<sup>4</sup>
 
-  [^1]: Don't use this.
-  [^2]: This may or may not be a backhanded compliment.
-  [^3]: No, really, don't use this. If you use it, don't report bugs.
-  [^4]: You've been warned!
+  [1]: Don't use this.
+  [2]: This may or may not be a backhanded compliment.
+  [3]: No, really, don't use this. If you use it, don't report bugs.
+  [4]: You've been warned!
   [jbarnette]: http://twitter.com/jbarnette
   [nakajima]: http://twitter.com/nakajima
