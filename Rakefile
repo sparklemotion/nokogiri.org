@@ -51,11 +51,17 @@ def run(cmd)
   system(cmd) || raise("command failed: #{cmd}")
 end
 
-def sub_do(tag, content, codetype="", &block)
+def sub_do(tag, content, &block)
   content.gsub!(/^~~~ #{tag} (.*)/) do |match|
     asset_name = "content/#{$1}"    
     raise "Could not find asset #{asset_name}" unless File.exists?(asset_name)
     puts "  #{tag} file: #{asset_name}"
+
+    codetype = case (asset_name.split(".").last)
+               when "xml" then "xml"
+               when "rb" then "ruby"
+               else ""
+               end
 
     "```#{codetype}\n" + yield(asset_name) + "\n```"
   end
@@ -68,7 +74,7 @@ def sub_inline_docs!(content)
 end
 
 def sub_inline_ruby!(content)
-  sub_do('ruby', content, "ruby") do |asset_name|
+  sub_do('ruby', content) do |asset_name|
     output = IO.popen("bundle exec xmpfilter -a --cd content/assets/ -I. #{asset_name}", "r").read
     raise "Error running inline ruby:\n#{output}" if output =~ /Error/
     output.gsub!(/^.*:startdoc:[^\n]*/m, '') if output =~ /:startdoc:/

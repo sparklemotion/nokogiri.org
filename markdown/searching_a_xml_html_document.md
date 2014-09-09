@@ -4,7 +4,7 @@
 
 Let's suppose you have the following document:
 
-```
+```xml
 [shows.xml]
 <root>
   <sitcoms>
@@ -116,7 +116,7 @@ where namespaces come to the rescue.
 Namespaces associate tags with a unique URL.  Let's take a look at the autoparts
 store's XML versus the bike stores:
 
-```
+```xml
 [parts.xml]
 <parts>
   <!-- Alice's Auto Parts Store -->
@@ -158,7 +158,7 @@ this naming convention, we can shorten up our code.
 
 Let's take this atom feed for example:
 
-```
+```xml
 [atom.xml]
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
