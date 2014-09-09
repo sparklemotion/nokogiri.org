@@ -4,8 +4,10 @@
 
 We've tried to make this easy on you. Really! We're here to make your life easier.
 
-    html_doc = Nokogiri::HTML("<html><body><h1>Mr. Belvedere Fan Club</h1></body></html>")
-    xml_doc  = Nokogiri::XML("<root><aliens><alien><name>Alf</name></alien></aliens></root>")
+```ruby
+html_doc = Nokogiri::HTML("<html><body><h1>Mr. Belvedere Fan Club</h1></body></html>")
+xml_doc  = Nokogiri::XML("<root><aliens><alien><name>Alf</name></alien></aliens></root>")
+```
 
 The variables `html_doc` and `xml_doc` are Nokogiri documents, which
 have all kinds of interesting properties and methods that you [can
@@ -18,9 +20,11 @@ chapters.
 
 Note that you don't need to read the file into a string variable. Nokogiri will do this for you.
 
-    f = File.open("blossom.xml")
-    doc = Nokogiri::XML(f)
-    f.close
+```ruby
+f = File.open("blossom.xml")
+doc = Nokogiri::XML(f)
+f.close
+```
 
 Clever Nokogiri! With the time you just saved, approach enlightenment by meditating on [this koan][].
 
@@ -31,8 +35,10 @@ Clever Nokogiri! With the time you just saved, approach enlightenment by meditat
 I understand that there may be some HTML documents available on the
 World Wide Web.
 
-    require 'open-uri'
-    doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
+```ruby
+require 'open-uri'
+doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
+```
 
 ## Parse Options
 
@@ -50,15 +56,19 @@ most commonly-used options are:
 
 Here's how they are used:
 
-    doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-      config.strict.nonet
-    end
+```ruby
+doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
+  config.strict.nonet
+end
+```
 
 Or
 
-    doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-      config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NONET
-    end
+```ruby
+doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
+  config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NONET
+end
+```
 
 ## Encoding
 
@@ -82,5 +92,6 @@ If you want Nokogiri to handle the document encoding properly, your
 best bet is to explicitly set the encoding.  Here is an example of
 explicitly setting the encoding to EUC-JP on the parser:
 
-    doc = Nokogiri.XML('<foo><bar /><foo>', nil, 'EUC-JP')
-
+```ruby
+doc = Nokogiri.XML('<foo><bar /><foo>', nil, 'EUC-JP')
+```

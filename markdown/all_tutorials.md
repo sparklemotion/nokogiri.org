@@ -191,8 +191,10 @@ gem install nokogiri
 
 We've tried to make this easy on you. Really! We're here to make your life easier.
 
-    html_doc = Nokogiri::HTML("<html><body><h1>Mr. Belvedere Fan Club</h1></body></html>")
-    xml_doc  = Nokogiri::XML("<root><aliens><alien><name>Alf</name></alien></aliens></root>")
+```ruby
+html_doc = Nokogiri::HTML("<html><body><h1>Mr. Belvedere Fan Club</h1></body></html>")
+xml_doc  = Nokogiri::XML("<root><aliens><alien><name>Alf</name></alien></aliens></root>")
+```
 
 The variables `html_doc` and `xml_doc` are Nokogiri documents, which
 have all kinds of interesting properties and methods that you [can
@@ -205,9 +207,11 @@ chapters.
 
 Note that you don't need to read the file into a string variable. Nokogiri will do this for you.
 
-    f = File.open("blossom.xml")
-    doc = Nokogiri::XML(f)
-    f.close
+```ruby
+f = File.open("blossom.xml")
+doc = Nokogiri::XML(f)
+f.close
+```
 
 Clever Nokogiri! With the time you just saved, approach enlightenment by meditating on [this koan][].
 
@@ -218,8 +222,10 @@ Clever Nokogiri! With the time you just saved, approach enlightenment by meditat
 I understand that there may be some HTML documents available on the
 World Wide Web.
 
-    require 'open-uri'
-    doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
+```ruby
+require 'open-uri'
+doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
+```
 
 ## Parse Options
 
@@ -237,15 +243,19 @@ most commonly-used options are:
 
 Here's how they are used:
 
-    doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-      config.strict.nonet
-    end
+```ruby
+doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
+  config.strict.nonet
+end
+```
 
 Or
 
-    doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-      config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NONET
-    end
+```ruby
+doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
+  config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NONET
+end
+```
 
 ## Encoding
 
@@ -269,8 +279,9 @@ If you want Nokogiri to handle the document encoding properly, your
 best bet is to explicitly set the encoding.  Here is an example of
 explicitly setting the encoding to EUC-JP on the parser:
 
-    doc = Nokogiri.XML('<foo><bar /><foo>', nil, 'EUC-JP')
-
+```ruby
+doc = Nokogiri.XML('<foo><bar /><foo>', nil, 'EUC-JP')
+```
 # Searching an HTML / XML Document
 
 ## Basic Searching
@@ -707,29 +718,32 @@ would before rendering.
 
   [like a boss]: http://knowyourmeme.com/memes/like-a-boss
 
-    badly_formed = <<-EOXML
-    <root>
-      <open>foo
-        <closed>bar</closed>
-    </root>
-    EOXML
-    
-    bad_doc  = Nokogiri::XML badly_formed
-    
-    puts bad_doc         # => <?xml version="1.0"?>
-                         #    <root>
-                         #      <open>foo
-                         #        <closed>bar</closed>
-                         #    </open>  
-                         #    </root>
+```ruby
+badly_formed = <<-EOXML
+<root>
+  <open>foo
+    <closed>bar</closed>
+</root>
+EOXML
+
+bad_doc  = Nokogiri::XML badly_formed
+
+puts bad_doc         # => <?xml version="1.0"?>
+                     #    <root>
+                     #      <open>foo
+                     #        <closed>bar</closed>
+                     #    </open>  
+                     #    </root>
+```
     
 And Nokogiri will even keep track of what the errors were, if the
 parse option NOERRORS and NOWARNINGS are turned off (the default for
 XML documents).
 
-    puts bad_doc.errors  # => Opening and ending tag mismatch: open line 2 and root
-                         #    Premature end of data in tag root line 1
-
+```ruby
+puts bad_doc.errors  # => Opening and ending tag mismatch: open line 2 and root
+                     #    Premature end of data in tag root line 1
+```
 
 Thus, you could use `errors.empty?` to determine whether the document was well-formed.
 
@@ -744,13 +758,14 @@ If you demand compliance from your XML, then you can configure
 Nokogiri into "strict" parsing mode, in which it will raise an
 exception at the first sign of malformedness:
 
-    begin
-      bad_doc = Nokogiri::XML(badly_formed) { |config| config.strict }
-    rescue Nokogiri::XML::SyntaxError => e
-      puts "caught exception: #{e}"
-    end
-    # => caught exception: Premature end of data in tag root line 1
-
+```ruby
+begin
+  bad_doc = Nokogiri::XML(badly_formed) { |config| config.strict }
+rescue Nokogiri::XML::SyntaxError => e
+  puts "caught exception: #{e}"
+end
+# => caught exception: Premature end of data in tag root line 1
+```
 # Getting Help and Reporting Issues
 
 ## Halp!
