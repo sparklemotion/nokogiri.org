@@ -17,18 +17,22 @@ Ubuntu doesn't come with the Ruby development packages that are
 required for building gems with C extensions. Here are the commands to
 install everything you might need:
 
-    # ruby developer packages
-    sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
-    sudo apt-get install libreadline-ruby1.8 libruby1.8 libopenssl-ruby
+```sh
+# ruby developer packages
+sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
+sudo apt-get install libreadline-ruby1.8 libruby1.8 libopenssl-ruby
 
-    # nokogiri requirements
-    sudo apt-get install libxslt-dev libxml2-dev
-    sudo gem install nokogiri
+# nokogiri requirements
+sudo apt-get install libxslt-dev libxml2-dev
+sudo gem install nokogiri
+```
 
 Although, if you're using Hardy (8.04) or earlier, you'll need to install slightly different packages:
 
-    # nokogiri requirements for Hardy (8.04) and earlier
-    sudo apt-get install libxslt1-dev libxml2-dev
+```sh
+# nokogiri requirements for Hardy (8.04) and earlier
+sudo apt-get install libxslt1-dev libxml2-dev
+```
 
 As [John Barnette once said][package-management], "Isn't package management convenient? :)"
 
@@ -45,12 +49,15 @@ days. If you are, you're in luck:
 Things pretty much Just Work™ these days. To use nokogiri with its
 vendored libxml2 and libxslt you only need to install libiconv:
 
-    gem install nokogiri
+```sh
+gem install nokogiri
+```
 
 ### Troubleshooting
 
 If you have problems mentioning libiconv missing that looks something like this:
 
+```
     Installing nokogiri (1.6.2.1) Building nokogiri using packaged libraries.
 
     Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
@@ -69,10 +76,12 @@ If you have problems mentioning libiconv missing that looks something like this:
 
 Then you are probably missing the right developer tools. This is a really easy fix:
 
-    brew unlink gcc-4.2      # you might not need this step
-    gem uninstall nokogiri
-    xcode-select --install
-    gem install nokogiri
+```sh
+brew unlink gcc-4.2      # you might not need this step
+gem uninstall nokogiri
+xcode-select --install
+gem install nokogiri
+```
 
 This is verified working on OSX 10.9 w/ xcode's clang compiler.
 
@@ -94,7 +103,9 @@ The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
 [EPEL][] repository which contains a prebuilt nokogiri package. To use it,
 install the appropriate [epel-release][] package for your OS, then run:
 
-    sudo yum install -y rubygem-nokogiri
+```sh
+sudo yum install -y rubygem-nokogiri
+```
 
   [EPEL]: http://fedoraproject.org/wiki/EPEL
   [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
@@ -104,7 +115,9 @@ the packages available from the central repositories. If you have rubygems
 installed, you may be able to install nokogiri via `gem install`. If you run
 intro problems, try installing these packages as well.
 
-    sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+```sh
+sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+```
 
 CentOS 5 (and RHEL5) come installed with libxml 2.6.26 which, while not as
 offensively out-of-date as Mac Leopard, is still pretty damn old ([released
@@ -124,10 +137,12 @@ and building them from source.
 
 Then install nokogiri specifying the libxml2 and libxslt install directories:
 
-    sudo gem install nokogiri -- --with-xml2-lib=/usr/local/lib \
-                                 --with-xml2-include=/usr/local/include/libxml2 \
-                                 --with-xslt-lib=/usr/local/lib \
-                                 --with-xslt-include=/usr/local/include
+```sh
+sudo gem install nokogiri -- --with-xml2-lib=/usr/local/lib \
+                             --with-xml2-include=/usr/local/include/libxml2 \
+                             --with-xslt-lib=/usr/local/lib \
+                             --with-xslt-include=/usr/local/include
+```
 
 (Note that, by default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
@@ -143,15 +158,19 @@ If you've got libxml2 and/or libxslt installed in a nonstandard place
 directories"), you can use command-line parameters to the `gem
 install` command to grease the wheels:
 
-    gem install nokogiri -- --with-xml2-dir=/home/joe/builds \
-                            --with-xslt-dir=/home/joe/builds
+```sh
+gem install nokogiri -- --with-xml2-dir=/home/joe/builds \
+                        --with-xslt-dir=/home/joe/builds
+```
 
 Or, you can specify include and library directories separately:
 
-    gem install nokogiri -- --with-xml2-lib=/home/joe/builds/lib \
-                            --with-xml2-include=/home/joe/builds/include/libxml2 \
-                            --with-xslt-lib=/home/joe/builds/lib \
-                            --with-xslt-include=/home/joe/builds/include
+```sh
+gem install nokogiri -- --with-xml2-lib=/home/joe/builds/lib \
+                        --with-xml2-include=/home/joe/builds/include/libxml2 \
+                        --with-xslt-lib=/home/joe/builds/lib \
+                        --with-xslt-include=/home/joe/builds/include
+```
 
 Note that, by default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
@@ -163,4 +182,7 @@ Luckily for you, building on Windows is so difficult that we've done
 it for you: Nokogiri comes bundled with all the DLLs you need to be
 NOKOGIRIFIED!
 
-    gem install nokogiri
+```sh
+gem install nokogiri
+```
+
