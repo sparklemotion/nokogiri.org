@@ -57,7 +57,6 @@ gem install nokogiri
 
 If you have problems mentioning libiconv missing that looks something like this:
 
-```
     Installing nokogiri (1.6.2.1) Building nokogiri using packaged libraries.
 
     Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
