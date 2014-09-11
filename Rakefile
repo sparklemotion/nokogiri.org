@@ -56,7 +56,7 @@ ssh_port       = "22"
 document_root  = "~/website.com/"
 rsync_delete   = false
 rsync_args     = ""  # Any extra arguments to pass to rsync
-deploy_default = "rsync"
+deploy_default = "push"
 
 # This will be configured for you when you run config_deploy
 deploy_branch  = "gh-pages"
@@ -307,7 +307,7 @@ multitask :push do
   puts "\n## Copying #{public_dir} to #{deploy_dir}"
   cp_r "#{public_dir}/.", deploy_dir
   cd "#{deploy_dir}" do
-    system "git add -A"
+    system "git add -A ."
     message = "Site updated at #{Time.now.utc}"
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
