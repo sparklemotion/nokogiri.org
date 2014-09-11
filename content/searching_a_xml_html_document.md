@@ -9,8 +9,7 @@ Let's suppose you have the following document:
 Let's further suppose that you want a list of all the characters in
 all the shows in this document.
 
-~~~ ruby assets/search-setup.rb
-~~~ ruby assets/search-xpath-characters.rb
+~~~ ruby assets/search-setup.rb assets/search-xpath-characters.rb
 
 The `Node` methods `xpath` and `css` actually return a [NodeSet][],
 which acts very much like an array, and contains matching nodes from
