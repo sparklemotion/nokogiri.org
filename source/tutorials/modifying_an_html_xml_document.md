@@ -1,6 +1,7 @@
 ---
 title: Modifying an HTML/XML document
 layout: page
+sidebar: false
 ---
 # Modifying an HTML / XML Document
 

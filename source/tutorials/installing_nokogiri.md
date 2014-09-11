@@ -1,6 +1,7 @@
 ---
 title: Installing Nokogiri
 layout: page
+sidebar: false
 ---
 # Installing Nokogiri
 

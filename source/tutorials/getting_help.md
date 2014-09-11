@@ -1,6 +1,7 @@
 ---
 title: Getting Help
 layout: page
+sidebar: false
 ---
 # Getting Help and Reporting Issues
 

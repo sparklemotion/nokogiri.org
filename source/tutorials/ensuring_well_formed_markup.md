@@ -1,6 +1,7 @@
 ---
 title: Ensuring well-formed markup
 layout: page
+sidebar: false
 ---
 # Ensuring Well-Formed Markup
 

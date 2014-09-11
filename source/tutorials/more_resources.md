@@ -1,6 +1,7 @@
 ---
 title: More Resources
 layout: page
+sidebar: false
 ---
 # More Resources
 

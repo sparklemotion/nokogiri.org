@@ -1,6 +1,7 @@
 ---
 title: Searching a XML/HTML document
 layout: page
+sidebar: false
 ---
 # Searching an HTML / XML Document
 

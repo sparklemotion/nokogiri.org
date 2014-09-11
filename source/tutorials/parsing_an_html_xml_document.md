@@ -1,6 +1,7 @@
 ---
 title: Parsing an HTML/XML document
 layout: page
+sidebar: false
 ---
 # Parsing an HTML / XML Document
 

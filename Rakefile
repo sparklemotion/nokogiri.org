@@ -37,7 +37,8 @@ task :tutorials do
       File.open dest_file, "w" do |file|
         write_front_matter file, {
           "title" => title,
-          "layout" => "page"
+          "layout" => "page",
+          "sidebar" => false
         }
         file.write File.read(source_file)
       end
