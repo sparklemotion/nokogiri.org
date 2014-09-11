@@ -19,7 +19,7 @@ have all kinds of interesting properties and methods that you [can
 read about here][read-document]. We'll cover the interesting bits in other
 chapters.
 
-  [read-document]: http://nokogiri.org/Nokogiri/XML/Document.html
+  [read-document]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/Document
 
 ## From a File
 
@@ -51,7 +51,7 @@ Nokogiri offers quite a few options that affect how a document is
 parsed. You can [read about them here][read-parse-options], but the
 most commonly-used options are:
 
-  [read-parse-options]: http://nokogiri.org/Nokogiri/XML/ParseOptions.html
+  [read-parse-options]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/ParseOptions
 
 * `NOBLANKS` - Remove blank nodes
 * `NOENT` - Substitute entities
