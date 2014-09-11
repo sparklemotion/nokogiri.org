@@ -1,6 +1,5 @@
 require 'rubygems'
 gem 'rcodetools'
-gem 'maruku', '>= 0.6.0'
 
 def rawmd_directory
   "content"
