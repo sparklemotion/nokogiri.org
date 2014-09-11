@@ -1,7 +1,7 @@
 <header>
   {% if index %}
   <h1 class="beta">
-    <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+    <a href="{{ post.url }}">{{ post.title }}</a>
   </h1>
   {% else %}
   <h1 class="title indent">{{ page.title }}</h1>
@@ -12,7 +12,7 @@
     {% include blog/post/date.html %}{{ time }}
     {% include blog/post/tags.html %}
     {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-      <a class="pull-right" href="{% if index %}{{ site.url }}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread">
+      <a class="pull-right" href="{% if index %}{{ site.url }}{{ post.url }}{% endif %}#disqus_thread">
         Comments <i class="icon-comment"></i>
       </a>
     {% endif %}
@@ -25,7 +25,7 @@
 {% if excerpted == 'true' and index %}
 <div class="entry-content clearfix">
   {{ content | excerpt }}
-  <a class="btn pull-right" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
+  <a class="btn pull-right" href="{{ post.url }}">{{ site.excerpt_link }}</a>
 </div>
 {% else %}
   {{ content }}
