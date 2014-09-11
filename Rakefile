@@ -36,19 +36,28 @@ def run(cmd)
   system(cmd) || raise("command failed: #{cmd}")
 end
 
+def codetype asset_name
+  case (asset_name.split(".").last)
+  when "xml" then "xml"
+  when "rb" then "ruby"
+  else ""
+  end
+end
+
 def sub_do(tag, content, &block)
   content.gsub!(/^~~~ #{tag} (.*)/) do |match|
-    asset_name = "content/#{$1}"    
-    raise "Could not find asset #{asset_name}" unless File.exists?(asset_name)
-    puts "  #{tag} file: #{asset_name}"
+    assets = $1.split
+    output = []
+    output << "``` #{codetype(assets.first)}\n" # assume all are the same type
+    assets.each do |asset|
+      asset_name = "content/#{asset}"
+      raise "Could not find asset #{asset_name}" unless File.exists?(asset_name)
+      puts "  #{tag} file: #{asset_name}"
 
-    codetype = case (asset_name.split(".").last)
-               when "xml" then "xml"
-               when "rb" then "ruby"
-               else ""
-               end
-
-    "```#{codetype}\n" + yield(asset_name) + "\n```"
+      output << yield(asset_name)
+    end
+    output << "\n```"
+    output.join
   end
 end
 
