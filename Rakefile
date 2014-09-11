@@ -14,8 +14,12 @@ def html_directory
   "html"
 end
 
+def toc
+  File.read("#{rawmd_directory}/toc").split("\n")
+end
+
 def rawmd_file_list
-  files = File.read("#{rawmd_directory}/toc").split("\n")
+  files = toc
   files.collect! {|file| file.downcase.downcase.gsub(/[\W ]/,"_") }
   files.collect! {|file| File.join(rawmd_directory, "#{file}.md")}
   files = files.select do |file|
@@ -29,17 +33,11 @@ def rawmd_file_list
 end
 
 def cookedmd_file_list
-  files = File.read("#{rawmd_directory}/toc").split("\n")
-  files.collect! {|file| file.downcase.downcase.gsub(/[\W ]/,"_") }
-  files.collect! {|file| File.join(cookedmd_directory, "#{file}.md")}
-  files = files.select do |file|
-    if File.exists? file
-      true
-    else
-      STDERR.puts "WARNING: file #{file} does not exist!"
-      false
-    end
-  end
+  rawmd_file_list.collect { |file| File.join(cookedmd_directory, File.basename(file)) }
+end
+
+def html_file_list
+  rawmd_file_list.collect { |f| format_html_filename(f) }
 end
 
 def format_html_filename(markdown_filename)
@@ -166,8 +164,16 @@ task :html => :markdown do
 end
 
 
-desc "Describe the tutorials in YAML"
-task :describe do
-  require 'yaml'
-  puts markdown_file_list.collect { |f| format_html_filename(f) }.to_yaml
+namespace :describe do
+  desc "Describe the markdown tutorials in YAML"
+  task :markdown do
+    require 'yaml'
+    puts toc.zip(cookedmd_file_list).to_h.to_yaml
+  end
+
+  desc "Describe the html tutorials in YAML"
+  task :html do
+    require 'yaml'
+    puts toc.zip(html_file_list).to_h.to_yaml
+  end
 end
