@@ -1,3 +1,6 @@
 [submodule ".themes/oscailte"]
 	path = .themes/oscailte
 	url = https://github.com/coogie/oscailte.git
+[submodule "tutorials"]
+	path = tutorials
+	url = git@github.com:sparklemotion/nokogiri.org-tutorials
