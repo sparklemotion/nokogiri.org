@@ -9,7 +9,7 @@ sidebar: false
 
 Assuming we have the following HTML document:
 
-```ruby
+``` ruby
 
 @doc = Nokogiri::HTML::DocumentFragment.parse <<-EOHTML
 <body>
@@ -21,7 +21,7 @@ EOHTML
 
 Let's change the header's text contents:
 
-```ruby
+``` ruby
 
 h1 = @doc.at_css "h1"
 h1.content = "Snap, Crackle and Pop"
@@ -40,7 +40,7 @@ Pow!
 
 The simplest method of moving a node is assign its parent:
 
-```ruby
+``` ruby
 
 h1  = @doc.at_css "h1"
 div = @doc.at_css "div"
@@ -57,7 +57,7 @@ h1.parent = div
 
 But you could also arrange it next to other nodes:
 
-```ruby
+``` ruby
 
 div.add_next_sibling(h1)
 
@@ -72,7 +72,7 @@ div.add_next_sibling(h1)
 
 ## Modifying Nodes and Attributes
 
-```ruby
+``` ruby
 
 h1.name = 'h2'
 h1['class'] = 'show-title'
@@ -87,7 +87,7 @@ h1['class'] = 'show-title'
 
 ## Creating new nodes
 
-```ruby
+``` ruby
 
 h3 = Nokogiri::XML::Node.new "h3", @doc
 h3.content = "1977 - 1984"
@@ -106,7 +106,7 @@ h1.add_next_sibling(h3)
 
 If you wanted to wrap new HTML around each node in a Nodeset, here's an example of how to do it:
 
-```ruby
+``` ruby
 
 nodes = @doc.css "h1,div"
 nodes.wrap("<div class='container'></div>")
@@ -128,7 +128,7 @@ an xml-stylesheet declaration, you should first create the node using
 `Nokogiri::XML::ProcessingInstruction.new` and then add it to the
 document as a previous-sibling of the root node:
 
-```ruby
+``` ruby
 
 doc = Nokogiri::XML "<root>foo</root>"
 doc.to_xml

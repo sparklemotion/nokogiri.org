@@ -9,7 +9,7 @@ sidebar: false
 
 Let's suppose you have the following document:
 
-```xml
+``` xml
 [shows.xml]
 <root>
   <sitcoms>
@@ -47,12 +47,9 @@ Let's suppose you have the following document:
 Let's further suppose that you want a list of all the characters in
 all the shows in this document.
 
-```ruby
+``` ruby
 
 @doc = Nokogiri::XML(File.open("shows.xml"))
-```
-```ruby
-
 @doc.xpath("//character")
 # => ["<character>Al Bundy</character>",
 #    "<character>Bud Bundy</character>",
@@ -71,7 +68,7 @@ the document.
 
   [NodeSet]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/NodeSet
 
-```ruby
+``` ruby
 
 characters[0].to_s # => "<character>Al Bundy</character>"
 ```
@@ -79,7 +76,7 @@ characters[0].to_s # => "<character>Al Bundy</character>"
 You can use any XPath or CSS query you like (see the chapter on XPath
 and CSS syntax for more information).
 
-```ruby
+``` ruby
 
 @doc.xpath("//dramas//character")
 # => ["<character>John \"Hannibal\" Smith</character>",
@@ -90,7 +87,7 @@ and CSS syntax for more information).
 
 Notably, you can even use CSS queries in an XML document!
 
-```ruby
+``` ruby
 
 characters = @doc.css("sitcoms name") # => ["<name>Married with Children</name>", "<name>Perfect Strangers</name>"] # !> assigned but unused variable - characters
 ```
@@ -104,7 +101,7 @@ If you know you're going to get only a single result back, you can use
 the shortcuts `at_css` and `at_xpath` instead of having to access the
 first element of a NodeSet.
 
-```ruby
+``` ruby
 
 @doc.css("dramas name").first # => "<name>The A-Team</name>"
 @doc.at_css("dramas name")    # => "<name>The A-Team</name>"
@@ -121,7 +118,7 @@ where namespaces come to the rescue.
 Namespaces associate tags with a unique URL.  Let's take a look at the autoparts
 store's XML versus the bike stores:
 
-```xml
+``` xml
 [parts.xml]
 <parts>
   <!-- Alice's Auto Parts Store -->
@@ -143,7 +140,7 @@ store's XML versus the bike stores:
 Since the URLs are unique, we can associate our query with a URL and get only
 the tires belonging to *that* url:
 
-```ruby
+``` ruby
 
 @doc = Nokogiri::XML(File.read("parts.xml"))
 
@@ -163,7 +160,7 @@ this naming convention, we can shorten up our code.
 
 Let's take this atom feed for example:
 
-```xml
+``` xml
 [atom.xml]
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -190,7 +187,7 @@ Let's take this atom feed for example:
 
 If we stick to the convention, we can grab all title tags like this
 
-```ruby
+``` ruby
 
 @doc.xpath('//xmlns:title') # => ["<title>Example Feed</title>", "<title>Atom-Powered Robots Run Amok</title>"]
 ```
@@ -201,7 +198,7 @@ to indicate a namespace search.
 
 Let's see the previous search rewritten to use CSS:
 
-```ruby
+``` ruby
 
 @doc.css('xmlns|title') # => ["<title>Example Feed</title>", "<title>Atom-Powered Robots Run Amok</title>"]
 
@@ -210,7 +207,7 @@ Let's see the previous search rewritten to use CSS:
 When using CSS, if the namespace is called "xmlns", you can even omit the
 namespace name.  That means your CSS will reduce to:
 
-```ruby
+``` ruby
 
 @doc.css('title') # => ["<title>Example Feed</title>", "<title>Atom-Powered Robots Run Amok</title>"]
 ```
@@ -246,7 +243,7 @@ probably like Nokogiri's Slop mode.<sup>2</sup>
 Slop mode allows you to violate the Law of Demeter with extreme
 prejudice, by using `#method_missing` to introspect on a node's child tags. <sup>3</sup>
 
-```ruby
+``` ruby
 
 doc = Nokogiri::Slop <<-EOXML
 <employees>
