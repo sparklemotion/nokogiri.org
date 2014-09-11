@@ -10,10 +10,6 @@ def cookedmd_directory
   "markdown"
 end
 
-def html_directory
-  "html"
-end
-
 def toc
   File.read("#{rawmd_directory}/toc").split("\n")
 end
@@ -34,14 +30,6 @@ end
 
 def cookedmd_file_list
   rawmd_file_list.collect { |file| File.join(cookedmd_directory, File.basename(file)) }
-end
-
-def html_file_list
-  rawmd_file_list.collect { |f| format_html_filename(f) }
-end
-
-def format_html_filename(markdown_filename)
-  File.join(html_directory, File.basename(markdown_filename).gsub(/\.md$/, ".html"))
 end
 
 def run(cmd)
@@ -90,12 +78,11 @@ def slurp_file(rawmd_file)
   content
 end
 
-task :default => :html
+task :default => :markdown
 
 desc "Remove all generated files"
 task :clean do
   FileUtils.rm_rf cookedmd_directory
-  FileUtils.rm_rf html_directory
 end
 
 desc "Build cooked markdown version of the book"
@@ -131,49 +118,8 @@ task :markdown do
   puts "complete doc is #{all_tutorials}"
 end
 
-desc "Compile an html version of the book"
-task :html => :markdown do
-  STDOUT.sync = true
-  FileUtils.mkdir_p html_directory
-  output_filenames = []
-
-  cookedmd_file_list.each do |markdown_filename|
-    output_filename = format_html_filename(markdown_filename)
-    output_filenames << output_filename
-    if FileUtils.uptodate?(output_filename, Array(markdown_filename))
-      puts "(#{output_filename} is up to date with #{markdown_filename})"
-    else
-      begin
-        puts "writing to #{output_filename} from #{markdown_filename} ..."
-        FileUtils.rm_f output_filename
-        File.open(output_filename, "w") { |f| f.write "<meta charset='utf-8'>" }
-        system "maruku -o #{output_filename} #{markdown_filename}"
-      rescue Exception => e
-        FileUtils.rm output_filename
-        raise e
-      end
-    end
-  end
-
-  all_tutorials = "#{html_directory}/all_tutorials.html"
-  system "> #{all_tutorials}"
-  output_filenames.each do |fn|
-    system "cat #{fn} >> #{all_tutorials}"
-  end
-  puts "complete doc is #{all_tutorials}"
-end
-
-
-namespace :describe do
-  desc "Describe the markdown tutorials in YAML"
-  task :markdown do
-    require 'yaml'
-    puts toc.zip(cookedmd_file_list).to_h.to_yaml
-  end
-
-  desc "Describe the html tutorials in YAML"
-  task :html do
-    require 'yaml'
-    puts toc.zip(html_file_list).to_h.to_yaml
-  end
+desc "Describe the markdown tutorials in YAML"
+task :describe do
+  require 'yaml'
+  puts toc.zip(cookedmd_file_list).to_h.to_yaml
 end
