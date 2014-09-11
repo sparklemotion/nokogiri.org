@@ -1,0 +1,504 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+  
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Searching a XML/HTML document - Nokogiri 鋸</title>
+    <meta name="author" content="Team Sparklemotion">
+    
+    <meta name="description" content="Documentation for Nokogiri, a Ruby XML and HTML library ("gem").">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://nokogiri.org/tutorials/searching_a_xml_html_document.html">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="" rel="alternate" title="Nokogiri 鋸" type="application/atom+xml">
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item one-fifth lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Nokogiri 鋸</a>
+</div>
+
+<div class="grid__item four-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-left">
+  <li><a href="http://rdoc.info/github/sparklemotion/nokogiri" target="_blank">Docs</a></li>
+  <li><a href="https://github.com/sparklemotion/nokogiri" target="_blank">GitHub</a></li>
+</ul>
+<ul class="menu pull-right">
+  <li><a href="/tutorials/installing_nokogiri.html"><b>Installation</b></a></li>
+  <li><a href="/tutorials/"><b>Tutorials</b></a></li>
+  <li><a href="/tutorials/getting_help.html"><b>Getting Help</b></a></li>
+</ul>
+
+  </nav>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="page">
+
+  
+  <header>
+    <h1 class="title indent">
+      Searching a XML/HTML Document
+    </h1>
+  </header>
+  <hr class="divider">
+  
+
+  <h1>Searching an HTML / XML Document</h1>
+
+<h2>Basic Searching</h2>
+
+<p>Let&rsquo;s suppose you have the following document:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>[shows.xml]
+</span><span class='line'><span class="nt">&lt;root&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;sitcoms&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;sitcom&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;name&gt;</span>Married with Children<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;characters&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>Al Bundy<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>Bud Bundy<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>Marcy Darcy<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/characters&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/sitcom&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;sitcom&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;name&gt;</span>Perfect Strangers<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;characters&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>Larry Appleton<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>Balki Bartokomous<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/characters&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/sitcom&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/sitcoms&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;dramas&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;drama&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;name&gt;</span>The A-Team<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;characters&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>John &quot;Hannibal&quot; Smith<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>Templeton &quot;Face&quot; Peck<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>&quot;B.A.&quot; Baracus<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;character&gt;</span>&quot;Howling Mad&quot; Murdock<span class="nt">&lt;/character&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/characters&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/drama&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/dramas&gt;</span>
+</span><span class='line'><span class="nt">&lt;/root&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Let&rsquo;s further suppose that you want a list of all the characters in
+all the shows in this document.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;shows.xml&quot;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//character&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="c1"># =&gt; [&quot;&lt;character&gt;Al Bundy&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;Bud Bundy&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;Marcy Darcy&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;Larry Appleton&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;Balki Bartokomous&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;John \&quot;Hannibal\&quot; Smith&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;Templeton \&quot;Face\&quot; Peck&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;\&quot;B.A.\&quot; Baracus&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;\&quot;Howling Mad\&quot; Murdock&lt;/character&gt;&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>Node</code> methods <code>xpath</code> and <code>css</code> actually return a <a href="http://nokogiri.org/Nokogiri/XML/NodeSet.html">NodeSet</a>,
+which acts very much like an array, and contains matching nodes from
+the document.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">characters</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">to_s</span> <span class="c1"># =&gt; &quot;&lt;character&gt;Al Bundy&lt;/character&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can use any XPath or CSS query you like (see the chapter on XPath
+and CSS syntax for more information).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//dramas//character&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="c1"># =&gt; [&quot;&lt;character&gt;John \&quot;Hannibal\&quot; Smith&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;Templeton \&quot;Face\&quot; Peck&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;\&quot;B.A.\&quot; Baracus&lt;/character&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;character&gt;\&quot;Howling Mad\&quot; Murdock&lt;/character&gt;&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notably, you can even use CSS queries in an XML document!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;sitcoms name&quot;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;name&gt;Married with Children&lt;/name&gt;&quot;, &quot;&lt;name&gt;Perfect Strangers&lt;/name&gt;&quot;] # !&gt; assigned but unused variable - characters</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>CSS queries are often the easiest and most succinct way to express
+what you&rsquo;re looking for, so don&rsquo;t be afraid to use them!</p>
+
+<h2>Single Results</h2>
+
+<p>If you know you&rsquo;re going to get only a single result back, you can use
+the shortcuts <code>at_css</code> and <code>at_xpath</code> instead of having to access the
+first element of a NodeSet.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;dramas name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span> <span class="c1"># =&gt; &quot;&lt;name&gt;The A-Team&lt;/name&gt;&quot;</span>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span><span class="p">(</span><span class="s2">&quot;dramas name&quot;</span><span class="p">)</span>    <span class="c1"># =&gt; &quot;&lt;name&gt;The A-Team&lt;/name&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Namespaces</h2>
+
+<p>Just like our Ruby code, XML can suffer from name collisions.  For example,
+an autoparts dealer can sell tires and so can a bike dealer.  Both of them
+may use a &ldquo;tire&rdquo; tag to describe the tires they sell.  However, we need to be
+able to tell the difference between a <em>car tire</em> and a <em>bike tire</em>.  This is
+where namespaces come to the rescue.</p>
+
+<p>Namespaces associate tags with a unique URL.  Let&rsquo;s take a look at the autoparts
+store&rsquo;s XML versus the bike stores:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>[parts.xml]
+</span><span class='line'><span class="nt">&lt;parts&gt;</span>
+</span><span class='line'>  <span class="c">&lt;!-- Alice&#39;s Auto Parts Store --&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;inventory</span> <span class="na">xmlns=</span><span class="s">&quot;http://alicesautoparts.com/&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;tire&gt;</span>all weather<span class="nt">&lt;/tire&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;tire&gt;</span>studded<span class="nt">&lt;/tire&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;tire&gt;</span>extra wide<span class="nt">&lt;/tire&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/inventory&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c">&lt;!-- Bob&#39;s Bike Shop --&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;inventory</span> <span class="na">xmlns=</span><span class="s">&quot;http://bobsbikes.com/&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;tire&gt;</span>street<span class="nt">&lt;/tire&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;tire&gt;</span>mountain<span class="nt">&lt;/tire&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/inventory&gt;</span>
+</span><span class='line'><span class="nt">&lt;/parts&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since the URLs are unique, we can associate our query with a URL and get only
+the tires belonging to <em>that</em> url:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;parts.xml&quot;</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">car_tires</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//car:tire&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://alicesautoparts.com/&#39;</span><span class="p">)</span> <span class="c1"># !&gt; assigned but unused variable - car_tires</span>
+</span><span class='line'><span class="c1"># =&gt; [&quot;&lt;tire&gt;all weather&lt;/tire&gt;&quot;, # !&gt; assigned but unused variable - bike_tires</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;tire&gt;studded&lt;/tire&gt;&quot;,</span>
+</span><span class='line'><span class="c1">#    &quot;&lt;tire&gt;extra wide&lt;/tire&gt;&quot;]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">bike_tires</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//bike:tire&#39;</span><span class="p">,</span> <span class="s1">&#39;bike&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://bobsbikes.com/&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="c1"># =&gt; [&quot;&lt;tire&gt;street&lt;/tire&gt;&quot;, &quot;&lt;tire&gt;mountain&lt;/tire&gt;&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To make this namespace registration a bit easier, nokogiri will automatically
+register any namespaces it finds on the root node <em>for you</em>.  Nokogiri will
+associate the name in the declaration with the supplied URL.  If we stick to
+this naming convention, we can shorten up our code.</p>
+
+<p>Let&rsquo;s take this atom feed for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>[atom.xml]
+</span><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;feed</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Example Feed<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://example.org/&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;updated&gt;</span>2003-12-13T18:30:02Z<span class="nt">&lt;/updated&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;author&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;name&gt;</span>John Doe<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/author&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;id&gt;</span>urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6<span class="nt">&lt;/id&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;entry&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;title&gt;</span>Atom-Powered Robots Run Amok<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://example.org/2003/12/13/atom03&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;id&gt;</span>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a<span class="nt">&lt;/id&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;updated&gt;</span>2003-12-13T18:30:02Z<span class="nt">&lt;/updated&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;summary&gt;</span>Some text.<span class="nt">&lt;/summary&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/entry&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/feed&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If we stick to the convention, we can grab all title tags like this</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//xmlns:title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Don&rsquo;t be fooled though.  You <em>do not</em> have to use XPath to get the benefits of
+namespaces.  CSS selectors can be used as well.  CSS just uses the pipe symbol
+to indicate a namespace search.</p>
+
+<p>Let&rsquo;s see the previous search rewritten to use CSS:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;xmlns|title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When using CSS, if the namespace is called &ldquo;xmlns&rdquo;, you can even omit the
+namespace name.  That means your CSS will reduce to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Dealing with namespaces is a broad topic.  If you need more examples, be sure
+to check out <a href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/">this blog post</a> or send an email to the <a href="http://groups.google.com/group/nokogiri-talk">mailing list</a>, and
+we can help out.</p>
+
+<h2>But I&rsquo;m Lazy and Don&rsquo;t Want to Deal With Namespaces!</h2>
+
+<p>Lazy == Efficient, so no judgements. :)</p>
+
+<p>If you have an XML document with namespaces, but would prefer to
+ignore them entirely (and query as if Tim Bray had never invented
+them), then you can call <a href="http://nokogiri.org/Nokogiri/XML/Document.html#method-i-remove_namespaces-21">remove_namespaces</a> on an XML::Document to
+remove all namespaces. Of course, if the document had nodes with the
+same names but different namespaces, they will now be ambiguous. But
+you&rsquo;re lazy! You don&rsquo;t care!</p>
+
+<h2>Slop<sup>1</sup></h2>
+
+<p>Maybe you want a more interactive (read: sloppy) way to access nodes
+and attributes. If you like what <a href="http://xml-simple.rubyforge.org/">XmlSimple</a> does, then you&rsquo;ll
+probably like Nokogiri&rsquo;s Slop mode.<sup>2</sup></p>
+
+<p>Slop mode allows you to violate the Law of Demeter with extreme
+prejudice, by using <code>#method_missing</code> to introspect on a node&rsquo;s child tags. <sup>3</sup></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">Slop</span> <span class="o">&lt;&lt;-</span><span class="no">EOXML</span>
+</span><span class='line'><span class="sh">&lt;employees&gt;</span>
+</span><span class='line'><span class="sh">  &lt;employee status=&quot;active&quot;&gt;</span>
+</span><span class='line'><span class="sh">    &lt;fullname&gt;Dean Martin&lt;/fullname&gt;</span>
+</span><span class='line'><span class="sh">  &lt;/employee&gt;</span>
+</span><span class='line'><span class="sh">  &lt;employee status=&quot;inactive&quot;&gt;</span>
+</span><span class='line'><span class="sh">    &lt;fullname&gt;Jerry Lewis&lt;/fullname&gt;</span>
+</span><span class='line'><span class="sh">  &lt;/employee&gt;</span>
+</span><span class='line'><span class="sh">&lt;/employees&gt;</span>
+</span><span class='line'><span class="no">EOXML</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># navigate!</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Jerry Lewis&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># access node attributes!</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="o">.</span><span class="n">first</span><span class="o">[</span><span class="s2">&quot;status&quot;</span><span class="o">]</span> <span class="c1"># =&gt; &quot;active&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># use some xpath!</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="s2">&quot;[@status=&#39;active&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="ss">:xpath</span> <span class="o">=&gt;</span> <span class="s2">&quot;@status=&#39;active&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># use some css!</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="s2">&quot;[status=&#39;active&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="ss">:css</span> <span class="o">=&gt;</span> <span class="s2">&quot;[status=&#39;active&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Aww yeah. Can you feel the spirit of <a href="http://twitter.com/jbarnette">@jbarnette</a> and
+<a href="http://twitter.com/nakajima">@nakajima</a> flowing through you? That&rsquo;s the power of the
+<em>slop</em>.<sup>4</sup></p>
+
+<ol>
+<li>Don&rsquo;t use this.</li>
+<li>This may or may not be a backhanded compliment.</li>
+<li>No, really, don&rsquo;t use this. If you use it, don&rsquo;t report bugs.</li>
+<li>You&rsquo;ve been warned!</li>
+</ol>
+
+
+
+</article>
+
+
+        </div>
+
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  <span class="pull-left">
+    Contribute to these docs at <a href="//github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.
+  </span>
+  <span class="pull-right">
+    Powered by <a href="//octopress.org/">Octopress</a>. Theme is <a href="//github.com/coogie/oscailte">Oscailte</a>.
+  </span>
+</p>
+
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

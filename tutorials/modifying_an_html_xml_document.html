@@ -1,0 +1,334 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+  
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Modifying an HTML/XML document - Nokogiri 鋸</title>
+    <meta name="author" content="Team Sparklemotion">
+    
+    <meta name="description" content="Documentation for Nokogiri, a Ruby XML and HTML library ("gem").">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://nokogiri.org/tutorials/modifying_an_html_xml_document.html">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="" rel="alternate" title="Nokogiri 鋸" type="application/atom+xml">
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item one-fifth lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Nokogiri 鋸</a>
+</div>
+
+<div class="grid__item four-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-left">
+  <li><a href="http://rdoc.info/github/sparklemotion/nokogiri" target="_blank">Docs</a></li>
+  <li><a href="https://github.com/sparklemotion/nokogiri" target="_blank">GitHub</a></li>
+</ul>
+<ul class="menu pull-right">
+  <li><a href="/tutorials/installing_nokogiri.html"><b>Installation</b></a></li>
+  <li><a href="/tutorials/"><b>Tutorials</b></a></li>
+  <li><a href="/tutorials/getting_help.html"><b>Getting Help</b></a></li>
+</ul>
+
+  </nav>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="page">
+
+  
+  <header>
+    <h1 class="title indent">
+      Modifying an HTML/XML Document
+    </h1>
+  </header>
+  <hr class="divider">
+  
+
+  <h1>Modifying an HTML / XML Document</h1>
+
+<h2>Changing text contents</h2>
+
+<p>Assuming we have the following HTML document:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="o">::</span><span class="no">DocumentFragment</span><span class="o">.</span><span class="n">parse</span> <span class="o">&lt;&lt;-</span><span class="no">EOHTML</span>
+</span><span class='line'><span class="sh">&lt;body&gt;</span>
+</span><span class='line'><span class="sh">  &lt;h1&gt;Three&#39;s Company&lt;/h1&gt;</span>
+</span><span class='line'><span class="sh">  &lt;div&gt;A love triangle.&lt;/div&gt;</span>
+</span><span class='line'><span class="sh">&lt;/body&gt;</span>
+</span><span class='line'><span class="no">EOHTML</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Let&rsquo;s change the header&rsquo;s text contents:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">h1</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
+</span><span class='line'><span class="n">h1</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;Snap, Crackle and Pop&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;h1&gt;Snap, Crackle and Pop&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;div&gt;A love triangle.&lt;/div&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pow!</p>
+
+<h2>Moving nodes</h2>
+
+<p>The simplest method of moving a node is assign its parent:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">h1</span>  <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
+</span><span class='line'><span class="n">div</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;div&quot;</span>
+</span><span class='line'><span class="n">h1</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">div</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
+</span><span class='line'><span class="c1">#   </span>
+</span><span class='line'><span class="c1">#   &lt;div&gt;A love triangle.&lt;h1&gt;Three&#39;s Company&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1"># &lt;/div&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But you could also arrange it next to other nodes:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">div</span><span class="o">.</span><span class="n">add_next_sibling</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
+</span><span class='line'><span class="c1">#   </span>
+</span><span class='line'><span class="c1">#   &lt;div&gt;A love triangle.&lt;/div&gt;</span>
+</span><span class='line'><span class="c1"># &lt;h1&gt;Three&#39;s Company&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Modifying Nodes and Attributes</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">h1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;h2&#39;</span>
+</span><span class='line'><span class="n">h1</span><span class="o">[</span><span class="s1">&#39;class&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;show-title&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;h2 class=\&quot;show-title\&quot;&gt;Three&#39;s Company&lt;/h2&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;div&gt;A love triangle.&lt;/div&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Creating new nodes</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">h3</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Node</span><span class="o">.</span><span class="n">new</span> <span class="s2">&quot;h3&quot;</span><span class="p">,</span> <span class="vi">@doc</span>
+</span><span class='line'><span class="n">h3</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;1977 - 1984&quot;</span>
+</span><span class='line'><span class="n">h1</span><span class="o">.</span><span class="n">add_next_sibling</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;h1&gt;Three&#39;s Company&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1"># &lt;h3&gt;1977 - 1984&lt;/h3&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;div&gt;A love triangle.&lt;/div&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Wrapping a NodeSet</h2>
+
+<p>If you wanted to wrap new HTML around each node in a Nodeset, here&rsquo;s an example of how to do it:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">nodes</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span> <span class="s2">&quot;h1,div&quot;</span>
+</span><span class='line'><span class="n">nodes</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;container&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;div class=\&quot;container\&quot;&gt;&lt;h1&gt;Three&#39;s Company&lt;/h1&gt;&lt;/div&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;div class=\&quot;container\&quot;&gt;&lt;div&gt;A love triangle.&lt;/div&gt;&lt;/div&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Adding a Processing Instruction</h2>
+
+<h3>(like &lt;?xml-stylesheet?&gt;)</h3>
+
+<p>If you want to add a processing instruction (a.k.a. &ldquo;PI node&rdquo;), like
+an xml-stylesheet declaration, you should first create the node using
+<code>Nokogiri::XML::ProcessingInstruction.new</code> and then add it to the
+document as a previous-sibling of the root node:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span> <span class="s2">&quot;&lt;root&gt;foo&lt;/root&gt;&quot;</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">to_xml</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;</span>
+</span><span class='line'><span class="c1"># &lt;root&gt;foo&lt;/root&gt;</span>
+</span><span class='line'><span class="c1"># &quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">pi</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ProcessingInstruction</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="s2">&quot;xml-stylesheet&quot;</span><span class="p">,</span>
+</span><span class='line'>                                              <span class="s1">&#39;type=&quot;text/xsl&quot; href=&quot;foo.xsl&quot;&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">add_previous_sibling</span> <span class="n">pi</span>
+</span><span class='line'><span class="n">doc</span><span class="o">.</span><span class="n">to_xml</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;</span>
+</span><span class='line'><span class="c1"># &lt;?xml-stylesheet type=\&quot;text/xsl\&quot; href=\&quot;foo.xsl\&quot;?&gt;</span>
+</span><span class='line'><span class="c1"># &lt;root&gt;foo&lt;/root&gt;</span>
+</span><span class='line'><span class="c1"># &quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</article>
+
+
+        </div>
+
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  <span class="pull-left">
+    Contribute to these docs at <a href="//github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.
+  </span>
+  <span class="pull-right">
+    Powered by <a href="//octopress.org/">Octopress</a>. Theme is <a href="//github.com/coogie/oscailte">Oscailte</a>.
+  </span>
+</p>
+
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

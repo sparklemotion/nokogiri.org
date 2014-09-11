@@ -1,0 +1,221 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+  
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Help - Nokogiri 鋸</title>
+    <meta name="author" content="Team Sparklemotion">
+    
+    <meta name="description" content="Documentation for Nokogiri, a Ruby XML and HTML library ("gem").">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://nokogiri.org/tutorials/getting_help.html">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="" rel="alternate" title="Nokogiri 鋸" type="application/atom+xml">
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item one-fifth lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Nokogiri 鋸</a>
+</div>
+
+<div class="grid__item four-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-left">
+  <li><a href="http://rdoc.info/github/sparklemotion/nokogiri" target="_blank">Docs</a></li>
+  <li><a href="https://github.com/sparklemotion/nokogiri" target="_blank">GitHub</a></li>
+</ul>
+<ul class="menu pull-right">
+  <li><a href="/tutorials/installing_nokogiri.html"><b>Installation</b></a></li>
+  <li><a href="/tutorials/"><b>Tutorials</b></a></li>
+  <li><a href="/tutorials/getting_help.html"><b>Getting Help</b></a></li>
+</ul>
+
+  </nav>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="page">
+
+  
+  <header>
+    <h1 class="title indent">
+      Getting Help
+    </h1>
+  </header>
+  <hr class="divider">
+  
+
+  <h1>Getting Help and Reporting Issues</h1>
+
+<h2>Halp!</h2>
+
+<p>So you&rsquo;re having a great time slicing and dicing your XML with
+Nokogiri, and suddenly something happens that you don&rsquo;t quite
+understand. O NOES, the good times are over.</p>
+
+<p>What do you do?</p>
+
+<h2>Step 1: Mail <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a>, grasshopper.</h2>
+
+<p>The best thing to do if you&rsquo;ve got a question, or are unsure how to
+diagnose a possible issue, want to complain or just ask for advice on
+how to solve a problem, is to email the <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a>
+list.</p>
+
+<p>The <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a> list has hundreds of subscribers who are all using
+nokogiri and who are happy to lend a hand, offer advice, and bail you
+out of tricky situations.</p>
+
+<p>In addition, other people may have the same issue or complaint, and so
+preserving the question and responses in the mailing list archive is a
+gift to future Nokogiri users <strong>just like you</strong>!</p>
+
+<h3>But I want to report a bug!</h3>
+
+<p>Step 1 should still be your first step. Mail <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a> first, and
+verify that this is really a bug. If there&rsquo;s going to be a
+bug-or-not-bug conversation, it&rsquo;s better that it happens transparently
+on the list than somewhere hidden, like off-list emails or Github
+Issues.</p>
+
+<h3>But I want to verify my issue with the maintainer(s) before I spam the list!</h3>
+
+<p>Valid questions and complaints aren&rsquo;t spam! :)</p>
+
+<p>The maintainers vastly prefer nokogiri-related emails to be sent to
+<a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a> than to their personal accounts. Again, an archive
+of discussion has a lot of value. Also, the maintainers may not
+respond as quickly as some of the subscribers on the mailing list.</p>
+
+<h3>But I emailed the list and my question hasn&rsquo;t been posted yet!</h3>
+
+<p>The <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a> google group is set for first-post moderation,
+meaning that the first time you email the list, your post will be held
+for review. Once your post is accepted, there won&rsquo;t be any delay on
+future emails.</p>
+
+<p>There&rsquo;s <em>never</em> more than a few hour delay on moderation. Thanks for
+your patience.</p>
+
+<h2>Step 2: &ldquo;You got so many <a href="http://github.com/sparklemotion/nokogiri/issues">Issues</a> you need a magazine rack.&rdquo;</h2>
+
+<p>So you say you&rsquo;ve got a bug. That&rsquo;s great! We always want to increase
+the yummy candy-coated goodness of Nokogiri, so if you&rsquo;ve got a bug,
+we want to hear about it.</p>
+
+<p>We track boogs on <a href="http://github.com/sparklemotion/nokogiri/issues">Github Issues</a>, which notifies the maintainers
+every time a new ticket is created.</p>
+
+<h3>What&rsquo;s In a Bug Report?</h3>
+
+<p>Whoa, do we have strong opinions on this topic. The two most important
+things that a bug report needs to contain are:</p>
+
+<ol>
+<li>Example code that reproduces the <strong>observed</strong> behavior.</li>
+<li>An explanation of what the <strong>expected</strong> behavior is.</li>
+</ol>
+
+
+<h3>That&rsquo;s it?</h3>
+
+<p>Yes, that&rsquo;s it.</p>
+
+<p>If you&rsquo;re a solid Rubyist, you should be able to provide a <strong>short,
+self-contained script</strong> that reproduces and demonstrates the
+behavior. <a href="http://github.com/sparklemotion/nokogiri/issues/158">Here&rsquo;s a great example.</a></p>
+
+<p>If you want to go above-and-beyond, impress the judge from the Czech
+Republic, and prove to everyone you went to high school with that
+you&rsquo;re better than them, you could even write a <strong>failing unit test</strong>
+that meets both criteria in one fell swoop. <a href="https://github.com/sparklemotion/nokogiri/issues/695">Like this
+guy.</a></p>
+
+<h2>Summary</h2>
+
+<p>To sum up the rules:</p>
+
+<ol>
+<li>Mail <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a>.</li>
+<li>No, really, mail <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a>.</li>
+<li>If you&rsquo;re really, absolutely, positively sure you&rsquo;ve got a bug AND you can reproduce it, then mail <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a>.</li>
+<li>If you&rsquo;ve confirmed it&rsquo;s a bug on <a href="http://groups.google.com/group/nokogiri-talk">nokogiri-talk</a>, then create a new bug report on <a href="http://github.com/sparklemotion/nokogiri/issues">Github Issues</a> with your repro code and description of expected behavior.</li>
+</ol>
+
+
+<p>Thanks so much for reading this page! You&rsquo;re a good person, and Nokogiri loves you.</p>
+
+
+</article>
+
+
+        </div>
+
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  <span class="pull-left">
+    Contribute to these docs at <a href="//github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.
+  </span>
+  <span class="pull-right">
+    Powered by <a href="//octopress.org/">Octopress</a>. Theme is <a href="//github.com/coogie/oscailte">Oscailte</a>.
+  </span>
+</p>
+
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

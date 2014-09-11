@@ -1,0 +1,230 @@
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+  
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Parsing an HTML/XML document - Nokogiri 鋸</title>
+    <meta name="author" content="Team Sparklemotion">
+    
+    <meta name="description" content="Documentation for Nokogiri, a Ruby XML and HTML library ("gem").">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://nokogiri.org/tutorials/parsing_an_html_xml_document.html">
+    
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="" rel="alternate" title="Nokogiri 鋸" type="application/atom+xml">
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item one-fifth lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Nokogiri 鋸</a>
+</div>
+
+<div class="grid__item four-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-left">
+  <li><a href="http://rdoc.info/github/sparklemotion/nokogiri" target="_blank">Docs</a></li>
+  <li><a href="https://github.com/sparklemotion/nokogiri" target="_blank">GitHub</a></li>
+</ul>
+<ul class="menu pull-right">
+  <li><a href="/tutorials/installing_nokogiri.html"><b>Installation</b></a></li>
+  <li><a href="/tutorials/"><b>Tutorials</b></a></li>
+  <li><a href="/tutorials/getting_help.html"><b>Getting Help</b></a></li>
+</ul>
+
+  </nav>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="page">
+
+  
+  <header>
+    <h1 class="title indent">
+      Parsing an HTML/XML Document
+    </h1>
+  </header>
+  <hr class="divider">
+  
+
+  <h1>Parsing an HTML / XML Document</h1>
+
+<h2>From a String</h2>
+
+<p>We&rsquo;ve tried to make this easy on you. Really! We&rsquo;re here to make your life easier.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">html_doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Mr. Belvedere Fan Club&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">xml_doc</span>  <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="s2">&quot;&lt;root&gt;&lt;aliens&gt;&lt;alien&gt;&lt;name&gt;Alf&lt;/name&gt;&lt;/alien&gt;&lt;/aliens&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The variables <code>html_doc</code> and <code>xml_doc</code> are Nokogiri documents, which
+have all kinds of interesting properties and methods that you <a href="http://nokogiri.org/Nokogiri/XML/Document.html">can
+read about here</a>. We&rsquo;ll cover the interesting bits in other
+chapters.</p>
+
+<h2>From a File</h2>
+
+<p>Note that you don&rsquo;t need to read the file into a string variable. Nokogiri will do this for you.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">close</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Clever Nokogiri! With the time you just saved, approach enlightenment by meditating on <a href="http://twitter.com/rjw1/status/2741916767">this koan</a>.</p>
+
+<h2>From the Internets</h2>
+
+<p>I understand that there may be some HTML documents available on the
+World Wide Web.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+</span><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;http://www.threescompany.com/&quot;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Parse Options</h2>
+
+<p>Nokogiri offers quite a few options that affect how a document is
+parsed. You can <a href="http://nokogiri.org/Nokogiri/XML/ParseOptions.html">read about them here</a>, but the
+most commonly-used options are:</p>
+
+<ul>
+<li><code>NOBLANKS</code> - Remove blank nodes</li>
+<li><code>NOENT</code> - Substitute entities</li>
+<li><code>NOERROR</code> - Suppress error reports</li>
+<li><code>STRICT</code> - Strict parsing; raise an error when parsing malformed documents</li>
+<li><code>NONET</code> - Prevent any network connections during parsing. Recommended for parsing untrusted documents.</li>
+</ul>
+
+
+<p>Here&rsquo;s how they are used:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">strict</span><span class="o">.</span><span class="n">nonet</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">.</span><span class="n">STRICT</span> <span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">.</span><span class="n">NONET</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Encoding</h2>
+
+<p>Strings are always stored as UTF-8 internally.  Methods that return
+text values will always return UTF-8 encoded strings.  Methods that
+return XML (like to_xml, to_html and inner_html) will return a string
+encoded like the source document.</p>
+
+<p><strong>WARNING</strong></p>
+
+<p>Some documents declare one particular encoding, but use a different
+one. So, which encoding should the parser choose?</p>
+
+<p>Remember that data is just a stream of bytes. Only us humans add
+meaning to that stream. Any particular set of bytes could be valid
+characters in multiple encodings, so detecting encoding with 100%
+accuracy is not possible. libxml2 does its best, but it can&rsquo;t be right
+100% of the time.</p>
+
+<p>If you want Nokogiri to handle the document encoding properly, your
+best bet is to explicitly set the encoding.  Here is an example of
+explicitly setting the encoding to EUC-JP on the parser:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;foo&gt;&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</article>
+
+
+        </div>
+
+        
+      </div>
+    </div>
+
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  <span class="pull-left">
+    Contribute to these docs at <a href="//github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.
+  </span>
+  <span class="pull-right">
+    Powered by <a href="//octopress.org/">Octopress</a>. Theme is <a href="//github.com/coogie/oscailte">Oscailte</a>.
+  </span>
+</p>
+
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
