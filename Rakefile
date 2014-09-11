@@ -2,6 +2,51 @@ require "rubygems"
 require "bundler/setup"
 require "stringex"
 
+tut_dest     = File.expand_path "source/tutorials"
+tut_repo     = File.expand_path "tutorials"
+tut_web_path = "tutorials"
+
+task :tutorials do
+  def write_front_matter io, front_matter
+    io.write front_matter.to_yaml
+    io.puts "---"
+  end
+
+  contents = Bundler.with_clean_env do
+    Dir.chdir "tutorials" do
+      system "bundle install"
+      system "bundle exec rake markdown"
+      YAML.load(`bundle exec rake describe`)
+    end
+  end
+  puts contents
+
+  FileUtils.rm_rf tut_dest
+  FileUtils.mkdir tut_dest
+  File.open "source/tutorials/index.md", "w" do |index|
+    write_front_matter index, {
+      "title" => "Tutorials",
+      "layout" => "page"
+    }
+
+    contents.each do |title, filename|
+      source_file = File.join(tut_repo, filename)
+      dest_file   = File.join(tut_dest, File.basename(filename))
+      web_file    = File.join("/", tut_web_path, File.basename(filename).gsub(/\.md$/, ".html"))
+
+      File.open dest_file, "w" do |file|
+        write_front_matter file, {
+          "title" => title,
+          "layout" => "page"
+        }
+        file.write File.read(source_file)
+      end
+      index.puts "* [#{title}](#{web_file})"
+    end
+  end
+end
+
+
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
 ssh_user       = "user@domain.com"
