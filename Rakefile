@@ -8,6 +8,9 @@ tut_web_path = "tutorials"
 
 task :tutorials do
   def write_front_matter io, front_matter
+    front_matter["layout"] ||= "page"
+    front_matter["sidebar"] = false unless front_matter.has_key?("sidebar")
+
     io.write front_matter.to_yaml
     io.puts "---"
   end
@@ -25,24 +28,22 @@ task :tutorials do
   FileUtils.mkdir tut_dest
   File.open "source/tutorials/index.md", "w" do |index|
     write_front_matter index, {
-      "title" => "Tutorials",
-      "layout" => "page"
+      "title" => "Tutorials"
     }
 
-    contents.each do |title, filename|
+    contents.each_with_index do |things, j|
+      title, filename = *things
       source_file = File.join(tut_repo, filename)
       dest_file   = File.join(tut_dest, File.basename(filename))
       web_file    = File.join("/", tut_web_path, File.basename(filename).gsub(/\.md$/, ".html"))
 
       File.open dest_file, "w" do |file|
         write_front_matter file, {
-          "title" => title,
-          "layout" => "page",
-          "sidebar" => false
+          "title" => title
         }
         file.write File.read(source_file)
       end
-      index.puts "* [#{title}](#{web_file})"
+      index.puts "#{j+1}. [#{title}](#{web_file})"
     end
   end
 end
