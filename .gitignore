@@ -8,7 +8,7 @@ public
 sass.old
 source.old
 source/_stash
-source/stylesheets/screen.css
+source/stylesheets
 vendor
 node_modules
 Gemfile.lock
