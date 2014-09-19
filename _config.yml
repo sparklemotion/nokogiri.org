@@ -2,8 +2,8 @@
 #      Main Configs       #
 # ----------------------- #
 
-#url: http://nokogiri.org
-url: https://sparklemotion.github.io
+url: https://sparklemotion.github.io # TODO CHANGE THIS ONCE DNS IS CUT OVER
+# url: http://nokogiri.org # TODO ... TO THIS
 title: Nokogiri 鋸
 subtitle: An HTML, XML, SAX, & Reader parser with the ability to search documents via XPath or CSS3 selectors… and much more
 author: Team Sparklemotion
@@ -27,7 +27,8 @@ email:
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /nokogiri.org
+root: /nokogiri.org # TODO CHANGE THIS ONCE DNS IS CUT OVER
+# root: / # TODO ... TO THIS
 permalink: /blog/:year/:month/:day/:title/
 source: source
 destination: public
