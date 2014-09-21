@@ -1,10 +1,25 @@
 # Nokogiri.org
 
-This is the source for the Nokogiri website (http://nokogiri.org).
+This is the source for the Nokogiri website
+[nokogiri.org](http://nokogiri.org).
+
+It's the presentation layer for the tutorials content at
+[github.com/sparklemotion/nokogiri.org-tutorials](https://github.com/sparklemotion/nokogiri.org-tutorials)
+
 
 ## Installation
 
-Nokogiri.org is built with [Octopress](http://octopress.org/), a [Jekyll](http://jekyllrb.com/) framework. To run this site locally, run `bundle install` and then refer to the commands output by `rake -T` to see options, including:
+Nokogiri.org is built with [Octopress](http://octopress.org/), a
+[Jekyll](http://jekyllrb.com/) framework.
+
+To run this site locally:
+
+1. `git submodule update --init`
+2. `bundle install`
+3. `bundle exec rake tutorials`
+
+and then refer to the Octopress commands output by `rake -T` to see
+options, including:
 
 ```
 rake generate   # Generates posts and pages into the public directory
@@ -12,11 +27,14 @@ rake watch      # Watches source/ and sass/ for changes and regenerates
 rake preview    # Watches, and mounts a webserver at http://localhost:4000
 ```
 
-To learn more about the process of creating pages and previewing them, check out the Octopress page on [blogging](http://octopress.org/docs/blogging/).
-
 ## Troubleshooting/Contributing
 
-Think you've found a typo or have a suggestion? Check out the Nokogiri guide to [contributing](http://nokogiri.org/tutorials/getting_help.html), or open a [pull request](https://github.com/sparklemotion/nokogiri.org/pulls) with your suggested changes.
+To contribute to the tutorials, please visit [github.com/sparklemotion/nokogiri.org-tutorials](https://github.com/sparklemotion/nokogiri.org-tutorials). Pull requests accepted!
+
+To contribute to the this site, please send a pull request.
+
+Also, you may want to check out the Nokogiri guide to [contributing](http://nokogiri.org/tutorials/getting_help.html).
+
 
 ## License
 

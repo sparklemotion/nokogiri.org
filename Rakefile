@@ -6,6 +6,7 @@ tut_dest     = File.expand_path "source/tutorials"
 tut_repo     = File.expand_path "tutorials"
 tut_web_path = "tutorials"
 
+desc "Sync the tutorials content into the site content."
 task :tutorials do
   def write_front_matter io, front_matter
     front_matter["layout"] ||= "page"
