@@ -36,20 +36,18 @@ To contribute to the this site, please send a pull request.
 Also, you may want to check out the Nokogiri guide to [contributing](http://nokogiri.org/tutorials/getting_help.html).
 
 
-## License
+## Tutorial Content License
+
+Please visit
+[github.com/sparklemotion/nokogiri.org-tutorials](https://github.com/sparklemotion/nokogiri.org-tutorials)
+for the license around the tutorials content (hint: it's MIT).
+
+
+## Octopress License
 
 (The MIT License)
 
-Copyright © 2008 - 2014:
-
-- Aaron Patterson
-- Mike Dalessio
-- Charles Nutter
-- Sergio Arbeo
-- Patrick Mahoney
-- Yoko Harada
-- Akinori MUSHA
-- Kristian Freeman
+Copyright © 2009-2013 Brandon Mathis
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
