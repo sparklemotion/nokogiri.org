@@ -1,5 +1,5 @@
 
-# The Official Tutorial Archive™ of Nokogiri ®
+# The Official Tutorial Archive™ of Nokogiri®
 
 These tutorials appear on [nokogiri.org](http://nokogiri.org/) at
 [http://nokogiri.org/tutorials](http://nokogiri.org/tutorials).
@@ -11,7 +11,7 @@ You could start by emailing
 [nokogiri-talk](http://groups.google.com/group/nokogiri-talk).
 
 Or, if you're feeling antisocial, you could just open a [Github
-Issue](http://github.com/sparklemotion/nokogiri.org-tutorials/issues).
+Issue](https://github.com/sparklemotion/nokogiri.org-tutorials/issues).
 
 
 ## How Do I Contribute Documentation?
@@ -28,16 +28,23 @@ Effect"](http://en.wikipedia.org/wiki/The_Philosophy_of_Composition).
 
 ## How Do I Edit and View My Changes?
 
+I've built an overly-complicated system that runs the ruby code in the
+documentation and captures the output as part of the final
+product. (See "Inline Code" below.)
+
+So, you write markdown and the Rakefile generates better markdown.
+
 1. `bundle install`
 2. Edit markdown files in the `content/` directory.
-3. `bundle exec rake html`
-4. View generated HTML in the `html/` directory.
+3. `bundle exec rake markdown`
+4. View final versions of markdown in the `markdown/` directory.
 
-### New Chapters
+If you want to see how your docs would appear on nokogiri.org, you
+should clone the repository at
+[https://github.com/sparklemotion/nokogiri.org](github.com/sparklemotion/nokogiri.org)
+and follow the instructions there. This repository is a submodule of
+that one.
 
-If you want to add a new chapter, make sure you update the file
-`content/toc` to contain the title (the first H1) of the
-chapter. `toc` is an ordered list.
 
 ### Inline Code
 
@@ -57,6 +64,7 @@ So, if you want to inline any blockquoted content, create a file in
     And here's some ruby:
 
     ~~~ inline assets/search-setup.rb
+
 
 ### Live Code with `xmpfilter`
 
@@ -78,6 +86,14 @@ So, if you want to inline ruby code and its output, create a file in
     Here's some ruby along with its stdout:
 
     ~~~ ruby assets/search-xpath-characters-first.rb
+
+
+### Adding New Chapters
+
+If you want to add a new chapter, make sure you update the file
+`content/toc` to contain the title (the first H1) of the
+chapter. `toc` is an ordered list.
+
 
 ### Conventions
 
