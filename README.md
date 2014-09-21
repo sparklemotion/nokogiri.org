@@ -41,7 +41,7 @@ So, you write markdown and the Rakefile generates better markdown.
 
 If you want to see how your docs would appear on nokogiri.org, you
 should clone the repository at
-[https://github.com/sparklemotion/nokogiri.org](github.com/sparklemotion/nokogiri.org)
+[github.com/sparklemotion/nokogiri.org](https://github.com/sparklemotion/nokogiri.org)
 and follow the instructions there. This repository is a submodule of
 that one.
 
