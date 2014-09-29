@@ -71,7 +71,7 @@ Or
 
 ```ruby
 doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-  config.options = Nokogiri::XML::ParseOptions.STRICT | Nokogiri::XML::ParseOptions.NONET
+  config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NONET
 end
 ```
 
