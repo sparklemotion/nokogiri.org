@@ -16,7 +16,7 @@ To run this site locally:
 
 1. `git submodule update --init`
 2. `bundle install`
-3. `bundle exec rake tutorials`
+3. `bundle exec rake`
 
 and then refer to the Octopress commands output by `rake -T` to see
 options, including:

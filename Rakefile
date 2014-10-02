@@ -6,49 +6,60 @@ tut_dest     = File.expand_path "source/tutorials"
 tut_repo     = File.expand_path "tutorials"
 tut_web_path = "tutorials"
 
-desc "Sync the tutorials content into the site content."
-task :tutorials do
-  def write_front_matter io, front_matter
-    front_matter["layout"] ||= "page"
-    front_matter["sidebar"] = false unless front_matter.has_key?("sidebar")
+namespace :tutorials do
+  desc "Sync the tutorials content into the site content."
+  task :generate do
+    def write_front_matter io, front_matter
+      front_matter["layout"] ||= "page"
+      front_matter["sidebar"] = false unless front_matter.has_key?("sidebar")
 
-    io.write front_matter.to_yaml
-    io.puts "---"
-  end
-
-  contents = Bundler.with_clean_env do
-    Dir.chdir "tutorials" do
-      system "bundle install"
-      system "bundle exec rake markdown"
-      YAML.load(`bundle exec rake describe`)
+      io.write front_matter.to_yaml
+      io.puts "---"
     end
-  end
-  puts contents
 
-  FileUtils.rm_rf tut_dest
-  FileUtils.mkdir tut_dest
-  File.open "source/tutorials/index.md", "w" do |index|
-    write_front_matter index, {
-      "title" => "Tutorials"
-    }
-
-    contents.each_with_index do |things, j|
-      title, filename = *things
-      source_file = File.join(tut_repo, filename)
-      dest_file   = File.join(tut_dest, File.basename(filename))
-      web_file    = File.join("/", tut_web_path, File.basename(filename).gsub(/\.md$/, ".html"))
-
-      File.open dest_file, "w" do |file|
-        write_front_matter file, {
-          "title" => title
-        }
-        file.write File.read(source_file)
+    contents = Bundler.with_clean_env do
+      Dir.chdir "tutorials" do
+        system "bundle install"
+        system "bundle exec rake markdown"
+        YAML.load(`bundle exec rake describe`)
       end
-      index.puts "#{j+1}. [#{title}](#{web_file})"
     end
+    puts contents
+
+    FileUtils.rm_rf tut_dest
+    FileUtils.mkdir tut_dest
+    File.open "source/tutorials/index.md", "w" do |index|
+      write_front_matter index, {
+        "title" => "Tutorials"
+      }
+
+      contents.each_with_index do |things, j|
+        title, filename = *things
+        source_file = File.join(tut_repo, filename)
+        dest_file   = File.join(tut_dest, File.basename(filename))
+        web_file    = File.join("/", tut_web_path, File.basename(filename).gsub(/\.md$/, ".html"))
+
+        File.open dest_file, "w" do |file|
+          write_front_matter file, {
+            "title" => title
+          }
+          file.write File.read(source_file)
+        end
+        index.puts "#{j+1}. [#{title}](#{web_file})"
+      end
+    end
+  end
+
+  desc "recursively clean the tutorials submodule"
+  task :clean do
+    Bundler.with_clean_env do
+      Dir.chdir "tutorials" do
+        system "rake clean"
+      end
+    end
+    FileUtils.rm_rf "source/tutorials", :verbose => true
   end
 end
-
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
@@ -452,3 +463,7 @@ task :list do
   puts "Tasks: #{(Rake::Task.tasks - [Rake::Task[:list]]).join(', ')}"
   puts "(type rake -T for more detail)\n\n"
 end
+
+task :default  => "generate"
+task :generate => "tutorials:generate"
+task :clean    => "tutorials:clean"
