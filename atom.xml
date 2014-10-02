@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Nokogiri 鋸]]></title>
-  <link href="https://sparklemotion.github.io/atom.xml" rel="self"/>
-  <link href="https://sparklemotion.github.io/"/>
-  <updated>2014-09-21T14:23:17-04:00</updated>
-  <id>https://sparklemotion.github.io/</id>
+  <link href="http://nokogiri.org/atom.xml" rel="self"/>
+  <link href="http://nokogiri.org/"/>
+  <updated>2014-10-02T12:29:48-04:00</updated>
+  <id>http://nokogiri.org/</id>
   <author>
     <name><![CDATA[Team Sparklemotion]]></name>
     

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://sparklemotion.github.io/sitemap.xml 
+Sitemap: http://nokogiri.org/sitemap.xml 

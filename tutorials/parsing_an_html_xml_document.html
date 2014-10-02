@@ -15,7 +15,7 @@
     <meta name="description" content="Documentation for Nokogiri, a Ruby XML and HTML library ("gem").">
     
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="https://sparklemotion.github.io/tutorials/parsing_an_html_xml_document.html">
+    <link rel="canonical" href="http://nokogiri.org/tutorials/parsing_an_html_xml_document.html">
     
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
@@ -151,7 +151,7 @@ most commonly-used options are:</p>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">.</span><span class="n">STRICT</span> <span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">.</span><span class="n">NONET</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">::</span><span class="no">STRICT</span> <span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">::</span><span class="no">NONET</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
