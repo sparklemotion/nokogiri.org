@@ -90,7 +90,7 @@ task :default => :markdown
 
 desc "Remove all generated files"
 task :clean do
-  FileUtils.rm_rf cookedmd_directory
+  FileUtils.rm_rf cookedmd_directory, :verbose => true
 end
 
 desc "Build cooked markdown version of the book"
