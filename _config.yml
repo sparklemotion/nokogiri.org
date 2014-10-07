@@ -8,7 +8,7 @@ title: Nokogiri 鋸
 subtitle: An HTML, XML, SAX, & Reader parser with the ability to search documents via XPath or CSS3 selectors… and much more
 author: Team Sparklemotion
 simple_search: https://www.google.com/search
-description: 'Documentation for Nokogiri, a Ruby XML and HTML library ("gem").'
+description: 'Documentation for Nokogiri, a Ruby XML and HTML library.'
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
