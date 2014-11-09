@@ -172,3 +172,6 @@ NOKOGIRIFIED!
 gem install nokogiri
 ```
 
+Please note that at this time, building Nokogiri with DevKit may work,
+but is unsupported. If you feel strongly that this should be
+supported, we'd love to talk about it on `nokogiri-talk`!
