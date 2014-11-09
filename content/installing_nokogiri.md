@@ -24,8 +24,6 @@ gem install nokogiri
 Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
 
-  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
-
 
 ## Windows
 
@@ -73,8 +71,6 @@ sudo yum install -y gcc ruby-devel
 
 Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
-
-  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
 
 ## Mac OS X
@@ -136,8 +132,6 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 
 If you have any other issues, please file an issue (preferably a new
 one, read [Getting Help][] for details) and pull in @zenspider.
-
-  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
 
 ## Using Your System Libraries
@@ -202,3 +196,4 @@ gem install nokogiri -- --with-xml2-lib=/path/to/builds/lib \
 N.B.: By default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
 subdirectory thereof named `libxml2`.
+  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
