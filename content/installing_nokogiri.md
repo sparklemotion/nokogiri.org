@@ -146,28 +146,39 @@ Or, you know, whatever directories into which you installed libxml and
 libxslt. Good luck.
 
 
-## Nonstandard libxml2 / libxslt installations
+## Using Nonstandard libxml2 / libxslt installations
 
 If you've got libxml2 and/or libxslt installed in a nonstandard place
 (read as "not /opt/local, /usr/local, /usr or the standard Ruby
 directories"), you can use command-line parameters to the `gem
-install` command to grease the wheels:
+install` command to grease the wheels.
+
+If you've got the proper `config` scripts:
 
 ```sh
-gem install nokogiri -- --with-xml2-dir=/home/joe/builds \
-                        --with-xslt-dir=/home/joe/builds
+gem install nokogiri -- --use-system-libraries
+    [--with-xml2-config=/path/to/xml2-config]
+    [--with-xslt-config=/path/to/xslt-config]
 ```
 
-Or, you can specify include and library directories separately:
+or, you can specify the installation root directory:
 
 ```sh
-gem install nokogiri -- --with-xml2-lib=/home/joe/builds/lib \
-                        --with-xml2-include=/home/joe/builds/include/libxml2 \
-                        --with-xslt-lib=/home/joe/builds/lib \
-                        --with-xslt-include=/home/joe/builds/include
+gem install nokogiri -- --use-system-libraries
+    [--with-xml2-dir=/path/to/dir]
+    [--with-xslt-dir=/path/to/dir]
 ```
 
-Note that, by default, libxslt header files are installed into the
+or, you can specify include and library directories separately:
+
+```sh
+gem install nokogiri -- --with-xml2-lib=/path/to/builds/lib \
+                        --with-xml2-include=/path/to/builds/include/libxml2 \
+                        --with-xslt-lib=/path/to/builds/lib \
+                        --with-xslt-include=/path/to/builds/include
+```
+
+N.B.: By default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
 subdirectory thereof named `libxml2`.
 
