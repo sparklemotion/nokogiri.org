@@ -29,22 +29,24 @@ Please report it as a bug if this doesn't work for you (see
 ## Mac OS X
 
 Most developers are using homebrew to manage their packages these
-days. If you are, you're in luck:
+days. If you are, you're in luck.
 
 ### homebrew 0.9.5+
 
-Things pretty much Just Work™ these days. To use nokogiri with its
-vendored libxml2 and libxslt you only need to install libiconv:
+Installation should Just Work™ using Nokogiri's vendored `libxml2` and
+`libxslt`:
 
 ```sh
 gem install nokogiri
 ```
 
+However, you may need to jump through some hoops around `libiconv` ... (see next section)
+
 ### Troubleshooting
 
 If you have problems mentioning libiconv missing that looks something like this:
 
-    Installing nokogiri (1.6.2.1) Building nokogiri using packaged libraries.
+    Installing nokogiri (1.6.4) Building nokogiri using packaged libraries.
 
     Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
 
@@ -71,9 +73,10 @@ gem install nokogiri
 
 This is verified working on OSX 10.9 w/ xcode's clang compiler.
 
-Many thanks to @allaire and others for helping verify this.
+(Many thanks to @allaire and others for helping verify this!)
 
-### Other tips:
+
+### Other OS X tips
 
 * Make sure ruby is compiled with the latest clang compiler.
 * Ruby is no longer dependent upon gcc-4.2.
@@ -81,7 +84,10 @@ Many thanks to @allaire and others for helping verify this.
 * If you have multiple versions of xcode installed, make sure you use the right xcode-select.
 
 If you have any other issues, please file an issue (preferably a new
-one) and pull in @zenspider.
+one, read [Getting Help][] for details) and pull in @zenspider.
+
+  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
+
 
 ## Red Hat / CentOS
 
@@ -137,6 +143,7 @@ subdirectory thereof named `libxml2`.)
 Or, you know, whatever directories into which you installed libxml and
 libxslt. Good luck.
 
+
 ## Nonstandard libxml2 / libxslt installations
 
 If you've got libxml2 and/or libxslt installed in a nonstandard place
@@ -161,6 +168,7 @@ gem install nokogiri -- --with-xml2-lib=/home/joe/builds/lib \
 Note that, by default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
 subdirectory thereof named `libxml2`.
+
 
 ## Windows
 
