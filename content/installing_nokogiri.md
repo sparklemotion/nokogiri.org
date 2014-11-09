@@ -180,29 +180,56 @@ install` command to grease the wheels.
 If you've got the proper `config` scripts:
 
 ```sh
-gem install nokogiri -- --use-system-libraries
-    [--with-xml2-config=/path/to/xml2-config]
-    [--with-xslt-config=/path/to/xslt-config]
+gem install nokogiri -- \
+    --use-system-libraries \
+    --with-xml2-config=/path/to/xml2-config \
+    --with-xslt-config=/path/to/xslt-config
 ```
 
 or, you can specify the installation root directory:
 
 ```sh
-gem install nokogiri -- --use-system-libraries
-    [--with-xml2-dir=/path/to/dir]
-    [--with-xslt-dir=/path/to/dir]
+gem install nokogiri -- \
+    --use-system-libraries \
+    --with-xml2-dir=/path/to/dir \
+    --with-xslt-dir=/path/to/dir
 ```
 
 or, you can specify include and library directories separately:
 
 ```sh
-gem install nokogiri -- --with-xml2-lib=/path/to/builds/lib \
-                        --with-xml2-include=/path/to/builds/include/libxml2 \
-                        --with-xslt-lib=/path/to/builds/lib \
-                        --with-xslt-include=/path/to/builds/include
+gem install nokogiri -- \
+    --use-system-libraries \
+    --with-xml2-lib=/path/to/builds/lib \
+    --with-xml2-include=/path/to/builds/include/libxml2 \
+    --with-xslt-lib=/path/to/builds/lib \
+    --with-xslt-include=/path/to/builds/include
 ```
 
 N.B.: By default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
 subdirectory thereof named `libxml2`.
+
+It's likely that you'll also need to specify the location of your
+`zlib` and `iconv` (and possibly `exslt`) install directories as
+well. In that case, you can add the options:
+
+```sh
+gem install nokogiri -- \
+    --use-system-libraries \
+    # ...
+    --with-iconv-dir=/path/to/dir \
+    --with-zlib-dir=/path/to/dir \
+    [--with-exslt-dir=/path/to/dir]
+    [--with-exslt-config=/path/to/exslt-config]
+```
+
+
+## Other
+
+Don't see your platform here? We'd love to add to this
+document. Please feel free to send pull requests to
+[sparklemotion/nokogiri.org-tutorials][].
+
+  [sparklemotion/nokogiri.org-tutorials]: https://github.com/sparklemotion/nokogiri.org-tutorials
   [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
