@@ -10,6 +10,7 @@ reputation for being complicated to install.
   [libxslt]: http://xmlsoft.org/xslt/
 
 Let's wrassle this little myth to the ground, shall we?
+In ascending order of difficulty ...
 
 ## Ubuntu / Debian
 
@@ -18,6 +19,56 @@ vendored `libxml2` and `libxslt`:
 
 ```sh
 gem install nokogiri
+```
+
+Please report it as a bug if this doesn't work for you (see
+[Getting Help][] for details).
+
+  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
+
+
+## Windows
+
+Luckily for you, building on Windows is so difficult that we've done
+it for you: Nokogiri comes bundled with all the DLLs you need to be
+NOKOGIRIFIED!
+
+```sh
+gem install nokogiri
+```
+
+Please note that at this time, building Nokogiri with DevKit may work,
+but is unsupported. If you feel strongly that this should be
+supported, we'd love to talk about it on `nokogiri-talk`!
+
+
+## Red Hat / CentOS
+
+The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
+[EPEL][] repository which contains a prebuilt nokogiri package. To use it,
+install the appropriate [epel-release][] package for your OS, then run:
+
+```sh
+sudo yum install -y rubygem-nokogiri
+```
+
+  [EPEL]: http://fedoraproject.org/wiki/EPEL
+  [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
+
+
+However, installation of the regular gem should Just Work™ using
+Nokogiri's vendored `libxml2` and `libxslt`:
+
+```sh
+gem install nokogiri
+```
+
+If you have issues, make sure you have some of the basic Ruby
+developer tools that you'll need to compile the C extension,
+`libxml2`, and `libxslt`:
+
+```sh
+sudo yum install -y gcc ruby-devel
 ```
 
 Please report it as a bug if this doesn't work for you (see
@@ -89,41 +140,6 @@ one, read [Getting Help][] for details) and pull in @zenspider.
   [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
 
-## Red Hat / CentOS
-
-The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
-[EPEL][] repository which contains a prebuilt nokogiri package. To use it,
-install the appropriate [epel-release][] package for your OS, then run:
-
-```sh
-sudo yum install -y rubygem-nokogiri
-```
-
-  [EPEL]: http://fedoraproject.org/wiki/EPEL
-  [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
-
-
-However, installation of the regular gem should Just Work™ using
-Nokogiri's vendored `libxml2` and `libxslt`:
-
-```sh
-gem install nokogiri
-```
-
-If you have issues, make sure you have some of the basic Ruby
-developer tools that you'll need to compile the C extension,
-`libxml2`, and `libxslt`:
-
-```sh
-sudo yum install -y gcc ruby-devel
-```
-
-Please report it as a bug if this doesn't work for you (see
-[Getting Help][] for details).
-
-  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
-
-
 ## Using Your System Libraries
 
 If, instead of Nokogiri's vendored libraries, you'd like to use your
@@ -186,18 +202,3 @@ gem install nokogiri -- --with-xml2-lib=/path/to/builds/lib \
 N.B.: By default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
 subdirectory thereof named `libxml2`.
-
-
-## Windows
-
-Luckily for you, building on Windows is so difficult that we've done
-it for you: Nokogiri comes bundled with all the DLLs you need to be
-NOKOGIRIFIED!
-
-```sh
-gem install nokogiri
-```
-
-Please note that at this time, building Nokogiri with DevKit may work,
-but is unsupported. If you feel strongly that this should be
-supported, we'd love to talk about it on `nokogiri-talk`!
