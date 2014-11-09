@@ -124,26 +124,31 @@ Please report it as a bug if this doesn't work for you (see
   [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
 
+## Using Your System Libraries
 
- 1. `sudo yum remove -y libxml2-devel libxslt-devel`
- 2. download the most recent libxml2 and libxslt from [ftp://xmlsoft.org/libxml2/](ftp://xmlsoft.org/libxml2/)
- 3. `./configure ; make ; sudo make install`
+If, instead of Nokogiri's vendored libraries, you'd like to use your
+system's `libxml2`, `libxslt` and related libraries, please first
+understand that you may be asking Nokogiri to work with an unsupported
+version of `libxml2`. We try hard to warn you about this; and will
+even refuse to compile against some known-bad versions of `libxml2`.
 
-Then install nokogiri specifying the libxml2 and libxslt install directories:
+But, we want to give you the flexibility to choose this option.
+
+Here's how to ignore Nokogiri's vendored libraries and use your
+installed system libraries (assuming they're installed somewhere
+reasonable, like /opt/local, /usr/local, /usr or the standard Ruby
+directories):
 
 ```sh
-sudo gem install nokogiri -- --with-xml2-lib=/usr/local/lib \
-                             --with-xml2-include=/usr/local/include/libxml2 \
-                             --with-xslt-lib=/usr/local/lib \
-                             --with-xslt-include=/usr/local/include
+gem install nokogiri -- --use-system-libraries
 ```
 
-(Note that, by default, libxslt header files are installed into the
-root include directory, but libxml2 header files are installed into a
-subdirectory thereof named `libxml2`.)
+Or, if you're using Bundler:
 
-Or, you know, whatever directories into which you installed libxml and
-libxslt. Good luck.
+```sh
+bundle config build.nokogiri --use-system-libraries
+bundle install
+```
 
 
 ## Using Nonstandard libxml2 / libxslt installations
