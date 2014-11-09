@@ -9,8 +9,17 @@ reputation for being complicated to install.
   [libxml2]: http://xmlsoft.org/index.html
   [libxslt]: http://xmlsoft.org/xslt/
 
-Let's wrassle this little myth to the ground, shall we?
-In ascending order of difficulty ...
+As of Nokogiri 1.6, `libxml2` and `libxslt` source code is bundled
+with Nokogiri, and compiled at gem-install-time. This document should
+work for all versions 1.6.4 and later.
+
+(If you need support for installing earlier versions of Nokogiri, you
+may want to take a look at the git history for [this document][].)
+
+  [this document]: https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md
+
+Let's tackle each platform and scenario in ascending order of difficulty ...
+
 
 ## Ubuntu / Debian
 
