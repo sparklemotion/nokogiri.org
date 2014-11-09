@@ -102,26 +102,28 @@ sudo yum install -y rubygem-nokogiri
   [EPEL]: http://fedoraproject.org/wiki/EPEL
   [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
 
-To install using gem install is somewhat more complicated because of the age of
-the packages available from the central repositories. If you have rubygems
-installed, you may be able to install nokogiri via `gem install`. If you run
-intro problems, try installing these packages as well.
+
+However, installation of the regular gem should Just Work™ using
+Nokogiri's vendored `libxml2` and `libxslt`:
 
 ```sh
-sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+gem install nokogiri
 ```
 
-CentOS 5 (and RHEL5) come installed with libxml 2.6.26 which, while not as
-offensively out-of-date as Mac Leopard, is still pretty damn old ([released
-June 2006][]) and has [known][] [issues][].
+If you have issues, make sure you have some of the basic Ruby
+developer tools that you'll need to compile the C extension,
+`libxml2`, and `libxslt`:
 
-If you're affected by any known bugs or are seeing odd behavior, you
-may want to consider uninstalling the RPMs for libxml2 and libxslt,
-and building them from source.
+```sh
+sudo yum install -y gcc ruby-devel
+```
 
-  [released June 2006]: http://mail.gnome.org/archives/xml/2006-June/msg00043.html
-  [known]: http://github.com/sparklemotion/nokogiri/issues#issue/243
-  [issues]: http://github.com/sparklemotion/nokogiri/issues#issue/122
+Please report it as a bug if this doesn't work for you (see
+[Getting Help][] for details).
+
+  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
+
+
 
  1. `sudo yum remove -y libxml2-devel libxslt-devel`
  2. download the most recent libxml2 and libxslt from [ftp://xmlsoft.org/libxml2/](ftp://xmlsoft.org/libxml2/)
