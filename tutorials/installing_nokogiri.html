@@ -80,62 +80,96 @@
 against both <a href="http://xmlsoft.org/index.html">libxml2</a> and <a href="http://xmlsoft.org/xslt/">libxslt</a>, it has gained a
 reputation for being complicated to install.</p>
 
-<p>Let&rsquo;s wrassle this little myth to the ground, shall we?</p>
+<p>As of Nokogiri 1.6, <code>libxml2</code> and <code>libxslt</code> source code is bundled
+with Nokogiri, and compiled at gem-install-time. This document should
+work for all versions 1.6.4 and later.</p>
+
+<p>(If you need support for installing earlier versions of Nokogiri, you
+may want to take a look at the git history for <a href="https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md">this document</a>.)</p>
+
+<p>Let&rsquo;s tackle each platform and scenario in ascending order of difficulty &hellip;</p>
 
 <h2>Ubuntu / Debian</h2>
 
-<p>Ubuntu doesn&rsquo;t come with the Ruby development packages that are
-required for building gems with C extensions. Here are the commands to
-install everything you might need:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># ruby developer packages</span>
-</span><span class='line'>sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
-</span><span class='line'>sudo apt-get install libreadline-ruby1.8 libruby1.8 libopenssl-ruby
-</span><span class='line'>
-</span><span class='line'><span class="c"># nokogiri requirements</span>
-</span><span class='line'>sudo apt-get install libxslt-dev libxml2-dev
-</span><span class='line'>sudo gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Although, if you&rsquo;re using Hardy (8.04) or earlier, you&rsquo;ll need to install slightly different packages:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># nokogiri requirements for Hardy (8.04) and earlier</span>
-</span><span class='line'>sudo apt-get install libxslt1-dev libxml2-dev
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As <a href="http://rubyforge.org/pipermail/nokogiri-talk/2009-March/000181.html">John Barnette once said</a>, &ldquo;Isn&rsquo;t package management convenient? :)&rdquo;</p>
-
-<h2>Mac OS X</h2>
-
-<p>Most developers are using homebrew to manage their packages these
-days. If you are, you&rsquo;re in luck:</p>
-
-<h3>homebrew 0.9.5+</h3>
-
-<p>Things pretty much Just Work™ these days. To use nokogiri with its
-vendored libxml2 and libxslt you only need to install libiconv:</p>
+<p>Installation should Just Work™ on Ubuntu and Debian using Nokogiri&rsquo;s
+vendored <code>libxml2</code> and <code>libxslt</code>:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
+<p>Please report it as a bug if this doesn&rsquo;t work for you (see
+<a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
+
+<h2>Windows</h2>
+
+<p>Luckily for you, building on Windows is so difficult that we&rsquo;ve done
+it for you: Nokogiri comes bundled with all the DLLs you need to be
+NOKOGIRIFIED!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Please note that at this time, building Nokogiri with DevKit may work,
+but is unsupported. If you feel strongly that this should be
+supported, we&rsquo;d love to talk about it on <code>nokogiri-talk</code>!</p>
+
+<h2>Red Hat / CentOS</h2>
+
+<p>The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
+<a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> repository which contains a prebuilt nokogiri package. To use it,
+install the appropriate <a href="http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">epel-release</a> package for your OS, then run:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y rubygem-nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>However, installation of the regular gem should Just Work™ using
+Nokogiri&rsquo;s vendored <code>libxml2</code> and <code>libxslt</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you have issues, make sure you have some of the basic Ruby
+developer tools that you&rsquo;ll need to compile the C extension,
+<code>libxml2</code>, and <code>libxslt</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y gcc ruby-devel
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Please report it as a bug if this doesn&rsquo;t work for you (see
+<a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
+
+<h2>Mac OS X</h2>
+
+<p>Most developers are using homebrew to manage their packages these
+days. If you are, you&rsquo;re in luck.</p>
+
+<h3>homebrew 0.9.5+</h3>
+
+<p>Installation should Just Work™ using Nokogiri&rsquo;s vendored <code>libxml2</code> and
+<code>libxslt</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>However, you may need to jump through some hoops around <code>libiconv</code> &hellip; (see next section)</p>
+
 <h3>Troubleshooting</h3>
 
 <p>If you have problems mentioning libiconv missing that looks something like this:</p>
 
-<pre><code>Installing nokogiri (1.6.2.1) Building nokogiri using packaged libraries.
+<pre><code>Installing nokogiri (1.6.4) Building nokogiri using packaged libraries.
 
 Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
 
@@ -167,9 +201,9 @@ libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_noko
 
 <p>This is verified working on OSX 10.9 w/ xcode&rsquo;s clang compiler.</p>
 
-<p>Many thanks to @allaire and others for helping verify this.</p>
+<p>(Many thanks to @allaire and others for helping verify this!)</p>
 
-<h3>Other tips:</h3>
+<h3>Other OS X tips</h3>
 
 <ul>
 <li>Make sure ruby is compiled with the latest clang compiler.</li>
@@ -180,107 +214,117 @@ libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_noko
 
 
 <p>If you have any other issues, please file an issue (preferably a new
-one) and pull in @zenspider.</p>
+one, read <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details) and pull in @zenspider.</p>
 
-<h2>Red Hat / CentOS</h2>
+<h2>Using Your System Libraries</h2>
 
-<p>The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
-<a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> repository which contains a prebuilt nokogiri package. To use it,
-install the appropriate <a href="http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">epel-release</a> package for your OS, then run:</p>
+<p>If, instead of Nokogiri&rsquo;s vendored libraries, you&rsquo;d like to use your
+system&rsquo;s <code>libxml2</code>, <code>libxslt</code> and related libraries, please first
+understand that you may be asking Nokogiri to work with an unsupported
+version of <code>libxml2</code>. We try hard to warn you about this; and will
+even refuse to compile against some known-bad versions of <code>libxml2</code>.</p>
+
+<p>But, we want to give you the flexibility to choose this option.</p>
+
+<p>Here&rsquo;s how to ignore Nokogiri&rsquo;s vendored libraries and use your
+installed system libraries (assuming they&rsquo;re installed somewhere
+reasonable, like /opt/local, /usr/local, /usr or the standard Ruby
+directories):</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y rubygem-nokogiri
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- --use-system-libraries
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>To install using gem install is somewhat more complicated because of the age of
-the packages available from the central repositories. If you have rubygems
-installed, you may be able to install nokogiri via <code>gem install</code>. If you run
-intro problems, try installing these packages as well.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>CentOS 5 (and RHEL5) come installed with libxml 2.6.26 which, while not as
-offensively out-of-date as Mac Leopard, is still pretty damn old (<a href="http://mail.gnome.org/archives/xml/2006-June/msg00043.html">released
-June 2006</a>) and has <a href="http://github.com/sparklemotion/nokogiri/issues#issue/243">known</a> <a href="http://github.com/sparklemotion/nokogiri/issues#issue/122">issues</a>.</p>
-
-<p>If you&rsquo;re affected by any known bugs or are seeing odd behavior, you
-may want to consider uninstalling the RPMs for libxml2 and libxslt,
-and building them from source.</p>
-
-<ol>
-<li><code>sudo yum remove -y libxml2-devel libxslt-devel</code></li>
-<li>download the most recent libxml2 and libxslt from <a href="ftp://xmlsoft.org/libxml2/">ftp://xmlsoft.org/libxml2/</a></li>
-<li><code>./configure ; make ; sudo make install</code></li>
-</ol>
-
-
-<p>Then install nokogiri specifying the libxml2 and libxslt install directories:</p>
+<p>Or, if you&rsquo;re using Bundler:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo gem install nokogiri -- --with-xml2-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>                             --with-xml2-include<span class="o">=</span>/usr/local/include/libxml2 <span class="se">\</span>
-</span><span class='line'>                             --with-xslt-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>                             --with-xslt-include<span class="o">=</span>/usr/local/include
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>bundle config build.nokogiri --use-system-libraries
+</span><span class='line'>bundle install
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>(Note that, by default, libxslt header files are installed into the
-root include directory, but libxml2 header files are installed into a
-subdirectory thereof named <code>libxml2</code>.)</p>
-
-<p>Or, you know, whatever directories into which you installed libxml and
-libxslt. Good luck.</p>
-
-<h2>Nonstandard libxml2 / libxslt installations</h2>
+<h2>Using Nonstandard libxml2 / libxslt installations</h2>
 
 <p>If you&rsquo;ve got libxml2 and/or libxslt installed in a nonstandard place
 (read as &ldquo;not /opt/local, /usr/local, /usr or the standard Ruby
 directories&rdquo;), you can use command-line parameters to the <code>gem
-install</code> command to grease the wheels:</p>
+install</code> command to grease the wheels.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- --with-xml2-dir<span class="o">=</span>/home/joe/builds <span class="se">\</span>
-</span><span class='line'>                        --with-xslt-dir<span class="o">=</span>/home/joe/builds
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Or, you can specify include and library directories separately:</p>
+<p>If you&rsquo;ve got the proper <code>config</code> scripts:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- --with-xml2-lib<span class="o">=</span>/home/joe/builds/lib <span class="se">\</span>
-</span><span class='line'>                        --with-xml2-include<span class="o">=</span>/home/joe/builds/include/libxml2 <span class="se">\</span>
-</span><span class='line'>                        --with-xslt-lib<span class="o">=</span>/home/joe/builds/lib <span class="se">\</span>
-</span><span class='line'>                        --with-xslt-include<span class="o">=</span>/home/joe/builds/include
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
+</span><span class='line'>    --use-system-libraries <span class="se">\</span>
+</span><span class='line'>    --with-xml2-config<span class="o">=</span>/path/to/xml2-config <span class="se">\</span>
+</span><span class='line'>    --with-xslt-config<span class="o">=</span>/path/to/xslt-config
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Note that, by default, libxslt header files are installed into the
+<p>or, you can specify the installation root directory:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
+</span><span class='line'>    --use-system-libraries <span class="se">\</span>
+</span><span class='line'>    --with-xml2-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
+</span><span class='line'>    --with-xslt-dir<span class="o">=</span>/path/to/dir
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or, you can specify include and library directories separately:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
+</span><span class='line'>    --use-system-libraries <span class="se">\</span>
+</span><span class='line'>    --with-xml2-lib<span class="o">=</span>/path/to/builds/lib <span class="se">\</span>
+</span><span class='line'>    --with-xml2-include<span class="o">=</span>/path/to/builds/include/libxml2 <span class="se">\</span>
+</span><span class='line'>    --with-xslt-lib<span class="o">=</span>/path/to/builds/lib <span class="se">\</span>
+</span><span class='line'>    --with-xslt-include<span class="o">=</span>/path/to/builds/include
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>N.B.: By default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
 subdirectory thereof named <code>libxml2</code>.</p>
 
-<h2>Windows</h2>
-
-<p>Luckily for you, building on Windows is so difficult that we&rsquo;ve done
-it for you: Nokogiri comes bundled with all the DLLs you need to be
-NOKOGIRIFIED!</p>
+<p>It&rsquo;s likely that you&rsquo;ll also need to specify the location of your
+<code>zlib</code> and <code>iconv</code> (and possibly <code>exslt</code>) install directories as
+well. In that case, you can add the options:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
+</span><span class='line'>    --use-system-libraries <span class="se">\</span>
+</span><span class='line'>    <span class="c"># ...</span>
+</span><span class='line'>    --with-iconv-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
+</span><span class='line'>    --with-zlib-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
+</span><span class='line'>    <span class="o">[</span>--with-exslt-dir<span class="o">=</span>/path/to/dir<span class="o">]</span>
+</span><span class='line'>    <span class="o">[</span>--with-exslt-config<span class="o">=</span>/path/to/exslt-config<span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h2>Other</h2>
 
+<p>Don&rsquo;t see your platform here? We&rsquo;d love to add to this
+document. Please feel free to send pull requests to
+<a href="https://github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.</p>
 
 
 </article>
