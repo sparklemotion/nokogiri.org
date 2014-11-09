@@ -13,30 +13,17 @@ Let's wrassle this little myth to the ground, shall we?
 
 ## Ubuntu / Debian
 
-Ubuntu doesn't come with the Ruby development packages that are
-required for building gems with C extensions. Here are the commands to
-install everything you might need:
+Installation should Just Work™ on Ubuntu and Debian using Nokogiri's
+vendored `libxml2` and `libxslt`:
 
 ```sh
-# ruby developer packages
-sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
-sudo apt-get install libreadline-ruby1.8 libruby1.8 libopenssl-ruby
-
-# nokogiri requirements
-sudo apt-get install libxslt-dev libxml2-dev
-sudo gem install nokogiri
+gem install nokogiri
 ```
 
-Although, if you're using Hardy (8.04) or earlier, you'll need to install slightly different packages:
+Please report it as a bug if this doesn't work for you (see
+[Getting Help][] for details).
 
-```sh
-# nokogiri requirements for Hardy (8.04) and earlier
-sudo apt-get install libxslt1-dev libxml2-dev
-```
-
-As [John Barnette once said][package-management], "Isn't package management convenient? :)"
-
-  [package-management]: http://rubyforge.org/pipermail/nokogiri-talk/2009-March/000181.html
+  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
 
 ## Mac OS X
