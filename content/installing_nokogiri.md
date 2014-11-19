@@ -132,6 +132,16 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 (Many thanks to @allaire and others for helping verify this!)
 
 
+### Other OS X tips
+
+* Make sure ruby is compiled with the latest clang compiler.
+* Ruby is no longer dependent upon gcc-4.2.
+* Binary gems and ruby really should be compiled with the same compiler/environment.
+* If you have multiple versions of xcode installed, make sure you use the right xcode-select.
+
+If you have any other issues, please file an issue (preferably a new
+one, read [Getting Help][] for details) and pull in @zenspider.
+
 ## FreeBSD
 
 FreeBSD needs libxml2, libxslt, and iconv locations specified.
@@ -164,20 +174,10 @@ bundle config build.nokogiri \
        --with-iconv-include=/usr/local/include
 ```
 
-There is a bug (bundler/bundler#3053) in bundler that causes the options
+Bundler has a bug (bundler/bundler#3053) that causes the options
 to be sent improperly, resulting in a `Syntax error: Unterminated quoted string` error.
 The workaround is to edit your `.bundle/config` file,
 remove the quotes around the options, and place all the options on a single line.
-
-### Other OS X tips
-
-* Make sure ruby is compiled with the latest clang compiler.
-* Ruby is no longer dependent upon gcc-4.2.
-* Binary gems and ruby really should be compiled with the same compiler/environment.
-* If you have multiple versions of xcode installed, make sure you use the right xcode-select.
-
-If you have any other issues, please file an issue (preferably a new
-one, read [Getting Help][] for details) and pull in @zenspider.
 
 ## Using Your System Libraries
 
