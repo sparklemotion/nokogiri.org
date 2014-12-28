@@ -100,6 +100,20 @@ However, you may need to jump through some hoops around `libiconv` ... (see next
 
 ### Troubleshooting
 
+#### "I'm on a virginal Yosemite installation."
+
+Team Nokogiri has reproduced an issue with brand-spanking-new Yosemite
+installations, which can be corrected by running:
+
+```sh
+gem update --system
+```
+
+Ya, really. >_< (Thanks to @zenspider for looking into this one.)
+
+
+#### "I see error messages about libiconv."
+
 If you have problems mentioning libiconv missing that looks something like this:
 
     Installing nokogiri (1.6.4) Building nokogiri using packaged libraries.
