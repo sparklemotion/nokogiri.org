@@ -2,6 +2,5 @@
 
 set -e
 
-pushd tutorials
-  git checkout master
-popd
+git submodule foreach "git remote update"
+git submodule foreach "git checkout master"
