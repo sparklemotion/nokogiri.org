@@ -465,5 +465,6 @@ task :list do
 end
 
 task :default  => "generate"
+task :preview  => "generate"
 task :generate => "tutorials:generate"
 task :clean    => "tutorials:clean"
