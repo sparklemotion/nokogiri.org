@@ -79,10 +79,39 @@ def sub_inline_ruby!(content)
   end
 end
 
+def make_toc(content)
+  header_re = /^(##) /
+  toc = []
+  content = content.split("\n").map do |line|
+    if line =~ header_re
+      title = line.gsub(header_re, '')
+      header = $1
+
+      # extract id and store it into toc
+      id = title.downcase.gsub(/\W/, '_')
+      toc_entry = "1. [#{title}](##{id})"
+      toc << toc_entry
+      puts "MIKE: toc entry: #{toc_entry}"
+
+      # then edit header markup to have that id
+      line = "#{header} <span id='#{id}'> #{title} </span>"
+    else
+      line
+    end
+  end
+
+  toc << ""
+  toc << "<hr class='divider'>"
+  toc << ""
+
+  (toc + content).join("\n")
+end
+
 def slurp_file(rawmd_file)
   content = File.read(rawmd_file)
   sub_inline_docs! content
   sub_inline_ruby! content
+  content = make_toc(content)
   content
 end
 
