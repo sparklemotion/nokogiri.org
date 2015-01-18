@@ -20,7 +20,6 @@ may want to take a look at the git history for [this document][].)
 
 Let's tackle each platform and scenario in ascending order of difficulty ...
 
-
 ## Ubuntu / Debian
 
 Installation should Just Work™ on Ubuntu and Debian using Nokogiri's
@@ -40,13 +39,70 @@ Luckily for you, building on Windows is so difficult that we've done
 it for you: Nokogiri comes bundled with all the DLLs you need to be
 NOKOGIRIFIED!
 
+Specifically, we publish gems specific for the Windows "platform", as
+it's called by Rubygems. For example, [Nokogiri 1.6.5][] published:
+
+* [nokogiri-1.6.5-x64-mingw32.gem][]
+* [nokogiri-1.6.5-x86-mingw32.gem][]
+
+for the 64-bit and 32-bit Rubyinstaller rubies, respectively.
+
+This __should__ Just Work™:
+
 ```sh
 gem install nokogiri
 ```
 
-Please note that at this time, building Nokogiri with DevKit may work,
-but is unsupported. If you feel strongly that this should be
-supported, we'd love to talk about it on `nokogiri-talk`!
+  [Nokogiri 1.6.5]: https://rubygems.org/gems/nokogiri/versions/1.6.5
+  [nokogiri-1.6.5-x64-mingw32.gem]: https://rubygems.org/downloads/nokogiri-1.6.5-x64-mingw32.gem
+  [nokogiri-1.6.5-x86-mingw32.gem]: https://rubygems.org/downloads/nokogiri-1.6.5-x86-mingw32.gem
+
+
+### Troubleshooting Windows Installation
+
+If you see this error:
+
+```
+ERROR:  Error installing nokogiri:
+        The 'nokogiri' native gem requires installed build tools.
+
+Please update your PATH to include build tools or download the DevKit
+from 'http://rubyinstaller.org/downloads' and follow the instructions
+at 'http://github.com/oneclick/rubyinstaller/wiki/Development-Kit'
+```
+
+or you see something like this error:
+
+```
+Extracting libiconv-1.14.tar.gz into tmp/i686-pc-mingw32/ports/libiconv/1.14... OK
+Running 'configure' for libiconv 1.14... ERROR, review
+'C:/RailsInstaller/.../nokogiri-1.6.5/.../libiconv/1.14/configure.log'
+to see what happened.
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+```
+
+then you may be runing a buggy version of Rubygems that's not
+downloading the appropriate gemfile for your platform (see
+[this thread][windows-platform-thread] for background). Please update
+to Rubygems 2.4.5 or later and everything should work.
+
+  [windows-platform-thread]: https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J
+
+
+### Compiling natively on Windows
+
+Please note that at this time, building Nokogiri with DevKit __may__
+work, but is unsupported. If you feel strongly that this should be
+supported, we'd love to talk about it.
+
+We've currently (as of 2015-01-18) got an open
+[Github Issue][windows-native-builds] to discuss this topic, please
+join in!
+
+  [windows-native-builds]: https://github.com/sparklemotion/nokogiri/issues/1190
 
 
 ## Red Hat / CentOS
@@ -98,7 +154,7 @@ gem install nokogiri
 
 However, you may need to jump through some hoops around `libiconv` ... (see next section)
 
-### Troubleshooting
+### Troubleshooting OSX Installation
 
 #### "I'm on a virginal Yosemite installation."
 
@@ -155,6 +211,8 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 
 If you have any other issues, please file an issue (preferably a new
 one, read [Getting Help][] for details) and pull in @zenspider.
+
+  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
 
 ## Using Your System Libraries
@@ -246,4 +304,3 @@ document. Please feel free to send pull requests to
 [sparklemotion/nokogiri.org-tutorials][].
 
   [sparklemotion/nokogiri.org-tutorials]: https://github.com/sparklemotion/nokogiri.org-tutorials
-  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
