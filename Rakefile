@@ -91,7 +91,6 @@ def make_toc(content)
       id = title.downcase.gsub(/\W/, '_')
       toc_entry = "1. [#{title}](##{id})"
       toc << toc_entry
-      puts "MIKE: toc entry: #{toc_entry}"
 
       # then edit header markup to have that id
       line = "#{header} <span id='#{id}'> #{title} </span>"
