@@ -108,14 +108,78 @@ vendored <code>libxml2</code> and <code>libxslt</code>:</p>
 it for you: Nokogiri comes bundled with all the DLLs you need to be
 NOKOGIRIFIED!</p>
 
+<p>Specifically, we publish gems specific for the Windows &ldquo;platform&rdquo;, as
+it&rsquo;s called by Rubygems. For example, <a href="https://rubygems.org/gems/nokogiri/versions/1.6.5">Nokogiri 1.6.5</a> published:</p>
+
+<ul>
+<li><a href="https://rubygems.org/downloads/nokogiri-1.6.5-x64-mingw32.gem">nokogiri-1.6.5-x64-mingw32.gem</a></li>
+<li><a href="https://rubygems.org/downloads/nokogiri-1.6.5-x86-mingw32.gem">nokogiri-1.6.5-x86-mingw32.gem</a></li>
+</ul>
+
+
+<p>for the 64-bit and 32-bit Rubyinstaller rubies, respectively.</p>
+
+<p>This <strong>should</strong> Just Work™:</p>
+
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Please note that at this time, building Nokogiri with DevKit may work,
-but is unsupported. If you feel strongly that this should be
-supported, we&rsquo;d love to talk about it on <code>nokogiri-talk</code>!</p>
+<h3>Troubleshooting Windows Installation</h3>
+
+<p>If you see this error:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ERROR:  Error installing nokogiri:
+</span><span class='line'>        The <span class="s1">&#39;nokogiri&#39;</span> native gem requires installed build tools.
+</span><span class='line'>
+</span><span class='line'>Please update your PATH to include build tools or download the DevKit
+</span><span class='line'>from <span class="s1">&#39;http://rubyinstaller.org/downloads&#39;</span> and follow the instructions
+</span><span class='line'>at <span class="s1">&#39;http://github.com/oneclick/rubyinstaller/wiki/Development-Kit&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or you see something like this error:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>Extracting libiconv-1.14.tar.gz into tmp/i686-pc-mingw32/ports/libiconv/1.14... OK
+</span><span class='line'>Running <span class="s1">&#39;configure&#39;</span> <span class="k">for</span> libiconv 1.14... ERROR, review
+</span><span class='line'><span class="s1">&#39;C:/RailsInstaller/.../nokogiri-1.6.5/.../libiconv/1.14/configure.log&#39;</span>
+</span><span class='line'>to see what happened.
+</span><span class='line'>*** extconf.rb failed ***
+</span><span class='line'>Could not create Makefile due to some reason, probably lack of necessary
+</span><span class='line'>libraries and/or headers.  Check the mkmf.log file <span class="k">for</span> more details.  You may
+</span><span class='line'>need configuration options.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>then you may be runing a buggy version of Rubygems that&rsquo;s not
+downloading the appropriate gemfile for your platform (see
+<a href="https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J">this thread</a> for background). Please update
+to Rubygems 2.4.5 or later and everything should work.</p>
+
+<h3>Compiling natively on Windows</h3>
+
+<p>Please note that at this time, building Nokogiri with DevKit <strong>may</strong>
+work, but is unsupported. If you feel strongly that this should be
+supported, we&rsquo;d love to talk about it.</p>
+
+<p>We&rsquo;ve currently (as of 2015-01-18) got an open
+<a href="https://github.com/sparklemotion/nokogiri/issues/1190">Github Issue</a> to discuss this topic, please
+join in!</p>
 
 <h2>Red Hat / CentOS</h2>
 
@@ -165,7 +229,7 @@ days. If you are, you&rsquo;re in luck.</p>
 
 <p>However, you may need to jump through some hoops around <code>libiconv</code> &hellip; (see next section)</p>
 
-<h3>Troubleshooting</h3>
+<h3>Troubleshooting OSX Installation</h3>
 
 <h4>&ldquo;I&rsquo;m on a virginal Yosemite installation.&rdquo;</h4>
 
