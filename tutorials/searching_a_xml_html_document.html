@@ -65,18 +65,43 @@
 
           <article class="page">
 
+  <div class='clearfix'>
+    
+    <div class='pull-left'>
+      <a href=/tutorials/parsing_an_html_xml_document.html>← Parsing an HTML/XML document</a>
+    </div>
+    
+
+    
+    <div class='pull-right'>
+      <a href=/tutorials/modifying_an_html_xml_document.html>Modifying an HTML/XML document →</a>
+    </div>
+    
+  </div>
+
   
   <header>
     <h1 class="title indent">
       Searching a XML/HTML Document
     </h1>
   </header>
-  <hr class="divider">
   
 
-  <h1>Searching an HTML / XML Document</h1>
+  <ol>
+<li><a href="#basic_searching">Basic Searching</a></li>
+<li><a href="#single_results">Single Results</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+<li><a href="#but_i_m_lazy_and_don_t_want_to_deal_with_namespaces_">But I&rsquo;m Lazy and Don&rsquo;t Want to Deal With Namespaces!</a></li>
+<li><a href="#slop_sup_1__sup_">Slop<sup>1</sup></a></li>
+</ol>
 
-<h2>Basic Searching</h2>
+
+<hr class='divider'>
+
+
+<h1>Searching an HTML / XML Document</h1>
+
+<h2><span id='basic_searching'> Basic Searching </span></h2>
 
 <p>Let&rsquo;s suppose you have the following document:</p>
 
@@ -208,7 +233,7 @@ and CSS syntax for more information).</p>
 <p>CSS queries are often the easiest and most succinct way to express
 what you&rsquo;re looking for, so don&rsquo;t be afraid to use them!</p>
 
-<h2>Single Results</h2>
+<h2><span id='single_results'> Single Results </span></h2>
 
 <p>If you know you&rsquo;re going to get only a single result back, you can use
 the shortcuts <code>at_css</code> and <code>at_xpath</code> instead of having to access the
@@ -221,7 +246,7 @@ first element of a NodeSet.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Namespaces</h2>
+<h2><span id='namespaces'> Namespaces </span></h2>
 
 <p>Just like our Ruby code, XML can suffer from name collisions.  For example,
 an autoparts dealer can sell tires and so can a bike dealer.  Both of them
@@ -371,7 +396,7 @@ namespace name.  That means your CSS will reduce to:</p>
 to check out <a href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/">this blog post</a> or send an email to the <a href="http://groups.google.com/group/nokogiri-talk">mailing list</a>, and
 we can help out.</p>
 
-<h2>But I&rsquo;m Lazy and Don&rsquo;t Want to Deal With Namespaces!</h2>
+<h2><span id='but_i_m_lazy_and_don_t_want_to_deal_with_namespaces_'> But I&rsquo;m Lazy and Don&rsquo;t Want to Deal With Namespaces! </span></h2>
 
 <p>Lazy == Efficient, so no judgements. :)</p>
 
@@ -382,7 +407,7 @@ remove all namespaces. Of course, if the document had nodes with the
 same names but different namespaces, they will now be ambiguous. But
 you&rsquo;re lazy! You don&rsquo;t care!</p>
 
-<h2>Slop<sup>1</sup></h2>
+<h2><span id='slop_sup_1__sup_'> Slop<sup>1</sup> </span></h2>
 
 <p>Maybe you want a more interactive (read: sloppy) way to access nodes
 and attributes. If you like what <a href="http://xml-simple.rubyforge.org/">XmlSimple</a> does, then you&rsquo;ll
@@ -454,6 +479,20 @@ prejudice, by using <code>#method_missing</code> to introspect on a node&rsquo;s
 </ol>
 
 
+
+  <div class='clearfix'>
+    
+    <div class='pull-left'>
+      <a href=/tutorials/parsing_an_html_xml_document.html>← Parsing an HTML/XML document</a>
+    </div>
+    
+
+    
+    <div class='pull-right'>
+      <a href=/tutorials/modifying_an_html_xml_document.html>Modifying an HTML/XML document →</a>
+    </div>
+    
+  </div>
 
 </article>
 

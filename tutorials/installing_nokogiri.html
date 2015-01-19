@@ -65,16 +65,39 @@
 
           <article class="page">
 
+  <div class='clearfix'>
+    
+
+    
+    <div class='pull-right'>
+      <a href=/tutorials/parsing_an_html_xml_document.html>Parsing an HTML/XML document →</a>
+    </div>
+    
+  </div>
+
   
   <header>
     <h1 class="title indent">
       Installing Nokogiri
     </h1>
   </header>
-  <hr class="divider">
   
 
-  <h1>Installing Nokogiri</h1>
+  <ol>
+<li><a href="#ubuntu___debian">Ubuntu / Debian</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#red_hat___centos">Red Hat / CentOS</a></li>
+<li><a href="#mac_os_x">Mac OS X</a></li>
+<li><a href="#using_your_system_libraries">Using Your System Libraries</a></li>
+<li><a href="#using_nonstandard_libxml2___libxslt_installations">Using Nonstandard libxml2 / libxslt installations</a></li>
+<li><a href="#other">Other</a></li>
+</ol>
+
+
+<hr class='divider'>
+
+
+<h1>Installing Nokogiri</h1>
 
 <p>Because Nokogiri needs to be <a href="http://en.wikipedia.org/wiki/Compiler">compiled</a> and <a href="http://en.wikipedia.org/wiki/Dynamic_linker">dynamically linked</a>
 against both <a href="http://xmlsoft.org/index.html">libxml2</a> and <a href="http://xmlsoft.org/xslt/">libxslt</a>, it has gained a
@@ -89,7 +112,7 @@ may want to take a look at the git history for <a href="https://github.com/spark
 
 <p>Let&rsquo;s tackle each platform and scenario in ascending order of difficulty &hellip;</p>
 
-<h2>Ubuntu / Debian</h2>
+<h2><span id='ubuntu___debian'> Ubuntu / Debian </span></h2>
 
 <p>Installation should Just Work™ on Ubuntu and Debian using Nokogiri&rsquo;s
 vendored <code>libxml2</code> and <code>libxslt</code>:</p>
@@ -102,7 +125,7 @@ vendored <code>libxml2</code> and <code>libxslt</code>:</p>
 <p>Please report it as a bug if this doesn&rsquo;t work for you (see
 <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
 
-<h2>Windows</h2>
+<h2><span id='windows'> Windows </span></h2>
 
 <p>Luckily for you, building on Windows is so difficult that we&rsquo;ve done
 it for you: Nokogiri comes bundled with all the DLLs you need to be
@@ -181,7 +204,7 @@ supported, we&rsquo;d love to talk about it.</p>
 <a href="https://github.com/sparklemotion/nokogiri/issues/1190">Github Issue</a> to discuss this topic, please
 join in!</p>
 
-<h2>Red Hat / CentOS</h2>
+<h2><span id='red_hat___centos'> Red Hat / CentOS </span></h2>
 
 <p>The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
 <a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> repository which contains a prebuilt nokogiri package. To use it,
@@ -212,7 +235,7 @@ developer tools that you&rsquo;ll need to compile the C extension,
 <p>Please report it as a bug if this doesn&rsquo;t work for you (see
 <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
 
-<h2>Mac OS X</h2>
+<h2><span id='mac_os_x'> Mac OS X </span></h2>
 
 <p>Most developers are using homebrew to manage their packages these
 days. If you are, you&rsquo;re in luck.</p>
@@ -294,7 +317,7 @@ libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_noko
 <p>If you have any other issues, please file an issue (preferably a new
 one, read <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details) and pull in @zenspider.</p>
 
-<h2>Using Your System Libraries</h2>
+<h2><span id='using_your_system_libraries'> Using Your System Libraries </span></h2>
 
 <p>If, instead of Nokogiri&rsquo;s vendored libraries, you&rsquo;d like to use your
 system&rsquo;s <code>libxml2</code>, <code>libxslt</code> and related libraries, please first
@@ -323,7 +346,7 @@ directories):</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Using Nonstandard libxml2 / libxslt installations</h2>
+<h2><span id='using_nonstandard_libxml2___libxslt_installations'> Using Nonstandard libxml2 / libxslt installations </span></h2>
 
 <p>If you&rsquo;ve got libxml2 and/or libxslt installed in a nonstandard place
 (read as &ldquo;not /opt/local, /usr/local, /usr or the standard Ruby
@@ -398,12 +421,22 @@ well. In that case, you can add the options:</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Other</h2>
+<h2><span id='other'> Other </span></h2>
 
 <p>Don&rsquo;t see your platform here? We&rsquo;d love to add to this
 document. Please feel free to send pull requests to
 <a href="https://github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.</p>
 
+
+  <div class='clearfix'>
+    
+
+    
+    <div class='pull-right'>
+      <a href=/tutorials/parsing_an_html_xml_document.html>Parsing an HTML/XML document →</a>
+    </div>
+    
+  </div>
 
 </article>
 
