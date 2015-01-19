@@ -4,6 +4,20 @@ layout: default
 
 <article class="page">
 
+  <div class='clearfix'>
+    {% if page.prev %}
+    <div class='pull-left'>
+      <a href={{page.prev.url}}>← {{page.prev.title}}</a>
+    </div>
+    {% endif %}
+
+    {% if page.next %}
+    <div class='pull-right'>
+      <a href={{page.next.url}}>{{page.next.title}} →</a>
+    </div>
+    {% endif %}
+  </div>
+
   {% if page.title and page.show_title != false %}
   <header>
     <h1 class="title indent">
@@ -13,5 +27,19 @@ layout: default
   {% endif %}
 
   {{ content }}
+
+  <div class='clearfix'>
+    {% if page.prev %}
+    <div class='pull-left'>
+      <a href={{page.prev.url}}>← {{page.prev.title}}</a>
+    </div>
+    {% endif %}
+
+    {% if page.next %}
+    <div class='pull-right'>
+      <a href={{page.next.url}}>{{page.next.title}} →</a>
+    </div>
+    {% endif %}
+  </div>
 
 </article>
