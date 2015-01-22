@@ -29,6 +29,23 @@ vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
+### Troubleshooting Ubuntu / Debian Installation
+
+It's possible that you don't have the zlib development header files
+installed on your system.
+
+This has never happened to me personally, but I have it on good
+authority that otherwise good and noble Ruby developers run into this.
+
+Here's what you should do if you should find yourself in this situation:
+
+```sh
+sudo apt-get install zlib1g-dev
+```
+
+I have no idea what the "1g" is for, but the Debian folks must have a
+good reason for it. Right? Right.
+
 Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
 
@@ -91,6 +108,9 @@ to Rubygems 2.4.5 or later and everything should work.
 
   [windows-platform-thread]: https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J
 
+Please report it as a bug if this doesn't work for you (see
+[Getting Help][] for details).
+
 
 ### Compiling natively on Windows
 
@@ -126,12 +146,20 @@ Nokogiri's vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
+### Troubleshooting Red Hat / CentOS Installation
+
 If you have issues, make sure you have some of the basic Ruby
 developer tools that you'll need to compile the C extension,
 `libxml2`, and `libxslt`:
 
+It's also possible that you don't have the zlib development header files
+installed on your system.
+
+This has never happened to me personally, but I have it on good
+authority that otherwise good and noble Ruby developers run into this.
+
 ```sh
-sudo yum install -y gcc ruby-devel
+sudo yum install -y gcc ruby-devel zlib-devel
 ```
 
 Please report it as a bug if this doesn't work for you (see
@@ -143,6 +171,7 @@ Please report it as a bug if this doesn't work for you (see
 Most developers are using homebrew to manage their packages these
 days. If you are, you're in luck.
 
+
 ### homebrew 0.9.5+
 
 Installation should Just Work™ using Nokogiri's vendored `libxml2` and
@@ -153,6 +182,7 @@ gem install nokogiri
 ```
 
 However, you may need to jump through some hoops around `libiconv` ... (see next section)
+
 
 ### Troubleshooting OSX Installation
 
@@ -209,8 +239,8 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 * Binary gems and ruby really should be compiled with the same compiler/environment.
 * If you have multiple versions of xcode installed, make sure you use the right xcode-select.
 
-If you have any other issues, please file an issue (preferably a new
-one, read [Getting Help][] for details) and pull in @zenspider.
+If you have any other issues, please report it as a bug (preferably a
+new one, read [Getting Help][] for details) and pull in @zenspider.
 
   [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
