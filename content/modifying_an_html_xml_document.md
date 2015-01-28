@@ -10,7 +10,8 @@ Let's change the header's text contents:
 
 ~~~ ruby assets/modify-change-content.rb
 
-Pow!
+You'll notice that, when you use `#content=`, entities are properly
+escaped. Pow!
 
 ## Moving nodes
 
