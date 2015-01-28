@@ -133,18 +133,19 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">h1</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
-</span><span class='line'><span class="n">h1</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;Snap, Crackle and Pop&quot;</span>
+</span><span class='line'><span class="n">h1</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;Snap, Crackle &amp; Pop&quot;</span>
 </span><span class='line'>
 </span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
 </span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
-</span><span class='line'><span class="c1">#   &lt;h1&gt;Snap, Crackle and Pop&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;h1&gt;Snap, Crackle &amp;amp; Pop&lt;/h1&gt;</span>
 </span><span class='line'><span class="c1">#   &lt;div&gt;A love triangle.&lt;/div&gt;</span>
 </span><span class='line'><span class="c1"># </span>
 </span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Pow!</p>
+<p>You&rsquo;ll notice that, when you use <code>#content=</code>, entities are properly
+escaped. Pow!</p>
 
 <h2><span id='moving_nodes'> Moving nodes </span></h2>
 
