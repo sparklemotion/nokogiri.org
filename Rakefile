@@ -1,34 +1,24 @@
 require 'rubygems'
 gem 'rcodetools'
 
-def rawmd_directory
-  "content"
-end
+RAWMD_DIRECTORY = "content"
+COOKEDMD_DIRECTORY = "markdown"
 
-def cookedmd_directory
-  "markdown"
-end
-
-def toc
-  File.read("#{rawmd_directory}/toc").split("\n")
+def book_toc_titles
+  File.read(File.join(RAWMD_DIRECTORY, "toc")).split("\n")
 end
 
 def rawmd_file_list
-  files = toc
-  files.collect! {|file| file.downcase.downcase.gsub(/[\W ]/,"_") }
-  files.collect! {|file| File.join(rawmd_directory, "#{file}.md")}
-  files = files.select do |file|
-    if File.exists? file
-      true
-    else
-      STDERR.puts "WARNING: file #{file} does not exist!"
-      false
+  book_toc_titles.
+    collect {|file| file.downcase.downcase.gsub(/[\W ]/,"_") }.
+    collect {|file| File.join(RAWMD_DIRECTORY, "#{file}.md")}.
+    tap do |files|
+      files.each {|file| raise "#{file} does not exist" unless File.exists?(file) }
     end
-  end
 end
 
 def cookedmd_file_list
-  rawmd_file_list.collect { |file| File.join(cookedmd_directory, File.basename(file)) }
+  rawmd_file_list.collect {|file| File.join(COOKEDMD_DIRECTORY, File.basename(file)) }
 end
 
 def run(cmd)
@@ -50,7 +40,7 @@ def sub_do(tag, content, &block)
     output = []
     output << "``` #{codetype(assets.first)}\n" # assume all are the same type
     assets.each do |asset|
-      asset_name = "content/#{asset}"
+      asset_name = File.join("content", asset)
       raise "Could not find asset #{asset_name}" unless File.exists?(asset_name)
       puts "  #{tag} file: #{asset_name}"
 
@@ -79,7 +69,7 @@ def sub_inline_ruby!(content)
   end
 end
 
-def make_toc(content)
+def chapter_toc(content)
   header_re = /^(##) /
   toc = []
   content = content.split("\n").map do |line|
@@ -110,7 +100,7 @@ def slurp_file(rawmd_file)
   content = File.read(rawmd_file)
   sub_inline_docs! content
   sub_inline_ruby! content
-  content = make_toc(content)
+  content = chapter_toc(content)
   content
 end
 
@@ -118,17 +108,17 @@ task :default => :markdown
 
 desc "Remove all generated files"
 task :clean do
-  FileUtils.rm_rf cookedmd_directory, :verbose => true
+  FileUtils.rm_rf COOKEDMD_DIRECTORY, :verbose => true
 end
 
 desc "Build cooked markdown version of the book"
 task :markdown do
   STDOUT.sync = true
-  FileUtils.mkdir_p cookedmd_directory
+  FileUtils.mkdir_p COOKEDMD_DIRECTORY
   output_filenames = []
 
   rawmd_file_list.each do |markdown_filename|
-    output_filename = File.join(cookedmd_directory, File.basename(markdown_filename))
+    output_filename = File.join(COOKEDMD_DIRECTORY, File.basename(markdown_filename))
     output_filenames << output_filename
     if FileUtils.uptodate?(output_filename, Array(markdown_filename))
       puts "(#{output_filename} is up to date with #{markdown_filename})"
@@ -146,7 +136,7 @@ task :markdown do
     end
   end
 
-  all_tutorials = "#{cookedmd_directory}/all_tutorials.md"
+  all_tutorials = File.join(COOKEDMD_DIRECTORY, "all_tutorials.md")
   system "> #{all_tutorials}"
   output_filenames.each do |fn|
     system "cat #{fn} >> #{all_tutorials}"
@@ -157,5 +147,5 @@ end
 desc "Describe the markdown tutorials in YAML"
 task :describe do
   require 'yaml'
-  puts toc.zip(cookedmd_file_list).to_h.to_yaml
+  puts book_toc_titles.zip(cookedmd_file_list).to_h.to_yaml
 end
