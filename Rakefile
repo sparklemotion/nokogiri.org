@@ -4,6 +4,9 @@ gem 'rcodetools'
 RAWMD_DIRECTORY = "content"
 COOKEDMD_DIRECTORY = "markdown"
 
+#
+#  utility functions. yes, this is a hot mess.
+#
 def book_toc_titles
   File.read(File.join(RAWMD_DIRECTORY, "toc")).split("\n")
 end
@@ -21,6 +24,10 @@ def cookedmd_file_list
   rawmd_file_list.collect {|file| File.join(COOKEDMD_DIRECTORY, File.basename(file)) }
 end
 
+def file_hash
+  rawmd_file_list.zip(cookedmd_file_list).to_h
+end
+
 def run(cmd)
   puts "=> #{cmd}"
   system(cmd) || raise("command failed: #{cmd}")
@@ -32,6 +39,15 @@ def codetype asset_name
   when "rb" then "ruby"
   else ""
   end
+end
+
+def rawmd_dependencies content
+  regex = /^~~~ \w+ (.*)/
+  deps = []
+  content.split("\n").grep(regex).each do |line|
+    deps += line.match(regex)[1].split
+  end
+  deps.collect { |dep| File.join(RAWMD_DIRECTORY, dep) }
 end
 
 def sub_do(tag, content, &block)
@@ -104,7 +120,29 @@ def slurp_file(rawmd_file)
   content
 end
 
-task :default => :markdown
+
+#
+#  rake tasks
+#
+file_hash.each do |rawmd_filename, cookedmd_filename|
+  deps = rawmd_dependencies(File.read(rawmd_filename))
+  deps << rawmd_filename
+  deps.each { |dep| file dep }
+
+  file cookedmd_filename => deps do
+    FileUtils.mkdir_p COOKEDMD_DIRECTORY
+    begin
+      puts "writing to #{cookedmd_filename} from #{rawmd_filename} ..."
+      FileUtils.rm_f cookedmd_filename
+      File.open(cookedmd_filename, "w") do |f|
+        f.write slurp_file(rawmd_filename)
+      end
+    rescue Exception => e
+      FileUtils.rm_rf cookedmd_filename
+      raise e
+    end
+  end
+end
 
 desc "Remove all generated files"
 task :clean do
@@ -112,40 +150,12 @@ task :clean do
 end
 
 desc "Build cooked markdown version of the book"
-task :markdown do
-  STDOUT.sync = true
-  FileUtils.mkdir_p COOKEDMD_DIRECTORY
-  output_filenames = []
-
-  rawmd_file_list.each do |markdown_filename|
-    output_filename = File.join(COOKEDMD_DIRECTORY, File.basename(markdown_filename))
-    output_filenames << output_filename
-    if FileUtils.uptodate?(output_filename, Array(markdown_filename))
-      puts "(#{output_filename} is up to date with #{markdown_filename})"
-    else
-      begin
-        puts "writing to #{output_filename} from #{markdown_filename} ..."
-        FileUtils.rm_f output_filename
-        File.open(output_filename, "w") do |f|
-          f.write slurp_file(markdown_filename)
-        end
-      rescue Exception => e
-        FileUtils.rm output_filename
-        raise e
-      end
-    end
-  end
-
-  all_tutorials = File.join(COOKEDMD_DIRECTORY, "all_tutorials.md")
-  system "> #{all_tutorials}"
-  output_filenames.each do |fn|
-    system "cat #{fn} >> #{all_tutorials}"
-  end
-  puts "complete doc is #{all_tutorials}"
-end
+task :markdown => cookedmd_file_list
 
 desc "Describe the markdown tutorials in YAML"
 task :describe do
   require 'yaml'
   puts book_toc_titles.zip(cookedmd_file_list).to_h.to_yaml
 end
+
+task :default => :markdown
