@@ -186,7 +186,7 @@ However, you may need to jump through some hoops around `libiconv` ... (see next
 
 ### Troubleshooting OSX Installation
 
-#### "I'm on a virginal Yosemite installation."
+#### "I'm on a fresh Yosemite installation."
 
 Team Nokogiri has reproduced an issue with brand-spanking-new Yosemite
 installations, which can be corrected by running:
