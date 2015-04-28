@@ -1,85 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  
-  
   <url>
     <loc>http://nokogiri.org/tutorials/ensuring_well_formed_markup.html</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>http://nokogiri.org/tutorials/getting_help.html</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
-  <url>
-    <loc>http://nokogiri.org/blog/</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
   <url>
     <loc>http://nokogiri.org/blog/archives/</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
   <url>
-    <loc>http://nokogiri.org/</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>http://nokogiri.org/blog/</loc>
   </url>
-  
   <url>
     <loc>http://nokogiri.org/tutorials/</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
+  <url>
+    <loc>http://nokogiri.org/</loc>
+  </url>
   <url>
     <loc>http://nokogiri.org/tutorials/installing_nokogiri.html</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>http://nokogiri.org/tutorials/modifying_an_html_xml_document.html</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>http://nokogiri.org/tutorials/more_resources.html</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>http://nokogiri.org/tutorials/parsing_an_html_xml_document.html</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>http://nokogiri.org/tutorials/searching_a_xml_html_document.html</loc>
-    <lastmod>2015-01-28T09:35:04-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-  
-  
-  
 </urlset>
