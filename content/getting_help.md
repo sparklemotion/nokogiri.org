@@ -13,7 +13,12 @@ What do you do?
 The best thing to do if you've got a question, or are unsure how to
 diagnose a possible issue, want to complain or just ask for advice on
 how to solve a problem, is to email the [nokogiri-talk][nt]
-list.
+list. If you don't want to use Google's web interface, subscribe to the
+list by sending an empty email to this address.
+
+```
+nokogiri-talk+subscribe@googlegroups.com
+```
 
 The [nokogiri-talk][nt] list has hundreds of subscribers who are all using
 nokogiri and who are happy to lend a hand, offer advice, and bail you
