@@ -87,11 +87,16 @@ end
 
 def chapter_toc(content)
   header_re = /^(##) /
+  markdown_link_re = /\[(.*)\](\[.*\]|\(.*\))/
   toc = []
   content = content.split("\n").map do |line|
     if line =~ header_re
       title = line.gsub(header_re, '')
       header = $1
+
+      if title =~ markdown_link_re
+        title = title.gsub(markdown_link_re, '\1')
+      end
 
       # extract id and store it into toc
       id = title.downcase.gsub(/\W/, '_')
