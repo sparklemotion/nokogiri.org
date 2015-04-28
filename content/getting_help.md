@@ -15,15 +15,6 @@ diagnose a possible issue, want to complain or just ask for advice on
 how to solve a problem, is to email the [nokogiri-talk][nt]
 list.
 
-You should also probably **subscribe** to the list. You can either use
-the [web interface][nt]; or if you're like RMS and hate to use
-javascripty things like Google's web interface, you can subscribe to
-the list by sending an empty email to this address:
-
-```
-nokogiri-talk+subscribe@googlegroups.com
-```
-
 The [nokogiri-talk][nt] list has hundreds of subscribers who are all using
 nokogiri and who are happy to lend a hand, offer advice, and bail you
 out of tricky situations.
@@ -31,6 +22,12 @@ out of tricky situations.
 In addition, other people may have the same issue or complaint, and so
 preserving the question and responses in the mailing list archive is a
 gift to future Nokogiri users __just like you__!
+
+You should also probably **subscribe** to the list. You can either use
+the [web interface][nt]; or if you're like RMS and hate to use
+javascripty things like Google's web interface, you can subscribe to
+the list by sending an empty email to `nokogiri-talk+subscribe@googlegroups.com`
+
 
 ### But I want to report a bug!
 
