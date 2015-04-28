@@ -335,6 +335,7 @@ desc "deploy public directory to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
+  raise "Please run `rake setup_github_pages`" unless File.exists?(deploy_dir)
   cd "#{deploy_dir}" do 
     Bundler.with_clean_env { system "git pull" }
   end
