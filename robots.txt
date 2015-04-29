@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://www.nokogiri.org/nokogiri/sitemap.xml 
+Sitemap: http://nokogiri.org/sitemap.xml 
