@@ -232,6 +232,19 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 (Many thanks to @allaire and others for helping verify this!)
 
 
+### "But xcode-select is telling me about a 'network problem'."
+
+If, when you run the above commands, you see this dialog:
+
+![xcode-select-network-problem](../images/xcode-select-network-problem.png)
+
+Then run this command to turn off forced-authentication with Apple Software Update:
+
+```sh
+sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
+```
+
+
 ### Other OS X tips
 
 * Make sure ruby is compiled with the latest clang compiler.
