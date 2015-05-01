@@ -5,6 +5,8 @@ require "stringex"
 tut_dest     = File.expand_path "source/tutorials"
 tut_repo     = File.expand_path "tutorials"
 tut_web_path = "tutorials"
+asset_dest = File.expand_path "source/assets"
+asset_src  = File.expand_path "tutorials/assets"
 
 namespace :tutorials do
   desc "Sync the tutorials content into the site content."
@@ -70,6 +72,9 @@ namespace :tutorials do
         index.puts "1. [#{chapter["title"]}](#{chapter["web_file"]})"
       end
     end
+
+    FileUtils.rm_rf asset_dest,            :verbose => true
+    FileUtils.cp_r  asset_src, asset_dest, :verbose => true
   end
 
   desc "recursively clean the tutorials submodule"
