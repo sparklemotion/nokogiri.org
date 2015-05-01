@@ -236,7 +236,7 @@ This is verified working on OSX 10.9 w/ xcode's clang compiler.
 
 If, when you run the above commands, you see this dialog:
 
-![xcode-select-network-problem](../images/xcode-select-network-problem.png)
+![xcode-select-network-problem](../assets/xcode-select-network-problem.png)
 
 Then run this command to turn off forced-authentication with Apple Software Update:
 
