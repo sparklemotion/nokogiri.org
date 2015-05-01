@@ -333,6 +333,19 @@ libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_noko
 
 <p>(Many thanks to @allaire and others for helping verify this!)</p>
 
+<h3>&ldquo;But xcode-select is telling me about a &lsquo;network problem&rsquo;.&rdquo;</h3>
+
+<p>If, when you run the above commands, you see this dialog:</p>
+
+<p><img src="../assets/xcode-select-network-problem.png" alt="xcode-select-network-problem" /></p>
+
+<p>Then run this command to turn off forced-authentication with Apple Software Update:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Other OS X tips</h3>
 
 <ul>
