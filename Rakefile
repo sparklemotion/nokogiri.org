@@ -84,7 +84,7 @@ namespace :tutorials do
         system "rake clean"
       end
     end
-    FileUtils.rm_rf "source/tutorials", :verbose => true
+    FileUtils.rm_rf tut_dest, :verbose => true
   end
 end
 
