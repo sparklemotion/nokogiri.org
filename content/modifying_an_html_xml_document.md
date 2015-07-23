@@ -27,9 +27,17 @@ But you could also arrange it next to other nodes:
 
 ~~~ ruby assets/modify-nodes-and-attrs.rb
 
+
 ## Creating new nodes
 
+Often the easiest thing to do is pass markup to one of the `Node` methods to create siblings:
+
+~~~ ruby assets/modify-creating-new-nodes-with-tags.rb
+
+or you can manually create a node object, if you're a detail-oriented person:
+
 ~~~ ruby assets/modify-creating-new-nodes.rb
+
 
 ## Wrapping a NodeSet
 
