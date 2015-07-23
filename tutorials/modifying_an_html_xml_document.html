@@ -224,6 +224,31 @@ escaped. Pow!</p>
 
 <h2><span id='creating_new_nodes'> Creating new nodes </span></h2>
 
+<p>Often the easiest thing to do is pass markup to one of the <code>Node</code> methods to create siblings:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">h1</span><span class="o">.</span><span class="n">add_next_sibling</span> <span class="s2">&quot;&lt;h3&gt;1977 - 1984&lt;/h3&gt;&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
+</span><span class='line'><span class="c1"># =&gt; &quot;&lt;body&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;h1&gt;Three&#39;s Company&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1"># &lt;h3&gt;1977 - 1984&lt;/h3&gt;</span>
+</span><span class='line'><span class="c1">#   &lt;div&gt;A love triangle.&lt;/div&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># &lt;/body&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or you can manually create a node object, if you&rsquo;re a detail-oriented person:</p>
+
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
