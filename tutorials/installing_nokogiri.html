@@ -124,7 +124,7 @@ vendored <code>libxml2</code> and <code>libxslt</code>:</p>
 
 <h3>Troubleshooting Ubuntu / Debian Installation</h3>
 
-<p>It&rsquo;s possible that you don&rsquo;t have the zlib development header files
+<p>It&rsquo;s possible that you don&rsquo;t have important development header files
 installed on your system.</p>
 
 <p>This has never happened to me personally, but I have it on good
@@ -133,12 +133,9 @@ authority that otherwise good and noble Ruby developers run into this.</p>
 <p>Here&rsquo;s what you should do if you should find yourself in this situation:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install zlib1g-dev
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install ruby-dev zlib1g-dev
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>I have no idea what the &ldquo;1g&rdquo; is for, but the Debian folks must have a
-good reason for it. Right? Right.</p>
 
 <p>Please report it as a bug if this doesn&rsquo;t work for you (see
 <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
