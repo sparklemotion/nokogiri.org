@@ -31,7 +31,7 @@ gem install nokogiri
 
 ### Troubleshooting Ubuntu / Debian Installation
 
-It's possible that you don't have the zlib development header files
+It's possible that you don't have important development header files
 installed on your system.
 
 This has never happened to me personally, but I have it on good
@@ -40,11 +40,8 @@ authority that otherwise good and noble Ruby developers run into this.
 Here's what you should do if you should find yourself in this situation:
 
 ```sh
-sudo apt-get install zlib1g-dev
+sudo apt-get install ruby-dev zlib1g-dev
 ```
-
-I have no idea what the "1g" is for, but the Debian folks must have a
-good reason for it. Right? Right.
 
 Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
