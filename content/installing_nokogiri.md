@@ -281,6 +281,23 @@ bundle config build.nokogiri --use-system-libraries
 bundle install
 ```
 
+### Using Your System Libraries before Nokogiri 1.6.2
+
+Nokogiri supported the CLI argument `--use-system-libraries` starting
+with 1.6.2.  If you are trying to use system libraries with an earlier
+version of Nokogiri, use the `NOKOGIRI_USE_SYSTEM_LIBRARIES` environment
+variable instead:
+
+```sh
+NOKOGIRI_USE_SYSTEM_LIBRARIES=1 gem install nokogiri
+```
+
+Or, if you're using Bundler:
+
+```sh
+export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+bundle install
+```
 
 ## Using Nonstandard libxml2 / libxslt installations
 
