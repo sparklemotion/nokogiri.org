@@ -281,7 +281,8 @@ bundle config build.nokogiri --use-system-libraries
 bundle install
 ```
 
-### Using Your System Libraries before Nokogiri 1.6.2
+
+### Using Your System Libraries with Nokogiri < 1.6.2, >= 1.6.0
 
 Nokogiri supported the CLI argument `--use-system-libraries` starting
 with 1.6.2.  If you are trying to use system libraries with an earlier
@@ -298,6 +299,7 @@ Or, if you're using Bundler:
 export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 bundle install
 ```
+
 
 ## Using Nonstandard libxml2 / libxslt installations
 
