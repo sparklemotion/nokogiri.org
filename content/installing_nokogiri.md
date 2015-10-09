@@ -275,6 +275,42 @@ new one, read [Getting Help][] for details) and pull in @zenspider.
 
   [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
 
+## FreeBSD
+
+FreeBSD needs libxml2, libxslt, and iconv locations specified.
+They are installed to /usr/local/lib
+
+```sh
+gem install nokogiri -- \
+    --use-system-libraries \
+    --with-xml2-lib=/usr/local/lib \
+    --with-xml2-include=/usr/local/include/libxml2/libxml \
+    --with-xslt-lib=/usr/local/lib \
+    --with-xslt-include=/usr/local/include/libxslt \
+    --with-iconv-lib=/usr/local/lib \
+    --with-iconv-include=/usr/local/include
+```
+
+### Bundler on FreeBSD
+
+If you install nokogiri through bundler on FreeBSD, you need to
+configure the above options through bundler.
+
+```sh
+bundle config build.nokogiri \
+       --use-system-libraries \
+       --with-xml2-lib=/usr/local/lib \
+       --with-xml2-include=/usr/local/include/libxml2/libxml \
+       --with-xslt-lib=/usr/local/lib \
+       --with-xslt-include=/usr/local/include/libxslt \
+       --with-iconv-lib=/usr/local/lib \
+       --with-iconv-include=/usr/local/include
+```
+
+Bundler has a bug (bundler/bundler#3053) that causes the options
+to be sent improperly, resulting in a `Syntax error: Unterminated quoted string` error.
+The workaround is to edit your `.bundle/config` file,
+remove the quotes around the options, and place all the options on a single line.
 
 ## Using Your System Libraries
 
