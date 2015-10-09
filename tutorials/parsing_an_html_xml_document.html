@@ -122,11 +122,7 @@ chapters.</p>
 <p>Note that you don&rsquo;t need to read the file into a string variable. Nokogiri will do this for you.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</span><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">close</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">doc</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
