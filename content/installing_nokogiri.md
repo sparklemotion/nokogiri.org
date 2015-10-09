@@ -47,6 +47,27 @@ Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
 
 
+### Troubleshooting RVM-based Installation
+
+Some versions of RVM will install a Ruby binary that requires
+libgmp. See https://github.com/rvm/rvm/issues/3509 for background.
+
+So, if your `mkmf.log` file says:
+
+```sh
+/usr/bin/ld: cannot find -lgmp
+```
+
+then try this:
+
+```sh
+sudo apt-get install libgmp-dev
+```
+
+Please report it as a bug if this doesn't work for you (see
+[Getting Help][] for details).
+
+
 ## Windows
 
 Luckily for you, building on Windows is so difficult that we've done
