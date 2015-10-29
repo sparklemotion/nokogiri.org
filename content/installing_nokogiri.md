@@ -29,6 +29,14 @@ vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
+This requires `patch` to be installed in order to work. It is very likely already
+installed as it is a common utility, but if you are using a VM or other
+system that doesn't have it installed, simply run:
+
+```sh
+sudo apt-get install patch
+```
+
 ### Troubleshooting Ubuntu / Debian Installation
 
 It's possible that you don't have important development header files
