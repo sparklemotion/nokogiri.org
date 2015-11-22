@@ -125,13 +125,19 @@ vendored <code>libxml2</code> and <code>libxslt</code>:</p>
 
 <h3>Troubleshooting Ubuntu / Debian Installation</h3>
 
+<p>If you have issues, first make sure you have all the tooling necessary
+to compile C extensions:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install build-essential patch
+</span></code></pre></td></tr></table></div></figure>
+
+
 <p>It&rsquo;s possible that you don&rsquo;t have important development header files
-installed on your system.</p>
-
-<p>This has never happened to me personally, but I have it on good
-authority that otherwise good and noble Ruby developers run into this.</p>
-
-<p>Here&rsquo;s what you should do if you should find yourself in this situation:</p>
+installed on your system. (This has never happened to me personally,
+but I have it on good authority that otherwise good and noble Ruby
+developers run into this.) Here&rsquo;s what you should do if you should
+find yourself in this situation:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install ruby-dev zlib1g-dev
