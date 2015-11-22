@@ -29,21 +29,20 @@ vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
-This requires `patch` to be installed in order to work. It is very likely already
-installed as it is a common utility, but if you are using a VM or other
-system that doesn't have it installed, simply run:
+### Troubleshooting Ubuntu / Debian Installation
+
+If you have issues, first make sure you have all the tooling necessary
+to compile C extensions:
 
 ```sh
-sudo apt-get install patch
+sudo apt-get install build-essential patch
 ```
-
-### Troubleshooting Ubuntu / Debian Installation
 
 It's possible that you don't have important development header files
 installed on your system.
 
-This has never happened to me personally, but I have it on good
-authority that otherwise good and noble Ruby developers run into this.
+(This has never happened to me personally, but I have it on good
+authority that otherwise good and noble Ruby developers run into this.)
 
 Here's what you should do if you should find yourself in this situation:
 
