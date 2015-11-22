@@ -39,12 +39,10 @@ sudo apt-get install build-essential patch
 ```
 
 It's possible that you don't have important development header files
-installed on your system.
-
-(This has never happened to me personally, but I have it on good
-authority that otherwise good and noble Ruby developers run into this.)
-
-Here's what you should do if you should find yourself in this situation:
+installed on your system. (This has never happened to me personally,
+but I have it on good authority that otherwise good and noble Ruby
+developers run into this.) Here's what you should do if you should
+find yourself in this situation:
 
 ```sh
 sudo apt-get install ruby-dev zlib1g-dev
