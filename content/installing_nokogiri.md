@@ -75,7 +75,7 @@ Please report it as a bug if this doesn't work for you (see
 
 ## Windows
 
-### Precompiled DLLs ("fat binary")
+### Option 1: Precompiled DLLs ("fat binary")
 
 Building on Windows is so difficult that we've done it for you:
 Nokogiri comes bundled with all the DLLs you need to be NOKOGIRIFIED!
@@ -99,7 +99,7 @@ gem install nokogiri
   [nokogiri-1.6.5-x86-mingw32.gem]: https://rubygems.org/downloads/nokogiri-1.6.5-x86-mingw32.gem
 
 
-### Native Windows compilation
+### Option 2: Native Windows compilation
 
 As of Nokogiri 1.6.7, building Nokogiri with DevKit is fully
 supported.
@@ -109,7 +109,7 @@ version of Nokogiri, you should not try to follow this process, and
 should instead install a gem with precompiled DLLs (see above).
 
 
-### Troubleshooting Navite Windows compilation
+### Troubleshooting Native Windows compilation
 
 If you see this error:
 
