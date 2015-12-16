@@ -75,9 +75,10 @@ Please report it as a bug if this doesn't work for you (see
 
 ## Windows
 
-Luckily for you, building on Windows is so difficult that we've done
-it for you: Nokogiri comes bundled with all the DLLs you need to be
-NOKOGIRIFIED!
+### Precompiled DLLs ("fat binary")
+
+Building on Windows is so difficult that we've done it for you:
+Nokogiri comes bundled with all the DLLs you need to be NOKOGIRIFIED!
 
 Specifically, we publish gems specific for the Windows "platform", as
 it's called by Rubygems. For example, [Nokogiri 1.6.5][] published:
@@ -98,7 +99,17 @@ gem install nokogiri
   [nokogiri-1.6.5-x86-mingw32.gem]: https://rubygems.org/downloads/nokogiri-1.6.5-x86-mingw32.gem
 
 
-### Troubleshooting Windows Installation
+### Native Windows compilation
+
+As of Nokogiri 1.6.7, building Nokogiri with DevKit is fully
+supported.
+
+If you don't know what DevKit is, or if you're using an earlier
+version of Nokogiri, you should not try to follow this process, and
+should instead install a gem with precompiled DLLs (see above).
+
+
+### Troubleshooting Navite Windows compilation
 
 If you see this error:
 
@@ -133,19 +144,6 @@ to Rubygems 2.4.5 or later and everything should work.
 
 Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
-
-
-### Compiling natively on Windows
-
-Please note that at this time, building Nokogiri with DevKit __may__
-work, but is unsupported. If you feel strongly that this should be
-supported, we'd love to talk about it.
-
-We've currently (as of 2015-01-18) got an open
-[Github Issue][windows-native-builds] to discuss this topic, please
-join in!
-
-  [windows-native-builds]: https://github.com/sparklemotion/nokogiri/issues/1190
 
 
 ## Red Hat / CentOS
