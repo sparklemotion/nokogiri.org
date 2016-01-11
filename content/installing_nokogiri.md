@@ -186,6 +186,20 @@ sudo yum install -y gcc ruby-devel zlib-devel
 Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
 
+## GNU Guix
+
+[GNU Guix](https://www.gnu.org/software/guix/) is a reproducible
+binary software package management and distribution system that works
+on *all* Linux distributions. Installing Nokogiri with
+
+```sh
+guix package -i ruby-nokogiri
+```
+
+will install Nokogiri with tool and libraries and all its dependencies
+(including a recent Ruby, libxml2 and libxslt). The source code for
+the package can be found [here](http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm). A short description of how Nokogiri was packaged can be found
+[here](https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org).
 
 ## Mac OS X
 
