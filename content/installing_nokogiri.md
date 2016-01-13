@@ -45,7 +45,7 @@ developers run into this.) Here's what you should do if you should
 find yourself in this situation:
 
 ```sh
-sudo apt-get install ruby-dev zlib1g-dev
+sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
 ```
 
 Please report it as a bug if this doesn't work for you (see
