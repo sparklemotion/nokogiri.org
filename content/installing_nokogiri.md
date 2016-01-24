@@ -4,21 +4,21 @@ Because Nokogiri needs to be [compiled][] and [dynamically linked][]
 against both [libxml2][] and [libxslt][], it has gained a
 reputation for being complicated to install.
 
-  [compiled]: http://en.wikipedia.org/wiki/Compiler
-  [dynamically linked]: http://en.wikipedia.org/wiki/Dynamic_linker
-  [libxml2]: http://xmlsoft.org/index.html
-  [libxslt]: http://xmlsoft.org/xslt/
-
 As of Nokogiri 1.6, `libxml2` and `libxslt` source code is bundled
-with Nokogiri, and compiled at gem-install-time. This document should
-work for all versions 1.6.4 and later.
+with Nokogiri, and compiled at gem-install-time. The instructions in
+this document should work for all versions 1.6.4 and later.
 
 (If you need support for installing earlier versions of Nokogiri, you
 may want to take a look at the git history for [this document][].)
 
+Let's tackle each platform and scenario in ascending order of difficulty ...
+
+  [compiled]: http://en.wikipedia.org/wiki/Compiler
+  [dynamically linked]: http://en.wikipedia.org/wiki/Dynamic_linker
+  [libxml2]: http://xmlsoft.org/index.html
+  [libxslt]: http://xmlsoft.org/xslt/
   [this document]: https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md
 
-Let's tackle each platform and scenario in ascending order of difficulty ...
 
 ## Ubuntu / Debian
 
@@ -73,12 +73,22 @@ Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
 
 
+## FreeBSD
+
+Installation should Just Work™ on FreeBSD using Nokogiri's
+vendored `libxml2` and `libxslt`:
+
+```sh
+gem install nokogiri
+```
+
 ## Windows
 
 ### Option 1: Precompiled DLLs ("fat binary")
 
-Building on Windows is so difficult that we've done it for you:
-Nokogiri comes bundled with all the DLLs you need to be NOKOGIRIFIED!
+Compiling on Windows requires the installation of special build tools,
+and so as an alternative we provide a pre-compiled Nokogiri gem that
+comes bundled with all the DLLs you need to be NOKOGIRIFIED!
 
 Specifically, we publish gems specific for the Windows "platform", as
 it's called by Rubygems. For example, [Nokogiri 1.6.5][] published:
@@ -101,12 +111,15 @@ gem install nokogiri
 
 ### Option 2: Native Windows compilation
 
-As of Nokogiri 1.6.7, building Nokogiri with DevKit is fully
+As of Nokogiri 1.6.7, [DevKit][] compilation of Nokogiri is fully
 supported.
 
 If you don't know what DevKit is, or if you're using an earlier
-version of Nokogiri, you should not try to follow this process, and
-should instead install a gem with precompiled DLLs (see above).
+version of Nokogiri than 1.6.7, you should not try to follow this
+process, and should instead install a gem with precompiled DLLs using
+__Option 1__ above.
+
+  [DevKit]: http://rubyinstaller.org/add-ons/devkit/
 
 
 ### Troubleshooting Native Windows compilation
@@ -137,13 +150,13 @@ need configuration options.
 
 then you may be runing a buggy version of Rubygems that's not
 downloading the appropriate gemfile for your platform (see
-[this thread][windows-platform-thread] for background). Please update
-to Rubygems 2.4.5 or later and everything should work.
-
-  [windows-platform-thread]: https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J
+[this thread][windows-platform-thread] for background). __Please update
+to Rubygems 2.4.5 or later for the fix__.
 
 Please report it as a bug if this doesn't work for you (see
 [Getting Help][] for details).
+
+  [windows-platform-thread]: https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J
 
 
 ## Red Hat / CentOS
@@ -156,10 +169,6 @@ install the appropriate [epel-release][] package for your OS, then run:
 sudo yum install -y rubygem-nokogiri
 ```
 
-  [EPEL]: http://fedoraproject.org/wiki/EPEL
-  [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
-
-
 However, installation of the regular gem should Just Work™ using
 Nokogiri's vendored `libxml2` and `libxslt`:
 
@@ -167,14 +176,18 @@ Nokogiri's vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
+  [EPEL]: http://fedoraproject.org/wiki/EPEL
+  [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
+
+
 ### Troubleshooting Red Hat / CentOS Installation
 
 If you have issues, make sure you have some of the basic Ruby
 developer tools that you'll need to compile the C extension,
 `libxml2`, and `libxslt`:
 
-It's also possible that you don't have the zlib development header files
-installed on your system.
+It's also possible that you don't have the zlib development header
+files installed on your system.
 
 This has never happened to me personally, but I have it on good
 authority that otherwise good and noble Ruby developers run into this.
@@ -202,7 +215,8 @@ Installation should Just Work™ using Nokogiri's vendored `libxml2` and
 gem install nokogiri
 ```
 
-However, you may need to jump through some hoops around `libiconv` ... (see next section)
+However, you may need to jump through some hoops around `libiconv`
+... (see next section)
 
 
 ### Troubleshooting OSX Installation
@@ -276,44 +290,6 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 If you have any other issues, please report it as a bug (preferably a
 new one, read [Getting Help][] for details) and pull in @zenspider.
 
-  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
-
-## FreeBSD
-
-FreeBSD needs libxml2, libxslt, and iconv locations specified.
-They are installed to /usr/local/lib
-
-```sh
-gem install nokogiri -- \
-    --use-system-libraries \
-    --with-xml2-lib=/usr/local/lib \
-    --with-xml2-include=/usr/local/include/libxml2/libxml \
-    --with-xslt-lib=/usr/local/lib \
-    --with-xslt-include=/usr/local/include/libxslt \
-    --with-iconv-lib=/usr/local/lib \
-    --with-iconv-include=/usr/local/include
-```
-
-### Bundler on FreeBSD
-
-If you install nokogiri through bundler on FreeBSD, you need to
-configure the above options through bundler.
-
-```sh
-bundle config build.nokogiri \
-       --use-system-libraries \
-       --with-xml2-lib=/usr/local/lib \
-       --with-xml2-include=/usr/local/include/libxml2/libxml \
-       --with-xslt-lib=/usr/local/lib \
-       --with-xslt-include=/usr/local/include/libxslt \
-       --with-iconv-lib=/usr/local/lib \
-       --with-iconv-include=/usr/local/include
-```
-
-Bundler has a bug (bundler/bundler#3053) that causes the options
-to be sent improperly, resulting in a `Syntax error: Unterminated quoted string` error.
-The workaround is to edit your `.bundle/config` file,
-remove the quotes around the options, and place all the options on a single line.
 
 ## Using Your System Libraries
 
@@ -325,10 +301,28 @@ even refuse to compile against some known-bad versions of `libxml2`.
 
 But, we want to give you the flexibility to choose this option.
 
-Here's how to ignore Nokogiri's vendored libraries and use your
-installed system libraries (assuming they're installed somewhere
-reasonable, like /opt/local, /usr/local, /usr or the standard Ruby
-directories):
+Here's how to use your installed system libraries instead of the
+vendored libraries:
+
+
+### Step 1: Make sure you have `pkg-config` installed
+
+Everything should Just Work™ if you have `pkg-config` installed.
+
+On Debian/Ubuntu:
+
+```
+sudo apt-get install pkg-config
+```
+
+On FreeBSD:
+
+```
+sudo pkg install pkgconf
+```
+
+
+### Step 2: Build Nokogiri
 
 ```sh
 gem install nokogiri -- --use-system-libraries
@@ -342,12 +336,12 @@ bundle install
 ```
 
 
-### Using Your System Libraries with Nokogiri < 1.6.2, >= 1.6.0
+### Using Your System Libraries with Nokogiri >= 1.6.0, < 1.6.2
 
-Nokogiri supported the CLI argument `--use-system-libraries` starting
-with 1.6.2.  If you are trying to use system libraries with an earlier
-version of Nokogiri, use the `NOKOGIRI_USE_SYSTEM_LIBRARIES` environment
-variable instead:
+Nokogiri did not support the CLI argument `--use-system-libraries`
+before v1.6.2. If you are trying to use system libraries with an
+earlier version of Nokogiri, use the `NOKOGIRI_USE_SYSTEM_LIBRARIES`
+environment variable instead:
 
 ```sh
 NOKOGIRI_USE_SYSTEM_LIBRARIES=1 gem install nokogiri
@@ -363,10 +357,13 @@ bundle install
 
 ## Using Nonstandard libxml2 / libxslt installations
 
-If you've got libxml2 and/or libxslt installed in a nonstandard place
-(read as "not /opt/local, /usr/local, /usr or the standard Ruby
-directories"), you can use command-line parameters to the `gem
-install` command to grease the wheels.
+If:
+
+* you've got libxml2 and/or libxslt installed in a nonstandard place,
+* and you don't have `pkg-config` installed
+
+you can use command-line parameters to the `gem install` command to
+specify build parameters.
 
 If you've got the proper `config` scripts:
 
@@ -415,6 +412,25 @@ gem install nokogiri -- \
     [--with-exslt-config=/path/to/exslt-config]
 ```
 
+### And how to tell Bundler to use custom parameters
+
+```
+bundle config build.nokogiri \
+       --use-system-libraries \
+       --with-xml2-lib=/usr/local/lib \
+       --with-xml2-include=/usr/local/include/libxml2/libxml \
+       --with-xslt-lib=/usr/local/lib \
+       --with-xslt-include=/usr/local/include/libxslt \
+       --with-iconv-lib=/usr/local/lib \
+       --with-iconv-include=/usr/local/include
+```
+
+Some versions of bundler have a bug (bundler/bundler#3053) that causes
+the options to be sent improperly, resulting in a `Syntax error:
+Unterminated quoted string` error.  The workaround is to edit your
+`.bundle/config` file, remove the quotes around the options, and place
+all the options on a single line.
+
 
 ## Other
 
@@ -423,3 +439,5 @@ document. Please feel free to send pull requests to
 [sparklemotion/nokogiri.org-tutorials][].
 
   [sparklemotion/nokogiri.org-tutorials]: https://github.com/sparklemotion/nokogiri.org-tutorials
+
+  [Getting Help]: http://www.nokogiri.org/tutorials/getting_help.html
