@@ -85,10 +85,10 @@
 
   <ol>
 <li><a href="#ubuntu___debian">Ubuntu / Debian</a></li>
+<li><a href="#freebsd">FreeBSD</a></li>
 <li><a href="#windows">Windows</a></li>
 <li><a href="#red_hat___centos">Red Hat / CentOS</a></li>
 <li><a href="#mac_os_x">Mac OS X</a></li>
-<li><a href="#freebsd">FreeBSD</a></li>
 <li><a href="#using_your_system_libraries">Using Your System Libraries</a></li>
 <li><a href="#using_nonstandard_libxml2___libxslt_installations">Using Nonstandard libxml2 / libxslt installations</a></li>
 <li><a href="#other">Other</a></li>
@@ -105,8 +105,8 @@ against both <a href="http://xmlsoft.org/index.html">libxml2</a> and <a href="ht
 reputation for being complicated to install.</p>
 
 <p>As of Nokogiri 1.6, <code>libxml2</code> and <code>libxslt</code> source code is bundled
-with Nokogiri, and compiled at gem-install-time. This document should
-work for all versions 1.6.4 and later.</p>
+with Nokogiri, and compiled at gem-install-time. The instructions in
+this document should work for all versions 1.6.4 and later.</p>
 
 <p>(If you need support for installing earlier versions of Nokogiri, you
 may want to take a look at the git history for <a href="https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md">this document</a>.)</p>
@@ -169,12 +169,23 @@ libgmp. See <a href="https://github.com/rvm/rvm/issues/3509">https://github.com/
 <p>Please report it as a bug if this doesn&rsquo;t work for you (see
 <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
 
+<h2><span id='freebsd'> FreeBSD </span></h2>
+
+<p>Installation should Just Work™ on FreeBSD using Nokogiri&rsquo;s
+vendored <code>libxml2</code> and <code>libxslt</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h2><span id='windows'> Windows </span></h2>
 
 <h3>Option 1: Precompiled DLLs (&ldquo;fat binary&rdquo;)</h3>
 
-<p>Building on Windows is so difficult that we&rsquo;ve done it for you:
-Nokogiri comes bundled with all the DLLs you need to be NOKOGIRIFIED!</p>
+<p>Compiling on Windows requires the installation of special build tools,
+and so as an alternative we provide a pre-compiled Nokogiri gem that
+comes bundled with all the DLLs you need to be NOKOGIRIFIED!</p>
 
 <p>Specifically, we publish gems specific for the Windows &ldquo;platform&rdquo;, as
 it&rsquo;s called by Rubygems. For example, <a href="https://rubygems.org/gems/nokogiri/versions/1.6.5">Nokogiri 1.6.5</a> published:</p>
@@ -196,12 +207,13 @@ it&rsquo;s called by Rubygems. For example, <a href="https://rubygems.org/gems/n
 
 <h3>Option 2: Native Windows compilation</h3>
 
-<p>As of Nokogiri 1.6.7, building Nokogiri with DevKit is fully
+<p>As of Nokogiri 1.6.7, <a href="http://rubyinstaller.org/add-ons/devkit/">DevKit</a> compilation of Nokogiri is fully
 supported.</p>
 
 <p>If you don&rsquo;t know what DevKit is, or if you&rsquo;re using an earlier
-version of Nokogiri, you should not try to follow this process, and
-should instead install a gem with precompiled DLLs (see above).</p>
+version of Nokogiri than 1.6.7, you should not try to follow this
+process, and should instead install a gem with precompiled DLLs using
+<strong>Option 1</strong> above.</p>
 
 <h3>Troubleshooting Native Windows compilation</h3>
 
@@ -245,8 +257,8 @@ should instead install a gem with precompiled DLLs (see above).</p>
 
 <p>then you may be runing a buggy version of Rubygems that&rsquo;s not
 downloading the appropriate gemfile for your platform (see
-<a href="https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J">this thread</a> for background). Please update
-to Rubygems 2.4.5 or later and everything should work.</p>
+<a href="https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J">this thread</a> for background). <strong>Please update
+to Rubygems 2.4.5 or later for the fix</strong>.</p>
 
 <p>Please report it as a bug if this doesn&rsquo;t work for you (see
 <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
@@ -276,8 +288,8 @@ Nokogiri&rsquo;s vendored <code>libxml2</code> and <code>libxslt</code>:</p>
 developer tools that you&rsquo;ll need to compile the C extension,
 <code>libxml2</code>, and <code>libxslt</code>:</p>
 
-<p>It&rsquo;s also possible that you don&rsquo;t have the zlib development header files
-installed on your system.</p>
+<p>It&rsquo;s also possible that you don&rsquo;t have the zlib development header
+files installed on your system.</p>
 
 <p>This has never happened to me personally, but I have it on good
 authority that otherwise good and noble Ruby developers run into this.</p>
@@ -305,7 +317,8 @@ days. If you are, you&rsquo;re in luck.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>However, you may need to jump through some hoops around <code>libiconv</code> &hellip; (see next section)</p>
+<p>However, you may need to jump through some hoops around <code>libiconv</code>
+&hellip; (see next section)</p>
 
 <h3>Troubleshooting OSX Installation</h3>
 
@@ -385,59 +398,6 @@ libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_noko
 <p>If you have any other issues, please report it as a bug (preferably a
 new one, read <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details) and pull in @zenspider.</p>
 
-<h2><span id='freebsd'> FreeBSD </span></h2>
-
-<p>FreeBSD needs libxml2, libxslt, and iconv locations specified.
-They are installed to /usr/local/lib</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
-</span><span class='line'>    --use-system-libraries <span class="se">\</span>
-</span><span class='line'>    --with-xml2-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>    --with-xml2-include<span class="o">=</span>/usr/local/include/libxml2/libxml <span class="se">\</span>
-</span><span class='line'>    --with-xslt-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>    --with-xslt-include<span class="o">=</span>/usr/local/include/libxslt <span class="se">\</span>
-</span><span class='line'>    --with-iconv-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>    --with-iconv-include<span class="o">=</span>/usr/local/include
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Bundler on FreeBSD</h3>
-
-<p>If you install nokogiri through bundler on FreeBSD, you need to
-configure the above options through bundler.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>bundle config build.nokogiri <span class="se">\</span>
-</span><span class='line'>       --use-system-libraries <span class="se">\</span>
-</span><span class='line'>       --with-xml2-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>       --with-xml2-include<span class="o">=</span>/usr/local/include/libxml2/libxml <span class="se">\</span>
-</span><span class='line'>       --with-xslt-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>       --with-xslt-include<span class="o">=</span>/usr/local/include/libxslt <span class="se">\</span>
-</span><span class='line'>       --with-iconv-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>       --with-iconv-include<span class="o">=</span>/usr/local/include
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Bundler has a bug (bundler/bundler#3053) that causes the options
-to be sent improperly, resulting in a <code>Syntax error: Unterminated quoted string</code> error.
-The workaround is to edit your <code>.bundle/config</code> file,
-remove the quotes around the options, and place all the options on a single line.</p>
-
 <h2><span id='using_your_system_libraries'> Using Your System Libraries </span></h2>
 
 <p>If, instead of Nokogiri&rsquo;s vendored libraries, you&rsquo;d like to use your
@@ -448,10 +408,28 @@ even refuse to compile against some known-bad versions of <code>libxml2</code>.<
 
 <p>But, we want to give you the flexibility to choose this option.</p>
 
-<p>Here&rsquo;s how to ignore Nokogiri&rsquo;s vendored libraries and use your
-installed system libraries (assuming they&rsquo;re installed somewhere
-reasonable, like /opt/local, /usr/local, /usr or the standard Ruby
-directories):</p>
+<p>Here&rsquo;s how to use your installed system libraries instead of the
+vendored libraries:</p>
+
+<h3>Step 1: Make sure you have <code>pkg-config</code> installed</h3>
+
+<p>Everything should Just Work™ if you have <code>pkg-config</code> installed.</p>
+
+<p>On Debian/Ubuntu:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install pkg-config
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>On FreeBSD:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pkg install pkgconf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step 2: Build Nokogiri</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- --use-system-libraries
@@ -467,12 +445,12 @@ directories):</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Using Your System Libraries with Nokogiri &lt; 1.6.2, >= 1.6.0</h3>
+<h3>Using Your System Libraries with Nokogiri >= 1.6.0, &lt; 1.6.2</h3>
 
-<p>Nokogiri supported the CLI argument <code>--use-system-libraries</code> starting
-with 1.6.2.  If you are trying to use system libraries with an earlier
-version of Nokogiri, use the <code>NOKOGIRI_USE_SYSTEM_LIBRARIES</code> environment
-variable instead:</p>
+<p>Nokogiri did not support the CLI argument <code>--use-system-libraries</code>
+before v1.6.2. If you are trying to use system libraries with an
+earlier version of Nokogiri, use the <code>NOKOGIRI_USE_SYSTEM_LIBRARIES</code>
+environment variable instead:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">NOKOGIRI_USE_SYSTEM_LIBRARIES</span><span class="o">=</span><span class="m">1</span> gem install nokogiri
@@ -490,10 +468,16 @@ variable instead:</p>
 
 <h2><span id='using_nonstandard_libxml2___libxslt_installations'> Using Nonstandard libxml2 / libxslt installations </span></h2>
 
-<p>If you&rsquo;ve got libxml2 and/or libxslt installed in a nonstandard place
-(read as &ldquo;not /opt/local, /usr/local, /usr or the standard Ruby
-directories&rdquo;), you can use command-line parameters to the <code>gem
-install</code> command to grease the wheels.</p>
+<p>If:</p>
+
+<ul>
+<li>you&rsquo;ve got libxml2 and/or libxslt installed in a nonstandard place,</li>
+<li>and you don&rsquo;t have <code>pkg-config</code> installed</li>
+</ul>
+
+
+<p>you can use command-line parameters to the <code>gem install</code> command to
+specify build parameters.</p>
 
 <p>If you&rsquo;ve got the proper <code>config</code> scripts:</p>
 
@@ -562,6 +546,33 @@ well. In that case, you can add the options:</p>
 </span><span class='line'>    <span class="o">[</span>--with-exslt-config<span class="o">=</span>/path/to/exslt-config<span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<h3>And how to tell Bundler to use custom parameters</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>bundle config build.nokogiri <span class="se">\</span>
+</span><span class='line'>       --use-system-libraries <span class="se">\</span>
+</span><span class='line'>       --with-xml2-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
+</span><span class='line'>       --with-xml2-include<span class="o">=</span>/usr/local/include/libxml2/libxml <span class="se">\</span>
+</span><span class='line'>       --with-xslt-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
+</span><span class='line'>       --with-xslt-include<span class="o">=</span>/usr/local/include/libxslt <span class="se">\</span>
+</span><span class='line'>       --with-iconv-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
+</span><span class='line'>       --with-iconv-include<span class="o">=</span>/usr/local/include
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Some versions of bundler have a bug (bundler/bundler#3053) that causes
+the options to be sent improperly, resulting in a <code>Syntax error:
+Unterminated quoted string</code> error.  The workaround is to edit your
+<code>.bundle/config</code> file, remove the quotes around the options, and place
+all the options on a single line.</p>
 
 <h2><span id='other'> Other </span></h2>
 
