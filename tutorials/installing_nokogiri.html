@@ -92,6 +92,7 @@
 <li><a href="#mac_os_x">Mac OS X</a></li>
 <li><a href="#using_your_system_libraries">Using Your System Libraries</a></li>
 <li><a href="#using_nonstandard_libxml2___libxslt_installations">Using Nonstandard libxml2 / libxslt installations</a></li>
+<li><a href="#smartos">SmartOS</a></li>
 <li><a href="#other">Other</a></li>
 </ol>
 
@@ -590,6 +591,44 @@ the options to be sent improperly, resulting in a <code>Syntax error:
 Unterminated quoted string</code> error.  The workaround is to edit your
 <code>.bundle/config</code> file, remove the quotes around the options, and place
 all the options on a single line.</p>
+
+<h2><span id='smartos'> SmartOS </span></h2>
+
+<p>SmartOS installation requires building and using
+libxml2/libxslt/libiconv in a nonstandard location. Building on the
+previous section, here&rsquo;s how to do it:</p>
+
+<p>(Note: <code>pkgsrc</code> is included in JPC SmartOS instances)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
+</span><span class='line'>ln -s /opt/local/gcc49/bin/gcc /opt/local/bin/gcc
+</span><span class='line'>
+</span><span class='line'>gem install nokogiri -- <span class="se">\</span>
+</span><span class='line'>    --use-system-libraries <span class="se">\</span>
+</span><span class='line'>    --with-xml2-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
+</span><span class='line'>    --with-xml2-include<span class="o">=</span>/opt/local/include/libxml2 <span class="se">\</span>
+</span><span class='line'>    --with-xslt-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
+</span><span class='line'>    --with-xslt-include<span class="o">=</span>/opt/local/include/libxslt <span class="se">\</span>
+</span><span class='line'>    --with-iconv-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
+</span><span class='line'>    --with-iconv-include<span class="o">=</span>/opt/local/include <span class="se">\</span>
+</span><span class='line'>    --with-zlib-dir<span class="o">=</span>/opt/local/lib
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>See the previous section for guidance on how to instruct Bundler to
+use these options.</p>
 
 <h2><span id='other'> Other </span></h2>
 
