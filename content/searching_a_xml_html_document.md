@@ -94,14 +94,14 @@ Lazy == Efficient, so no judgements. :)
 
 If you have an XML document with namespaces, but would prefer to
 ignore them entirely (and query as if Tim Bray had never invented
-them), then you can call [remove_namespaces][] on an XML::Document to
+them), then you can call [remove_namespaces!][] on an XML::Document to
 remove all namespaces. Of course, if the document had nodes with the
 same names but different namespaces, they will now be ambiguous. But
 you're lazy! You don't care!
 
   [1]: http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/
   [2]: http://groups.google.com/group/nokogiri-talk
-  [remove_namespaces]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/Document#remove_namespaces%21-instance_method
+  [remove_namespaces!]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/Document#remove_namespaces%21-instance_method
 
 ## Slop<sup>1</sup>
 
