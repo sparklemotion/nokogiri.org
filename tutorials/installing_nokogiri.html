@@ -88,6 +88,7 @@
 <li><a href="#freebsd">FreeBSD</a></li>
 <li><a href="#windows">Windows</a></li>
 <li><a href="#red_hat___centos">Red Hat / CentOS</a></li>
+<li><a href="#gnu_guix">GNU Guix</a></li>
 <li><a href="#mac_os_x">Mac OS X</a></li>
 <li><a href="#using_your_system_libraries">Using Your System Libraries</a></li>
 <li><a href="#using_nonstandard_libxml2___libxslt_installations">Using Nonstandard libxml2 / libxslt installations</a></li>
@@ -301,6 +302,22 @@ authority that otherwise good and noble Ruby developers run into this.</p>
 
 <p>Please report it as a bug if this doesn&rsquo;t work for you (see
 <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
+
+<h2><span id='gnu_guix'> GNU Guix </span></h2>
+
+<p><a href="https://www.gnu.org/software/guix/">GNU Guix</a> is a reproducible
+binary software package management and distribution system that works
+on <em>all</em> Linux distributions. Installing Nokogiri with</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>guix package -i ruby-nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>will install Nokogiri with tool and libraries and all its dependencies
+(including a recent Ruby, libxml2 and libxslt). The source code for
+the package can be found <a href="http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm">here</a>. A short description of how Nokogiri was packaged can be found
+<a href="https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org">here</a>.</p>
 
 <h2><span id='mac_os_x'> Mac OS X </span></h2>
 
