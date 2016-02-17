@@ -305,26 +305,6 @@ If you have any other issues, please report it as a bug (preferably a
 new one, read [Getting Help][] for details) and pull in @zenspider.
 
 
-## SmartOS
-
-### with pkgsrc provided packages
-pkgsrc is included in JPC SmartOS instances
-
-```sh
-pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
-ln -s /opt/local/gcc49/bin/gcc /opt/local/bin/gcc
-
-gem install nokogiri -- \
-    --use-system-libraries \
-    --with-xml2-lib=/opt/local/lib \
-    --with-xml2-include=/opt/local/include/libxml2 \
-    --with-xslt-lib=/opt/local/lib \
-    --with-xslt-include=/opt/local/include/libxslt \
-    --with-iconv-lib=/opt/local/lib \
-    --with-iconv-include=/opt/local/include \
-    --with-zlib-dir=/opt/local/lib
-```
-
 ## Using Your System Libraries
 
 If, instead of Nokogiri's vendored libraries, you'd like to use your
@@ -464,6 +444,33 @@ the options to be sent improperly, resulting in a `Syntax error:
 Unterminated quoted string` error.  The workaround is to edit your
 `.bundle/config` file, remove the quotes around the options, and place
 all the options on a single line.
+
+
+## SmartOS
+
+SmartOS installation requires building and using
+libxml2/libxslt/libiconv in a nonstandard location. Building on the
+previous section, here's how to do it:
+
+(Note: `pkgsrc` is included in JPC SmartOS instances)
+
+```sh
+pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
+ln -s /opt/local/gcc49/bin/gcc /opt/local/bin/gcc
+
+gem install nokogiri -- \
+    --use-system-libraries \
+    --with-xml2-lib=/opt/local/lib \
+    --with-xml2-include=/opt/local/include/libxml2 \
+    --with-xslt-lib=/opt/local/lib \
+    --with-xslt-include=/opt/local/include/libxslt \
+    --with-iconv-lib=/opt/local/lib \
+    --with-iconv-include=/opt/local/include \
+    --with-zlib-dir=/opt/local/lib
+```
+
+See the previous section for guidance on how to instruct Bundler to
+use these options.
 
 
 ## Other
