@@ -176,7 +176,13 @@ Nokogiri's vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
-In newest versions of Fedora and Red Hat, you might need rpm to build
+In newer versions of Fedora and Red Hat, you may see an error like:
+
+```
+gcc: error: /usr/lib/rpm/redhat/redhat-hardened-cc1: File or directory doesn't exists
+```
+
+in which case you'll also need rpm to build nokogiri:
 
 ```
 sudo dnf install -y rpm-build
