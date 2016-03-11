@@ -176,6 +176,12 @@ Nokogiri's vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
+In newest versions of Fedora and Red Hat, you might need rpm to build
+
+```
+sudo dnf install -y rpm-build
+```
+
   [EPEL]: http://fedoraproject.org/wiki/EPEL
   [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
 
