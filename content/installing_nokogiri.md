@@ -176,18 +176,6 @@ Nokogiri's vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
-In newer versions of Fedora and Red Hat, you may see an error like:
-
-```
-gcc: error: /usr/lib/rpm/redhat/redhat-hardened-cc1: File or directory doesn't exists
-```
-
-in which case you'll also need rpm to build nokogiri:
-
-```
-sudo dnf install -y rpm-build
-```
-
   [EPEL]: http://fedoraproject.org/wiki/EPEL
   [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
 
@@ -206,6 +194,18 @@ authority that otherwise good and noble Ruby developers run into this.
 
 ```sh
 sudo yum install -y gcc ruby-devel zlib-devel
+```
+
+In newer versions of Fedora and Red Hat, you may see an error like:
+
+```
+gcc: error: /usr/lib/rpm/redhat/redhat-hardened-cc1: File or directory doesn't exists
+```
+
+in which case you'll also need rpm to build nokogiri:
+
+```
+sudo dnf install -y rpm-build
 ```
 
 Please report it as a bug if this doesn't work for you (see
