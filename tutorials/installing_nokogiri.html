@@ -301,6 +301,20 @@ authority that otherwise good and noble Ruby developers run into this.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<p>In newer versions of Fedora and Red Hat, you may see an error like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gcc: error: /usr/lib/rpm/redhat/redhat-hardened-cc1: File or directory doesn<span class="err">&#39;</span>t exists
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>in which case you&rsquo;ll also need rpm to build nokogiri:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo dnf install -y rpm-build
+</span></code></pre></td></tr></table></div></figure>
+
+
 <p>Please report it as a bug if this doesn&rsquo;t work for you (see
 <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
 
