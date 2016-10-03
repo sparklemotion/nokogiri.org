@@ -458,7 +458,7 @@ Unterminated quoted string` error.  The workaround is to edit your
 all the options on a single line.
 
 
-## SmartOS
+## SmartOS (Nonstandard)
 
 SmartOS installation requires building and using
 libxml2/libxslt/libiconv in a nonstandard location. Building on the
