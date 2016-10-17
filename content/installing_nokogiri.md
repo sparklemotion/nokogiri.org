@@ -226,60 +226,52 @@ will install Nokogiri with tool and libraries and all its dependencies
 the package can be found [here](http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm). A short description of how Nokogiri was packaged can be found
 [here](https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org).
 
-## Mac OS X
-
-Most developers are using homebrew to manage their packages these
-days. If you are, you're in luck.
-
-
-### homebrew 0.9.5+
+## macOS / Mac OS X
 
 Installation should Just Work™ using Nokogiri's vendored `libxml2` and
-`libxslt`:
+`libxslt`.
 
 ```sh
 gem install nokogiri
 ```
 
-However, you may need to jump through some hoops around `libiconv`
-... (see next section)
+### Troubleshooting
 
+There are various issues which may need resolution if installation doesn't work
+the first time.
 
-### Troubleshooting OSX Installation
-
-#### "I'm on a fresh Yosemite installation."
+#### Fresh Installs of Mac OS X Yosemite (Mac OS 10.10)
 
 Team Nokogiri has reproduced an issue with brand-spanking-new Yosemite
-installations, which can be corrected by running:
+installations using the installed Ruby, which can be corrected by updating the
+system RubyGems:
 
 ```sh
 gem update --system
 ```
 
-Ya, really. >_< (Thanks to @zenspider for looking into this one.)
+Ya, really. `>_<` (Thanks to @zenspider for looking into this one.)
 
+#### Error Message About `libiconv` Missing
 
-#### "I see error messages about libiconv."
+If you get an error message saying that `libiconv` is missing, the fix is
+ensuring that you have the right developer tools selected, or the license has
+been accepted.
 
-If you have problems mentioning libiconv missing that looks something like this:
+```
+Building nokogiri using packaged libraries.
+checking for iconv.h... yes
+checking for iconv_open() in iconv.h... no
+checking for iconv_open() in -liconv... no
+checking for libiconv_open() in iconv.h... no
+checking for libiconv_open() in -liconv... no
+-----
+libiconv is missing. please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
+-----
+*** extconf.rb failed ***
+```
 
-    Installing nokogiri (1.6.4) Building nokogiri using packaged libraries.
-
-    Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
-
-        /usr/local/rvm/rubies/ruby-2.0.0-p0/bin/ruby extconf.rb
-    Building nokogiri using packaged libraries.
-    checking for iconv.h... yes
-    checking for iconv_open() in iconv.h... no
-    checking for iconv_open() in -liconv... no
-    checking for libiconv_open() in iconv.h... no
-    checking for libiconv_open() in -liconv... no
-    -----
-    libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
-    -----
-    *** extconf.rb failed ***
-
-Then you are probably missing the right developer tools. This is a really easy fix:
+The fix is really easy:
 
 ```sh
 brew unlink gcc-4.2      # you might not need this step
@@ -288,34 +280,91 @@ xcode-select --install
 gem install nokogiri
 ```
 
-This is verified working on OSX 10.9 w/ xcode's clang compiler.
+This is verified working on Mac OS X 10.9 w/ Xcode's clang compiler. (Many
+thanks to @allaire and others for helping verify this!)
 
-(Many thanks to @allaire and others for helping verify this!)
-
-
-### "But xcode-select is telling me about a 'network problem'."
+##### `xcode-select` errors with a 'network problem'
 
 If, when you run the above commands, you see this dialog:
 
 ![xcode-select-network-problem](../assets/xcode-select-network-problem.png)
 
-Then run this command to turn off forced-authentication with Apple Software Update:
+Then run this command to turn off forced-authentication with Apple Software
+Update:
 
 ```sh
 sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 ```
 
+#### Error Message About Undeclared Identifier `LZMA_OK`
 
-### Other OS X tips
+A more recent error mentions an undeclared identifier `LZMA_OK`:
 
-* Make sure ruby is compiled with the latest clang compiler.
-* Ruby is no longer dependent upon gcc-4.2.
-* Binary gems and ruby really should be compiled with the same compiler/environment.
-* If you have multiple versions of xcode installed, make sure you use the right xcode-select.
+```
+xmlIO.c:1450:52: error: use of undeclared identifier 'LZMA_OK'
+    ret =  (__libxml2_xzclose((xzFile) context) == LZMA_OK ) ? 0 : -1;
+                                                   ^
+1 error generated.
+```
 
-If you have any other issues, please report it as a bug (preferably a
-new one, read [Getting Help][] for details) and pull in @zenspider.
+The solution for this is a little more subtle and can be fixed in a couple of
+ways.
 
+1.  For some people, the `xcode-select` solution presented under the
+    [`libiconv`](#error-message-about-libiconv-missing) issue above works.
+    Generally, this works only when Xcode or macOS has recently been upgraded
+    and the Xcode licence has not yet been accepted.
+
+2.  When using Homebrew, there are several libraries that use a formula called
+    `xz` (including `the_silver_searcher` and `imagemagick`), which by default
+    installs a version of `liblzma` that is incompatible with most Ruby builds.
+    (Homebrew installs only the 64-bit version of the library, but most Ruby
+    builds are universal.) This can be fixed in a couple of ways:
+
+    a.  The most reliable way appears to be temporarily unlinking `xz` and
+        relinking it during an install of `nokogiri`:
+
+        ```sh
+        brew unlink xz
+        gem install nokogiri # or bundle install
+        brew link xz
+        ```
+
+    b.  The second way that has been reported having success is to install `xz`
+        as a universal build:
+
+        ```sh
+        brew reinstall xz --universal
+        ```
+
+    c.  The third way is to use a Homebrew-installed `libxml2`, as suggested in
+        [using your system libraries](#using-your-system-libraries).
+
+        ```sh
+        brew install libxml2
+        # If installing directly
+        gem install nokogiri -- --use-system-libraries \
+          --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
+        # If using Bundle
+        bundle config build.nokogiri --use-system-libraries \
+          --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
+        bundle install
+        ```
+
+        When working with this, be certain to use `$(brew --prefix libxml2)`
+        because it will use the correct location for your Homebrew install.
+
+### Other macOS Tips
+
+*   Make sure ruby is compiled with the latest clang compiler.
+*   Ruby is no longer dependent upon `gcc-4.2`.
+*   Binary gems and ruby really should be compiled with the same
+    compiler/environment.
+*   If you have multiple versions of Xcode installed, make sure you use the
+    right `xcode-select`.
+
+If you have any other issues, please report it as a bug (preferably a new one,
+read [Getting Help][] for details) and pull in @zenspider.
 
 ## Using Your System Libraries
 
