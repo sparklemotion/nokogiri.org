@@ -226,31 +226,25 @@ will install Nokogiri with tool and libraries and all its dependencies
 the package can be found [here](http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm). A short description of how Nokogiri was packaged can be found
 [here](https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org).
 
-## macOS / Mac OS X
 
-Installation should Just Work™ using Nokogiri's vendored `libxml2` and
-`libxslt`.
+## Mac OS X
+
+Installation should Just Work™ using Nokogiri's vendored `libxml2` and `libxslt`.
+
+First, make sure you have the latest version of RubyGems and xcode commandline tools:
+
+```sh
+gem update --system
+xcode-select --install
+```
+
+Then install nokogiri:
 
 ```sh
 gem install nokogiri
 ```
 
-### Troubleshooting
-
-There are various issues which may need resolution if installation doesn't work
-the first time.
-
-#### Fresh Installs of Mac OS X Yosemite (Mac OS 10.10)
-
-Team Nokogiri has reproduced an issue with brand-spanking-new Yosemite
-installations using the installed Ruby, which can be corrected by updating the
-system RubyGems:
-
-```sh
-gem update --system
-```
-
-Ya, really. `>_<` (Thanks to @zenspider for looking into this one.)
+### Troubleshooting OSX Installation
 
 #### Error Message About `libiconv` Missing
 
@@ -280,8 +274,10 @@ xcode-select --install
 gem install nokogiri
 ```
 
-This is verified working on Mac OS X 10.9 w/ Xcode's clang compiler. (Many
-thanks to @allaire and others for helping verify this!)
+This is verified working on Mac OS X 10.9 w/ Xcode's clang compiler.
+
+(Many thanks to @allaire and others for helping verify this!)
+
 
 ##### `xcode-select` errors with a 'network problem'
 
