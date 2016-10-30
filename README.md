@@ -14,6 +14,11 @@ Or, if you're feeling antisocial, you could just open a [Github
 Issue](https://github.com/sparklemotion/nokogiri.org-tutorials/issues).
 
 
+## What needs to be documented? I'd like to help.
+
+Take a look at the [open issues](https://github.com/sparklemotion/nokogiri.org-tutorials/issues)!
+
+
 ## How Do I Contribute Documentation?
 
 1. Fork.
