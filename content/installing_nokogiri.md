@@ -82,6 +82,18 @@ vendored `libxml2` and `libxslt`:
 gem install nokogiri
 ```
 
+
+## OpenBSD
+
+Installation requires gcc from ports in order to compile
+vendored `libxml2` and `libxslt`. Installing nokogiri should
+Just Work™ using the following commands:
+
+```sh
+pkg_add -v gcc
+gem install nokogiri
+```
+
 ## Windows
 
 ### Option 1: Precompiled DLLs ("fat binary")
