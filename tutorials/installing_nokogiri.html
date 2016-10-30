@@ -86,6 +86,7 @@
   <ol>
 <li><a href="#ubuntu___debian">Ubuntu / Debian</a></li>
 <li><a href="#freebsd">FreeBSD</a></li>
+<li><a href="#openbsd">OpenBSD</a></li>
 <li><a href="#windows">Windows</a></li>
 <li><a href="#red_hat___centos">Red Hat / CentOS</a></li>
 <li><a href="#gnu_guix">GNU Guix</a></li>
@@ -178,6 +179,19 @@ vendored <code>libxml2</code> and <code>libxslt</code>:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2><span id='openbsd'> OpenBSD </span></h2>
+
+<p>Installation requires gcc from ports in order to compile
+vendored <code>libxml2</code> and <code>libxslt</code>. Installing nokogiri should
+Just Work™ using the following commands:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pkg_add -v gcc
+</span><span class='line'>gem install nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
