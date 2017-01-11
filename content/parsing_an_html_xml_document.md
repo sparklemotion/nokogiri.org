@@ -59,7 +59,7 @@ Some commonly-used [parse options][read-parse-options] are:
 * `DTDLOAD` and `DTDVALID` - If you want DTD validation
 * `HUGE` - use to skip hardcoded limits around document size or DOM depth; comes with a performance penalty
 
-You _could_ use them by handcrafting an artisinal bitmap (not recommended):
+You _could_ use them by handcrafting an artisanal bitmap (not recommended):
 
 ```ruby
 doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
