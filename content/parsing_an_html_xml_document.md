@@ -41,32 +41,56 @@ doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
 ## Parse Options
 
 Nokogiri offers quite a few options that affect how a document is
-parsed. You can [read about them here][read-parse-options], but the
-most commonly-used options are:
+parsed; you can read about them in the [XML::ParseOptions docs][read-parse-options].
+
+Notably, Nokogiri will treat input as untrusted documents by default, thereby avoiding a class of vulnerabilities known as [XXE][XXE] or "XML eXternal Entity" processing. What this means is that Nokogiri won't attempt to load external DTDs or access the network for any external resources.
+
+Some commonly-used [parse options][read-parse-options] are:
 
   [read-parse-options]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/ParseOptions
+  [XXE]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 
+* `NONET` - Prevent any network connections during parsing. Recommended for parsing untrusted documents. __This is set by default!__
+* `RECOVER` - Attempt to recover from errors. Recommended for parsing malformed or invalid documents. __This is set by default!__
 * `NOBLANKS` - Remove blank nodes
 * `NOENT` - Substitute entities
 * `NOERROR` - Suppress error reports
 * `STRICT` - Strict parsing; raise an error when parsing malformed documents
-* `NONET` - Prevent any network connections during parsing. Recommended for parsing untrusted documents.
+* `DTDLOAD` and `DTDVALID` - If you want DTD validation
+* `HUGE` - use to skip hardcoded limits around document size or DOM depth; comes with a performance penalty
 
-Here's how they are used:
-
-```ruby
-doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-  config.strict.nonet
-end
-```
-
-Or
+You _could_ use them by handcrafting an artisinal bitmap (not recommended):
 
 ```ruby
 doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
-  config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NONET
+  config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
 end
 ```
+
+But it's more idiomatic to use the chainable shortcuts on the config object instead:
+
+```ruby
+doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
+  config.strict.noblanks
+end
+```
+
+Notably, if you want to turn _off_ an option that's set by default, you can prefix a "no" to the config shortcut:
+
+```ruby
+doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
+  config.norecover
+end
+```
+
+Leading to the perhaps-surprising (but logical!) `nononet` to turn networking back on:
+
+``` ruby
+doc = Nokogiri::XML(File.open("blossom.xml")) do |config|
+  config.nononet
+end
+```
+
 
 ## Encoding
 
