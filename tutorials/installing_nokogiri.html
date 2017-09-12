@@ -84,17 +84,9 @@
   
 
   <ol>
-<li><a href="#ubuntu___debian">Ubuntu / Debian</a></li>
-<li><a href="#freebsd">FreeBSD</a></li>
-<li><a href="#openbsd">OpenBSD</a></li>
-<li><a href="#windows">Windows</a></li>
-<li><a href="#red_hat___centos">Red Hat / CentOS</a></li>
-<li><a href="#gnu_guix">GNU Guix</a></li>
-<li><a href="#mac_os_x">Mac OS X</a></li>
-<li><a href="#using_your_system_libraries">Using Your System Libraries</a></li>
-<li><a href="#using_nonstandard_libxml2___libxslt_installations">Using Nonstandard libxml2 / libxslt installations</a></li>
-<li><a href="#smartos__nonstandard_">SmartOS (Nonstandard)</a></li>
-<li><a href="#other">Other</a></li>
+<li><a href="#install_with_included_libraries__recommended_">Install with included libraries (RECOMMENDED)</a></li>
+<li><a href="#install_with_system_libraries">Install with system libraries</a></li>
+<li><a href="#install_with_custom___non_standard_libraries">Install with custom / non-standard libraries</a></li>
 </ol>
 
 
@@ -103,90 +95,50 @@
 
 <h1>Installing Nokogiri</h1>
 
-<p>Because Nokogiri needs to be <a href="http://en.wikipedia.org/wiki/Compiler">compiled</a> and <a href="http://en.wikipedia.org/wiki/Dynamic_linker">dynamically linked</a>
-against both <a href="http://xmlsoft.org/index.html">libxml2</a> and <a href="http://xmlsoft.org/xslt/">libxslt</a>, it has gained a
-reputation for being complicated to install.</p>
+<p>Nokogiri includes its own updated and patched copies of <a href="http://xmlsoft.org/">libxml2</a> and
+<a href="http://xmlsoft.org/libxslt/">libxslt</a> libraries. By default, installation of Nokogiri will used the use
+these copies. Alternatively, you may install using your operating system&rsquo;s
+built-in libraries or other custom versions of these libraries.</p>
 
-<p>As of Nokogiri 1.6, <code>libxml2</code> and <code>libxslt</code> source code is bundled
-with Nokogiri, and compiled at gem-install-time. The instructions in
-this document should work for all versions 1.6.4 and later.</p>
+<p><em>This document also helps with common problems we&rsquo;ve heard. If you have an
+issue not discussed here, please
+<a href="https://github.com/sparklemotion/nokogiri.org-tutorials/issues">open an issue</a>.</em></p>
 
-<p>(If you need support for installing earlier versions of Nokogiri, you
-may want to take a look at the git history for <a href="https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md">this document</a>.)</p>
+<p><em>For earlier versions of Nokogiri, find instructions in
+<a href="https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md">the git history for this document</a>.</em></p>
 
-<p>Let&rsquo;s tackle each platform and scenario in ascending order of difficulty &hellip;</p>
+<p><em>For other platforms, please send pull requests to
+<a href="https://github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.</em></p>
 
-<h2><span id='ubuntu___debian'> Ubuntu / Debian </span></h2>
+<hr />
 
-<p>Installation should Just Work™ on Ubuntu and Debian using Nokogiri&rsquo;s
-vendored <code>libxml2</code> and <code>libxslt</code>:</p>
+<h2><span id='install_with_included_libraries__recommended_'> Install with included libraries (RECOMMENDED) </span></h2>
+
+<h3>Ubuntu / Debian</h3>
+
+<p>Install Nokogiri on a brand new Ubuntu system with these commands:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+</span><span class='line'>gem install nokogiri
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Note for RMV users: <a href="https://github.com/rvm/rvm/issues/3509">you may require libgmp</a>, consider running <code>sudo apt-get install libgmp-dev</code>.</em></p>
+
+<h3>FreeBSD</h3>
+
+<p>Install Nokogiri on a brand new FreeBSD system with these commands:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Troubleshooting Ubuntu / Debian Installation</h3>
+<h3>OpenBSD</h3>
 
-<p>If you have issues, first make sure you have all the tooling necessary
-to compile C extensions:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install build-essential patch
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It&rsquo;s possible that you don&rsquo;t have important development header files
-installed on your system. (This has never happened to me personally,
-but I have it on good authority that otherwise good and noble Ruby
-developers run into this.) Here&rsquo;s what you should do if you should
-find yourself in this situation:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Please report it as a bug if this doesn&rsquo;t work for you (see
-<a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
-
-<h3>Troubleshooting RVM-based Installation</h3>
-
-<p>Some versions of RVM will install a Ruby binary that requires
-libgmp. See <a href="https://github.com/rvm/rvm/issues/3509">https://github.com/rvm/rvm/issues/3509</a> for background.</p>
-
-<p>So, if your <code>mkmf.log</code> file says:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>/usr/bin/ld: cannot find -lgmp
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>then try this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install libgmp-dev
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Please report it as a bug if this doesn&rsquo;t work for you (see
-<a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
-
-<h2><span id='freebsd'> FreeBSD </span></h2>
-
-<p>Installation should Just Work™ on FreeBSD using Nokogiri&rsquo;s
-vendored <code>libxml2</code> and <code>libxslt</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2><span id='openbsd'> OpenBSD </span></h2>
-
-<p>Installation requires gcc from ports in order to compile
-vendored <code>libxml2</code> and <code>libxslt</code>. Installing nokogiri should
-Just Work™ using the following commands:</p>
+<p>Use <code>gcc</code> from ports in order to compile the included libraries:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -195,169 +147,64 @@ Just Work™ using the following commands:</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2><span id='windows'> Windows </span></h2>
+<h3>Windows</h3>
 
-<h3>Option 1: Precompiled DLLs (&ldquo;fat binary&rdquo;)</h3>
-
-<p>Compiling on Windows requires the installation of special build tools,
-and so as an alternative we provide a pre-compiled Nokogiri gem that
-comes bundled with all the DLLs you need to be NOKOGIRIFIED!</p>
-
-<p>Specifically, we publish gems specific for the Windows &ldquo;platform&rdquo;, as
-it&rsquo;s called by Rubygems. For example, <a href="https://rubygems.org/gems/nokogiri/versions/1.6.5">Nokogiri 1.6.5</a> published:</p>
-
-<ul>
-<li><a href="https://rubygems.org/downloads/nokogiri-1.6.5-x64-mingw32.gem">nokogiri-1.6.5-x64-mingw32.gem</a></li>
-<li><a href="https://rubygems.org/downloads/nokogiri-1.6.5-x86-mingw32.gem">nokogiri-1.6.5-x86-mingw32.gem</a></li>
-</ul>
-
-
-<p>for the 64-bit and 32-bit Rubyinstaller rubies, respectively.</p>
-
-<p>This <strong>should</strong> Just Work™:</p>
+<p>Use Rubyinstaller to install our binary distribution in a flash!</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Option 2: Native Windows compilation</h3>
+<p>Or build using <a href="http://rubyinstaller.org/add-ons/devkit/">DevKit</a>. This is an advanced option you should only
+try if you know what you&rsquo;re doing. You MUST use Rubygems 2.4.5 or later.</p>
 
-<p>As of Nokogiri 1.6.7, <a href="http://rubyinstaller.org/add-ons/devkit/">DevKit</a> compilation of Nokogiri is fully
-supported.</p>
+<p>Also see more details on this advanced procedure on <a href="https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J">this nokogiri-talk thread</a>.</p>
 
-<p>If you don&rsquo;t know what DevKit is, or if you&rsquo;re using an earlier
-version of Nokogiri than 1.6.7, you should not try to follow this
-process, and should instead install a gem with precompiled DLLs using
-<strong>Option 1</strong> above.</p>
+<h3>Red Hat / CentOS</h3>
 
-<h3>Troubleshooting Native Windows compilation</h3>
-
-<p>If you see this error:</p>
+<p>Install Nokogiri on a brand new Red Had / CentOS system with these commands:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>ERROR:  Error installing nokogiri:
-</span><span class='line'>        The <span class="s1">&#39;nokogiri&#39;</span> native gem requires installed build tools.
-</span><span class='line'>
-</span><span class='line'>Please update your PATH to include build tools or download the DevKit
-</span><span class='line'>from <span class="s1">&#39;http://rubyinstaller.org/downloads&#39;</span> and follow the instructions
-</span><span class='line'>at <span class="s1">&#39;http://github.com/oneclick/rubyinstaller/wiki/Development-Kit&#39;</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y gcc ruby-devel zlib-devel
+</span><span class='line'><span class="c"># sudo dnf install -y rpm-build # This may be required</span>
+</span><span class='line'>gem install nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>or you see something like this error:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>Extracting libiconv-1.14.tar.gz into tmp/i686-pc-mingw32/ports/libiconv/1.14... OK
-</span><span class='line'>Running <span class="s1">&#39;configure&#39;</span> <span class="k">for</span> libiconv 1.14... ERROR, review
-</span><span class='line'><span class="s1">&#39;C:/RailsInstaller/.../nokogiri-1.6.5/.../libiconv/1.14/configure.log&#39;</span>
-</span><span class='line'>to see what happened.
-</span><span class='line'>*** extconf.rb failed ***
-</span><span class='line'>Could not create Makefile due to some reason, probably lack of necessary
-</span><span class='line'>libraries and/or headers.  Check the mkmf.log file <span class="k">for</span> more details.  You may
-</span><span class='line'>need configuration options.
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>then you may be runing a buggy version of Rubygems that&rsquo;s not
-downloading the appropriate gemfile for your platform (see
-<a href="https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J">this thread</a> for background). <strong>Please update
-to Rubygems 2.4.5 or later for the fix</strong>.</p>
-
-<p>Please report it as a bug if this doesn&rsquo;t work for you (see
-<a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
-
-<h2><span id='red_hat___centos'> Red Hat / CentOS </span></h2>
-
-<p>The easiest way to get Nokogiri installed on CentOS and RHEL seems to be the
-<a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> repository which contains a prebuilt nokogiri package. To use it,
-install the appropriate <a href="http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">epel-release</a> package for your OS, then run:</p>
+<p>Alternatively, you may install the appropriate <a href="http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">epel-release</a> and get the
+Nokogiri package from <a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> using:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y rubygem-nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>However, installation of the regular gem should Just Work™ using
-Nokogiri&rsquo;s vendored <code>libxml2</code> and <code>libxslt</code>:</p>
+<h3>GNU Guix</h3>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<p>Install on any Linux distribution using <a href="https://www.gnu.org/software/guix/">GNU Guix</a>,
+a reproducible binary software package management and distribution system.</p>
 
-
-<h3>Troubleshooting Red Hat / CentOS Installation</h3>
-
-<p>If you have issues, make sure you have some of the basic Ruby
-developer tools that you&rsquo;ll need to compile the C extension,
-<code>libxml2</code>, and <code>libxslt</code>:</p>
-
-<p>It&rsquo;s also possible that you don&rsquo;t have the zlib development header
-files installed on your system.</p>
-
-<p>This has never happened to me personally, but I have it on good
-authority that otherwise good and noble Ruby developers run into this.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y gcc ruby-devel zlib-devel
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In newer versions of Fedora and Red Hat, you may see an error like:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gcc: error: /usr/lib/rpm/redhat/redhat-hardened-cc1: File or directory doesn<span class="err">&#39;</span>t exists
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>in which case you&rsquo;ll also need rpm to build nokogiri:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo dnf install -y rpm-build
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Please report it as a bug if this doesn&rsquo;t work for you (see
-<a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details).</p>
-
-<h2><span id='gnu_guix'> GNU Guix </span></h2>
-
-<p><a href="https://www.gnu.org/software/guix/">GNU Guix</a> is a reproducible
-binary software package management and distribution system that works
-on <em>all</em> Linux distributions. Installing Nokogiri with</p>
+<p>Use this command:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>guix package -i ruby-nokogiri
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>will install Nokogiri with tool and libraries and all its dependencies
-(including a recent Ruby, libxml2 and libxslt). The source code for
-the package can be found <a href="http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm">here</a>. A short description of how Nokogiri was packaged can be found
-<a href="https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org">here</a>.</p>
+<p><em>Note: source code is available <a href="http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm">here</a>. A short description of how Nokogiri was packaged can be found
+<a href="https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org">here</a>.</em></p>
 
-<h2><span id='mac_os_x'> Mac OS X </span></h2>
-
-<p>Installation should Just Work™ using Nokogiri&rsquo;s vendored <code>libxml2</code> and <code>libxslt</code>.</p>
+<h3>macOS</h3>
 
 <p>First, make sure you have the latest version of RubyGems and xcode commandline tools:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem update --system
-</span><span class='line'>xcode-select --install
+</span><span class='line'>xcode-select --install <span class="c"># Then agree to the terms, even if you have done this before!</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -368,57 +215,11 @@ the package can be found <a href="http://git.savannah.gnu.org/cgit/guix.git/tree
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Troubleshooting OSX Installation</h3>
+<p><em>This is verified working on maxOS 10.9 w/ Xcode&rsquo;s clang compiler. (Many thanks to @allaire and others for helping!)</em></p>
 
-<h4>Error Message About <code>libiconv</code> Missing</h4>
+<h4><code>xcode-select</code> errors with a &lsquo;network problem&rsquo;</h4>
 
-<p>If you get an error message saying that <code>libiconv</code> is missing, the fix is
-ensuring that you have the right developer tools selected, or the license has
-been accepted.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>Building nokogiri using packaged libraries.
-</span><span class='line'>checking <span class="k">for</span> iconv.h... yes
-</span><span class='line'>checking <span class="k">for</span> iconv_open<span class="o">()</span> in iconv.h... no
-</span><span class='line'>checking <span class="k">for</span> iconv_open<span class="o">()</span> in -liconv... no
-</span><span class='line'>checking <span class="k">for</span> libiconv_open<span class="o">()</span> in iconv.h... no
-</span><span class='line'>checking <span class="k">for</span> libiconv_open<span class="o">()</span> in -liconv... no
-</span><span class='line'>-----
-</span><span class='line'>libiconv is missing. please visit http://nokogiri.org/tutorials/installing_nokogiri.html <span class="k">for</span> <span class="nb">help </span>with installing dependencies.
-</span><span class='line'>-----
-</span><span class='line'>*** extconf.rb failed ***
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The fix is really easy:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>brew unlink gcc-4.2      <span class="c"># you might not need this step</span>
-</span><span class='line'>gem uninstall nokogiri
-</span><span class='line'>xcode-select --install
-</span><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is verified working on Mac OS X 10.9 w/ Xcode&rsquo;s clang compiler.</p>
-
-<p>(Many thanks to @allaire and others for helping verify this!)</p>
-
-<h5><code>xcode-select</code> errors with a &lsquo;network problem&rsquo;</h5>
-
-<p>If, when you run the above commands, you see this dialog:</p>
+<p>If, you see this dialog when you run the above commands:</p>
 
 <p><img src="../assets/xcode-select-network-problem.png" alt="xcode-select-network-problem" /></p>
 
@@ -449,13 +250,9 @@ Update:</p>
 ways.</p>
 
 <ol>
-<li><p>For some people, the <code>xcode-select</code> solution presented under the
-<a href="#error-message-about-libiconv-missing"><code>libiconv</code></a> issue above works.
-Generally, this works only when Xcode or macOS has recently been upgraded
-and the Xcode licence has not yet been accepted.</p></li>
 <li><p>When using Homebrew, there are several libraries that use a formula called
 <code>xz</code> (including <code>the_silver_searcher</code> and <code>imagemagick</code>), which by default
-installs a version of <code>liblzma</code> that is incompatible with most Ruby builds.
+install a version of <code>liblzma</code> that is incompatible with most Ruby builds.
 (Homebrew installs only the 64-bit version of the library, but most Ruby
 builds are universal.) This can be fixed in a couple of ways:</p>
 
@@ -492,37 +289,27 @@ because it will use the correct location for your Homebrew install.</p></li>
 </ol>
 
 
-<h3>Other macOS Tips</h3>
+<h4>Other macOS Tips</h4>
 
 <ul>
 <li>Make sure ruby is compiled with the latest clang compiler.</li>
-<li>Ruby is no longer dependent upon <code>gcc-4.2</code>.</li>
-<li>Binary gems and ruby really should be compiled with the same
-compiler/environment.</li>
+<li>Binary gems and ruby should be compiled with the same compiler/environment.</li>
 <li>If you have multiple versions of Xcode installed, make sure you use the
 right <code>xcode-select</code>.</li>
 </ul>
 
 
-<p>If you have any other issues, please report it as a bug (preferably a new one,
-read <a href="http://www.nokogiri.org/tutorials/getting_help.html">Getting Help</a> for details) and pull in @zenspider.</p>
+<p><em>If reporting an issue about the macOS installation instructions, please mentain @zenspider.</em></p>
 
-<h2><span id='using_your_system_libraries'> Using Your System Libraries </span></h2>
+<hr />
 
-<p>If, instead of Nokogiri&rsquo;s vendored libraries, you&rsquo;d like to use your
-system&rsquo;s <code>libxml2</code>, <code>libxslt</code> and related libraries, please first
-understand that you may be asking Nokogiri to work with an unsupported
-version of <code>libxml2</code>. We try hard to warn you about this; and will
-even refuse to compile against some known-bad versions of <code>libxml2</code>.</p>
+<h2><span id='install_with_system_libraries'> Install with system libraries </span></h2>
 
-<p>But, we want to give you the flexibility to choose this option.</p>
+<p>Nokogiri will refuse to build against certain versions of <code>libxml2</code>, <code>libxslt</code>
+supplied with your operating system, and certain versions will cause mysterious
+problems. The compile scripts will warn you if you try to do this.</p>
 
-<p>Here&rsquo;s how to use your installed system libraries instead of the
-vendored libraries:</p>
-
-<h3>Step 1: Make sure you have <code>pkg-config</code> installed</h3>
-
-<p>Everything should Just Work™ if you have <code>pkg-config</code> installed.</p>
+<h3>Step 1: Install <code>pkg-config</code></h3>
 
 <p>On Debian/Ubuntu:</p>
 
@@ -540,12 +327,14 @@ vendored libraries:</p>
 
 <h3>Step 2: Build Nokogiri</h3>
 
+<p>Using gem:</p>
+
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- --use-system-libraries
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Or, if you&rsquo;re using Bundler:</p>
+<p>Or, use Bundler:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -554,33 +343,14 @@ vendored libraries:</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Using Your System Libraries with Nokogiri >= 1.6.0, &lt; 1.6.2</h3>
+<hr />
 
-<p>Nokogiri did not support the CLI argument <code>--use-system-libraries</code>
-before v1.6.2. If you are trying to use system libraries with an
-earlier version of Nokogiri, use the <code>NOKOGIRI_USE_SYSTEM_LIBRARIES</code>
-environment variable instead:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">NOKOGIRI_USE_SYSTEM_LIBRARIES</span><span class="o">=</span><span class="m">1</span> gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Or, if you&rsquo;re using Bundler:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">export </span><span class="nv">NOKOGIRI_USE_SYSTEM_LIBRARIES</span><span class="o">=</span>1
-</span><span class='line'>bundle install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2><span id='using_nonstandard_libxml2___libxslt_installations'> Using Nonstandard libxml2 / libxslt installations </span></h2>
+<h2><span id='install_with_custom___non_standard_libraries'> Install with custom / non-standard libraries </span></h2>
 
 <p>If:</p>
 
 <ul>
-<li>you&rsquo;ve got libxml2 and/or libxslt installed in a nonstandard place,</li>
+<li>you&rsquo;ve got <code>libxml2</code> and/or <code>libxslt</code> installed in a nonstandard place,</li>
 <li>and you don&rsquo;t have <code>pkg-config</code> installed</li>
 </ul>
 
@@ -631,9 +401,9 @@ specify build parameters.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>N.B.: By default, libxslt header files are installed into the
+<p><em>Note: By default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
-subdirectory thereof named <code>libxml2</code>.</p>
+subdirectory thereof named <code>libxml2</code>.</em></p>
 
 <p>It&rsquo;s likely that you&rsquo;ll also need to specify the location of your
 <code>zlib</code> and <code>iconv</code> (and possibly <code>exslt</code>) install directories as
@@ -656,7 +426,7 @@ well. In that case, you can add the options:</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>And how to tell Bundler to use custom parameters</h3>
+<h3>How to tell Bundler to use custom parameters</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -677,13 +447,11 @@ well. In that case, you can add the options:</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Some versions of bundler have a bug (bundler/bundler#3053) that causes
-the options to be sent improperly, resulting in a <code>Syntax error:
-Unterminated quoted string</code> error.  The workaround is to edit your
-<code>.bundle/config</code> file, remove the quotes around the options, and place
-all the options on a single line.</p>
+<p>Do not attempt Bundler installion using Bundler versions before v1.8.3.
+See <a href="bundler/bundler#3053">related issue here</a>. But if you really want to,
+see earlier git history of this file, which includes a workaround.</p>
 
-<h2><span id='smartos__nonstandard_'> SmartOS (Nonstandard) </span></h2>
+<h3>SmartOS (Nonstandard)</h3>
 
 <p>SmartOS installation requires building and using
 libxml2/libxslt/libiconv in a nonstandard location. Building on the
@@ -720,12 +488,6 @@ previous section, here&rsquo;s how to do it:</p>
 
 <p>See the previous section for guidance on how to instruct Bundler to
 use these options.</p>
-
-<h2><span id='other'> Other </span></h2>
-
-<p>Don&rsquo;t see your platform here? We&rsquo;d love to add to this
-document. Please feel free to send pull requests to
-<a href="https://github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.</p>
 
 
   <div class='clearfix'>
