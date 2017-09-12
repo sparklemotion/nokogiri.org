@@ -5,21 +5,19 @@ Nokogiri includes its own updated and patched copies of [libxml2][] and
 these copies. Alternatively, you may install using your operating system's
 built-in libraries or other custom versions of these libraries.
 
-* [Install with included libraries (RECOMMENDED)]()
-* [Install with system libraries]()
-* [Install with custom / non-standard libraries]()
-
 *This document also helps with common problems we've heard. If you have an
 issue not discussed here, please
-[open an issue][https://github.com/sparklemotion/nokogiri.org-tutorials/issues].*
+[open an issue](https://github.com/sparklemotion/nokogiri.org-tutorials/issues).*
 
 *For earlier versions of Nokogiri, find instructions in
-[the git history for this document][].*
+[the git history for this document](https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md).*
 
 *For other platforms, please send pull requests to 
-[sparklemotion/nokogiri.org-tutorials][].
+[sparklemotion/nokogiri.org-tutorials][].*
 
   [sparklemotion/nokogiri.org-tutorials]: https://github.com/sparklemotion/nokogiri.org-tutorials
+  [libxml2]: http://xmlsoft.org/
+  [libxslt]: http://xmlsoft.org/libxslt/
 
 ---
 
@@ -34,7 +32,7 @@ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
 gem install nokogiri
 ```
 
-*Note for RMV users: [you may require libgmp](https://github.com/rvm/rvm/issues/3509), consider running `sudo apt-get install libgmp-dev`
+*Note for RVM users: [you may require libgmp](https://github.com/rvm/rvm/issues/3509), consider running `sudo apt-get install libgmp-dev`.*
 
 ### FreeBSD
 
@@ -66,9 +64,7 @@ try if you know what you're doing. You MUST use Rubygems 2.4.5 or later.
 
   [DevKit]: http://rubyinstaller.org/add-ons/devkit/
 
-Also see more details on this advanced procedure at:
-
-https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J
+Also see more details on this advanced procedure on [this nokogiri-talk thread](https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J).
 
 ### Red Hat / CentOS
 
@@ -194,7 +190,7 @@ ways.
 *   If you have multiple versions of Xcode installed, make sure you use the
     right `xcode-select`.
 
-*If reporting an issue about the macOS installation instructions, please mentain @zenspider.*
+*If reporting an issue about the macOS installation instructions, please mention @zenspider.*
 
 
 ---
@@ -307,7 +303,7 @@ bundle config build.nokogiri \
        --with-iconv-include=/usr/local/include
 ```
 
-Do not attempt Bundler installion using Bundler versions before v1.8.3.
+Do not attempt Bundler installation using Bundler versions before v1.8.3.
 See [related issue here](bundler/bundler#3053). But if you really want to,
 see earlier git history of this file, which includes a workaround.
 
