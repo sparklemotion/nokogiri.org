@@ -34,7 +34,7 @@ gem install nokogiri
 
 *Note for RVM users: [you may require libgmp](https://github.com/rvm/rvm/issues/3509), consider running `sudo apt-get install libgmp-dev`.*
 
-### FreeBSD
+### FreeBSD / OpenBSD >= 6.2
 
 Install Nokogiri on a brand new FreeBSD system with these commands:
 
@@ -42,7 +42,7 @@ Install Nokogiri on a brand new FreeBSD system with these commands:
 gem install nokogiri
 ```
 
-### OpenBSD
+### OpenBSD < 6.2
 
 Use `gcc` from ports in order to compile the included libraries:
 
