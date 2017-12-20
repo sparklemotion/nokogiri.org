@@ -1,7 +1,7 @@
 # Installing Nokogiri
 
 Nokogiri includes its own updated and patched copies of [libxml2][] and
-[libxslt][] libraries. By default, installation of Nokogiri will used the use
+[libxslt][] libraries. By default, installation of Nokogiri will use
 these copies. Alternatively, you may install using your operating system's
 built-in libraries or other custom versions of these libraries.
 
