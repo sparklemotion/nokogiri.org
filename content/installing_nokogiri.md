@@ -182,6 +182,7 @@ ways.
 *   Binary gems and ruby should be compiled with the same compiler/environment.
 *   If you have multiple versions of Xcode installed, make sure you use the
     right `xcode-select`.
+*   Try [installing with system libraries](#install_with_system_libraries).
 
 *If reporting an issue about the macOS installation instructions, please mention @zenspider.*
 
