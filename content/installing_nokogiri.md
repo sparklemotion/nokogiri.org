@@ -159,14 +159,7 @@ ways.
         brew link xz
         ```
 
-    b.  The second way that has been reported having success is to install `xz`
-        as a universal build:
-
-        ```sh
-        brew reinstall xz --universal
-        ```
-
-    c.  The third way is to use a Homebrew-installed `libxml2`, as suggested in
+    b.  The third way is to use a Homebrew-installed `libxml2`, as suggested in
         [using your system libraries](#using-your-system-libraries).
 
         ```sh
