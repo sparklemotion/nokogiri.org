@@ -97,7 +97,7 @@
 <h1>Installing Nokogiri</h1>
 
 <p>Nokogiri includes its own updated and patched copies of <a href="http://xmlsoft.org/">libxml2</a> and
-<a href="http://xmlsoft.org/libxslt/">libxslt</a> libraries. By default, installation of Nokogiri will used the use
+<a href="http://xmlsoft.org/libxslt/">libxslt</a> libraries. By default, installation of Nokogiri will use
 these copies. Alternatively, you may install using your operating system&rsquo;s
 built-in libraries or other custom versions of these libraries.</p>
 
@@ -265,11 +265,6 @@ relinking it during an install of <code>nokogiri</code>:</p>
 gem install nokogiri # or bundle install
 brew link xz
 </code></pre></li>
-<li><p>The second way that has been reported having success is to install <code>xz</code>
-as a universal build:</p>
-
-<pre><code class="sh">brew reinstall xz --universal
-</code></pre></li>
 <li><p>The third way is to use a Homebrew-installed <code>libxml2</code>, as suggested in
 <a href="#using-your-system-libraries">using your system libraries</a>.</p>
 
@@ -297,6 +292,7 @@ because it will use the correct location for your Homebrew install.</p></li>
 <li>Binary gems and ruby should be compiled with the same compiler/environment.</li>
 <li>If you have multiple versions of Xcode installed, make sure you use the
 right <code>xcode-select</code>.</li>
+<li>Try <a href="#install_with_system_libraries">installing with system libraries</a>.</li>
 </ul>
 
 
