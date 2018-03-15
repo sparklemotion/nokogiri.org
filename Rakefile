@@ -164,3 +164,8 @@ task :describe do
 end
 
 task :default => :markdown
+
+desc "import any files you need from the nokogiri repo"
+task :import do
+  system 'curl https://raw.githubusercontent.com/sparklemotion/nokogiri/master/SECURITY.md -o content/security.md'
+end
