@@ -4,7 +4,7 @@
 
 # url: https://sparklemotion.github.io # TODO CHANGE THIS ONCE DNS IS CUT OVER
 url: http://nokogiri.org # TODO ... TO THIS
-title: Nokogiri 鋸
+title: "Nokogiri&nbsp;鋸"
 subtitle: An HTML, XML, SAX, & Reader parser with the ability to search documents via XPath or CSS3 selectors… and much more
 author: Team Sparklemotion
 simple_search: https://www.google.com/search
