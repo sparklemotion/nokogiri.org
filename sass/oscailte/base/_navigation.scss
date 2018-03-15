@@ -38,7 +38,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   @include box-sizing(border-box);
   @include transition(all 0.25s linear);
   display: block;
-  padding: 32px 10px;
+  padding: 32px 15px;
   text-decoration: none;
   font-weight: normal;
   font-size: 20px;
@@ -49,7 +49,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   background: $site-background;
   box-shadow: inset 0px 5px $navigation-color;
   color: $navigation-color;
-  padding: 40px 20px 24px;
+  padding: 40px 15px 24px;
 }
 
 .toggle{ 
