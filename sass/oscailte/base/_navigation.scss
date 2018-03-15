@@ -26,6 +26,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
 /*--------------------------------
  Presentation Styles (Editable)
 ---------------------------------*/
+.logo {
+  padding-top: 5px;
+}
+
 .menu {
   margin: 0;
 }
@@ -34,10 +38,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   @include box-sizing(border-box);
   @include transition(all 0.25s linear);
   display: block;
-  padding: 32px 20px;
+  padding: 32px 10px;
   text-decoration: none;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1;
 }
 
