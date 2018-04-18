@@ -205,7 +205,9 @@ which acts very much like an array, and contains matching nodes from
 the document.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">characters</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">to_s</span> <span class="c1"># =&gt; &quot;&lt;character&gt;Al Bundy&lt;/character&gt;&quot;</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//character&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">characters</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">to_s</span> <span class="c1"># =&gt; &quot;&lt;character&gt;Al Bundy&lt;/character&gt;&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
