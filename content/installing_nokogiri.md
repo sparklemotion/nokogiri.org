@@ -176,6 +176,28 @@ ways.
         When working with this, be certain to use `$(brew --prefix libxml2)`
         because it will use the correct location for your Homebrew install.
 
+#### Unable to find libraries on macOS Mojave
+
+Xcode 10 on macOS Mojave [moves the system headers][xcode10] out of `/usr/include`
+and so Nokogiri will fail to build. Instead you'll see an error similar to this:
+
+```sh
+Building nokogiri using packaged libraries.
+-----
+libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
+-----
+*** extconf.rb failed ***
+```
+
+A temporary workaround to allow previous releases of Nokogiri to build is to
+install the extra headers package mentioned in the Xcode 10 release notes:
+
+```sh
+open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+```
+
+[xcode10]: https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624
+
 #### Other macOS Tips
 
 *   Make sure ruby is compiled with the latest clang compiler.
