@@ -187,6 +187,7 @@ Building nokogiri using packaged libraries.
 libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
 -----
 *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary libraries and/or headers.
 ```
 
 A temporary workaround to allow previous releases of Nokogiri to build is to
