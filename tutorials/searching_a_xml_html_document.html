@@ -230,7 +230,7 @@ and CSS syntax for more information).</p>
 <p>Notably, you can even use CSS queries in an XML document!</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;sitcoms name&quot;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;name&gt;Married with Children&lt;/name&gt;&quot;, &quot;&lt;name&gt;Perfect Strangers&lt;/name&gt;&quot;] # !&gt; assigned but unused variable - characters</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;sitcoms name&quot;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;name&gt;Married with Children&lt;/name&gt;&quot;, &quot;&lt;name&gt;Perfect Strangers&lt;/name&gt;&quot;]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -308,8 +308,8 @@ the tires belonging to <em>that</em> url:</p>
 <span class='line-number'>9</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;parts.xml&quot;</span><span class="p">))</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">car_tires</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//car:tire&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://alicesautoparts.com/&#39;</span><span class="p">)</span> <span class="c1"># !&gt; assigned but unused variable - car_tires</span>
-</span><span class='line'><span class="c1"># =&gt; [&quot;&lt;tire&gt;all weather&lt;/tire&gt;&quot;, # !&gt; assigned but unused variable - bike_tires</span>
+</span><span class='line'><span class="n">car_tires</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//car:tire&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://alicesautoparts.com/&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="c1"># =&gt; [&quot;&lt;tire&gt;all weather&lt;/tire&gt;&quot;,</span>
 </span><span class='line'><span class="c1">#    &quot;&lt;tire&gt;studded&lt;/tire&gt;&quot;,</span>
 </span><span class='line'><span class="c1">#    &quot;&lt;tire&gt;extra wide&lt;/tire&gt;&quot;]</span>
 </span><span class='line'>

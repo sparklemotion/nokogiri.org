@@ -286,6 +286,34 @@ because it will use the correct location for your Homebrew install.</p></li>
 </ol>
 
 
+<h4>Unable to find libraries on macOS Mojave</h4>
+
+<p>Xcode 10 on macOS Mojave <a href="https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624">moves the system headers</a> out of <code>/usr/include</code>
+and so Nokogiri will fail to build. Instead you&rsquo;ll see an error similar to this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>Building nokogiri using packaged libraries.
+</span><span class='line'>-----
+</span><span class='line'>libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html <span class="k">for</span> <span class="nb">help </span>with installing dependencies.
+</span><span class='line'>-----
+</span><span class='line'>*** extconf.rb failed ***
+</span><span class='line'>Could not create Makefile due to some reason, probably lack of necessary libraries and/or headers.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A temporary workaround to allow previous releases of Nokogiri to build is to
+install the extra headers package mentioned in the Xcode 10 release notes:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h4>Other macOS Tips</h4>
 
 <ul>
