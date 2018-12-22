@@ -1,5 +1,15 @@
+---
 site_name: nokogiri.org
-docs_dir: "staging" # populated with rake task `generate`
+docs_dir: staging
 markdown_extensions:
-  - codehilite
+- codehilite
 theme: readthedocs
+nav:
+- Installing Nokogiri: installing_nokogiri.md
+- Parsing an HTML/XML document: parsing_an_html_xml_document.md
+- Searching a XML/HTML document: searching_a_xml_html_document.md
+- Modifying an HTML/XML document: modifying_an_html_xml_document.md
+- Ensuring well-formed markup: ensuring_well_formed_markup.md
+- Getting Help: getting_help.md
+- Security: security.md
+- More Resources: more_resources.md
