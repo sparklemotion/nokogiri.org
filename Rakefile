@@ -1,5 +1,18 @@
 require 'yaml'
 
+namespace :dev do
+  desc "Set up system dependencies to develop this site."
+  task :setup do
+    system "pip install --user mkdocs"
+    
+    Bundler.with_clean_env do
+      Dir.chdir "tutorials" do
+        system "bundle install"
+      end
+    end
+  end
+end
+
 namespace :tutorials do
   tut_dest     = File.expand_path "source/tutorials"
   tut_repo     = File.expand_path "tutorials"
@@ -19,7 +32,6 @@ namespace :tutorials do
 
     files = Bundler.with_clean_env do
       Dir.chdir "tutorials" do
-        system "bundle install"
         system "bundle exec rake markdown"
         YAML.load(`bundle exec rake describe`)
       end

@@ -19,3 +19,17 @@ Visit [the tutorials repo](https://github.com/sparklemotion/nokogiri.org-tutoria
 ## How Do I Contribute Documentation?
 
 Visit [the tutorials repo](https://github.com/sparklemotion/nokogiri.org-tutorials).
+
+
+## How do I develop on this site?
+
+You'll need ruby, python and pip installed.
+
+Then run:
+
+``` sh
+$ bundle install
+$ bundle exec rake dev:setup
+```
+
+
