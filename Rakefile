@@ -87,8 +87,8 @@ namespace :mkdocs do
 
   desc "Use mkdocs to generate a static site"
   task :generate do
-    system "mkdocs build"
     mkdocs_inject_toc
+    system "mkdocs build"
   end
 
   desc "Use mkdocs to generate a static site"
