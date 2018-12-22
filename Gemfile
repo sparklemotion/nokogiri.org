@@ -16,4 +16,9 @@ group :development do
   gem 'stringex', '~> 1.4.0'
 end
 
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+end
+
 gem 'sinatra', '~> 1.4.2'
