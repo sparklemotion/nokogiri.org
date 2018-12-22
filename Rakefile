@@ -93,6 +93,10 @@ namespace :mkdocs do
 
   desc "Use mkdocs to generate a static site"
   task :preview do
+    Thread.new do
+      sleep 1
+      Launchy.open "http://localhost:8000"
+    end
     system "mkdocs serve"
   end
 end
@@ -106,9 +110,7 @@ desc "generate a static site"
 task :generate => ["clean", "tutorials:generate", "nokogiri:generate", "mkdocs:generate"]
 
 desc "preview the site"
-task :preview => ["tutorials:generate", "nokogiri:generate", "mkdocs:preview"] do
-  Launchy.open "http://localhost:8000"
-end
+task :preview => ["tutorials:generate", "nokogiri:generate", "mkdocs:preview"]
 
 
 
