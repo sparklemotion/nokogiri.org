@@ -2,7 +2,9 @@ require 'rubygems'
 gem 'rcodetools'
 
 RAWMD_DIRECTORY = "content"
+RAWASSETS_DIRECTORY = "assets"
 COOKEDMD_DIRECTORY = "markdown"
+COOKEDASSETS_DIRECTORY = File.join(COOKEDMD_DIRECTORY, RAWASSETS_DIRECTORY)
 
 #
 #  utility functions. yes, this is a hot mess.
@@ -149,13 +151,17 @@ file_hash.each do |rawmd_filename, cookedmd_filename|
   end
 end
 
+file COOKEDASSETS_DIRECTORY do
+  FileUtils.ln_sf File.join("..", RAWASSETS_DIRECTORY), COOKEDASSETS_DIRECTORY
+end
+
 desc "Remove all generated files"
 task :clean do
   FileUtils.rm_rf COOKEDMD_DIRECTORY, :verbose => true
 end
 
 desc "Build cooked markdown version of the book"
-task :markdown => cookedmd_file_list
+task :markdown => [cookedmd_file_list, COOKEDASSETS_DIRECTORY].flatten
 
 desc "Describe the markdown tutorials in YAML"
 task :describe do
