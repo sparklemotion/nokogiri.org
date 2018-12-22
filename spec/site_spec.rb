@@ -48,8 +48,8 @@ describe "nokogiri.org" do
 
     it "has entries for each markdown file" do
       chapters.each do |title, path|
-        filename = File.basename(path).gsub(".md", ".html")
-        expect(page).to have_link(title, href: "/tutorials/#{filename}")
+        filename = File.basename(path).gsub(".md", "")
+        expect(page).to have_link(title, href: "/#{filename}")
       end
     end
   end

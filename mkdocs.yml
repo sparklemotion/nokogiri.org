@@ -1,0 +1,5 @@
+site_name: nokogiri.org
+docs_dir: "staging" # populated with rake task `generate`
+markdown_extensions:
+  - codehilite
+theme: readthedocs

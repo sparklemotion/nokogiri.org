@@ -4,7 +4,7 @@ require 'capybara/rspec'
 
 module NokogiriTestConfig
   module PATH
-    Root = "public"
+    Root = "site"
     Tutorials = "tutorials"
   end
 

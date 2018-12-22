@@ -1,12 +1,19 @@
-require 'yaml'
+require "rspec/core/rake_task"
+require "yaml"
+require "launchy"
+
+STAGING_DIR = "staging"
+SITE_DIR = "site"
+TUTORIALS_DIR = "tutorials"
+TUTORIALS_MARKDOWN_DIR = File.join(TUTORIALS_DIR, "markdown")
 
 namespace :dev do
   desc "Set up system dependencies to develop this site."
   task :setup do
-    system "pip install --user mkdocs"
+    system "pip install --user mkdocs pygments"
     
     Bundler.with_clean_env do
-      Dir.chdir "tutorials" do
+      Dir.chdir TUTORIALS_DIR do
         system "bundle install"
       end
     end
@@ -14,86 +21,99 @@ namespace :dev do
 end
 
 namespace :tutorials do
-  tut_dest     = File.expand_path "source/tutorials"
-  tut_repo     = File.expand_path "tutorials"
-  tut_web_path = "tutorials"
-  asset_dest = File.expand_path "source/assets"
-  asset_src  = File.expand_path "tutorials/assets"
-
-  desc "Sync the tutorials content into the site content."
+  desc "Pull in tutorial content"
   task :generate do
-    def write_front_matter io, front_matter
-      front_matter["layout"] ||= "page"
-      front_matter["sidebar"] = false unless front_matter.has_key?("sidebar")
+    FileUtils.mkdir_p STAGING_DIR
 
-      io.write front_matter.to_yaml
-      io.puts "---"
-    end
-
-    files = Bundler.with_clean_env do
-      Dir.chdir "tutorials" do
+    Bundler.with_clean_env do
+      Dir.chdir TUTORIALS_DIR do
         system "bundle exec rake markdown"
-        YAML.load(`bundle exec rake describe`)
       end
     end
 
-    chapters = [].tap do |chapters|
-      files.each do |title, filename|
-        chapters << {
-          "title" =>       title,
-          "filename" =>    filename,
-          "source_file" => File.join(tut_repo, filename),
-          "dest_file" =>   File.join(tut_dest, File.basename(filename)),
-          "web_file" =>    File.join("/", tut_web_path, File.basename(filename).gsub(/\.md$/, ".html")),
-        }
-      end
-    end
-    chapters.each_with_index do |chapter, j|
-      if j >= 1
-        chapter["prev"] ||= {}
-        chapter["prev"]["title"] = chapters[j-1]["title"]
-        chapter["prev"]["url"] = chapters[j-1]["web_file"]
-      end
-      if j < chapters.length-1
-        chapter["next"] ||= {}
-        chapter["next"]["title"] = chapters[j+1]["title"]
-        chapter["next"]["url"] = chapters[j+1]["web_file"]
-      end
-    end
-
-    FileUtils.rm_rf tut_dest
-    FileUtils.mkdir_p tut_dest
-    File.open "source/tutorials/index.md", "w" do |index|
-      write_front_matter index, {
-        "title" => "Tutorials"
-      }
-
-      chapters.each do |chapter|
-        File.open chapter["dest_file"], "w" do |file|
-          front_matter = {
-            "title" => chapter["title"]
-          }
-          front_matter["prev"] = chapter["prev"] if chapter["prev"]
-          front_matter["next"] = chapter["next"] if chapter["next"]
-
-          write_front_matter file, front_matter
-          file.write File.read(chapter["source_file"])
-        end
-        index.puts "1. [#{chapter["title"]}](#{chapter["web_file"]})"
-      end
-    end
-
-    FileUtils.rm_rf asset_dest,            :verbose => true
-    FileUtils.cp_r  asset_src, asset_dest, :verbose => true
+    system "cp -varL #{TUTORIALS_MARKDOWN_DIR}/* #{STAGING_DIR}"
   end
 
   desc "recursively clean the tutorials submodule"
   task :clean do
     Bundler.with_clean_env do
-      Dir.chdir "tutorials" do
+      Dir.chdir TUTORIALS_DIR do
         system "rake clean"
       end
     end
-    FileUtils.rm_rf tut_dest, :verbose => true
   end
 end
+
+namespace :nokogiri do
+  def nokogiri_dir
+    ENV["NOKOGIRI_DIR"] || "../nokogiri"
+  end
+
+  desc "Pull in Nokogiri repo files"
+  task :generate do
+    FileUtils.mkdir_p STAGING_DIR
+    {
+      "LICENSE.md" => "LICENSE.md",
+      "SECURITY.md" => "security.md",
+      "README.md" => "index.md",
+    }.each do |source_file, dest_file|
+      source_path = File.join(nokogiri_dir, source_file)
+      if ! File.exist?(source_path)
+        raise "Could not find file #{source_path}, please set \$NOKOGIRI_DIR if necessary"
+      end
+      dest_path = File.join(STAGING_DIR, dest_file)
+      FileUtils.cp source_path, dest_path, verbose: true
+    end
+  end
+end
+
+namespace :mkdocs do
+  MKDOCS_CONFIG = "mkdocs.yml"
+
+  def mkdocs_inject_toc
+    toc = Bundler.with_clean_env do
+      Dir.chdir TUTORIALS_DIR do
+        YAML.load(`bundle exec rake describe`)
+      end
+    end
+    nav = toc.inject([]) do |nav, (title, filename)|
+      nav << { title => File.basename(filename) }
+      nav
+    end
+    mkdocs_config = YAML.load_file(MKDOCS_CONFIG)
+    mkdocs_config["nav"] = nav
+    File.open(MKDOCS_CONFIG, "w") { |f| f.write mkdocs_config.to_yaml }
+  end
+
+  desc "Use mkdocs to generate a static site"
+  task :generate do
+    system "mkdocs build"
+    mkdocs_inject_toc
+  end
+
+  desc "Use mkdocs to generate a static site"
+  task :preview do
+    system "mkdocs serve"
+  end
+end
+
+task :clean do
+  FileUtils.rm_rf STAGING_DIR
+  FileUtils.rm_rf SITE_DIR
+end
+
+desc "generate a static site"
+task :generate => ["clean", "tutorials:generate", "nokogiri:generate", "mkdocs:generate"]
+
+desc "preview the site"
+task :preview => ["tutorials:generate", "nokogiri:generate", "mkdocs:preview"] do
+  Launchy.open "http://localhost:8000"
+end
+
+
+
+RSpec::Core::RakeTask.new(:spec)
+
+task :spec => :generate
+
+task :default => :spec
