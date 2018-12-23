@@ -1,6 +1,11 @@
 ---
 site_name: "Nokogiri 鋸"
-site_url: https://nokogiri.org/
+site_url: https://nokogiri.org
+repo_url: https://github.com/sparklemotion/nokogiri
+edit_uri: null
+site_description: "The Official Tutorial Archive™ of Nokogiri®"
+site_author: "Mike Dalessio"
+copyright: "Copyright Ⓒ 2009-2018 Mike Dalessio"
 
 docs_dir: staging
 use_directory_urls: false
