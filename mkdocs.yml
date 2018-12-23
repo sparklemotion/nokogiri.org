@@ -1,0 +1,37 @@
+---
+site_name: "Nokogiri"
+site_url: https://nokogiri.org
+repo_name: sparklemotion/nokogiri
+repo_url: https://github.com/sparklemotion/nokogiri
+edit_uri: https://github.com/sparklemotion/nokogiri.org/blob/master/docs
+site_description: "The Official Tutorial Archive™ of Nokogiri®"
+site_author: "Mike Dalessio"
+copyright: "Copyright Ⓒ 2009-2018 Mike Dalessio"
+
+docs_dir: staging
+use_directory_urls: false
+
+theme:
+  name: material
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+  logo: 'images/nokogiri-serif-white.svg'
+  favicon: 'images/nokogiri-serif-black.png'
+  feature:
+    tabs: true
+markdown_extensions:
+- codehilite
+
+nav:
+- Overview: index.md
+- Tutorials:
+  - Installing Nokogiri: tutorials/installing_nokogiri.md
+  - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
+  - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
+  - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
+  - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
+- Getting Help: tutorials/getting_help.md
+- Security: SECURITY.md
+- License: LICENSE.md
+- More Resources: tutorials/more_resources.md

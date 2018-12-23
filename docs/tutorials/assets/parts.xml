@@ -1,0 +1,14 @@
+<parts>
+  <!-- Alice's Auto Parts Store -->
+  <inventory xmlns="http://alicesautoparts.com/">
+    <tire>all weather</tire>
+    <tire>studded</tire>
+    <tire>extra wide</tire>
+  </inventory>
+
+  <!-- Bob's Bike Shop -->
+  <inventory xmlns="http://bobsbikes.com/">
+    <tire>street</tire>
+    <tire>mountain</tire>
+  </inventory>
+</parts>
