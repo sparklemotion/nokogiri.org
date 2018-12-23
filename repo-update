@@ -1,6 +1,0 @@
-#! /usr/bin/env bash
-
-set -e
-
-git submodule foreach "git remote update"
-git submodule foreach "git checkout master"
