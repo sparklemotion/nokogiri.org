@@ -1,8 +1,9 @@
 ---
 site_name: "Nokogiri"
 site_url: https://nokogiri.org
+repo_name: sparklemotion/nokogiri
 repo_url: https://github.com/sparklemotion/nokogiri
-edit_uri: null
+edit_uri: https://github.com/sparklemotion/nokogiri.org/blob/master/docs
 site_description: "The Official Tutorial Archive™ of Nokogiri®"
 site_author: "Mike Dalessio"
 copyright: "Copyright Ⓒ 2009-2018 Mike Dalessio"
@@ -17,6 +18,8 @@ theme:
     code: 'Ubuntu Mono'
   logo: 'images/nokogiri-serif-white.svg'
   favicon: 'images/nokogiri-serif-black.png'
+  feature:
+    tabs: true
 markdown_extensions:
 - codehilite
 
