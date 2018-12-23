@@ -1,0 +1,30 @@
+<root>
+  <sitcoms>
+    <sitcom>
+      <name>Married with Children</name>
+      <characters>
+        <character>Al Bundy</character>
+        <character>Bud Bundy</character>
+        <character>Marcy Darcy</character>
+      </characters>
+    </sitcom>
+    <sitcom>
+      <name>Perfect Strangers</name>
+      <characters>
+        <character>Larry Appleton</character>
+        <character>Balki Bartokomous</character>
+      </characters>
+    </sitcom>
+  </sitcoms>
+  <dramas>
+    <drama>
+      <name>The A-Team</name>
+      <characters>
+        <character>John "Hannibal" Smith</character>
+        <character>Templeton "Face" Peck</character>
+        <character>"B.A." Baracus</character>
+        <character>"Howling Mad" Murdock</character>
+      </characters>
+    </drama>
+  </dramas>
+</root>
