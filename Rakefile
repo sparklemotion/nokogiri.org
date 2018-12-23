@@ -12,7 +12,7 @@ TUTORIALS_DIR = "tutorials"
 namespace :dev do
   desc "Set up system dependencies to develop this site."
   task :setup do
-    system "pip install --user mkdocs pygments"
+    system "pip install --user mkdocs pygments mkdocs-material"
   end
 end
 

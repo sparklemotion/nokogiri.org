@@ -1,9 +1,14 @@
 ---
-site_name: nokogiri.org
+site_name: "Nokogiri 鋸"
+site_url: https://nokogiri.org/
+
 docs_dir: staging
+use_directory_urls: false
+
+theme: material
 markdown_extensions:
 - codehilite
-theme: readthedocs
+
 nav:
 - Overview: index.md
 - Tutorials:
