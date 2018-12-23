@@ -1,5 +1,5 @@
 ---
-site_name: "Nokogiri 鋸"
+site_name: "Nokogiri"
 site_url: https://nokogiri.org
 repo_url: https://github.com/sparklemotion/nokogiri
 edit_uri: null
@@ -10,7 +10,13 @@ copyright: "Copyright Ⓒ 2009-2018 Mike Dalessio"
 docs_dir: staging
 use_directory_urls: false
 
-theme: material
+theme:
+  name: material
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+  logo: 'images/nokogiri-serif-white.svg'
+  favicon: 'images/nokogiri-serif-black.png'
 markdown_extensions:
 - codehilite
 
