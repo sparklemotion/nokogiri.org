@@ -121,7 +121,7 @@ gem install nokogiri
 
 If, you see this dialog when you run the above commands:
 
-![xcode-select-network-problem](assets/xcode-select-network-problem.png)
+![xcode-select-network-problem](images/xcode-select-network-problem.png)
 
 Then run this command to turn off forced-authentication with Apple Software
 Update:
