@@ -28,14 +28,17 @@ markdown_extensions:
     permalink: true
 
 nav:
-- Overview: index.md
+- About:
+  - Overview: index.md
+  - Changelog: CHANGELOG.md
+  - Security: SECURITY.md
+  - License: LICENSE.md
+  - More Resources: tutorials/more_resources.md
 - Tutorials:
-  - Installing Nokogiri: tutorials/installing_nokogiri.md
   - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
   - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
   - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
   - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
-- Getting Help: tutorials/getting_help.md
-- Security: SECURITY.md
-- License: LICENSE.md
-- More Resources: tutorials/more_resources.md
+- Support:
+  - Installing Nokogiri: tutorials/installing_nokogiri.md
+  - Getting Help: tutorials/getting_help.md

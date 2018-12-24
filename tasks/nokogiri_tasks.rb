@@ -4,12 +4,14 @@ def create_nokogiri_tasks source_dir, dest_dir
   file_pairs = {
     "LICENSE.md" => "LICENSE.md",
     "SECURITY.md" => "SECURITY.md",
-    "README.md" => "index.md",
+    "tutorials/security.md" => "SECURITY.md",
+    "CHANGELOG.md" => "CHANGELOG.md",
+    "index.md" => "README.md",
   }
 
   dest_paths = []
 
-  file_pairs.each do |source_file, dest_file|
+  file_pairs.each do |dest_file, source_file|
     source_path = File.join(nokogiri_dir, source_file)
     dest_path = File.join(dest_dir, dest_file)
     dest_paths << dest_path
