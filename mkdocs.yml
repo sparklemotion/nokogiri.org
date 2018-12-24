@@ -3,7 +3,7 @@ site_name: "Nokogiri"
 site_url: https://nokogiri.org
 repo_name: sparklemotion/nokogiri
 repo_url: https://github.com/sparklemotion/nokogiri
-edit_uri: https://github.com/sparklemotion/nokogiri.org/blob/master/docs
+edit_uri: ""
 site_description: "The Official Tutorial Archive™ of Nokogiri®"
 site_author: "Mike Dalessio"
 copyright: "Copyright Ⓒ 2009-2018 Mike Dalessio"
@@ -22,6 +22,8 @@ theme:
     tabs: true
 markdown_extensions:
 - codehilite
+- toc:
+    permalink: true
 
 nav:
 - Overview: index.md
