@@ -21,7 +21,9 @@ theme:
   feature:
     tabs: true
 markdown_extensions:
-- codehilite
+- admonition
+- codehilite:
+    guess_lang: false
 - toc:
     permalink: true
 
