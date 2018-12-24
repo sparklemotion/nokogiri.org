@@ -9,14 +9,17 @@ module NokogiriTestConfig
   end
 
   module CSS
-    Header = "body > header"
-    Footer = "body > footer"
-    Nav = "nav"
+    Footer = "footer"
   end
 end
 
 Capybara.app = Rack::Builder.app do
-  use Rack::Static, root: NokogiriTestConfig::PATH::Root, index: "index.html"
-  use Rack::Lint
-  run(lambda { |env| [200, {'Content-Type'  => 'text/html'} ] })
+  map "/" do
+    use Rack::Static,
+        :urls => ["/"],
+        :root => NokogiriTestConfig::PATH::Root,
+        :index => "index.html"
+    use Rack::Lint
+    run lambda {|env| [404, {}, '']}
+  end
 end
