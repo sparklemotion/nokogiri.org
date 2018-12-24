@@ -15,7 +15,7 @@ theme:
   name: material
   font:
     text: 'Ubuntu'
-    code: 'Ubuntu Mono'
+    code: 'Menlo'
   logo: 'images/nokogiri-serif-white.svg'
   favicon: 'images/nokogiri-serif-black.png'
   feature:
