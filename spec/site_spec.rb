@@ -36,7 +36,7 @@ describe "nokogiri.org" do
       let(:within_css) { NokogiriTestConfig::CSS::Footer }
 
       it "points at the tutorials repo" do
-        expect(page).to have_link("sparklemotion/nokogiri.org-tutorials", href: "https://github.com/sparklemotion/nokogiri.org-tutorials")
+        expect(page).to have_link("sparklemotion/nokogiri.org", href: "https://github.com/sparklemotion/nokogiri.org")
       end
     end
   end

@@ -13,6 +13,7 @@ use_directory_urls: false
 
 theme:
   name: material
+  custom_dir: theme/extensions/material
   font:
     text: 'Ubuntu'
     code: 'Menlo'
