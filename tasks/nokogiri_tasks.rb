@@ -25,6 +25,18 @@ def create_nokogiri_tasks source_dir, dest_dir
       FileUtils.cp source_path, dest_path, verbose: true
     end
   end
+
+  desc "Generate and pull in Nokogiri rdocs"
+  task :rdoc do
+    if ! File.exist?(File.join(STAGING_DIR, "rdoc", "index.html"))
+      pwd = Dir.pwd
+      Dir.chdir(nokogiri_dir) do
+        system "yard doc --output-dir #{File.join(pwd, STAGING_DIR, "rdoc")}"
+      end
+    end
+  end
+  dest_paths << "nokogiri:rdoc"
+
   dest_paths
 end
 

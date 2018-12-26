@@ -4,6 +4,7 @@ group :development do
   gem 'rake'
   gem 'launchy'
   gem 'rcodetools'
+  gem 'yard'
 end
 
 group :test do

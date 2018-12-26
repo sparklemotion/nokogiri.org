@@ -46,3 +46,4 @@ nav:
 - Support:
   - Installing Nokogiri: tutorials/installing_nokogiri.md
   - Getting Help: tutorials/getting_help.md
+- RDoc: rdoc/index.html
