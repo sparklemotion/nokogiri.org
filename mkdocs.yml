@@ -38,6 +38,7 @@ nav:
   - License: LICENSE.md
   - Dependencies: LICENSE-DEPENDENCIES.md
   - More Resources: tutorials/more_resources.md
+  - RDoc: rdoc/index.html
 - Tutorials:
   - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
   - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
@@ -46,4 +47,3 @@ nav:
 - Support:
   - Installing Nokogiri: tutorials/installing_nokogiri.md
   - Getting Help: tutorials/getting_help.md
-- RDoc: rdoc/index.html
