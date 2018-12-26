@@ -1,6 +1,6 @@
 # Getting Help and Reporting Issues
 
-## Halp!
+## Help!
 
 So you're having a great time slicing and dicing your XML with
 Nokogiri, and suddenly something happens that you don't quite
