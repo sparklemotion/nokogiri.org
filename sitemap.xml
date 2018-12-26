@@ -31,6 +31,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://nokogiri.org/rdoc/index.html</loc>
+     <lastmod>2018-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://nokogiri.org/tutorials/parsing_an_html_xml_document.html</loc>
      <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
@@ -57,11 +62,6 @@
     </url>
     <url>
      <loc>https://nokogiri.org/tutorials/getting_help.html</loc>
-     <lastmod>2018-12-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://nokogiri.org/rdoc/index.html</loc>
      <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
