@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Nokogiri::XML::RelaxNG
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Nokogiri::XML::RelaxNG";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
+     &raquo; 
+    <span class="title">RelaxNG</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Nokogiri::XML::RelaxNG
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">NokogiriXmlSchema</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">NokogiriXmlSchema</li>
+          
+            <li class="next">Nokogiri::XML::RelaxNG</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/nokogiri/xml/relax_ng.rb<span class="defines">,<br />
+  ext/nokogiri/xml_relax_ng.c</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Nokogiri::XML::RelaxNG is used for validating XML against a RelaxNG schema.</p>
+
+<h2 id="label-Synopsis">Synopsis</h2>
+
+<p>Validate an XML document against a RelaxNG schema.  Loop over the errors
+that are returned and print them out:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_schema'>schema</span>  <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>RelaxNG</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='const'>ADDRESS_SCHEMA_FILE</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_doc'>doc</span>     <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='const'>ADDRESS_XML_FILE</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_doc'>doc</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_error'>error</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>The list of errors are Nokogiri::XML::SyntaxError objects.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_document-class_method" title="from_document (class method)">.<strong>from_document</strong>(doc)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new RelaxNG schema from the Nokogiri::XML::Document
+<code>doc</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_memory-class_method" title="read_memory (class method)">.<strong>read_memory</strong>(string)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new RelaxNG from the contents of <code>string</code>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="from_document-class_method">
+  
+    .<strong>from_document</strong>(doc)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new RelaxNG schema from the Nokogiri::XML::Document
+<code>doc</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_relax_ng.c', line 103</span>
+
+static VALUE from_document(VALUE klass, VALUE document)
+{
+  xmlDocPtr doc;
+  xmlRelaxNGParserCtxtPtr ctx;
+  xmlRelaxNGPtr schema;
+  VALUE errors;
+  VALUE rb_schema;
+
+  Data_Get_Struct(document, xmlDoc, doc);
+
+  /* In case someone passes us a node. ugh. */
+  doc = doc-&gt;doc;
+
+  ctx = xmlRelaxNGNewDocParserCtxt(doc);
+
+  errors = rb_ary_new();
+  xmlSetStructuredErrorFunc((void *)errors, Nokogiri_error_array_pusher);
+
+#ifdef HAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS
+  xmlRelaxNGSetParserStructuredErrors(
+    ctx,
+    Nokogiri_error_array_pusher,
+    (void *)errors
+  );
+#endif
+
+  schema = xmlRelaxNGParse(ctx);
+
+  xmlSetStructuredErrorFunc(NULL, NULL);
+
+  if(NULL == schema) {
+    xmlErrorPtr error = xmlGetLastError();
+    if(error)
+      Nokogiri_error_raise(NULL, error);
+    else
+      rb_raise(rb_eRuntimeError, &quot;Could not parse document&quot;);
+
+    return Qnil;
+  }
+
+  rb_schema = Data_Wrap_Struct(klass, 0, dealloc, schema);
+  rb_iv_set(rb_schema, &quot;@errors&quot;, errors);
+
+  return rb_schema;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_memory-class_method">
+  
+    .<strong>read_memory</strong>(string)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new RelaxNG from the contents of <code>string</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_relax_ng.c', line 56</span>
+
+static VALUE read_memory(VALUE klass, VALUE content)
+{
+  xmlRelaxNGParserCtxtPtr ctx = xmlRelaxNGNewMemParserCtxt(
+      (const char *)StringValuePtr(content),
+      (int)RSTRING_LEN(content)
+  );
+  xmlRelaxNGPtr schema;
+  VALUE errors = rb_ary_new();
+  VALUE rb_schema;
+
+  xmlSetStructuredErrorFunc((void *)errors, Nokogiri_error_array_pusher);
+
+#ifdef HAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS
+  xmlRelaxNGSetParserStructuredErrors(
+    ctx,
+    Nokogiri_error_array_pusher,
+    (void *)errors
+  );
+#endif
+
+  schema = xmlRelaxNGParse(ctx);
+
+  xmlSetStructuredErrorFunc(NULL, NULL);
+  xmlRelaxNGFreeParserCtxt(ctx);
+
+  if(NULL == schema) {
+    xmlErrorPtr error = xmlGetLastError();
+    if(error)
+      Nokogiri_error_raise(NULL, error);
+    else
+      rb_raise(rb_eRuntimeError, &quot;Could not parse document&quot;);
+
+    return Qnil;
+  }
+
+  rb_schema = Data_Wrap_Struct(klass, 0, dealloc, schema);
+  rb_iv_set(rb_schema, &quot;@errors&quot;, errors);
+
+  return rb_schema;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Dec 26 17:11:01 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.3).
+</div>
+
+    </div>
+  </body>
+</html>

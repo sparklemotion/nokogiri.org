@@ -1,0 +1,4263 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="The Official Tutorial Archive™ of Nokogiri®">
+      
+      
+        <link rel="canonical" href="https://nokogiri.org/CHANGELOG.html">
+      
+      
+        <meta name="author" content="Mike Dalessio">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="images/nokogiri-serif-black.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Changelog - Nokogiri</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Menlo">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#nokogiri-changelog" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://nokogiri.org" title="Nokogiri" class="md-header-nav__button md-logo">
+          
+            <img src="images/nokogiri-serif-white.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Nokogiri
+              </span>
+              <span class="md-header-nav__topic">
+                Changelog
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      sparklemotion/nokogiri
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" title="Readme" class="md-tabs__link">
+        Readme
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="CHANGELOG.html" title="About" class="md-tabs__link md-tabs__link--active">
+          About
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="tutorials/parsing_an_html_xml_document.html" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="tutorials/installing_nokogiri.html" title="Support" class="md-tabs__link">
+          Support
+        </a>
+      
+    </li>
+  
+
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="rdoc/index.html" title="RDoc" class="md-tabs__link">
+        RDoc
+      </a>
+    
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://nokogiri.org" title="Nokogiri" class="md-nav__button md-logo">
+      
+        <img src="images/nokogiri-serif-white.svg" width="48" height="48">
+      
+    </a>
+    Nokogiri
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      sparklemotion/nokogiri
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Readme" class="md-nav__link">
+      Readme
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Changelog
+      </label>
+    
+    <a href="CHANGELOG.html" title="Changelog" class="md-nav__link md-nav__link--active">
+      Changelog
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1100-unreleased" title="1.10.0 / unreleased" class="md-nav__link">
+    1.10.0 / unreleased
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backwards-incompatibilities" title="Backwards incompatibilities" class="md-nav__link">
+    Backwards incompatibilities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#191-2018-12-17" title="1.9.1 / 2018-12-17" class="md-nav__link">
+    1.9.1 / 2018-12-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#190-2018-12-17" title="1.9.0 / 2018-12-17" class="md-nav__link">
+    1.9.0 / 2018-12-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notable-non-functional-changes" title="Notable non-functional changes" class="md-nav__link">
+    Notable non-functional changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#185-2018-10-04" title="1.8.5 / 2018-10-04" class="md-nav__link">
+    1.8.5 / 2018-10-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_1" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#184-2018-07-03" title="1.8.4 / 2018-07-03" class="md-nav__link">
+    1.8.4 / 2018-07-03
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183-2018-06-16" title="1.8.3 / 2018-06-16" class="md-nav__link">
+    1.8.3 / 2018-06-16
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_2" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_1" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_1" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182-2018-01-29" title="1.8.2 / 2018-01-29" class="md-nav__link">
+    1.8.2 / 2018-01-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_3" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_2" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_2" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#181-2017-09-19" title="1.8.1 / 2017-09-19" class="md-nav__link">
+    1.8.1 / 2017-09-19
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_3" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs" title="Bugs" class="md-nav__link">
+    Bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#180-2017-06-04" title="1.8.0 / 2017-06-04" class="md-nav__link">
+    1.8.0 / 2017-06-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backwards-incompatibilities_1" title="Backwards incompatibilities" class="md-nav__link">
+    Backwards incompatibilities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_4" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-notes" title="Compatibility notes" class="md-nav__link">
+    Compatibility notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_3" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs_1" title="Bugs" class="md-nav__link">
+    Bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#172-2017-05-09" title="1.7.2 / 2017-05-09" class="md-nav__link">
+    1.7.2 / 2017-05-09
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_4" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#171-2017-03-19" title="1.7.1 / 2017-03-19" class="md-nav__link">
+    1.7.1 / 2017-03-19
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_5" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1701-2017-01-04" title="1.7.0.1 / 2017-01-04" class="md-nav__link">
+    1.7.0.1 / 2017-01-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugs_2" title="Bugs" class="md-nav__link">
+    Bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#170-2016-12-26" title="1.7.0 / 2016-12-26" class="md-nav__link">
+    1.7.0 / 2016-12-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_4" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backwards-incompatibilities_2" title="Backwards incompatibilities." class="md-nav__link">
+    Backwards incompatibilities.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1681-2016-10-03" title="1.6.8.1 / 2016-10-03" class="md-nav__link">
+    1.6.8.1 / 2016-10-03
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-license-notes" title="Dependency License Notes" class="md-nav__link">
+    Dependency License Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#168-2016-06-06" title="1.6.8 / 2016-06-06" class="md-nav__link">
+    1.6.8 / 2016-06-06
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_6" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_5" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" title="Bug Fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-notes" title="Other Notes" class="md-nav__link">
+    Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1672-2016-01-20" title="1.6.7.2 / 2016-01-20" class="md-nav__link">
+    1.6.7.2 / 2016-01-20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1671-2015-12-16" title="1.6.7.1 / 2015-12-16" class="md-nav__link">
+    1.6.7.1 / 2015-12-16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#167-2015-11-29" title="1.6.7 / 2015-11-29" class="md-nav__link">
+    1.6.7 / 2015-11-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" title="Notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_6" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_7" title="Bug Fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1664-2015-11-19" title="1.6.6.4 / 2015-11-19" class="md-nav__link">
+    1.6.6.4 / 2015-11-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1663-2015-11-16" title="1.6.6.3 / 2015-11-16" class="md-nav__link">
+    1.6.6.3 / 2015-11-16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1662-2015-01-23" title="1.6.6.2 / 2015-01-23" class="md-nav__link">
+    1.6.6.2 / 2015-01-23
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_8" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1661-2015-01-22" title="1.6.6.1 / 2015-01-22" class="md-nav__link">
+    1.6.6.1 / 2015-01-22
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_7" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_9" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-2014-11-26" title="1.6.5 / 2014-11-26" class="md-nav__link">
+    1.6.5 / 2014-11-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_8" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_10" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1641-2014-11-05" title="1.6.4.1 / 2014-11-05" class="md-nav__link">
+    1.6.4.1 / 2014-11-05
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_11" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-2014-11-04" title="1.6.4 / 2014-11-04" class="md-nav__link">
+    1.6.4 / 2014-11-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_9" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_12" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1631-2014-07-21" title="1.6.3.1 / 2014-07-21" class="md-nav__link">
+    1.6.3.1 / 2014-07-21
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_13" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-2014-07-20" title="1.6.3 / 2014-07-20" class="md-nav__link">
+    1.6.3 / 2014-07-20
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_10" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_14" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1621-2014-05-13" title="1.6.2.1 / 2014-05-13" class="md-nav__link">
+    1.6.2.1 / 2014-05-13
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_15" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-2014-05-12" title="1.6.2 / 2014-05-12" class="md-nav__link">
+    1.6.2 / 2014-05-12
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-note" title="Security Note" class="md-nav__link">
+    Security Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-note" title="Compatibility Note" class="md-nav__link">
+    Compatibility Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_11" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes" title="Bugfixes" class="md-nav__link">
+    Bugfixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#161-2013-12-14" title="1.6.1 / 2013-12-14" class="md-nav__link">
+    1.6.1 / 2013-12-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160-2013-06-08" title="1.6.0 / 2013-06-08" class="md-nav__link">
+    1.6.0 / 2013-06-08
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160rc1-2013-04-14" title="1.6.0.rc1 / 2013-04-14" class="md-nav__link">
+    1.6.0.rc1 / 2013-04-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1511-2013-12-14" title="1.5.11 / 2013-12-14" class="md-nav__link">
+    1.5.11 / 2013-12-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1510-2013-06-07" title="1.5.10 / 2013-06-07" class="md-nav__link">
+    1.5.10 / 2013-06-07
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#159-2013-03-21" title="1.5.9 / 2013-03-21" class="md-nav__link">
+    1.5.9 / 2013-03-21
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#158-2013-03-19" title="1.5.8 / 2013-03-19" class="md-nav__link">
+    1.5.8 / 2013-03-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#157-2013-03-18" title="1.5.7 / 2013-03-18" class="md-nav__link">
+    1.5.7 / 2013-03-18
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#156-2012-12-19" title="1.5.6 / 2012-12-19" class="md-nav__link">
+    1.5.6 / 2012-12-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-2012-06-24" title="1.5.5 / 2012-06-24" class="md-nav__link">
+    1.5.5 / 2012-06-24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-2012-06-12" title="1.5.4 / 2012-06-12" class="md-nav__link">
+    1.5.4 / 2012-06-12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-2012-06-01" title="1.5.3 / 2012-06-01" class="md-nav__link">
+    1.5.3 / 2012-06-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-2012-03-09" title="1.5.2 / 2012-03-09" class="md-nav__link">
+    1.5.2 / 2012-03-09
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#151-2012-03-09" title="1.5.1 / 2012-03-09" class="md-nav__link">
+    1.5.1 / 2012-03-09
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-2011-07-01" title="1.5.0 / 2011-07-01" class="md-nav__link">
+    1.5.0 / 2011-07-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta3-20101202" title="1.5.0 beta3 / 2010/12/02" class="md-nav__link">
+    1.5.0 beta3 / 2010/12/02
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta2-20100730" title="1.5.0 beta2 / 2010/07/30" class="md-nav__link">
+    1.5.0 beta2 / 2010/07/30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta1-20100522" title="1.5.0 beta1 / 2010/05/22" class="md-nav__link">
+    1.5.0 beta1 / 2010/05/22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#147-2011-07-01" title="1.4.7 / 2011-07-01" class="md-nav__link">
+    1.4.7 / 2011-07-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-2011-06-19" title="1.4.6 / 2011-06-19" class="md-nav__link">
+    1.4.6 / 2011-06-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-2011-05-19" title="1.4.5 / 2011-05-19" class="md-nav__link">
+    1.4.5 / 2011-05-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-2010-11-15" title="1.4.4 / 2010-11-15" class="md-nav__link">
+    1.4.4 / 2010-11-15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-20100728" title="1.4.3 / 2010/07/28" class="md-nav__link">
+    1.4.3 / 2010/07/28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-20100522" title="1.4.2 / 2010/05/22" class="md-nav__link">
+    1.4.2 / 2010/05/22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141-20091210" title="1.4.1 / 2009/12/10" class="md-nav__link">
+    1.4.1 / 2009/12/10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#140-20091030" title="1.4.0 / 2009/10/30" class="md-nav__link">
+    1.4.0 / 2009/10/30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-20090726" title="1.3.3 / 2009/07/26" class="md-nav__link">
+    1.3.3 / 2009/07/26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-2009-06-22" title="1.3.2 / 2009-06-22" class="md-nav__link">
+    1.3.2 / 2009-06-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-2009-06-07" title="1.3.1 / 2009-06-07" class="md-nav__link">
+    1.3.1 / 2009-06-07
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#130-2009-05-30" title="1.3.0 / 2009-05-30" class="md-nav__link">
+    1.3.0 / 2009-05-30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-2009-03-22" title="1.2.3 / 2009-03-22" class="md-nav__link">
+    1.2.3 / 2009-03-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-2009-03-14" title="1.2.2 / 2009-03-14" class="md-nav__link">
+    1.2.2 / 2009-03-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121-2009-02-23" title="1.2.1 / 2009-02-23" class="md-nav__link">
+    1.2.1 / 2009-02-23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#120-2009-02-22" title="1.2.0 / 2009-02-22" class="md-nav__link">
+    1.2.0 / 2009-02-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111" title="1.1.1" class="md-nav__link">
+    1.1.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110" title="1.1.0" class="md-nav__link">
+    1.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107" title="1.0.7" class="md-nav__link">
+    1.0.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106" title="1.0.6" class="md-nav__link">
+    1.0.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105" title="1.0.5" class="md-nav__link">
+    1.0.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104" title="1.0.4" class="md-nav__link">
+    1.0.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103" title="1.0.3" class="md-nav__link">
+    1.0.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102" title="1.0.2" class="md-nav__link">
+    1.0.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101" title="1.0.1" class="md-nav__link">
+    1.0.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#100-2008-07-13" title="1.0.0 / 2008-07-13" class="md-nav__link">
+    1.0.0 / 2008-07-13
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="SECURITY.html" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="LICENSE.html" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="LICENSE-DEPENDENCIES.html" title="Dependencies" class="md-nav__link">
+      Dependencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/more_resources.html" title="More Resources" class="md-nav__link">
+      More Resources
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/parsing_an_html_xml_document.html" title="Parsing an HTML/XML document" class="md-nav__link">
+      Parsing an HTML/XML document
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/searching_a_xml_html_document.html" title="Searching a XML/HTML document" class="md-nav__link">
+      Searching a XML/HTML document
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/modifying_an_html_xml_document.html" title="Modifying an HTML/XML document" class="md-nav__link">
+      Modifying an HTML/XML document
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/ensuring_well_formed_markup.html" title="Ensuring well-formed markup" class="md-nav__link">
+      Ensuring well-formed markup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/installing_nokogiri.html" title="Installing Nokogiri" class="md-nav__link">
+      Installing Nokogiri
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/getting_help.html" title="Getting Help" class="md-nav__link">
+      Getting Help
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="rdoc/index.html" title="RDoc" class="md-nav__link">
+      RDoc
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1100-unreleased" title="1.10.0 / unreleased" class="md-nav__link">
+    1.10.0 / unreleased
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backwards-incompatibilities" title="Backwards incompatibilities" class="md-nav__link">
+    Backwards incompatibilities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#191-2018-12-17" title="1.9.1 / 2018-12-17" class="md-nav__link">
+    1.9.1 / 2018-12-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#190-2018-12-17" title="1.9.0 / 2018-12-17" class="md-nav__link">
+    1.9.0 / 2018-12-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notable-non-functional-changes" title="Notable non-functional changes" class="md-nav__link">
+    Notable non-functional changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#185-2018-10-04" title="1.8.5 / 2018-10-04" class="md-nav__link">
+    1.8.5 / 2018-10-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_1" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#184-2018-07-03" title="1.8.4 / 2018-07-03" class="md-nav__link">
+    1.8.4 / 2018-07-03
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183-2018-06-16" title="1.8.3 / 2018-06-16" class="md-nav__link">
+    1.8.3 / 2018-06-16
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_2" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_1" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_1" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182-2018-01-29" title="1.8.2 / 2018-01-29" class="md-nav__link">
+    1.8.2 / 2018-01-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_3" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_2" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_2" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#181-2017-09-19" title="1.8.1 / 2017-09-19" class="md-nav__link">
+    1.8.1 / 2017-09-19
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_3" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs" title="Bugs" class="md-nav__link">
+    Bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#180-2017-06-04" title="1.8.0 / 2017-06-04" class="md-nav__link">
+    1.8.0 / 2017-06-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backwards-incompatibilities_1" title="Backwards incompatibilities" class="md-nav__link">
+    Backwards incompatibilities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_4" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-notes" title="Compatibility notes" class="md-nav__link">
+    Compatibility notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_3" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs_1" title="Bugs" class="md-nav__link">
+    Bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#172-2017-05-09" title="1.7.2 / 2017-05-09" class="md-nav__link">
+    1.7.2 / 2017-05-09
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_4" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#171-2017-03-19" title="1.7.1 / 2017-03-19" class="md-nav__link">
+    1.7.1 / 2017-03-19
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_5" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1701-2017-01-04" title="1.7.0.1 / 2017-01-04" class="md-nav__link">
+    1.7.0.1 / 2017-01-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugs_2" title="Bugs" class="md-nav__link">
+    Bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#170-2016-12-26" title="1.7.0 / 2016-12-26" class="md-nav__link">
+    1.7.0 / 2016-12-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_4" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backwards-incompatibilities_2" title="Backwards incompatibilities." class="md-nav__link">
+    Backwards incompatibilities.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1681-2016-10-03" title="1.6.8.1 / 2016-10-03" class="md-nav__link">
+    1.6.8.1 / 2016-10-03
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-license-notes" title="Dependency License Notes" class="md-nav__link">
+    Dependency License Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#168-2016-06-06" title="1.6.8 / 2016-06-06" class="md-nav__link">
+    1.6.8 / 2016-06-06
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-notes_6" title="Security Notes" class="md-nav__link">
+    Security Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_5" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" title="Bug Fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-notes" title="Other Notes" class="md-nav__link">
+    Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1672-2016-01-20" title="1.6.7.2 / 2016-01-20" class="md-nav__link">
+    1.6.7.2 / 2016-01-20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1671-2015-12-16" title="1.6.7.1 / 2015-12-16" class="md-nav__link">
+    1.6.7.1 / 2015-12-16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#167-2015-11-29" title="1.6.7 / 2015-11-29" class="md-nav__link">
+    1.6.7 / 2015-11-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" title="Notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_6" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_7" title="Bug Fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1664-2015-11-19" title="1.6.6.4 / 2015-11-19" class="md-nav__link">
+    1.6.6.4 / 2015-11-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1663-2015-11-16" title="1.6.6.3 / 2015-11-16" class="md-nav__link">
+    1.6.6.3 / 2015-11-16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1662-2015-01-23" title="1.6.6.2 / 2015-01-23" class="md-nav__link">
+    1.6.6.2 / 2015-01-23
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_8" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1661-2015-01-22" title="1.6.6.1 / 2015-01-22" class="md-nav__link">
+    1.6.6.1 / 2015-01-22
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_7" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_9" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-2014-11-26" title="1.6.5 / 2014-11-26" class="md-nav__link">
+    1.6.5 / 2014-11-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_8" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_10" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1641-2014-11-05" title="1.6.4.1 / 2014-11-05" class="md-nav__link">
+    1.6.4.1 / 2014-11-05
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_11" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-2014-11-04" title="1.6.4 / 2014-11-04" class="md-nav__link">
+    1.6.4 / 2014-11-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_9" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_12" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1631-2014-07-21" title="1.6.3.1 / 2014-07-21" class="md-nav__link">
+    1.6.3.1 / 2014-07-21
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_13" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-2014-07-20" title="1.6.3 / 2014-07-20" class="md-nav__link">
+    1.6.3 / 2014-07-20
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_10" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_14" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1621-2014-05-13" title="1.6.2.1 / 2014-05-13" class="md-nav__link">
+    1.6.2.1 / 2014-05-13
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_15" title="Bug fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-2014-05-12" title="1.6.2 / 2014-05-12" class="md-nav__link">
+    1.6.2 / 2014-05-12
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-note" title="Security Note" class="md-nav__link">
+    Security Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-note" title="Compatibility Note" class="md-nav__link">
+    Compatibility Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_11" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes" title="Bugfixes" class="md-nav__link">
+    Bugfixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#161-2013-12-14" title="1.6.1 / 2013-12-14" class="md-nav__link">
+    1.6.1 / 2013-12-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160-2013-06-08" title="1.6.0 / 2013-06-08" class="md-nav__link">
+    1.6.0 / 2013-06-08
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160rc1-2013-04-14" title="1.6.0.rc1 / 2013-04-14" class="md-nav__link">
+    1.6.0.rc1 / 2013-04-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1511-2013-12-14" title="1.5.11 / 2013-12-14" class="md-nav__link">
+    1.5.11 / 2013-12-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1510-2013-06-07" title="1.5.10 / 2013-06-07" class="md-nav__link">
+    1.5.10 / 2013-06-07
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#159-2013-03-21" title="1.5.9 / 2013-03-21" class="md-nav__link">
+    1.5.9 / 2013-03-21
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#158-2013-03-19" title="1.5.8 / 2013-03-19" class="md-nav__link">
+    1.5.8 / 2013-03-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#157-2013-03-18" title="1.5.7 / 2013-03-18" class="md-nav__link">
+    1.5.7 / 2013-03-18
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#156-2012-12-19" title="1.5.6 / 2012-12-19" class="md-nav__link">
+    1.5.6 / 2012-12-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-2012-06-24" title="1.5.5 / 2012-06-24" class="md-nav__link">
+    1.5.5 / 2012-06-24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-2012-06-12" title="1.5.4 / 2012-06-12" class="md-nav__link">
+    1.5.4 / 2012-06-12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-2012-06-01" title="1.5.3 / 2012-06-01" class="md-nav__link">
+    1.5.3 / 2012-06-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-2012-03-09" title="1.5.2 / 2012-03-09" class="md-nav__link">
+    1.5.2 / 2012-03-09
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#151-2012-03-09" title="1.5.1 / 2012-03-09" class="md-nav__link">
+    1.5.1 / 2012-03-09
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-2011-07-01" title="1.5.0 / 2011-07-01" class="md-nav__link">
+    1.5.0 / 2011-07-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta3-20101202" title="1.5.0 beta3 / 2010/12/02" class="md-nav__link">
+    1.5.0 beta3 / 2010/12/02
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta2-20100730" title="1.5.0 beta2 / 2010/07/30" class="md-nav__link">
+    1.5.0 beta2 / 2010/07/30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta1-20100522" title="1.5.0 beta1 / 2010/05/22" class="md-nav__link">
+    1.5.0 beta1 / 2010/05/22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#147-2011-07-01" title="1.4.7 / 2011-07-01" class="md-nav__link">
+    1.4.7 / 2011-07-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-2011-06-19" title="1.4.6 / 2011-06-19" class="md-nav__link">
+    1.4.6 / 2011-06-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-2011-05-19" title="1.4.5 / 2011-05-19" class="md-nav__link">
+    1.4.5 / 2011-05-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-2010-11-15" title="1.4.4 / 2010-11-15" class="md-nav__link">
+    1.4.4 / 2010-11-15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-20100728" title="1.4.3 / 2010/07/28" class="md-nav__link">
+    1.4.3 / 2010/07/28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-20100522" title="1.4.2 / 2010/05/22" class="md-nav__link">
+    1.4.2 / 2010/05/22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141-20091210" title="1.4.1 / 2009/12/10" class="md-nav__link">
+    1.4.1 / 2009/12/10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#140-20091030" title="1.4.0 / 2009/10/30" class="md-nav__link">
+    1.4.0 / 2009/10/30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-20090726" title="1.3.3 / 2009/07/26" class="md-nav__link">
+    1.3.3 / 2009/07/26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-2009-06-22" title="1.3.2 / 2009-06-22" class="md-nav__link">
+    1.3.2 / 2009-06-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-2009-06-07" title="1.3.1 / 2009-06-07" class="md-nav__link">
+    1.3.1 / 2009-06-07
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#130-2009-05-30" title="1.3.0 / 2009-05-30" class="md-nav__link">
+    1.3.0 / 2009-05-30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-2009-03-22" title="1.2.3 / 2009-03-22" class="md-nav__link">
+    1.2.3 / 2009-03-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-2009-03-14" title="1.2.2 / 2009-03-14" class="md-nav__link">
+    1.2.2 / 2009-03-14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121-2009-02-23" title="1.2.1 / 2009-02-23" class="md-nav__link">
+    1.2.1 / 2009-02-23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#120-2009-02-22" title="1.2.0 / 2009-02-22" class="md-nav__link">
+    1.2.0 / 2009-02-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111" title="1.1.1" class="md-nav__link">
+    1.1.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110" title="1.1.0" class="md-nav__link">
+    1.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107" title="1.0.7" class="md-nav__link">
+    1.0.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106" title="1.0.6" class="md-nav__link">
+    1.0.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105" title="1.0.5" class="md-nav__link">
+    1.0.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104" title="1.0.4" class="md-nav__link">
+    1.0.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103" title="1.0.3" class="md-nav__link">
+    1.0.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102" title="1.0.2" class="md-nav__link">
+    1.0.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101" title="1.0.1" class="md-nav__link">
+    1.0.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#100-2008-07-13" title="1.0.0 / 2008-07-13" class="md-nav__link">
+    1.0.0 / 2008-07-13
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
+<h2 id="1100-unreleased">1.10.0 / unreleased<a class="headerlink" href="#1100-unreleased" title="Permanent link">&para;</a></h2>
+<h3 id="backwards-incompatibilities">Backwards incompatibilities<a class="headerlink" href="#backwards-incompatibilities" title="Permanent link">&para;</a></h3>
+<p>This release ends support for:</p>
+<ul>
+<li>Ruby 2.2, for which <a href="https://www.ruby-lang.org/en/news/2018/06/20/support-of-ruby-2-2-has-ended/">official support ended on 2018-03-31</a> [#1841]</li>
+<li>JRuby 1.7, for which <a href="https://github.com/jruby/jruby/issues/4112">official support ended on 2017-11-21</a> [#1741]</li>
+</ul>
+<h2 id="191-2018-12-17">1.9.1 / 2018-12-17<a class="headerlink" href="#191-2018-12-17" title="Permanent link">&para;</a></h2>
+<h3 id="bug-fixes">Bug fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fix a bug introduced in v1.9.0 where <code>XML::DocumentFragment#dup</code> no longer returned an instance of the callee's class, instead always returning an <code>XML::DocumentFragment</code>. This notably broke any subclass of <code>XML::DocumentFragment</code> including <code>HTML::DocumentFragment</code> as well as the Loofah gem's <code>Loofah::HTML::DocumentFragment</code>. [#1846]</li>
+</ul>
+<h2 id="190-2018-12-17">1.9.0 / 2018-12-17<a class="headerlink" href="#190-2018-12-17" title="Permanent link">&para;</a></h2>
+<h3 id="security-notes">Security Notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[JRuby] Upgrade Xerces dependency from 2.11.0 to 2.12.0 to address upstream vulnerability CVE-2012-0881 [#1831] (Thanks @grajagandev for reporting.)</li>
+</ul>
+<h3 id="notable-non-functional-changes">Notable non-functional changes<a class="headerlink" href="#notable-non-functional-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Decrease installation size by removing many unneeded files (e.g., <code>/test</code>) from the packaged gems. [#1719] (Thanks, @stevecrozz!)</li>
+</ul>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>XML::Attr#value=</code> allows HTML node attribute values to be set to either a blank string or an empty boolean attribute. [#1800]</li>
+<li>Introduce <code>XML::Node#wrap</code> which does what <code>XML::NodeSet#wrap</code> has always done, but for a single node. [#1531] (Thanks, @ethirajsrinivasan!)</li>
+<li>[MRI] Improve installation experience on macOS High Sierra (Darwin). [#1812, #1813] (Thanks, @gpakosz and @nurse!)</li>
+<li>[MRI] Node#dup supports copying a node directly to a new document. See the method documentation for details.</li>
+<li>[MRI] DocumentFragment#dup is now more memory-efficient, avoiding making unnecessary copies. [#1063]</li>
+<li>[JRuby] NodeSet has been rewritten to improve performance! [#1795]</li>
+</ul>
+<h3 id="bug-fixes_1">Bug fixes<a class="headerlink" href="#bug-fixes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>NodeSet#each</code> now returns <code>self</code> instead of zero. [#1822] (Thanks, @olehif!)</li>
+<li>[MRI] Address a memory leak when using XML::Builder to create nodes with namespaces. [#1810]</li>
+<li>[MRI] Address a memory leak when unparenting a DTD. [#1784] (Thanks, @stevecheckoway!)</li>
+<li>[MRI] Use RbConfig::CONFIG instead of ::MAKEFILE_CONFIG to fix installations that use Makefile macros. [#1820] (Thanks, @nobu!)</li>
+<li>[JRuby] Decrease large memory usage when making nested XPath queries. [#1749]</li>
+<li>[JRuby] Fix failing tests on JRuby 9.2.x</li>
+<li>[JRuby] Fix default namespaces in nodes reparented into a different document [#1774]</li>
+<li>[JRuby] Fix support for Java 9. [#1759] (Thanks, @Taywee!)</li>
+</ul>
+<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] Upgrade mini_portile2 dependency from <code>~&gt; 2.3.0</code> to <code>~&gt; 2.4.0</code></li>
+</ul>
+<h2 id="185-2018-10-04">1.8.5 / 2018-10-04<a class="headerlink" href="#185-2018-10-04" title="Permanent link">&para;</a></h2>
+<h3 id="security-notes_1">Security Notes<a class="headerlink" href="#security-notes_1" title="Permanent link">&para;</a></h3>
+<p>[MRI] Pulled in upstream patches from libxml2 that address CVE-2018-14404 and CVE-2018-14567. Full details are available in <a href="https://github.com/sparklemotion/nokogiri/issues/1785">#1785</a>. Note that these patches are not yet (as of 2018-10-04) in an upstream release of libxml2.</p>
+<h3 id="bug-fixes_2">Bug fixes<a class="headerlink" href="#bug-fixes_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] Fix regression in installation when building against system libraries, where some systems would not be able to find libxml2 or libxslt when present. (Regression introduced in v1.8.3.) [#1722]</li>
+<li>[JRuby] Fix node reparenting when the destination doc is empty. [#1773]</li>
+</ul>
+<h2 id="184-2018-07-03">1.8.4 / 2018-07-03<a class="headerlink" href="#184-2018-07-03" title="Permanent link">&para;</a></h2>
+<h3 id="bug-fixes_3">Bug fixes<a class="headerlink" href="#bug-fixes_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] Fix memory leak when creating nodes with namespaces. (Introduced in v1.5.7) [#1771]</li>
+</ul>
+<h2 id="183-2018-06-16">1.8.3 / 2018-06-16<a class="headerlink" href="#183-2018-06-16" title="Permanent link">&para;</a></h2>
+<h3 id="security-notes_2">Security Notes<a class="headerlink" href="#security-notes_2" title="Permanent link">&para;</a></h3>
+<p>[MRI] Behavior in libxml2 has been reverted which caused CVE-2018-8048 (loofah gem), CVE-2018-3740 (sanitize gem), and CVE-2018-3741 (rails-html-sanitizer gem). The commit in question is here:</p>
+<blockquote>
+<p><a href="https://github.com/GNOME/libxml2/commit/960f0e2">https://github.com/GNOME/libxml2/commit/960f0e2</a></p>
+</blockquote>
+<p>and more information is available about this commit and its impact here:</p>
+<blockquote>
+<p><a href="https://github.com/flavorjones/loofah/issues/144">https://github.com/flavorjones/loofah/issues/144</a></p>
+</blockquote>
+<p>This release simply reverts the libxml2 commit in question to protect users of Nokogiri's vendored libraries from similar vulnerabilities.</p>
+<p>If you're offended by what happened here, I'd kindly ask that you comment on the upstream bug report here:</p>
+<blockquote>
+<p><a href="https://bugzilla.gnome.org/show_bug.cgi?id=769760">https://bugzilla.gnome.org/show_bug.cgi?id=769760</a></p>
+</blockquote>
+<h3 id="dependencies_1">Dependencies<a class="headerlink" href="#dependencies_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] libxml2 is updated from 2.9.7 to 2.9.8</li>
+</ul>
+<h3 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Node#classes, #add_class, #append_class, and #remove_class are added.</li>
+<li>NodeSet#append_class is added.</li>
+<li>NodeSet#remove_attribute is a new alias for NodeSet#remove_attr.</li>
+<li>NodeSet#each now returns an Enumerator when no block is passed (Thanks, @park53kr!)</li>
+<li>[JRuby] General improvements in JRuby implementation (Thanks, @kares!)</li>
+</ul>
+<h3 id="bug-fixes_4">Bug fixes<a class="headerlink" href="#bug-fixes_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CSS attribute selectors now gracefully handle queries using integers. [#711]</li>
+<li>Handle ASCII-8BIT encoding on fragment input [#553]</li>
+<li>Handle non-string return values within <code>Reader</code> [#898]</li>
+<li>[JRuby] Allow Node#replace to insert Comment and CDATA nodes. [#1666]</li>
+<li>[JRuby] Stability and speed improvements to <code>Node</code>, <code>Sax::PushParser</code>, and the JRuby implementation [#1708, #1710, #1501]</li>
+</ul>
+<h2 id="182-2018-01-29">1.8.2 / 2018-01-29<a class="headerlink" href="#182-2018-01-29" title="Permanent link">&para;</a></h2>
+<h3 id="security-notes_3">Security Notes<a class="headerlink" href="#security-notes_3" title="Permanent link">&para;</a></h3>
+<p>[MRI] The update of vendored libxml2 from 2.9.5 to 2.9.7 addresses at least one published vulnerability, CVE-2017-15412. [#1714 has complete details]</p>
+<h3 id="dependencies_2">Dependencies<a class="headerlink" href="#dependencies_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] libxml2 is updated from 2.9.5 to 2.9.7</li>
+<li>[MRI] libxslt is updated from 1.1.30 to 1.1.32</li>
+</ul>
+<h3 id="features_2">Features<a class="headerlink" href="#features_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] OpenBSD installation should be a bit easier now. [#1685] (Thanks, @jeremyevans!)</li>
+<li>[MRI] Cross-built Windows gems now support Ruby 2.5</li>
+</ul>
+<h3 id="bug-fixes_5">Bug fixes<a class="headerlink" href="#bug-fixes_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Node#serialize once again returns UTF-8-encoded strings. [#1659]</li>
+<li>[JRuby] made SAX parsing of characters consistent with C implementation [#1676] (Thanks, @andrew-aladev!)</li>
+<li>[MRI] Predefined entities, when inspected, no longer cause a segfault. [#1238]</li>
+</ul>
+<h2 id="181-2017-09-19">1.8.1 / 2017-09-19<a class="headerlink" href="#181-2017-09-19" title="Permanent link">&para;</a></h2>
+<h3 id="dependencies_3">Dependencies<a class="headerlink" href="#dependencies_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] libxml2 is updated from 2.9.4 to 2.9.5.</li>
+<li>[MRI] libxslt is updated from 1.1.29 to 1.1.30.</li>
+<li>[MRI] optional dependency on the pkg-config gem has had its constraint loosened to <code>~&gt; 1.1</code> (from <code>~&gt; 1.1.7</code>). [#1660]</li>
+<li>[MRI] Upgrade mini_portile2 dependency from <code>~&gt; 2.2.0</code> to <code>~&gt; 2.3.0</code>, which will validate checksums on the vendored libxml2 and libxslt tarballs before using them.</li>
+</ul>
+<h3 id="bugs">Bugs<a class="headerlink" href="#bugs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NodeSet#first with an integer argument longer than the length of the NodeSet now correctly clamps the length of the returned NodeSet to the original length. [#1650] (Thanks, @Derenge!)</li>
+<li>[MRI] Ensure CData.new raises TypeError if the <code>content</code> argument is not implicitly convertible into a string. [#1669]</li>
+</ul>
+<h2 id="180-2017-06-04">1.8.0 / 2017-06-04<a class="headerlink" href="#180-2017-06-04" title="Permanent link">&para;</a></h2>
+<h3 id="backwards-incompatibilities_1">Backwards incompatibilities<a class="headerlink" href="#backwards-incompatibilities_1" title="Permanent link">&para;</a></h3>
+<p>This release ends support for Ruby 2.1 on Windows in the <code>x86-mingw32</code> and <code>x64-mingw32</code> platform gems (containing pre-compiled DLLs). Official support ended for Ruby 2.1 on 2017-04-01.</p>
+<p>Please note that this deprecation note only applies to the precompiled Windows gems. Ruby 2.1 continues to be supported (for now) in the default gem when compiled on installation.</p>
+<h3 id="dependencies_4">Dependencies<a class="headerlink" href="#dependencies_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[Windows] Upgrade iconv from 1.14 to 1.15 (unless --use-system-libraries)</li>
+<li>[Windows] Upgrade zlib from 1.2.8 to 1.2.11 (unless --use-system-libraries)</li>
+<li>[MRI] Upgrade rake-compiler dependency from 0.9.2 to 1.0.3</li>
+<li>[MRI] Upgrade mini-portile2 dependency from <code>~&gt; 2.1.0</code> to <code>~&gt; 2.2.0</code></li>
+</ul>
+<h3 id="compatibility-notes">Compatibility notes<a class="headerlink" href="#compatibility-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[JRuby] Removed support for <code>jruby --1.8</code> code paths. [#1607] (Thanks, @kares!)</li>
+<li>[MRI Windows] Retrieve zlib source from <a href="http://zlib.net/fossils">http://zlib.net/fossils</a> to avoid deprecation issues going forward. See #1632 for details around this problem.</li>
+</ul>
+<h3 id="features_3">Features<a class="headerlink" href="#features_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NodeSet#clone is not an alias for NodeSet#dup [#1503] (Thanks, @stephankaag!)</li>
+<li>Allow Processing Instructions and Comments as children of a document root. [#1033] (Thanks, @windwiny!)</li>
+<li>[MRI] PushParser#replace_entities and #replace_entities= will control whether entities are replaced or not. [#1017] (Thanks, @spraints!)</li>
+<li>[MRI] SyntaxError#to_s now includes line number, column number, and log level if made available by the parser. [#1304, #1637] (Thanks, @spk and @ccarruitero!)</li>
+<li>[MRI] Cross-built Windows gems now support Ruby 2.4</li>
+<li>[MRI] Support for frozen string literals. [#1413]</li>
+<li>[MRI] Support for installing Nokogiri on a machine in FIPS-enabled mode [#1544]</li>
+<li>[MRI] Vendored libraries are verified with SHA-256 hashes (formerly some MD5 hashes were used) [#1544]</li>
+<li>[JRuby] (performance) remove unnecessary synchronization of class-cache [#1563] (Thanks, @kares!)</li>
+<li>[JRuby] (performance) remove unnecessary cloning of objects in XPath searches [#1563] (Thanks, @kares!)</li>
+<li>[JRuby] (performance) more performance improvements, particularly in XPath, Reader, XmlNode, and XmlNodeSet [#1597] (Thanks, @kares!)</li>
+</ul>
+<h3 id="bugs_1">Bugs<a class="headerlink" href="#bugs_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTML::SAX::Parser#parse_io now correctly parses HTML and not XML [#1577] (Thanks for the test case, @gregors!)</li>
+<li>Support installation on systems with a <code>lib64</code> site config. [#1562]</li>
+<li>[MRI] on OpenBSD, do not require gcc if using system libraries [#1515] (Thanks, @jeremyevans!)</li>
+<li>[MRI] XML::Attr.new checks type of Document arg to prevent segfaults. [#1477]</li>
+<li>[MRI] Prefer xmlCharStrdup (and friends) to strdup (and friends), which can cause problems on some platforms. [#1517] (Thanks, @jeremy!)</li>
+<li>[JRuby] correctly append a text node before another text node [#1318] (Thanks, @jkraemer!)</li>
+<li>[JRuby] custom xpath functions returning an integer now work correctly [#1595] (Thanks, @kares!)</li>
+<li>[JRuby] serializing (<code>#to_html</code>, <code>#to_s</code>, et al) a document with explicit encoding now works correctly. [#1281, #1440] (Thanks, @kares!)</li>
+<li>[JRuby] XML::Reader now returns parse errors [#1586] (Thanks, @kares!)</li>
+<li>[JRuby] Empty NodeSets are now decorated properly. [#1319] (Thanks, @kares!)</li>
+<li>[JRuby] Merged nodes no longer results in Java exceptions during XPath queries. [#1320] (Thanks, @kares!)</li>
+</ul>
+<h2 id="172-2017-05-09">1.7.2 / 2017-05-09<a class="headerlink" href="#172-2017-05-09" title="Permanent link">&para;</a></h2>
+<h3 id="security-notes_4">Security Notes<a class="headerlink" href="#security-notes_4" title="Permanent link">&para;</a></h3>
+<p>[MRI] Upstream libxslt patches are applied to the vendored libxslt 1.1.29 which address CVE-2017-5029 and CVE-2016-4738.</p>
+<p>For more information:</p>
+<ul>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/1634">https://github.com/sparklemotion/nokogiri/issues/1634</a></li>
+<li><a href="http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-5029.html">http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-5029.html</a></li>
+<li><a href="http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4738.html">http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4738.html</a></li>
+</ul>
+<h2 id="171-2017-03-19">1.7.1 / 2017-03-19<a class="headerlink" href="#171-2017-03-19" title="Permanent link">&para;</a></h2>
+<h3 id="security-notes_5">Security Notes<a class="headerlink" href="#security-notes_5" title="Permanent link">&para;</a></h3>
+<p>[MRI] Upstream libxml2 patches are applied to the vendored libxml 2.9.4 which address CVE-2016-4658 and CVE-2016-5131.</p>
+<p>For more information:</p>
+<ul>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/1615">https://github.com/sparklemotion/nokogiri/issues/1615</a></li>
+<li><a href="http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4658.html">http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4658.html</a></li>
+<li><a href="http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5131.html">http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5131.html</a></li>
+</ul>
+<h2 id="1701-2017-01-04">1.7.0.1 / 2017-01-04<a class="headerlink" href="#1701-2017-01-04" title="Permanent link">&para;</a></h2>
+<h3 id="bugs_2">Bugs<a class="headerlink" href="#bugs_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fix OpenBSD support. (#1569) (related to #1543)</li>
+</ul>
+<h2 id="170-2016-12-26">1.7.0 / 2016-12-26<a class="headerlink" href="#170-2016-12-26" title="Permanent link">&para;</a></h2>
+<h3 id="features_4">Features<a class="headerlink" href="#features_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Remove deprecation warnings in Ruby 2.4.0 (#1545) (Thanks, @matthewd!)</li>
+<li>Support egcc compiler on OpenBSD (#1543) (Thanks, @frenkel and @knu!)</li>
+</ul>
+<h3 id="backwards-incompatibilities_2">Backwards incompatibilities.<a class="headerlink" href="#backwards-incompatibilities_2" title="Permanent link">&para;</a></h3>
+<p>This release ends support for:</p>
+<ul>
+<li>Ruby 1.9.2, for which official support ended on 2014-07-31</li>
+<li>Ruby 1.9.3, for which official support ended on 2015-02-23</li>
+<li>Ruby 2.0.0, for which official support ended on 2016-02-24</li>
+<li>MacRuby, which hasn't been actively supported since 2015-01-13 (see <a href="https://github.com/MacRuby/MacRuby/commit/f76b9d6e99c18236db617e8aceb12c27d593a483">https://github.com/MacRuby/MacRuby/commit/f76b9d6e99c18236db617e8aceb12c27d593a483</a>)</li>
+</ul>
+<h2 id="1681-2016-10-03">1.6.8.1 / 2016-10-03<a class="headerlink" href="#1681-2016-10-03" title="Permanent link">&para;</a></h2>
+<h3 id="dependency-license-notes">Dependency License Notes<a class="headerlink" href="#dependency-license-notes" title="Permanent link">&para;</a></h3>
+<p>Removes required dependency on the <code>pkg-config</code> gem. This dependency
+was introduced in v1.6.8 and, because it's distributed under LGPL, was
+objectionable to many Nokogiri users (#1488, #1496).</p>
+<p>This version makes <code>pkg-config</code> an optional dependency. If it's
+installed, it's used; but otherwise Nokogiri will attempt to work
+around its absence.</p>
+<h2 id="168-2016-06-06">1.6.8 / 2016-06-06<a class="headerlink" href="#168-2016-06-06" title="Permanent link">&para;</a></h2>
+<h3 id="security-notes_6">Security Notes<a class="headerlink" href="#security-notes_6" title="Permanent link">&para;</a></h3>
+<p>[MRI] Bundled libxml2 is upgraded to 2.9.4, which fixes many security issues. Many of these had previously been patched in the vendored libxml 2.9.2 in the 1.6.7.x branch, but some are newer.</p>
+<p>See these libxml2 email posts for more:</p>
+<ul>
+<li><a href="https://mail.gnome.org/archives/xml/2015-November/msg00012.html">https://mail.gnome.org/archives/xml/2015-November/msg00012.html</a></li>
+<li><a href="https://mail.gnome.org/archives/xml/2016-May/msg00023.html">https://mail.gnome.org/archives/xml/2016-May/msg00023.html</a></li>
+</ul>
+<p>For a more detailed analysis, you may care to read Canonical's take on these security issues:</p>
+<ul>
+<li><a href="http://www.ubuntu.com/usn/usn-2994-1">http://www.ubuntu.com/usn/usn-2994-1</a></li>
+</ul>
+<p>[MRI] Bundled libxslt is upgraded to 1.1.29, which fixes a security issue as well as many long-known outstanding bugs, some features, some portability improvements, and general cleanup.</p>
+<p>See this libxslt email post for more:</p>
+<ul>
+<li><a href="https://mail.gnome.org/archives/xslt/2016-May/msg00004.html">https://mail.gnome.org/archives/xslt/2016-May/msg00004.html</a></li>
+</ul>
+<h3 id="features_5">Features<a class="headerlink" href="#features_5" title="Permanent link">&para;</a></h3>
+<p>Several changes were made to improve performance:</p>
+<ul>
+<li>[MRI] Simplify NodeSet#to_a with a minor speed-up. (#1397)</li>
+<li>XML::Node#ancestors optimization. (#1297) (Thanks, Bruno Sutic!)</li>
+<li>Use Symbol#to_proc where we weren't previously. (#1296) (Thanks, Bruno Sutic!)</li>
+<li>XML::DTD#each uses implicit block calls. (Thanks, @glaucocustodio!)</li>
+<li>Fall back to the <code>pkg-config</code> gem if we're having trouble finding the system libxml2. This should help many FreeBSD users. (#1417)</li>
+<li>Set document encoding appropriately even on blank document. (#1043) (Thanks, @batter!)</li>
+</ul>
+<h3 id="bug-fixes_6">Bug Fixes<a class="headerlink" href="#bug-fixes_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[JRuby] fix slow add_child (#692)</li>
+<li>[JRuby] fix load errors when deploying to JRuby/Torquebox (#1114) (Thanks, @atambo and @jvshahid!)</li>
+<li>[JRuby] fix NPE when inspecting nodes returned by NodeSet#drop (#1042) (Thanks, @mkristian!)</li>
+<li>[JRuby] fix nil attriubte node's namespace in reader (#1327) (Thanks, @codekitchen!)</li>
+<li>[JRuby] fix Nokogiri munging unicode characters that require more than 2 bytes (#1113) (Thanks, @mkristian!)</li>
+<li>[JRuby] allow unlinking an unparented node (#1112, #1152) (Thanks, @esse!)</li>
+<li>[JRuby] allow Fragment parsing on a frozen string (#444, #1077)</li>
+<li>[JRuby] HTML <code>style</code> tags are no longer encoded (#1316) (Thanks, @tbeauvais!)</li>
+<li>[MRI] fix assertion failure while accessing attribute node's namespace in reader (#843) (Thanks, @2potatocakes!)</li>
+<li>[MRI] fix issue with GCing namespace nodes returned in an xpath query. (#1155)</li>
+<li>[MRI] Ensure C strings are null-terminated. (#1381)</li>
+<li>[MRI] Ensure Rubygems is loaded before using mini_portile2 at installation. (#1393, #1411) (Thanks, @JonRowe!)</li>
+<li>[MRI] Handling another edge case where the <code>libxml-ruby</code> gem's global callbacks were smashing the heap. (#1426). (Thanks to @bbergstrom for providing an isolated test case!)</li>
+<li>[MRI] Ensure encodings are passed to Sax::Parser xmldecl callback. (#844)</li>
+<li>[MRI] Ensure default ns prefix is applied correctly when reparenting nodes to another document. (#391) (Thanks, @ylecuyer!)</li>
+<li>[MRI] Ensure Reader handles non-existent attributes as expected. (#1254) (Thanks, @ccutrer!)</li>
+<li>[MRI] Cleanup around namespace handling when reparenting nodes. (#1332, #1333, #1444) (Thanks, @cuttrer and @bradleybeddoes!)</li>
+<li>unescape special characters in CSS queries (#1303) (Thanks, @twalpole!)</li>
+<li>consistently handle empty documents (#1349)</li>
+<li>Update to mini_portile2 2.1.0 to address whitespace-handling during patching. (#1402)</li>
+<li>Fix encoding of xml node namespaces.</li>
+<li>Work around issue installing Nokogiri on overlayfs (commonly used in Docker containers). (#1370, #1405)</li>
+</ul>
+<h3 id="other-notes">Other Notes<a class="headerlink" href="#other-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Removed legacy code remaining from Ruby 1.8.x support.</li>
+<li>Removed legacy code remaining from REE support.</li>
+<li>Removing hacky workarounds for bugs in some older versions of libxml2.</li>
+<li>Handling C strings in a forward-compatible manner, see <a href="https://github.com/ruby/ruby/blob/v2_2_0/NEWS#L319">https://github.com/ruby/ruby/blob/v2_2_0/NEWS#L319</a></li>
+</ul>
+<h2 id="1672-2016-01-20">1.6.7.2 / 2016-01-20<a class="headerlink" href="#1672-2016-01-20" title="Permanent link">&para;</a></h2>
+<p>This version pulls in several upstream patches to the vendored libxml2 and libxslt to address:</p>
+<p>CVE-2015-7499</p>
+<p>Ubuntu classifies this as "Priority: Low", RedHat classifies this as "Impact: Moderate", and NIST classifies this as "Severity: 5.0 (MEDIUM)".</p>
+<p>MITRE record is <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7499">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7499</a></p>
+<h2 id="1671-2015-12-16">1.6.7.1 / 2015-12-16<a class="headerlink" href="#1671-2015-12-16" title="Permanent link">&para;</a></h2>
+<p>This version pulls in several upstream patches to the vendored libxml2 and libxslt to address:</p>
+<p>CVE-2015-5312
+  CVE-2015-7497
+  CVE-2015-7498
+  CVE-2015-7499
+  CVE-2015-7500
+  CVE-2015-8241
+  CVE-2015-8242
+  CVE-2015-8317</p>
+<p>See also <a href="http://www.ubuntu.com/usn/usn-2834-1/">http://www.ubuntu.com/usn/usn-2834-1/</a></p>
+<h2 id="167-2015-11-29">1.6.7 / 2015-11-29<a class="headerlink" href="#167-2015-11-29" title="Permanent link">&para;</a></h2>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<p>This version supports native builds on Windows using the RubyInstaller
+DevKit. It also supports Ruby 2.2.x on Windows, as well as making
+several other improvements to the installation process on various
+platforms.</p>
+<p>This version also includes the security patches already applied in
+v1.6.6.3 and v1.6.6.4 to the vendored libxml2 and libxslt source.
+See #1374 and #1376 for details.</p>
+<h3 id="features_6">Features<a class="headerlink" href="#features_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cross-built gems now have a proper ruby version requirement. (#1266)</li>
+<li>Ruby 2.2.x is supported on Windows.</li>
+<li>Native build is supported on Windows.</li>
+<li>[MRI] libxml2 and libxslt <code>config.guess</code> files brought up to date. (#1326) (Thanks, @hernan-erasmo!)</li>
+<li>[JRuby] fix error in validating files with jruby (#1355, #1361) (Thanks, @twalpole!)</li>
+<li>[MRI, OSX] Patch to handle nonstandard location of <code>iconv.h</code>. (#1206, #1210, #1218, #1345) (Thanks, @neonichu!)</li>
+</ul>
+<h3 id="bug-fixes_7">Bug Fixes<a class="headerlink" href="#bug-fixes_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[JRuby] reset the namespace cache when replacing the document's innerHtml (#1265) (Thanks, @mkristian!)</li>
+<li>[JRuby] Document#parse should support IO objects that respond to #read. (#1124) (Thanks, Jake Byman!)</li>
+<li>[MRI] Duplicate-id errors when setting the <code>id</code> attribute on HTML documents are now silenced. (#1262)</li>
+<li>[JRuby] SAX parser cuts texts in pieces when square brackets exist. (#1261)</li>
+<li>[JRuby] Namespaced attributes aren't removed by remove_attribute. (#1299)</li>
+</ul>
+<h2 id="1664-2015-11-19">1.6.6.4 / 2015-11-19<a class="headerlink" href="#1664-2015-11-19" title="Permanent link">&para;</a></h2>
+<p>This version pulls in an upstream patch to the vendored libxml2 to address:</p>
+<ul>
+<li>unclosed comment uninitialized access issue (#1376)</li>
+</ul>
+<p>This issue was assigned CVE-2015-8710 after the fact. See <a href="http://seclists.org/oss-sec/2015/q4/616">http://seclists.org/oss-sec/2015/q4/616</a> for details.</p>
+<h2 id="1663-2015-11-16">1.6.6.3 / 2015-11-16<a class="headerlink" href="#1663-2015-11-16" title="Permanent link">&para;</a></h2>
+<p>This version pulls in several upstream patches to the vendored libxml2 and libxslt to address:</p>
+<ul>
+<li>CVE-2015-1819</li>
+<li>CVE-2015-7941_1</li>
+<li>CVE-2015-7941_2</li>
+<li>CVE-2015-7942</li>
+<li>CVE-2015-7942-2</li>
+<li>CVE-2015-8035</li>
+<li>CVE-2015-7995</li>
+</ul>
+<p>See #1374 for details.</p>
+<h2 id="1662-2015-01-23">1.6.6.2 / 2015-01-23<a class="headerlink" href="#1662-2015-01-23" title="Permanent link">&para;</a></h2>
+<h3 id="bug-fixes_8">Bug fixes<a class="headerlink" href="#bug-fixes_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixed installation issue affecting compiler arguments. (#1230)</li>
+</ul>
+<h2 id="1661-2015-01-22">1.6.6.1 / 2015-01-22<a class="headerlink" href="#1661-2015-01-22" title="Permanent link">&para;</a></h2>
+<p>Note that 1.6.6.0 was not released.</p>
+<h3 id="features_7">Features<a class="headerlink" href="#features_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unified Node and NodeSet implementations of #search, #xpath and #css.</li>
+<li>Added Node#lang and Node#lang=.</li>
+<li>bin/nokogiri passes the URI to parse() if an HTTP URL is given.</li>
+<li>bin/nokogiri now loads ~/.nokogirirc so user can define helper methods, etc.</li>
+<li>bin/nokogiri can be configured to use Pry instead of IRB by adding a couple of lines to ~/.nokogirirc. (#1198)</li>
+<li>bin/nokogiri can better handle urls from STDIN (aiding use of xargs). (#1065)</li>
+<li>JRuby 9K support.</li>
+</ul>
+<h3 id="bug-fixes_9">Bug fixes<a class="headerlink" href="#bug-fixes_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DocumentFragment#search now matches against root nodes. (#1205)</li>
+<li>(MRI) More fixes related to handling libxml2 parse errors during DocumentFragment#dup. (#1196)</li>
+<li>(JRuby) Builder now handles namespace hrefs properly when there is a default ns. (#1039)</li>
+<li>(JRuby) Clear the XPath cache on attr removal. (#1109)</li>
+<li><code>XML::Comment.new</code> argument types are now consistent and safe (and documented) across MRI and JRuby. (#1224)</li>
+<li>(MRI) Restoring support for Ruby 1.9.2 that was broken in v1.6.4.1 and v1.6.5. (#1207)</li>
+<li>Check if <code>zlib</code> is available before building <code>libxml2</code>. (#1188)</li>
+<li>(JRuby) HtmlSaxPushParser now exists. (#1147) (Thanks, Piotr Szmielew!)</li>
+</ul>
+<h2 id="165-2014-11-26">1.6.5 / 2014-11-26<a class="headerlink" href="#165-2014-11-26" title="Permanent link">&para;</a></h2>
+<h3 id="features_8">Features<a class="headerlink" href="#features_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implement Slop#respond_to_missing?. (#1176)</li>
+<li>Optimized the XPath query generated by an <code>an+b</code> CSS query.</li>
+</ul>
+<h3 id="bug-fixes_10">Bug fixes<a class="headerlink" href="#bug-fixes_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Capture non-parse errors from Document#dup in Document#errors. (#1196)</li>
+<li>(JRuby) Document#canonicalize parameters are now consistent with MRI. (#1189)</li>
+</ul>
+<h2 id="1641-2014-11-05">1.6.4.1 / 2014-11-05<a class="headerlink" href="#1641-2014-11-05" title="Permanent link">&para;</a></h2>
+<h3 id="bug-fixes_11">Bug fixes<a class="headerlink" href="#bug-fixes_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>(MRI) Fix a bug where CFLAGS passed in are dropped. (#1188)</li>
+<li>Fix a bug where CSS selector :nth(n) did not work. (#1187)</li>
+</ul>
+<h2 id="164-2014-11-04">1.6.4 / 2014-11-04<a class="headerlink" href="#164-2014-11-04" title="Permanent link">&para;</a></h2>
+<h3 id="features_9">Features<a class="headerlink" href="#features_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>(MRI) Bundled Libxml2 is upgraded to 2.9.2.</li>
+<li>(MRI) <code>nokogiri --version</code> will include a list of applied patches.</li>
+<li>(MRI) Nokogiri no longer prints messages directly to TTY while building the extension.</li>
+<li>(MRI) Detect and help user fix a missing /usr/include/iconv.h on OS X. (#1111)</li>
+<li>(MRI) Improve the iconv detection for building libxml2.</li>
+</ul>
+<h3 id="bug-fixes_12">Bug fixes<a class="headerlink" href="#bug-fixes_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>(MRI) Fix DocumentFragment#element_children (#1138).</li>
+<li>Fix a bug with CSS attribute selector without any prefix where "foo [bar]" was treated as "foo[bar]". (#1174)</li>
+</ul>
+<h2 id="1631-2014-07-21">1.6.3.1 / 2014-07-21<a class="headerlink" href="#1631-2014-07-21" title="Permanent link">&para;</a></h2>
+<h3 id="bug-fixes_13">Bug fixes<a class="headerlink" href="#bug-fixes_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Addressing an Apple Macintosh installation problem for GCC users. #1130 (Thanks, @zenspider!)</li>
+</ul>
+<h2 id="163-2014-07-20">1.6.3 / 2014-07-20<a class="headerlink" href="#163-2014-07-20" title="Permanent link">&para;</a></h2>
+<h3 id="features_10">Features<a class="headerlink" href="#features_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added Node#document? and Node#processing_instruction?</li>
+</ul>
+<h3 id="bug-fixes_14">Bug fixes<a class="headerlink" href="#bug-fixes_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[JRuby] Fix Ruby memory exhaustion vulnerability. #1087 (Thanks, @ocher)</li>
+<li>[MRI] Fix segfault during GC when using <code>libxml-ruby</code> and <code>nokogiri</code> together in multi-threaded environment. #895 (Thanks, @ender672!)</li>
+<li>Building on OSX 10.9 stock ruby 2.0.0 now works. #1101 (Thanks, @zenspider!)</li>
+<li>Node#parse now works again for HTML document nodes (broken in 1.6.2+).</li>
+<li>Processing instructions can now be added via Node#add_next_sibling.</li>
+</ul>
+<h2 id="1621-2014-05-13">1.6.2.1 / 2014-05-13<a class="headerlink" href="#1621-2014-05-13" title="Permanent link">&para;</a></h2>
+<h3 id="bug-fixes_15">Bug fixes<a class="headerlink" href="#bug-fixes_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fix statically-linked libxml2 installation when using universal builds of Ruby. #1104</li>
+<li>Patching <code>mini_portile</code> to address the git dependency detailed in #1102.</li>
+<li>Library load fix to address segfault reported on some systems. #1097</li>
+</ul>
+<h2 id="162-2014-05-12">1.6.2 / 2014-05-12<a class="headerlink" href="#162-2014-05-12" title="Permanent link">&para;</a></h2>
+<h3 id="security-note">Security Note<a class="headerlink" href="#security-note" title="Permanent link">&para;</a></h3>
+<p>A set of security and bugfix patches have been backported from the libxml2 and libxslt repositories onto the version of 2.8.0 packaged with Nokogiri, including these notable security fixes:</p>
+<ul>
+<li><a href="https://git.gnome.org/browse/libxml2/commit/?id=4629ee02ac649c27f9c0cf98ba017c6b5526070f">https://git.gnome.org/browse/libxml2/commit/?id=4629ee02ac649c27f9c0cf98ba017c6b5526070f</a></li>
+<li>CVE-2013-2877 <a href="https://git.gnome.org/browse/libxml2/commit/?id=e50ba8164eee06461c73cd8abb9b46aa0be81869">https://git.gnome.org/browse/libxml2/commit/?id=e50ba8164eee06461c73cd8abb9b46aa0be81869</a></li>
+<li>CVE-2014-0191 <a href="https://git.gnome.org/browse/libxml2/commit/?id=9cd1c3cfbd32655d60572c0a413e017260c854df">https://git.gnome.org/browse/libxml2/commit/?id=9cd1c3cfbd32655d60572c0a413e017260c854df</a></li>
+</ul>
+<p>It is recommended that you upgrade from 1.6.x to this version as soon as possible.</p>
+<h3 id="compatibility-note">Compatibility Note<a class="headerlink" href="#compatibility-note" title="Permanent link">&para;</a></h3>
+<p>Now requires libxml &gt;= 2.6.21 (was previously &gt;= 2.6.17).</p>
+<h3 id="features_11">Features<a class="headerlink" href="#features_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Add cross building of fat binary gems for 64-Bit Windows (x64-mingw32) and add support for native builds on Windows. #864, #989, #1072</li>
+<li>(MRI) Alias CP932 to Windows-31J if iconv does not support Windows-31J.</li>
+<li>(MRI) Nokogiri now links packaged libraries statically. To disable static linking, pass --disable-static to extconf.rb. #923</li>
+<li>(MRI) Fix a library path (LIBPATH) precedence problem caused by CRuby bug #9760.</li>
+<li>(MRI) Nokogiri automatically deletes directories of packaged libraries only used during build. To keep them for debugging purposes, pass --disable-clean to extconf.rb. #952</li>
+<li>(MRI) Nokogiri now builds libxml2 properly with iconv support on platforms where libiconv is installed outside the system default directories, such as FreeBSD.</li>
+<li>Add support for an-b in nth selectors. #886 (Thanks, Magnus Bergmark!)</li>
+<li>Add support for bare and multiple :not() functions in selectors. #887 (Thanks, Magnus Bergmark!)</li>
+<li>(MRI) Add an extconf.rb option --use-system-libraries, alternative to setting the environment variable NOKOGIRI_USE_SYSTEM_LIBRARIES.</li>
+<li>(MRI) Update packaged libraries: libxslt to 1.1.28, zlib to 1.2.8, and libiconv to 1.14, respectively.</li>
+<li>Nokogiri::HTML::Document#title= and #meta_encoding= now always add an element if not present, trying hard to find the best place to put it.</li>
+<li>Nokogiri::XML::DTD#html_dtd? and #html5_dtd? are added.</li>
+<li>Nokogiri::XML::Node#prepend_child is added. #664</li>
+<li>Nokogiri::XML::SAX::ParserContext#recovery is added. #453</li>
+<li>Fix documentation for XML::Node#namespace. #803 #802 (Thanks, Hoylen Sue)</li>
+<li>Allow Nokogiri::XML::Node#parse from unparented non-element nodes. #407</li>
+</ul>
+<h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ensure :only-child pseudo class works within :not pseudo class. #858 (Thanks, Yamagishi Kazutoshi!)</li>
+<li>Don't call pkg_config when using bundled libraries in extconf.rb #931 (Thanks, Shota Fukumori!)</li>
+<li>Nokogiri.parse() does not mistake a non-HTML document like a RSS document as HTML document. #932 (Thanks, Yamagishi Kazutoshi!)</li>
+<li>(MRI) Perform a node type check before adding a child node to another. Previously adding a text node to another as a child could cause a SEGV. #1092</li>
+<li>(JRuby) XSD validation crashes in Java version. #373</li>
+<li>(JRuby) Document already has a root node error while using Builder. #646</li>
+<li>(JRuby) c14n tests are all passing on JRuby. #226</li>
+<li>Parsing empty documents raise SyntaxError in strict mode. #1005</li>
+<li>(JRuby) Make xpath faster by caching the xpath context. #741</li>
+<li>(JRuby) XML SAX push parser leaks memory on JRuby, but not on MRI. #998</li>
+<li>(JRuby) Inconsistent behavior aliasing the default namespace. #940</li>
+<li>(JRuby) Inconsistent behavior between parsing and adding namespaces. #943</li>
+<li>(JRuby) Xpath returns inconsistent result set on cloned document with namespaces and attributes. #1034</li>
+<li>(JRuby) Java-Implementation forgets element namespaces #902</li>
+<li>(JRuby) JRuby-Nokogiri does not recognise attributes inside namespaces #1081</li>
+<li>(JRuby) JRuby-Nokogiri has different comment node name #1080</li>
+<li>(JRuby) JAXPExtensionsProvider / Java 7 / Secure Processing #1070</li>
+</ul>
+<h2 id="161-2013-12-14">1.6.1 / 2013-12-14<a class="headerlink" href="#161-2013-12-14" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>(JRuby) Fix out of memory bug when certain invalid documents are parsed.</p>
+</li>
+<li>(JRuby) Fix regression of billion-laughs vulnerability. #586</li>
+</ul>
+<h2 id="160-2013-06-08">1.6.0 / 2013-06-08<a class="headerlink" href="#160-2013-06-08" title="Permanent link">&para;</a></h2>
+<p>This release was based on v1.5.10 and 1.6.0.rc1, and contains changes
+mentioned in both.</p>
+<ul>
+<li>
+<p>Deprecations</p>
+</li>
+<li>
+<p>Remove pre 1.9 monitoring from Travis.</p>
+</li>
+</ul>
+<h2 id="160rc1-2013-04-14">1.6.0.rc1 / 2013-04-14<a class="headerlink" href="#160rc1-2013-04-14" title="Permanent link">&para;</a></h2>
+<p>This release was based on v1.5.9, and so does not contain any fixes
+mentioned in the notes for v1.5.10.</p>
+<ul>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>mini_portile is now a runtime dependency</p>
+</li>
+<li>
+<p>Ruby 1.9.2 and higher now required</p>
+</li>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>(MRI) Source code for libxml 2.8.0 and libxslt 1.2.26 is packaged
+    with the gem. These libraries are compiled at gem install time
+    unless the environment variable NOKOGIRI_USE_SYSTEM_LIBRARIES is
+    set. VERSION_INFO (also <code>nokogiri -v</code>) exposes whether libxml was
+    compiled from packaged source, or the system library was used.</p>
+</li>
+<li>
+<p>(Windows) libxml upgraded to 2.8.0</p>
+</li>
+<li>
+<p>Deprecations</p>
+</li>
+<li>
+<p>Support for Ruby 1.8.7 and prior has been dropped</p>
+</li>
+</ul>
+<h2 id="1511-2013-12-14">1.5.11 / 2013-12-14<a class="headerlink" href="#1511-2013-12-14" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>(JRuby) Fix out of memory bug when certain invalid documents are parsed.</p>
+</li>
+<li>(JRuby) Fix regression of billion-laughs vulnerability. #586</li>
+</ul>
+<h2 id="1510-2013-06-07">1.5.10 / 2013-06-07<a class="headerlink" href="#1510-2013-06-07" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>(JRuby) Fix "null document" error when parsing an empty IO in jruby 1.7.3. #883</p>
+</li>
+<li>(JRuby) Fix schema validation when XSD has DOCTYPE set to DTD. #912 (Thanks, Patrick Cheng!)</li>
+<li>
+<p>(MRI) Fix segfault when there is no default subelement for an HTML node. #917</p>
+</li>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>Use rb_ary_entry instead of RARRAY_PTR (you know, for Rubinius). #877 (Thanks, Dirkjan Bussink!)</p>
+</li>
+<li>Fix TypeError when running tests. #900 (Thanks, Cédric Boutillier!)</li>
+</ul>
+<h2 id="159-2013-03-21">1.5.9 / 2013-03-21<a class="headerlink" href="#159-2013-03-21" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Ensure that prefixed attributes are properly namespaced when reparented. #869</p>
+</li>
+<li>Fix for inconsistent namespaced attribute access for SVG nested in HTML. #861</li>
+<li>(MRI) Fixed a memory leak in fragment parsing if nodes are not all subsequently reparented. #856</li>
+</ul>
+<h2 id="158-2013-03-19">1.5.8 / 2013-03-19<a class="headerlink" href="#158-2013-03-19" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>(JRuby) Fix EmptyStackException thrown by elements with xlink:href attributes and no base_uri #534, #805. (Thanks, Patrick Quinn and Brian Hoffman!)</p>
+</li>
+<li>Fixes duplicate attributes issue introduced in 1.5.7. #865</li>
+<li>Allow use of a prefixed namespace on a root node using Nokogiri::XML::Builder #868</li>
+</ul>
+<h2 id="157-2013-03-18">1.5.7 / 2013-03-18<a class="headerlink" href="#157-2013-03-18" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>Windows support for Ruby 2.0.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>SAX::Parser.parse_io throw an error when used with lower case encoding. #828</p>
+</li>
+<li>(JRuby) Java Nokogiri is finally green (passes all tests) under 1.8 and 1.9 mode. High five everyone. #798, #705</li>
+<li>(JRuby) Nokogiri::XML::Reader broken (as a pull parser) on jruby - reads the whole XML document. #831</li>
+<li>(JRuby) JRuby hangs parsing "&amp;". #837</li>
+<li>(JRuby) JRuby NPE parsing an invalid XML instruction. #838</li>
+<li>(JRuby) Node#content= incompatibility. #839</li>
+<li>(JRuby) to_xhtml doesn't print the last slash for self-closing tags in JRuby. #834</li>
+<li>(JRuby) Adding an EntityReference after a Text node mangles the entity in JRuby. #835</li>
+<li>(JRuby) JRuby version inconsistency: nil for empty attributes. #818</li>
+<li>CSS queries for classes (e.g., ".foo") now treat all whitespace identically. #854</li>
+<li>Namespace behavior cleaned up and made consistent between JRuby and MRI. #846, #801 (Thanks, Michael Klein!)</li>
+<li>(MRI) SAX parser handles empty processing instructions. #845</li>
+</ul>
+<h2 id="156-2012-12-19">1.5.6 / 2012-12-19<a class="headerlink" href="#156-2012-12-19" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>Improved performance of XML::Document#collect_namespaces. #761 (Thanks, Juergen Mangler!)</p>
+</li>
+<li>New callback SAX::Document#processing_instruction (Thanks, Kitaiti Makoto!)</li>
+<li>Node#native_content= allows setting unescaped node contant. #768</li>
+<li>XPath lookup with namespaces supports symbol keys. #729 (Thanks, Ben Langfeld.)</li>
+<li>XML::Node#[]= stringifies values. #729 (Thanks, Ben Langfeld.)</li>
+<li>bin/nokogiri will process a document from $stdin</li>
+<li>bin/nokogiri -e will execute a program from the command line</li>
+<li>
+<p>(JRuby) bin/nokogiri --version will print the Xerces and NekoHTML versions.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Nokogiri now detects XSLT transform errors. #731 (Thanks, Justin Fitzsimmons!)</p>
+</li>
+<li>Don't throw an Error when trying to replace top-level text node in DocumentFragment. #775</li>
+<li>Raise an ArgumentError if an invalid encoding is passed to the SAX parser. #756 (Thanks, Bradley Schaefer!)</li>
+<li>Prefixed element inconsistency between CRuby and JRuby. #712</li>
+<li>(JRuby) space prior to xml preamble causes nokogiri to fail parsing. (fixed along with #748) #790</li>
+<li>(JRuby) Fixed the bug Nokogiri::XML::Node#content inconsistency between Java and C. #794, #797</li>
+<li>(JRuby) raises INVALID_CHARACTER_ERR exception when EntityReference name starts with '#'. #719</li>
+<li>(JRuby) doesn't coerce namespaces out of strings on a direct subclass of Node. #715</li>
+<li>(JRuby) Node#content now renders newlines properly. #737 (Thanks, Piotr Szmielew!)</li>
+<li>(JRuby) Unknown namespace are ignore when the recover option is used. #748</li>
+<li>(JRuby) XPath queries for namespaces should not throw exceptions when called twice in a row. #764</li>
+<li>(JRuby) More consistent (with libxml2) whitespace formatting when emitting XML. #771</li>
+<li>(JRuby) namespaced attributes broken when appending raw xml to builder. #770</li>
+<li>(JRuby) Nokogiri::XML::Document#wrap raises undefined method `length' for nil:NilClass when trying to &lt;&lt; to a node. #781</li>
+<li>(JRuby) Fixed "bad file descriptor" bug when closing open file descriptors. #495</li>
+<li>(JRuby) JRuby/CRuby incompatibility for attribute decorators. #785</li>
+<li>(JRuby) Issues parsing valid XML with no internal subset in the DTD. #547, #811</li>
+<li>(JRuby) Issues parsing valid node content when it contains colons. #728</li>
+<li>(JRuby) Correctly parse the doc type of html documents. #733</li>
+<li>(JRuby) Include dtd in the xml output when a builder is used with create_internal_subset. #751</li>
+<li>(JRuby) builder requires textwrappers for valid utf8 in jruby, not in mri. #784</li>
+</ul>
+<h2 id="155-2012-06-24">1.5.5 / 2012-06-24<a class="headerlink" href="#155-2012-06-24" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>Much-improved support for JRuby in 1.9 mode! Yay!</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Regression in JRuby Nokogiri add_previous_sibling (1.5.0 -&gt; 1.5.1) #691 (Thanks, John Shahid!)</p>
+</li>
+<li>JRuby unable to create HTML doc if URL arg provided #674 (Thanks, John Shahid!)</li>
+<li>JRuby raises NullPointerException when given HTML document is nil or empty string. #699</li>
+<li>JRuby 1.9 error, uncaught throw 'encoding_found', has been fixed. #673</li>
+<li>Invalid encoding returned in JRuby with US-ASCII. #583</li>
+<li>XmlSaxPushParser raises IndexOutOfBoundsException when over 512 characters are given. #567, #615</li>
+<li>When xpath evaluation returns empty NodeSet, decorating NodeSet's base document raises exception. #514</li>
+<li>JRuby raises exception when xpath with namespace is specified. pull request #681 (Thanks, Piotr Szmielew)</li>
+<li>JRuby renders nodes without their namespace when subclassing Node. #695</li>
+<li>JRuby raises NAMESPACE_ERR (org.w3c.dom.DOMException) while instantiating RDF::RDFXML::Writer. #683</li>
+<li>JRuby is not able to use namespaces in xpath. #493</li>
+<li>JRuby's Entity resolving should be consistent with C-Nokogiri #704, #647, #703</li>
+</ul>
+<h2 id="154-2012-06-12">1.5.4 / 2012-06-12<a class="headerlink" href="#154-2012-06-12" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>The "nokogiri" script now has more verbose output when passed the <code>--rng</code> option. #675 (Thanks, Dan Radez!)</p>
+</li>
+<li>Build support on hardened Debian systems that use <code>-Werror=format-security</code>. #680.</li>
+<li>Better build support for systems with pkg-config. #584</li>
+<li>
+<p>Better build support for systems with multiple iconv installations.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Segmentation fault when creating a comment node for a DocumentFragment. #677, #678.</p>
+</li>
+<li>
+<p>Treat '.' as xpath in at() and search(). #690</p>
+</li>
+<li>
+<p>(MRI, Security) Default parse options for XML documents were
+    changed to not make network connections during document parsing,
+    to avoid XXE vulnerability. #693</p>
+<p>To re-enable this behavior, the configuration method <code>nononet</code> may
+be called, like this:</p>
+<p>Nokogiri::XML::Document.parse(xml) { |config| config.nononet }</p>
+<p>Insert your own joke about double-negatives here.</p>
+</li>
+</ul>
+<h2 id="153-2012-06-01">1.5.3 / 2012-06-01<a class="headerlink" href="#153-2012-06-01" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>Support for "prefixless" CSS selectors ~, &gt; and + like jQuery
+    supports. #621, #623. (Thanks, David Lee!)</p>
+</li>
+<li>
+<p>Attempting to improve installation on homebrew 0.9 (with regards
+    to iconv). Isn't package management convenient?</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Custom xpath functions with empty nodeset arguments cause a
+    segfault. #634.</p>
+</li>
+<li>Nokogiri::XML::Node#css now works for XML documents with default
+    namespaces when the rule contains attribute selector without
+    namespace.</li>
+<li>Fixed marshalling bugs around how arguments are passed to (and
+    returned from) XSLT custom xpath functions. #640.</li>
+<li>Nokogiri::XML::Reader#outer_xml is broken in JRuby #617</li>
+<li>Nokogiri::XML::Attribute on JRuby returns a nil namespace #647</li>
+<li>Nokogiri::XML::Node#namespace= cannot set a namespace without a
+    prefix on JRuby #648</li>
+<li>(JRuby) 1.9 mode causes dead lock while running rake #571</li>
+<li>HTML::Document#meta_encoding does not raise exception on docs with
+    malformed content-type. #655</li>
+<li>Fixing segfault related to unsupported encodings in in-context
+    parsing on 1.8.7. #643</li>
+<li>(JRuby) Concurrency issue in XPath parsing. #682</li>
+</ul>
+<h2 id="152-2012-03-09">1.5.2 / 2012-03-09<a class="headerlink" href="#152-2012-03-09" title="Permanent link">&para;</a></h2>
+<p>Repackaging of 1.5.1 with a gemspec that is compatible with older Rubies. #631, #632.</p>
+<h2 id="151-2012-03-09">1.5.1 / 2012-03-09<a class="headerlink" href="#151-2012-03-09" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>XML::Builder#comment allows creation of comment nodes.</p>
+</li>
+<li>CSS searches now support namespaced attributes. #593</li>
+<li>Java integration feature is added. Now, XML::Document.wrap
+    and XML::Document#to_java methods are available.</li>
+<li>
+<p>RelaxNG validator support in the <code>nokogiri</code> cli utility. #591 (thanks, Dan Radez!)</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fix many memory leaks and segfault opportunities. Thanks, Tim Elliott!</p>
+</li>
+<li>extconf searches homebrew paths if homebrew is installed.</li>
+<li>Inconsistent behavior of Nokogiri 1.5.0 Java #620</li>
+<li>Inheriting from Nokogiri::XML::Node on JRuby (1.6.4/5) fails #560</li>
+<li>XML::Attr nodes are not allowed to be added as node children, so an
+    exception is raised. #558</li>
+<li>No longer defensively "pickle" adjacent text nodes on
+    Node#add_next_sibling and Node#add_previous_sibling calls. #595.</li>
+<li>Java version inconsistency: it returns nil for empty attributes #589</li>
+<li>to_xhtml incorrectly generates <p /></p> when tag is empty #557</li>
+<li>Document#add_child now accepts a Node, NodeSet, DocumentFragment,
+    or String. #546.</li>
+<li>Document#create_element now recognizes namespaces containing
+    non-word characters (like "SOAP-ENV"). This is mostly relevant to
+    users of Builder, which calls Document#create_element for nearly
+    everything. #531.</li>
+<li>File encoding broken in 1.5.0 / jruby / windows #529</li>
+<li>Java version does not return namespace defs as attrs for ::HTML #542</li>
+<li>Bad file descriptor with Nokogiri 1.5.0 #495</li>
+<li>remove_namespace! doesn't work in pure java version #492</li>
+<li>The Nokogiri Java native build throws a null pointer exception
+    when ActiveSupport's .blank? method is called directly on a parsed
+    object. #489</li>
+<li>1.5.0 Not using correct character encoding #488</li>
+<li>Raw XML string in XML Builder broken on JRuby #486</li>
+<li>Nokogiri 1.5.0 XML generation broken on JRuby #484</li>
+<li>Do not allow multiple root nodes. #550</li>
+<li>Fixes for custom XPath functions. #605, #606 (thanks, Juan Wajnerman!)</li>
+<li>Node#to_xml does not override :save_with if it is provided. #505</li>
+<li>Node#set is a private method (JRuby). #564 (thanks, Nick Sieger!)</li>
+<li>C14n cleanup and Node#canonicalize (thanks, Ivan Pirlik!) #563</li>
+</ul>
+<h2 id="150-2011-07-01">1.5.0 / 2011-07-01<a class="headerlink" href="#150-2011-07-01" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>See changelog from 1.4.7</p>
+</li>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>extracted sets of Node::SaveOptions into Node::SaveOptions::DEFAULT_{X,H,XH}TML (refactor)</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>default output of XML on JRuby is no longer formatted due to
+    inconsistent whitespace handling. #415</p>
+</li>
+<li>(JRuby) making empty NodeSets with null <code>nodes</code> member safe to operate on. #443</li>
+<li>Fix a bug in advanced encoding detection that leads to partially
+    duplicated document when parsing an HTML file with unknown
+    encoding.</li>
+<li>Add support for <meta charset="...">.</li>
+</ul>
+<h2 id="150-beta3-20101202">1.5.0 beta3 / 2010/12/02<a class="headerlink" href="#150-beta3-20101202" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>JRuby performance tuning</p>
+</li>
+<li>
+<p>See changelog from 1.4.4</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Node#inner_text no longer returns nil. (JRuby) #264</p>
+</li>
+</ul>
+<h2 id="150-beta2-20100730">1.5.0 beta2 / 2010/07/30<a class="headerlink" href="#150-beta2-20100730" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>See changelog from 1.4.3</p>
+</li>
+</ul>
+<h2 id="150-beta1-20100522">1.5.0 beta1 / 2010/05/22<a class="headerlink" href="#150-beta1-20100522" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>JRuby support is provided by a new pure-java backend.</p>
+</li>
+<li>
+<p>Deprecations</p>
+</li>
+<li>
+<p>Ruby 1.8.6 is deprecated. Nokogiri will install, but official support is ended.</p>
+</li>
+<li>LibXML 2.6.16 and earlier are deprecated. Nokogiri will refuse to install.</li>
+<li>FFI support is removed.</li>
+</ul>
+<h2 id="147-2011-07-01">1.4.7 / 2011-07-01<a class="headerlink" href="#147-2011-07-01" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fix a bug in advanced encoding detection that leads to partially
+    duplicated document when parsing an HTML file with unknown
+    encoding. Thanks, Timothy Elliott (@ender672)! #478</p>
+</li>
+</ul>
+<h2 id="146-2011-06-19">1.4.6 / 2011-06-19<a class="headerlink" href="#146-2011-06-19" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>This version is functionally identical to 1.4.5.</p>
+</li>
+<li>Ruby 1.8.6 support has been restored.</li>
+</ul>
+<h2 id="145-2011-05-19">1.4.5 / 2011-05-19<a class="headerlink" href="#145-2011-05-19" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>Nokogiri::HTML::Document#title accessor gets and sets the document title.</p>
+</li>
+<li>extracted sets of Node::SaveOptions into Node::SaveOptions::DEFAULT_{X,H,XH}TML (refactor)</li>
+<li>
+<p>Raise an exception if a string is passed to Nokogiri::XML::Schema#validate. #406</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Node#serialize-and-friends now accepts a SaveOption object as the, erm, save object.</p>
+</li>
+<li>Nokogiri::CSS::Parser has-a Nokogiri::CSS::Tokenizer</li>
+<li>(JRUBY+FFI only) Weak references are now threadsafe. #355</li>
+<li>Make direct start_element() callback (currently used for
+    HTML::SAX::Parser) pass attributes in assoc array, just as
+    emulated start_element() callback does.  rel. #356</li>
+<li>HTML::SAX::Parser should call back a block given to parse*() if any, just as XML::SAX::Parser does.</li>
+<li>Add further encoding detection to HTML parser that libxml2 does not do.</li>
+<li>Document#remove_namespaces! now handles attributes with namespaces. #396</li>
+<li>XSLT::Stylesheet#transform no longer segfaults when handed a non-XML::Document. #452</li>
+<li>XML::Reader no longer segfaults when under GC pressure. #439</li>
+</ul>
+<h2 id="144-2010-11-15">1.4.4 / 2010-11-15<a class="headerlink" href="#144-2010-11-15" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>XML::Node#children= sets the node's inner html (much like #inner_html=), but returns the reparent node(s).</p>
+</li>
+<li>XSLT supports function extensions. #336</li>
+<li>XPath bind parameter substitution. #329</li>
+<li>XML::Reader node type constants. #369</li>
+<li>
+<p>SAX Parser context provides line and column information</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>XML::DTD#attributes returns an empty hash instead of nil when there are no attributes.</p>
+</li>
+<li>XML::DTD#{keys,each} now work as expected. #324</li>
+<li>{XML,HTML}::DocumentFragment.{new,parse} no longer strip leading and trailing whitespace. #319</li>
+<li>XML::Node#{add_child,add_previous_sibling,add_next_sibling,replace} return a NodeSet when passed a string.</li>
+<li>Unclosed tags parsed more robustly in fragments. #315</li>
+<li>XML::Node#{replace,add_previous_sibling,add_next_sibling} edge cases fixed related to libxml's text node merging. #308</li>
+<li>Fixed a segfault when GC occurs during xpath handler argument marshalling. #345</li>
+<li>Added hack to Slop decorator to work with previously defined methods. #330</li>
+<li>Fix a memory leak when duplicating child nodes. #353</li>
+<li>Fixed off-by-one bug with nth-last-{child,of-type} CSS selectors when NOT using an+b notation. #354</li>
+<li>Fixed passing of non-namespace attributes to SAX::Document#start_element. #356</li>
+<li>Workaround for libxml2 in-context parsing bug. #362</li>
+<li>Fixed NodeSet#wrap on nodes within a fragment. #331</li>
+</ul>
+<h2 id="143-20100728">1.4.3 / 2010/07/28<a class="headerlink" href="#143-20100728" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>XML::Reader#empty_element? returns true for empty elements. #262</p>
+</li>
+<li>Node#remove_namespaces! now removes namespace <em>declarations</em> as well. #294</li>
+<li>
+<p>NodeSet#at_xpath, NodeSet#at_css and NodeSet#&gt; do what the corresponding
+    methods of Node do.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>XML::NodeSet#{include?,delete,push} accept an XML::Namespace</p>
+</li>
+<li>XML::Document#parse added for parsing in the context of a document</li>
+<li>XML::DocumentFragment#inner_html= works with contextual parsing! #298, #281</li>
+<li>lib/nokogiri/css/parser.y Combined CSS functions + pseudo selectors fixed</li>
+<li>Reparenting text nodes is safe, even when the operation frees adjacent merged nodes. #283</li>
+<li>Fixed libxml2 versionitis issue with xmlFirstElementChild et al. #303</li>
+<li>XML::Attr#add_namespace now works as expected. #252</li>
+<li>HTML::DocumentFragment uses the string's encoding. #305</li>
+<li>Fix the CSS3 selector translation rule for the general sibling combinator
+    (a.k.a. preceding selector) that incorrectly converted "E ~ F G" to
+    "//F//G[preceding-sibling::E]".</li>
+</ul>
+<h2 id="142-20100522">1.4.2 / 2010/05/22<a class="headerlink" href="#142-20100522" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>XML::Node#parse will parse XML or HTML fragments with respect to the
+    context node.</p>
+</li>
+<li>XML::Node#namespaces returns all namespaces defined in the node and all
+    ancestor nodes
+    (previously did not return ancestors' namespace definitions).</li>
+<li>Added Enumerable to XML::Node</li>
+<li>Nokogiri::XML::Schema#validate now uses xmlSchemaValidateFile if a
+    filename is passed, which is faster and more memory-efficient. GH #219</li>
+<li>XML::Document#create_entity will create new EntityDecl objects. GH #174</li>
+<li>JRuby FFI implementation no longer uses ObjectSpace._id2ref,
+    instead using Charles Nutter's rocking Weakling gem.</li>
+<li>Nokogiri::XML::Node#first_element_child fetch the first child node that is
+    an ELEMENT node.</li>
+<li>Nokogiri::XML::Node#last_element_child fetch the last child node that is
+    an ELEMENT node.</li>
+<li>Nokogiri::XML::Node#elements fetch all children nodes that are ELEMENT
+    nodes.</li>
+<li>Nokogiri::XML::Node#add_child, #add_previous_sibling, #before,
+    #add_next_sibling, #after, #inner_html, #swap and #replace all now
+    accept a Node, DocumentFragment, NodeSet, or a string containing
+    markup.</li>
+<li>
+<p>Node#fragment? indicates whether a node is a DocumentFragment.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>XML::NodeSet is now always decorated (if the document has decorators).
+    GH #198</p>
+</li>
+<li>XML::NodeSet#slice gracefully handles offset+length larger than the set
+    length. GH #200</li>
+<li>XML::Node#content= safely unlinks previous content. GH #203</li>
+<li>XML::Node#namespace= takes nil as a parameter</li>
+<li>XML::Node#xpath returns things other than NodeSet objects. GH #208</li>
+<li>XSLT::StyleSheet#transform accepts hashes for parameters. GH #223</li>
+<li>Psuedo selectors inside not() work. GH #205</li>
+<li>XML::Builder doesn't break when nodes are unlinked.
+    Thanks to vihai! GH #228</li>
+<li>Encoding can be forced on the SAX parser. Thanks Eugene Pimenov! GH #204</li>
+<li>XML::DocumentFragment uses XML::Node#parse to determine children.</li>
+<li>Fixed a memory leak in xml reader. Thanks sdor! GH #244</li>
+<li>
+<p>Node#replace returns the new child node as claimed in the
+    RDoc. Previously returned +self+.</p>
+</li>
+<li>
+<p>Notes</p>
+</li>
+<li>
+<p>The Windows gems now bundle DLLs for libxml 2.7.6 and libxslt
+    1.1.26. Prior to this release, libxml 2.7.3 and libxslt 1.1.24
+    were bundled.</p>
+</li>
+</ul>
+<h2 id="141-20091210">1.4.1 / 2009/12/10<a class="headerlink" href="#141-20091210" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>Added Nokogiri::LIBXML_ICONV_ENABLED</p>
+</li>
+<li>Alias Node#[] to Node#attr</li>
+<li>XML::Node#next_element added</li>
+<li>XML::Node#&gt; added for searching a nodes immediate children</li>
+<li>XML::NodeSet#reverse added</li>
+<li>Added fragment support to Node#add_child, Node#add_next_sibling,
+    Node#add_previous_sibling, and Node#replace.</li>
+<li>XML::Node#previous_element implemented</li>
+<li>Rubinius support</li>
+<li>Ths CSS selector engine now supports :has()</li>
+<li>XML::NodeSet#filter() was added</li>
+<li>
+<p>XML::Node.next= and .previous= are aliases for add_next_sibling and add_previous_sibling. GH #183</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>XML fragments with namespaces do not raise an exception (regression in 1.4.0)</p>
+</li>
+<li>Node#matches? works in nodes contained by a DocumentFragment. GH #158</li>
+<li>Document should not define add_namespace() method. GH #169</li>
+<li>XPath queries returning namespace declarations do not segfault.</li>
+<li>Node#replace works with nodes from different documents. GH #162</li>
+<li>Adding XML::Document#collect_namespaces</li>
+<li>Fixed bugs in the SOAP4R adapter</li>
+<li>Fixed bug in XML::Node#next_element for certain edge cases</li>
+<li>Fixed load path issue with JRuby under Windows. GH #160.</li>
+<li>XSLT#apply_to will honor the "output method". Thanks richardlehane!</li>
+<li>Fragments containing leading text nodes with newlines now parse properly. GH #178.</li>
+</ul>
+<h2 id="140-20091030">1.4.0 / 2009/10/30<a class="headerlink" href="#140-20091030" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Happy Birthday!</p>
+</li>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>Node#at_xpath returns the first element of the NodeSet matching the XPath
+    expression.</p>
+</li>
+<li>Node#at_css returns the first element of the NodeSet matching the CSS
+    selector.</li>
+<li>NodeSet#| for unions GH #119 (Thanks Serabe!)</li>
+<li>NodeSet#inspect makes prettier output</li>
+<li>Node#inspect implemented for more rubyish document inspecting</li>
+<li>Added XML::DTD#external_id</li>
+<li>Added XML::DTD#system_id</li>
+<li>Added XML::ElementContent for DTD Element content validity</li>
+<li>Better namespace declaration support in Nokogiri::XML::Builder</li>
+<li>Added XML::Node#external_subset</li>
+<li>Added XML::Node#create_external_subset</li>
+<li>Added XML::Node#create_internal_subset</li>
+<li>XML Builder can append raw strings (GH #141, patch from dudleyf)</li>
+<li>XML::SAX::ParserContext added</li>
+<li>
+<p>XML::Document#remove_namespaces! for the namespace-impaired</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>returns nil when HTML documents do not declare a meta encoding tag. GH #115</p>
+</li>
+<li>Uses RbConfig::CONFIG['host_os'] to adjust ENV['PATH'] GH #113</li>
+<li>NodeSet#search is more efficient GH #119 (Thanks Serabe!)</li>
+<li>NodeSet#xpath handles custom xpath functions</li>
+<li>Fixing a SEGV when XML::Reader gets attributes for current node</li>
+<li>Node#inner_html takes the same arguments as Node#to_html GH #117</li>
+<li>DocumentFragment#css delegates to it's child nodes GH #123</li>
+<li>NodeSet#[] works with slices larger than NodeSet#length GH #131</li>
+<li>Reparented nodes maintain their namespace. GH #134</li>
+<li>Fixed SEGV when adding an XML::Document to NodeSet</li>
+<li>
+<p>XML::SyntaxError can be duplicated. GH #148</p>
+</li>
+<li>
+<p>Deprecations</p>
+</li>
+<li>
+<p>Hpricot compatibility layer removed</p>
+</li>
+</ul>
+<h2 id="133-20090726">1.3.3 / 2009/07/26<a class="headerlink" href="#133-20090726" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>NodeSet#children returns all children of all nodes</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Override libxml-ruby's global error handler</p>
+</li>
+<li>ParseOption#strict fixed</li>
+<li>Fixed a segfault when sending an empty string to Node#inner_html= GH #88</li>
+<li>String encoding is now set to UTF-8 in Ruby 1.9</li>
+<li>Fixed a segfault when moving root nodes between documents. GH #91</li>
+<li>Fixed an O(n) penalty on node creation. GH #101</li>
+<li>
+<p>Allowing XML documents to be output as HTML documents</p>
+</li>
+<li>
+<p>Deprecations</p>
+</li>
+<li>
+<p>Hpricot compatibility layer will be removed in 1.4.0</p>
+</li>
+</ul>
+<h2 id="132-2009-06-22">1.3.2 / 2009-06-22<a class="headerlink" href="#132-2009-06-22" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>Nokogiri::XML::DTD#validate will validate your document</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Nokogiri::XML::NodeSet#search will search top level nodes. GH #73</p>
+</li>
+<li>Removed namespace related methods from Nokogiri::XML::Document</li>
+<li>Fixed a segfault when a namespace was added twice</li>
+<li>Made nokogiri work with Snow Leopard GH #79</li>
+<li>Mailing list has moved to: <a href="http://groups.google.com/group/nokogiri-talk">http://groups.google.com/group/nokogiri-talk</a></li>
+<li>HTML fragments now correctly handle comments and CDATA blocks. GH #78</li>
+<li>
+<p>Nokogiri::XML::Document#clone is now an alias of dup</p>
+</li>
+<li>
+<p>Deprecations</p>
+</li>
+<li>
+<p>Nokogiri::XML::SAX::Document#start_element_ns is deprecated, please switch
+    to Nokogiri::XML::SAX::Document#start_element_namespace</p>
+</li>
+<li>Nokogiri::XML::SAX::Document#end_element_ns is deprecated, please switch
+    to Nokogiri::XML::SAX::Document#end_element_namespace</li>
+</ul>
+<h2 id="131-2009-06-07">1.3.1 / 2009-06-07<a class="headerlink" href="#131-2009-06-07" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>extconf.rb checks for optional RelaxNG and Schema functions</p>
+</li>
+<li>Namespace nodes are added to the Document node cache</li>
+</ul>
+<h2 id="130-2009-05-30">1.3.0 / 2009-05-30<a class="headerlink" href="#130-2009-05-30" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>Builder changes scope based on block arity</p>
+</li>
+<li>Builder supports methods ending in underscore similar to tagz</li>
+<li>Nokogiri::XML::Node#&lt;=&gt; compares nodes based on Document position</li>
+<li>Nokogiri::XML::Node#matches? returns true if Node can be found with
+    given selector.</li>
+<li>Nokogiri::XML::Node#ancestors now returns an Nokogiri::XML::NodeSet</li>
+<li>Nokogiri::XML::Node#ancestors will match parents against optional selector</li>
+<li>Nokogiri::HTML::Document#meta_encoding for getting the meta encoding</li>
+<li>Nokogiri::HTML::Document#meta_encoding= for setting the meta encoding</li>
+<li>Nokogiri::XML::Document#encoding= to set the document encoding</li>
+<li>Nokogiri::XML::Schema for validating documents against XSD schema</li>
+<li>Nokogiri::XML::RelaxNG for validating documents against RelaxNG schema</li>
+<li>Nokogiri::HTML::ElementDescription for fetching HTML element descriptions</li>
+<li>Nokogiri::XML::Node#description to fetch the node description</li>
+<li>Nokogiri::XML::Node#accept implements Visitor pattern</li>
+<li>bin/nokogiri for easily examining documents (Thanks Yutaka HARA!)</li>
+<li>Nokogiri::XML::NodeSet now supports more Array and Enumerable operators:
+    index, delete, slice, - (difference), + (concatenation), &amp; (intersection),
+    push, pop, shift, ==</li>
+<li>Nokogiri.XML, Nokogiri.HTML take blocks that receive
+    Nokogiri::XML::ParseOptions objects</li>
+<li>Nokogiri::XML::Node#namespace returns a Nokogiri::XML::Namespace</li>
+<li>Nokogiri::XML::Node#namespace= for setting a node's namespace</li>
+<li>Nokogiri::XML::DocumentFragment and Nokogiri::HTML::DocumentFragment
+    have a sensible API and a more robust implementation.</li>
+<li>
+<p>JRuby 1.3.0 support via FFI.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fixed a problem with nil passed to CDATA constructor</p>
+</li>
+<li>Fragment method deals with regular expression characters
+    (Thanks Joel!) LH #73</li>
+<li>Fixing builder scope issues LH #61, LH #74, LH #70</li>
+<li>Fixed a problem when adding a child could remove the child namespace LH#78</li>
+<li>Fixed bug with unlinking a node then reparenting it. (GH#22)</li>
+<li>Fixed failure to catch errors during XSLT parsing (GH#32)</li>
+<li>Fixed a bug with attribute conditions in CSS selectors (GH#36)</li>
+<li>Fixed intolerance of HTML attributes without values in Node#before/after/inner_html=. (GH#35)</li>
+</ul>
+<h2 id="123-2009-03-22">1.2.3 / 2009-03-22<a class="headerlink" href="#123-2009-03-22" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fixing bug where a node is passed in to Node#new</p>
+</li>
+<li>Namespace should be assigned on DocumentFragment creation. LH #66</li>
+<li>Nokogiri::XML::NodeSet#dup works GH #10</li>
+<li>Nokogiri::HTML returns an empty Document when given a blank string GH#11</li>
+<li>Adding a child will remove duplicate namespace declarations LH #67</li>
+<li>Builder methods take a hash as a second argument</li>
+</ul>
+<h2 id="122-2009-03-14">1.2.2 / 2009-03-14<a class="headerlink" href="#122-2009-03-14" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New features</p>
+</li>
+<li>
+<p>Nokogiri may be used with soap4r. See XSD::XMLParser::Nokogiri</p>
+</li>
+<li>Nokogiri::XML::Node#inner_html= to set the inner html for a node</li>
+<li>Nokogiri builder interface improvements</li>
+<li>
+<p>Nokogiri::XML::Node#swap swaps html for current node (LH #50)</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fixed a tag nesting problem in the Builder API (LH #41)</p>
+</li>
+<li>Nokogiri::HTML.fragment will properly handle text only nodes (LH #43)</li>
+<li>Nokogiri::XML::Node#before will prepend text nodes (LH #44)</li>
+<li>Nokogiri::XML::Node#after will append text nodes</li>
+<li>Nokogiri::XML::Node#search automatically registers root namespaces (LH #42)</li>
+<li>Nokogiri::XML::NodeSet#search automatically registers namespaces</li>
+<li>Nokogiri::HTML::NamedCharacters delegates to libxml2</li>
+<li>Nokogiri::XML::Node#[] can take a symbol (LH #48)</li>
+<li>vasprintf for windows updated.  Thanks Geoffroy Couprie!</li>
+<li>Nokogiri::XML::Node#[]= should not encode entities (LH #55)</li>
+<li>Namespaces should be copied to reparented nodes (LH #56)</li>
+<li>Nokogiri uses encoding set on the string for default in Ruby 1.9</li>
+<li>Document#dup should create a new document of the same type (LH #59)</li>
+<li>Document should not have a parent method (LH #64)</li>
+</ul>
+<h2 id="121-2009-02-23">1.2.1 / 2009-02-23<a class="headerlink" href="#121-2009-02-23" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fixed a CSS selector space bug</p>
+</li>
+<li>Fixed Ruby 1.9 String Encoding (Thanks 角谷さん！)</li>
+</ul>
+<h2 id="120-2009-02-22">1.2.0 / 2009-02-22<a class="headerlink" href="#120-2009-02-22" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New features</p>
+</li>
+<li>
+<p>CSS search now supports CSS3 namespace queries</p>
+</li>
+<li>Namespaces on the root node are automatically registered</li>
+<li>CSS queries use the default namespace</li>
+<li>Nokogiri::XML::Document#encoding get encoding used for this document</li>
+<li>Nokogiri::XML::Document#url get the document url</li>
+<li>Nokogiri::XML::Node#add_namespace add a namespace to the node LH#38</li>
+<li>Nokogiri::XML::Node#each iterate over attribute name, value pairs</li>
+<li>Nokogiri::XML::Node#keys get all attribute names</li>
+<li>Nokogiri::XML::Node#line get the line number for a node (Thanks Dirkjan Bussink!)</li>
+<li>Nokogiri::XML::Node#serialize now takes an optional encoding parameter</li>
+<li>Nokogiri::XML::Node#to_html, to_xml, and to_xhtml take an optional encoding</li>
+<li>Nokogiri::XML::Node#to_str</li>
+<li>Nokogiri::XML::Node#to_xhtml to produce XHTML documents</li>
+<li>Nokogiri::XML::Node#values get all attribute values</li>
+<li>Nokogiri::XML::Node#write_to writes the node to an IO object with optional encoding</li>
+<li>Nokogiri::XML::ProcessingInstrunction.new</li>
+<li>
+<p>Nokogiri::XML::SAX::PushParser for all your push parsing needs.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fixed Nokogiri::XML::Document#dup</p>
+</li>
+<li>Fixed header detection. Thanks rubikitch!</li>
+<li>
+<p>Fixed a problem where invalid CSS would cause the parser to hang</p>
+</li>
+<li>
+<p>Deprecations</p>
+</li>
+<li>
+<p>Nokogiri::XML::Node.new_from_str will be deprecated in 1.3.0</p>
+</li>
+<li>
+<p>API Changes</p>
+</li>
+<li>
+<p>Nokogiri::HTML.fragment now returns an XML::DocumentFragment (LH #32)</p>
+</li>
+</ul>
+<h2 id="111">1.1.1<a class="headerlink" href="#111" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New features</p>
+</li>
+<li>
+<p>Added XML::Node#elem?</p>
+</li>
+<li>Added XML::Node#attribute_nodes</li>
+<li>Added XML::Attr</li>
+<li>XML::Node#delete added.</li>
+<li>
+<p>XML::NodeSet#inner_html added.</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Not including an HTML entity for \r for HTML nodes.</p>
+</li>
+<li>Removed CSS::SelectorHandler and XML::XPathHandler</li>
+<li>XML::Node#attributes returns an Attr node for the value.</li>
+<li>XML::NodeSet implements to_xml</li>
+</ul>
+<h2 id="110">1.1.0<a class="headerlink" href="#110" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>New Features</p>
+</li>
+<li>
+<p>Custom XPath functions are now supported.  See Nokogiri::XML::Node#xpath</p>
+</li>
+<li>Custom CSS pseudo classes are now supported.  See Nokogiri::XML::Node#css</li>
+<li>
+<p>Nokogiri::XML::Node#&lt;&lt; will add a child to the current node</p>
+</li>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Mutex lock on CSS cache access</p>
+</li>
+<li>Fixed build problems with GCC 3.3.5</li>
+<li>XML::Node#to_xml now takes an indentation argument</li>
+<li>XML::Node#dup takes an optional depth argument</li>
+<li>XML::Node#add_previous_sibling returns new sibling node.</li>
+</ul>
+<h2 id="107">1.0.7<a class="headerlink" href="#107" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Fixed memory leak when using Dike</p>
+</li>
+<li>SAX parser now parses IO streams</li>
+<li>Comment nodes have their own class</li>
+<li>Nokogiri() should delegate to Nokogiri.parse()</li>
+<li>Prepending rather than appending to ENV['PATH'] on windows</li>
+<li>Fixed a bug in complex CSS negation selectors</li>
+</ul>
+<h2 id="106">1.0.6<a class="headerlink" href="#106" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>5 Bugfixes</p>
+</li>
+<li>
+<p>XPath Parser raises a SyntaxError on parse failure</p>
+</li>
+<li>CSS Parser raises a SyntaxError on parse failure</li>
+<li>filter() and not() hpricot compatibility added</li>
+<li>CSS searches via Node#search are now always relative</li>
+<li>CSS to XPath conversion is now cached</li>
+</ul>
+<h2 id="105">1.0.5<a class="headerlink" href="#105" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Added mailing list and ticket tracking information to the README.txt</p>
+</li>
+<li>Sets ENV['PATH'] on windows if it doesn't exist</li>
+<li>Caching results of NodeSet#[] on Document</li>
+</ul>
+<h2 id="104">1.0.4<a class="headerlink" href="#104" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Bugfixes</p>
+</li>
+<li>
+<p>Changed memory management from weak refs to document refs</p>
+</li>
+<li>Plugged some memory leaks</li>
+<li>Builder blocks can call methods from surrounding contexts</li>
+</ul>
+<h2 id="103">1.0.3<a class="headerlink" href="#103" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>5 Bugfixes</p>
+</li>
+<li>
+<p>NodeSet now implements to_ary</p>
+</li>
+<li>XML::Document should not implement parent</li>
+<li>More GC Bugs fixed.  (Mike is AWESOME!)</li>
+<li>Removed RARRAY_LEN for 1.8.5 compatibility.  Thanks Shane Hanna.</li>
+<li>inner_html fixed. (Thanks Yehuda!)</li>
+</ul>
+<h2 id="102">1.0.2<a class="headerlink" href="#102" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>1 Bugfix</p>
+</li>
+<li>
+<p>extconf.rb should not check for frex and racc</p>
+</li>
+</ul>
+<h2 id="101">1.0.1<a class="headerlink" href="#101" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>1 Bugfix</p>
+</li>
+<li>
+<p>Made sure extconf.rb searched libdir and prefix so that ports libxml/ruby
+    will link properly.  Thanks lucsky!</p>
+</li>
+</ul>
+<h2 id="100-2008-07-13">1.0.0 / 2008-07-13<a class="headerlink" href="#100-2008-07-13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>1 major enhancement</p>
+</li>
+<li>
+<p>Birthday!</p>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="index.html" title="Readme" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Readme
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="SECURITY.html" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Security
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright Ⓒ 2009-2018 Mike Dalessio
+          </div>
+        
+        <a href="https://github.com/sparklemotion/nokogiri.org">sparklemotion/nokogiri.org</a>
+        rendered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

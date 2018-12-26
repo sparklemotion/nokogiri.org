@@ -1,0 +1,3232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Nokogiri::XML::Document
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Nokogiri::XML::Document";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
+     &raquo; 
+    <span class="title">Document</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Nokogiri::XML::Document
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></li>
+          
+            <li class="next">Nokogiri::XML::Document</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/nokogiri/xml/document.rb<span class="defines">,<br />
+  ext/nokogiri/xml_document.c,<br /> ext/nokogiri/html_document.c</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Nokogiri::XML::Document is the main entry point for dealing with XML
+documents.  The Document is created by parsing an XML document. See
+Nokogiri::XML::Document.parse() for more information on parsing.</p>
+
+<p>For searching a Document, see Nokogiri::XML::Searchable#css and
+Nokogiri::XML::Searchable#xpath</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="../HTML/Document.html" title="Nokogiri::HTML::Document (class)">HTML::Document</a></span></p>
+</div>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="NCNAME_START_CHAR-constant" class="">NCNAME_START_CHAR =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>I&#39;m ignoring unicode characters here. See <a
+href="http://www.w3.org/TR/REC-xml-names/#ns-decl">www.w3.org/TR/REC-xml-names/#ns-decl</a>
+for more details.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A-Za-z_</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+        <dt id="NCNAME_CHAR-constant" class="">NCNAME_CHAR =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="#NCNAME_START_CHAR-constant" title="Nokogiri::XML::Document::NCNAME_START_CHAR (constant)">NCNAME_START_CHAR</a></span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\\-.0-9</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+        <dt id="NCNAME_RE-constant" class="">NCNAME_RE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^xmlns(:[</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#NCNAME_START_CHAR-constant" title="Nokogiri::XML::Document::NCNAME_START_CHAR (constant)">NCNAME_START_CHAR</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>][</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#NCNAME_CHAR-constant" title="Nokogiri::XML::Document::NCNAME_CHAR (constant)">NCNAME_CHAR</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>]*)?$</span><span class='regexp_end'>/</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+  
+  <h3 class="inherited">Constants inherited
+     from <span class='object_link'><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Node.html#ATTRIBUTE_DECL-constant" title="Nokogiri::XML::Node::ATTRIBUTE_DECL (constant)">Node::ATTRIBUTE_DECL</a></span>, <span class='object_link'><a href="Node.html#ATTRIBUTE_NODE-constant" title="Nokogiri::XML::Node::ATTRIBUTE_NODE (constant)">Node::ATTRIBUTE_NODE</a></span>, <span class='object_link'><a href="Node.html#CDATA_SECTION_NODE-constant" title="Nokogiri::XML::Node::CDATA_SECTION_NODE (constant)">Node::CDATA_SECTION_NODE</a></span>, <span class='object_link'><a href="Node.html#COMMENT_NODE-constant" title="Nokogiri::XML::Node::COMMENT_NODE (constant)">Node::COMMENT_NODE</a></span>, <span class='object_link'><a href="Node.html#DOCB_DOCUMENT_NODE-constant" title="Nokogiri::XML::Node::DOCB_DOCUMENT_NODE (constant)">Node::DOCB_DOCUMENT_NODE</a></span>, <span class='object_link'><a href="Node.html#DOCUMENT_FRAG_NODE-constant" title="Nokogiri::XML::Node::DOCUMENT_FRAG_NODE (constant)">Node::DOCUMENT_FRAG_NODE</a></span>, <span class='object_link'><a href="Node.html#DOCUMENT_NODE-constant" title="Nokogiri::XML::Node::DOCUMENT_NODE (constant)">Node::DOCUMENT_NODE</a></span>, <span class='object_link'><a href="Node.html#DOCUMENT_TYPE_NODE-constant" title="Nokogiri::XML::Node::DOCUMENT_TYPE_NODE (constant)">Node::DOCUMENT_TYPE_NODE</a></span>, <span class='object_link'><a href="Node.html#DTD_NODE-constant" title="Nokogiri::XML::Node::DTD_NODE (constant)">Node::DTD_NODE</a></span>, <span class='object_link'><a href="Node.html#ELEMENT_DECL-constant" title="Nokogiri::XML::Node::ELEMENT_DECL (constant)">Node::ELEMENT_DECL</a></span>, <span class='object_link'><a href="Node.html#ELEMENT_NODE-constant" title="Nokogiri::XML::Node::ELEMENT_NODE (constant)">Node::ELEMENT_NODE</a></span>, <span class='object_link'><a href="Node.html#ENTITY_DECL-constant" title="Nokogiri::XML::Node::ENTITY_DECL (constant)">Node::ENTITY_DECL</a></span>, <span class='object_link'><a href="Node.html#ENTITY_NODE-constant" title="Nokogiri::XML::Node::ENTITY_NODE (constant)">Node::ENTITY_NODE</a></span>, <span class='object_link'><a href="Node.html#ENTITY_REF_NODE-constant" title="Nokogiri::XML::Node::ENTITY_REF_NODE (constant)">Node::ENTITY_REF_NODE</a></span>, <span class='object_link'><a href="Node.html#HTML_DOCUMENT_NODE-constant" title="Nokogiri::XML::Node::HTML_DOCUMENT_NODE (constant)">Node::HTML_DOCUMENT_NODE</a></span>, <span class='object_link'><a href="Node.html#NAMESPACE_DECL-constant" title="Nokogiri::XML::Node::NAMESPACE_DECL (constant)">Node::NAMESPACE_DECL</a></span>, <span class='object_link'><a href="Node.html#NOTATION_NODE-constant" title="Nokogiri::XML::Node::NOTATION_NODE (constant)">Node::NOTATION_NODE</a></span>, <span class='object_link'><a href="Node.html#PI_NODE-constant" title="Nokogiri::XML::Node::PI_NODE (constant)">Node::PI_NODE</a></span>, <span class='object_link'><a href="Node.html#TEXT_NODE-constant" title="Nokogiri::XML::Node::TEXT_NODE (constant)">Node::TEXT_NODE</a></span>, <span class='object_link'><a href="Node.html#XINCLUDE_END-constant" title="Nokogiri::XML::Node::XINCLUDE_END (constant)">Node::XINCLUDE_END</a></span>, <span class='object_link'><a href="Node.html#XINCLUDE_START-constant" title="Nokogiri::XML::Node::XINCLUDE_START (constant)">Node::XINCLUDE_START</a></span></p>
+
+  
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="Searchable.html" title="Nokogiri::XML::Searchable (module)">Searchable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Searchable.html#LOOKS_LIKE_XPATH-constant" title="Nokogiri::XML::Searchable::LOOKS_LIKE_XPATH (constant)">Searchable::LOOKS_LIKE_XPATH</a></span></p>
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#errors-instance_method" title="#errors (instance method)">#<strong>errors</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A list of Nokogiri::XML::SyntaxError found when parsing a document.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(version = default)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new document with <code>version</code> (defaults to “1.0”).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(string_or_io, url = nil, encoding = nil, options = ParseOptions::DEFAULT_XML) {|options| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parse an XML file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_io-class_method" title="read_io (class method)">.<strong>read_io</strong>(io, url, encoding, options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new document from an IO object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_memory-class_method" title="read_memory (class method)">.<strong>read_memory</strong>(string, url, encoding, options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new document from a String.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wrap-class_method" title="wrap (class method)">.<strong>wrap</strong>(document)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p><code>JRuby</code> Wraps Java&#39;s org.w3c.dom.document and returns
+Nokogiri::XML::Document.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_child-instance_method" title="#add_child (instance method)">#<strong>add_child</strong>(node_or_tags)  &#x21d2; Object </a>
+    
+
+    
+      (also: #&lt;&lt;)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#canonicalize-instance_method" title="#canonicalize (instance method)">#<strong>canonicalize</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Canonicalize a document and return the results.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_namespaces-instance_method" title="#collect_namespaces (instance method)">#<strong>collect_namespaces</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Recursively get all namespaces from this node and its subtree and return
+them as a hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_cdata-instance_method" title="#create_cdata (instance method)">#<strong>create_cdata</strong>(string, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a CDATA Node containing <code>string</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_comment-instance_method" title="#create_comment (instance method)">#<strong>create_comment</strong>(string, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a Comment Node containing <code>string</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_element-instance_method" title="#create_element (instance method)">#<strong>create_element</strong>(name, *args, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create an element with <code>name</code>, and optionally setting the
+content and attributes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_entity-instance_method" title="#create_entity (instance method)">#<strong>create_entity</strong>(name, type, external_id, system_id, content)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new entity named <code>name</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_text_node-instance_method" title="#create_text_node (instance method)">#<strong>create_text_node</strong>(string, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a Text Node with <code>string</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#decorate-instance_method" title="#decorate (instance method)">#<strong>decorate</strong>(node)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Apply any decorators to <code>node</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#decorators-instance_method" title="#decorators (instance method)">#<strong>decorators</strong>(key)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the list of decorators given <code>key</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#document-instance_method" title="#document (instance method)">#<strong>document</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A reference to <code>self</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dup-instance_method" title="#dup (instance method)">#<strong>dup</strong>  &#x21d2; Object </a>
+    
+
+    
+      (also: #clone)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Copy this Document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#encoding-instance_method" title="#encoding (instance method)">#<strong>encoding</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the encoding for this Document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#encoding=-instance_method" title="#encoding= (instance method)">#<strong>encoding=</strong>(encoding)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the encoding string for this Document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fragment-instance_method" title="#fragment (instance method)">#<strong>fragment</strong>(tags = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a Nokogiri::XML::DocumentFragment from <code>tags</code> Returns an
+empty fragment if <code>tags</code> is nil.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; Document </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The name of this document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#namespaces-instance_method" title="#namespaces (instance method)">#<strong>namespaces</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the hash of namespaces on the root Nokogiri::XML::Node.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_namespaces!-instance_method" title="#remove_namespaces! (instance method)">#<strong>remove_namespaces!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remove all namespaces from all nodes in the document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#root-instance_method" title="#root (instance method)">#<strong>root</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the root node for this document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#root=-instance_method" title="#root= (instance method)">#<strong>root=</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the root element on this document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#slop!-instance_method" title="#slop! (instance method)">#<strong>slop!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Explore a document with shortcut methods.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_java-instance_method" title="#to_java (instance method)">#<strong>to_java</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p><code>JRuby</code> Returns Java&#39;s org.w3c.dom.document of this
+Document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#url-instance_method" title="#url (instance method)">#<strong>url</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the url name for this document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#validate-instance_method" title="#validate (instance method)">#<strong>validate</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Validate this Document against it&#39;s DTD.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#version-instance_method" title="#version (instance method)">#<strong>version</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the XML version for this Document.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Node.html#<=>-instance_method" title="Nokogiri::XML::Node#&lt;=&gt; (method)">#<=></a></span>, <span class='object_link'><a href="Node.html#==-instance_method" title="Nokogiri::XML::Node#== (method)">#==</a></span>, <span class='object_link'><a href="Node.html#>-instance_method" title="Nokogiri::XML::Node#&gt; (method)">#></a></span>, <span class='object_link'><a href="Node.html#[]-instance_method" title="Nokogiri::XML::Node#[] (method)">#[]</a></span>, <span class='object_link'><a href="Node.html#[]=-instance_method" title="Nokogiri::XML::Node#[]= (method)">#[]=</a></span>, <span class='object_link'><a href="Node.html#accept-instance_method" title="Nokogiri::XML::Node#accept (method)">#accept</a></span>, <span class='object_link'><a href="Node.html#add_class-instance_method" title="Nokogiri::XML::Node#add_class (method)">#add_class</a></span>, <span class='object_link'><a href="Node.html#add_namespace_definition-instance_method" title="Nokogiri::XML::Node#add_namespace_definition (method)">#add_namespace_definition</a></span>, <span class='object_link'><a href="Node.html#add_next_sibling-instance_method" title="Nokogiri::XML::Node#add_next_sibling (method)">#add_next_sibling</a></span>, <span class='object_link'><a href="Node.html#add_previous_sibling-instance_method" title="Nokogiri::XML::Node#add_previous_sibling (method)">#add_previous_sibling</a></span>, <span class='object_link'><a href="Node.html#after-instance_method" title="Nokogiri::XML::Node#after (method)">#after</a></span>, <span class='object_link'><a href="Node.html#ancestors-instance_method" title="Nokogiri::XML::Node#ancestors (method)">#ancestors</a></span>, <span class='object_link'><a href="Node.html#append_class-instance_method" title="Nokogiri::XML::Node#append_class (method)">#append_class</a></span>, <span class='object_link'><a href="Node.html#attribute-instance_method" title="Nokogiri::XML::Node#attribute (method)">#attribute</a></span>, <span class='object_link'><a href="Node.html#attribute_nodes-instance_method" title="Nokogiri::XML::Node#attribute_nodes (method)">#attribute_nodes</a></span>, <span class='object_link'><a href="Node.html#attribute_with_ns-instance_method" title="Nokogiri::XML::Node#attribute_with_ns (method)">#attribute_with_ns</a></span>, <span class='object_link'><a href="Node.html#attributes-instance_method" title="Nokogiri::XML::Node#attributes (method)">#attributes</a></span>, <span class='object_link'><a href="Node.html#before-instance_method" title="Nokogiri::XML::Node#before (method)">#before</a></span>, <span class='object_link'><a href="Node.html#blank%3F-instance_method" title="Nokogiri::XML::Node#blank? (method)">#blank?</a></span>, <span class='object_link'><a href="Node.html#cdata%3F-instance_method" title="Nokogiri::XML::Node#cdata? (method)">#cdata?</a></span>, <span class='object_link'><a href="Node.html#child-instance_method" title="Nokogiri::XML::Node#child (method)">#child</a></span>, <span class='object_link'><a href="Node.html#children-instance_method" title="Nokogiri::XML::Node#children (method)">#children</a></span>, <span class='object_link'><a href="Node.html#children=-instance_method" title="Nokogiri::XML::Node#children= (method)">#children=</a></span>, <span class='object_link'><a href="Node.html#classes-instance_method" title="Nokogiri::XML::Node#classes (method)">#classes</a></span>, <span class='object_link'><a href="Node.html#comment%3F-instance_method" title="Nokogiri::XML::Node#comment? (method)">#comment?</a></span>, <span class='object_link'><a href="Node.html#content-instance_method" title="Nokogiri::XML::Node#content (method)">#content</a></span>, <span class='object_link'><a href="Node.html#content=-instance_method" title="Nokogiri::XML::Node#content= (method)">#content=</a></span>, <span class='object_link'><a href="Node.html#create_external_subset-instance_method" title="Nokogiri::XML::Node#create_external_subset (method)">#create_external_subset</a></span>, <span class='object_link'><a href="Node.html#create_internal_subset-instance_method" title="Nokogiri::XML::Node#create_internal_subset (method)">#create_internal_subset</a></span>, <span class='object_link'><a href="Node.html#css_path-instance_method" title="Nokogiri::XML::Node#css_path (method)">#css_path</a></span>, <span class='object_link'><a href="Node.html#decorate!-instance_method" title="Nokogiri::XML::Node#decorate! (method)">#decorate!</a></span>, <span class='object_link'><a href="Node.html#default_namespace=-instance_method" title="Nokogiri::XML::Node#default_namespace= (method)">#default_namespace=</a></span>, <span class='object_link'><a href="Node.html#description-instance_method" title="Nokogiri::XML::Node#description (method)">#description</a></span>, <span class='object_link'><a href="Node.html#do_xinclude-instance_method" title="Nokogiri::XML::Node#do_xinclude (method)">#do_xinclude</a></span>, <span class='object_link'><a href="Node.html#document%3F-instance_method" title="Nokogiri::XML::Node#document? (method)">#document?</a></span>, <span class='object_link'><a href="Node.html#each-instance_method" title="Nokogiri::XML::Node#each (method)">#each</a></span>, <span class='object_link'><a href="Node.html#element%3F-instance_method" title="Nokogiri::XML::Node#element? (method)">#element?</a></span>, <span class='object_link'><a href="Node.html#element_children-instance_method" title="Nokogiri::XML::Node#element_children (method)">#element_children</a></span>, <span class='object_link'><a href="Node.html#encode_special_chars-instance_method" title="Nokogiri::XML::Node#encode_special_chars (method)">#encode_special_chars</a></span>, <span class='object_link'><a href="Node.html#external_subset-instance_method" title="Nokogiri::XML::Node#external_subset (method)">#external_subset</a></span>, <span class='object_link'><a href="Node.html#first_element_child-instance_method" title="Nokogiri::XML::Node#first_element_child (method)">#first_element_child</a></span>, <span class='object_link'><a href="Node.html#fragment%3F-instance_method" title="Nokogiri::XML::Node#fragment? (method)">#fragment?</a></span>, <span class='object_link'><a href="Node.html#html%3F-instance_method" title="Nokogiri::XML::Node#html? (method)">#html?</a></span>, <span class='object_link'><a href="Node.html#inner_html-instance_method" title="Nokogiri::XML::Node#inner_html (method)">#inner_html</a></span>, <span class='object_link'><a href="Node.html#inner_html=-instance_method" title="Nokogiri::XML::Node#inner_html= (method)">#inner_html=</a></span>, <span class='object_link'><a href="Node.html#internal_subset-instance_method" title="Nokogiri::XML::Node#internal_subset (method)">#internal_subset</a></span>, <span class='object_link'><a href="Node.html#key%3F-instance_method" title="Nokogiri::XML::Node#key? (method)">#key?</a></span>, <span class='object_link'><a href="Node.html#keys-instance_method" title="Nokogiri::XML::Node#keys (method)">#keys</a></span>, <span class='object_link'><a href="Node.html#lang-instance_method" title="Nokogiri::XML::Node#lang (method)">#lang</a></span>, <span class='object_link'><a href="Node.html#lang=-instance_method" title="Nokogiri::XML::Node#lang= (method)">#lang=</a></span>, <span class='object_link'><a href="Node.html#last_element_child-instance_method" title="Nokogiri::XML::Node#last_element_child (method)">#last_element_child</a></span>, <span class='object_link'><a href="Node.html#line-instance_method" title="Nokogiri::XML::Node#line (method)">#line</a></span>, <span class='object_link'><a href="Node.html#matches%3F-instance_method" title="Nokogiri::XML::Node#matches? (method)">#matches?</a></span>, <span class='object_link'><a href="Node.html#namespace-instance_method" title="Nokogiri::XML::Node#namespace (method)">#namespace</a></span>, <span class='object_link'><a href="Node.html#namespace=-instance_method" title="Nokogiri::XML::Node#namespace= (method)">#namespace=</a></span>, <span class='object_link'><a href="Node.html#namespace_definitions-instance_method" title="Nokogiri::XML::Node#namespace_definitions (method)">#namespace_definitions</a></span>, <span class='object_link'><a href="Node.html#namespace_scopes-instance_method" title="Nokogiri::XML::Node#namespace_scopes (method)">#namespace_scopes</a></span>, <span class='object_link'><a href="Node.html#namespaced_key%3F-instance_method" title="Nokogiri::XML::Node#namespaced_key? (method)">#namespaced_key?</a></span>, <span class='object_link'><a href="Node.html#native_content=-instance_method" title="Nokogiri::XML::Node#native_content= (method)">#native_content=</a></span>, <span class='object_link'><a href="Node.html#next_element-instance_method" title="Nokogiri::XML::Node#next_element (method)">#next_element</a></span>, <span class='object_link'><a href="Node.html#next_sibling-instance_method" title="Nokogiri::XML::Node#next_sibling (method)">#next_sibling</a></span>, <span class='object_link'><a href="Node.html#node_name-instance_method" title="Nokogiri::XML::Node#node_name (method)">#node_name</a></span>, <span class='object_link'><a href="Node.html#node_name=-instance_method" title="Nokogiri::XML::Node#node_name= (method)">#node_name=</a></span>, <span class='object_link'><a href="Node.html#node_type-instance_method" title="Nokogiri::XML::Node#node_type (method)">#node_type</a></span>, <span class='object_link'><a href="Node.html#parent-instance_method" title="Nokogiri::XML::Node#parent (method)">#parent</a></span>, <span class='object_link'><a href="Node.html#parent=-instance_method" title="Nokogiri::XML::Node#parent= (method)">#parent=</a></span>, <span class='object_link'><a href="Node.html#parse-instance_method" title="Nokogiri::XML::Node#parse (method)">#parse</a></span>, <span class='object_link'><a href="Node.html#path-instance_method" title="Nokogiri::XML::Node#path (method)">#path</a></span>, <span class='object_link'><a href="Node.html#pointer_id-instance_method" title="Nokogiri::XML::Node#pointer_id (method)">#pointer_id</a></span>, <span class='object_link'><a href="Node.html#prepend_child-instance_method" title="Nokogiri::XML::Node#prepend_child (method)">#prepend_child</a></span>, <span class='object_link'><a href="Node.html#previous_element-instance_method" title="Nokogiri::XML::Node#previous_element (method)">#previous_element</a></span>, <span class='object_link'><a href="Node.html#previous_sibling-instance_method" title="Nokogiri::XML::Node#previous_sibling (method)">#previous_sibling</a></span>, <span class='object_link'><a href="Node.html#processing_instruction%3F-instance_method" title="Nokogiri::XML::Node#processing_instruction? (method)">#processing_instruction?</a></span>, <span class='object_link'><a href="Node.html#read_only%3F-instance_method" title="Nokogiri::XML::Node#read_only? (method)">#read_only?</a></span>, <span class='object_link'><a href="Node.html#remove_attribute-instance_method" title="Nokogiri::XML::Node#remove_attribute (method)">#remove_attribute</a></span>, <span class='object_link'><a href="Node.html#remove_class-instance_method" title="Nokogiri::XML::Node#remove_class (method)">#remove_class</a></span>, <span class='object_link'><a href="Node.html#replace-instance_method" title="Nokogiri::XML::Node#replace (method)">#replace</a></span>, <span class='object_link'><a href="Node.html#serialize-instance_method" title="Nokogiri::XML::Node#serialize (method)">#serialize</a></span>, <span class='object_link'><a href="Node.html#swap-instance_method" title="Nokogiri::XML::Node#swap (method)">#swap</a></span>, <span class='object_link'><a href="Node.html#text%3F-instance_method" title="Nokogiri::XML::Node#text? (method)">#text?</a></span>, <span class='object_link'><a href="Node.html#to_html-instance_method" title="Nokogiri::XML::Node#to_html (method)">#to_html</a></span>, <span class='object_link'><a href="Node.html#to_s-instance_method" title="Nokogiri::XML::Node#to_s (method)">#to_s</a></span>, <span class='object_link'><a href="Node.html#to_xhtml-instance_method" title="Nokogiri::XML::Node#to_xhtml (method)">#to_xhtml</a></span>, <span class='object_link'><a href="Node.html#traverse-instance_method" title="Nokogiri::XML::Node#traverse (method)">#traverse</a></span>, <span class='object_link'><a href="Node.html#unlink-instance_method" title="Nokogiri::XML::Node#unlink (method)">#unlink</a></span>, <span class='object_link'><a href="Node.html#values-instance_method" title="Nokogiri::XML::Node#values (method)">#values</a></span>, <span class='object_link'><a href="Node.html#wrap-instance_method" title="Nokogiri::XML::Node#wrap (method)">#wrap</a></span>, <span class='object_link'><a href="Node.html#write_html_to-instance_method" title="Nokogiri::XML::Node#write_html_to (method)">#write_html_to</a></span>, <span class='object_link'><a href="Node.html#write_to-instance_method" title="Nokogiri::XML::Node#write_to (method)">#write_to</a></span>, <span class='object_link'><a href="Node.html#write_xhtml_to-instance_method" title="Nokogiri::XML::Node#write_xhtml_to (method)">#write_xhtml_to</a></span>, <span class='object_link'><a href="Node.html#write_xml_to-instance_method" title="Nokogiri::XML::Node#write_xml_to (method)">#write_xml_to</a></span>, <span class='object_link'><a href="Node.html#xml%3F-instance_method" title="Nokogiri::XML::Node#xml? (method)">#xml?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Searchable.html" title="Nokogiri::XML::Searchable (module)">Searchable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Searchable.html#at-instance_method" title="Nokogiri::XML::Searchable#at (method)">#at</a></span>, <span class='object_link'><a href="Searchable.html#at_css-instance_method" title="Nokogiri::XML::Searchable#at_css (method)">#at_css</a></span>, <span class='object_link'><a href="Searchable.html#at_xpath-instance_method" title="Nokogiri::XML::Searchable#at_xpath (method)">#at_xpath</a></span>, <span class='object_link'><a href="Searchable.html#css-instance_method" title="Nokogiri::XML::Searchable#css (method)">#css</a></span>, <span class='object_link'><a href="Searchable.html#search-instance_method" title="Nokogiri::XML::Searchable#search (method)">#search</a></span>, <span class='object_link'><a href="Searchable.html#xpath-instance_method" title="Nokogiri::XML::Searchable#xpath (method)">#xpath</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="PP/Node.html" title="Nokogiri::XML::PP::Node (module)">PP::Node</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="PP/Node.html#inspect-instance_method" title="Nokogiri::XML::PP::Node#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="PP/Node.html#pretty_print-instance_method" title="Nokogiri::XML::PP::Node#pretty_print (method)">#pretty_print</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(*args)  &#x21d2; <tt><span class='object_link'><a href="" title="Nokogiri::XML::Document (class)">Document</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span> <span class='comment'># :nodoc:
+</span>  <span class='ivar'>@errors</span>     <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@decorators</span> <span class='op'>=</span> <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="errors=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="errors-instance_method">
+  
+    #<strong>errors</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A list of Nokogiri::XML::SyntaxError found when parsing a document</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_errors'>errors</span>
+  <span class='ivar'>@errors</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(version = default)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new document with <code>version</code> (defaults to “1.0”)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 352</span>
+
+static VALUE new(int argc, VALUE *argv, VALUE klass)
+{
+  xmlDocPtr doc;
+  VALUE version, rest, rb_doc ;
+
+  rb_scan_args(argc, argv, &quot;0*&quot;, &amp;rest);
+  version = rb_ary_entry(rest, (long)0);
+  if (NIL_P(version)) version = rb_str_new2(&quot;1.0&quot;);
+
+  doc = xmlNewDoc((xmlChar *)StringValueCStr(version));
+  rb_doc = Nokogiri_wrap_xml_document(klass, doc);
+  rb_obj_call_init(rb_doc, argc, argv);
+  return rb_doc ;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse-class_method">
+  
+    .<strong>parse</strong>(string_or_io, url = nil, encoding = nil, options = ParseOptions::DEFAULT_XML) {|options| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parse an XML file.</p>
+
+<p><code>string_or_io</code> may be a String, or any object that responds to
+<em>read</em> and <em>close</em> such as an IO, or StringIO.</p>
+
+<p><code>url</code> (optional) is the URI where this document is located.</p>
+
+<p><code>encoding</code> (optional) is the encoding that should be used when
+processing the document.</p>
+
+<p><code>options</code> (optional) is a configuration object that sets options
+during parsing, such as Nokogiri::XML::ParseOptions::RECOVER. See the
+Nokogiri::XML::ParseOptions for more information.</p>
+
+<p><code>block</code> (optional) is passed a configuration object on which
+parse options may be set.</p>
+
+<p>By default, Nokogiri treats documents as untrusted, and so does not attempt
+to load DTDs or access the network. See Nokogiri::XML::ParseOptions for a
+complete list of options; and that module&#39;s DEFAULT_XML constant for
+what&#39;s set (and not set) by default.</p>
+
+<p>Nokogiri.XML() is a convenience method which will call this method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>options</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span> <span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='const'>Integer</span> <span class='op'>===</span> <span class='id identifier rubyid_options'>options</span>
+  <span class='comment'># Give the options to the user
+</span>  <span class='kw'>yield</span> <span class='id identifier rubyid_options'>options</span> <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_empty_doc?'>empty_doc?</span><span class='lparen'>(</span><span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_strict?'>strict?</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SyntaxError.html" title="Nokogiri::XML::SyntaxError (class)">SyntaxError</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Empty document</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>?</span> <span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='id identifier rubyid_encoding'>encoding</span> <span class='rbrace'>}</span> <span class='op'>:</span> <span class='id identifier rubyid_new'>new</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:read</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_url'>url</span> <span class='op'>||=</span> <span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:path</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span> <span class='op'>:</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_read_io'>read_io</span><span class='lparen'>(</span><span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='comment'># read_memory pukes on empty docs
+</span>    <span class='id identifier rubyid_read_memory'>read_memory</span><span class='lparen'>(</span><span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># do xinclude processing
+</span>  <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_do_xinclude'>do_xinclude</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_xinclude?'>xinclude?</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid_doc'>doc</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_io-class_method">
+  
+    .<strong>read_io</strong>(io, url, encoding, options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new document from an IO object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 228</span>
+
+static VALUE read_io( VALUE klass,
+                      VALUE io,
+                      VALUE url,
+                      VALUE encoding,
+                      VALUE options )
+{
+  const char * c_url    = NIL_P(url)      ? NULL : StringValueCStr(url);
+  const char * c_enc    = NIL_P(encoding) ? NULL : StringValueCStr(encoding);
+  VALUE error_list      = rb_ary_new();
+  VALUE document;
+  xmlDocPtr doc;
+
+  xmlResetLastError();
+  xmlSetStructuredErrorFunc((void *)error_list, Nokogiri_error_array_pusher);
+
+  doc = xmlReadIO(
+      (xmlInputReadCallback)io_read_callback,
+      (xmlInputCloseCallback)io_close_callback,
+      (void *)io,
+      c_url,
+      c_enc,
+      (int)NUM2INT(options)
+  );
+  xmlSetStructuredErrorFunc(NULL, NULL);
+
+  if(doc == NULL) {
+    xmlErrorPtr error;
+
+    xmlFreeDoc(doc);
+
+    error = xmlGetLastError();
+    if(error)
+      rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
+    else
+      rb_raise(rb_eRuntimeError, &quot;Could not parse document&quot;);
+
+    return Qnil;
+  }
+
+  document = Nokogiri_wrap_xml_document(klass, doc);
+  rb_iv_set(document, &quot;@errors&quot;, error_list);
+  return document;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_memory-class_method">
+  
+    .<strong>read_memory</strong>(string, url, encoding, options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new document from a String</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 278</span>
+
+static VALUE read_memory( VALUE klass,
+                          VALUE string,
+                          VALUE url,
+                          VALUE encoding,
+                          VALUE options )
+{
+  const char * c_buffer = StringValuePtr(string);
+  const char * c_url    = NIL_P(url)      ? NULL : StringValueCStr(url);
+  const char * c_enc    = NIL_P(encoding) ? NULL : StringValueCStr(encoding);
+  int len               = (int)RSTRING_LEN(string);
+  VALUE error_list      = rb_ary_new();
+  VALUE document;
+  xmlDocPtr doc;
+
+  xmlResetLastError();
+  xmlSetStructuredErrorFunc((void *)error_list, Nokogiri_error_array_pusher);
+  doc = xmlReadMemory(c_buffer, len, c_url, c_enc, (int)NUM2INT(options));
+  xmlSetStructuredErrorFunc(NULL, NULL);
+
+  if(doc == NULL) {
+    xmlErrorPtr error;
+
+    xmlFreeDoc(doc);
+
+    error = xmlGetLastError();
+    if(error)
+      rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
+    else
+      rb_raise(rb_eRuntimeError, &quot;Could not parse document&quot;);
+
+    return Qnil;
+  }
+
+  document = Nokogiri_wrap_xml_document(klass, doc);
+  rb_iv_set(document, &quot;@errors&quot;, error_list);
+  return document;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wrap-class_method">
+  
+    .<strong>wrap</strong>(document)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><code>JRuby</code> Wraps Java&#39;s org.w3c.dom.document and returns
+Nokogiri::XML::Document</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+257
+258
+259
+260</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 257</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span> <span class='id identifier rubyid_document'>document</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>JRuby only method</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='period'>.</span><span class='id identifier rubyid_jruby?'><span class='object_link'><a href="../../Nokogiri.html#jruby%3F-class_method" title="Nokogiri.jruby? (method)">jruby?</a></span></span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_wrapJavaDocument'>wrapJavaDocument</span><span class='lparen'>(</span><span class='id identifier rubyid_document'>document</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_child-instance_method">
+  
+    #<strong>add_child</strong>(node_or_tags)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='<<-instance_method'>&lt;&lt;</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 242</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_child'>add_child</span> <span class='id identifier rubyid_node_or_tags'>node_or_tags</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A document may not have multiple root nodes.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>nokogiri_text_wrapper</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='lparen'>(</span><span class='id identifier rubyid_node_or_tags'>node_or_tags</span><span class='period'>.</span><span class='id identifier rubyid_comment?'>comment?</span> <span class='op'>||</span> <span class='id identifier rubyid_node_or_tags'>node_or_tags</span><span class='period'>.</span><span class='id identifier rubyid_processing_instruction?'>processing_instruction?</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_node_or_tags'>node_or_tags</span> <span class='op'>=</span> <span class='id identifier rubyid_coerce'>coerce</span><span class='lparen'>(</span><span class='id identifier rubyid_node_or_tags'>node_or_tags</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_node_or_tags'>node_or_tags</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NodeSet.html" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A document may not have multiple root nodes.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_node_or_tags'>node_or_tags</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_node_or_tags'>node_or_tags</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>super</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="canonicalize-instance_method">
+  
+    
+      <span class="overload">#<strong>canonicalize</strong>(mode = XML_C14N_1_0, inclusive_namespaces = nil, with_comments = false)  &#x21d2; <tt>Object</tt> </span>
+    
+      <span class="overload">#<strong>canonicalize</strong> {|obj, parent| ... } &#x21d2; <tt>Object</tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Canonicalize a document and return the results.  Takes an optional block
+that takes two parameters: the <code>obj</code> and that node&#39;s
+<code>parent</code>. The  <code>obj</code> will be either a
+Nokogiri::XML::Node, or a Nokogiri::XML::Namespace The block must return a
+non-nil, non-false value if the <code>obj</code> passed in should be
+included in the canonicalized document.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>canonicalize</strong> {|obj, parent| ... } &#x21d2; <tt>Object</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>obj</tt>, <tt><span class='object_link'><a href="Node.html#parent-instance_method" title="Nokogiri::XML::Node#parent (method)">parent</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 495</span>
+
+static VALUE canonicalize(int argc, VALUE* argv, VALUE self)
+{
+  VALUE mode;
+  VALUE incl_ns;
+  VALUE with_comments;
+  xmlChar **ns;
+  long ns_len, i;
+
+  xmlDocPtr doc;
+  xmlOutputBufferPtr buf;
+  xmlC14NIsVisibleCallback cb = NULL;
+  void * ctx = NULL;
+
+  VALUE rb_cStringIO;
+  VALUE io;
+
+  rb_scan_args(argc, argv, &quot;03&quot;, &amp;mode, &amp;incl_ns, &amp;with_comments);
+
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  rb_cStringIO = rb_const_get_at(rb_cObject, rb_intern(&quot;StringIO&quot;));
+  io           = rb_class_new_instance(0, 0, rb_cStringIO);
+  buf          = xmlAllocOutputBuffer(NULL);
+
+  buf-&gt;writecallback = (xmlOutputWriteCallback)io_write_callback;
+  buf-&gt;closecallback = (xmlOutputCloseCallback)io_close_callback;
+  buf-&gt;context       = (void *)io;
+
+  if(rb_block_given_p()) {
+    cb = block_caller;
+    ctx = (void *)rb_block_proc();
+  }
+
+  if(NIL_P(incl_ns)){
+    ns = NULL;
+  }
+  else{
+    Check_Type(incl_ns, T_ARRAY);
+    ns_len = RARRAY_LEN(incl_ns);
+    ns = calloc((size_t)ns_len+1, sizeof(xmlChar *));
+    for (i = 0 ; i &lt; ns_len ; i++) {
+      VALUE entry = rb_ary_entry(incl_ns, i);
+      ns[i] = (xmlChar*)StringValueCStr(entry);
+    }
+  }
+
+
+  xmlC14NExecute(doc, cb, ctx,
+    (int)      (NIL_P(mode)        ? 0 : NUM2INT(mode)),
+    ns,
+    (int)      RTEST(with_comments),
+    buf);
+
+  xmlOutputBufferClose(buf);
+
+  return rb_funcall(io, rb_intern(&quot;string&quot;), 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_namespaces-instance_method">
+  
+    #<strong>collect_namespaces</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Recursively get all namespaces from this node and its subtree and return
+them as a hash.</p>
+
+<p>For example, given this document:</p>
+
+<pre class="code ruby"><code class="ruby">&lt;root xmlns:foo=&quot;bar&quot;&gt;
+  &lt;bar xmlns:hello=&quot;world&quot; /&gt;
+&lt;/root&gt;
+</code></pre>
+
+<p>This method will return:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns:foo</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns:hello</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>world</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
+</code></pre>
+
+<p>WARNING: this method will clobber duplicate names in the keys. For example,
+given this document:</p>
+
+<pre class="code ruby"><code class="ruby">&lt;root xmlns:foo=&quot;bar&quot;&gt;
+  &lt;bar xmlns:foo=&quot;baz&quot; /&gt;
+&lt;/root&gt;
+</code></pre>
+
+<p>The hash returned will look like this: { &#39;xmlns:foo&#39; =&gt;
+&#39;bar&#39; }</p>
+
+<p>Non-prefixed default namespaces (as in “xmlns=”) are not included in the
+hash.</p>
+
+<p>Note that this method does an xpath lookup for nodes with namespaces, and
+as a result the order may be dependent on the implementation of the
+underlying XML library.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+167
+168
+169
+170
+171
+172</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 167</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_namespaces'>collect_namespaces</span>
+  <span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//namespace::*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_hash'>hash</span><span class='comma'>,</span> <span class='id identifier rubyid_ns'>ns</span><span class='op'>|</span>
+    <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>xmlns</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_ns'>ns</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ns'>ns</span><span class='period'>.</span><span class='id identifier rubyid_href'>href</span> <span class='kw'>if</span> <span class='id identifier rubyid_ns'>ns</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>xml</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_hash'>hash</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_cdata-instance_method">
+  
+    #<strong>create_cdata</strong>(string, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a CDATA Node containing <code>string</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_cdata'>create_cdata</span> <span class='id identifier rubyid_string'>string</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CDATA.html" title="Nokogiri::XML::CDATA (class)">CDATA</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="CDATA.html#new-class_method" title="Nokogiri::XML::CDATA.new (method)">new</a></span></span> <span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_comment-instance_method">
+  
+    #<strong>create_comment</strong>(string, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a Comment Node containing <code>string</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+123
+124
+125</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 123</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_comment'>create_comment</span> <span class='id identifier rubyid_string'>string</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Comment.html" title="Nokogiri::XML::Comment (class)">Comment</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Comment.html#new-class_method" title="Nokogiri::XML::Comment.new (method)">new</a></span></span> <span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_element-instance_method">
+  
+    #<strong>create_element</strong>(name, *args, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create an element with <code>name</code>, and optionally setting the
+content and attributes.</p>
+
+<pre class="code ruby"><code class="ruby">doc.create_element &quot;div&quot; # &lt;div&gt;&lt;/div&gt;
+doc.create_element &quot;div&quot;, :class =&gt; &quot;container&quot; # &lt;div class=&#39;container&#39;&gt;&lt;/div&gt;
+doc.create_element &quot;div&quot;, &quot;contents&quot; # &lt;div&gt;contents&lt;/div&gt;
+doc.create_element &quot;div&quot;, &quot;contents&quot;, :class =&gt; &quot;container&quot; # &lt;div class=&#39;container&#39;&gt;contents&lt;/div&gt;
+doc.create_element &quot;div&quot; { |node| node[&#39;class&#39;] = &quot;container&quot; } # &lt;div class=&#39;container&#39;&gt;&lt;/div&gt;
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_element'>create_element</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='id identifier rubyid_elm'>elm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Element.html" title="Nokogiri::XML::Element (class)">Element</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Node.html#new-class_method" title="Nokogiri::XML::Node.new (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_arg'>arg</span><span class='op'>|</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_arg'>arg</span>
+    <span class='kw'>when</span> <span class='const'>Hash</span>
+      <span class='id identifier rubyid_arg'>arg</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+        <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_key'>key</span> <span class='op'>=~</span> <span class='const'><span class='object_link'><a href="#NCNAME_RE-constant" title="Nokogiri::XML::Document::NCNAME_RE (constant)">NCNAME_RE</a></span></span>
+          <span class='id identifier rubyid_ns_name'>ns_name</span> <span class='op'>=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_elm'>elm</span><span class='period'>.</span><span class='id identifier rubyid_add_namespace_definition'>add_namespace_definition</span> <span class='id identifier rubyid_ns_name'>ns_name</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span>
+        <span class='kw'>else</span>
+          <span class='id identifier rubyid_elm'>elm</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+        <span class='kw'>end</span>
+      <span class='rbrace'>}</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_elm'>elm</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span> <span class='op'>=</span> <span class='id identifier rubyid_arg'>arg</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_ns'>ns</span> <span class='op'>=</span> <span class='id identifier rubyid_elm'>elm</span><span class='period'>.</span><span class='id identifier rubyid_namespace_definitions'>namespace_definitions</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_elm'>elm</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='id identifier rubyid_ns'>ns</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_elm'>elm</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_entity-instance_method">
+  
+    #<strong>create_entity</strong>(name, type, external_id, system_id, content)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new entity named <code>name</code>.</p>
+
+<p><code>type</code> is an integer representing the type of entity to be
+created, and it defaults to Nokogiri::XML::EntityDecl::INTERNAL_GENERAL. 
+See the constants on Nokogiri::XML::EntityDecl for more information.</p>
+
+<p><code>external_id</code>, <code>system_id</code>, and <code>content</code>
+set the External ID, System ID, and content respectively.  All of these
+parameters are optional.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 424</span>
+
+static VALUE create_entity(int argc, VALUE *argv, VALUE self)
+{
+  VALUE name;
+  VALUE type;
+  VALUE external_id;
+  VALUE system_id;
+  VALUE content;
+  xmlEntityPtr ptr;
+  xmlDocPtr doc ;
+
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  rb_scan_args(argc, argv, &quot;14&quot;, &amp;name, &amp;type, &amp;external_id, &amp;system_id,
+      &amp;content);
+
+  xmlResetLastError();
+  ptr = xmlAddDocEntity(
+      doc,
+      (xmlChar *)(NIL_P(name)        ? NULL                        : StringValueCStr(name)),
+      (int)      (NIL_P(type)        ? XML_INTERNAL_GENERAL_ENTITY : NUM2INT(type)),
+      (xmlChar *)(NIL_P(external_id) ? NULL                        : StringValueCStr(external_id)),
+      (xmlChar *)(NIL_P(system_id)   ? NULL                        : StringValueCStr(system_id)),
+      (xmlChar *)(NIL_P(content)     ? NULL                        : StringValueCStr(content))
+    );
+
+  if(NULL == ptr) {
+    xmlErrorPtr error = xmlGetLastError();
+    if(error)
+      rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
+    else
+      rb_raise(rb_eRuntimeError, &quot;Could not create entity&quot;);
+
+    return Qnil;
+  }
+
+  return Nokogiri_wrap_xml_node(cNokogiriXmlEntityDecl, (xmlNodePtr)ptr);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_text_node-instance_method">
+  
+    #<strong>create_text_node</strong>(string, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a Text Node with <code>string</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_text_node'>create_text_node</span> <span class='id identifier rubyid_string'>string</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Text.html" title="Nokogiri::XML::Text (class)">Text</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Text.html#new-class_method" title="Nokogiri::XML::Text.new (method)">new</a></span></span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="decorate-instance_method">
+  
+    #<strong>decorate</strong>(node)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Apply any decorators to <code>node</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+215
+216
+217
+218
+219
+220
+221</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 215</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_decorate'>decorate</span> <span class='id identifier rubyid_node'>node</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='ivar'>@decorators</span>
+  <span class='ivar'>@decorators</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span><span class='id identifier rubyid_list'>list</span><span class='op'>|</span>
+    <span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_list'>list</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_moodule'>moodule</span><span class='op'>|</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='id identifier rubyid_moodule'>moodule</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="decorators-instance_method">
+  
+    #<strong>decorators</strong>(key)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the list of decorators given <code>key</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+175
+176
+177
+178</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 175</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_decorators'>decorators</span> <span class='id identifier rubyid_key'>key</span>
+  <span class='ivar'>@decorators</span> <span class='op'>||=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='ivar'>@decorators</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="document-instance_method">
+  
+    #<strong>document</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A reference to <code>self</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 133</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_document'>document</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dup-instance_method">
+  
+    #<strong>dup</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='clone-instance_method'>clone</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Copy this Document.  An optional depth may be passed in, but it defaults to
+a deep copy.  0 is a shallow copy, 1 is a deep copy.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 323</span>
+
+static VALUE duplicate_document(int argc, VALUE *argv, VALUE self)
+{
+  xmlDocPtr doc, dup;
+  VALUE copy;
+  VALUE level;
+  VALUE error_list;
+
+  if(rb_scan_args(argc, argv, &quot;01&quot;, &amp;level) == 0)
+    level = INT2NUM((long)1);
+
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  dup = xmlCopyDoc(doc, (int)NUM2INT(level));
+
+  if(dup == NULL) return Qnil;
+
+  dup-&gt;type = doc-&gt;type;
+  copy = Nokogiri_wrap_xml_document(rb_obj_class(self), dup);
+  error_list = rb_iv_get(self, &quot;@errors&quot;);
+  rb_iv_set(copy, &quot;@errors&quot;, error_list);
+  return copy ;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="encoding-instance_method">
+  
+    #<strong>encoding</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the encoding for this Document</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+198
+199
+200
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 198</span>
+
+static VALUE encoding(VALUE self)
+{
+  xmlDocPtr doc;
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  if(!doc-&gt;encoding) return Qnil;
+  return NOKOGIRI_STR_NEW2(doc-&gt;encoding);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="encoding=-instance_method">
+  
+    #<strong>encoding=</strong>(encoding)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the encoding string for this Document</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 179</span>
+
+static VALUE set_encoding(VALUE self, VALUE encoding)
+{
+  xmlDocPtr doc;
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  if (doc-&gt;encoding)
+      free((char *)(uintptr_t) doc-&gt;encoding); /* avoid gcc cast warning */
+
+  doc-&gt;encoding = xmlStrdup((xmlChar *)StringValueCStr(encoding));
+
+  return encoding;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fragment-instance_method">
+  
+    #<strong>fragment</strong>(tags = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a Nokogiri::XML::DocumentFragment from <code>tags</code> Returns an
+empty fragment if <code>tags</code> is nil.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 234</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fragment'>fragment</span> <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='const'><span class='object_link'><a href="DocumentFragment.html" title="Nokogiri::XML::DocumentFragment (class)">DocumentFragment</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="DocumentFragment.html#new-class_method" title="Nokogiri::XML::DocumentFragment.new (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    #<strong>name</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The name of this document.  Always returns “document”</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 128</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>document</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="namespaces-instance_method">
+  
+    #<strong>namespaces</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the hash of namespaces on the root Nokogiri::XML::Node</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+227
+228
+229</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 227</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_namespaces'>namespaces</span>
+  <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class='op'>?</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class='period'>.</span><span class='id identifier rubyid_namespaces'>namespaces</span> <span class='op'>:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_namespaces!-instance_method">
+  
+    #<strong>remove_namespaces!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remove all namespaces from all nodes in the document.</p>
+
+<p>This could be useful for developers who either don&#39;t understand
+namespaces or don&#39;t care about them.</p>
+
+<p>The following example shows a use case, and you can decide for yourself
+whether this is a good thing or not:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span> <span class='heredoc_beg'>&lt;&lt;-EOXML</span>
+<span class='tstring_content'>   &lt;root&gt;
+     &lt;car xmlns:part=&quot;http://general-motors.com/&quot;&gt;
+       &lt;part:tire&gt;Michelin Model XGV&lt;/part:tire&gt;
+     &lt;/car&gt;
+     &lt;bicycle xmlns:part=&quot;http://schwinn.com/&quot;&gt;
+       &lt;part:tire&gt;I&#39;m a bicycle tire!&lt;/part:tire&gt;
+     &lt;/bicycle&gt;
+   &lt;/root&gt;
+</span><span class='heredoc_end'>   EOXML
+</span>
+<span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//tire</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># =&gt; &quot;&quot;
+</span><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//part:tire</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>part</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://general-motors.com/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># =&gt; &quot;&lt;part:tire&gt;Michelin Model XGV&lt;/part:tire&gt;&quot;
+</span><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//part:tire</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>part</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://schwinn.com/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># =&gt; &quot;&lt;part:tire&gt;I&#39;m a bicycle tire!&lt;/part:tire&gt;&quot;
+</span>
+<span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_remove_namespaces!'>remove_namespaces!</span>
+
+<span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//tire</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># =&gt; &quot;&lt;tire&gt;Michelin Model XGV&lt;/tire&gt;&lt;tire&gt;I&#39;m a bicycle tire!&lt;/tire&gt;&quot;
+</span><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//part:tire</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>part</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://general-motors.com/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># =&gt; &quot;&quot;
+</span><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//part:tire</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>part</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://schwinn.com/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># =&gt; &quot;&quot;
+</span></code></pre>
+
+<p>For more information on why this probably is <strong>not</strong> a good
+thing in general, please direct your browser to <a
+href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml.html">tenderlovemaking.com/2009/04/23/namespaces-in-xml.html</a></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+404
+405
+406
+407
+408
+409
+410
+411</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 404</span>
+
+VALUE remove_namespaces_bang(VALUE self)
+{
+  xmlDocPtr doc ;
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  recursively_remove_namespaces_from_node((xmlNodePtr)doc);
+  return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="root-instance_method">
+  
+    #<strong>root</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the root node for this document.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 160</span>
+
+static VALUE root(VALUE self)
+{
+  xmlDocPtr doc;
+  xmlNodePtr root;
+
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  root = xmlDocGetRootElement(doc);
+
+  if(!root) return Qnil;
+  return Nokogiri_wrap_xml_node(Qnil, root) ;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="root=-instance_method">
+  
+    #<strong>root=</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the root element on this document</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 116</span>
+
+static VALUE set_root(VALUE self, VALUE root)
+{
+  xmlDocPtr doc;
+  xmlNodePtr new_root;
+  xmlNodePtr old_root;
+
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  old_root = NULL;
+
+  if(NIL_P(root)) {
+    old_root = xmlDocGetRootElement(doc);
+
+    if(old_root) {
+      xmlUnlinkNode(old_root);
+      nokogiri_root_node(old_root);
+    }
+
+    return root;
+  }
+
+  Data_Get_Struct(root, xmlNode, new_root);
+
+
+  /* If the new root&#39;s document is not the same as the current document,
+   * then we need to dup the node in to this document. */
+  if(new_root-&gt;doc != doc) {
+    old_root = xmlDocGetRootElement(doc);
+    if (!(new_root = xmlDocCopyNode(new_root, doc, 1))) {
+      rb_raise(rb_eRuntimeError, &quot;Could not reparent node (xmlDocCopyNode)&quot;);
+    }
+  }
+
+  xmlDocSetRootElement(doc, new_root);
+  if(old_root) nokogiri_root_node(old_root);
+  return root;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="slop!-instance_method">
+  
+    #<strong>slop!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Explore a document with shortcut methods. See Nokogiri::Slop for details.</p>
+
+<p>Note that any nodes that have been instantiated before #slop! is called
+will not be decorated with sloppy behavior. So, if you&#39;re in irb, the
+preferred idiom is:</p>
+
+<pre class="code ruby"><code class="ruby">irb&gt; doc = Nokogiri::Slop my_markup
+</code></pre>
+
+<p>and not</p>
+
+<pre class="code ruby"><code class="ruby">irb&gt; doc = Nokogiri::HTML my_markup
+... followed by irb&#39;s implicit inspect (and therefore instantiation of every node) ...
+irb&gt; doc.slop!
+... which does absolutely nothing.
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206
+207
+208
+209
+210
+211</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 204</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_slop!'>slop!</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_decorators'>decorators</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Decorators.html" title="Nokogiri::Decorators (module)">Decorators</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Decorators/Slop.html" title="Nokogiri::Decorators::Slop (module)">Slop</a></span></span>
+    <span class='id identifier rubyid_decorators'>decorators</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class='rparen'>)</span> <span class='op'>&lt;&lt;</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Decorators.html" title="Nokogiri::Decorators (module)">Decorators</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Decorators/Slop.html" title="Nokogiri::Decorators::Slop (module)">Slop</a></span></span>
+    <span class='id identifier rubyid_decorate!'>decorate!</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_java-instance_method">
+  
+    #<strong>to_java</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><code>JRuby</code> Returns Java&#39;s org.w3c.dom.document of this
+Document.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+265
+266
+267
+268</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 265</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>JRuby only method</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='period'>.</span><span class='id identifier rubyid_jruby?'><span class='object_link'><a href="../../Nokogiri.html#jruby%3F-class_method" title="Nokogiri.jruby? (method)">jruby?</a></span></span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_toJavaDocument'>toJavaDocument</span><span class='lparen'>(</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="url-instance_method">
+  
+    #<strong>url</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the url name for this document.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 100</span>
+
+static VALUE url(VALUE self)
+{
+  xmlDocPtr doc;
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  if(doc-&gt;URL) return NOKOGIRI_STR_NEW2(doc-&gt;URL);
+
+  return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="validate-instance_method">
+  
+    #<strong>validate</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Validate this Document against it&#39;s DTD.  Returns a list of errors on
+the document or <code>nil</code> when there is no DTD.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+183
+184
+185
+186</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 183</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_validate'>validate</span>
+  <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_internal_subset'>internal_subset</span>
+  <span class='id identifier rubyid_internal_subset'>internal_subset</span><span class='period'>.</span><span class='id identifier rubyid_validate'>validate</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="version-instance_method">
+  
+    #<strong>version</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the XML version for this Document</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+213
+214
+215
+216
+217
+218
+219
+220</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 213</span>
+
+static VALUE version(VALUE self)
+{
+  xmlDocPtr doc;
+  Data_Get_Struct(self, xmlDoc, doc);
+
+  if(!doc-&gt;version) return Qnil;
+  return NOKOGIRI_STR_NEW2(doc-&gt;version);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Dec 26 17:11:01 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.3).
+</div>
+
+    </div>
+  </body>
+</html>

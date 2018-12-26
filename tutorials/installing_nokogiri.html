@@ -1,275 +1,1030 @@
-<!doctype html>
-  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-  
-    
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Installing Nokogiri - Nokogiri&nbsp;鋸</title>
-    <meta name="author" content="Team Sparklemotion">
     
-    <meta name="description" content="Documentation for Nokogiri, a Ruby XML and HTML library.">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="The Official Tutorial Archive™ of Nokogiri®">
+      
+      
+        <link rel="canonical" href="https://nokogiri.org/tutorials/installing_nokogiri.html">
+      
+      
+        <meta name="author" content="Mike Dalessio">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../images/nokogiri-serif-black.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
-    <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="http://nokogiri.org/tutorials/installing_nokogiri.html">
     
-    <link href="/favicon.png" rel="icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
-    <link href="" rel="alternate" title="Nokogiri&nbsp;鋸" type="application/atom+xml">
+      
+        <title>Installing Nokogiri - Nokogiri</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Menlo">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
   </head>
-
-
-  <body >
-
-    <header>
-      <div class="grid-wrapper">
-  <div class="grid">
-
-    <div class="logo grid__item one-sixth lap-four-sixths palm-one-whole">
-  <a href="/" class="site-title">Nokogiri&nbsp;鋸</a>
-</div>
-
-<div class="grid__item five-sixths lap-two-sixths palm-one-whole">
-  <nav>
-    <input type="checkbox" id="toggle">
-<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
-<ul class="menu pull-left">
-  <li><a href="http://rdoc.info/github/sparklemotion/nokogiri" target="_blank">Docs</a></li>
-  <li><a href="https://github.com/sparklemotion/nokogiri" target="_blank">GitHub</a></li>
-  <li><a href="https://ci.nokogiri.org/" target="_blank">Build Status</a></li>
-</ul>
-<ul class="menu pull-right">
-  <li><a href="/tutorials/installing_nokogiri.html"><b>Install Help</b></a></li>
-  <li><a href="/tutorials/"><b>Tutorials</b></a></li>
-  <li><a href="/tutorials/getting_help.html"><b>Support</b></a></li>
-  <li><a href="/tutorials/security.html"><b>Security</b></a></li>
-</ul>
-
-  </nav>
-</div>
-
-
-  </div>
-</div>
-    </header>
-
-    
-
-    <div class="grid-wrapper">
-      <div class="grid grid-center">
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
         
-        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
         
-
-          <article class="page">
-
-  <div class='clearfix'>
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-
+      <a href="#installing-nokogiri" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
     
-    <div class='pull-right'>
-      <a href=/tutorials/parsing_an_html_xml_document.html>Parsing an HTML/XML document →</a>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://nokogiri.org" title="Nokogiri" class="md-header-nav__button md-logo">
+          
+            <img src="../images/nokogiri-serif-white.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Nokogiri
+              </span>
+              <span class="md-header-nav__topic">
+                Installing Nokogiri
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
     </div>
-    
   </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
 
   
-  <header>
-    <h1 class="title indent">
+
+
+  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      sparklemotion/nokogiri
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../index.html" title="Readme" class="md-tabs__link">
+        Readme
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../CHANGELOG.html" title="About" class="md-tabs__link">
+          About
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="parsing_an_html_xml_document.html" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="installing_nokogiri.html" title="Support" class="md-tabs__link md-tabs__link--active">
+          Support
+        </a>
+      
+    </li>
+  
+
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../rdoc/index.html" title="RDoc" class="md-tabs__link">
+        RDoc
+      </a>
+    
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://nokogiri.org" title="Nokogiri" class="md-nav__button md-logo">
+      
+        <img src="../images/nokogiri-serif-white.svg" width="48" height="48">
+      
+    </a>
+    Nokogiri
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      sparklemotion/nokogiri
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" title="Readme" class="md-nav__link">
+      Readme
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CHANGELOG.html" title="Changelog" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SECURITY.html" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LICENSE.html" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LICENSE-DEPENDENCIES.html" title="Dependencies" class="md-nav__link">
+      Dependencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="more_resources.html" title="More Resources" class="md-nav__link">
+      More Resources
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="parsing_an_html_xml_document.html" title="Parsing an HTML/XML document" class="md-nav__link">
+      Parsing an HTML/XML document
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="searching_a_xml_html_document.html" title="Searching a XML/HTML document" class="md-nav__link">
+      Searching a XML/HTML document
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="modifying_an_html_xml_document.html" title="Modifying an HTML/XML document" class="md-nav__link">
+      Modifying an HTML/XML document
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ensuring_well_formed_markup.html" title="Ensuring well-formed markup" class="md-nav__link">
+      Ensuring well-formed markup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Installing Nokogiri
+      </label>
+    
+    <a href="installing_nokogiri.html" title="Installing Nokogiri" class="md-nav__link md-nav__link--active">
       Installing Nokogiri
-    </h1>
-  </header>
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
   
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-included-libraries-recommended" title="Install with included libraries (RECOMMENDED)" class="md-nav__link">
+    Install with included libraries (RECOMMENDED)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-debian" title="Ubuntu / Debian" class="md-nav__link">
+    Ubuntu / Debian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freebsd-openbsd-62" title="FreeBSD / OpenBSD &gt;= 6.2" class="md-nav__link">
+    FreeBSD / OpenBSD &gt;= 6.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openbsd-62" title="OpenBSD &lt; 6.2" class="md-nav__link">
+    OpenBSD &lt; 6.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#red-hat-centos" title="Red Hat / CentOS" class="md-nav__link">
+    Red Hat / CentOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnu-guix" title="GNU Guix" class="md-nav__link">
+    GNU Guix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xcode-select-errors-with-a-network-problem" title="xcode-select errors with a 'network problem'" class="md-nav__link">
+    xcode-select errors with a 'network problem'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-message-about-undeclared-identifier-lzma_ok" title="Error Message About Undeclared Identifier LZMA_OK" class="md-nav__link">
+    Error Message About Undeclared Identifier LZMA_OK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unable-to-find-libraries-on-macos-mojave" title="Unable to find libraries on macOS Mojave" class="md-nav__link">
+    Unable to find libraries on macOS Mojave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-macos-tips" title="Other macOS Tips" class="md-nav__link">
+    Other macOS Tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-system-libraries" title="Install with system libraries" class="md-nav__link">
+    Install with system libraries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-pkg-config" title="Step 1: Install pkg-config" class="md-nav__link">
+    Step 1: Install pkg-config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-nokogiri" title="Step 2: Build Nokogiri" class="md-nav__link">
+    Step 2: Build Nokogiri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-custom-non-standard-libraries" title="Install with custom / non-standard libraries" class="md-nav__link">
+    Install with custom / non-standard libraries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-tell-bundler-to-use-custom-parameters" title="How to tell Bundler to use custom parameters" class="md-nav__link">
+    How to tell Bundler to use custom parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smartos-nonstandard" title="SmartOS (Nonstandard)" class="md-nav__link">
+    SmartOS (Nonstandard)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
 
-  <ol>
-<li><a href="#install_with_included_libraries__recommended_">Install with included libraries (RECOMMENDED)</a></li>
-<li><a href="#install_with_system_libraries">Install with system libraries</a></li>
-<li><a href="#install_with_custom___non_standard_libraries">Install with custom / non-standard libraries</a></li>
-</ol>
+        
+          
+          
+          
 
 
-<hr class='divider'>
+  <li class="md-nav__item">
+    <a href="getting_help.html" title="Getting Help" class="md-nav__link">
+      Getting Help
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
 
 
-<h1>Installing Nokogiri</h1>
+  <li class="md-nav__item">
+    <a href="../rdoc/index.html" title="RDoc" class="md-nav__link">
+      RDoc
+    </a>
+  </li>
 
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-included-libraries-recommended" title="Install with included libraries (RECOMMENDED)" class="md-nav__link">
+    Install with included libraries (RECOMMENDED)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-debian" title="Ubuntu / Debian" class="md-nav__link">
+    Ubuntu / Debian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freebsd-openbsd-62" title="FreeBSD / OpenBSD &gt;= 6.2" class="md-nav__link">
+    FreeBSD / OpenBSD &gt;= 6.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openbsd-62" title="OpenBSD &lt; 6.2" class="md-nav__link">
+    OpenBSD &lt; 6.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#red-hat-centos" title="Red Hat / CentOS" class="md-nav__link">
+    Red Hat / CentOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnu-guix" title="GNU Guix" class="md-nav__link">
+    GNU Guix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xcode-select-errors-with-a-network-problem" title="xcode-select errors with a 'network problem'" class="md-nav__link">
+    xcode-select errors with a 'network problem'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-message-about-undeclared-identifier-lzma_ok" title="Error Message About Undeclared Identifier LZMA_OK" class="md-nav__link">
+    Error Message About Undeclared Identifier LZMA_OK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unable-to-find-libraries-on-macos-mojave" title="Unable to find libraries on macOS Mojave" class="md-nav__link">
+    Unable to find libraries on macOS Mojave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-macos-tips" title="Other macOS Tips" class="md-nav__link">
+    Other macOS Tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-system-libraries" title="Install with system libraries" class="md-nav__link">
+    Install with system libraries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-pkg-config" title="Step 1: Install pkg-config" class="md-nav__link">
+    Step 1: Install pkg-config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-nokogiri" title="Step 2: Build Nokogiri" class="md-nav__link">
+    Step 2: Build Nokogiri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-custom-non-standard-libraries" title="Install with custom / non-standard libraries" class="md-nav__link">
+    Install with custom / non-standard libraries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-tell-bundler-to-use-custom-parameters" title="How to tell Bundler to use custom parameters" class="md-nav__link">
+    How to tell Bundler to use custom parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smartos-nonstandard" title="SmartOS (Nonstandard)" class="md-nav__link">
+    SmartOS (Nonstandard)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="installing-nokogiri">Installing Nokogiri<a class="headerlink" href="#installing-nokogiri" title="Permanent link">&para;</a></h1>
 <p>Nokogiri includes its own updated and patched copies of <a href="http://xmlsoft.org/">libxml2</a> and
 <a href="http://xmlsoft.org/libxslt/">libxslt</a> libraries. By default, installation of Nokogiri will use
-these copies. Alternatively, you may install using your operating system&rsquo;s
+these copies. Alternatively, you may install using your operating system's
 built-in libraries or other custom versions of these libraries.</p>
-
-<p><em>This document also helps with common problems we&rsquo;ve heard. If you have an
+<p><em>This document also helps with common problems we've heard. If you have an
 issue not discussed here, please
 <a href="https://github.com/sparklemotion/nokogiri.org-tutorials/issues">open an issue</a>.</em></p>
-
 <p><em>For earlier versions of Nokogiri, find instructions in
 <a href="https://github.com/sparklemotion/nokogiri.org-tutorials/blob/master/content/installing_nokogiri.md">the git history for this document</a>.</em></p>
-
-<p><em>For other platforms, please send pull requests to
+<p><em>For other platforms, please send pull requests to 
 <a href="https://github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.</em></p>
-
 <hr />
-
-<h2><span id='install_with_included_libraries__recommended_'> Install with included libraries (RECOMMENDED) </span></h2>
-
-<h3>Ubuntu / Debian</h3>
-
+<h2 id="install-with-included-libraries-recommended">Install with included libraries (RECOMMENDED)<a class="headerlink" href="#install-with-included-libraries-recommended" title="Permanent link">&para;</a></h2>
+<h3 id="ubuntu-debian">Ubuntu / Debian<a class="headerlink" href="#ubuntu-debian" title="Permanent link">&para;</a></h3>
 <p>Install Nokogiri on a brand new Ubuntu system with these commands:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
-</span><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+gem install nokogiri
+</pre></div>
 
 
 <p><em>Note for RVM users: <a href="https://github.com/rvm/rvm/issues/3509">you may require libgmp</a>, consider running <code>sudo apt-get install libgmp-dev</code>.</em></p>
-
-<h3>FreeBSD / OpenBSD >= 6.2</h3>
-
+<h3 id="freebsd-openbsd-62">FreeBSD / OpenBSD &gt;= 6.2<a class="headerlink" href="#freebsd-openbsd-62" title="Permanent link">&para;</a></h3>
 <p>Install Nokogiri on a brand new FreeBSD system with these commands:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem install nokogiri
+</pre></div>
 
 
-<h3>OpenBSD &lt; 6.2</h3>
-
+<h3 id="openbsd-62">OpenBSD &lt; 6.2<a class="headerlink" href="#openbsd-62" title="Permanent link">&para;</a></h3>
 <p>Use <code>gcc</code> from ports in order to compile the included libraries:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>pkg_add -v gcc
-</span><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>pkg_add -v gcc
+gem install nokogiri
+</pre></div>
 
 
-<h3>Windows</h3>
-
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>Use Rubyinstaller to install our binary distribution in a flash!</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem install nokogiri
+</pre></div>
 
 
 <p>Or build using <a href="http://rubyinstaller.org/add-ons/devkit/">DevKit</a>. This is an advanced option you should only
-try if you know what you&rsquo;re doing. You MUST use Rubygems 2.4.5 or later.</p>
-
+try if you know what you're doing. You MUST use Rubygems 2.4.5 or later.</p>
 <p>Also see more details on this advanced procedure on <a href="https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J">this nokogiri-talk thread</a>.</p>
-
-<h3>Red Hat / CentOS</h3>
-
+<h3 id="red-hat-centos">Red Hat / CentOS<a class="headerlink" href="#red-hat-centos" title="Permanent link">&para;</a></h3>
 <p>Install Nokogiri on a brand new Red Had / CentOS system with these commands:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y gcc ruby-devel zlib-devel
-</span><span class='line'><span class="c"># sudo dnf install -y rpm-build # This may be required</span>
-</span><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>sudo yum install -y gcc ruby-devel zlib-devel
+<span class="c1"># sudo dnf install -y rpm-build # This may be required</span>
+gem install nokogiri
+</pre></div>
 
 
 <p>Alternatively, you may install the appropriate <a href="http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">epel-release</a> and get the
 Nokogiri package from <a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> using:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo yum install -y rubygem-nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>sudo yum install -y rubygem-nokogiri
+</pre></div>
 
 
-<h3>GNU Guix</h3>
-
+<h3 id="gnu-guix">GNU Guix<a class="headerlink" href="#gnu-guix" title="Permanent link">&para;</a></h3>
 <p>Install on any Linux distribution using <a href="https://www.gnu.org/software/guix/">GNU Guix</a>,
 a reproducible binary software package management and distribution system.</p>
-
 <p>Use this command:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>guix package -i ruby-nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>guix package -i ruby-nokogiri
+</pre></div>
 
 
 <p><em>Note: source code is available <a href="http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm">here</a>. A short description of how Nokogiri was packaged can be found
 <a href="https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org">here</a>.</em></p>
-
-<h3>macOS</h3>
-
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
 <p>First, make sure you have the latest version of RubyGems and xcode commandline tools:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem update --system
-</span><span class='line'>xcode-select --install <span class="c"># Then agree to the terms, even if you have done this before!</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem update --system
+xcode-select --install <span class="c1"># Then agree to the terms, even if you have done this before!</span>
+</pre></div>
 
 
 <p>Then install nokogiri:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem install nokogiri
+</pre></div>
 
 
-<p><em>This is verified working on maxOS 10.9 w/ Xcode&rsquo;s clang compiler. (Many thanks to @allaire and others for helping!)</em></p>
-
-<h4><code>xcode-select</code> errors with a &lsquo;network problem&rsquo;</h4>
-
+<p><em>This is verified working on maxOS 10.9 w/ Xcode's clang compiler. (Many thanks to @allaire and others for helping!)</em></p>
+<h4 id="xcode-select-errors-with-a-network-problem"><code>xcode-select</code> errors with a 'network problem'<a class="headerlink" href="#xcode-select-errors-with-a-network-problem" title="Permanent link">&para;</a></h4>
 <p>If, you see this dialog when you run the above commands:</p>
-
-<p><img src="../assets/xcode-select-network-problem.png" alt="xcode-select-network-problem" /></p>
-
+<p><img alt="xcode-select-network-problem" src="images/xcode-select-network-problem.png" /></p>
 <p>Then run this command to turn off forced-authentication with Apple Software
 Update:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
+</pre></div>
 
 
-<h4>Error Message About Undeclared Identifier <code>LZMA_OK</code></h4>
-
+<h4 id="error-message-about-undeclared-identifier-lzma_ok">Error Message About Undeclared Identifier <code>LZMA_OK</code><a class="headerlink" href="#error-message-about-undeclared-identifier-lzma_ok" title="Permanent link">&para;</a></h4>
 <p>A more recent error mentions an undeclared identifier <code>LZMA_OK</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>xmlIO.c:1450:52: error: use of undeclared identifier <span class="s1">&#39;LZMA_OK&#39;</span>
-</span><span class='line'>    <span class="nv">ret</span> <span class="o">=</span>  <span class="o">(</span>__libxml2_xzclose<span class="o">((</span>xzFile<span class="o">)</span> context<span class="o">)</span> <span class="o">==</span> LZMA_OK <span class="o">)</span> ? <span class="m">0</span> : -1<span class="p">;</span>
-</span><span class='line'>                                                   ^
-</span><span class='line'><span class="m">1</span> error generated.
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>xmlIO.c:1450:52: error: use of undeclared identifier &#39;LZMA_OK&#39;
+    ret =  (__libxml2_xzclose((xzFile) context) == LZMA_OK ) ? 0 : -1;
+                                                   ^
+1 error generated.
+</pre></div>
 
 
 <p>The solution for this is a little more subtle and can be fixed in a couple of
 ways.</p>
-
 <ol>
-<li><p>When using Homebrew, there are several libraries that use a formula called
-<code>xz</code> (including <code>the_silver_searcher</code> and <code>imagemagick</code>), which by default
-install a version of <code>liblzma</code> that is incompatible with most Ruby builds.
-(Homebrew installs only the 64-bit version of the library, but most Ruby
-builds are universal.) This can be fixed in a couple of ways:</p>
-
-<ol type="a">
-<li><p>The most reliable way appears to be temporarily unlinking <code>xz</code> and
-relinking it during an install of <code>nokogiri</code>:</p>
-
-<pre><code class="sh">brew unlink xz
+<li>
+<p>When using Homebrew, there are several libraries that use a formula called
+    <code>xz</code> (including <code>the_silver_searcher</code> and <code>imagemagick</code>), which by default
+    install a version of <code>liblzma</code> that is incompatible with most Ruby builds.
+    (Homebrew installs only the 64-bit version of the library, but most Ruby
+    builds are universal.) This can be fixed in a couple of ways:</p>
+<p>a.  The most reliable way appears to be temporarily unlinking <code>xz</code> and
+    relinking it during an install of <code>nokogiri</code>:</p>
+<div class="codehilite"><pre><span></span>```sh
+brew unlink xz
 gem install nokogiri # or bundle install
 brew link xz
-</code></pre></li>
-<li><p>The third way is to use a Homebrew-installed <code>libxml2</code>, as suggested in
-<a href="#using-your-system-libraries">using your system libraries</a>.</p>
+```
+</pre></div>
 
-<pre><code class="sh">brew install libxml2
+
+<p>b.  The third way is to use a Homebrew-installed <code>libxml2</code>, as suggested in
+    <a href="#using-your-system-libraries">using your system libraries</a>.</p>
+<div class="codehilite"><pre><span></span>```sh
+brew install libxml2
 # If installing directly
 gem install nokogiri -- --use-system-libraries \
   --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
@@ -277,296 +1032,241 @@ gem install nokogiri -- --use-system-libraries \
 bundle config build.nokogiri --use-system-libraries \
   --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
 bundle install
-</code></pre>
+```
 
-<p>When working with this, be certain to use <code>$(brew --prefix libxml2)</code>
-because it will use the correct location for your Homebrew install.</p></li>
-</ol>
+When working with this, be certain to use `$(brew --prefix libxml2)`
+because it will use the correct location for your Homebrew install.
+</pre></div>
+
+
 </li>
 </ol>
-
-
-<h4>Unable to find libraries on macOS Mojave</h4>
-
+<h4 id="unable-to-find-libraries-on-macos-mojave">Unable to find libraries on macOS Mojave<a class="headerlink" href="#unable-to-find-libraries-on-macos-mojave" title="Permanent link">&para;</a></h4>
 <p>Xcode 10 on macOS Mojave <a href="https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624">moves the system headers</a> out of <code>/usr/include</code>
-and so Nokogiri will fail to build. Instead you&rsquo;ll see an error similar to this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>Building nokogiri using packaged libraries.
-</span><span class='line'>-----
-</span><span class='line'>libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html <span class="k">for</span> <span class="nb">help </span>with installing dependencies.
-</span><span class='line'>-----
-</span><span class='line'>*** extconf.rb failed ***
-</span><span class='line'>Could not create Makefile due to some reason, probably lack of necessary libraries and/or headers.
-</span></code></pre></td></tr></table></div></figure>
+and so Nokogiri will fail to build. Instead you'll see an error similar to this:</p>
+<div class="codehilite"><pre><span></span>Building nokogiri using packaged libraries.
+-----
+libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html <span class="k">for</span> <span class="nb">help</span> with installing dependencies.
+-----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary libraries and/or headers.
+</pre></div>
 
 
 <p>A temporary workaround to allow previous releases of Nokogiri to build is to
 install the extra headers package mentioned in the Xcode 10 release notes:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+</pre></div>
 
 
-<h4>Other macOS Tips</h4>
-
+<h4 id="other-macos-tips">Other macOS Tips<a class="headerlink" href="#other-macos-tips" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Make sure ruby is compiled with the latest clang compiler.</li>
 <li>Binary gems and ruby should be compiled with the same compiler/environment.</li>
 <li>If you have multiple versions of Xcode installed, make sure you use the
-right <code>xcode-select</code>.</li>
+    right <code>xcode-select</code>.</li>
 <li>Try <a href="#install_with_system_libraries">installing with system libraries</a>.</li>
 </ul>
-
-
 <p><em>If reporting an issue about the macOS installation instructions, please mention @zenspider.</em></p>
-
 <hr />
-
-<h2><span id='install_with_system_libraries'> Install with system libraries </span></h2>
-
+<h2 id="install-with-system-libraries">Install with system libraries<a class="headerlink" href="#install-with-system-libraries" title="Permanent link">&para;</a></h2>
 <p>Nokogiri will refuse to build against certain versions of <code>libxml2</code>, <code>libxslt</code>
 supplied with your operating system, and certain versions will cause mysterious
 problems. The compile scripts will warn you if you try to do this.</p>
-
-<h3>Step 1: Install <code>pkg-config</code></h3>
-
+<h3 id="step-1-install-pkg-config">Step 1: Install <code>pkg-config</code><a class="headerlink" href="#step-1-install-pkg-config" title="Permanent link">&para;</a></h3>
 <p>On Debian/Ubuntu:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install pkg-config
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>sudo apt-get install pkg-config
+</pre></div>
 
 
 <p>On FreeBSD:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pkg install pkgconf
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>sudo pkg install pkgconf
+</pre></div>
 
 
-<h3>Step 2: Build Nokogiri</h3>
-
+<h3 id="step-2-build-nokogiri">Step 2: Build Nokogiri<a class="headerlink" href="#step-2-build-nokogiri" title="Permanent link">&para;</a></h3>
 <p>Using gem:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- --use-system-libraries
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem install nokogiri -- --use-system-libraries
+</pre></div>
 
 
 <p>Or, use Bundler:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>bundle config build.nokogiri --use-system-libraries
-</span><span class='line'>bundle install
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>bundle config build.nokogiri --use-system-libraries
+bundle install
+</pre></div>
 
 
 <hr />
-
-<h2><span id='install_with_custom___non_standard_libraries'> Install with custom / non-standard libraries </span></h2>
-
+<h2 id="install-with-custom-non-standard-libraries">Install with custom / non-standard libraries<a class="headerlink" href="#install-with-custom-non-standard-libraries" title="Permanent link">&para;</a></h2>
 <p>If:</p>
-
 <ul>
-<li>you&rsquo;ve got <code>libxml2</code> and/or <code>libxslt</code> installed in a nonstandard place,</li>
-<li>and you don&rsquo;t have <code>pkg-config</code> installed</li>
+<li>you've got <code>libxml2</code> and/or <code>libxslt</code> installed in a nonstandard place,</li>
+<li>and you don't have <code>pkg-config</code> installed</li>
 </ul>
-
-
 <p>you can use command-line parameters to the <code>gem install</code> command to
 specify build parameters.</p>
-
-<p>If you&rsquo;ve got the proper <code>config</code> scripts:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
-</span><span class='line'>    --use-system-libraries <span class="se">\</span>
-</span><span class='line'>    --with-xml2-config<span class="o">=</span>/path/to/xml2-config <span class="se">\</span>
-</span><span class='line'>    --with-xslt-config<span class="o">=</span>/path/to/xslt-config
-</span></code></pre></td></tr></table></div></figure>
+<p>If you've got the proper <code>config</code> scripts:</p>
+<div class="codehilite"><pre><span></span>gem install nokogiri -- <span class="se">\</span>
+    --use-system-libraries <span class="se">\</span>
+    --with-xml2-config<span class="o">=</span>/path/to/xml2-config <span class="se">\</span>
+    --with-xslt-config<span class="o">=</span>/path/to/xslt-config
+</pre></div>
 
 
 <p>or, you can specify the installation root directory:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
-</span><span class='line'>    --use-system-libraries <span class="se">\</span>
-</span><span class='line'>    --with-xml2-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
-</span><span class='line'>    --with-xslt-dir<span class="o">=</span>/path/to/dir
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem install nokogiri -- <span class="se">\</span>
+    --use-system-libraries <span class="se">\</span>
+    --with-xml2-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
+    --with-xslt-dir<span class="o">=</span>/path/to/dir
+</pre></div>
 
 
 <p>or, you can specify include and library directories separately:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
-</span><span class='line'>    --use-system-libraries <span class="se">\</span>
-</span><span class='line'>    --with-xml2-lib<span class="o">=</span>/path/to/builds/lib <span class="se">\</span>
-</span><span class='line'>    --with-xml2-include<span class="o">=</span>/path/to/builds/include/libxml2 <span class="se">\</span>
-</span><span class='line'>    --with-xslt-lib<span class="o">=</span>/path/to/builds/lib <span class="se">\</span>
-</span><span class='line'>    --with-xslt-include<span class="o">=</span>/path/to/builds/include
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem install nokogiri -- <span class="se">\</span>
+    --use-system-libraries <span class="se">\</span>
+    --with-xml2-lib<span class="o">=</span>/path/to/builds/lib <span class="se">\</span>
+    --with-xml2-include<span class="o">=</span>/path/to/builds/include/libxml2 <span class="se">\</span>
+    --with-xslt-lib<span class="o">=</span>/path/to/builds/lib <span class="se">\</span>
+    --with-xslt-include<span class="o">=</span>/path/to/builds/include
+</pre></div>
 
 
 <p><em>Note: By default, libxslt header files are installed into the
 root include directory, but libxml2 header files are installed into a
 subdirectory thereof named <code>libxml2</code>.</em></p>
-
-<p>It&rsquo;s likely that you&rsquo;ll also need to specify the location of your
+<p>It's likely that you'll also need to specify the location of your
 <code>zlib</code> and <code>iconv</code> (and possibly <code>exslt</code>) install directories as
 well. In that case, you can add the options:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install nokogiri -- <span class="se">\</span>
-</span><span class='line'>    --use-system-libraries <span class="se">\</span>
-</span><span class='line'>    <span class="c"># ...</span>
-</span><span class='line'>    --with-iconv-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
-</span><span class='line'>    --with-zlib-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
-</span><span class='line'>    <span class="o">[</span>--with-exslt-dir<span class="o">=</span>/path/to/dir<span class="o">]</span>
-</span><span class='line'>    <span class="o">[</span>--with-exslt-config<span class="o">=</span>/path/to/exslt-config<span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="codehilite"><pre><span></span>gem install nokogiri -- <span class="se">\</span>
+    --use-system-libraries <span class="se">\</span>
+    <span class="c1"># ...</span>
+    --with-iconv-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
+    --with-zlib-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
+    <span class="o">[</span>--with-exslt-dir<span class="o">=</span>/path/to/dir<span class="o">]</span>
+    <span class="o">[</span>--with-exslt-config<span class="o">=</span>/path/to/exslt-config<span class="o">]</span>
+</pre></div>
 
 
-<h3>How to tell Bundler to use custom parameters</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>bundle config build.nokogiri <span class="se">\</span>
-</span><span class='line'>       --use-system-libraries <span class="se">\</span>
-</span><span class='line'>       --with-xml2-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>       --with-xml2-include<span class="o">=</span>/usr/local/include/libxml2/libxml <span class="se">\</span>
-</span><span class='line'>       --with-xslt-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>       --with-xslt-include<span class="o">=</span>/usr/local/include/libxslt <span class="se">\</span>
-</span><span class='line'>       --with-iconv-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
-</span><span class='line'>       --with-iconv-include<span class="o">=</span>/usr/local/include
-</span></code></pre></td></tr></table></div></figure>
+<h3 id="how-to-tell-bundler-to-use-custom-parameters">How to tell Bundler to use custom parameters<a class="headerlink" href="#how-to-tell-bundler-to-use-custom-parameters" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>bundle config build.nokogiri \
+       --use-system-libraries \
+       --with-xml2-lib=/usr/local/lib \
+       --with-xml2-include=/usr/local/include/libxml2/libxml \
+       --with-xslt-lib=/usr/local/lib \
+       --with-xslt-include=/usr/local/include/libxslt \
+       --with-iconv-lib=/usr/local/lib \
+       --with-iconv-include=/usr/local/include
+</pre></div>
 
 
 <p>Do not attempt Bundler installation using Bundler versions before v1.8.3.
 See <a href="bundler/bundler#3053">related issue here</a>. But if you really want to,
 see earlier git history of this file, which includes a workaround.</p>
-
-<h3>SmartOS (Nonstandard)</h3>
-
+<h3 id="smartos-nonstandard">SmartOS (Nonstandard)<a class="headerlink" href="#smartos-nonstandard" title="Permanent link">&para;</a></h3>
 <p>SmartOS installation requires building and using
 libxml2/libxslt/libiconv in a nonstandard location. Building on the
-previous section, here&rsquo;s how to do it:</p>
-
+previous section, here's how to do it:</p>
 <p>(Note: <code>pkgsrc</code> is included in JPC SmartOS instances)</p>
+<div class="codehilite"><pre><span></span>pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
+ln -s /opt/local/gcc49/bin/gcc /opt/local/bin/gcc
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
-</span><span class='line'>ln -s /opt/local/gcc49/bin/gcc /opt/local/bin/gcc
-</span><span class='line'>
-</span><span class='line'>gem install nokogiri -- <span class="se">\</span>
-</span><span class='line'>    --use-system-libraries <span class="se">\</span>
-</span><span class='line'>    --with-xml2-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
-</span><span class='line'>    --with-xml2-include<span class="o">=</span>/opt/local/include/libxml2 <span class="se">\</span>
-</span><span class='line'>    --with-xslt-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
-</span><span class='line'>    --with-xslt-include<span class="o">=</span>/opt/local/include/libxslt <span class="se">\</span>
-</span><span class='line'>    --with-iconv-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
-</span><span class='line'>    --with-iconv-include<span class="o">=</span>/opt/local/include <span class="se">\</span>
-</span><span class='line'>    --with-zlib-dir<span class="o">=</span>/opt/local/lib
-</span></code></pre></td></tr></table></div></figure>
+gem install nokogiri -- <span class="se">\</span>
+    --use-system-libraries <span class="se">\</span>
+    --with-xml2-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
+    --with-xml2-include<span class="o">=</span>/opt/local/include/libxml2 <span class="se">\</span>
+    --with-xslt-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
+    --with-xslt-include<span class="o">=</span>/opt/local/include/libxslt <span class="se">\</span>
+    --with-iconv-lib<span class="o">=</span>/opt/local/lib <span class="se">\</span>
+    --with-iconv-include<span class="o">=</span>/opt/local/include <span class="se">\</span>
+    --with-zlib-dir<span class="o">=</span>/opt/local/lib
+</pre></div>
 
 
 <p>See the previous section for guidance on how to instruct Bundler to
 use these options.</p>
+                
+                  
+                
+              
+              
+                
 
 
-  <div class='clearfix'>
-    
-
-    
-    <div class='pull-right'>
-      <a href=/tutorials/parsing_an_html_xml_document.html>Parsing an HTML/XML document →</a>
-    </div>
-    
-  </div>
-
-</article>
-
-
+              
+            </article>
+          </div>
         </div>
-
+      </main>
+      
         
-      </div>
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="ensuring_well_formed_markup.html" title="Ensuring well-formed markup" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Ensuring well-formed markup
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="getting_help.html" title="Getting Help" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Getting Help
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-
-    <footer>
-      <div class="grid-wrapper">
-  <div class="grid">
-    <div class="grid__item">
-      <p class="copyright">
-  <span class="pull-left">
-    Contribute to these docs at <a href="//github.com/sparklemotion/nokogiri.org-tutorials">sparklemotion/nokogiri.org-tutorials</a>.
-  </span>
-  <span class="pull-right">
-    Powered by <a href="//octopress.org/">Octopress</a>. Theme is <a href="//github.com/coogie/oscailte">Oscailte</a>.
-  </span>
-</p>
-
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright Ⓒ 2009-2018 Mike Dalessio
+          </div>
+        
+        <a href="https://github.com/sparklemotion/nokogiri.org">sparklemotion/nokogiri.org</a>
+        rendered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
     </div>
   </div>
-</div>
-
-    </footer>
-
-    <!--[if lt IE 7]>
-      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-<script defer src="/javascripts/octopress.js"></script>
-
-
-
-
-
-
-
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
   </body>
 </html>

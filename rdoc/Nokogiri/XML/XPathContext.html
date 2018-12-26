@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Nokogiri::XML::XPathContext
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Nokogiri::XML::XPathContext";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (X)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
+     &raquo; 
+    <span class="title">XPathContext</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Nokogiri::XML::XPathContext
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Nokogiri::XML::XPathContext</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/nokogiri/xml/xpath_context.rb<span class="defines">,<br />
+  ext/nokogiri/xml_xpath_context.c</span>
+</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(node)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new XPathContext with <code>node</code> as the reference point.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evaluate-instance_method" title="#evaluate (instance method)">#<strong>evaluate</strong>(search_path, handler = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluate the <code>search_path</code> returning an XML::XPath object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_namespaces-instance_method" title="#register_namespaces (instance method)">#<strong>register_namespaces</strong>(namespaces)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Register namespaces in <code>namespaces</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_ns-instance_method" title="#register_ns (instance method)">#<strong>register_ns</strong>(prefix, uri)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Register the namespace with <code>prefix</code> and <code>uri</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_variable-instance_method" title="#register_variable (instance method)">#<strong>register_variable</strong>(name, value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Register the variable <code>name</code> with <code>value</code>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(node)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new XPathContext with <code>node</code> as the reference point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 260</span>
+
+static VALUE new(VALUE klass, VALUE nodeobj)
+{
+  xmlNodePtr node;
+  xmlXPathContextPtr ctx;
+  VALUE self;
+
+  xmlXPathInit();
+
+  Data_Get_Struct(nodeobj, xmlNode, node);
+
+  ctx = xmlXPathNewContext(node-&gt;doc);
+  ctx-&gt;node = node;
+  self = Data_Wrap_Struct(klass, 0, deallocate, ctx);
+  /*rb_iv_set(self, &quot;@xpath_handler&quot;, Qnil); */
+  return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="evaluate-instance_method">
+  
+    #<strong>evaluate</strong>(search_path, handler = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluate the <code>search_path</code> returning an XML::XPath object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 190</span>
+
+static VALUE evaluate(int argc, VALUE *argv, VALUE self)
+{
+  VALUE search_path, xpath_handler;
+  VALUE thing = Qnil;
+  xmlXPathContextPtr ctx;
+  xmlXPathObjectPtr xpath;
+  xmlChar *query;
+
+  Data_Get_Struct(self, xmlXPathContext, ctx);
+
+  if(rb_scan_args(argc, argv, &quot;11&quot;, &amp;search_path, &amp;xpath_handler) == 1)
+    xpath_handler = Qnil;
+
+  query = (xmlChar *)StringValueCStr(search_path);
+
+  if(Qnil != xpath_handler) {
+    /* FIXME: not sure if this is the correct place to shove private data. */
+    ctx-&gt;userData = (void *)xpath_handler;
+    xmlXPathRegisterFuncLookup(ctx, lookup, (void *)xpath_handler);
+  }
+
+  xmlResetLastError();
+  xmlSetStructuredErrorFunc(NULL, Nokogiri_error_raise);
+
+  /* For some reason, xmlXPathEvalExpression will blow up with a generic error */
+  /* when there is a non existent function. */
+  xmlSetGenericErrorFunc(NULL, xpath_generic_exception_handler);
+
+  xpath = xmlXPathEvalExpression(query, ctx);
+  xmlSetStructuredErrorFunc(NULL, NULL);
+  xmlSetGenericErrorFunc(NULL, NULL);
+
+  if(xpath == NULL) {
+    xmlErrorPtr error = xmlGetLastError();
+    rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
+  }
+
+  assert(ctx-&gt;doc);
+  assert(DOC_RUBY_OBJECT_TEST(ctx-&gt;doc));
+
+  switch(xpath-&gt;type) {
+    case XPATH_STRING:
+      thing = NOKOGIRI_STR_NEW2(xpath-&gt;stringval);
+      xmlFree(xpath-&gt;stringval);
+      break;
+    case XPATH_NODESET:
+      thing = Nokogiri_wrap_xml_node_set(xpath-&gt;nodesetval,
+                                         DOC_RUBY_OBJECT(ctx-&gt;doc));
+      break;
+    case XPATH_NUMBER:
+      thing = rb_float_new(xpath-&gt;floatval);
+      break;
+    case XPATH_BOOLEAN:
+      thing = xpath-&gt;boolval == 1 ? Qtrue : Qfalse;
+      break;
+    default:
+      thing = Nokogiri_wrap_xml_node_set(NULL, DOC_RUBY_OBJECT(ctx-&gt;doc));
+  }
+
+  xmlXPathFreeNodeSetList(xpath);
+
+  return thing;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_namespaces-instance_method">
+  
+    #<strong>register_namespaces</strong>(namespaces)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Register namespaces in <code>namespaces</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/xpath_context.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_namespaces'>register_namespaces</span><span class='lparen'>(</span><span class='id identifier rubyid_namespaces'>namespaces</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_namespaces'>namespaces</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+    <span class='id identifier rubyid_k'>k</span> <span class='op'>=</span> <span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>.*:</span><span class='regexp_end'>/</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'># strip off &#39;xmlns:&#39; or &#39;xml:&#39;
+</span>    <span class='id identifier rubyid_register_ns'>register_ns</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_ns-instance_method">
+  
+    #<strong>register_ns</strong>(prefix, uri)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Register the namespace with <code>prefix</code> and <code>uri</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 18</span>
+
+static VALUE register_ns(VALUE self, VALUE prefix, VALUE uri)
+{
+  xmlXPathContextPtr ctx;
+  Data_Get_Struct(self, xmlXPathContext, ctx);
+
+  xmlXPathRegisterNs( ctx,
+                      (const xmlChar *)StringValueCStr(prefix),
+                      (const xmlChar *)StringValueCStr(uri)
+  );
+  return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_variable-instance_method">
+  
+    #<strong>register_variable</strong>(name, value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Register the variable <code>name</code> with <code>value</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 36</span>
+
+static VALUE register_variable(VALUE self, VALUE name, VALUE value)
+{
+   xmlXPathContextPtr ctx;
+   xmlXPathObjectPtr xmlValue;
+   Data_Get_Struct(self, xmlXPathContext, ctx);
+
+   xmlValue = xmlXPathNewCString(StringValueCStr(value));
+
+   xmlXPathRegisterVariable( ctx,
+      (const xmlChar *)StringValueCStr(name),
+      xmlValue
+   );
+
+   return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Dec 26 17:11:02 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.3).
+</div>
+
+    </div>
+  </body>
+</html>

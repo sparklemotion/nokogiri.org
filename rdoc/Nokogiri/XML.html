@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Nokogiri::XML
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Nokogiri::XML";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (X)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span>
+     &raquo; 
+    <span class="title">XML</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Nokogiri::XML
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/nokogiri/xml.rb<span class="defines">,<br />
+  lib/nokogiri/xml/dtd.rb,<br /> lib/nokogiri/xml/attr.rb,<br /> lib/nokogiri/xml/node.rb,<br /> lib/nokogiri/xml/text.rb,<br /> lib/nokogiri/xml/cdata.rb,<br /> lib/nokogiri/xml/xpath.rb,<br /> lib/nokogiri/xml/reader.rb,<br /> lib/nokogiri/xml/schema.rb,<br /> lib/nokogiri/xml/builder.rb,<br /> lib/nokogiri/xml/pp/node.rb,<br /> lib/nokogiri/xml/document.rb,<br /> lib/nokogiri/xml/node_set.rb,<br /> lib/nokogiri/xml/notation.rb,<br /> lib/nokogiri/xml/relax_ng.rb,<br /> lib/nokogiri/xml/namespace.rb,<br /> lib/nokogiri/xml/sax/parser.rb,<br /> lib/nokogiri/xml/searchable.rb,<br /> lib/nokogiri/xml/entity_decl.rb,<br /> lib/nokogiri/xml/element_decl.rb,<br /> lib/nokogiri/xml/sax/document.rb,<br /> lib/nokogiri/xml/syntax_error.rb,<br /> lib/nokogiri/xml/parse_options.rb,<br /> lib/nokogiri/xml/xpath_context.rb,<br /> lib/nokogiri/xml/attribute_decl.rb,<br /> lib/nokogiri/xml/character_data.rb,<br /> lib/nokogiri/xml/element_content.rb,<br /> lib/nokogiri/xml/sax/push_parser.rb,<br /> lib/nokogiri/xml/entity_reference.rb,<br /> lib/nokogiri/xml/document_fragment.rb,<br /> lib/nokogiri/xml/node/save_options.rb,<br /> lib/nokogiri/xml/pp/character_data.rb,<br /> lib/nokogiri/xml/sax/parser_context.rb,<br /> lib/nokogiri/xml/xpath/syntax_error.rb,<br /> lib/nokogiri/xml/processing_instruction.rb,<br /> ext/nokogiri/xml_dtd.c,<br /> ext/nokogiri/nokogiri.c,<br /> ext/nokogiri/xml_attr.c,<br /> ext/nokogiri/xml_node.c,<br /> ext/nokogiri/xml_text.c,<br /> ext/nokogiri/xml_cdata.c,<br /> ext/nokogiri/xml_reader.c,<br /> ext/nokogiri/xml_schema.c,<br /> ext/nokogiri/xml_comment.c,<br /> ext/nokogiri/xml_document.c,<br /> ext/nokogiri/xml_node_set.c,<br /> ext/nokogiri/xml_relax_ng.c,<br /> ext/nokogiri/html_document.c,<br /> ext/nokogiri/xml_namespace.c,<br /> ext/nokogiri/xml_sax_parser.c,<br /> ext/nokogiri/xml_entity_decl.c,<br /> ext/nokogiri/xml_element_decl.c,<br /> ext/nokogiri/xml_syntax_error.c,<br /> ext/nokogiri/xml_xpath_context.c,<br /> ext/nokogiri/xml_attribute_decl.c,<br /> ext/nokogiri/xml_element_content.c,<br /> ext/nokogiri/xml_sax_push_parser.c,<br /> ext/nokogiri/xml_entity_reference.c,<br /> ext/nokogiri/xml_document_fragment.c,<br /> ext/nokogiri/xml_sax_parser_context.c,<br /> ext/nokogiri/html_sax_parser_context.c,<br /> ext/nokogiri/xml_processing_instruction.c</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="XML/PP.html" title="Nokogiri::XML::PP (module)">PP</a></span>, <span class='object_link'><a href="XML/SAX.html" title="Nokogiri::XML::SAX (module)">SAX</a></span>, <span class='object_link'><a href="XML/Searchable.html" title="Nokogiri::XML::Searchable (module)">Searchable</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="XML/Attr.html" title="Nokogiri::XML::Attr (class)">Attr</a></span>, <span class='object_link'><a href="XML/AttributeDecl.html" title="Nokogiri::XML::AttributeDecl (class)">AttributeDecl</a></span>, <span class='object_link'><a href="XML/Builder.html" title="Nokogiri::XML::Builder (class)">Builder</a></span>, <span class='object_link'><a href="XML/CDATA.html" title="Nokogiri::XML::CDATA (class)">CDATA</a></span>, <span class='object_link'><a href="XML/CharacterData.html" title="Nokogiri::XML::CharacterData (class)">CharacterData</a></span>, <span class='object_link'><a href="XML/Comment.html" title="Nokogiri::XML::Comment (class)">Comment</a></span>, <span class='object_link'><a href="XML/DTD.html" title="Nokogiri::XML::DTD (class)">DTD</a></span>, <span class='object_link'><a href="XML/Document.html" title="Nokogiri::XML::Document (class)">Document</a></span>, <span class='object_link'><a href="XML/DocumentFragment.html" title="Nokogiri::XML::DocumentFragment (class)">DocumentFragment</a></span>, <span class='object_link'><a href="XML/Element.html" title="Nokogiri::XML::Element (class)">Element</a></span>, <span class='object_link'><a href="XML/ElementContent.html" title="Nokogiri::XML::ElementContent (class)">ElementContent</a></span>, <span class='object_link'><a href="XML/ElementDecl.html" title="Nokogiri::XML::ElementDecl (class)">ElementDecl</a></span>, <span class='object_link'><a href="XML/EntityDecl.html" title="Nokogiri::XML::EntityDecl (class)">EntityDecl</a></span>, <span class='object_link'><a href="XML/EntityReference.html" title="Nokogiri::XML::EntityReference (class)">EntityReference</a></span>, <span class='object_link'><a href="XML/Namespace.html" title="Nokogiri::XML::Namespace (class)">Namespace</a></span>, <span class='object_link'><a href="XML/Node.html" title="Nokogiri::XML::Node (class)">Node</a></span>, <span class='object_link'><a href="XML/NodeSet.html" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span>, <span class='object_link'><a href="XML/Notation.html" title="Nokogiri::XML::Notation (class)">Notation</a></span>, <span class='object_link'><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span>, <span class='object_link'><a href="XML/ProcessingInstruction.html" title="Nokogiri::XML::ProcessingInstruction (class)">ProcessingInstruction</a></span>, <span class='object_link'><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span>, <span class='object_link'><a href="XML/RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span>, <span class='object_link'><a href="XML/Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span>, <span class='object_link'><a href="XML/SyntaxError.html" title="Nokogiri::XML::SyntaxError (class)">SyntaxError</a></span>, <span class='object_link'><a href="XML/Text.html" title="Nokogiri::XML::Text (class)">Text</a></span>, <span class='object_link'><a href="XML/XPath.html" title="Nokogiri::XML::XPath (class)">XPath</a></span>, <span class='object_link'><a href="XML/XPathContext.html" title="Nokogiri::XML::XPathContext (class)">XPathContext</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="XML_C14N_1_0-constant" class="">XML_C14N_1_0 =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Original C14N 1.0 spec canonicalization</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='int'>0</span></pre></dd>
+      
+        <dt id="XML_C14N_EXCLUSIVE_1_0-constant" class="">XML_C14N_EXCLUSIVE_1_0 =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Exclusive C14N 1.0 spec canonicalization</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='int'>1</span></pre></dd>
+      
+        <dt id="XML_C14N_1_1-constant" class="">XML_C14N_1_1 =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>C14N 1.1 spec canonicalization</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='int'>2</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fragment-class_method" title="fragment (class method)">.<strong>fragment</strong>(string)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parse a fragment from <code>string</code> in to a NodeSet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(thing, url = nil, encoding = nil, options = ParseOptions::DEFAULT_XML, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parse XML.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Reader-class_method" title="Reader (class method)">.<strong>Reader</strong>(string_or_io, url = nil, encoding = nil, options = ParseOptions::STRICT) {|options| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parse an XML document using the Nokogiri::XML::Reader API.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#RelaxNG-class_method" title="RelaxNG (class method)">.<strong>RelaxNG</strong>(string_or_io)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new Nokogiri::XML::RelaxNG document from
+<code>string_or_io</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Schema-class_method" title="Schema (class method)">.<strong>Schema</strong>(string_or_io)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new Nokogiri::XML::Schema object using a <code>string_or_io</code>
+object.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="fragment-class_method">
+  
+    .<strong>fragment</strong>(string)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parse a fragment from <code>string</code> in to a NodeSet.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fragment'>fragment</span> <span class='id identifier rubyid_string'>string</span>
+  <span class='const'><span class='object_link'><a href="" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="XML/DocumentFragment.html" title="Nokogiri::XML::DocumentFragment (class)">DocumentFragment</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="XML/DocumentFragment.html#parse-class_method" title="Nokogiri::XML::DocumentFragment.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse-class_method">
+  
+    .<strong>parse</strong>(thing, url = nil, encoding = nil, options = ParseOptions::DEFAULT_XML, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parse XML.  Convenience method for Nokogiri::XML::Document.parse</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span> <span class='id identifier rubyid_thing'>thing</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="XML/ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='const'><span class='object_link'><a href="XML/Document.html" title="Nokogiri::XML::Document (class)">Document</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="XML/Document.html#parse-class_method" title="Nokogiri::XML::Document.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_thing'>thing</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Reader-class_method">
+  
+    .<strong>Reader</strong>(string_or_io, url = nil, encoding = nil, options = ParseOptions::STRICT) {|options| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parse an XML document using the Nokogiri::XML::Reader API.  See
+Nokogiri::XML::Reader for mor information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>options</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='const'><span class='object_link'><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span></span> <span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="XML/ParseOptions.html#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="XML/ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='const'>Integer</span> <span class='op'>===</span> <span class='id identifier rubyid_options'>options</span>
+  <span class='comment'># Give the options to the user
+</span>  <span class='kw'>yield</span> <span class='id identifier rubyid_options'>options</span> <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:read</span>
+    <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_io'><span class='object_link'><a href="XML/Reader.html#from_io-class_method" title="Nokogiri::XML::Reader.from_io (method)">from_io</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='const'><span class='object_link'><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_memory'><span class='object_link'><a href="XML/Reader.html#from_memory-class_method" title="Nokogiri::XML::Reader.from_memory (method)">from_memory</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RelaxNG-class_method">
+  
+    .<strong>RelaxNG</strong>(string_or_io)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new Nokogiri::XML::RelaxNG document from
+<code>string_or_io</code>. See Nokogiri::XML::RelaxNG for an example.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/relax_ng.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='const'><span class='object_link'><a href="XML/RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span></span> <span class='id identifier rubyid_string_or_io'>string_or_io</span>
+  <span class='const'><span class='object_link'><a href="XML/RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Schema-class_method">
+  
+    .<strong>Schema</strong>(string_or_io)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new Nokogiri::XML::Schema object using a <code>string_or_io</code>
+object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='const'><span class='object_link'><a href="XML/Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></span> <span class='id identifier rubyid_string_or_io'>string_or_io</span>
+  <span class='const'><span class='object_link'><a href="XML/Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="XML/Schema.html#new-class_method" title="Nokogiri::XML::Schema.new (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_string_or_io'>string_or_io</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Dec 26 17:10:58 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.3).
+</div>
+
+    </div>
+  </body>
+</html>
