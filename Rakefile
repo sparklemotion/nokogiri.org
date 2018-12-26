@@ -17,7 +17,7 @@ namespace :dev do
 end
 
 desc "Push everything to Github Pages"
-task :deploy do
+task :deploy => :generate do
   system "mkdocs gh-deploy"
 end
 
