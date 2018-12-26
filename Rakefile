@@ -16,6 +16,11 @@ namespace :dev do
   end
 end
 
+desc "Push everything to Github Pages"
+task :deploy do
+  system "mkdocs gh-deploy"
+end
+
 namespace :tutorials do
   tasks = create_tutorial_tasks("docs", "staging")
 
