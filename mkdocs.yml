@@ -36,6 +36,7 @@ nav:
   - Changelog: CHANGELOG.md
   - Security: SECURITY.md
   - License: LICENSE.md
+  - Dependencies: LICENSE-DEPENDENCIES.md
   - More Resources: tutorials/more_resources.md
 - Tutorials:
   - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md

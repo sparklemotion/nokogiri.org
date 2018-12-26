@@ -3,6 +3,7 @@ def create_nokogiri_tasks source_dir, dest_dir
 
   file_pairs = {
     "LICENSE.md" => "LICENSE.md",
+    "LICENSE-DEPENDENCIES.md" => "LICENSE-DEPENDENCIES.md",
     "SECURITY.md" => "SECURITY.md",
     "tutorials/security.md" => "SECURITY.md",
     "CHANGELOG.md" => "CHANGELOG.md",
