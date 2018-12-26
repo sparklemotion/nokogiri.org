@@ -672,7 +672,7 @@
 
 
 <p>The variables <code>html_doc</code> and <code>xml_doc</code> are Nokogiri documents, which
-have all kinds of interesting properties and methods that you <a href="http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/Document">can
+have all kinds of interesting properties and methods that you <a href="https://www.nokogiri.org/rdoc/Nokogiri/XML/Document">can
 read about here</a>. We'll cover the interesting bits in other
 chapters.</p>
 <h2 id="from-a-file">From a File<a class="headerlink" href="#from-a-file" title="Permanent link">&para;</a></h2>
@@ -692,9 +692,9 @@ World Wide Web.</p>
 
 <h2 id="parse-options">Parse Options<a class="headerlink" href="#parse-options" title="Permanent link">&para;</a></h2>
 <p>Nokogiri offers quite a few options that affect how a document is
-parsed; you can read about them in the <a href="http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/ParseOptions">XML::ParseOptions docs</a>.</p>
+parsed; you can read about them in the <a href="https://www.nokogiri.org/rdoc/Nokogiri/XML/ParseOptions">XML::ParseOptions docs</a>.</p>
 <p>Notably, Nokogiri will treat input as untrusted documents by default, thereby avoiding a class of vulnerabilities known as <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing">XXE</a> or "XML eXternal Entity" processing. What this means is that Nokogiri won't attempt to load external DTDs or access the network for any external resources.</p>
-<p>Some commonly-used <a href="http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/ParseOptions">parse options</a> are:</p>
+<p>Some commonly-used <a href="https://www.nokogiri.org/rdoc/Nokogiri/XML/ParseOptions">parse options</a> are:</p>
 <ul>
 <li><code>NONET</code> - Prevent any network connections during parsing. Recommended for parsing untrusted documents. <strong>This is set by default!</strong></li>
 <li><code>RECOVER</code> - Attempt to recover from errors. Recommended for parsing malformed or invalid documents. <strong>This is set by default!</strong></li>

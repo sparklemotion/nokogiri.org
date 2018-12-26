@@ -716,7 +716,7 @@ all the shows in this document.</p>
 </pre></div>
 
 
-<p>The <code>Node</code> methods <code>xpath</code> and <code>css</code> actually return a <a href="http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/NodeSet">NodeSet</a>,
+<p>The <code>Node</code> methods <code>xpath</code> and <code>css</code> actually return a <a href="https://www.nokogiri.org/rdoc/Nokogiri/XML/NodeSet">NodeSet</a>,
 which acts very much like an array, and contains matching nodes from
 the document.</p>
 <div class="codehilite"><pre><span></span><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//character&quot;</span><span class="p">)</span>
@@ -845,7 +845,7 @@ we can help out.</p>
 <p>Lazy == Efficient, so no judgements. :)</p>
 <p>If you have an XML document with namespaces, but would prefer to
 ignore them entirely (and query as if Tim Bray had never invented
-them), then you can call <a href="http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/Document#remove_namespaces%21-instance_method">remove_namespaces!</a> on an XML::Document to
+them), then you can call <a href="https://www.nokogiri.org/rdoc/Nokogiri/XML/Document#remove_namespaces%21-instance_method">remove_namespaces!</a> on an XML::Document to
 remove all namespaces. Of course, if the document had nodes with the
 same names but different namespaces, they will now be ambiguous. But
 you're lazy! You don't care!</p>
