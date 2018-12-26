@@ -15,7 +15,7 @@ The `Node` methods `xpath` and `css` actually return a [NodeSet][],
 which acts very much like an array, and contains matching nodes from
 the document.
 
-  [NodeSet]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/NodeSet
+  [NodeSet]: https://www.nokogiri.org/rdoc/Nokogiri/XML/NodeSet
 
 ~~~ ruby assets/search-xpath-characters-first.rb
 
@@ -101,7 +101,7 @@ you're lazy! You don't care!
 
   [1]: http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/
   [2]: http://groups.google.com/group/nokogiri-talk
-  [remove_namespaces!]: http://rdoc.info/github/sparklemotion/nokogiri/Nokogiri/XML/Document#remove_namespaces%21-instance_method
+  [remove_namespaces!]: https://www.nokogiri.org/rdoc/Nokogiri/XML/Document#remove_namespaces%21-instance_method
 
 ## Slop [^1]
 
