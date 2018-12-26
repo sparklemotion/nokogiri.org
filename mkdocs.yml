@@ -31,8 +31,8 @@ markdown_extensions:
 - pymdownx.magiclink
 
 nav:
+- Readme: index.md
 - About:
-  - Overview: index.md
   - Changelog: CHANGELOG.md
   - Security: SECURITY.md
   - License: LICENSE.md
