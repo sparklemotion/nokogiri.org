@@ -17,8 +17,10 @@ namespace :dev do
 end
 
 namespace :tutorials do
+  tasks = create_tutorial_tasks("docs", "staging")
+
   desc "Pull in tutorial content"
-  task :generate => create_tutorial_tasks("docs", "staging")
+  task :generate => tasks
 
   desc "recursively clean the tutorials submodule"
   task :clean do
@@ -31,8 +33,10 @@ namespace :tutorials do
 end
 
 namespace :nokogiri do
+  tasks = create_nokogiri_tasks(nokogiri_dir, STAGING_DIR)
+
   desc "Pull in Nokogiri repo files"
-  task :generate => create_nokogiri_tasks(nokogiri_dir, STAGING_DIR)
+  task :generate => tasks
 end
 
 namespace :mkdocs do
