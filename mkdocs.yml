@@ -27,6 +27,8 @@ markdown_extensions:
     guess_lang: false
 - toc:
     permalink: true
+- footnotes # https://python-markdown.github.io/extensions/footnotes/
+- pymdownx.magiclink
 
 nav:
 - About:
