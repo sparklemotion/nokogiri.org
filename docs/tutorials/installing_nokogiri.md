@@ -321,7 +321,7 @@ bundle config build.nokogiri \
 ```
 
 Do not attempt Bundler installation using Bundler versions before v1.8.3.
-See [related issue here](bundler/bundler#3053). But if you really want to,
+See [bundler/bundler#3053](https://github.com/bundler/bundler/issues/3053). But if you really want to,
 see earlier git history of this file, which includes a workaround.
 
 ### SmartOS (Nonstandard)
