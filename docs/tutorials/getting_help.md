@@ -1,6 +1,6 @@
 # Getting Help and Reporting Issues
 
-## Halp!
+## [Halp!](https://www.urbandictionary.com/define.php?term=halp)
 
 So you're having a great time slicing and dicing your XML with
 Nokogiri, and suddenly something happens that you don't quite
