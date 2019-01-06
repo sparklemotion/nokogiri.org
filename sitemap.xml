@@ -6,32 +6,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.nokogiri.org/CHANGELOG.html</loc>
+     <loc>https://www.nokogiri.org/tutorials/installing_nokogiri.html</loc>
      <lastmod>2019-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.nokogiri.org/SECURITY.html</loc>
-     <lastmod>2019-01-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.nokogiri.org/LICENSE.html</loc>
-     <lastmod>2019-01-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.nokogiri.org/LICENSE-DEPENDENCIES.html</loc>
+     <loc>https://www.nokogiri.org/tutorials/getting_help.html</loc>
      <lastmod>2019-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.nokogiri.org/tutorials/more_resources.html</loc>
-     <lastmod>2019-01-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.nokogiri.org/rdoc/index.html</loc>
      <lastmod>2019-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -56,12 +41,27 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.nokogiri.org/tutorials/installing_nokogiri.html</loc>
+     <loc>https://www.nokogiri.org/CHANGELOG.html</loc>
      <lastmod>2019-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.nokogiri.org/tutorials/getting_help.html</loc>
+     <loc>https://www.nokogiri.org/SECURITY.html</loc>
+     <lastmod>2019-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.nokogiri.org/LICENSE.html</loc>
+     <lastmod>2019-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.nokogiri.org/LICENSE-DEPENDENCIES.html</loc>
+     <lastmod>2019-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.nokogiri.org/rdoc/index.html</loc>
      <lastmod>2019-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
