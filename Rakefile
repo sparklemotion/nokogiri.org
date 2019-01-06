@@ -2,12 +2,12 @@ require "rspec/core/rake_task"
 require "yaml"
 require "launchy"
 
-require_relative "tasks/tutorial_tasks"
-require_relative "tasks/nokogiri_tasks"
-
 STAGING_DIR = "staging"
 SITE_DIR = "site"
 TUTORIALS_DIR = "tutorials"
+
+require_relative "tasks/tutorial_tasks"
+require_relative "tasks/nokogiri_tasks"
 
 namespace :dev do
   desc "Set up system dependencies to develop this site."
