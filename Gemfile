@@ -5,6 +5,7 @@ group :development do
   gem 'launchy'
   gem 'rcodetools'
   gem 'yard'
+  gem 'nokogiri'
 end
 
 group :test do
