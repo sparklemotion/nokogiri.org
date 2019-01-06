@@ -30,6 +30,10 @@ markdown_extensions:
 - footnotes # https://python-markdown.github.io/extensions/footnotes/
 - pymdownx.magiclink
 
+google_analytics:
+- 'UA-1260604-8'
+- 'nokogiri.org'
+
 nav:
 - Readme: index.md
 - Support:
