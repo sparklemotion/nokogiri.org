@@ -106,12 +106,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Nokogiri::XML::Document is the main entry point for dealing with XML
-documents.  The Document is created by parsing an XML document. See
-Nokogiri::XML::Document.parse() for more information on parsing.</p>
+<p>Nokogiri::XML::Document is the main entry point for dealing with XML documents.  The Document is created by parsing an XML document. See Nokogiri::XML::Document.parse() for more information on parsing.</p>
 
-<p>For searching a Document, see Nokogiri::XML::Searchable#css and
-Nokogiri::XML::Searchable#xpath</p>
+<p>For searching a Document, see Nokogiri::XML::Searchable#css and Nokogiri::XML::Searchable#xpath</p>
 
 
   </div>
@@ -136,9 +133,7 @@ Nokogiri::XML::Searchable#xpath</p>
           <div class="docstring">
   <div class="discussion">
     
-<p>I&#39;m ignoring unicode characters here. See <a
-href="http://www.w3.org/TR/REC-xml-names/#ns-decl">www.w3.org/TR/REC-xml-names/#ns-decl</a>
-for more details.</p>
+<p>I&#39;m ignoring unicode characters here. See <a href="http://www.w3.org/TR/REC-xml-names/#ns-decl">www.w3.org/TR/REC-xml-names/#ns-decl</a> for more details.</p>
 
 
   </div>
@@ -335,8 +330,7 @@ for more details.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p><code>JRuby</code> Wraps Java&#39;s org.w3c.dom.document and returns
-Nokogiri::XML::Document.</p>
+<p><code>JRuby</code> Wraps Java&#39;s org.w3c.dom.document and returns Nokogiri::XML::Document.</p>
 </div></span>
   
 </li>
@@ -417,8 +411,7 @@ Nokogiri::XML::Document.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Recursively get all namespaces from this node and its subtree and return
-them as a hash.</p>
+<p>Recursively get all namespaces from this node and its subtree and return them as a hash.</p>
 </div></span>
   
 </li>
@@ -490,8 +483,7 @@ them as a hash.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create an element with <code>name</code>, and optionally setting the
-content and attributes.</p>
+<p>Create an element with <code>name</code>, and optionally setting the content and attributes.</p>
 </div></span>
   
 </li>
@@ -709,8 +701,7 @@ content and attributes.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a Nokogiri::XML::DocumentFragment from <code>tags</code> Returns an
-empty fragment if <code>tags</code> is nil.</p>
+<p>Create a Nokogiri::XML::DocumentFragment from <code>tags</code> Returns an empty fragment if <code>tags</code> is nil.</p>
 </div></span>
   
 </li>
@@ -904,8 +895,7 @@ empty fragment if <code>tags</code> is nil.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p><code>JRuby</code> Returns Java&#39;s org.w3c.dom.document of this
-Document.</p>
+<p><code>JRuby</code> Returns Java&#39;s org.w3c.dom.document of this Document.</p>
 </div></span>
   
 </li>
@@ -1200,25 +1190,17 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
     
 <p>Parse an XML file.</p>
 
-<p><code>string_or_io</code> may be a String, or any object that responds to
-<em>read</em> and <em>close</em> such as an IO, or StringIO.</p>
+<p><code>string_or_io</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO.</p>
 
 <p><code>url</code> (optional) is the URI where this document is located.</p>
 
-<p><code>encoding</code> (optional) is the encoding that should be used when
-processing the document.</p>
+<p><code>encoding</code> (optional) is the encoding that should be used when processing the document.</p>
 
-<p><code>options</code> (optional) is a configuration object that sets options
-during parsing, such as Nokogiri::XML::ParseOptions::RECOVER. See the
-Nokogiri::XML::ParseOptions for more information.</p>
+<p><code>options</code> (optional) is a configuration object that sets options during parsing, such as Nokogiri::XML::ParseOptions::RECOVER. See the Nokogiri::XML::ParseOptions for more information.</p>
 
-<p><code>block</code> (optional) is passed a configuration object on which
-parse options may be set.</p>
+<p><code>block</code> (optional) is passed a configuration object on which parse options may be set.</p>
 
-<p>By default, Nokogiri treats documents as untrusted, and so does not attempt
-to load DTDs or access the network. See Nokogiri::XML::ParseOptions for a
-complete list of options; and that module&#39;s DEFAULT_XML constant for
-what&#39;s set (and not set) by default.</p>
+<p>By default, Nokogiri treats documents as untrusted, and so does not attempt to load DTDs or access the network. See Nokogiri::XML::ParseOptions for a complete list of options; and that module&#39;s DEFAULT_XML constant for what&#39;s set (and not set) by default.</p>
 
 <p>Nokogiri.XML() is a convenience method which will call this method.</p>
 
@@ -1554,8 +1536,7 @@ static VALUE read_memory( VALUE klass,
 </h3><div class="docstring">
   <div class="discussion">
     
-<p><code>JRuby</code> Wraps Java&#39;s org.w3c.dom.document and returns
-Nokogiri::XML::Document</p>
+<p><code>JRuby</code> Wraps Java&#39;s org.w3c.dom.document and returns Nokogiri::XML::Document</p>
 
 
   </div>
@@ -1656,12 +1637,7 @@ Nokogiri::XML::Document</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Canonicalize a document and return the results.  Takes an optional block
-that takes two parameters: the <code>obj</code> and that node&#39;s
-<code>parent</code>. The  <code>obj</code> will be either a
-Nokogiri::XML::Node, or a Nokogiri::XML::Namespace The block must return a
-non-nil, non-false value if the <code>obj</code> passed in should be
-included in the canonicalized document.</p>
+<p>Canonicalize a document and return the results.  Takes an optional block that takes two parameters: the <code>obj</code> and that node&#39;s <code>parent</code>. The  <code>obj</code> will be either a Nokogiri::XML::Node, or a Nokogiri::XML::Namespace The block must return a non-nil, non-false value if the <code>obj</code> passed in should be included in the canonicalized document.</p>
 
 
   </div>
@@ -1844,8 +1820,7 @@ static VALUE canonicalize(int argc, VALUE* argv, VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Recursively get all namespaces from this node and its subtree and return
-them as a hash.</p>
+<p>Recursively get all namespaces from this node and its subtree and return them as a hash.</p>
 
 <p>For example, given this document:</p>
 
@@ -1859,23 +1834,18 @@ them as a hash.</p>
 <pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns:foo</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns:hello</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>world</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
 </code></pre>
 
-<p>WARNING: this method will clobber duplicate names in the keys. For example,
-given this document:</p>
+<p>WARNING: this method will clobber duplicate names in the keys. For example, given this document:</p>
 
 <pre class="code ruby"><code class="ruby">&lt;root xmlns:foo=&quot;bar&quot;&gt;
   &lt;bar xmlns:foo=&quot;baz&quot; /&gt;
 &lt;/root&gt;
 </code></pre>
 
-<p>The hash returned will look like this: { &#39;xmlns:foo&#39; =&gt;
-&#39;bar&#39; }</p>
+<p>The hash returned will look like this: { &#39;xmlns:foo&#39; =&gt; &#39;bar&#39; }</p>
 
-<p>Non-prefixed default namespaces (as in “xmlns=”) are not included in the
-hash.</p>
+<p>Non-prefixed default namespaces (as in “xmlns=”) are not included in the hash.</p>
 
-<p>Note that this method does an xpath lookup for nodes with namespaces, and
-as a result the order may be dependent on the implementation of the
-underlying XML library.</p>
+<p>Note that this method does an xpath lookup for nodes with namespaces, and as a result the order may be dependent on the implementation of the underlying XML library.</p>
 
 
   </div>
@@ -2004,8 +1974,7 @@ underlying XML library.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create an element with <code>name</code>, and optionally setting the
-content and attributes.</p>
+<p>Create an element with <code>name</code>, and optionally setting the content and attributes.</p>
 
 <pre class="code ruby"><code class="ruby">doc.create_element &quot;div&quot; # &lt;div&gt;&lt;/div&gt;
 doc.create_element &quot;div&quot;, :class =&gt; &quot;container&quot; # &lt;div class=&#39;container&#39;&gt;&lt;/div&gt;
@@ -2095,13 +2064,9 @@ doc.create_element &quot;div&quot; { |node| node[&#39;class&#39;] = &quot;contai
     
 <p>Create a new entity named <code>name</code>.</p>
 
-<p><code>type</code> is an integer representing the type of entity to be
-created, and it defaults to Nokogiri::XML::EntityDecl::INTERNAL_GENERAL. 
-See the constants on Nokogiri::XML::EntityDecl for more information.</p>
+<p><code>type</code> is an integer representing the type of entity to be created, and it defaults to Nokogiri::XML::EntityDecl::INTERNAL_GENERAL.  See the constants on Nokogiri::XML::EntityDecl for more information.</p>
 
-<p><code>external_id</code>, <code>system_id</code>, and <code>content</code>
-set the External ID, System ID, and content respectively.  All of these
-parameters are optional.</p>
+<p><code>external_id</code>, <code>system_id</code>, and <code>content</code> set the External ID, System ID, and content respectively.  All of these parameters are optional.</p>
 
 
   </div>
@@ -2390,8 +2355,7 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Copy this Document.  An optional depth may be passed in, but it defaults to
-a deep copy.  0 is a shallow copy, 1 is a deep copy.</p>
+<p>Copy this Document.  An optional depth may be passed in, but it defaults to a deep copy.  0 is a shallow copy, 1 is a deep copy.</p>
 
 
   </div>
@@ -2586,8 +2550,7 @@ static VALUE set_encoding(VALUE self, VALUE encoding)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a Nokogiri::XML::DocumentFragment from <code>tags</code> Returns an
-empty fragment if <code>tags</code> is nil.</p>
+<p>Create a Nokogiri::XML::DocumentFragment from <code>tags</code> Returns an empty fragment if <code>tags</code> is nil.</p>
 
 
   </div>
@@ -2712,11 +2675,9 @@ empty fragment if <code>tags</code> is nil.</p>
     
 <p>Remove all namespaces from all nodes in the document.</p>
 
-<p>This could be useful for developers who either don&#39;t understand
-namespaces or don&#39;t care about them.</p>
+<p>This could be useful for developers who either don&#39;t understand namespaces or don&#39;t care about them.</p>
 
-<p>The following example shows a use case, and you can decide for yourself
-whether this is a good thing or not:</p>
+<p>The following example shows a use case, and you can decide for yourself whether this is a good thing or not:</p>
 
 <pre class="code"><code class=""><span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span> <span class='heredoc_beg'>&lt;&lt;-EOXML</span>
 <span class='tstring_content'>   &lt;root&gt;
@@ -2740,9 +2701,7 @@ whether this is a good thing or not:</p>
 </span><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//part:tire</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>part</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://schwinn.com/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='comment'># =&gt; &quot;&quot;
 </span></code></pre>
 
-<p>For more information on why this probably is <strong>not</strong> a good
-thing in general, please direct your browser to <a
-href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml.html">tenderlovemaking.com/2009/04/23/namespaces-in-xml.html</a></p>
+<p>For more information on why this probably is <strong>not</strong> a good thing in general, please direct your browser to <a href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml.html">tenderlovemaking.com/2009/04/23/namespaces-in-xml.html</a></p>
 
 
   </div>
@@ -2969,9 +2928,7 @@ static VALUE set_root(VALUE self, VALUE root)
     
 <p>Explore a document with shortcut methods. See Nokogiri::Slop for details.</p>
 
-<p>Note that any nodes that have been instantiated before #slop! is called
-will not be decorated with sloppy behavior. So, if you&#39;re in irb, the
-preferred idiom is:</p>
+<p>Note that any nodes that have been instantiated before #slop! is called will not be decorated with sloppy behavior. So, if you&#39;re in irb, the preferred idiom is:</p>
 
 <pre class="code ruby"><code class="ruby">irb&gt; doc = Nokogiri::Slop my_markup
 </code></pre>
@@ -3033,8 +2990,7 @@ irb&gt; doc.slop!
 </h3><div class="docstring">
   <div class="discussion">
     
-<p><code>JRuby</code> Returns Java&#39;s org.w3c.dom.document of this
-Document.</p>
+<p><code>JRuby</code> Returns Java&#39;s org.w3c.dom.document of this Document.</p>
 
 
   </div>
@@ -3132,8 +3088,7 @@ static VALUE url(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Validate this Document against it&#39;s DTD.  Returns a list of errors on
-the document or <code>nil</code> when there is no DTD.</p>
+<p>Validate this Document against it&#39;s DTD.  Returns a list of errors on the document or <code>nil</code> when there is no DTD.</p>
 
 
   </div>
@@ -3222,9 +3177,9 @@ static VALUE version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:01 2018 by
+  Generated on Sun Jan  6 00:53:42 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

@@ -102,14 +102,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>This class is used for registering types of events you are interested in
-handling.  All of the methods on this class are available as possible
-events while parsing an XML document.  To register for any particular
-event, just subclass this class and implement the methods you are
-interested in knowing about.</p>
+<p>This class is used for registering types of events you are interested in handling.  All of the methods on this class are available as possible events while parsing an XML document.  To register for any particular event, just subclass this class and implement the methods you are interested in knowing about.</p>
 
-<p>To only be notified about start and end element events, write a class like
-this:</p>
+<p>To only be notified about start and end element events, write a class like this:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>MyDocument</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../SAX.html" title="Nokogiri::XML::SAX (module)">SAX</a></span></span><span class='op'>::</span><span class='const'>Document</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_start_element'>start_element</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -122,8 +117,7 @@ this:</p>
 <span class='kw'>end</span>
 </code></pre>
 
-<p>You can use this event handler for any SAX style parser included with
-Nokogiri.  See Nokogiri::XML::SAX, and Nokogiri::HTML::SAX.</p>
+<p>You can use this event handler for any SAX style parser included with Nokogiri.  See Nokogiri::XML::SAX, and Nokogiri::HTML::SAX.</p>
 
 
   </div>
@@ -168,8 +162,7 @@ Nokogiri.  See Nokogiri::XML::SAX, and Nokogiri::HTML::SAX.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Called when cdata blocks are found <code>string</code> contains the cdata
-content.</p>
+<p>Called when cdata blocks are found <code>string</code> contains the cdata content.</p>
 </div></span>
   
 </li>
@@ -217,8 +210,7 @@ content.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Called when comments are encountered <code>string</code> contains the
-comment data.</p>
+<p>Called when comments are encountered <code>string</code> contains the comment data.</p>
 </div></span>
   
 </li>
@@ -290,9 +282,7 @@ comment data.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Called at the end of an element <code>name</code> is the element&#39;s name
-<code>prefix</code> is the namespace prefix associated with the element
-<code>uri</code> is the associated namespace URI.</p>
+<p>Called at the end of an element <code>name</code> is the element&#39;s name <code>prefix</code> is the namespace prefix associated with the element <code>uri</code> is the associated namespace URI.</p>
 </div></span>
   
 </li>
@@ -340,9 +330,7 @@ comment data.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Called when processing instructions are found <code>name</code> is the
-target of the instruction <code>content</code> is the value of the
-instruction.</p>
+<p>Called when processing instructions are found <code>name</code> is the target of the instruction <code>content</code> is the value of the instruction.</p>
 </div></span>
   
 </li>
@@ -390,10 +378,7 @@ instruction.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Called at the beginning of an element * <code>name</code> is the name of
-the tag * <code>attrs</code> are an assoc list of namespaces and
-attributes, e.g.:     [ [“xmlns:foo”, “<a
-href="http://sample.net">sample.net</a>”], [“size”, “large”] ].</p>
+<p>Called at the beginning of an element * <code>name</code> is the name of the tag * <code>attrs</code> are an assoc list of namespaces and attributes, e.g.:     [ [“xmlns:foo”, “<a href="http://sample.net">sample.net</a>”], [“size”, “large”] ].</p>
 </div></span>
   
 </li>
@@ -417,11 +402,7 @@ href="http://sample.net">sample.net</a>”], [“size”, “large”] ].</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Called at the beginning of an element <code>name</code> is the element name
-<code>attrs</code> is a list of attributes <code>prefix</code> is the
-namespace prefix for the element <code>uri</code> is the associated
-namespace URI <code>ns</code> is a hash of namespace prefix:urls associated
-with the element.</p>
+<p>Called at the beginning of an element <code>name</code> is the element name <code>attrs</code> is a list of attributes <code>prefix</code> is the namespace prefix for the element <code>uri</code> is the associated namespace URI <code>ns</code> is a hash of namespace prefix:urls associated with the element.</p>
 </div></span>
   
 </li>
@@ -496,8 +477,7 @@ with the element.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Called when cdata blocks are found <code>string</code> contains the cdata
-content</p>
+<p>Called when cdata blocks are found <code>string</code> contains the cdata content</p>
 
 
   </div>
@@ -536,8 +516,7 @@ content</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Characters read between a tag.  This method might be called multiple times
-given one contiguous string of characters.</p>
+<p>Characters read between a tag.  This method might be called multiple times given one contiguous string of characters.</p>
 
 <p><code>string</code> contains the character data</p>
 
@@ -578,8 +557,7 @@ given one contiguous string of characters.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Called when comments are encountered <code>string</code> contains the
-comment data</p>
+<p>Called when comments are encountered <code>string</code> contains the comment data</p>
 
 
   </div>
@@ -696,9 +674,7 @@ comment data</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Called at the end of an element <code>name</code> is the element&#39;s name
-<code>prefix</code> is the namespace prefix associated with the element
-<code>uri</code> is the associated namespace URI</p>
+<p>Called at the end of an element <code>name</code> is the element&#39;s name <code>prefix</code> is the namespace prefix associated with the element <code>uri</code> is the associated namespace URI</p>
 
 
   </div>
@@ -782,9 +758,7 @@ comment data</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Called when processing instructions are found <code>name</code> is the
-target of the instruction <code>content</code> is the value of the
-instruction</p>
+<p>Called when processing instructions are found <code>name</code> is the target of the instruction <code>content</code> is the value of the instruction</p>
 
 
   </div>
@@ -909,11 +883,7 @@ instruction</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Called at the beginning of an element <code>name</code> is the element name
-<code>attrs</code> is a list of attributes <code>prefix</code> is the
-namespace prefix for the element <code>uri</code> is the associated
-namespace URI <code>ns</code> is a hash of namespace prefix:urls associated
-with the element</p>
+<p>Called at the beginning of an element <code>name</code> is the element name <code>attrs</code> is a list of attributes <code>prefix</code> is the namespace prefix for the element <code>uri</code> is the associated namespace URI <code>ns</code> is a hash of namespace prefix:urls associated with the element</p>
 
 
   </div>
@@ -1041,9 +1011,9 @@ with the element</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:02 2018 by
+  Generated on Sun Jan  6 00:53:43 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

@@ -106,10 +106,7 @@
 
 <h2 id="label-Building+combinations+of+parse+options">Building combinations of parse options</h2>
 
-<p>You can build your own combinations of these parse options by using any of
-the following methods: <strong>Note</strong>: All examples attempt to set
-the <code>RECOVER</code> &amp; <code>NOENT</code> options. All examples use
-Ruby 2 optional parameter syntax.</p>
+<p>You can build your own combinations of these parse options by using any of the following methods: <strong>Note</strong>: All examples attempt to set the <code>RECOVER</code> &amp; <code>NOENT</code> options. All examples use Ruby 2 optional parameter syntax.</p>
 <dl class="rdoc-list label-list"><dt>Ruby&#39;s bitwise operators
 <dd>
 <p>You can use the Ruby bitwise operators to set various combinations.</p>
@@ -119,16 +116,14 @@ Ruby 2 optional parameter syntax.</p>
 </code></pre>
 <dl class="rdoc-list label-list"><dt>Method chaining
 <dd>
-<p>Every option has an equivalent method in lowercase. You can chain these
-methods together to set various combinations.</p>
+<p>Every option has an equivalent method in lowercase. You can chain these methods together to set various combinations.</p>
 </dd></dl>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='period'>.</span><span class='const'>XML</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;content&gt;Chapter 1&lt;/content</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>options:</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>ParseOptions</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class='period'>.</span><span class='id identifier rubyid_recover'>recover</span><span class='period'>.</span><span class='id identifier rubyid_noent'>noent</span><span class='rparen'>)</span>
 </code></pre>
 <dl class="rdoc-list label-list"><dt>Using Ruby Blocks
 <dd>
-<p>You can also setup parse combinations in the block passed to Nokogiri.XML
-or Nokogiri.HTML</p>
+<p>You can also setup parse combinations in the block passed to Nokogiri.XML or Nokogiri.HTML</p>
 </dd></dl>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='period'>.</span><span class='const'>XML</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;content&gt;Chapter 1&lt;/content</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_recover'>recover</span><span class='period'>.</span><span class='id identifier rubyid_noent'>noent</span><span class='rbrace'>}</span>
@@ -136,11 +131,7 @@ or Nokogiri.HTML</p>
 
 <h2 id="label-Removing+particular+parse+options">Removing particular parse options</h2>
 
-<p>You can also remove options from an instance of <code>ParseOptions</code>
-dynamically. Every option has an equivalent <code>no{option}</code> method
-in lowercase. You can call these methods on an instance of
-<code>ParseOptions</code> to remove the option. Note that this is not
-available for <code>STRICT</code>.</p>
+<p>You can also remove options from an instance of <code>ParseOptions</code> dynamically. Every option has an equivalent <code>no{option}</code> method in lowercase. You can call these methods on an instance of <code>ParseOptions</code> to remove the option. Note that this is not available for <code>STRICT</code>.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='comment'># Setting the RECOVER &amp; NOENT options...
 </span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>ParseOptions</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class='period'>.</span><span class='id identifier rubyid_recover'>recover</span><span class='period'>.</span><span class='id identifier rubyid_noent'>noent</span>
@@ -440,8 +431,7 @@ available for <code>STRICT</code>.</p>
           <div class="docstring">
   <div class="discussion">
     
-<p>compact small text nodes; no modification of the tree allowed afterwards
-(will possibly crash if you try to modify the tree)</p>
+<p>compact small text nodes; no modification of the tree allowed afterwards (will possibly crash if you try to modify the tree)</p>
 
 
   </div>
@@ -909,9 +899,9 @@ available for <code>STRICT</code>.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:02 2018 by
+  Generated on Sun Jan  6 00:53:43 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

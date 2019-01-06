@@ -88,20 +88,13 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>SAX Parsers are event driven parsers.  Nokogiri provides two different
-event based parsers when dealing with XML.  If you want to do SAX style
-parsing using HTML, check out Nokogiri::HTML::SAX.</p>
+<p>SAX Parsers are event driven parsers.  Nokogiri provides two different event based parsers when dealing with XML.  If you want to do SAX style parsing using HTML, check out Nokogiri::HTML::SAX.</p>
 
-<p>The basic way a SAX style parser works is by creating a parser, telling the
-parser about the events we&#39;re interested in, then giving the parser
-some XML to process.  The parser will notify you when it encounters events
-you said you would like to know about.</p>
+<p>The basic way a SAX style parser works is by creating a parser, telling the parser about the events we&#39;re interested in, then giving the parser some XML to process.  The parser will notify you when it encounters events you said you would like to know about.</p>
 
-<p>To register for events, you simply subclass Nokogiri::XML::SAX::Document,
-and implement the methods for which you would like notification.</p>
+<p>To register for events, you simply subclass Nokogiri::XML::SAX::Document, and implement the methods for which you would like notification.</p>
 
-<p>For example, if I want to be notified when a document ends, and when an
-element starts, I would write a class like this:</p>
+<p>For example, if I want to be notified when a document ends, and when an element starts, I would write a class like this:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>MyDocument</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>SAX</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SAX/Document.html" title="Nokogiri::XML::SAX::Document (class)">Document</a></span></span>
   <span class='kw'>def</span> <span class='id identifier rubyid_end_document'>end_document</span>
@@ -114,8 +107,7 @@ element starts, I would write a class like this:</p>
 <span class='kw'>end</span>
 </code></pre>
 
-<p>Then I would instantiate a SAX parser with this document, and feed the
-parser some XML</p>
+<p>Then I would instantiate a SAX parser with this document, and feed the parser some XML</p>
 
 <pre class="code ruby"><code class="ruby"><span class='comment'># Create a new parser
 </span><span class='id identifier rubyid_parser'>parser</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>SAX</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SAX/Parser.html" title="Nokogiri::XML::SAX::Parser (class)">Parser</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SAX/Parser.html#initialize-instance_method" title="Nokogiri::XML::SAX::Parser#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>MyDocument</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
@@ -124,15 +116,9 @@ parser some XML</p>
 </span><span class='id identifier rubyid_parser'>parser</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='const'>ARGV</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 </code></pre>
 
-<p>Now my document handler will be called when each node starts, and when then
-document ends.  To see what kinds of events are available, take a look at
-Nokogiri::XML::SAX::Document.</p>
+<p>Now my document handler will be called when each node starts, and when then document ends.  To see what kinds of events are available, take a look at Nokogiri::XML::SAX::Document.</p>
 
-<p>Two SAX parsers for XML are available, a parser that reads from a string or
-IO object as it feels necessary, and a parser that lets you spoon feed it
-XML.  If you want to let Nokogiri deal with reading your XML, use the
-Nokogiri::XML::SAX::Parser.  If you want to have fine grain control over
-the XML input, use the Nokogiri::XML::SAX::PushParser.</p>
+<p>Two SAX parsers for XML are available, a parser that reads from a string or IO object as it feels necessary, and a parser that lets you spoon feed it XML.  If you want to let Nokogiri deal with reading your XML, use the Nokogiri::XML::SAX::Parser.  If you want to have fine grain control over the XML input, use the Nokogiri::XML::SAX::PushParser.</p>
 
 
   </div>
@@ -162,9 +148,9 @@ the XML input, use the Nokogiri::XML::SAX::PushParser.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:10:58 2018 by
+  Generated on Sun Jan  6 00:53:39 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

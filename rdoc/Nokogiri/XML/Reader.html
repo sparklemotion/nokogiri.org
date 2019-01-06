@@ -109,9 +109,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Nokogiri::XML::Reader parses an XML document similar to the way a cursor
-would move.  The Reader is given an XML document, and yields nodes to an
-each block.</p>
+<p>Nokogiri::XML::Reader parses an XML document similar to the way a cursor would move.  The Reader is given an XML document, and yields nodes to an each block.</p>
 
 <p>Here is an example of usage:</p>
 
@@ -129,13 +127,9 @@ each block.</p>
 <span class='kw'>end</span>
 </code></pre>
 
-<p>Note that Nokogiri::XML::Reader#each can only be called once!!  Once the
-cursor moves through the entire document, you must parse the document
-again.  So make sure that you capture any information you need during the
-first iteration.</p>
+<p>Note that Nokogiri::XML::Reader#each can only be called once!!  Once the cursor moves through the entire document, you must parse the document again.  So make sure that you capture any information you need during the first iteration.</p>
 
-<p>The Reader parser is good for when you need the speed of a SAX parser, but
-do not want to write a Document handler.</p>
+<p>The Reader parser is good for when you need the speed of a SAX parser, but do not want to write a Document handler.</p>
 
 
   </div>
@@ -2291,8 +2285,7 @@ static VALUE empty_element_p(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Read the contents of the current node, including child nodes and markup.
-Returns a utf-8 encoded string.</p>
+<p>Read the contents of the current node, including child nodes and markup. Returns a utf-8 encoded string.</p>
 
 
   </div>
@@ -2727,8 +2720,7 @@ static VALUE node_type(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Read the current node and its contents, including child nodes and markup.
-Returns a utf-8 encoded string.</p>
+<p>Read the current node and its contents, including child nodes and markup. Returns a utf-8 encoded string.</p>
 
 
   </div>
@@ -3179,9 +3171,9 @@ static VALUE xml_version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:00 2018 by
+  Generated on Sun Jan  6 00:53:41 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

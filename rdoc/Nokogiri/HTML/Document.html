@@ -219,8 +219,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Read the HTML document from <code>io</code> with given <code>url</code>,
-<code>encoding</code>, and <code>options</code>.</p>
+<p>Read the HTML document from <code>io</code> with given <code>url</code>, <code>encoding</code>, and <code>options</code>.</p>
 </div></span>
   
 </li>
@@ -244,8 +243,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Read the HTML document contained in <code>string</code> with given
-<code>url</code>, <code>encoding</code>, and <code>options</code>.</p>
+<p>Read the HTML document contained in <code>string</code> with given <code>url</code>, <code>encoding</code>, and <code>options</code>.</p>
 </div></span>
   
 </li>
@@ -571,13 +569,7 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Parse HTML.  <code>string_or_io</code> may be a String, or any object that
-responds to <em>read</em> and <em>close</em> such as an IO, or StringIO.
-<code>url</code> is resource where this document is located. 
-<code>encoding</code> is the encoding that should be used when processing
-the document. <code>options</code> is a number that sets options in the
-parser, such as Nokogiri::XML::ParseOptions::RECOVER.  See the constants in
-Nokogiri::XML::ParseOptions.</p>
+<p>Parse HTML.  <code>string_or_io</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO. <code>url</code> is resource where this document is located.  <code>encoding</code> is the encoding that should be used when processing the document. <code>options</code> is a number that sets options in the parser, such as Nokogiri::XML::ParseOptions::RECOVER.  See the constants in Nokogiri::XML::ParseOptions.</p>
 
 
   </div>
@@ -715,8 +707,7 @@ Nokogiri::XML::ParseOptions.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Read the HTML document from <code>io</code> with given <code>url</code>,
-<code>encoding</code>, and <code>options</code>.  See Nokogiri::HTML.parse</p>
+<p>Read the HTML document from <code>io</code> with given <code>url</code>, <code>encoding</code>, and <code>options</code>.  See Nokogiri::HTML.parse</p>
 
 
   </div>
@@ -863,9 +854,7 @@ static VALUE read_io( VALUE klass,
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Read the HTML document contained in <code>string</code> with given
-<code>url</code>, <code>encoding</code>, and <code>options</code>.  See
-Nokogiri::HTML.parse</p>
+<p>Read the HTML document contained in <code>string</code> with given <code>url</code>, <code>encoding</code>, and <code>options</code>.  See Nokogiri::HTML.parse</p>
 
 
   </div>
@@ -1025,8 +1014,7 @@ static VALUE read_memory( VALUE klass,
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the meta tag encoding for this document.  If there is no meta tag, then
-nil is returned.</p>
+<p>Get the meta tag encoding for this document.  If there is no meta tag, then nil is returned.</p>
 
 
   </div>
@@ -1079,19 +1067,13 @@ nil is returned.</p>
     
 <p>Set the meta tag encoding for this document.</p>
 
-<p>If an meta encoding tag is already present, its content is replaced with
-the given text.</p>
+<p>If an meta encoding tag is already present, its content is replaced with the given text.</p>
 
-<p>Otherwise, this method tries to create one at an appropriate place
-supplying head and/or html elements as necessary, which is inside a head
-element if any, and before any text node or content element (typically
-&lt;body&gt;) if any.</p>
+<p>Otherwise, this method tries to create one at an appropriate place supplying head and/or html elements as necessary, which is inside a head element if any, and before any text node or content element (typically &lt;body&gt;) if any.</p>
 
-<p>The result when trying to set an encoding that is different from the
-document encoding is undefined.</p>
+<p>The result when trying to set an encoding that is different from the document encoding is undefined.</p>
 
-<p>Beware in CRuby, that libxml2 automatically inserts a meta tag into a head
-element.</p>
+<p>Beware in CRuby, that libxml2 automatically inserts a meta tag into a head element.</p>
 
 
   </div>
@@ -1176,8 +1158,7 @@ element.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Serialize Node using <code>options</code>.  Save options can also be set
-using a block. See SaveOptions.</p>
+<p>Serialize Node using <code>options</code>.  Save options can also be set using a block. See SaveOptions.</p>
 
 <p>These two statements are equivalent:</p>
 
@@ -1232,8 +1213,7 @@ using a block. See SaveOptions.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the title string of this document.  Return nil if there is no title
-tag.</p>
+<p>Get the title string of this document.  Return nil if there is no title tag.</p>
 
 
   </div>
@@ -1276,13 +1256,9 @@ tag.</p>
     
 <p>Set the title string of this document.</p>
 
-<p>If a title element is already present, its content is replaced with the
-given text.</p>
+<p>If a title element is already present, its content is replaced with the given text.</p>
 
-<p>Otherwise, this method tries to create one at an appropriate place
-supplying head and/or html elements as necessary, which is inside a head
-element if any, right after a meta encoding/charset tag if any, and before
-any text node or content element (typically &lt;body&gt;) if any.</p>
+<p>Otherwise, this method tries to create one at an appropriate place supplying head and/or html elements as necessary, which is inside a head element if any, right after a meta encoding/charset tag if any, and before any text node or content element (typically &lt;body&gt;) if any.</p>
 
 
   </div>
@@ -1397,9 +1373,9 @@ static VALUE type(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:01 2018 by
+  Generated on Sun Jan  6 00:53:42 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

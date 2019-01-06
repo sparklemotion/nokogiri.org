@@ -104,13 +104,11 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Nokogiri::XML::Schema is used for validating XML against a schema (usually
-from an xsd file).</p>
+<p>Nokogiri::XML::Schema is used for validating XML against a schema (usually from an xsd file).</p>
 
 <h2 id="label-Synopsis">Synopsis</h2>
 
-<p>Validate an XML document against a Schema.  Loop over the errors that are
-returned and print them out:</p>
+<p>Validate an XML document against a Schema.  Loop over the errors that are returned and print them out:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_xsd'>xsd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Schema</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='const'>PO_SCHEMA_FILE</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='const'>PO_XML_FILE</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -217,8 +215,7 @@ returned and print them out:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a new Nokogiri::XML::Schema object using a <code>string_or_io</code>
-object.</p>
+<p>Create a new Nokogiri::XML::Schema object using a <code>string_or_io</code> object.</p>
 </div></span>
   
 </li>
@@ -275,8 +272,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns true if <code>thing</code> is a valid Nokogiri::XML::Document or
-file.</p>
+<p>Returns true if <code>thing</code> is a valid Nokogiri::XML::Document or file.</p>
 </div></span>
   
 </li>
@@ -508,8 +504,7 @@ static VALUE from_document(VALUE klass, VALUE document)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new Nokogiri::XML::Schema object using a <code>string_or_io</code>
-object.</p>
+<p>Create a new Nokogiri::XML::Schema object using a <code>string_or_io</code> object.</p>
 
 
   </div>
@@ -671,8 +666,7 @@ static VALUE read_memory(VALUE klass, VALUE content)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns true if <code>thing</code> is a valid Nokogiri::XML::Document or
-file.</p>
+<p>Returns true if <code>thing</code> is a valid Nokogiri::XML::Document or file.</p>
 
 
   </div>
@@ -726,10 +720,7 @@ file.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Validate <code>thing</code> against this schema.  <code>thing</code> can be
-a Nokogiri::XML::Document object, or a filename.  An Array of
-Nokogiri::XML::SyntaxError objects found while validating the
-<code>thing</code> is returned.</p>
+<p>Validate <code>thing</code> against this schema.  <code>thing</code> can be a Nokogiri::XML::Document object, or a filename.  An Array of Nokogiri::XML::SyntaxError objects found while validating the <code>thing</code> is returned.</p>
 
 
   </div>
@@ -775,9 +766,9 @@ Nokogiri::XML::SyntaxError objects found while validating the
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:00 2018 by
+  Generated on Sun Jan  6 00:53:41 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

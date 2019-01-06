@@ -134,10 +134,7 @@
 
 <h3 id="label-Builder+scope">Builder scope</h3>
 
-<p>The builder allows two forms.  When the builder is supplied with a block
-that has a parameter, the outside scope is maintained.  This means you can
-access variables that are outside your builder.  If you don&#39;t need
-outside scope, you can use the builder without the “xml” prefix like this:</p>
+<p>The builder allows two forms.  When the builder is supplied with a block that has a parameter, the outside scope is maintained.  This means you can access variables that are outside your builder.  If you don&#39;t need outside scope, you can use the builder without the “xml” prefix like this:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span>
   <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class='lbrace'>{</span>
@@ -153,14 +150,9 @@ outside scope, you can use the builder without the “xml” prefix like this:</
 
 <h2 id="label-Special+Tags">Special Tags</h2>
 
-<p>The builder works by taking advantage of method_missing.  Unfortunately
-some methods are defined in ruby that are difficult or dangerous to remove.
-You may want to create tags with the name “type”, “class”, and “id” for
-example.  In that case, you can use an underscore to disambiguate your tag
-name from the method call.</p>
+<p>The builder works by taking advantage of method_missing.  Unfortunately some methods are defined in ruby that are difficult or dangerous to remove.  You may want to create tags with the name “type”, “class”, and “id” for example.  In that case, you can use an underscore to disambiguate your tag name from the method call.</p>
 
-<p>Here is an example of using the underscore to disambiguate tag names from
-ruby methods:</p>
+<p>Here is an example of using the underscore to disambiguate tag names from ruby methods:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='ivar'>@objects</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rbracket'>]</span>
 
@@ -180,8 +172,7 @@ ruby methods:</p>
 <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
 </code></pre>
 
-<p>The underscore may be used with any tag name, and the last underscore will
-just be removed.  This code will output the following XML:</p>
+<p>The underscore may be used with any tag name, and the last underscore will just be removed.  This code will output the following XML:</p>
 
 <pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;root&gt;
@@ -207,8 +198,7 @@ just be removed.  This code will output the following XML:</p>
 
 <h2 id="label-Tag+Attributes">Tag Attributes</h2>
 
-<p>Tag attributes may be supplied as method arguments.  Here is our previous
-example, but using attributes rather than tags:</p>
+<p>Tag attributes may be supplied as method arguments.  Here is our previous example, but using attributes rather than tags:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='ivar'>@objects</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rbracket'>]</span>
 
@@ -226,11 +216,9 @@ example, but using attributes rather than tags:</p>
 
 <h3 id="label-Tag+Attribute+Short+Cuts">Tag Attribute Short Cuts</h3>
 
-<p>A couple attribute short cuts are available when building tags.  The short
-cuts are available by special method calls when building a tag.</p>
+<p>A couple attribute short cuts are available when building tags.  The short cuts are available by special method calls when building a tag.</p>
 
-<p>This example builds an “object” tag with the class attribute “classy” and
-the id of “thing”:</p>
+<p>This example builds an “object” tag with the class attribute “classy” and the id of “thing”:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
   <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span> <span class='lbrace'>{</span>
@@ -252,14 +240,11 @@ the id of “thing”:</p>
 &lt;/root&gt;
 </code></pre>
 
-<p>All other options are still supported with this syntax, including blocks
-and extra tag attributes.</p>
+<p>All other options are still supported with this syntax, including blocks and extra tag attributes.</p>
 
 <h2 id="label-Namespaces">Namespaces</h2>
 
-<p>Namespaces are added similarly to attributes.  Nokogiri::XML::Builder
-assumes that when an attribute starts with “xmlns”, it is meant to be a
-namespace:</p>
+<p>Namespaces are added similarly to attributes.  Nokogiri::XML::Builder assumes that when an attribute starts with “xmlns”, it is meant to be a namespace:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
   <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>default</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns:foo</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
@@ -279,8 +264,7 @@ namespace:</p>
 
 <h3 id="label-Referencing+declared+namespaces">Referencing declared namespaces</h3>
 
-<p>Tags that reference non-default namespaces (i.e. a tag “foo:bar”) can be
-built by using the Nokogiri::XML::Builder#[] method.</p>
+<p>Tags that reference non-default namespaces (i.e. a tag “foo:bar”) can be built by using the Nokogiri::XML::Builder#[] method.</p>
 
 <p>For example:</p>
 
@@ -308,9 +292,7 @@ built by using the Nokogiri::XML::Builder#[] method.</p>
 
 <h2 id="label-Document+Types">Document Types</h2>
 
-<p>To create a document type (DTD), access use the Builder#doc method to get
-the current context document.  Then call Node#create_internal_subset to
-create the DTD node.</p>
+<p>To create a document type (DTD), access use the Builder#doc method to get the current context document.  Then call Node#create_internal_subset to create the DTD node.</p>
 
 <p>For example, this Ruby:</p>
 
@@ -730,8 +712,7 @@ create the DTD node.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new Builder object.  <code>options</code> are sent to the top
-level Document that is being built.</p>
+<p>Create a new Builder object.  <code>options</code> are sent to the top level Document that is being built.</p>
 
 <p>Building a document with a particular encoding for example:</p>
 
@@ -1110,10 +1091,7 @@ end
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a builder with an existing root object.  This is for use when you
-have an existing document that you would like to augment with builder
-methods.  The builder context created will start with the given
-<code>root</code> node.</p>
+<p>Create a builder with an existing root object.  This is for use when you have an existing document that you would like to augment with builder methods.  The builder context created will start with the given <code>root</code> node.</p>
 
 <p>For example:</p>
 
@@ -1210,8 +1188,7 @@ methods.  The builder context created will start with the given
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Build a tag that is associated with namespace <code>ns</code>.  Raises an
-ArgumentError if <code>ns</code> has not been defined higher in the tree.</p>
+<p>Build a tag that is associated with namespace <code>ns</code>.  Raises an ArgumentError if <code>ns</code> has not been defined higher in the tree.</p>
 
 
   </div>
@@ -1447,9 +1424,9 @@ ArgumentError if <code>ns</code> has not been defined higher in the tree.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:00 2018 by
+  Generated on Sun Jan  6 00:53:41 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>

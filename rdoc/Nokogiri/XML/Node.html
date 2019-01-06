@@ -109,9 +109,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Nokogiri::XML::Node is your window to the fun filled world of dealing with
-XML and HTML tags.  A Nokogiri::XML::Node may be treated similarly to a
-hash with regard to attributes.  For example (from irb):</p>
+<p>Nokogiri::XML::Node is your window to the fun filled world of dealing with XML and HTML tags.  A Nokogiri::XML::Node may be treated similarly to a hash with regard to attributes.  For example (from irb):</p>
 
 <pre class="code ruby"><code class="ruby">irb(main):004:0&gt; node
 =&gt; &lt;a href=&quot;#foo&quot; id=&quot;link&quot;&gt;link&lt;/a&gt;
@@ -130,8 +128,7 @@ irb(main):010:0&gt;
 
 <p>See Nokogiri::XML::Node#[] and Nokogiri::XML#[]= for more information.</p>
 
-<p>Nokogiri::XML::Node also has methods that let you move around your tree. 
-For navigating your tree, see:</p>
+<p>Nokogiri::XML::Node also has methods that let you move around your tree.  For navigating your tree, see:</p>
 <ul><li>
 <p>Nokogiri::XML::Node#parent</p>
 </li><li>
@@ -142,23 +139,18 @@ For navigating your tree, see:</p>
 <p>Nokogiri::XML::Node#previous</p>
 </li></ul>
 
-<p>When printing or otherwise emitting a document or a node (and its subtree),
-there are a few methods you might want to use:</p>
+<p>When printing or otherwise emitting a document or a node (and its subtree), there are a few methods you might want to use:</p>
 <ul><li>
 <p>content, text, inner_text, to_str: emit plaintext</p>
 
-<p>These methods will all emit the plaintext version of your document, meaning
-that entities will be replaced (e.g., “&amp;lt;” will be replaced with
-“&lt;”), meaning that any sanitizing will likely be un-done in the output.</p>
+<p>These methods will all emit the plaintext version of your document, meaning that entities will be replaced (e.g., “&amp;lt;” will be replaced with “&lt;”), meaning that any sanitizing will likely be un-done in the output.</p>
 </li><li>
 <p>to_s, to_xml, to_html, inner_html: emit well-formed markup</p>
 
-<p>These methods will all emit properly-escaped markup, meaning that it&#39;s
-suitable for consumption by browsers, parsers, etc.</p>
+<p>These methods will all emit properly-escaped markup, meaning that it&#39;s suitable for consumption by browsers, parsers, etc.</p>
 </li></ul>
 
-<p>You may search this node&#39;s subtree using Searchable#xpath and
-Searchable#css</p>
+<p>You may search this node&#39;s subtree using Searchable#xpath and Searchable#css</p>
 
 
   </div>
@@ -566,8 +558,7 @@ Searchable#css</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a new node with <code>name</code> sharing GC lifecycle with
-<code>document</code>.</p>
+<p>Create a new node with <code>name</code> sharing GC lifecycle with <code>document</code>.</p>
 </div></span>
   
 </li>
@@ -672,8 +663,7 @@ Searchable#css</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Search this node&#39;s immediate children using CSS selector
-<code>selector</code>.</p>
+<p>Search this node&#39;s immediate children using CSS selector <code>selector</code>.</p>
 </div></span>
   
 </li>
@@ -725,8 +715,7 @@ Searchable#css</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Set the attribute value for the attribute <code>name</code> to
-<code>value</code>.</p>
+<p>Set the attribute value for the attribute <code>name</code> to <code>value</code>.</p>
 </div></span>
   
 </li>
@@ -798,8 +787,7 @@ Searchable#css</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Add <code>name</code> to the “class” attribute value of this Node and
-return self.</p>
+<p>Add <code>name</code> to the “class” attribute value of this Node and return self.</p>
 </div></span>
   
 </li>
@@ -825,8 +813,7 @@ return self.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Adds a namespace definition with <code>prefix</code> using
-<code>href</code> value.</p>
+<p>Adds a namespace definition with <code>prefix</code> using <code>href</code> value.</p>
 </div></span>
   
 </li>
@@ -950,8 +937,7 @@ return self.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Append <code>name</code> to the “class” attribute value of this Node and
-return self.</p>
+<p>Append <code>name</code> to the “class” attribute value of this Node and return self.</p>
 </div></span>
   
 </li>
@@ -1213,9 +1199,7 @@ return self.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Set the inner html for this Node <code>node_or_tags</code>
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
+<p>Set the inner html for this Node <code>node_or_tags</code> <code>node_or_tags</code> can be a Nokogiri::XML::Node, a Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 </div></span>
   
 </li>
@@ -1289,7 +1273,7 @@ Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the content for this Node.</p>
+<p>Returns the plaintext content for this Node.</p>
 </div></span>
   
 </li>
@@ -1433,8 +1417,7 @@ Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Adds a default namespace supplied as a string <code>url</code> href, to
-self.</p>
+<p>Adds a default namespace supplied as a string <code>url</code> href, to self.</p>
 </div></span>
   
 </li>
@@ -1728,8 +1711,7 @@ self.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a DocumentFragment containing <code>tags</code> that is relative to
-<em>this</em> context node.</p>
+<p>Create a DocumentFragment containing <code>tags</code> that is relative to <em>this</em> context node.</p>
 </div></span>
   
 </li>
@@ -1851,9 +1833,7 @@ self.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Set the inner html for this Node to <code>node_or_tags</code>
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
+<p>Set the inner html for this Node to <code>node_or_tags</code> <code>node_or_tags</code> can be a Nokogiri::XML::Node, a Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 </div></span>
   
 </li>
@@ -2071,8 +2051,7 @@ Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>returns the namespace of the element or attribute node as a Namespace
-object, or nil if there is no namespace for the element or attribute.</p>
+<p>returns the namespace of the element or attribute node as a Namespace object, or nil if there is no namespace for the element or attribute.</p>
 </div></span>
   
 </li>
@@ -2096,8 +2075,7 @@ object, or nil if there is no namespace for the element or attribute.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Set the default namespace on this node (as would be defined with an
-“xmlns=” attribute in XML source), as a Namespace object <code>ns</code>.</p>
+<p>Set the default namespace on this node (as would be defined with an “xmlns=” attribute in XML source), as a Namespace object <code>ns</code>.</p>
 </div></span>
   
 </li>
@@ -2121,8 +2099,7 @@ object, or nil if there is no namespace for the element or attribute.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>returns namespaces defined on self element directly, as an array of
-Namespace objects.</p>
+<p>returns namespaces defined on self element directly, as an array of Namespace objects.</p>
 </div></span>
   
 </li>
@@ -2146,8 +2123,7 @@ Namespace objects.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>returns namespaces in scope for self – those defined on self element
-directly or any ancestor node – as an array of Namespace objects.</p>
+<p>returns namespaces in scope for self – those defined on self element directly or any ancestor node – as an array of Namespace objects.</p>
 </div></span>
   
 </li>
@@ -2195,8 +2171,7 @@ directly or any ancestor node – as an array of Namespace objects.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a Hash of =&gt; value for all namespaces on this node and
-its ancestors.</p>
+<p>Returns a Hash of =&gt; value for all namespaces on this node and its ancestors.</p>
 </div></span>
   
 </li>
@@ -2420,8 +2395,7 @@ its ancestors.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Parse <code>string_or_io</code> as a document fragment within the context
-of <strong>this</strong> node.</p>
+<p>Parse <code>string_or_io</code> as a document fragment within the context of <strong>this</strong> node.</p>
 </div></span>
   
 </li>
@@ -2641,8 +2615,7 @@ of <strong>this</strong> node.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Remove <code>name</code> from the “class” attribute value of this Node and
-return self.</p>
+<p>Remove <code>name</code> from the “class” attribute value of this Node and return self.</p>
 </div></span>
   
 </li>
@@ -2714,9 +2687,7 @@ return self.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Swap this Node for <code>node_or_tags</code> <code>node_or_tags</code> can
-be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string
-containing markup.</p>
+<p>Swap this Node for <code>node_or_tags</code> <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 </div></span>
   
 </li>
@@ -3149,8 +3120,7 @@ containing markup.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new node with <code>name</code> sharing GC lifecycle with
-<code>document</code></p>
+<p>Create a new node with <code>name</code> sharing GC lifecycle with <code>document</code></p>
 
 
   </div>
@@ -3166,6 +3136,9 @@ containing markup.</p>
       <pre class="lines">
 
 
+1384
+1385
+1386
 1387
 1388
 1389
@@ -3189,13 +3162,10 @@ containing markup.</p>
 1407
 1408
 1409
-1410
-1411
-1412
-1413</pre>
+1410</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1387</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1384</span>
 
 static VALUE new(int argc, VALUE *argv, VALUE klass)
 {
@@ -3247,12 +3217,9 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Add <code>node_or_tags</code> as a child of this Node.
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
+<p>Add <code>node_or_tags</code> as a child of this Node. <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
-<p>Returns self, to support chaining of calls (e.g., root &lt;&lt; child1
-&lt;&lt; child2)</p>
+<p>Returns self, to support chaining of calls (e.g., root &lt;&lt; child1 &lt;&lt; child2)</p>
 
 <p>Also see related method <code>add_child</code>.</p>
 
@@ -3297,8 +3264,7 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Compare two Node objects with respect to their Document.  Nodes from
-different documents cannot be compared.</p>
+<p>Compare two Node objects with respect to their Document.  Nodes from different documents cannot be compared.</p>
 
 
   </div>
@@ -3388,8 +3354,7 @@ different documents cannot be compared.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Search this node&#39;s immediate children using CSS selector
-<code>selector</code></p>
+<p>Search this node&#39;s immediate children using CSS selector <code>selector</code></p>
 
 
   </div>
@@ -3481,8 +3446,7 @@ different documents cannot be compared.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set the attribute value for the attribute <code>name</code> to
-<code>value</code></p>
+<p>Set the attribute value for the attribute <code>name</code> to <code>value</code></p>
 
 
   </div>
@@ -3523,8 +3487,7 @@ different documents cannot be compared.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Accept a visitor.  This method calls “visit” on <code>visitor</code> with
-self.</p>
+<p>Accept a visitor.  This method calls “visit” on <code>visitor</code> with self.</p>
 
 
   </div>
@@ -3565,13 +3528,9 @@ self.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Add <code>node_or_tags</code> as a child of this Node.
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
+<p>Add <code>node_or_tags</code> as a child of this Node. <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
-<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or
-NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or
-string).</p>
+<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or string).</p>
 
 <p>Also see related method <tt>&lt;&lt;</tt>.</p>
 
@@ -3626,10 +3585,7 @@ string).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Add <code>name</code> to the “class” attribute value of this Node and
-return self.  If the value is already in the current value, it is not
-added.  If no “class” attribute exists yet, one is created with the given
-value.</p>
+<p>Add <code>name</code> to the “class” attribute value of this Node and return self.  If the value is already in the current value, it is not added.  If no “class” attribute exists yet, one is created with the given value.</p>
 
 <p>More than one class may be added at a time, separated by a space.</p>
 
@@ -3680,12 +3636,7 @@ value.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Adds a namespace definition with <code>prefix</code> using
-<code>href</code> value. The result is as if parsed XML for this node had
-included an attribute &#39;xmlns:prefix=value&#39;.  A default namespace
-for this node (“xmlns=”) can be added by passing &#39;nil&#39; for prefix.
-Namespaces added this way will not show up in #attributes, but they will be
-included as an xmlns attribute when the node is serialized to XML.</p>
+<p>Adds a namespace definition with <code>prefix</code> using <code>href</code> value. The result is as if parsed XML for this node had included an attribute &#39;xmlns:prefix=value&#39;.  A default namespace for this node (“xmlns=”) can be added by passing &#39;nil&#39; for prefix. Namespaces added this way will not show up in #attributes, but they will be included as an xmlns attribute when the node is serialized to XML.</p>
 
 
   </div>
@@ -3701,6 +3652,9 @@ included as an xmlns attribute when the node is serialized to XML.</p>
       <pre class="lines">
 
 
+1346
+1347
+1348
 1349
 1350
 1351
@@ -3728,13 +3682,10 @@ included as an xmlns attribute when the node is serialized to XML.</p>
 1373
 1374
 1375
-1376
-1377
-1378
-1379</pre>
+1376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1349</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1346</span>
 
 static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
 {
@@ -3788,13 +3739,9 @@ static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Insert <code>node_or_tags</code> after this Node (as a sibling).
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
+<p>Insert <code>node_or_tags</code> after this Node (as a sibling). <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
-<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or
-NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or
-string).</p>
+<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or string).</p>
 
 <p>Also see related method <code>after</code>.</p>
 
@@ -3858,13 +3805,9 @@ string).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Insert <code>node_or_tags</code> before this Node (as a sibling).
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
+<p>Insert <code>node_or_tags</code> before this Node (as a sibling). <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
-<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or
-NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or
-string).</p>
+<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or string).</p>
 
 <p>Also see related method <code>before</code>.</p>
 
@@ -3924,9 +3867,7 @@ string).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Insert <code>node_or_tags</code> after this node (as a sibling).
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
+<p>Insert <code>node_or_tags</code> after this node (as a sibling). <code>node_or_tags</code> can be a Nokogiri::XML::Node, a Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 
 <p>Returns self, to support chaining of calls.</p>
 
@@ -3973,8 +3914,7 @@ Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get a list of ancestor Node for this Node.  If <code>selector</code> is
-given, the ancestors must match <code>selector</code></p>
+<p>Get a list of ancestor Node for this Node.  If <code>selector</code> is given, the ancestors must match <code>selector</code></p>
 
 
   </div>
@@ -4049,10 +3989,7 @@ given, the ancestors must match <code>selector</code></p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Append <code>name</code> to the “class” attribute value of this Node and
-return self.  The value is simply appended without checking if it is
-already in the current value.  If no “class” attribute exists yet, one is
-created with the given value.</p>
+<p>Append <code>name</code> to the “class” attribute value of this Node and return self.  The value is simply appended without checking if it is already in the current value.  If no “class” attribute exists yet, one is created with the given value.</p>
 
 <p>More than one class may be appended at a time, separated by a space.</p>
 
@@ -4113,19 +4050,19 @@ created with the given value.</p>
       <pre class="lines">
 
 
+963
+964
+965
+966
 967
 968
 969
 970
 971
-972
-973
-974
-975
-976</pre>
+972</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 967</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 963</span>
 
 static VALUE attr(VALUE self, VALUE name)
 {
@@ -4170,6 +4107,10 @@ static VALUE attr(VALUE self, VALUE name)
       <pre class="lines">
 
 
+998
+999
+1000
+1001
 1002
 1003
 1004
@@ -4178,14 +4119,10 @@ static VALUE attr(VALUE self, VALUE name)
 1007
 1008
 1009
-1010
-1011
-1012
-1013
-1014</pre>
+1010</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1002</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 998</span>
 
 static VALUE attribute_nodes(VALUE self)
 {
@@ -4233,20 +4170,20 @@ static VALUE attribute_nodes(VALUE self)
       <pre class="lines">
 
 
+980
+981
+982
+983
 984
 985
 986
 987
 988
 989
-990
-991
-992
-993
-994</pre>
+990</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 984</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 980</span>
 
 static VALUE attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
 {
@@ -4276,10 +4213,7 @@ static VALUE attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a hash containing the node&#39;s attributes.  The key is the
-attribute name without any namespace, the value is a Nokogiri::XML::Attr
-representing the attribute. If you need to distinguish attributes with the
-same name, with different namespaces use #attribute_nodes instead.</p>
+<p>Returns a hash containing the node&#39;s attributes.  The key is the attribute name without any namespace, the value is a Nokogiri::XML::Attr representing the attribute. If you need to distinguish attributes with the same name, with different namespaces use #attribute_nodes instead.</p>
 
 
   </div>
@@ -4324,9 +4258,7 @@ same name, with different namespaces use #attribute_nodes instead.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Insert <code>node_or_tags</code> before this node (as a sibling).
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
+<p>Insert <code>node_or_tags</code> before this node (as a sibling). <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
 <p>Returns self, to support chaining of calls.</p>
 
@@ -4402,15 +4334,15 @@ same name, with different namespaces use #attribute_nodes instead.</p>
       <pre class="lines">
 
 
+592
+593
+594
+595
 596
-597
-598
-599
-600
-601</pre>
+597</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 596</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 592</span>
 
 static VALUE blank_eh(VALUE self)
 {
@@ -4543,19 +4475,19 @@ static VALUE blank_eh(VALUE self)
       <pre class="lines">
 
 
+765
+766
+767
+768
 769
 770
 771
 772
 773
-774
-775
-776
-777
-778</pre>
+774</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 769</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 765</span>
 
 static VALUE child(VALUE self)
 {
@@ -4600,6 +4532,10 @@ static VALUE child(VALUE self)
       <pre class="lines">
 
 
+692
+693
+694
+695
 696
 697
 698
@@ -4622,14 +4558,10 @@ static VALUE child(VALUE self)
 715
 716
 717
-718
-719
-720
-721
-722</pre>
+718</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 696</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 692</span>
 
 static VALUE children(VALUE self)
 {
@@ -4675,13 +4607,9 @@ static VALUE children(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set the inner html for this Node <code>node_or_tags</code>
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
+<p>Set the inner html for this Node <code>node_or_tags</code> <code>node_or_tags</code> can be a Nokogiri::XML::Node, a Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 
-<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or
-NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or
-string).</p>
+<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or string).</p>
 
 <p>Also see related method <code>inner_html=</code></p>
 
@@ -4837,7 +4765,7 @@ string).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the content for this Node</p>
+<p>Returns the plaintext content for this Node. Note that entities will always be expanded in the returned string.</p>
 
 
   </div>
@@ -4853,6 +4781,9 @@ string).</p>
       <pre class="lines">
 
 
+1135
+1136
+1137
 1138
 1139
 1140
@@ -4864,13 +4795,10 @@ string).</p>
 1146
 1147
 1148
-1149
-1150
-1151
-1152</pre>
+1149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1138</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1135</span>
 
 static VALUE get_native_content(VALUE self)
 {
@@ -4904,8 +4832,7 @@ static VALUE get_native_content(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set the Node&#39;s content to a Text node containing <code>string</code>.
-The string gets XML escaped, not interpreted as markup.</p>
+<p>Set the Node&#39;s content to a Text node containing <code>string</code>. The string gets XML escaped, not interpreted as markup.</p>
 
 
   </div>
@@ -4962,6 +4889,10 @@ The string gets XML escaped, not interpreted as markup.</p>
       <pre class="lines">
 
 
+454
+455
+456
+457
 458
 459
 460
@@ -4982,14 +4913,10 @@ The string gets XML escaped, not interpreted as markup.</p>
 475
 476
 477
-478
-479
-480
-481
-482</pre>
+478</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 458</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 454</span>
 
 static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
 {
@@ -5056,6 +4983,10 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
       <pre class="lines">
 
 
+422
+423
+424
+425
 426
 427
 428
@@ -5076,14 +5007,10 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
 443
 444
 445
-446
-447
-448
-449
-450</pre>
+446</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 426</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 422</span>
 
 static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
 {
@@ -5213,11 +5140,7 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Adds a default namespace supplied as a string <code>url</code> href, to
-self. The consequence is as an xmlns attribute with supplied argument were
-present in parsed XML.  A default namespace set with this method will now
-show up in #attributes, but when this node is serialized to XML an “xmlns”
-attribute will appear. See also #namespace and #namespace=</p>
+<p>Adds a default namespace supplied as a string <code>url</code> href, to self. The consequence is as an xmlns attribute with supplied argument were present in parsed XML.  A default namespace set with this method will now show up in #attributes, but when this node is serialized to XML an “xmlns” attribute will appear. See also #namespace and #namespace=</p>
 
 
   </div>
@@ -5258,8 +5181,7 @@ attribute will appear. See also #namespace and #namespace=</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Fetch the Nokogiri::HTML::ElementDescription for this node.  Returns nil on
-XML documents and on unknown tags.</p>
+<p>Fetch the Nokogiri::HTML::ElementDescription for this node.  Returns nil on XML documents and on unknown tags.</p>
 
 
   </div>
@@ -5302,10 +5224,7 @@ XML documents and on unknown tags.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Do xinclude substitution on the subtree below node. If given a block, a
-Nokogiri::XML::ParseOptions object initialized from <code>options</code>,
-will be passed to it, allowing more convenient modification of the parser
-options.</p>
+<p>Do xinclude substitution on the subtree below node. If given a block, a Nokogiri::XML::ParseOptions object initialized from <code>options</code>, will be passed to it, allowing more convenient modification of the parser options.</p>
 
 
   </div>
@@ -5387,15 +5306,15 @@ options.</p>
       <pre class="lines">
 
 
+365
+366
+367
+368
 369
-370
-371
-372
-373
-374</pre>
+370</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 369</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 365</span>
 
 static VALUE document(VALUE self)
 {
@@ -5484,10 +5403,7 @@ static VALUE document(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Copy this node. An optional depth may be passed in. 0 is a shallow copy, 1
-(the default) is a deep copy. An optional new_parent_doc may also be passed
-in, which will be the new node&#39;s parent document. Defaults to the
-current node&#39;s document. current document.</p>
+<p>Copy this node. An optional depth may be passed in. 0 is a shallow copy, 1 (the default) is a deep copy. An optional new_parent_doc may also be passed in, which will be the new node&#39;s parent document. Defaults to the current node&#39;s document. current document.</p>
 
 
   </div>
@@ -5501,6 +5417,10 @@ current node&#39;s document. current document.</p>
       <pre class="lines">
 
 
+540
+541
+542
+543
 544
 545
 546
@@ -5526,14 +5446,10 @@ current node&#39;s document. current document.</p>
 566
 567
 568
-569
-570
-571
-572
-573</pre>
+569</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 544</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 540</span>
 
 static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
 {
@@ -5689,8 +5605,7 @@ static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the list of children for this node as a NodeSet.  All nodes will be
-element nodes.</p>
+<p>Get the list of children for this node as a NodeSet.  All nodes will be element nodes.</p>
 
 <p>Example:</p>
 
@@ -5711,6 +5626,10 @@ element nodes.</p>
       <pre class="lines">
 
 
+731
+732
+733
+734
 735
 736
 737
@@ -5733,14 +5652,10 @@ element nodes.</p>
 754
 755
 756
-757
-758
-759
-760
-761</pre>
+757</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 735</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 731</span>
 
 static VALUE element_children(VALUE self)
 {
@@ -5802,6 +5717,10 @@ static VALUE element_children(VALUE self)
       <pre class="lines">
 
 
+392
+393
+394
+395
 396
 397
 398
@@ -5814,14 +5733,10 @@ static VALUE element_children(VALUE self)
 405
 406
 407
-408
-409
-410
-411
-412</pre>
+408</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 396</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 392</span>
 
 static VALUE encode_special_chars(VALUE self, VALUE string)
 {
@@ -5873,6 +5788,10 @@ static VALUE encode_special_chars(VALUE self, VALUE string)
       <pre class="lines">
 
 
+486
+487
+488
+489
 490
 491
 492
@@ -5885,14 +5804,10 @@ static VALUE encode_special_chars(VALUE self, VALUE string)
 499
 500
 501
-502
-503
-504
-505
-506</pre>
+502</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 490</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 486</span>
 
 static VALUE external_subset(VALUE self)
 {
@@ -5949,19 +5864,19 @@ static VALUE external_subset(VALUE self)
       <pre class="lines">
 
 
+786
+787
+788
+789
 790
 791
 792
 793
 794
-795
-796
-797
-798
-799</pre>
+795</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 790</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 786</span>
 
 static VALUE first_element_child(VALUE self)
 {
@@ -5990,8 +5905,7 @@ static VALUE first_element_child(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a DocumentFragment containing <code>tags</code> that is relative to
-<em>this</em> context node.</p>
+<p>Create a DocumentFragment containing <code>tags</code> that is relative to <em>this</em> context node.</p>
 
 
   </div>
@@ -6183,9 +6097,7 @@ static VALUE first_element_child(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set the inner html for this Node to <code>node_or_tags</code>
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
+<p>Set the inner html for this Node to <code>node_or_tags</code> <code>node_or_tags</code> can be a Nokogiri::XML::Node, a Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 
 <p>Returns self.</p>
 
@@ -6248,6 +6160,10 @@ Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
       <pre class="lines">
 
 
+510
+511
+512
+513
 514
 515
 516
@@ -6260,14 +6176,10 @@ Nokogiri::XML::DocumentFragment, or a string containing markup.</p>
 523
 524
 525
-526
-527
-528
-529
-530</pre>
+526</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 514</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 510</span>
 
 static VALUE internal_subset(VALUE self)
 {
@@ -6336,18 +6248,18 @@ static VALUE internal_subset(VALUE self)
       <pre class="lines">
 
 
+824
+825
+826
+827
 828
 829
 830
 831
-832
-833
-834
-835
-836</pre>
+832</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 828</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 824</span>
 
 static VALUE key_eh(VALUE self, VALUE attribute)
 {
@@ -6416,8 +6328,7 @@ static VALUE key_eh(VALUE self, VALUE attribute)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Searches the language of a node, i.e. the values of the xml:lang attribute
-or the one carried by the nearest ancestor.</p>
+<p>Searches the language of a node, i.e. the values of the xml:lang attribute or the one carried by the nearest ancestor.</p>
 
 
   </div>
@@ -6433,6 +6344,9 @@ or the one carried by the nearest ancestor.</p>
       <pre class="lines">
 
 
+1177
+1178
+1179
 1180
 1181
 1182
@@ -6446,13 +6360,10 @@ or the one carried by the nearest ancestor.</p>
 1190
 1191
 1192
-1193
-1194
-1195
-1196</pre>
+1193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1180</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1177</span>
 
 static VALUE get_lang(VALUE self_rb)
 {
@@ -6504,6 +6415,9 @@ static VALUE get_lang(VALUE self_rb)
       <pre class="lines">
 
 
+1157
+1158
+1159
 1160
 1161
 1162
@@ -6512,13 +6426,10 @@ static VALUE get_lang(VALUE self_rb)
 1165
 1166
 1167
-1168
-1169
-1170
-1171</pre>
+1168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1160</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1157</span>
 
 static VALUE set_lang(VALUE self_rb, VALUE lang_rb)
 {
@@ -6570,19 +6481,19 @@ static VALUE set_lang(VALUE self_rb, VALUE lang_rb)
       <pre class="lines">
 
 
+807
+808
+809
+810
 811
 812
 813
 814
 815
-816
-817
-818
-819
-820</pre>
+816</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 811</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 807</span>
 
 static VALUE last_element_child(VALUE self)
 {
@@ -6627,16 +6538,16 @@ static VALUE last_element_child(VALUE self)
       <pre class="lines">
 
 
+1327
+1328
+1329
 1330
 1331
 1332
-1333
-1334
-1335
-1336</pre>
+1333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1330</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1327</span>
 
 static VALUE line(VALUE self)
 {
@@ -6716,8 +6627,7 @@ static VALUE line(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>returns the namespace of the element or attribute node as a Namespace
-object, or nil if there is no namespace for the element or attribute.</p>
+<p>returns the namespace of the element or attribute node as a Namespace object, or nil if there is no namespace for the element or attribute.</p>
 
 
   </div>
@@ -6733,20 +6643,20 @@ object, or nil if there is no namespace for the element or attribute.</p>
       <pre class="lines">
 
 
+1020
+1021
+1022
+1023
 1024
 1025
 1026
 1027
 1028
 1029
-1030
-1031
-1032
-1033
-1034</pre>
+1030</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1024</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1020</span>
 
 static VALUE namespace(VALUE self)
 {
@@ -6776,11 +6686,7 @@ return Qnil ;
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set the default namespace on this node (as would be defined with an
-“xmlns=” attribute in XML source), as a Namespace object <code>ns</code>.
-Note that a Namespace added this way will NOT be serialized as an xmlns
-attribute for this node. You probably want #default_namespace= instead, or
-perhaps #add_namespace_definition with a nil prefix argument.</p>
+<p>Set the default namespace on this node (as would be defined with an “xmlns=” attribute in XML source), as a Namespace object <code>ns</code>. Note that a Namespace added this way will NOT be serialized as an xmlns attribute for this node. You probably want #default_namespace= instead, or perhaps #add_namespace_definition with a nil prefix argument.</p>
 
 
   </div>
@@ -6839,9 +6745,7 @@ perhaps #add_namespace_definition with a nil prefix argument.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>returns namespaces defined on self element directly, as an array of
-Namespace objects. Includes both a default namespace (as in“xmlns=”), and
-prefixed namespaces (as in “xmlns:prefix=”).</p>
+<p>returns namespaces defined on self element directly, as an array of Namespace objects. Includes both a default namespace (as in“xmlns=”), and prefixed namespaces (as in “xmlns:prefix=”).</p>
 
 
   </div>
@@ -6857,6 +6761,10 @@ prefixed namespaces (as in “xmlns:prefix=”).</p>
       <pre class="lines">
 
 
+1038
+1039
+1040
+1041
 1042
 1043
 1044
@@ -6874,14 +6782,10 @@ prefixed namespaces (as in “xmlns:prefix=”).</p>
 1056
 1057
 1058
-1059
-1060
-1061
-1062
-1063</pre>
+1059</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1042</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1038</span>
 
 static VALUE namespace_definitions(VALUE self)
 {
@@ -6922,10 +6826,7 @@ static VALUE namespace_definitions(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>returns namespaces in scope for self – those defined on self element
-directly or any ancestor node – as an array of Namespace objects.  Default
-namespaces (“xmlns=” style) for self are included in this array; Default
-namespaces for  ancestors, however, are not. See also #namespaces</p>
+<p>returns namespaces in scope for self – those defined on self element directly or any ancestor node – as an array of Namespace objects.  Default namespaces (“xmlns=” style) for self are included in this array; Default namespaces for  ancestors, however, are not. See also #namespaces</p>
 
 
   </div>
@@ -6941,6 +6842,10 @@ namespaces for  ancestors, however, are not. See also #namespaces</p>
       <pre class="lines">
 
 
+1070
+1071
+1072
+1073
 1074
 1075
 1076
@@ -6957,14 +6862,10 @@ namespaces for  ancestors, however, are not. See also #namespaces</p>
 1087
 1088
 1089
-1090
-1091
-1092
-1093
-1094</pre>
+1090</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1074</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1070</span>
 
 static VALUE namespace_scopes(VALUE self)
 {
@@ -7033,19 +6934,19 @@ static VALUE namespace_scopes(VALUE self)
       <pre class="lines">
 
 
+840
+841
+842
+843
 844
 845
 846
 847
 848
-849
-850
-851
-852
-853</pre>
+849</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 844</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 840</span>
 
 static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 {
@@ -7074,18 +6975,11 @@ static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a Hash of =&gt; value for all namespaces on this node and
-its ancestors.</p>
+<p>Returns a Hash of =&gt; value for all namespaces on this node and its ancestors.</p>
 
 <p>This method returns the same namespaces as #namespace_scopes.</p>
 
-<p>Returns namespaces in scope for self – those defined on self element
-directly or any ancestor node – as a Hash of attribute-name/value pairs.
-Note that the keys in this hash XML attributes that would be used to define
-this namespace, such as “xmlns:prefix”, not just the prefix. Default
-namespace set on self will be included with key “xmlns”. However, default
-namespaces set on ancestor will NOT be, even if self has no explicit
-default namespace.</p>
+<p>Returns namespaces in scope for self – those defined on self element directly or any ancestor node – as a Hash of attribute-name/value pairs. Note that the keys in this hash XML attributes that would be used to define this namespace, such as “xmlns:prefix”, not just the prefix. Default namespace set on self will be included with key “xmlns”. However, default namespaces set on ancestor will NOT be, even if self has no explicit default namespace.</p>
 
 
   </div>
@@ -7148,6 +7042,10 @@ default namespace.</p>
       <pre class="lines">
 
 
+1111
+1112
+1113
+1114
 1115
 1116
 1117
@@ -7159,14 +7057,10 @@ default namespace.</p>
 1123
 1124
 1125
-1126
-1127
-1128
-1129
-1130</pre>
+1126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1115</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1111</span>
 
 static VALUE set_native_content(VALUE self, VALUE content)
 {
@@ -7217,19 +7111,19 @@ static VALUE set_native_content(VALUE self, VALUE content)
       <pre class="lines">
 
 
+639
+640
+641
+642
 643
 644
 645
 646
 647
-648
-649
-650
-651
-652</pre>
+648</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 643</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 639</span>
 
 static VALUE next_element(VALUE self)
 {
@@ -7278,19 +7172,19 @@ static VALUE next_element(VALUE self)
       <pre class="lines">
 
 
+605
+606
+607
+608
 609
 610
 611
 612
 613
-614
-615
-616
-617
-618</pre>
+614</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 609</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 605</span>
 
 static VALUE next_sibling(VALUE self)
 {
@@ -7339,18 +7233,18 @@ static VALUE next_sibling(VALUE self)
       <pre class="lines">
 
 
+1238
+1239
+1240
 1241
 1242
 1243
 1244
 1245
-1246
-1247
-1248
-1249</pre>
+1246</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1241</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1238</span>
 
 static VALUE get_name(VALUE self)
 {
@@ -7398,16 +7292,16 @@ static VALUE get_name(VALUE self)
       <pre class="lines">
 
 
+1224
+1225
+1226
 1227
 1228
 1229
-1230
-1231
-1232
-1233</pre>
+1230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1227</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1224</span>
 
 static VALUE set_name(VALUE self, VALUE new_name)
 {
@@ -7453,15 +7347,15 @@ static VALUE set_name(VALUE self, VALUE new_name)
       <pre class="lines">
 
 
+1098
+1099
+1100
+1101
 1102
-1103
-1104
-1105
-1106
-1107</pre>
+1103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1102</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1098</span>
 
 static VALUE node_type(VALUE self)
 {
@@ -7502,19 +7396,19 @@ static VALUE node_type(VALUE self)
       <pre class="lines">
 
 
+1207
+1208
+1209
 1210
 1211
 1212
 1213
 1214
 1215
-1216
-1217
-1218
-1219</pre>
+1216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1210</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1207</span>
 
 static VALUE get_parent(VALUE self)
 {
@@ -7586,9 +7480,7 @@ static VALUE get_parent(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Parse <code>string_or_io</code> as a document fragment within the context
-of <strong>this</strong> node.  Returns a XML::NodeSet containing the nodes
-parsed from <code>string_or_io</code>.</p>
+<p>Parse <code>string_or_io</code> as a document fragment within the context of <strong>this</strong> node.  Returns a XML::NodeSet containing the nodes parsed from <code>string_or_io</code>.</p>
 
 
   </div>
@@ -7718,6 +7610,9 @@ parsed from <code>string_or_io</code>.</p>
       <pre class="lines">
 
 
+1254
+1255
+1256
 1257
 1258
 1259
@@ -7727,13 +7622,10 @@ parsed from <code>string_or_io</code>.</p>
 1263
 1264
 1265
-1266
-1267
-1268
-1269</pre>
+1266</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1257</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1254</span>
 
 static VALUE path(VALUE self)
 {
@@ -7781,16 +7673,16 @@ static VALUE path(VALUE self)
       <pre class="lines">
 
 
+378
+379
+380
+381
 382
 383
-384
-385
-386
-387
-388</pre>
+384</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 382</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 378</span>
 
 static VALUE pointer_id(VALUE self)
 {
@@ -7816,13 +7708,9 @@ static VALUE pointer_id(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Add <code>node_or_tags</code> as the first child of this Node.
-<code>node_or_tags</code> can be a Nokogiri::XML::Node, a
-::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
+<p>Add <code>node_or_tags</code> as the first child of this Node. <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
-<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or
-NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or
-string).</p>
+<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or string).</p>
 
 <p>Also see related method <code>add_child</code>.</p>
 
@@ -7893,6 +7781,10 @@ string).</p>
       <pre class="lines">
 
 
+656
+657
+658
+659
 660
 661
 662
@@ -7905,14 +7797,10 @@ string).</p>
 669
 670
 671
-672
-673
-674
-675
-676</pre>
+672</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 660</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 656</span>
 
 static VALUE previous_element(VALUE self)
 {
@@ -7968,19 +7856,19 @@ static VALUE previous_element(VALUE self)
       <pre class="lines">
 
 
+622
+623
+624
+625
 626
 627
 628
 629
 630
-631
-632
-633
-634
-635</pre>
+631</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 626</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 622</span>
 
 static VALUE previous_sibling(VALUE self)
 {
@@ -8168,14 +8056,11 @@ static VALUE previous_sibling(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Remove <code>name</code> from the “class” attribute value of this Node and
-return self.  If there are many occurrences of the name, they are all
-removed.</p>
+<p>Remove <code>name</code> from the “class” attribute value of this Node and return self.  If there are many occurrences of the name, they are all removed.</p>
 
 <p>More than one class may be removed at a time, separated by a space.</p>
 
-<p>If no class name is left after removal, or when <code>name</code> is nil,
-the “class” attribute is removed from this Node.</p>
+<p>If no class name is left after removal, or when <code>name</code> is nil, the “class” attribute is removed from this Node.</p>
 
 
   </div>
@@ -8236,13 +8121,9 @@ the “class” attribute is removed from this Node.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Replace this Node with <code>node_or_tags</code>. <code>node_or_tags</code>
-can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a
-string containing markup.</p>
+<p>Replace this Node with <code>node_or_tags</code>. <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
-<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or
-NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or
-string).</p>
+<p>Returns the reparented node (if <code>node_or_tags</code> is a Node), or NodeSet (if <code>node_or_tags</code> is a DocumentFragment, NodeSet, or string).</p>
 
 <p>Also see related method <code>swap</code>.</p>
 
@@ -8323,8 +8204,7 @@ string).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Serialize Node using <code>options</code>.  Save options can also be set
-using a block. See SaveOptions.</p>
+<p>Serialize Node using <code>options</code>.  Save options can also be set using a block. See SaveOptions.</p>
 
 <p>These two statements are equivalent:</p>
 
@@ -8401,9 +8281,7 @@ using a block. See SaveOptions.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Swap this Node for <code>node_or_tags</code> <code>node_or_tags</code> can
-be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string
-containing markup.</p>
+<p>Swap this Node for <code>node_or_tags</code> <code>node_or_tags</code> can be a Nokogiri::XML::Node, a ::DocumentFragment, a ::NodeSet, or a string containing markup.</p>
 
 <p>Returns self, to support chaining of calls.</p>
 
@@ -8509,8 +8387,7 @@ containing markup.</p>
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_to_html'>to_html</span>
 </code></pre>
 
-<p>See Node#write_to for a list of <code>options</code>.  For formatted
-output, use Node#to_xhtml instead.</p>
+<p>See Node#write_to for a list of <code>options</code>.  For formatted output, use Node#to_xhtml instead.</p>
 
 
   </div>
@@ -8551,8 +8428,7 @@ output, use Node#to_xhtml instead.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Turn this node in to a string.  If the document is HTML, this method
-returns html.  If the document is XML, this method returns XML.</p>
+<p>Turn this node in to a string.  If the document is HTML, this method returns html.  If the document is XML, this method returns XML.</p>
 
 
   </div>
@@ -8750,17 +8626,17 @@ returns html.  If the document is XML, this method returns XML.</p>
       <pre class="lines">
 
 
+577
+578
+579
+580
 581
 582
 583
-584
-585
-586
-587
-588</pre>
+584</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 581</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 577</span>
 
 static VALUE unlink_node(VALUE self)
 {
@@ -8920,15 +8796,13 @@ static VALUE unlink_node(VALUE self)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Write Node to <code>io</code> with <code>options</code>.
-<code>options</code> modify the output of this method.  Valid options are:</p>
+<p>Write Node to <code>io</code> with <code>options</code>. <code>options</code> modify the output of this method.  Valid options are:</p>
 <ul><li>
 <p><code>:encoding</code> for changing the encoding</p>
 </li><li>
 <p><code>:indent_text</code> the indentation text, defaults to one space</p>
 </li><li>
-<p><code>:indent</code> the number of <code>:indent_text</code> to use,
-defaults to 2</p>
+<p><code>:indent</code> the number of <code>:indent_text</code> to use, defaults to 2</p>
 </li><li>
 <p><code>:save_with</code> a combination of SaveOptions constants.</p>
 </li></ul>
@@ -9161,9 +9035,9 @@ defaults to 2</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 26 17:11:00 2018 by
+  Generated on Sun Jan  6 00:53:40 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.3).
+  0.9.16 (ruby-2.6.0).
 </div>
 
     </div>
