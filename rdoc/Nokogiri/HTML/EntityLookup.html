@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   Class: Nokogiri::HTML::EntityLookup
   
-    &mdash; Documentation by YARD 0.9.16
+    — Documentation by YARD 0.9.16
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8">
 
 <script type="text/javascript" charset="utf-8">
   pathId = "Nokogiri::HTML::EntityLookup";
@@ -25,7 +26,16 @@
   <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
 
 
-  </head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1260604-8');
+    </script>
+</head>
   <body>
     <div class="nav_wrap">
       <iframe id="nav" src="../../class_list.html?1"></iframe>
@@ -36,17 +46,16 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../_index.html">Index (E)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span>
-     &raquo; 
+    <a href="../../_index.html">Index (E)</a> »
+    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span>
+     » 
     <span class="title">EntityLookup</span>
   
 </div>
 
         <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="../../class_list.html">
+    <a class="full_list_link" id="class_list_link" href="../../class_list.html">
 
         <svg width="24" height="24">
           <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
@@ -59,7 +68,8 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Nokogiri::HTML::EntityLookup
+      <div id="content">
+<h1>Class: Nokogiri::HTML::EntityLookup
   
   
   
@@ -94,7 +104,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/nokogiri/html/entity_lookup.rb<span class="defines">,<br />
+    <dd>lib/nokogiri/html/entity_lookup.rb<span class="defines">,<br>
   ext/nokogiri/html_entity_lookup.c</span>
 </dd>
   </dl>
@@ -119,7 +129,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(name)  &#x21d2; Object </a>
+      <a href="#%5B%5D-instance_method" title="#[] (instance method)">#<strong>[]</strong>(name)  ⇒ Object </a>
     
 
     
@@ -133,7 +143,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Look up entity with <code>name</code>.</p>
 </div></span>
   
@@ -143,7 +153,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(key)  &#x21d2; Object </a>
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(key)  ⇒ Object </a>
     
 
     
@@ -157,7 +167,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Get the HTML::EntityDescription for <code>key</code>.</p>
 </div></span>
   
@@ -176,13 +186,14 @@
       <div class="method_details first">
   <h3 class="signature first" id="[]-instance_method">
   
-    #<strong>[]</strong>(name)  &#x21d2; <tt>Object</tt> 
+    #<strong>[]</strong>(name)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Look up entity with <code>name</code></p>
@@ -193,7 +204,8 @@
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -206,9 +218,9 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/html/entity_lookup.rb', line 8</span>
 
-<span class='kw'>def</span> <span class='op'>[]</span> <span class='id identifier rubyid_name'>name</span>
-  <span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_val'>val</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="op">[]</span> <span class="id identifier rubyid_name">name</span>
+  <span class="lparen">(</span><span class="id identifier rubyid_val">val</span> <span class="op">=</span> <span class="id identifier rubyid_get">get</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="rparen">)</span><span class="rparen">)</span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_val">val</span><span class="period">.</span><span class="id identifier rubyid_value">value</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -217,13 +229,14 @@
       <div class="method_details ">
   <h3 class="signature " id="get-instance_method">
   
-    #<strong>get</strong>(key)  &#x21d2; <tt>Object</tt> 
+    #<strong>get</strong>(key)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Get the HTML::EntityDescription for <code>key</code></p>
@@ -236,7 +249,8 @@
   
 
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -268,7 +282,7 @@ static VALUE get(VALUE self, VALUE key)
   VALUE klass, args[3];
 
   if(NULL == desc) return Qnil;
-  klass = rb_const_get(mNokogiriHtml, rb_intern(&quot;EntityDescription&quot;));
+  klass = rb_const_get(mNokogiriHtml, rb_intern("EntityDescription"));
 
   args[0] = INT2NUM((long)desc-&gt;value);
   args[1] = NOKOGIRI_STR_NEW2(desc-&gt;name);
@@ -286,7 +300,7 @@ static VALUE get(VALUE self, VALUE key)
 </div>
 
       <div id="footer">
-  Generated on Sun Jan  6 13:36:47 2019 by
+  Generated on Sun Jan  6 14:09:54 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.6.0).
 </div>

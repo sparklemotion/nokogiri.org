@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   Class: Nokogiri::HTML::Builder
   
-    &mdash; Documentation by YARD 0.9.16
+    — Documentation by YARD 0.9.16
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8">
 
 <script type="text/javascript" charset="utf-8">
   pathId = "Nokogiri::HTML::Builder";
@@ -25,7 +26,16 @@
   <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
 
 
-  </head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1260604-8');
+    </script>
+</head>
   <body>
     <div class="nav_wrap">
       <iframe id="nav" src="../../class_list.html?1"></iframe>
@@ -36,17 +46,16 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../_index.html">Index (B)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span>
-     &raquo; 
+    <a href="../../_index.html">Index (B)</a> »
+    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span>
+     » 
     <span class="title">Builder</span>
   
 </div>
 
         <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="../../class_list.html">
+    <a class="full_list_link" id="class_list_link" href="../../class_list.html">
 
         <svg width="24" height="24">
           <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
@@ -59,7 +68,8 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Nokogiri::HTML::Builder
+      <div id="content">
+<h1>Class: Nokogiri::HTML::Builder
   
   
   
@@ -69,12 +79,12 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName"><span class='object_link'><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span></span>
+      <span class="inheritName"><span class="object_link"><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span></span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next"><span class='object_link'><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span></li>
+            <li class="next"><span class="object_link"><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span></li>
           
             <li class="next">Nokogiri::HTML::Builder</li>
           
@@ -101,7 +111,8 @@
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+<div class="docstring">
   <div class="discussion">
     
 <p>Nokogiri HTML builder is used for building HTML documents.  It is very similar to the Nokogiri::XML::Builder.  In fact, you should go read the documentation for Nokogiri::XML::Builder before reading this documentation.</p>
@@ -110,16 +121,16 @@
 
 <p>Create an HTML document with a body that has an onload attribute, and a span tag with a class of “bold” that has content of “Hello world”.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_doc'>doc</span><span class='op'>|</span>
-  <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_html'>html</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lparen'>(</span><span class='symbol'>:onload</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>some_func();</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
-      <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_span'>span</span><span class='period'>.</span><span class='id identifier rubyid_bold'>bold</span> <span class='lbrace'>{</span>
-        <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span>
-      <span class='rbrace'>}</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_html'>to_html</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_doc">doc</span><span class="op">|</span>
+  <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_html">html</span> <span class="lbrace">{</span>
+    <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_body">body</span><span class="lparen">(</span><span class="symbol">:onload</span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">some_func();</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="lbrace">{</span>
+      <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_span">span</span><span class="period">.</span><span class="id identifier rubyid_bold">bold</span> <span class="lbrace">{</span>
+        <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_text">text</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Hello world</span><span class="tstring_end">"</span></span>
+      <span class="rbrace">}</span>
+    <span class="rbrace">}</span>
+  <span class="rbrace">}</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_html">to_html</span>
 </code></pre>
 
 <p>The HTML builder inherits from the XML builder, so make sure to read the Nokogiri::XML::Builder documentation.</p>
@@ -138,8 +149,9 @@
 
   <h2>Instance Attribute Summary</h2>
   
-  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../XML/Builder.html#arity-instance_method" title="Nokogiri::XML::Builder#arity (method)">#arity</a></span>, <span class='object_link'><a href="../XML/Builder.html#context-instance_method" title="Nokogiri::XML::Builder#context (method)">#context</a></span>, <span class='object_link'><a href="../XML/Builder.html#doc-instance_method" title="Nokogiri::XML::Builder#doc (method)">#doc</a></span>, <span class='object_link'><a href="../XML/Builder.html#parent-instance_method" title="Nokogiri::XML::Builder#parent (method)">#parent</a></span></p>
+  <h3 class="inherited">Attributes inherited from <span class="object_link"><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span>
+</h3>
+  <p class="inherited"><span class="object_link"><a href="../XML/Builder.html#arity-instance_method" title="Nokogiri::XML::Builder#arity (method)">#arity</a></span>, <span class="object_link"><a href="../XML/Builder.html#context-instance_method" title="Nokogiri::XML::Builder#context (method)">#context</a></span>, <span class="object_link"><a href="../XML/Builder.html#doc-instance_method" title="Nokogiri::XML::Builder#doc (method)">#doc</a></span>, <span class="object_link"><a href="../XML/Builder.html#parent-instance_method" title="Nokogiri::XML::Builder#parent (method)">#parent</a></span></p>
 
 
   
@@ -153,7 +165,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_html-instance_method" title="#to_html (instance method)">#<strong>to_html</strong>  &#x21d2; Object </a>
+      <a href="#to_html-instance_method" title="#to_html (instance method)">#<strong>to_html</strong>  ⇒ Object </a>
     
 
     
@@ -167,7 +179,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Convert the builder to HTML.</p>
 </div></span>
   
@@ -186,12 +198,13 @@
   
   
   
-  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../XML/Builder.html#<<-instance_method" title="Nokogiri::XML::Builder#&lt;&lt; (method)">#<<</a></span>, <span class='object_link'><a href="../XML/Builder.html#[]-instance_method" title="Nokogiri::XML::Builder#[] (method)">#[]</a></span>, <span class='object_link'><a href="../XML/Builder.html#cdata-instance_method" title="Nokogiri::XML::Builder#cdata (method)">#cdata</a></span>, <span class='object_link'><a href="../XML/Builder.html#comment-instance_method" title="Nokogiri::XML::Builder#comment (method)">#comment</a></span>, <span class='object_link'><a href="../XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="../XML/Builder.html#method_missing-instance_method" title="Nokogiri::XML::Builder#method_missing (method)">#method_missing</a></span>, <span class='object_link'><a href="../XML/Builder.html#text-instance_method" title="Nokogiri::XML::Builder#text (method)">#text</a></span>, <span class='object_link'><a href="../XML/Builder.html#to_xml-instance_method" title="Nokogiri::XML::Builder#to_xml (method)">#to_xml</a></span>, <span class='object_link'><a href="../XML/Builder.html#with-class_method" title="Nokogiri::XML::Builder.with (method)">with</a></span></p>
+  <h3 class="inherited">Methods inherited from <span class="object_link"><a href="../XML/Builder.html" title="Nokogiri::XML::Builder (class)">XML::Builder</a></span>
+</h3>
+  <p class="inherited"><span class="object_link"><a href="../XML/Builder.html#&lt;&lt;-instance_method" title="Nokogiri::XML::Builder#&lt;&lt; (method)">#&lt;&lt;</a></span>, <span class="object_link"><a href="../XML/Builder.html#%5B%5D-instance_method" title="Nokogiri::XML::Builder#[] (method)">#[]</a></span>, <span class="object_link"><a href="../XML/Builder.html#cdata-instance_method" title="Nokogiri::XML::Builder#cdata (method)">#cdata</a></span>, <span class="object_link"><a href="../XML/Builder.html#comment-instance_method" title="Nokogiri::XML::Builder#comment (method)">#comment</a></span>, <span class="object_link"><a href="../XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">#initialize</a></span>, <span class="object_link"><a href="../XML/Builder.html#method_missing-instance_method" title="Nokogiri::XML::Builder#method_missing (method)">#method_missing</a></span>, <span class="object_link"><a href="../XML/Builder.html#text-instance_method" title="Nokogiri::XML::Builder#text (method)">#text</a></span>, <span class="object_link"><a href="../XML/Builder.html#to_xml-instance_method" title="Nokogiri::XML::Builder#to_xml (method)">#to_xml</a></span>, <span class="object_link"><a href="../XML/Builder.html#with-class_method" title="Nokogiri::XML::Builder.with (method)">with</a></span></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
-    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="../XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">Nokogiri::XML::Builder</a></span></p>
+    <p class="notice">This class inherits a constructor from <span class="object_link"><a href="../XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">Nokogiri::XML::Builder</a></span></p>
   
 </div>
 <div id="method_missing_details" class="method_details_list">
@@ -199,7 +212,7 @@
   <p class="notice super">
     This class handles dynamic methods through the <tt>method_missing</tt> method
     
-      in the class <span class='object_link'><a href="../XML/Builder.html#method_missing-instance_method" title="Nokogiri::XML::Builder#method_missing (method)">Nokogiri::XML::Builder</a></span>
+      in the class <span class="object_link"><a href="../XML/Builder.html#method_missing-instance_method" title="Nokogiri::XML::Builder#method_missing (method)">Nokogiri::XML::Builder</a></span>
     
   </p>
   
@@ -213,13 +226,14 @@
       <div class="method_details first">
   <h3 class="signature first" id="to_html-instance_method">
   
-    #<strong>to_html</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>to_html</strong>  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Convert the builder to HTML</p>
@@ -230,7 +244,8 @@
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -243,9 +258,9 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/html/builder.rb', line 30</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_to_html'>to_html</span>
-  <span class='ivar'>@doc</span><span class='period'>.</span><span class='id identifier rubyid_to_html'>to_html</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_to_html">to_html</span>
+  <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_to_html">to_html</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -256,7 +271,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Jan  6 13:36:44 2019 by
+  Generated on Sun Jan  6 14:09:51 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.6.0).
 </div>

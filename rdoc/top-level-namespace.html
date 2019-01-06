@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   Top Level Namespace
   
-    &mdash; Documentation by YARD 0.9.16
+    — Documentation by YARD 0.9.16
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8">
 
 <script type="text/javascript" charset="utf-8">
   pathId = "";
@@ -25,7 +26,16 @@
   <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
 
-  </head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1260604-8');
+    </script>
+</head>
   <body>
     <div class="nav_wrap">
       <iframe id="nav" src="class_list.html?1"></iframe>
@@ -36,7 +46,7 @@
       <div id="header">
         <div id="menu">
   
-    <a href="_index.html">Index</a> &raquo;
+    <a href="_index.html">Index</a> »
     
     
     <span class="title">Top Level Namespace</span>
@@ -45,8 +55,7 @@
 
         <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="class_list.html">
+    <a class="full_list_link" id="class_list_link" href="class_list.html">
 
         <svg width="24" height="24">
           <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
@@ -59,7 +68,8 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Top Level Namespace
+      <div id="content">
+<h1>Top Level Namespace
   
   
   
@@ -82,7 +92,7 @@
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span>, <span class='object_link'><a href="XSD.html" title="XSD (module)">XSD</a></span>
+      <strong class="modules">Modules:</strong> <span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span>, <span class="object_link"><a href="XSD.html" title="XSD (module)">XSD</a></span>
     
   
     
@@ -106,7 +116,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#Nokogiri-instance_method" title="#Nokogiri (instance method)">#<strong>Nokogiri</strong>(*args, &amp;block)  &#x21d2; Object </a>
+      <a href="top-level-namespace.html#Nokogiri-instance_method" title="#Nokogiri (instance method)">#<strong>Nokogiri</strong>(*args, &amp;block)  ⇒ Object </a>
     
 
     
@@ -120,7 +130,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Parser a document contained in <code>args</code>.</p>
 </div></span>
   
@@ -139,13 +149,14 @@
       <div class="method_details first">
   <h3 class="signature first" id="Nokogiri-instance_method">
   
-    #<strong>Nokogiri</strong>(*args, &amp;block)  &#x21d2; <tt>Object</tt> 
+    #<strong>Nokogiri</strong>(*args, &amp;block)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Parser a document contained in <code>args</code>.  Nokogiri will try to guess what type of document you are attempting to parse.  For more information, see Nokogiri.parse</p>
@@ -158,7 +169,8 @@
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -175,13 +187,13 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 138</span>
 
-<span class='kw'>def</span> <span class='const'><span class='object_link'><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
-    <span class='const'><span class='object_link'><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Nokogiri/HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Nokogiri/HTML/Builder.html" title="Nokogiri::HTML::Builder (class)">Builder</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Nokogiri/XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_doc'><span class='object_link'><a href="Nokogiri/XML/Builder.html#doc-instance_method" title="Nokogiri::XML::Builder#doc (method)">doc</a></span></span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span>
-  <span class='kw'>else</span>
-    <span class='const'><span class='object_link'><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="Nokogiri.html#parse-class_method" title="Nokogiri.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="const"><span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
+    <span class="const"><span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/HTML/Builder.html" title="Nokogiri::HTML::Builder (class)">Builder</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Nokogiri/XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_doc"><span class="object_link"><a href="Nokogiri/XML/Builder.html#doc-instance_method" title="Nokogiri::XML::Builder#doc (method)">doc</a></span></span><span class="period">.</span><span class="id identifier rubyid_root">root</span>
+  <span class="kw">else</span>
+    <span class="const"><span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="Nokogiri.html#parse-class_method" title="Nokogiri.parse (method)">parse</a></span></span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
+  <span class="kw">end</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -192,7 +204,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Jan  6 13:36:41 2019 by
+  Generated on Sun Jan  6 14:09:49 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.6.0).
 </div>

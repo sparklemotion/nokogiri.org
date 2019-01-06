@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   Class: Nokogiri::XML::Builder
   
-    &mdash; Documentation by YARD 0.9.16
+    — Documentation by YARD 0.9.16
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8">
 
 <script type="text/javascript" charset="utf-8">
   pathId = "Nokogiri::XML::Builder";
@@ -25,7 +26,16 @@
   <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
 
 
-  </head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1260604-8');
+    </script>
+</head>
   <body>
     <div class="nav_wrap">
       <iframe id="nav" src="../../class_list.html?1"></iframe>
@@ -36,17 +46,16 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../_index.html">Index (B)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
-     &raquo; 
+    <a href="../../_index.html">Index (B)</a> »
+    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
+     » 
     <span class="title">Builder</span>
   
 </div>
 
         <div id="search">
   
-    <a class="full_list_link" id="class_list_link"
-        href="../../class_list.html">
+    <a class="full_list_link" id="class_list_link" href="../../class_list.html">
 
         <svg width="24" height="24">
           <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
@@ -59,7 +68,8 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Nokogiri::XML::Builder
+      <div id="content">
+<h1>Class: Nokogiri::XML::Builder
   
   
   
@@ -99,29 +109,30 @@
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
+<h2>Overview</h2>
+<div class="docstring">
   <div class="discussion">
     
 <p>Nokogiri builder can be used for building XML and HTML documents.</p>
 
 <h2 id="label-Synopsis-3A">Synopsis:</h2>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_products'>products</span> <span class='lbrace'>{</span>
-      <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_widget'>widget</span> <span class='lbrace'>{</span>
-        <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_id_'>id_</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>10</span><span class='tstring_end'>&quot;</span></span>
-        <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Awesome widget</span><span class='tstring_end'>&quot;</span></span>
-      <span class='rbrace'>}</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_root">root</span> <span class="lbrace">{</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_products">products</span> <span class="lbrace">{</span>
+      <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_widget">widget</span> <span class="lbrace">{</span>
+        <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_id_">id_</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">10</span><span class="tstring_end">"</span></span>
+        <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_name">name</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Awesome widget</span><span class="tstring_end">"</span></span>
+      <span class="rbrace">}</span>
+    <span class="rbrace">}</span>
+  <span class="rbrace">}</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
 </code></pre>
 
 <p>Will output:</p>
 
-<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre class="code ruby"><code class="ruby">&lt;?xml version="1.0"?&gt;
 &lt;root&gt;
   &lt;products&gt;
     &lt;widget&gt;
@@ -134,18 +145,18 @@
 
 <h3 id="label-Builder+scope">Builder scope</h3>
 
-<p>The builder allows two forms.  When the builder is supplied with a block that has a parameter, the outside scope is maintained.  This means you can access variables that are outside your builder.  If you don&#39;t need outside scope, you can use the builder without the “xml” prefix like this:</p>
+<p>The builder allows two forms.  When the builder is supplied with a block that has a parameter, the outside scope is maintained.  This means you can access variables that are outside your builder.  If you don't need outside scope, you can use the builder without the “xml” prefix like this:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_products'>products</span> <span class='lbrace'>{</span>
-      <span class='id identifier rubyid_widget'>widget</span> <span class='lbrace'>{</span>
-        <span class='id identifier rubyid_id_'>id_</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>10</span><span class='tstring_end'>&quot;</span></span>
-        <span class='id identifier rubyid_name'>name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Awesome widget</span><span class='tstring_end'>&quot;</span></span>
-      <span class='rbrace'>}</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span>
+  <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class="lbrace">{</span>
+    <span class="id identifier rubyid_products">products</span> <span class="lbrace">{</span>
+      <span class="id identifier rubyid_widget">widget</span> <span class="lbrace">{</span>
+        <span class="id identifier rubyid_id_">id_</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">10</span><span class="tstring_end">"</span></span>
+        <span class="id identifier rubyid_name">name</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Awesome widget</span><span class="tstring_end">"</span></span>
+      <span class="rbrace">}</span>
+    <span class="rbrace">}</span>
+  <span class="rbrace">}</span>
+<span class="kw">end</span>
 </code></pre>
 
 <h2 id="label-Special+Tags">Special Tags</h2>
@@ -154,27 +165,27 @@
 
 <p>Here is an example of using the underscore to disambiguate tag names from ruby methods:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='ivar'>@objects</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rbracket'>]</span>
+<pre class="code ruby"><code class="ruby"><span class="ivar">@objects</span> <span class="op">=</span> <span class="lbracket">[</span><span class="const">Object</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="comma">,</span> <span class="const">Object</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="comma">,</span> <span class="const">Object</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="rbracket">]</span>
 
-<span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_objects'>objects</span> <span class='lbrace'>{</span>
-      <span class='ivar'>@objects</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span>
-        <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_object'>object</span> <span class='lbrace'>{</span>
-          <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_type_'>type_</span>   <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span>
-          <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_class_'>class_</span>  <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
-          <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_id_'>id_</span>     <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
-        <span class='rbrace'>}</span>
-      <span class='kw'>end</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
+<span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_root">root</span> <span class="lbrace">{</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_objects">objects</span> <span class="lbrace">{</span>
+      <span class="ivar">@objects</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_o">o</span><span class="op">|</span>
+        <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_object">object</span> <span class="lbrace">{</span>
+          <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_type_">type_</span>   <span class="id identifier rubyid_o">o</span><span class="period">.</span><span class="id identifier rubyid_type">type</span>
+          <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_class_">class_</span>  <span class="id identifier rubyid_o">o</span><span class="period">.</span><span class="id identifier rubyid_class">class</span><span class="period">.</span><span class="id identifier rubyid_name">name</span>
+          <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_id_">id_</span>     <span class="id identifier rubyid_o">o</span><span class="period">.</span><span class="id identifier rubyid_id">id</span>
+        <span class="rbrace">}</span>
+      <span class="kw">end</span>
+    <span class="rbrace">}</span>
+  <span class="rbrace">}</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
 </code></pre>
 
 <p>The underscore may be used with any tag name, and the last underscore will just be removed.  This code will output the following XML:</p>
 
-<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre class="code ruby"><code class="ruby">&lt;?xml version="1.0"?&gt;
 &lt;root&gt;
   &lt;objects&gt;
     &lt;object&gt;
@@ -200,18 +211,18 @@
 
 <p>Tag attributes may be supplied as method arguments.  Here is our previous example, but using attributes rather than tags:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='ivar'>@objects</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rbracket'>]</span>
+<pre class="code ruby"><code class="ruby"><span class="ivar">@objects</span> <span class="op">=</span> <span class="lbracket">[</span><span class="const">Object</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="comma">,</span> <span class="const">Object</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="comma">,</span> <span class="const">Object</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="rbracket">]</span>
 
-<span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_objects'>objects</span> <span class='lbrace'>{</span>
-      <span class='ivar'>@objects</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span>
-        <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_object'>object</span><span class='lparen'>(</span><span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='symbol'>:class</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-      <span class='kw'>end</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
+<span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_root">root</span> <span class="lbrace">{</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_objects">objects</span> <span class="lbrace">{</span>
+      <span class="ivar">@objects</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_o">o</span><span class="op">|</span>
+        <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_object">object</span><span class="lparen">(</span><span class="symbol">:type</span> <span class="op">=&gt;</span> <span class="id identifier rubyid_o">o</span><span class="period">.</span><span class="id identifier rubyid_type">type</span><span class="comma">,</span> <span class="symbol">:class</span> <span class="op">=&gt;</span> <span class="id identifier rubyid_o">o</span><span class="period">.</span><span class="id identifier rubyid_class">class</span><span class="comma">,</span> <span class="symbol">:id</span> <span class="op">=&gt;</span> <span class="id identifier rubyid_o">o</span><span class="period">.</span><span class="id identifier rubyid_id">id</span><span class="rparen">)</span>
+      <span class="kw">end</span>
+    <span class="rbrace">}</span>
+  <span class="rbrace">}</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
 </code></pre>
 
 <h3 id="label-Tag+Attribute+Short+Cuts">Tag Attribute Short Cuts</h3>
@@ -220,22 +231,22 @@
 
 <p>This example builds an “object” tag with the class attribute “classy” and the id of “thing”:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_objects'>objects</span> <span class='lbrace'>{</span>
-      <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_object'>object</span><span class='period'>.</span><span class='id identifier rubyid_classy'>classy</span><span class='period'>.</span><span class='id identifier rubyid_thing!'>thing!</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_root">root</span> <span class="lbrace">{</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_objects">objects</span> <span class="lbrace">{</span>
+      <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_object">object</span><span class="period">.</span><span class="id identifier rubyid_classy">classy</span><span class="period">.</span><span class="id identifier rubyid_thing!">thing!</span>
+    <span class="rbrace">}</span>
+  <span class="rbrace">}</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
 </code></pre>
 
 <p>Which will output:</p>
 
-<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre class="code ruby"><code class="ruby">&lt;?xml version="1.0"?&gt;
 &lt;root&gt;
   &lt;objects&gt;
-    &lt;object class=&quot;classy&quot; id=&quot;thing&quot;/&gt;
+    &lt;object class="classy" id="thing"/&gt;
   &lt;/objects&gt;
 &lt;/root&gt;
 </code></pre>
@@ -246,18 +257,18 @@
 
 <p>Namespaces are added similarly to attributes.  Nokogiri::XML::Builder assumes that when an attribute starts with “xmlns”, it is meant to be a namespace:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>default</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns:foo</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_tenderlove'>tenderlove</span>
-  <span class='kw'>end</span>
-<span class='rbrace'>}</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_root">root</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">xmlns</span><span class="tstring_end">'</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">default</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">xmlns:foo</span><span class="tstring_end">'</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bar</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="kw">do</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_tenderlove">tenderlove</span>
+  <span class="kw">end</span>
+<span class="rbrace">}</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
 </code></pre>
 
 <p>Will output XML like this:</p>
 
-<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;root xmlns:foo=&quot;bar&quot; xmlns=&quot;default&quot;&gt;
+<pre class="code ruby"><code class="ruby">&lt;?xml version="1.0"?&gt;
+&lt;root xmlns:foo="bar" xmlns="default"&gt;
   &lt;tenderlove/&gt;
 &lt;/root&gt;
 </code></pre>
@@ -268,22 +279,22 @@
 
 <p>For example:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xmlns:foo</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_objects'>objects</span> <span class='lbrace'>{</span>
-      <span class='id identifier rubyid_xml'>xml</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foo</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_object'>object</span><span class='period'>.</span><span class='id identifier rubyid_classy'>classy</span><span class='period'>.</span><span class='id identifier rubyid_thing!'>thing!</span>
-    <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_root">root</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">xmlns:foo</span><span class="tstring_end">'</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bar</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="lbrace">{</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_objects">objects</span> <span class="lbrace">{</span>
+      <span class="id identifier rubyid_xml">xml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">foo</span><span class="tstring_end">'</span></span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_object">object</span><span class="period">.</span><span class="id identifier rubyid_classy">classy</span><span class="period">.</span><span class="id identifier rubyid_thing!">thing!</span>
+    <span class="rbrace">}</span>
+  <span class="rbrace">}</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
 </code></pre>
 
 <p>Will output this XML:</p>
 
-<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;root xmlns:foo=&quot;bar&quot;&gt;
+<pre class="code ruby"><code class="ruby">&lt;?xml version="1.0"?&gt;
+&lt;root xmlns:foo="bar"&gt;
   &lt;objects&gt;
-    &lt;foo:object class=&quot;classy&quot; id=&quot;thing&quot;/&gt;
+    &lt;foo:object class="classy" id="thing"/&gt;
   &lt;/objects&gt;
 &lt;/root&gt;
 </code></pre>
@@ -296,24 +307,24 @@
 
 <p>For example, this Ruby:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'>Builder</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_create_internal_subset'>create_internal_subset</span><span class='lparen'>(</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>html</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-//W3C//DTD HTML 4.01 Transitional//EN</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.w3.org/TR/html4/loose.dtd</span><span class='tstring_end'>&quot;</span></span>
-  <span class='rparen'>)</span>
-  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_foo'>foo</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_create_internal_subset">create_internal_subset</span><span class="lparen">(</span>
+    <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">html</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+    <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">-//W3C//DTD HTML 4.01 Transitional//EN</span><span class="tstring_end">"</span></span><span class="comma">,</span>
+    <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">http://www.w3.org/TR/html4/loose.dtd</span><span class="tstring_end">"</span></span>
+  <span class="rparen">)</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_root">root</span> <span class="kw">do</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_foo">foo</span>
+  <span class="kw">end</span>
+<span class="kw">end</span>
 
-<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span>
+<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
 </code></pre>
 
 <p>Will output this xml:</p>
 
-<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+<pre class="code ruby"><code class="ruby">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
 &lt;root&gt;
   &lt;foo/&gt;
 &lt;/root&gt;
@@ -325,9 +336,10 @@
 <div class="tags">
   
 
-</div><div id="subclasses">
+</div>
+<div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="../HTML/Builder.html" title="Nokogiri::HTML::Builder (class)">HTML::Builder</a></span></p>
+  <p class="children"><span class="object_link"><a href="../HTML/Builder.html" title="Nokogiri::HTML::Builder (class)">HTML::Builder</a></span></p>
 </div>
 <h2>Defined Under Namespace</h2>
 <p class="children">
@@ -335,7 +347,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Builder/NodeBuilder.html" title="Nokogiri::XML::Builder::NodeBuilder (class)">NodeBuilder</a></span>
+      <strong class="classes">Classes:</strong> <span class="object_link"><a href="Builder/NodeBuilder.html" title="Nokogiri::XML::Builder::NodeBuilder (class)">NodeBuilder</a></span>
     
   
 </p>
@@ -343,13 +355,14 @@
 
 
 
-  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
   <ul class="summary">
     
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#arity-instance_method" title="#arity (instance method)">#<strong>arity</strong>  &#x21d2; Object </a>
+      <a href="#arity-instance_method" title="#arity (instance method)">#<strong>arity</strong>  ⇒ Object </a>
     
 
     
@@ -366,7 +379,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>:nodoc:.</p>
 </div></span>
   
@@ -376,7 +389,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#context-instance_method" title="#context (instance method)">#<strong>context</strong>  &#x21d2; Object </a>
+      <a href="#context-instance_method" title="#context (instance method)">#<strong>context</strong>  ⇒ Object </a>
     
 
     
@@ -393,7 +406,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>A context object for use when the block has no arguments.</p>
 </div></span>
   
@@ -403,7 +416,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#doc-instance_method" title="#doc (instance method)">#<strong>doc</strong>  &#x21d2; Object </a>
+      <a href="#doc-instance_method" title="#doc (instance method)">#<strong>doc</strong>  ⇒ Object </a>
     
 
     
@@ -420,7 +433,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>The current Document object being built.</p>
 </div></span>
   
@@ -430,7 +443,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parent-instance_method" title="#parent (instance method)">#<strong>parent</strong>  &#x21d2; Object </a>
+      <a href="#parent-instance_method" title="#parent (instance method)">#<strong>parent</strong>  ⇒ Object </a>
     
 
     
@@ -447,7 +460,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>The parent of the current node being built.</p>
 </div></span>
   
@@ -470,7 +483,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#with-class_method" title="with (class method)">.<strong>with</strong>(root, &amp;block)  &#x21d2; Object </a>
+      <a href="#with-class_method" title="with (class method)">.<strong>with</strong>(root, &amp;block)  ⇒ Object </a>
     
 
     
@@ -484,7 +497,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Create a builder with an existing root object.</p>
 </div></span>
   
@@ -503,7 +516,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#<<-instance_method" title="#&lt;&lt; (instance method)">#<strong>&lt;&lt;</strong>(string)  &#x21d2; Object </a>
+      <a href="#&lt;&lt;-instance_method" title="#&lt;&lt; (instance method)">#<strong>&lt;&lt;</strong>(string)  ⇒ Object </a>
     
 
     
@@ -517,7 +530,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Append the given raw XML <code>string</code> to the document.</p>
 </div></span>
   
@@ -527,7 +540,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(ns)  &#x21d2; Object </a>
+      <a href="#%5B%5D-instance_method" title="#[] (instance method)">#<strong>[]</strong>(ns)  ⇒ Object </a>
     
 
     
@@ -541,7 +554,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Build a tag that is associated with namespace <code>ns</code>.</p>
 </div></span>
   
@@ -551,7 +564,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#cdata-instance_method" title="#cdata (instance method)">#<strong>cdata</strong>(string)  &#x21d2; Object </a>
+      <a href="#cdata-instance_method" title="#cdata (instance method)">#<strong>cdata</strong>(string)  ⇒ Object </a>
     
 
     
@@ -565,7 +578,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Create a CDATA Node with content of <code>string</code>.</p>
 </div></span>
   
@@ -575,7 +588,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#comment-instance_method" title="#comment (instance method)">#<strong>comment</strong>(string)  &#x21d2; Object </a>
+      <a href="#comment-instance_method" title="#comment (instance method)">#<strong>comment</strong>(string)  ⇒ Object </a>
     
 
     
@@ -589,7 +602,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Create a Comment Node with content of <code>string</code>.</p>
 </div></span>
   
@@ -599,7 +612,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(options = {}, root = nil, &amp;block)  &#x21d2; Builder </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(options = {}, root = nil, &amp;block)  ⇒ Builder </a>
     
 
     
@@ -615,7 +628,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Create a new Builder object.</p>
 </div></span>
   
@@ -625,7 +638,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#method_missing-instance_method" title="#method_missing (instance method)">#<strong>method_missing</strong>(method, *args, &amp;block)  &#x21d2; Object </a>
+      <a href="#method_missing-instance_method" title="#method_missing (instance method)">#<strong>method_missing</strong>(method, *args, &amp;block)  ⇒ Object </a>
     
 
     
@@ -639,7 +652,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>:nodoc:.</p>
 </div></span>
   
@@ -649,7 +662,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#text-instance_method" title="#text (instance method)">#<strong>text</strong>(string)  &#x21d2; Object </a>
+      <a href="#text-instance_method" title="#text (instance method)">#<strong>text</strong>(string)  ⇒ Object </a>
     
 
     
@@ -663,7 +676,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Create a Text Node with content of <code>string</code>.</p>
 </div></span>
   
@@ -673,7 +686,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_xml-instance_method" title="#to_xml (instance method)">#<strong>to_xml</strong>(*args)  &#x21d2; Object </a>
+      <a href="#to_xml-instance_method" title="#to_xml (instance method)">#<strong>to_xml</strong>(*args)  ⇒ Object </a>
     
 
     
@@ -687,7 +700,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class="inline">
 <p>Convert this Builder object to XML.</p>
 </div></span>
   
@@ -703,20 +716,21 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(options = {}, root = nil, &amp;block)  &#x21d2; <tt><span class='object_link'><a href="" title="Nokogiri::XML::Builder (class)">Builder</a></span></tt> 
+    #<strong>initialize</strong>(options = {}, root = nil, &amp;block)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Builder (class)">Builder</a></span></tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Create a new Builder object.  <code>options</code> are sent to the top level Document that is being built.</p>
 
 <p>Building a document with a particular encoding for example:</p>
 
-<pre class="code ruby"><code class="ruby">Nokogiri::XML::Builder.new(:encoding =&gt; &#39;UTF-8&#39;) do |xml|
+<pre class="code ruby"><code class="ruby">Nokogiri::XML::Builder.new(:encoding =&gt; 'UTF-8') do |xml|
   ...
 end
 </code></pre>
@@ -727,7 +741,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -769,38 +784,38 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 266</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+<span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="comma">,</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
 
-  <span class='kw'>if</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span>
-    <span class='ivar'>@doc</span>    <span class='op'>=</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class='period'>.</span><span class='id identifier rubyid_document'>document</span>
-    <span class='ivar'>@parent</span> <span class='op'>=</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_namespace'>namespace</span>     <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>::</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_namespace'>namespace</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Document</span><span class='tstring_end'>&#39;</span></span>
-    <span class='ivar'>@doc</span>          <span class='op'>=</span> <span class='id identifier rubyid_eval'>eval</span><span class='lparen'>(</span><span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>::</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-    <span class='ivar'>@parent</span>       <span class='op'>=</span> <span class='ivar'>@doc</span>
-  <span class='kw'>end</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span>
+    <span class="ivar">@doc</span>    <span class="op">=</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="period">.</span><span class="id identifier rubyid_document">document</span>
+    <span class="ivar">@parent</span> <span class="op">=</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span>
+  <span class="kw">else</span>
+    <span class="id identifier rubyid_namespace">namespace</span>     <span class="op">=</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_class">class</span><span class="period">.</span><span class="id identifier rubyid_name">name</span><span class="period">.</span><span class="id identifier rubyid_split">split</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">::</span><span class="tstring_end">'</span></span><span class="rparen">)</span>
+    <span class="id identifier rubyid_namespace">namespace</span><span class="lbracket">[</span><span class="op">-</span><span class="int">1</span><span class="rbracket">]</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">Document</span><span class="tstring_end">'</span></span>
+    <span class="ivar">@doc</span>          <span class="op">=</span> <span class="id identifier rubyid_eval">eval</span><span class="lparen">(</span><span class="id identifier rubyid_namespace">namespace</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">::</span><span class="tstring_end">'</span></span><span class="rparen">)</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_new">new</span>
+    <span class="ivar">@parent</span>       <span class="op">=</span> <span class="ivar">@doc</span>
+  <span class="kw">end</span>
 
-  <span class='ivar'>@context</span>  <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='ivar'>@arity</span>    <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='ivar'>@ns</span>       <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class="ivar">@context</span>  <span class="op">=</span> <span class="kw">nil</span>
+  <span class="ivar">@arity</span>    <span class="op">=</span> <span class="kw">nil</span>
+  <span class="ivar">@ns</span>       <span class="op">=</span> <span class="kw">nil</span>
 
-  <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
-    <span class='ivar'>@doc</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:&quot;#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+  <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_k">k</span><span class="comma">,</span><span class="id identifier rubyid_v">v</span><span class="op">|</span>
+    <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_send">send</span><span class="lparen">(</span><span class="symbol">:"#{</span><span class="id identifier rubyid_k">k</span><span class="embexpr_end">}</span><span class="tstring_content">=</span><span class="tstring_end">"</span><span class="comma">,</span> <span class="id identifier rubyid_v">v</span><span class="rparen">)</span>
+  <span class="kw">end</span>
 
-  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+  <span class="kw">return</span> <span class="kw">unless</span> <span class="id identifier rubyid_block_given?">block_given?</span>
 
-  <span class='ivar'>@arity</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_arity'>arity</span>
-  <span class='kw'>if</span> <span class='ivar'>@arity</span> <span class='op'>&lt;=</span> <span class='int'>0</span>
-    <span class='ivar'>@context</span> <span class='op'>=</span> <span class='id identifier rubyid_eval'>eval</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>self</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_binding'>binding</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>
-    <span class='kw'>yield</span> <span class='kw'>self</span>
-  <span class='kw'>end</span>
+  <span class="ivar">@arity</span> <span class="op">=</span> <span class="id identifier rubyid_block">block</span><span class="period">.</span><span class="id identifier rubyid_arity">arity</span>
+  <span class="kw">if</span> <span class="ivar">@arity</span> <span class="op">&lt;=</span> <span class="int">0</span>
+    <span class="ivar">@context</span> <span class="op">=</span> <span class="id identifier rubyid_eval">eval</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">self</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="id identifier rubyid_block">block</span><span class="period">.</span><span class="id identifier rubyid_binding">binding</span><span class="rparen">)</span>
+    <span class="id identifier rubyid_instance_eval">instance_eval</span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+  <span class="kw">else</span>
+    <span class="kw">yield</span> <span class="kw">self</span>
+  <span class="kw">end</span>
 
-  <span class='ivar'>@parent</span> <span class='op'>=</span> <span class='ivar'>@doc</span>
-<span class='kw'>end</span></pre>
+  <span class="ivar">@parent</span> <span class="op">=</span> <span class="ivar">@doc</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -817,13 +832,14 @@ end
     <div class="method_details first">
   <h3 class="signature first" id="method_missing-instance_method">
   
-    #<strong>method_missing</strong>(method, *args, &amp;block)  &#x21d2; <tt>Object</tt> 
+    #<strong>method_missing</strong>(method, *args, &amp;block)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>:nodoc:</p>
@@ -834,7 +850,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -867,29 +884,29 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 355</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span> <span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span> <span class='comment'># :nodoc:
-</span>  <span class='kw'>if</span> <span class='ivar'>@context</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span><span class='rparen'>)</span>
-    <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='ivar'>@doc</span><span class='period'>.</span><span class='id identifier rubyid_create_element'>create_element</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[_!]$</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span>
-      <span class='comment'># Set up the namespace
-</span>      <span class='kw'>if</span> <span class='ivar'>@ns</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Namespace.html" title="Nokogiri::XML::Namespace (class)">Namespace</a></span></span>
-        <span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='ivar'>@ns</span>
-        <span class='ivar'>@ns</span> <span class='op'>=</span> <span class='kw'>nil</span>
-      <span class='kw'>end</span>
-    <span class='rbrace'>}</span>
+<span class="kw">def</span> <span class="id identifier rubyid_method_missing">method_missing</span> <span class="id identifier rubyid_method">method</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span> <span class="comment"># :nodoc:
+</span>  <span class="kw">if</span> <span class="ivar">@context</span> <span class="op">&amp;&amp;</span> <span class="ivar">@context</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="id identifier rubyid_method">method</span><span class="rparen">)</span>
+    <span class="ivar">@context</span><span class="period">.</span><span class="id identifier rubyid_send">send</span><span class="lparen">(</span><span class="id identifier rubyid_method">method</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+  <span class="kw">else</span>
+    <span class="id identifier rubyid_node">node</span> <span class="op">=</span> <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_create_element">create_element</span><span class="lparen">(</span><span class="id identifier rubyid_method">method</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="period">.</span><span class="id identifier rubyid_sub">sub</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">[_!]$</span><span class="regexp_end">/</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_end">'</span></span><span class="rparen">)</span><span class="comma">,</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_n">n</span><span class="op">|</span>
+      <span class="comment"># Set up the namespace
+</span>      <span class="kw">if</span> <span class="ivar">@ns</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Namespace.html" title="Nokogiri::XML::Namespace (class)">Namespace</a></span></span>
+        <span class="id identifier rubyid_n">n</span><span class="period">.</span><span class="id identifier rubyid_namespace">namespace</span> <span class="op">=</span> <span class="ivar">@ns</span>
+        <span class="ivar">@ns</span> <span class="op">=</span> <span class="kw">nil</span>
+      <span class="kw">end</span>
+    <span class="rbrace">}</span>
 
-    <span class='kw'>if</span> <span class='ivar'>@ns</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Hash</span>
-      <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_namespace_definitions'>namespace_definitions</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>==</span> <span class='ivar'>@ns</span><span class='lbracket'>[</span><span class='symbol'>:pending</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Namespace </span><span class='embexpr_beg'>#{</span><span class='ivar'>@ns</span><span class='lbracket'>[</span><span class='symbol'>:pending</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'> has not been defined</span><span class='tstring_end'>&quot;</span></span>
-      <span class='kw'>end</span>
-      <span class='ivar'>@ns</span> <span class='op'>=</span> <span class='kw'>nil</span>
-    <span class='kw'>end</span>
+    <span class="kw">if</span> <span class="ivar">@ns</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span> <span class="const">Hash</span>
+      <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_namespace">namespace</span> <span class="op">=</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_namespace_definitions">namespace_definitions</span><span class="period">.</span><span class="id identifier rubyid_find">find</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_x">x</span><span class="period">.</span><span class="id identifier rubyid_prefix">prefix</span> <span class="op">==</span> <span class="ivar">@ns</span><span class="lbracket">[</span><span class="symbol">:pending</span><span class="rbracket">]</span> <span class="rbrace">}</span>
+      <span class="kw">if</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_namespace">namespace</span><span class="period">.</span><span class="id identifier rubyid_nil?">nil?</span>
+        <span class="id identifier rubyid_raise">raise</span> <span class="const">ArgumentError</span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Namespace </span><span class="embexpr_beg">#{</span><span class="ivar">@ns</span><span class="lbracket">[</span><span class="symbol">:pending</span><span class="rbracket">]</span><span class="embexpr_end">}</span><span class="tstring_content"> has not been defined</span><span class="tstring_end">"</span></span>
+      <span class="kw">end</span>
+      <span class="ivar">@ns</span> <span class="op">=</span> <span class="kw">nil</span>
+    <span class="kw">end</span>
 
-    <span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+    <span class="id identifier rubyid_insert">insert</span><span class="lparen">(</span><span class="id identifier rubyid_node">node</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+  <span class="kw">end</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -905,13 +922,14 @@ end
       <div class="method_details first">
   <h3 class="signature first" id="arity-instance_method">
   
-    #<strong>arity</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>arity</strong>  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>:nodoc:</p>
@@ -922,7 +940,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -935,9 +954,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 237</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_arity'>arity</span>
-  <span class='ivar'>@arity</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_arity">arity</span>
+  <span class="ivar">@arity</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -948,13 +967,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="context-instance_method">
   
-    #<strong>context</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>context</strong>  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>A context object for use when the block has no arguments</p>
@@ -965,7 +985,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -978,9 +999,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 235</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_context'>context</span>
-  <span class='ivar'>@context</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_context">context</span>
+  <span class="ivar">@context</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -991,13 +1012,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="doc-instance_method">
   
-    #<strong>doc</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>doc</strong>  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The current Document object being built</p>
@@ -1008,7 +1030,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1021,9 +1044,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 229</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_doc'>doc</span>
-  <span class='ivar'>@doc</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_doc">doc</span>
+  <span class="ivar">@doc</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1034,13 +1057,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="parent-instance_method">
   
-    #<strong>parent</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>parent</strong>  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The parent of the current node being built</p>
@@ -1051,7 +1075,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1064,9 +1089,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 232</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_parent'>parent</span>
-  <span class='ivar'>@parent</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_parent">parent</span>
+  <span class="ivar">@parent</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1082,24 +1107,25 @@ end
       <div class="method_details first">
   <h3 class="signature first" id="with-class_method">
   
-    .<strong>with</strong>(root, &amp;block)  &#x21d2; <tt>Object</tt> 
+    .<strong>with</strong>(root, &amp;block)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Create a builder with an existing root object.  This is for use when you have an existing document that you would like to augment with builder methods.  The builder context created will start with the given <code>root</code> node.</p>
 
 <p>For example:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>somedoc.xml</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
-<span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Nokogiri::XML::Builder (class)">Builder</a></span></span><span class='period'>.</span><span class='id identifier rubyid_with'>with</span><span class='lparen'>(</span><span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>some_tag</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_xml'>xml</span><span class='op'>|</span>
-  <span class='comment'># ... Use normal builder methods here ...
-</span>  <span class='id identifier rubyid_xml'>xml</span><span class='period'>.</span><span class='id identifier rubyid_awesome'>awesome</span> <span class='comment'># add the &quot;awesome&quot; tag below &quot;some_tag&quot;
-</span><span class='kw'>end</span>
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_doc">doc</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_open">open</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">somedoc.xml</span><span class="tstring_end">'</span></span><span class="rparen">)</span><span class="rparen">)</span>
+<span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="" title="Nokogiri::XML::Builder (class)">Builder</a></span></span><span class="period">.</span><span class="id identifier rubyid_with">with</span><span class="lparen">(</span><span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_at">at</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">some_tag</span><span class="tstring_end">'</span></span><span class="rparen">)</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="comment"># ... Use normal builder methods here ...
+</span>  <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="id identifier rubyid_awesome">awesome</span> <span class="comment"># add the "awesome" tag below "some_tag"
+</span><span class="kw">end</span>
 </code></pre>
 
 
@@ -1108,7 +1134,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1121,9 +1148,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 253</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_with'>with</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
-  <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_with">with</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
+  <span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="comma">,</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1136,15 +1163,16 @@ end
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="<<-instance_method">
+  <h3 class="signature first" id="&lt;&lt;-instance_method">
   
-    #<strong>&lt;&lt;</strong>(string)  &#x21d2; <tt>Object</tt> 
-  
-
+    #<strong>&lt;&lt;</strong>(string)  ⇒ <tt>Object</tt> 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Append the given raw XML <code>string</code> to the document</p>
@@ -1155,7 +1183,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1168,9 +1197,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 351</span>
 
-<span class='kw'>def</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_string'>string</span>
-  <span class='ivar'>@doc</span><span class='period'>.</span><span class='id identifier rubyid_fragment'>fragment</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="op">&lt;&lt;</span> <span class="id identifier rubyid_string">string</span>
+  <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_children">children</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_insert">insert</span><span class="lparen">(</span><span class="id identifier rubyid_x">x</span><span class="rparen">)</span> <span class="rbrace">}</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1179,13 +1208,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="[]-instance_method">
   
-    #<strong>[]</strong>(ns)  &#x21d2; <tt>Object</tt> 
+    #<strong>[]</strong>(ns)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Build a tag that is associated with namespace <code>ns</code>.  Raises an ArgumentError if <code>ns</code> has not been defined higher in the tree.</p>
@@ -1196,7 +1226,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1221,21 +1252,21 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 320</span>
 
-<span class='kw'>def</span> <span class='op'>[]</span> <span class='id identifier rubyid_ns'>ns</span>
-  <span class='kw'>if</span> <span class='ivar'>@parent</span> <span class='op'>!=</span> <span class='ivar'>@doc</span>
-    <span class='ivar'>@ns</span> <span class='op'>=</span> <span class='ivar'>@parent</span><span class='period'>.</span><span class='id identifier rubyid_namespace_definitions'>namespace_definitions</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>==</span> <span class='id identifier rubyid_ns'>ns</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
-  <span class='kw'>end</span>
-  <span class='kw'>return</span> <span class='kw'>self</span> <span class='kw'>if</span> <span class='ivar'>@ns</span>
+<span class="kw">def</span> <span class="op">[]</span> <span class="id identifier rubyid_ns">ns</span>
+  <span class="kw">if</span> <span class="ivar">@parent</span> <span class="op">!=</span> <span class="ivar">@doc</span>
+    <span class="ivar">@ns</span> <span class="op">=</span> <span class="ivar">@parent</span><span class="period">.</span><span class="id identifier rubyid_namespace_definitions">namespace_definitions</span><span class="period">.</span><span class="id identifier rubyid_find">find</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_x">x</span><span class="period">.</span><span class="id identifier rubyid_prefix">prefix</span> <span class="op">==</span> <span class="id identifier rubyid_ns">ns</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span> <span class="rbrace">}</span>
+  <span class="kw">end</span>
+  <span class="kw">return</span> <span class="kw">self</span> <span class="kw">if</span> <span class="ivar">@ns</span>
 
-  <span class='ivar'>@parent</span><span class='period'>.</span><span class='id identifier rubyid_ancestors'>ancestors</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span>
-    <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>==</span> <span class='id identifier rubyid_doc'>doc</span>
-    <span class='ivar'>@ns</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_namespace_definitions'>namespace_definitions</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>==</span> <span class='id identifier rubyid_ns'>ns</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
-    <span class='kw'>return</span> <span class='kw'>self</span> <span class='kw'>if</span> <span class='ivar'>@ns</span>
-  <span class='kw'>end</span>
+  <span class="ivar">@parent</span><span class="period">.</span><span class="id identifier rubyid_ancestors">ancestors</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_a">a</span><span class="op">|</span>
+    <span class="kw">next</span> <span class="kw">if</span> <span class="id identifier rubyid_a">a</span> <span class="op">==</span> <span class="id identifier rubyid_doc">doc</span>
+    <span class="ivar">@ns</span> <span class="op">=</span> <span class="id identifier rubyid_a">a</span><span class="period">.</span><span class="id identifier rubyid_namespace_definitions">namespace_definitions</span><span class="period">.</span><span class="id identifier rubyid_find">find</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_x">x</span><span class="period">.</span><span class="id identifier rubyid_prefix">prefix</span> <span class="op">==</span> <span class="id identifier rubyid_ns">ns</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span> <span class="rbrace">}</span>
+    <span class="kw">return</span> <span class="kw">self</span> <span class="kw">if</span> <span class="ivar">@ns</span>
+  <span class="kw">end</span>
 
-  <span class='ivar'>@ns</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:pending</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ns'>ns</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
-  <span class='kw'>return</span> <span class='kw'>self</span>
-<span class='kw'>end</span></pre>
+  <span class="ivar">@ns</span> <span class="op">=</span> <span class="lbrace">{</span> <span class="symbol">:pending</span> <span class="op">=&gt;</span> <span class="id identifier rubyid_ns">ns</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span> <span class="rbrace">}</span>
+  <span class="kw">return</span> <span class="kw">self</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1244,13 +1275,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="cdata-instance_method">
   
-    #<strong>cdata</strong>(string)  &#x21d2; <tt>Object</tt> 
+    #<strong>cdata</strong>(string)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Create a CDATA Node with content of <code>string</code></p>
@@ -1261,7 +1293,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1274,9 +1307,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 307</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_cdata'>cdata</span> <span class='id identifier rubyid_string'>string</span>
-  <span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_create_cdata'>create_cdata</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_cdata">cdata</span> <span class="id identifier rubyid_string">string</span>
+  <span class="id identifier rubyid_insert">insert</span> <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_create_cdata">create_cdata</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1285,13 +1318,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="comment-instance_method">
   
-    #<strong>comment</strong>(string)  &#x21d2; <tt>Object</tt> 
+    #<strong>comment</strong>(string)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Create a Comment Node with content of <code>string</code></p>
@@ -1302,7 +1336,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1315,9 +1350,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 313</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_comment'>comment</span> <span class='id identifier rubyid_string'>string</span>
-  <span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_create_comment'>create_comment</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_comment">comment</span> <span class="id identifier rubyid_string">string</span>
+  <span class="id identifier rubyid_insert">insert</span> <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_create_comment">create_comment</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1326,13 +1361,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="text-instance_method">
   
-    #<strong>text</strong>(string)  &#x21d2; <tt>Object</tt> 
+    #<strong>text</strong>(string)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Create a Text Node with content of <code>string</code></p>
@@ -1343,7 +1379,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1356,9 +1393,9 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 301</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_text'>text</span> <span class='id identifier rubyid_string'>string</span>
-  <span class='id identifier rubyid_insert'>insert</span> <span class='ivar'>@doc</span><span class='period'>.</span><span class='id identifier rubyid_create_text_node'>create_text_node</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_text">text</span> <span class="id identifier rubyid_string">string</span>
+  <span class="id identifier rubyid_insert">insert</span> <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_create_text_node">create_text_node</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1367,13 +1404,14 @@ end
       <div class="method_details ">
   <h3 class="signature " id="to_xml-instance_method">
   
-    #<strong>to_xml</strong>(*args)  &#x21d2; <tt>Object</tt> 
+    #<strong>to_xml</strong>(*args)  ⇒ <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Convert this Builder object to XML</p>
@@ -1384,7 +1422,8 @@ end
 <div class="tags">
   
 
-</div><table class="source_code">
+</div>
+<table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -1404,16 +1443,16 @@ end
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 338</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_to_xml'>to_xml</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class='period'>.</span><span class='id identifier rubyid_jruby?'><span class='object_link'><a href="../../Nokogiri.html#jruby%3F-class_method" title="Nokogiri.jruby? (method)">jruby?</a></span></span>
-    <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span> <span class='op'>:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-    <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:save_with</span><span class='rbracket'>]</span>
-      <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:save_with</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Node/SaveOptions.html#AS_BUILDER-constant" title="Nokogiri::XML::Node::SaveOptions::AS_BUILDER (constant)">AS_BUILDER</a></span></span>
-    <span class='kw'>end</span>
-    <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='ivar'>@doc</span><span class='period'>.</span><span class='id identifier rubyid_to_xml'>to_xml</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class="kw">def</span> <span class="id identifier rubyid_to_xml">to_xml</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
+  <span class="kw">if</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="id identifier rubyid_jruby?"><span class="object_link"><a href="../../Nokogiri.html#jruby%3F-class_method" title="Nokogiri.jruby? (method)">jruby?</a></span></span>
+    <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_first">first</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const">Hash</span><span class="rparen">)</span> <span class="op">?</span> <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_shift">shift</span> <span class="op">:</span> <span class="lbrace">{</span><span class="rbrace">}</span>
+    <span class="kw">if</span> <span class="op">!</span><span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:save_with</span><span class="rbracket">]</span>
+      <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:save_with</span><span class="rbracket">]</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#AS_BUILDER-constant" title="Nokogiri::XML::Node::SaveOptions::AS_BUILDER (constant)">AS_BUILDER</a></span></span>
+    <span class="kw">end</span>
+    <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_insert">insert</span><span class="lparen">(</span><span class="int">0</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
+  <span class="kw">end</span>
+  <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
     </td>
   </tr>
 </table>
@@ -1424,7 +1463,7 @@ end
 </div>
 
       <div id="footer">
-  Generated on Sun Jan  6 13:36:44 2019 by
+  Generated on Sun Jan  6 14:09:51 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.6.0).
 </div>
