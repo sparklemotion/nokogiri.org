@@ -14,7 +14,7 @@ have all kinds of interesting properties and methods that you [can
 read about here][read-document]. We'll cover the interesting bits in other
 chapters.
 
-  [read-document]: https://www.nokogiri.org/rdoc/Nokogiri/XML/Document
+  [read-document]: https://nokogiri.org/rdoc/Nokogiri/XML/Document
 
 ## From a File
 
@@ -47,7 +47,7 @@ Notably, Nokogiri will treat input as untrusted documents by default, thereby av
 
 Some commonly-used [parse options][read-parse-options] are:
 
-  [read-parse-options]: https://www.nokogiri.org/rdoc/Nokogiri/XML/ParseOptions
+  [read-parse-options]: https://nokogiri.org/rdoc/Nokogiri/XML/ParseOptions
   [XXE]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 
 * `NONET` - Prevent any network connections during parsing. Recommended for parsing untrusted documents. __This is set by default!__
