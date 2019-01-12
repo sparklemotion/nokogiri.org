@@ -8,6 +8,7 @@ def create_nokogiri_tasks source_dir, dest_dir
     "LICENSE.md" => "LICENSE.md",
     "LICENSE-DEPENDENCIES.md" => "LICENSE-DEPENDENCIES.md",
     "SECURITY.md" => "SECURITY.md",
+    "CODE_OF_CONDUCT.md" => "CODE_OF_CONDUCT.md",
     "tutorials/security.md" => "SECURITY.md",
     "CHANGELOG.md" => "CHANGELOG.md",
     "index.md" => "README.md",

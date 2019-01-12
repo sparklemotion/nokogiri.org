@@ -46,6 +46,7 @@ nav:
   - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
   - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
 - About:
+  - Code of Conduct: CODE_OF_CONDUCT.md
   - Changelog: CHANGELOG.md
   - Security: SECURITY.md
   - License: LICENSE.md
