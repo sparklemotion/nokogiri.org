@@ -39,6 +39,7 @@ nav:
 - Support:
   - Installing Nokogiri: tutorials/installing_nokogiri.md
   - Getting Help: tutorials/getting_help.md
+  - Security: tutorials/security.md
   - More Resources: tutorials/more_resources.md
 - Tutorials:
   - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
