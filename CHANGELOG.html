@@ -515,8 +515,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unreleased" title="unreleased" class="md-nav__link">
-    unreleased
+  <a href="#1101-2019-01-13" title="1.10.1 / 2019-01-13" class="md-nav__link">
+    1.10.1 / 2019-01-13
   </a>
   
     <nav class="md-nav">
@@ -1691,8 +1691,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unreleased" title="unreleased" class="md-nav__link">
-    unreleased
+  <a href="#1101-2019-01-13" title="1.10.1 / 2019-01-13" class="md-nav__link">
+    1.10.1 / 2019-01-13
   </a>
   
     <nav class="md-nav">
@@ -2788,16 +2788,17 @@
                 
                 
                 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
-<h2 id="unreleased">unreleased<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
+<h2 id="1101-2019-01-13">1.10.1 / 2019-01-13<a class="headerlink" href="#1101-2019-01-13" title="Permanent link">&para;</a></h2>
 <h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[MRI] Handle Xcode 10's new library path on macOS. [#1801, #1851] (Thanks, @mlj and @deepj!)</li>
+<li>[MRI] During installation, handle Xcode 10's new library path. [#1801, #1851] (Thanks, @mlj and @deepj!)</li>
 <li>Avoid unnecessary creation of <code>Proc</code>s in many methods. [#1776] (Thanks, @chopraanmol1!)</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>CSS selector <code>:has()</code> correctly matches against any descendant (previously matched against only direct children). [#350] (Thanks, @Phrogz!)</li>
-<li><code>NodeSet#attr</code> now returns <code>nil</code> if it's empty (previously raised a NoMethodError).</li>
+<li>CSS selector <code>:has()</code> now correctly matches against any descendant. Previously this selector matched against only direct children). [#350] (Thanks, @Phrogz!)</li>
+<li><code>NodeSet#attr</code> now returns <code>nil</code> if it's empty. Previously this raised a NoMethodError.</li>
+<li>[MRI] XPath errors are no longer suppressed during <code>XSLT::Stylesheet#transform</code>. Previously these errors were suppressed which led to silent failures and a subsequent segfault. [#1802]</li>
 </ul>
 <h2 id="1100-2019-01-04">1.10.0 / 2019-01-04<a class="headerlink" href="#1100-2019-01-04" title="Permanent link">&para;</a></h2>
 <h3 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">&para;</a></h3>
