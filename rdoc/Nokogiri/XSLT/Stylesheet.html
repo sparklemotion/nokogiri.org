@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XSLT::Stylesheet
   
-    — Documentation by YARD 0.9.16
+    — Documentation by YARD 0.9.18
   
 </title>
 
@@ -597,7 +597,7 @@ static VALUE transform(int argc, VALUE* argv, VALUE self)
 
     errstr = rb_str_new(0, 0);
     xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
-    xmlSetGenericErrorFunc(NULL, (xmlGenericErrorFunc)&amp;swallow_superfluous_xml_errors);
+    xmlSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
 
     result = xsltApplyStylesheet(wrapper-&gt;ss, xml, params);
     free(params);
@@ -624,9 +624,9 @@ static VALUE transform(int argc, VALUE* argv, VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sat Jan 12 00:44:28 2019 by
+  Generated on Thu Jan 31 19:18:27 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.6.0).
+  0.9.18 (ruby-2.6.0).
 </div>
 
     </div>

@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::Node
   
-    — Documentation by YARD 0.9.16
+    — Documentation by YARD 0.9.18
   
 </title>
 
@@ -1295,7 +1295,7 @@ irb(main):010:0&gt;
 
   
     <span class="summary_desc"><div class="inline">
-<p>Returns the content for this Node.</p>
+<p>Returns the plaintext content for this Node.</p>
 </div></span>
   
 </li>
@@ -2193,7 +2193,7 @@ irb(main):010:0&gt;
 
   
     <span class="summary_desc"><div class="inline">
-<p>Returns a Hash of =&gt; value for all namespaces on this node and its ancestors.</p>
+<p>Returns a Hash of <tt>{prefix =&gt; value}</tt> for all namespaces on this node and its ancestors.</p>
 </div></span>
   
 </li>
@@ -3164,6 +3164,9 @@ irb(main):010:0&gt;
       <pre class="lines">
 
 
+1384
+1385
+1386
 1387
 1388
 1389
@@ -3187,13 +3190,10 @@ irb(main):010:0&gt;
 1407
 1408
 1409
-1410
-1411
-1412
-1413</pre>
+1410</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1387</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1384</span>
 
 static VALUE new(int argc, VALUE *argv, VALUE klass)
 {
@@ -3700,6 +3700,9 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+1346
+1347
+1348
 1349
 1350
 1351
@@ -3727,13 +3730,10 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 1373
 1374
 1375
-1376
-1377
-1378
-1379</pre>
+1376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1349</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1346</span>
 
 static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
 {
@@ -4110,19 +4110,19 @@ static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
       <pre class="lines">
 
 
+963
+964
+965
+966
 967
 968
 969
 970
 971
-972
-973
-974
-975
-976</pre>
+972</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 967</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 963</span>
 
 static VALUE attr(VALUE self, VALUE name)
 {
@@ -4169,6 +4169,10 @@ static VALUE attr(VALUE self, VALUE name)
       <pre class="lines">
 
 
+998
+999
+1000
+1001
 1002
 1003
 1004
@@ -4177,14 +4181,10 @@ static VALUE attr(VALUE self, VALUE name)
 1007
 1008
 1009
-1010
-1011
-1012
-1013
-1014</pre>
+1010</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1002</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 998</span>
 
 static VALUE attribute_nodes(VALUE self)
 {
@@ -4234,20 +4234,20 @@ static VALUE attribute_nodes(VALUE self)
       <pre class="lines">
 
 
+980
+981
+982
+983
 984
 985
 986
 987
 988
 989
-990
-991
-992
-993
-994</pre>
+990</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 984</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 980</span>
 
 static VALUE attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
 {
@@ -4404,15 +4404,15 @@ static VALUE attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
       <pre class="lines">
 
 
+592
+593
+594
+595
 596
-597
-598
-599
-600
-601</pre>
+597</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 596</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 592</span>
 
 static VALUE blank_eh(VALUE self)
 {
@@ -4550,19 +4550,19 @@ static VALUE blank_eh(VALUE self)
       <pre class="lines">
 
 
+765
+766
+767
+768
 769
 770
 771
 772
 773
-774
-775
-776
-777
-778</pre>
+774</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 769</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 765</span>
 
 static VALUE child(VALUE self)
 {
@@ -4609,6 +4609,10 @@ static VALUE child(VALUE self)
       <pre class="lines">
 
 
+692
+693
+694
+695
 696
 697
 698
@@ -4631,14 +4635,10 @@ static VALUE child(VALUE self)
 715
 716
 717
-718
-719
-720
-721
-722</pre>
+718</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 696</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 692</span>
 
 static VALUE children(VALUE self)
 {
@@ -4849,7 +4849,7 @@ static VALUE children(VALUE self)
 <div class="docstring">
   <div class="discussion">
     
-<p>Returns the content for this Node</p>
+<p>Returns the plaintext content for this Node. Note that entities will always be expanded in the returned string.</p>
 
 
   </div>
@@ -4866,6 +4866,9 @@ static VALUE children(VALUE self)
       <pre class="lines">
 
 
+1135
+1136
+1137
 1138
 1139
 1140
@@ -4877,13 +4880,10 @@ static VALUE children(VALUE self)
 1146
 1147
 1148
-1149
-1150
-1151
-1152</pre>
+1149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1138</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1135</span>
 
 static VALUE get_native_content(VALUE self)
 {
@@ -4978,6 +4978,10 @@ static VALUE get_native_content(VALUE self)
       <pre class="lines">
 
 
+454
+455
+456
+457
 458
 459
 460
@@ -4998,14 +5002,10 @@ static VALUE get_native_content(VALUE self)
 475
 476
 477
-478
-479
-480
-481
-482</pre>
+478</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 458</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 454</span>
 
 static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
 {
@@ -5074,6 +5074,10 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
       <pre class="lines">
 
 
+422
+423
+424
+425
 426
 427
 428
@@ -5094,14 +5098,10 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
 443
 444
 445
-446
-447
-448
-449
-450</pre>
+446</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 426</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 422</span>
 
 static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
 {
@@ -5365,7 +5365,7 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 810</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_do_xinclude">do_xinclude</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
+<span class="kw">def</span> <span class="id identifier rubyid_do_xinclude">do_xinclude</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">if</span> <span class="const">Integer</span> <span class="op">===</span> <span class="id identifier rubyid_options">options</span>
 
   <span class="comment"># give options to user
@@ -5409,15 +5409,15 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
       <pre class="lines">
 
 
+365
+366
+367
+368
 369
-370
-371
-372
-373
-374</pre>
+370</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 369</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 365</span>
 
 static VALUE document(VALUE self)
 {
@@ -5524,6 +5524,10 @@ static VALUE document(VALUE self)
       <pre class="lines">
 
 
+540
+541
+542
+543
 544
 545
 546
@@ -5549,14 +5553,10 @@ static VALUE document(VALUE self)
 566
 567
 568
-569
-570
-571
-572
-573</pre>
+569</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 544</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 540</span>
 
 static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
 {
@@ -5739,6 +5739,10 @@ static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
+731
+732
+733
+734
 735
 736
 737
@@ -5761,14 +5765,10 @@ static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
 754
 755
 756
-757
-758
-759
-760
-761</pre>
+757</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 735</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 731</span>
 
 static VALUE element_children(VALUE self)
 {
@@ -5832,6 +5832,10 @@ static VALUE element_children(VALUE self)
       <pre class="lines">
 
 
+392
+393
+394
+395
 396
 397
 398
@@ -5844,14 +5848,10 @@ static VALUE element_children(VALUE self)
 405
 406
 407
-408
-409
-410
-411
-412</pre>
+408</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 396</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 392</span>
 
 static VALUE encode_special_chars(VALUE self, VALUE string)
 {
@@ -5905,6 +5905,10 @@ static VALUE encode_special_chars(VALUE self, VALUE string)
       <pre class="lines">
 
 
+486
+487
+488
+489
 490
 491
 492
@@ -5917,14 +5921,10 @@ static VALUE encode_special_chars(VALUE self, VALUE string)
 499
 500
 501
-502
-503
-504
-505
-506</pre>
+502</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 490</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 486</span>
 
 static VALUE external_subset(VALUE self)
 {
@@ -5983,19 +5983,19 @@ static VALUE external_subset(VALUE self)
       <pre class="lines">
 
 
+786
+787
+788
+789
 790
 791
 792
 793
 794
-795
-796
-797
-798
-799</pre>
+795</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 790</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 786</span>
 
 static VALUE first_element_child(VALUE self)
 {
@@ -6291,6 +6291,10 @@ static VALUE first_element_child(VALUE self)
       <pre class="lines">
 
 
+510
+511
+512
+513
 514
 515
 516
@@ -6303,14 +6307,10 @@ static VALUE first_element_child(VALUE self)
 523
 524
 525
-526
-527
-528
-529
-530</pre>
+526</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 514</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 510</span>
 
 static VALUE internal_subset(VALUE self)
 {
@@ -6381,18 +6381,18 @@ static VALUE internal_subset(VALUE self)
       <pre class="lines">
 
 
+824
+825
+826
+827
 828
 829
 830
 831
-832
-833
-834
-835
-836</pre>
+832</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 828</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 824</span>
 
 static VALUE key_eh(VALUE self, VALUE attribute)
 {
@@ -6481,6 +6481,9 @@ static VALUE key_eh(VALUE self, VALUE attribute)
       <pre class="lines">
 
 
+1177
+1178
+1179
 1180
 1181
 1182
@@ -6494,13 +6497,10 @@ static VALUE key_eh(VALUE self, VALUE attribute)
 1190
 1191
 1192
-1193
-1194
-1195
-1196</pre>
+1193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1180</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1177</span>
 
 static VALUE get_lang(VALUE self_rb)
 {
@@ -6554,6 +6554,9 @@ static VALUE get_lang(VALUE self_rb)
       <pre class="lines">
 
 
+1157
+1158
+1159
 1160
 1161
 1162
@@ -6562,13 +6565,10 @@ static VALUE get_lang(VALUE self_rb)
 1165
 1166
 1167
-1168
-1169
-1170
-1171</pre>
+1168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1160</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1157</span>
 
 static VALUE set_lang(VALUE self_rb, VALUE lang_rb)
 {
@@ -6622,19 +6622,19 @@ static VALUE set_lang(VALUE self_rb, VALUE lang_rb)
       <pre class="lines">
 
 
+807
+808
+809
+810
 811
 812
 813
 814
 815
-816
-817
-818
-819
-820</pre>
+816</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 811</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 807</span>
 
 static VALUE last_element_child(VALUE self)
 {
@@ -6681,16 +6681,16 @@ static VALUE last_element_child(VALUE self)
       <pre class="lines">
 
 
+1327
+1328
+1329
 1330
 1331
 1332
-1333
-1334
-1335
-1336</pre>
+1333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1330</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1327</span>
 
 static VALUE line(VALUE self)
 {
@@ -6790,20 +6790,20 @@ static VALUE line(VALUE self)
       <pre class="lines">
 
 
+1020
+1021
+1022
+1023
 1024
 1025
 1026
 1027
 1028
 1029
-1030
-1031
-1032
-1033
-1034</pre>
+1030</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1024</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1020</span>
 
 static VALUE namespace(VALUE self)
 {
@@ -6912,6 +6912,10 @@ return Qnil ;
       <pre class="lines">
 
 
+1038
+1039
+1040
+1041
 1042
 1043
 1044
@@ -6929,14 +6933,10 @@ return Qnil ;
 1056
 1057
 1058
-1059
-1060
-1061
-1062
-1063</pre>
+1059</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1042</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1038</span>
 
 static VALUE namespace_definitions(VALUE self)
 {
@@ -6995,6 +6995,10 @@ static VALUE namespace_definitions(VALUE self)
       <pre class="lines">
 
 
+1070
+1071
+1072
+1073
 1074
 1075
 1076
@@ -7011,14 +7015,10 @@ static VALUE namespace_definitions(VALUE self)
 1087
 1088
 1089
-1090
-1091
-1092
-1093
-1094</pre>
+1090</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1074</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1070</span>
 
 static VALUE namespace_scopes(VALUE self)
 {
@@ -7089,19 +7089,19 @@ static VALUE namespace_scopes(VALUE self)
       <pre class="lines">
 
 
+840
+841
+842
+843
 844
 845
 846
 847
 848
-849
-850
-851
-852
-853</pre>
+849</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 844</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 840</span>
 
 static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 {
@@ -7131,7 +7131,7 @@ static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 <div class="docstring">
   <div class="discussion">
     
-<p>Returns a Hash of =&gt; value for all namespaces on this node and its ancestors.</p>
+<p>Returns a Hash of <tt>{prefix =&gt; value}</tt> for all namespaces on this node and its ancestors.</p>
 
 <p>This method returns the same namespaces as #namespace_scopes.</p>
 
@@ -7201,6 +7201,10 @@ static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
       <pre class="lines">
 
 
+1111
+1112
+1113
+1114
 1115
 1116
 1117
@@ -7212,14 +7216,10 @@ static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 1123
 1124
 1125
-1126
-1127
-1128
-1129
-1130</pre>
+1126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1115</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1111</span>
 
 static VALUE set_native_content(VALUE self, VALUE content)
 {
@@ -7272,19 +7272,19 @@ static VALUE set_native_content(VALUE self, VALUE content)
       <pre class="lines">
 
 
+639
+640
+641
+642
 643
 644
 645
 646
 647
-648
-649
-650
-651
-652</pre>
+648</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 643</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 639</span>
 
 static VALUE next_element(VALUE self)
 {
@@ -7335,19 +7335,19 @@ static VALUE next_element(VALUE self)
       <pre class="lines">
 
 
+605
+606
+607
+608
 609
 610
 611
 612
 613
-614
-615
-616
-617
-618</pre>
+614</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 609</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 605</span>
 
 static VALUE next_sibling(VALUE self)
 {
@@ -7398,18 +7398,18 @@ static VALUE next_sibling(VALUE self)
       <pre class="lines">
 
 
+1238
+1239
+1240
 1241
 1242
 1243
 1244
 1245
-1246
-1247
-1248
-1249</pre>
+1246</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1241</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1238</span>
 
 static VALUE get_name(VALUE self)
 {
@@ -7459,16 +7459,16 @@ static VALUE get_name(VALUE self)
       <pre class="lines">
 
 
+1224
+1225
+1226
 1227
 1228
 1229
-1230
-1231
-1232
-1233</pre>
+1230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1227</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1224</span>
 
 static VALUE set_name(VALUE self, VALUE new_name)
 {
@@ -7516,15 +7516,15 @@ static VALUE set_name(VALUE self, VALUE new_name)
       <pre class="lines">
 
 
+1098
+1099
+1100
+1101
 1102
-1103
-1104
-1105
-1106
-1107</pre>
+1103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1102</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1098</span>
 
 static VALUE node_type(VALUE self)
 {
@@ -7567,19 +7567,19 @@ static VALUE node_type(VALUE self)
       <pre class="lines">
 
 
+1207
+1208
+1209
 1210
 1211
 1212
 1213
 1214
 1215
-1216
-1217
-1218
-1219</pre>
+1216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1210</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1207</span>
 
 static VALUE get_parent(VALUE self)
 {
@@ -7787,6 +7787,9 @@ static VALUE get_parent(VALUE self)
       <pre class="lines">
 
 
+1254
+1255
+1256
 1257
 1258
 1259
@@ -7796,13 +7799,10 @@ static VALUE get_parent(VALUE self)
 1263
 1264
 1265
-1266
-1267
-1268
-1269</pre>
+1266</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1257</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1254</span>
 
 static VALUE path(VALUE self)
 {
@@ -7852,16 +7852,16 @@ static VALUE path(VALUE self)
       <pre class="lines">
 
 
+378
+379
+380
+381
 382
 383
-384
-385
-386
-387
-388</pre>
+384</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 382</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 378</span>
 
 static VALUE pointer_id(VALUE self)
 {
@@ -7964,6 +7964,10 @@ static VALUE pointer_id(VALUE self)
       <pre class="lines">
 
 
+656
+657
+658
+659
 660
 661
 662
@@ -7976,14 +7980,10 @@ static VALUE pointer_id(VALUE self)
 669
 670
 671
-672
-673
-674
-675
-676</pre>
+672</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 660</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 656</span>
 
 static VALUE previous_element(VALUE self)
 {
@@ -8041,19 +8041,19 @@ static VALUE previous_element(VALUE self)
       <pre class="lines">
 
 
+622
+623
+624
+625
 626
 627
 628
 629
 630
-631
-632
-633
-634
-635</pre>
+631</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 626</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 622</span>
 
 static VALUE previous_sibling(VALUE self)
 {
@@ -8839,17 +8839,17 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
+577
+578
+579
+580
 581
 582
 583
-584
-585
-586
-587
-588</pre>
+584</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 581</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 577</span>
 
 static VALUE unlink_node(VALUE self)
 {
@@ -9267,9 +9267,9 @@ static VALUE unlink_node(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sat Jan 12 00:44:25 2019 by
+  Generated on Thu Jan 31 19:18:24 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.6.0).
+  0.9.18 (ruby-2.6.0).
 </div>
 
     </div>

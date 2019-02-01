@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::NodeSet
   
-    — Documentation by YARD 0.9.16
+    — Documentation by YARD 0.9.18
   
 </title>
 
@@ -427,7 +427,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attr-instance_method" title="#attr (instance method)">#<strong>attr</strong>(key, value = nil, &amp;blk)  ⇒ Object </a>
+      <a href="#attr-instance_method" title="#attr (instance method)">#<strong>attr</strong>(key, value = nil, &amp;block)  ⇒ Object </a>
     
 
     
@@ -444,7 +444,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Set the attribute <code>key</code> to <code>value</code> or the return value of <code>blk</code> on all Node objects in the NodeSet.</p>
+<p>Set attributes on each Node in the NodeSet, or get an attribute from the first Node in the NodeSet.</p>
 </div></span>
   
 </li>
@@ -575,7 +575,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong>(&amp;block)  ⇒ Object </a>
+      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong>  ⇒ Object </a>
     
 
     
@@ -695,7 +695,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#index-instance_method" title="#index (instance method)">#<strong>index</strong>(node = nil, &amp;block)  ⇒ Object </a>
+      <a href="#index-instance_method" title="#index (instance method)">#<strong>index</strong>(node = nil)  ⇒ Object </a>
     
 
     
@@ -1599,17 +1599,17 @@ static VALUE minus(VALUE self, VALUE rb_other)
       <pre class="lines">
 
 
-293
-294
-295
-296
-297
-298
-299
-300</pre>
+327
+328
+329
+330
+331
+332
+333
+334</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 293</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 327</span>
 
 <span class="kw">def</span> <span class="op">==</span> <span class="id identifier rubyid_other">other</span>
   <span class="kw">return</span> <span class="kw">false</span> <span class="kw">unless</span> <span class="id identifier rubyid_other">other</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class="rparen">)</span>
@@ -2011,7 +2011,7 @@ static VALUE slice(int argc, VALUE *argv, VALUE self)
       <div class="method_details ">
   <h3 class="signature " id="attr-instance_method">
   
-    #<strong>attr</strong>(key, value = nil, &amp;blk)  ⇒ <tt>Object</tt> 
+    #<strong>attr</strong>(key, value = nil, &amp;block)  ⇒ <tt>Object</tt> 
   
 
   
@@ -2025,7 +2025,33 @@ static VALUE slice(int argc, VALUE *argv, VALUE self)
 <div class="docstring">
   <div class="discussion">
     
-<p>Set the attribute <code>key</code> to <code>value</code> or the return value of <code>blk</code> on all Node objects in the NodeSet.</p>
+<p>Set attributes on each Node in the NodeSet, or get an attribute from the first Node in the NodeSet.</p>
+
+<p>To get an attribute from the first Node in a NodeSet:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node_set">node_set</span><span class="period">.</span><span class="id identifier rubyid_attr">attr</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">href</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; "https://www.nokogiri.org"
+</span></code></pre>
+
+<p>Note that an empty NodeSet will return nil when <code>#attr</code> is called as a getter.</p>
+
+<p>To set an attribute on each node, <code>key</code> can either be an attribute name, or a Hash of attribute names and values. When called as a setter, <code>#attr</code> returns the NodeSet.</p>
+
+<p>If <code>key</code> is an attribute name, then either <code>value</code> or <code>block</code> must be passed.</p>
+
+<p>If <code>key</code> is a Hash then attributes will be set for each key/value pair:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node_set">node_set</span><span class="period">.</span><span class="id identifier rubyid_attr">attr</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">href</span><span class="tstring_end">"</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">https://www.nokogiri.org</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">member</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+</code></pre>
+
+<p>If <code>value</code> is passed, it will be used as the attribute value for all nodes:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node_set">node_set</span><span class="period">.</span><span class="id identifier rubyid_attr">attr</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">href</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">https://www.nokogiri.org</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+</code></pre>
+
+<p>If <code>block</code> is passed, it will be called on each Node object in the NodeSet and the return value used as the attribute value for that node:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node_set">node_set</span><span class="period">.</span><span class="id identifier rubyid_attr">attr</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="op">|</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_name">name</span> <span class="rbrace">}</span>
+</code></pre>
 
 
   </div>
@@ -2040,29 +2066,37 @@ static VALUE slice(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186</pre>
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 206</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_attr">attr</span> <span class="id identifier rubyid_key">key</span><span class="comma">,</span> <span class="id identifier rubyid_value">value</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_blk">blk</span>
-  <span class="kw">unless</span> <span class="const">Hash</span> <span class="op">===</span> <span class="id identifier rubyid_key">key</span> <span class="op">||</span> <span class="id identifier rubyid_key">key</span> <span class="op">&amp;&amp;</span> <span class="lparen">(</span><span class="id identifier rubyid_value">value</span> <span class="op">||</span> <span class="id identifier rubyid_blk">blk</span><span class="rparen">)</span>
-    <span class="kw">return</span> <span class="id identifier rubyid_first">first</span><span class="period">.</span><span class="id identifier rubyid_attribute">attribute</span><span class="lparen">(</span><span class="id identifier rubyid_key">key</span><span class="rparen">)</span>
+<span class="kw">def</span> <span class="id identifier rubyid_attr">attr</span> <span class="id identifier rubyid_key">key</span><span class="comma">,</span> <span class="id identifier rubyid_value">value</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
+  <span class="kw">unless</span> <span class="id identifier rubyid_key">key</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const">Hash</span><span class="rparen">)</span> <span class="op">||</span> <span class="lparen">(</span><span class="id identifier rubyid_key">key</span> <span class="op">&amp;&amp;</span> <span class="lparen">(</span><span class="id identifier rubyid_value">value</span> <span class="op">||</span> <span class="id identifier rubyid_block">block</span><span class="rparen">)</span><span class="rparen">)</span>
+    <span class="kw">return</span> <span class="id identifier rubyid_first">first</span> <span class="op">?</span> <span class="id identifier rubyid_first">first</span><span class="period">.</span><span class="id identifier rubyid_attribute">attribute</span><span class="lparen">(</span><span class="id identifier rubyid_key">key</span><span class="rparen">)</span> <span class="op">:</span> <span class="kw">nil</span>
   <span class="kw">end</span>
 
   <span class="id identifier rubyid_hash">hash</span> <span class="op">=</span> <span class="id identifier rubyid_key">key</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const">Hash</span><span class="rparen">)</span> <span class="op">?</span> <span class="id identifier rubyid_key">key</span> <span class="op">:</span> <span class="lbrace">{</span> <span class="id identifier rubyid_key">key</span> <span class="op">=&gt;</span> <span class="id identifier rubyid_value">value</span> <span class="rbrace">}</span>
 
-  <span class="id identifier rubyid_hash">hash</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_k">k</span><span class="comma">,</span><span class="id identifier rubyid_v">v</span><span class="op">|</span> <span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_el">el</span><span class="op">|</span> <span class="id identifier rubyid_el">el</span><span class="lbracket">[</span><span class="id identifier rubyid_k">k</span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_v">v</span> <span class="op">||</span> <span class="id identifier rubyid_blk">blk</span><span class="lbracket">[</span><span class="id identifier rubyid_el">el</span><span class="rbracket">]</span> <span class="rbrace">}</span> <span class="rbrace">}</span>
+  <span class="id identifier rubyid_hash">hash</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_k">k</span><span class="comma">,</span><span class="id identifier rubyid_v">v</span><span class="op">|</span>
+    <span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="op">|</span>
+      <span class="id identifier rubyid_node">node</span><span class="lbracket">[</span><span class="id identifier rubyid_k">k</span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_v">v</span> <span class="op">||</span> <span class="id identifier rubyid_block">block</span><span class="period">.</span><span class="id identifier rubyid_call">call</span><span class="lparen">(</span><span class="id identifier rubyid_node">node</span><span class="rparen">)</span>
+    <span class="kw">end</span>
+  <span class="kw">end</span>
 
   <span class="kw">self</span>
 <span class="kw">end</span></pre>
@@ -2142,16 +2176,16 @@ static VALUE slice(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-305
-306
-307
-308
-309
-310
-311</pre>
+339
+340
+341
+342
+343
+344
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 305</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 339</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_children">children</span>
   <span class="id identifier rubyid_node_set">node_set</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::NodeSet#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="rparen">)</span>
@@ -2363,7 +2397,7 @@ static VALUE duplicate(VALUE self)
       <div class="method_details ">
   <h3 class="signature " id="each-instance_method">
   
-    #<strong>each</strong>(&amp;block)  ⇒ <tt>Object</tt> 
+    #<strong>each</strong>  ⇒ <tt>Object</tt> 
   
 
   
@@ -2388,19 +2422,19 @@ static VALUE duplicate(VALUE self)
       <pre class="lines">
 
 
-200
-201
-202
-203
-204
-205
-206
-207</pre>
+234
+235
+236
+237
+238
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 234</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_each">each</span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+<span class="kw">def</span> <span class="id identifier rubyid_each">each</span>
   <span class="kw">return</span> <span class="id identifier rubyid_to_enum">to_enum</span> <span class="kw">unless</span> <span class="id identifier rubyid_block_given?">block_given?</span>
 
   <span class="int">0</span><span class="period">.</span><span class="id identifier rubyid_upto">upto</span><span class="lparen">(</span><span class="id identifier rubyid_length">length</span> <span class="op">-</span> <span class="int">1</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span>
@@ -2640,7 +2674,7 @@ static VALUE include_eh(VALUE self, VALUE rb_node)
       <div class="method_details ">
   <h3 class="signature " id="index-instance_method">
   
-    #<strong>index</strong>(node = nil, &amp;block)  ⇒ <tt>Object</tt> 
+    #<strong>index</strong>(node = nil)  ⇒ <tt>Object</tt> 
   
 
   
@@ -2678,7 +2712,7 @@ static VALUE include_eh(VALUE self, VALUE rb_node)
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 47</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_index">index</span><span class="lparen">(</span><span class="id identifier rubyid_node">node</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+<span class="kw">def</span> <span class="id identifier rubyid_index">index</span><span class="lparen">(</span><span class="id identifier rubyid_node">node</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="id identifier rubyid_node">node</span>
     <span class="id identifier rubyid_warn">warn</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">given block not used</span><span class="tstring_end">"</span></span> <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
     <span class="id identifier rubyid_each_with_index">each_with_index</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_member">member</span><span class="comma">,</span> <span class="id identifier rubyid_j">j</span><span class="op">|</span> <span class="kw">return</span> <span class="id identifier rubyid_j">j</span> <span class="kw">if</span> <span class="id identifier rubyid_member">member</span> <span class="op">==</span> <span class="id identifier rubyid_node">node</span> <span class="rbrace">}</span>
@@ -2720,12 +2754,12 @@ static VALUE include_eh(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-229
-230
-231</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 229</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 263</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inner_html">inner_html</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span>
   <span class="id identifier rubyid_collect">collect</span><span class="lbrace">{</span><span class="op">|</span><span class="id identifier rubyid_j">j</span><span class="op">|</span> <span class="id identifier rubyid_j">j</span><span class="period">.</span><span class="id identifier rubyid_inner_html">inner_html</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span> <span class="rbrace">}</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_end">'</span></span><span class="rparen">)</span>
@@ -2780,12 +2814,12 @@ static VALUE include_eh(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-222
-223
-224</pre>
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 256</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inner_text">inner_text</span>
   <span class="id identifier rubyid_collect">collect</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:inner_text</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_end">'</span></span><span class="rparen">)</span>
@@ -2823,12 +2857,12 @@ static VALUE include_eh(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-326
-327
-328</pre>
+360
+361
+362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 326</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 360</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inspect">inspect</span>
   <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">[</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_map">map</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:inspect</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_join">join</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">, </span><span class="tstring_end">'</span></span><span class="embexpr_end">}</span><span class="tstring_content">]</span><span class="tstring_end">"</span></span>
@@ -2968,13 +3002,13 @@ static VALUE length(VALUE self)
       <pre class="lines">
 
 
-276
-277
-278
-279</pre>
+310
+311
+312
+313</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 276</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 310</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_pop">pop</span>
   <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">if</span> <span class="id identifier rubyid_length">length</span> <span class="op">==</span> <span class="int">0</span>
@@ -3088,13 +3122,13 @@ static VALUE push(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-192
-193
-194
-195</pre>
+226
+227
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 192</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 226</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_remove_attr">remove_attr</span> <span class="id identifier rubyid_name">name</span>
   <span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_el">el</span><span class="op">|</span> <span class="id identifier rubyid_el">el</span><span class="period">.</span><span class="id identifier rubyid_delete">delete</span> <span class="id identifier rubyid_name">name</span> <span class="rbrace">}</span>
@@ -3184,16 +3218,16 @@ static VALUE push(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-316
-317
-318
-319
-320
-321
-322</pre>
+350
+351
+352
+353
+354
+355
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 316</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 350</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_reverse">reverse</span>
   <span class="id identifier rubyid_node_set">node_set</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::NodeSet#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="rparen">)</span>
@@ -3235,13 +3269,13 @@ static VALUE push(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-284
-285
-286
-287</pre>
+318
+319
+320
+321</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 284</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 318</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_shift">shift</span>
   <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">if</span> <span class="id identifier rubyid_length">length</span> <span class="op">==</span> <span class="int">0</span>
@@ -3485,19 +3519,19 @@ static VALUE to_array(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256</pre>
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 247</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 281</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_html">to_html</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span>
   <span class="kw">if</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="id identifier rubyid_jruby?"><span class="object_link"><a href="../../Nokogiri.html#jruby%3F-class_method" title="Nokogiri.jruby? (method)">jruby?</a></span></span>
@@ -3542,12 +3576,12 @@ static VALUE to_array(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-241
-242
-243</pre>
+275
+276
+277</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 241</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 275</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_s">to_s</span>
   <span class="id identifier rubyid_map">map</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:to_s</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_join">join</span>
@@ -3585,12 +3619,12 @@ static VALUE to_array(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-260
-261
-262</pre>
+294
+295
+296</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 294</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_xhtml">to_xhtml</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span>
   <span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_x">x</span><span class="period">.</span><span class="id identifier rubyid_to_xhtml">to_xhtml</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span> <span class="rbrace">}</span><span class="period">.</span><span class="id identifier rubyid_join">join</span>
@@ -3628,12 +3662,12 @@ static VALUE to_array(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-266
-267
-268</pre>
+300
+301
+302</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 266</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 300</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_xml">to_xml</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span>
   <span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_x">x</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span> <span class="rbrace">}</span><span class="period">.</span><span class="id identifier rubyid_join">join</span>
@@ -3754,12 +3788,12 @@ static VALUE unlink_nodeset(VALUE self)
       <pre class="lines">
 
 
-235
-236
-237</pre>
+269
+270
+271</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 235</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node_set.rb', line 269</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_wrap">wrap</span> <span class="id identifier rubyid_html">html</span>
   <span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="op">|</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_wrap">wrap</span> <span class="id identifier rubyid_html">html</span> <span class="rbrace">}</span>
@@ -3904,9 +3938,9 @@ static VALUE set_union(VALUE self, VALUE rb_other)
 </div>
 
       <div id="footer">
-  Generated on Sat Jan 12 00:44:27 2019 by
+  Generated on Thu Jan 31 19:18:26 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.6.0).
+  0.9.18 (ruby-2.6.0).
 </div>
 
     </div>
