@@ -21,35 +21,36 @@ theme:
   favicon: 'images/nokogiri-serif-black.png'
   feature:
     tabs: true
+
 markdown_extensions:
-- admonition
-- codehilite:
-    guess_lang: false
-- toc:
-    permalink: true
-- footnotes # https://python-markdown.github.io/extensions/footnotes/
-- pymdownx.magiclink
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - footnotes # https://python-markdown.github.io/extensions/footnotes/
+  - pymdownx.magiclink
 
 google_analytics:
-- 'UA-1260604-8'
-- 'nokogiri.org'
+  - 'UA-1260604-8'
+  - 'nokogiri.org'
 
 nav:
-- Readme: index.md
-- Support:
-  - Installing Nokogiri: tutorials/installing_nokogiri.md
-  - Getting Help: tutorials/getting_help.md
-  - Security: tutorials/security.md
-  - More Resources: tutorials/more_resources.md
-- Tutorials:
-  - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
-  - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
-  - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
-  - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
-- About:
-  - Changelog: CHANGELOG.md
-  - Code of Conduct: CODE_OF_CONDUCT.md
-  - Security: SECURITY.md
-  - License: LICENSE.md
-  - Dependencies: LICENSE-DEPENDENCIES.md
-- RDoc: rdoc/index.html
+  - Readme: index.md
+  - Support:
+    - Installing Nokogiri: tutorials/installing_nokogiri.md
+    - Getting Help: tutorials/getting_help.md
+    - Security: tutorials/security.md
+    - More Resources: tutorials/more_resources.md
+  - Tutorials:
+    - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
+    - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
+    - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
+    - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
+  - About:
+    - Changelog: CHANGELOG.md
+    - Code of Conduct: CODE_OF_CONDUCT.md
+    - Security: SECURITY.md
+    - License: LICENSE.md
+    - Dependencies: LICENSE-DEPENDENCIES.md
+  - RDoc: rdoc/index.html
