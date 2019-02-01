@@ -16,28 +16,4 @@ describe "nokogiri.org" do
       expect(page.status_code).to eq(200)
     end
   end
-
-  feature "navigation" do
-    let(:within_css) { "body" }
-
-    around do |example|
-      visit "/"
-      within within_css do
-        example.run
-      end
-    end
-
-    feature "nav" do
-      it { expect(page).to have_link("Docs", href: "https://rdoc.info/github/sparklemotion/nokogiri") }
-      it { expect(page).to have_link("Build Status", href: "https://ci.nokogiri.org/") }
-    end
-
-    feature "footer" do
-      let(:within_css) { NokogiriTestConfig::CSS::Footer }
-
-      it "points at the tutorials repo" do
-        expect(page).to have_link("sparklemotion/nokogiri.org", href: "https://github.com/sparklemotion/nokogiri.org")
-      end
-    end
-  end
 end
