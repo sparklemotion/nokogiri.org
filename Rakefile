@@ -22,7 +22,7 @@ task :deploy => :generate do
 end
 
 namespace :tutorials do
-  tasks = create_tutorial_tasks("docs", "staging")
+  tasks = create_tutorial_tasks("docs", STAGING_DIR)
 
   desc "Pull in tutorial content"
   task :generate => tasks
