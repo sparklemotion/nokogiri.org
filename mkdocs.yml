@@ -22,6 +22,9 @@ theme:
   feature:
     tabs: true
 
+extra_css:
+  - "stylesheets/tidelift.css"
+
 markdown_extensions:
   - "admonition"
   - "codehilite":
