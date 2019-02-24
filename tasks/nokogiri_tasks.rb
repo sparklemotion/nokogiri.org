@@ -100,7 +100,7 @@ end
 def tidelift_cta
   <<~EOHTML
     <a class="tidelift" href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=website" target="_blank">
-      Get supported Nokogiri with a Tidelift subscription
+      Get support for Nokogiri with a Tidelift subscription
     </a>
   EOHTML
 end
