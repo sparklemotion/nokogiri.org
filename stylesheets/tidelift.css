@@ -1,0 +1,36 @@
+/*
+ *  see tidelift's branding guidelines at:
+ *  https://docs.google.com/document/d/1XKNUiquMvj6BGzXAC-hXWw392HHe1K5vcAuHSD3iVX4/
+ *
+ *  some of this is borrowed from the tidelift CTA at https://material-ui.com/
+ */
+div.md-content {
+  position: relative;
+}
+
+div.md-content a.tidelift {
+  top: 0px;
+  right: 10px;
+  position: absolute;
+
+  border-radius: 18px;
+  box-shadow: 0 0 2px 1px #4B5168;
+
+  background-color: #F6914D ;
+  background-image: url(/images/Tidelift_Logos_RGB_Tidelift_Shorthand_On-Orange.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 16px 50% ;
+
+  color: #fff;
+  padding: 8px 8px 8px 44px;
+  margin: 0;
+
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+div.md-content a.tidelift:hover {
+  text-decoration: underline ;
+}
