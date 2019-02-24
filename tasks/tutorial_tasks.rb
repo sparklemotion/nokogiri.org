@@ -1,7 +1,7 @@
 # coding: utf-8
-def create_tutorial_tasks source_dir, dest_dir
+def create_tutorial_tasks(source_dir, dest_dir)
   dest_paths = []
-  
+
   each_glob_match_to_file_pairs("*.md", source_dir, dest_dir) do |source_path, dest_path|
     deps = source_file_dependencies(source_path) + [source_path]
 
@@ -22,9 +22,9 @@ def create_tutorial_tasks source_dir, dest_dir
     dest_paths << dest_path
   end
 
-  each_glob_match_to_file_pairs("{CNAME,*.{png,svg}}", source_dir, dest_dir) do |source_path, dest_path|
+  each_glob_match_to_file_pairs("{CNAME,*.{png,svg,css}}", source_dir, dest_dir) do |source_path, dest_path|
     file dest_path => source_path do
-      FileUtils.mkdir_p File.dirname(dest_path)    
+      FileUtils.mkdir_p File.dirname(dest_path)
       FileUtils.cp source_path, dest_path, verbose: true
     end
     dest_paths << dest_path
@@ -33,16 +33,16 @@ def create_tutorial_tasks source_dir, dest_dir
   dest_paths
 end
 
-def each_glob_match_to_file_pairs glob, source_dir, dest_dir, &block
+def each_glob_match_to_file_pairs(glob, source_dir, dest_dir, &block)
   glob = "#{source_dir}/**/#{glob}"
   Dir[glob].each do |source_path|
     relative_path = File.join(source_path.split(File::SEPARATOR)[1..-1])
     dest_path = File.join(dest_dir, relative_path)
     block.call source_path, dest_path
-  end  
+  end
 end
 
-def source_file_dependencies source_path
+def source_file_dependencies(source_path)
   regex = /^~~~ \w+ (.*)/
   dirname = File.dirname(source_path)
 
@@ -52,7 +52,7 @@ def source_file_dependencies source_path
   end.collect { |dep| File.join(dirname, dep) }
 end
 
-def transmogrify_doc_file rawmd_file
+def transmogrify_doc_file(rawmd_file)
   content = File.read rawmd_file
   Dir.chdir File.dirname(rawmd_file) do
     sub_inline_docs! content
@@ -62,19 +62,19 @@ def transmogrify_doc_file rawmd_file
 end
 
 def sub_inline_docs!(content)
-  sub_do('inline', content) do |asset_name|
+  sub_do("inline", content) do |asset_name|
     "[#{File.basename(asset_name)}]\n" + File.read(asset_name)
   end
 end
 
 def sub_inline_ruby!(content)
-  sub_do('ruby', content) do |asset_name|
+  sub_do("ruby", content) do |asset_name|
     asset_dir = File.dirname(asset_name)
     output = IO.popen("xmpfilter -a --cd #{asset_dir} -I. #{asset_name}", "r").read
     raise "Error running inline ruby:\n#{output}" if output =~ /Error/
-    output.gsub!(/^.*:startdoc:[^\n]*/m, '') if output =~ /:startdoc:/
-    output.gsub!(/^.*:nodoc:.*$\n?/, '')
-    output.gsub!(/\\n/,"\n# ")
+    output.gsub!(/^.*:startdoc:[^\n]*/m, "") if output =~ /:startdoc:/
+    output.gsub!(/^.*:nodoc:.*$\n?/, "")
+    output.gsub!(/\\n/, "\n# ")
     output.chomp!
     output
   end
@@ -96,7 +96,7 @@ def sub_do(tag, content, &block)
   end
 end
 
-def codetype asset_name
+def codetype(asset_name)
   case (asset_name.split(".").last)
   when "xml" then "xml"
   when "rb" then "ruby"

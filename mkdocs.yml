@@ -6,7 +6,7 @@ repo_url: https://github.com/sparklemotion/nokogiri
 edit_uri: ""
 site_description: "The Official Tutorial Archive™ of Nokogiri®"
 site_author: "Mike Dalessio"
-copyright: "Copyright Ⓒ 2009-2018 Mike Dalessio"
+copyright: "Copyright Ⓒ 2009-2019 Mike Dalessio"
 
 docs_dir: staging
 use_directory_urls: false
@@ -15,25 +15,28 @@ theme:
   name: material
   custom_dir: theme/extensions/material
   font:
-    text: 'Ubuntu'
-    code: 'Menlo'
-  logo: 'images/nokogiri-serif-white.svg'
-  favicon: 'images/nokogiri-serif-black.png'
+    text: "Ubuntu"
+    code: "Menlo"
+  logo: "images/nokogiri-serif-white.svg"
+  favicon: "images/nokogiri-serif-black.png"
   feature:
     tabs: true
 
+extra_css:
+  - "stylesheets/tidelift.css"
+
 markdown_extensions:
-  - admonition
-  - codehilite:
-      guess_lang: false
-  - toc:
-      permalink: true
-  - footnotes # https://python-markdown.github.io/extensions/footnotes/
-  - pymdownx.magiclink
+  - "admonition"
+  - "codehilite":
+      "guess_lang": false
+  - "toc":
+      "permalink": true
+  - "footnotes" # https://python-markdown.github.io/extensions/footnotes/
+  - "pymdownx.magiclink"
 
 google_analytics:
-  - 'UA-1260604-8'
-  - 'nokogiri.org'
+  - "UA-1260604-8"
+  - "nokogiri.org"
 
 nav:
   - Readme: index.md
