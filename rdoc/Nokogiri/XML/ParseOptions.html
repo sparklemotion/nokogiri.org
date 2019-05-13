@@ -117,7 +117,7 @@
 
 <h2 id="label-Building+combinations+of+parse+options">Building combinations of parse options</h2>
 
-<p>You can build your own combinations of these parse options by using any of the following methods: <strong>Note</strong>: All examples attempt to set the <code>RECOVER</code> &amp; <code>NOENT</code> options. All examples use Ruby 2 optional parameter syntax.</p>
+<p>You can build your own combinations of these parse options by using any of the following methods: <strong>Note</strong>: All examples attempt to set the <code>RECOVER</code> &amp; <code>NOENT</code> options.</p>
 <dl class="rdoc-list label-list">
 <dt>Ruby's bitwise operators
 </dt>
@@ -126,7 +126,7 @@
 </dd>
 </dl>
 
-<pre class="code ruby"><code class="ruby"><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const">XML</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">&lt;content&gt;Chapter 1&lt;/content</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="label">options:</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="lparen">(</span><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">0</span><span class="rparen">)</span> <span class="op">|</span> <span class="lparen">(</span><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">1</span><span class="rparen">)</span><span class="rparen">)</span><span class="rparen">)</span>
+<pre class="code ruby"><code class="ruby"><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const">XML</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">&lt;content&gt;Chapter 1&lt;/content</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="lparen">(</span><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">0</span><span class="rparen">)</span> <span class="op">|</span> <span class="lparen">(</span><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">1</span><span class="rparen">)</span><span class="rparen">)</span><span class="rparen">)</span>
 </code></pre>
 <dl class="rdoc-list label-list">
 <dt>Method chaining
@@ -136,7 +136,7 @@
 </dd>
 </dl>
 
-<pre class="code ruby"><code class="ruby"><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const">XML</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">&lt;content&gt;Chapter 1&lt;/content</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="label">options:</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_recover">recover</span><span class="period">.</span><span class="id identifier rubyid_noent">noent</span><span class="rparen">)</span>
+<pre class="code ruby"><code class="ruby"><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const">XML</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">&lt;content&gt;Chapter 1&lt;/content</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_recover">recover</span><span class="period">.</span><span class="id identifier rubyid_noent">noent</span><span class="rparen">)</span>
 </code></pre>
 <dl class="rdoc-list label-list">
 <dt>Using Ruby Blocks
@@ -928,9 +928,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Mar  6 16:01:22 2019 by
+  Generated on Mon May 13 10:46:50 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.18 (ruby-2.6.0).
+  0.9.18 (ruby-2.6.2).
 </div>
 
     </div>

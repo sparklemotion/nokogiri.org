@@ -143,7 +143,7 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">1.10.1</span><span class="tstring_end">'</span></span></pre></dd>
+        <dd><pre class="code"><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">1.10.3</span><span class="tstring_end">"</span></span></pre></dd>
       
         <dt id="VERSION_INFO-constant" class="">VERSION_INFO =
           <div class="docstring">
@@ -460,18 +460,18 @@
       <pre class="lines">
 
 
-118
-119
-120
-121
-122
-123
-124
-125
-126</pre>
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 118</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 100</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_install_default_aliases">install_default_aliases</span>
   <span class="comment"># Make sure to support some popular encoding aliases not known by
@@ -528,12 +528,12 @@
       <pre class="lines">
 
 
-106
-107
-108</pre>
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/version.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/version.rb', line 104</span>
 
 <span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_jruby?">jruby?</span> <span class="comment"># :nodoc:
 </span>  <span class="const"><span class="object_link"><a href="Nokogiri/VersionInfo.html" title="Nokogiri::VersionInfo (class)">VersionInfo</a></span></span><span class="period">.</span><span class="id identifier rubyid_instance"><span class="object_link"><a href="Nokogiri/VersionInfo.html#instance-class_method" title="Nokogiri::VersionInfo.instance (method)">instance</a></span></span><span class="period">.</span><span class="id identifier rubyid_jruby?">jruby?</span>
@@ -571,16 +571,16 @@
       <pre class="lines">
 
 
-91
-92
-93
-94
-95
-96
-97</pre>
+73
+74
+75
+76
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 73</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_make">make</span> <span class="id identifier rubyid_input">input</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_opts">opts</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_blk">blk</span>
   <span class="kw">if</span> <span class="id identifier rubyid_input">input</span>
@@ -622,24 +622,24 @@
       <pre class="lines">
 
 
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87</pre>
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 55</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="kw">nil</span>
   <span class="kw">if</span> <span class="id identifier rubyid_string">string</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:read</span><span class="rparen">)</span> <span class="op">||</span>
@@ -700,12 +700,12 @@
       <pre class="lines">
 
 
-114
-115
-116</pre>
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 96</span>
 
 <span class="kw">def</span> <span class="const">Slop</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="const"><span class="object_link"><a href="" title="Nokogiri (module)">Nokogiri</a></span></span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_slop!">slop!</span>
@@ -756,12 +756,12 @@
       <pre class="lines">
 
 
-102
-103
-104</pre>
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/version.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/version.rb', line 100</span>
 
 <span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_uses_libxml?">uses_libxml?</span> <span class="comment"># :nodoc:
 </span>  <span class="const"><span class="object_link"><a href="Nokogiri/VersionInfo.html" title="Nokogiri::VersionInfo (class)">VersionInfo</a></span></span><span class="period">.</span><span class="id identifier rubyid_instance"><span class="object_link"><a href="Nokogiri/VersionInfo.html#instance-class_method" title="Nokogiri::VersionInfo.instance (method)">instance</a></span></span><span class="period">.</span><span class="id identifier rubyid_libxml2?">libxml2?</span>
@@ -867,9 +867,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Mar  6 16:01:18 2019 by
+  Generated on Mon May 13 10:46:47 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.18 (ruby-2.6.0).
+  0.9.18 (ruby-2.6.2).
 </div>
 
     </div>
