@@ -209,7 +209,7 @@ open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10
 
 *If reporting an issue about the macOS installation instructions, please mention @zenspider.*
 
-### Alpine Linux Ruby
+### Alpine Linux Ruby (Docker)
 
 [The official ruby-alpine Docker images](https://hub.docker.com/_/ruby/) are
 stripped of their development tools to minimize size. To install nokogiri (or
@@ -221,18 +221,19 @@ $ apk add build-base
 $ gem install nokogiri
 ```
 
-For a compact docker build that uses Alpine system libraries, you can install
-runtime support and combine the gem installation with removing development tools
-to create a very compact layer.
+For a compact docker build that uses Alpine's own XML libraries, first
+install runtime support to the base image. Then combine the gem
+installation with adding/removing development tools into a single layer.
 
 ```Dockerfile
 FROM ruby:2.6-alpine
 
-# Additional runtime libraries
+# Additional runtime libraries necessitated by --use-system-libraries
 RUN apk add --no-cache libxml2 libxslt
 # Gem installation and build tool add/del in one layer
 RUN apk add --no-cache --virtual .gem-installdeps build-base libxml2-dev libxslt-dev && \
         gem install nokogiri -- --use-system-libraries && \
+        rm -rf $GEM_HOME/cache && \
         apk del .gem-installdeps
 ```
 
