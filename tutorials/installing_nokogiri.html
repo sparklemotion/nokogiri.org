@@ -423,6 +423,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ruby-on-alpine-linux-docker" title="Ruby on Alpine Linux (Docker)" class="md-nav__link">
+    Ruby on Alpine Linux (Docker)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos" title="macOS" class="md-nav__link">
     macOS
   </a>
@@ -506,6 +513,13 @@
           <li class="md-nav__item">
   <a href="#how-to-tell-bundler-to-use-custom-parameters" title="How to tell Bundler to use custom parameters" class="md-nav__link">
     How to tell Bundler to use custom parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-on-alpine-linux-docker_1" title="Ruby on Alpine Linux (Docker)" class="md-nav__link">
+    Ruby on Alpine Linux (Docker)
   </a>
   
 </li>
@@ -813,6 +827,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ruby-on-alpine-linux-docker" title="Ruby on Alpine Linux (Docker)" class="md-nav__link">
+    Ruby on Alpine Linux (Docker)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos" title="macOS" class="md-nav__link">
     macOS
   </a>
@@ -896,6 +917,13 @@
           <li class="md-nav__item">
   <a href="#how-to-tell-bundler-to-use-custom-parameters" title="How to tell Bundler to use custom parameters" class="md-nav__link">
     How to tell Bundler to use custom parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby-on-alpine-linux-docker_1" title="Ruby on Alpine Linux (Docker)" class="md-nav__link">
+    Ruby on Alpine Linux (Docker)
   </a>
   
 </li>
@@ -997,6 +1025,19 @@ a reproducible binary software package management and distribution system.</p>
 
 <p><em>Note: source code is available <a href="http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm">here</a>. A short description of how Nokogiri was packaged can be found
 <a href="https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org">here</a>.</em></p>
+<h3 id="ruby-on-alpine-linux-docker">Ruby on Alpine Linux (Docker)<a class="headerlink" href="#ruby-on-alpine-linux-docker" title="Permanent link">&para;</a></h3>
+<p><a href="https://hub.docker.com/_/ruby/">The official ruby-alpine Docker images</a> are
+stripped of their development tools to minimize size. To install nokogiri (or
+other gems with native extensions) you'll need to install build tools again via
+the <a href="https://pkgs.alpinelinux.org/package/edge/main/x86_64/build-base"><code>build-base</code> meta-package</a>
+(which includes gcc and other necessities).</p>
+<div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> ruby:2.6-alpine</span>
+
+<span class="k">RUN</span> apk add --no-cache build-base
+<span class="k">RUN</span> gem install nokogiri
+</pre></div>
+
+
 <h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
 <p>First, make sure you have the latest version of RubyGems and xcode commandline tools:</p>
 <div class="codehilite"><pre><span></span>gem update --system
@@ -1188,6 +1229,32 @@ well. In that case, you can add the options:</p>
 <p>Do not attempt Bundler installation using Bundler versions before v1.8.3.
 See <a href="https://github.com/bundler/bundler/issues/3053">bundler/bundler#3053</a>. But if you really want to,
 see earlier git history of this file, which includes a workaround.</p>
+<h3 id="ruby-on-alpine-linux-docker_1">Ruby on Alpine Linux (Docker)<a class="headerlink" href="#ruby-on-alpine-linux-docker_1" title="Permanent link">&para;</a></h3>
+<p>To compile against Alpine's own XML libraries, add the necessary
+development tools and libraries to the image.</p>
+<div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> ruby:2.6-alpine</span>
+
+<span class="k">RUN</span> apk add --no-cache build-base libxml2-dev libxslt-dev
+<span class="k">RUN</span> gem install nokogiri -- --use-system-libraries
+</pre></div>
+
+
+<p>When optimizing the size of an Alpine image, the runtime libraries
+must be permanently added. Additionally, adding and removing
+development tooling can be chained with gem installation to ensure a
+small layer.</p>
+<div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> ruby:2.6-alpine</span>
+
+<span class="k">RUN</span> apk add --no-cache libxml2 libxslt <span class="o">&amp;&amp;</span> <span class="se">\</span>
+        apk add --no-cache --virtual .gem-installdeps build-base libxml2-dev libxslt-dev <span class="o">&amp;&amp;</span> <span class="se">\</span>
+        gem install nokogiri -- --use-system-libraries <span class="o">&amp;&amp;</span> <span class="se">\</span>
+        rm -rf <span class="nv">$GEM_HOME</span>/cache <span class="o">&amp;&amp;</span> <span class="se">\</span>
+        apk del .gem-installdeps
+</pre></div>
+
+
+<p>This approach nets an 12.1 MB layer (versus 18.1 MB without <code>--use-system-libraries</code>)
+and saves over 170 MB in build tools.</p>
 <h3 id="smartos-nonstandard">SmartOS (Nonstandard)<a class="headerlink" href="#smartos-nonstandard" title="Permanent link">&para;</a></h3>
 <p>SmartOS installation requires building and using
 libxml2/libxslt/libiconv in a nonstandard location. Building on the
