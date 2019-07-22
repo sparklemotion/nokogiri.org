@@ -209,6 +209,20 @@ open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10
 
 *If reporting an issue about the macOS installation instructions, please mention @zenspider.*
 
+### Ruby on Alpine Linux (Docker)
+
+[The official ruby-alpine Docker images](https://hub.docker.com/_/ruby/) are
+stripped of their development tools to minimize size. To install nokogiri (or
+other gems with native extensions) you'll need to install build tools again via
+the [`build-base` meta-package](https://pkgs.alpinelinux.org/package/edge/main/x86_64/build-base)
+(which includes gcc and other necessities).
+
+```Dockerfile
+FROM ruby:2.6-alpine
+
+RUN apk add --no-cache build-base
+RUN gem install nokogiri
+```
 
 ---
 
@@ -323,6 +337,36 @@ bundle config build.nokogiri \
 Do not attempt Bundler installation using Bundler versions before v1.8.3.
 See [bundler/bundler#3053](https://github.com/bundler/bundler/issues/3053). But if you really want to,
 see earlier git history of this file, which includes a workaround.
+
+### Ruby on Alpine Linux (Docker)
+
+To compile against Alpine's own XML libraries, add the necessary
+development tools and libraries to the image.
+
+``` Dockerfile
+FROM ruby:2.6-alpine
+
+RUN apk add --no-cache build-base libxml2-dev libxslt-dev
+RUN gem install nokogiri -- --use-system-libraries
+```
+
+When optimizing the size of an Alpine image, the runtime libraries
+must be permanently added. Additionally, adding and removing
+development tooling can be chained with gem installation to ensure a
+small layer.
+
+```Dockerfile
+FROM ruby:2.6-alpine
+
+RUN apk add --no-cache libxml2 libxslt && \
+        apk add --no-cache --virtual .gem-installdeps build-base libxml2-dev libxslt-dev && \
+        gem install nokogiri -- --use-system-libraries && \
+        rm -rf $GEM_HOME/cache && \
+        apk del .gem-installdeps
+```
+
+This approach nets an 12.1 MB layer (versus 18.1 MB without `--use-system-libraries`)
+and saves over 170 MB in build tools.
 
 ### SmartOS (Nonstandard)
 
