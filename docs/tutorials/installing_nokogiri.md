@@ -100,6 +100,21 @@ guix package -i ruby-nokogiri
 *Note: source code is available [here](http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm). A short description of how Nokogiri was packaged can be found
 [here](https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org).*
 
+### Ruby on Alpine Linux (Docker)
+
+[The official ruby-alpine Docker images](https://hub.docker.com/_/ruby/) are
+stripped of their development tools to minimize size. To install nokogiri (or
+other gems with native extensions) you'll need to install build tools again via
+the [`build-base` meta-package](https://pkgs.alpinelinux.org/package/edge/main/x86_64/build-base)
+(which includes gcc and other necessities).
+
+```Dockerfile
+FROM ruby:2.6-alpine
+
+RUN apk add --no-cache build-base
+RUN gem install nokogiri
+```
+
 ### macOS
 
 First, make sure you have the latest version of RubyGems and xcode commandline tools:
@@ -208,21 +223,6 @@ open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10
 *   Try [installing with system libraries](#install_with_system_libraries).
 
 *If reporting an issue about the macOS installation instructions, please mention @zenspider.*
-
-### Ruby on Alpine Linux (Docker)
-
-[The official ruby-alpine Docker images](https://hub.docker.com/_/ruby/) are
-stripped of their development tools to minimize size. To install nokogiri (or
-other gems with native extensions) you'll need to install build tools again via
-the [`build-base` meta-package](https://pkgs.alpinelinux.org/package/edge/main/x86_64/build-base)
-(which includes gcc and other necessities).
-
-```Dockerfile
-FROM ruby:2.6-alpine
-
-RUN apk add --no-cache build-base
-RUN gem install nokogiri
-```
 
 ---
 
