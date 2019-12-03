@@ -430,6 +430,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#termux" title="TermUX" class="md-nav__link">
+    TermUX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos" title="macOS" class="md-nav__link">
     macOS
   </a>
@@ -834,6 +841,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#termux" title="TermUX" class="md-nav__link">
+    TermUX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos" title="macOS" class="md-nav__link">
     macOS
   </a>
@@ -1035,6 +1049,13 @@ the <a href="https://pkgs.alpinelinux.org/package/edge/main/x86_64/build-base"><
 
 <span class="k">RUN</span> apk add --no-cache build-base
 <span class="k">RUN</span> gem install nokogiri
+</pre></div>
+
+
+<h3 id="termux">TermUX<a class="headerlink" href="#termux" title="Permanent link">&para;</a></h3>
+<p>Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:</p>
+<div class="codehilite"><pre><span></span>pkg install ruby clang make pkg-config libxslt
+gem install nokogiri -- --use-system-libraries
 </pre></div>
 
 

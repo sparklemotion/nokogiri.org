@@ -3062,6 +3062,11 @@
 <h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Add support for CSS queries "a:has(&gt; b)", "a:has(~ b)", and "a:has(+ b)". [#688] (Thanks, @jonathanhefner!)</li>
+<li>Add <code>frozen_string_literal: true</code> magic comment to all <code>lib</code> files. [#1745] (Thanks, @oniofchaos!)</li>
+<li>Improve performance of some namespace operations. [#1916] (Thanks, @ashmaroli!)</li>
+<li>Remove unnecessary array allocations from Node serialization methods [#1911] (Thanks, @ashmaroli!)</li>
+<li>[MRI] Add <code>Nokogiri::XML::Node#line=</code> for use by downstream libs like nokogumbo. [#1918] (Thanks, @stevecheckoway!)</li>
+<li>[JRuby] Lots of code cleanup and performance improvements. [#1934] (Thanks, @kares!)</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h3>
 <ul>
