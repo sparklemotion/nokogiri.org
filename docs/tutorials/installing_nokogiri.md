@@ -115,6 +115,16 @@ RUN apk add --no-cache build-base
 RUN gem install nokogiri
 ```
 
+### TermUX
+
+Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:
+
+``` sh
+pkg install ruby clang make pkg-config libxslt
+gem install nokogiri -- --use-system-libraries
+```
+
+
 ### macOS
 
 First, make sure you have the latest version of RubyGems and xcode commandline tools:
