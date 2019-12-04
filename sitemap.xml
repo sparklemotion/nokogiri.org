@@ -11,6 +11,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://nokogiri.org/tidelift-landing.html</loc>
+     <lastmod>2019-12-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://nokogiri.org/tutorials/getting_help.html</loc>
      <lastmod>2019-12-04</lastmod>
      <changefreq>daily</changefreq>
