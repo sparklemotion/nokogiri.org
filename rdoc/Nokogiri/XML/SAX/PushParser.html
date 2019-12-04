@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::SAX::PushParser
   
-    — Documentation by YARD 0.9.18
+    — Documentation by YARD 0.9.20
   
 </title>
 
@@ -389,17 +389,17 @@
       <pre class="lines">
 
 
-34
 35
 36
 37
 38
 39
 40
-41</pre>
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 35</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_doc">doc</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX.html" title="Nokogiri::XML::SAX (module)">SAX</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::XML::SAX::Document (class)">Document</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="comma">,</span> <span class="id identifier rubyid_file_name">file_name</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">UTF-8</span><span class="tstring_end">'</span></span><span class="rparen">)</span>
   <span class="ivar">@document</span> <span class="op">=</span> <span class="id identifier rubyid_doc">doc</span>
@@ -449,12 +449,12 @@
       <pre class="lines">
 
 
-29
 30
-31</pre>
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 30</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_document">document</span>
   <span class="ivar">@document</span>
@@ -499,12 +499,12 @@
       <pre class="lines">
 
 
-54
 55
-56</pre>
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 55</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_finish">finish</span>
   <span class="id identifier rubyid_write">write</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="kw">true</span>
@@ -758,12 +758,12 @@ static VALUE set_replace_entities(VALUE self, VALUE value)
       <pre class="lines">
 
 
-46
 47
-48</pre>
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/push_parser.rb', line 47</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write">write</span> <span class="id identifier rubyid_chunk">chunk</span><span class="comma">,</span> <span class="id identifier rubyid_last_chunk">last_chunk</span> <span class="op">=</span> <span class="kw">false</span>
   <span class="id identifier rubyid_native_write">native_write</span><span class="lparen">(</span><span class="id identifier rubyid_chunk">chunk</span><span class="comma">,</span> <span class="id identifier rubyid_last_chunk">last_chunk</span><span class="rparen">)</span>
@@ -778,9 +778,9 @@ static VALUE set_replace_entities(VALUE self, VALUE value)
 </div>
 
       <div id="footer">
-  Generated on Mon May 13 10:46:51 2019 by
+  Generated on Tue Dec  3 19:47:42 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.18 (ruby-2.6.2).
+  0.9.20 (ruby-2.6.2).
 </div>
 
     </div>

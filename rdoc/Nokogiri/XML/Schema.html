@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::Schema
   
-    — Documentation by YARD 0.9.18
+    — Documentation by YARD 0.9.20
   
 </title>
 
@@ -351,12 +351,12 @@
       <pre class="lines">
 
 
-31
 32
-33</pre>
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 32</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_errors">errors</span>
   <span class="ivar">@errors</span>
@@ -536,12 +536,12 @@ static VALUE from_document(VALUE klass, VALUE document)
       <pre class="lines">
 
 
-36
 37
-38</pre>
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 37</span>
 
 <span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_new">new</span> <span class="id identifier rubyid_string_or_io">string_or_io</span>
   <span class="id identifier rubyid_from_document">from_document</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="rparen">)</span>
@@ -715,12 +715,12 @@ static VALUE read_memory(VALUE klass, VALUE content)
       <pre class="lines">
 
 
-58
 59
-60</pre>
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 59</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_valid?">valid?</span> <span class="id identifier rubyid_thing">thing</span>
   <span class="id identifier rubyid_validate">validate</span><span class="lparen">(</span><span class="id identifier rubyid_thing">thing</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_length">length</span> <span class="op">==</span> <span class="int">0</span>
@@ -758,7 +758,6 @@ static VALUE read_memory(VALUE klass, VALUE content)
       <pre class="lines">
 
 
-45
 46
 47
 48
@@ -766,10 +765,11 @@ static VALUE read_memory(VALUE klass, VALUE content)
 50
 51
 52
-53</pre>
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 46</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_validate">validate</span> <span class="id identifier rubyid_thing">thing</span>
   <span class="kw">if</span> <span class="id identifier rubyid_thing">thing</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::XML::Document (class)">Document</a></span></span><span class="rparen">)</span> 
@@ -790,9 +790,9 @@ static VALUE read_memory(VALUE klass, VALUE content)
 </div>
 
       <div id="footer">
-  Generated on Mon May 13 10:46:48 2019 by
+  Generated on Tue Dec  3 19:47:39 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.18 (ruby-2.6.2).
+  0.9.20 (ruby-2.6.2).
 </div>
 
     </div>

@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::SAX::Parser
   
-    — Documentation by YARD 0.9.18
+    — Documentation by YARD 0.9.20
   
 </title>
 
@@ -441,14 +441,14 @@
       <pre class="lines">
 
 
-70
 71
 72
 73
-74</pre>
+74
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 71</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="id identifier rubyid_doc">doc</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX.html" title="Nokogiri::XML::SAX (module)">SAX</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::XML::SAX::Document (class)">Document</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">UTF-8</span><span class="tstring_end">'</span></span>
   <span class="ivar">@encoding</span> <span class="op">=</span> <span class="id identifier rubyid_check_encoding">check_encoding</span><span class="lparen">(</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
@@ -495,12 +495,12 @@
       <pre class="lines">
 
 
-64
 65
-66</pre>
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 65</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_document">document</span>
   <span class="ivar">@document</span>
@@ -540,12 +540,12 @@
       <pre class="lines">
 
 
-67
 68
-69</pre>
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 68</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_encoding">encoding</span>
   <span class="ivar">@encoding</span>
@@ -590,16 +590,16 @@
       <pre class="lines">
 
 
-79
 80
 81
 82
 83
 84
-85</pre>
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 80</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_thing">thing</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
   <span class="kw">if</span> <span class="id identifier rubyid_thing">thing</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:read</span><span class="rparen">)</span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_thing">thing</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:close</span><span class="rparen">)</span>
@@ -667,17 +667,17 @@
       <pre class="lines">
 
 
-98
 99
 100
 101
 102
 103
 104
-105</pre>
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 99</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse_file">parse_file</span> <span class="id identifier rubyid_filename">filename</span>
   <span class="id identifier rubyid_raise">raise</span> <span class="const">ArgumentError</span> <span class="kw">unless</span> <span class="id identifier rubyid_filename">filename</span>
@@ -733,15 +733,15 @@
       <pre class="lines">
 
 
-89
 90
 91
 92
 93
-94</pre>
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 90</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse_io">parse_io</span> <span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">ASCII</span><span class="tstring_end">'</span></span>
   <span class="ivar">@encoding</span> <span class="op">=</span> <span class="id identifier rubyid_check_encoding">check_encoding</span><span class="lparen">(</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
@@ -793,14 +793,14 @@
       <pre class="lines">
 
 
-107
 108
 109
 110
-111</pre>
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/parser.rb', line 108</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse_memory">parse_memory</span> <span class="id identifier rubyid_data">data</span>
   <span class="id identifier rubyid_ctx">ctx</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="ParserContext.html" title="Nokogiri::XML::SAX::ParserContext (class)">ParserContext</a></span></span><span class="period">.</span><span class="id identifier rubyid_memory"><span class="object_link"><a href="ParserContext.html#memory-class_method" title="Nokogiri::XML::SAX::ParserContext.memory (method)">memory</a></span></span> <span class="id identifier rubyid_data">data</span>
@@ -817,9 +817,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon May 13 10:46:50 2019 by
+  Generated on Tue Dec  3 19:47:41 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.18 (ruby-2.6.2).
+  0.9.20 (ruby-2.6.2).
 </div>
 
     </div>

@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::Reader
   
-    — Documentation by YARD 0.9.18
+    — Documentation by YARD 0.9.20
   
 </title>
 
@@ -1239,12 +1239,12 @@
       <pre class="lines">
 
 
-73
 74
-75</pre>
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 74</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_encoding">encoding</span>
   <span class="ivar">@encoding</span>
@@ -1284,12 +1284,12 @@
       <pre class="lines">
 
 
-70
 71
-72</pre>
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 71</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_errors">errors</span>
   <span class="ivar">@errors</span>
@@ -1329,12 +1329,12 @@
       <pre class="lines">
 
 
-76
 77
-78</pre>
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 77</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_source">source</span>
   <span class="ivar">@source</span>
@@ -1830,14 +1830,14 @@ static VALUE attribute_count(VALUE self)
       <pre class="lines">
 
 
-97
-98
-99
-100
-101</pre>
+101
+102
+103
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 101</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span>
   <span class="id identifier rubyid_nodes">nodes</span> <span class="op">=</span> <span class="id identifier rubyid_attr_nodes">attr_nodes</span>
@@ -1877,19 +1877,25 @@ static VALUE attribute_count(VALUE self)
       <pre class="lines">
 
 
-89
 90
 91
 92
-93</pre>
+93
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 90</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_attributes">attributes</span>
-  <span class="const">Hash</span><span class="lbracket">[</span><span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="op">|</span>
-    <span class="lbracket">[</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="rbracket">]</span>
-  <span class="rbrace">}</span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_merge">merge</span><span class="lparen">(</span><span class="id identifier rubyid_namespaces">namespaces</span> <span class="op">||</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_attrs_hash">attrs_hash</span> <span class="op">=</span> <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_each_with_object">each_with_object</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="comma">,</span> <span class="id identifier rubyid_hash">hash</span><span class="op">|</span>
+                 <span class="id identifier rubyid_hash">hash</span><span class="lbracket">[</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_name">name</span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span>
+               <span class="kw">end</span>
+  <span class="id identifier rubyid_ns">ns</span> <span class="op">=</span> <span class="id identifier rubyid_namespaces">namespaces</span>
+  <span class="id identifier rubyid_attrs_hash">attrs_hash</span><span class="period">.</span><span class="id identifier rubyid_merge!">merge!</span><span class="lparen">(</span><span class="id identifier rubyid_ns">ns</span><span class="rparen">)</span> <span class="kw">if</span> <span class="id identifier rubyid_ns">ns</span>
+  <span class="id identifier rubyid_attrs_hash">attrs_hash</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -2198,14 +2204,14 @@ static VALUE depth(VALUE self)
       <pre class="lines">
 
 
-105
-106
-107
-108
-109</pre>
+109
+110
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 109</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_each">each</span>
   <span class="kw">while</span> <span class="id identifier rubyid_cursor">cursor</span> <span class="op">=</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_read">read</span>
@@ -2265,19 +2271,6 @@ static VALUE depth(VALUE self)
 
 </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div>
 <table class="source_code">
@@ -3243,9 +3236,9 @@ static VALUE xml_version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Mon May 13 10:46:48 2019 by
+  Generated on Tue Dec  3 19:47:39 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.18 (ruby-2.6.2).
+  0.9.20 (ruby-2.6.2).
 </div>
 
     </div>
