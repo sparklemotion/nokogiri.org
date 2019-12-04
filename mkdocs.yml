@@ -42,6 +42,7 @@ nav:
   - Readme: index.md
   - Support:
     - Installing Nokogiri: tutorials/installing_nokogiri.md
+    - Nokogiri for Enterprise: tidelift-landing.md
     - Getting Help: tutorials/getting_help.md
     - Security: tutorials/security.md
     - More Resources: tutorials/more_resources.md
