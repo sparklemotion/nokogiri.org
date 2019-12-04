@@ -8,11 +8,13 @@ div.md-content {
   position: relative;
 }
 
-div.md-content a.tidelift {
+div.md-content a.tidelift-top {
   top: 0px;
   right: 10px;
   position: absolute;
+}
 
+div.md-content a.tidelift {
   border-radius: 18px;
   box-shadow: 0 0 2px 1px #4B5168;
 
@@ -29,6 +31,23 @@ div.md-content a.tidelift {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 21px;
+}
+
+div.md-content div.tidelift-button-bar {
+  padding-top: 2em ;
+}
+
+div.md-content div.tidelift-button-bar a.tidelift {
+  font-size: 18px;
+  font-weight: bold ;
+  line-height: 25px;
+  padding-right: 12px;
+  margin-left: 10% ;
+}
+
+div.md-content a.tidelift.tidelift-inverse {
+  background-color: #626980 ;
+  background-image: url(/images/Tidelift_Logos_RGB_Tidelift_Shorthand_On-Blue.png);
 }
 
 div.md-content a.tidelift:hover {
