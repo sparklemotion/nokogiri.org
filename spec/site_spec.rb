@@ -18,6 +18,8 @@ describe "nokogiri.org" do
 
   feature "tidelift URLs" do
     let(:tidelift_url) { "https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=website" }
+    let(:tidelift_enterprise_url) { "https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=enterprise" }
+    let(:tidelift_enterprise_demo_url) { "https://tidelift.com/subscription/request-a-demo?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=enterprise" }
 
     it "should link to tidelift from home page" do
       visit "/"
@@ -37,6 +39,8 @@ describe "nokogiri.org" do
     it "should have a 'for enterprise' page" do
       visit "/tidelift-landing.html"
       expect(page).to have_content("Available as part of the Tidelift Subscription")
+      expect(page).to have_link("Learn More", href: tidelift_enterprise_url)
+      expect(page).to have_link("Request a Demo", href: tidelift_enterprise_demo_url)
     end
   end
 end
