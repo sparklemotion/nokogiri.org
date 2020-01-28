@@ -134,6 +134,12 @@ gem update --system
 xcode-select --install # Then agree to the terms, even if you have done this before!
 ```
 
+Agree to the Xcode license:
+
+```sh
+sudo xcodebuild -license
+```
+
 Then install nokogiri:
 
 ```sh
