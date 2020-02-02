@@ -42,7 +42,7 @@
     
     
       
-        <title>Roadmap for API Changes - Nokogiri</title>
+        <title>Roadmap - Nokogiri</title>
       
     
     
@@ -125,7 +125,7 @@
                 Nokogiri
               </span>
               <span class="md-header-nav__topic">
-                Roadmap for API Changes
+                Roadmap
               </span>
             
           
@@ -197,14 +197,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="index.html" title="Readme" class="md-tabs__link md-tabs__link--active">
+      <a href="index.html" title="Readme" class="md-tabs__link">
         Readme
       </a>
     
@@ -242,7 +244,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="CHANGELOG.html" title="About" class="md-tabs__link">
+        <a href="CHANGELOG.html" title="About" class="md-tabs__link md-tabs__link--active">
           About
         </a>
       
@@ -253,7 +255,7 @@
         
   <li class="md-tabs__item">
     
-      <a href="rdoc/index.html" title="RDoc" class="md-tabs__link md-tabs__link--active">
+      <a href="rdoc/index.html" title="RDoc" class="md-tabs__link">
         RDoc
       </a>
     
@@ -477,10 +479,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       About
@@ -549,6 +553,126 @@
     <a href="LICENSE-DEPENDENCIES.html" title="Dependencies" class="md-nav__link">
       Dependencies
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Roadmap
+      </label>
+    
+    <a href="ROADMAP.html" title="Roadmap" class="md-nav__link md-nav__link--active">
+      Roadmap
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overhaul-serializepretty-printing-api" title="overhaul serialize/pretty printing API" class="md-nav__link">
+    overhaul serialize/pretty printing API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overhaul-and-optimize-the-sax-parsing" title="overhaul and optimize the SAX parsing" class="md-nav__link">
+    overhaul and optimize the SAX parsing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-should-not-be-enumerable-and-should-have-a-better-attributes-api" title="Node should not be Enumerable; and should have a better attributes API" class="md-nav__link">
+    Node should not be Enumerable; and should have a better attributes API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improve-css-query-parsing" title="improve CSS query parsing" class="md-nav__link">
+    improve CSS query parsing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentfragment" title="DocumentFragment" class="md-nav__link">
+    DocumentFragment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#better-syntax-for-custom-xpath-function-handler" title="Better Syntax for custom XPath function handler" class="md-nav__link">
+    Better Syntax for custom XPath function handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#better-syntax-around-nodexpath-and-nodesetxpath" title="Better Syntax around Node#xpath and NodeSet#xpath" class="md-nav__link">
+    Better Syntax around Node#xpath and NodeSet#xpath
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" title="Encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reader" title="Reader" class="md-nav__link">
+    Reader
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-methods-that-require-document" title="Class methods that require Document" class="md-nav__link">
+    Class methods that require Document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collect_namespaces-is-just-broken" title="collect_namespaces is just broken" class="md-nav__link">
+    collect_namespaces is just broken
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -807,6 +931,41 @@ XML, so what do I know?</p>
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="LICENSE-DEPENDENCIES.html" title="Dependencies" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Dependencies
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="rdoc/index.html" title="RDoc" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                RDoc
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
