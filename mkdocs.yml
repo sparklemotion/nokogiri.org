@@ -57,4 +57,5 @@ nav:
     - Security: SECURITY.md
     - License: LICENSE.md
     - Dependencies: LICENSE-DEPENDENCIES.md
+    - Roadmap: ROADMAP.md
   - RDoc: rdoc/index.html
