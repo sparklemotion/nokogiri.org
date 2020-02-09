@@ -53,18 +53,27 @@ gem install nokogiri
 
 ### Windows
 
-Use Rubyinstaller to install our binary distribution in a flash!
+Use [RubyInstaller][] to install our binary gem distribution in a flash!
 
 ```sh
 gem install nokogiri
 ```
 
-Or build using [DevKit][]. This is an advanced option you should only
-try if you know what you're doing. You MUST use Rubygems 2.4.5 or later.
+Nokogiri source gems can also be installed on RubyInstaller+Devkit.
+This can be necessary if the binary gem doesn't fit to your ruby version.
+Install Nokogiri with builtin libxml/libxslt sources:
 
-  [DevKit]: http://rubyinstaller.org/add-ons/devkit/
+```sh
+gem install nokogiri --platform=ruby
+```
+Install Nokogiri and link to MSYS2 libraries:
 
-Also see more details on this advanced procedure on [this nokogiri-talk thread](https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J).
+```sh
+ridk exec pacman -S mingw-w64-x86_64-libxslt
+gem install nokogiri --platform=ruby -- --use-system-libraries
+```
+
+  [RubyInstaller]: https://rubyinstaller.org/
 
 ### Red Hat / CentOS
 
