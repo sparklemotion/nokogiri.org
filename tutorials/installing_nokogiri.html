@@ -1031,14 +1031,24 @@ gem install nokogiri
 
 
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
-<p>Use Rubyinstaller to install our binary distribution in a flash!</p>
+<p>Use <a href="https://rubyinstaller.org/">RubyInstaller</a> to install our binary gem distribution in a flash!</p>
 <div class="codehilite"><pre><span></span>gem install nokogiri
 </pre></div>
 
 
-<p>Or build using <a href="http://rubyinstaller.org/add-ons/devkit/">DevKit</a>. This is an advanced option you should only
-try if you know what you're doing. You MUST use Rubygems 2.4.5 or later.</p>
-<p>Also see more details on this advanced procedure on <a href="https://groups.google.com/d/msg/nokogiri-talk/BJiwiebHxoQ/B3vgV4iE9g0J">this nokogiri-talk thread</a>.</p>
+<p>Nokogiri source gems can also be installed on RubyInstaller+Devkit.
+This can be necessary if the binary gem doesn't fit to your ruby version.
+Install Nokogiri with builtin libxml/libxslt sources:</p>
+<div class="codehilite"><pre><span></span>gem install nokogiri --platform<span class="o">=</span>ruby
+</pre></div>
+
+
+<p>Install Nokogiri and link to MSYS2 libraries:</p>
+<div class="codehilite"><pre><span></span>ridk <span class="nb">exec</span> pacman -S mingw-w64-x86_64-libxslt
+gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
+</pre></div>
+
+
 <h3 id="red-hat-centos">Red Hat / CentOS<a class="headerlink" href="#red-hat-centos" title="Permanent link">&para;</a></h3>
 <p>Install Nokogiri on a brand new Red Had / CentOS system with these commands:</p>
 <div class="codehilite"><pre><span></span>sudo yum install -y gcc ruby-devel zlib-devel
