@@ -228,6 +228,12 @@ install the extra headers package mentioned in the Xcode 10 release notes:
 open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 ```
 
+You can also install the headers package from the command line (e.g. for a build script or a CI server):
+
+```sh
+sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+```
+
 [xcode10]: https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624
 
 #### Other macOS Tips
