@@ -7,15 +7,15 @@
 <title>
   Class: Nokogiri::XML::ParseOptions
   
-    — Documentation by YARD 0.9.20
+    — Documentation by YARD 0.9.24
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "Nokogiri::XML::ParseOptions";
   relpath = '../../';
 </script>
@@ -154,9 +154,9 @@
 <p>You can also remove options from an instance of <code>ParseOptions</code> dynamically. Every option has an equivalent <code>no{option}</code> method in lowercase. You can call these methods on an instance of <code>ParseOptions</code> to remove the option. Note that this is not available for <code>STRICT</code>.</p>
 
 <pre class="code ruby"><code class="ruby"><span class="comment"># Setting the RECOVER &amp; NOENT options...
-</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_recover">recover</span><span class="period">.</span><span class="id identifier rubyid_noent">noent</span>
-<span class="comment"># later...
-</span><span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_norecover">norecover</span> <span class="comment"># Removes the Nokogiri::XML::ParseOptions::RECOVER option
+</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_recover">recover</span><span class="period">.</span><span class="id identifier rubyid_noent">noent</span><span class="comment"># later...
+</span>
+<span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_norecover">norecover</span> <span class="comment"># Removes the Nokogiri::XML::ParseOptions::RECOVER option
 </span><span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_nonoent">nonoent</span> <span class="comment"># Removes the Nokogiri::XML::ParseOptions::NOENT option
 </span></code></pre>
 
@@ -706,7 +706,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of ParseOptions</p>
+<p>Returns a new instance of ParseOptions.</p>
 
 
   </div>
@@ -760,7 +760,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute options</p>
+<p>Returns the value of attribute options.</p>
 
 
   </div>
@@ -928,9 +928,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Dec  4 16:44:00 2019 by
+  Generated on Sun Feb  9 16:40:11 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.20 (ruby-2.6.2).
+  0.9.24 (ruby-2.7.0).
 </div>
 
     </div>
