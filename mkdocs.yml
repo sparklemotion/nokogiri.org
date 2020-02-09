@@ -47,6 +47,7 @@ nav:
     - Security: tutorials/security.md
     - More Resources: tutorials/more_resources.md
   - Tutorials:
+    - Table of Contents: tutorials/toc.md
     - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
     - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
     - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md

@@ -22,6 +22,8 @@ def create_tutorial_tasks(source_dir, dest_dir)
     dest_paths << dest_path
   end
 
+  dest_paths << create_tutorial_toc_task(source_dir, dest_dir)
+
   each_glob_match_to_file_pairs("{CNAME,*.{png,svg,css}}", source_dir, dest_dir) do |source_path, dest_path|
     file dest_path => source_path do
       FileUtils.mkdir_p File.dirname(dest_path)
@@ -31,6 +33,29 @@ def create_tutorial_tasks(source_dir, dest_dir)
   end
 
   dest_paths
+end
+
+def create_tutorial_toc_task(source_dir, dest_dir)
+  mkdocs_yml_path = File.join(File.dirname(__FILE__), "../mkdocs.yml")
+  toc_path = File.join(dest_dir, TUTORIALS_DIR, "toc.md")
+
+  toc_md = ["# Nokogiri Tutorials\n"]
+
+  nav = YAML.load_file(mkdocs_yml_path)["nav"]
+  tutorials = nav.find { |x| x["Tutorials"] }.first.last
+  tutorials.each do |tutorial|
+    tutorial_title, tutorial_path = *(tutorial.flatten)
+    next if tutorial_title =~ /Table of Contents/
+
+    toc_md << "* [#{tutorial_title}](#{File.basename(tutorial_path)})"
+  end
+
+  file toc_path => mkdocs_yml_path do
+    puts "generating tutorials' table of contents"
+    File.open(toc_path, "w") do |f|
+      f.write toc_md.join("\n")
+    end
+  end
 end
 
 def each_glob_match_to_file_pairs(glob, source_dir, dest_dir, &block)

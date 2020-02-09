@@ -16,6 +16,13 @@ describe "nokogiri.org" do
     end
   end
 
+  feature "permalinks" do
+    it "should support a Tutorials TOC landing page" do
+      visit "/tutorials/toc.html"
+      expect(page.status_code).to eq(200)
+    end
+  end
+
   feature "tidelift URLs" do
     let(:tidelift_url) { "https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=website" }
     let(:tidelift_enterprise_url) { "https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=enterprise" }
