@@ -75,10 +75,10 @@ gem install nokogiri --platform=ruby -- --use-system-libraries
 
   [RubyInstaller]: https://rubyinstaller.org/
 
+
 ### Fedora
 
-The preferred way to install Nokogiri on Fedora is from system repositories
-using:
+Install Nokogiri on Fedora from system repositories using:
 
 ```sh
 sudo dnf install -y rubygem-nokogiri
