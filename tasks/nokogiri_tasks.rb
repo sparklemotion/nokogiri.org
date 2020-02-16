@@ -56,7 +56,7 @@ def nokogiri_generate_rdocs
 
   pwd = Dir.pwd
   Dir.chdir(nokogiri_dir) do
-    system "yard doc --output-dir #{File.join(pwd, RDOC_STAGING_DIR)}"
+    system "yard doc --output-dir #{File.join(pwd, RDOC_STAGING_DIR)} --embed-mixins"
   end
 end
 
