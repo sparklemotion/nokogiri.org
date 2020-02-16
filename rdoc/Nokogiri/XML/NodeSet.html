@@ -148,13 +148,6 @@
 
 
 
-  
-  
-  <h3 class="inherited">Constants included
-     from <span class="object_link"><a href="Searchable.html" title="Nokogiri::XML::Searchable (module)">Searchable</a></span>
-</h3>
-  <p class="inherited"><span class="object_link"><a href="Searchable.html#LOOKS_LIKE_XPATH-constant" title="Nokogiri::XML::Searchable::LOOKS_LIKE_XPATH (constant)">Searchable::LOOKS_LIKE_XPATH</a></span></p>
-
 
   <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small>
 </h2>
@@ -192,6 +185,104 @@
 
 
 
+  
+    <h2>
+      Searching via XPath or CSS Queries
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#at_css-instance_method" title="#at_css (instance method)">#<strong>at_css</strong>(*args)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class="object_link"><a href="Searchable.html#at_css-instance_method" title="Nokogiri::XML::Searchable#at_css (method)">Searchable</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>call-seq: css *rules, [namespace-bindings, custom-pseudo-class].</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#at_xpath-instance_method" title="#at_xpath (instance method)">#<strong>at_xpath</strong>(*args)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class="object_link"><a href="Searchable.html#at_xpath-instance_method" title="Nokogiri::XML::Searchable#at_xpath (method)">Searchable</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>call-seq: xpath *paths, [namespace-bindings, variable-bindings, custom-handler-class].</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search-instance_method" title="#search (instance method)">#<strong>search</strong>(*args)  ⇒ Object </a>
+    
+
+    
+      (also: #/)
+    
+  </span>
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class="object_link"><a href="Searchable.html#search-instance_method" title="Nokogiri::XML::Searchable#search (method)">Searchable</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>call-seq: search *paths, [namespace-bindings, xpath-variable-bindings, custom-handler-class].</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
   
     <h2>
       Instance Method Summary
@@ -1272,17 +1363,7 @@
 
   
   
-  
-  
-  
-  
-  
-  
-  
-  <h3 class="inherited">Methods included from <span class="object_link"><a href="Searchable.html" title="Nokogiri::XML::Searchable (module)">Searchable</a></span>
-</h3>
-  <p class="inherited"><span class="object_link"><a href="Searchable.html#at_css-instance_method" title="Nokogiri::XML::Searchable#at_css (method)">#at_css</a></span>, <span class="object_link"><a href="Searchable.html#at_xpath-instance_method" title="Nokogiri::XML::Searchable#at_xpath (method)">#at_xpath</a></span>, <span class="object_link"><a href="Searchable.html#search-instance_method" title="Nokogiri::XML::Searchable#search (method)">#search</a></span></p>
-<div id="constructor_details" class="method_details_list">
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -2006,6 +2087,72 @@ static VALUE slice(int argc, VALUE *argv, VALUE self)
     </td>
   </tr>
 </table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="at_css-instance_method">
+  
+    #<strong>at_css</strong>(*args)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class="object_link"><a href="Searchable.html#at_css-instance_method" title="Nokogiri::XML::Searchable#at_css (method)">Searchable</a></span>
+    </span>
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq: css *rules, [namespace-bindings, custom-pseudo-class]</p>
+
+<p>Search this object for CSS <code>rules</code>, and return only the first match. <code>rules</code> must be one or more CSS selectors.</p>
+
+<p>See Searchable#css for more information.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="at_xpath-instance_method">
+  
+    #<strong>at_xpath</strong>(*args)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class="object_link"><a href="Searchable.html#at_xpath-instance_method" title="Nokogiri::XML::Searchable#at_xpath (method)">Searchable</a></span>
+    </span>
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq: xpath *paths, [namespace-bindings, variable-bindings, custom-handler-class]</p>
+
+<p>Search this node for XPath <code>paths</code>, and return only the first match. <code>paths</code> must be one or more XPath queries.</p>
+
+<p>See Searchable#xpath for more information.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 </div>
     
       <div class="method_details ">
@@ -3242,6 +3389,68 @@ static VALUE push(VALUE self, VALUE rb_node)
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="search-instance_method">
+  
+    #<strong>search</strong>(*args)  ⇒ <tt>Object</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id="/-instance_method">/</span></span>
+    </span>
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class="object_link"><a href="Searchable.html#search-instance_method" title="Nokogiri::XML::Searchable#search (method)">Searchable</a></span>
+    </span>
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq: search *paths, [namespace-bindings, xpath-variable-bindings, custom-handler-class]</p>
+
+<p>Search this object for <code>paths</code>. <code>paths</code> must be one or more XPath or CSS queries:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_search">search</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">div.employee</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">.//title</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+</code></pre>
+
+<p>A hash of namespace bindings may be appended:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_search">search</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">.//bike:tire</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="lbrace">{</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bike</span><span class="tstring_end">'</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">http://schwinn.com/</span><span class="tstring_end">'</span></span><span class="rbrace">}</span><span class="rparen">)</span>
+<span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_search">search</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bike|tire</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="lbrace">{</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bike</span><span class="tstring_end">'</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">http://schwinn.com/</span><span class="tstring_end">'</span></span><span class="rbrace">}</span><span class="rparen">)</span>
+</code></pre>
+
+<p>For XPath queries, a hash of variable bindings may also be appended to the namespace bindings. For example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_search">search</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">.//address[@domestic=$value]</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="lbrace">{</span><span class="symbol">:value</span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">Yes</span><span class="tstring_end">'</span></span><span class="rbrace">}</span><span class="rparen">)</span>
+</code></pre>
+
+<p>Custom XPath functions and CSS pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define.  The first argument to the method will be the current matching NodeSet.  Any other arguments are ones that you pass in.  Note that this class may appear anywhere in the argument list.  For example:</p>
+
+<pre class="code ruby"><code class="ruby">node.search('.//title[regex(., "\w+")]', 'div.employee:regex("[0-9]+")'
+  Class.new {
+    def regex node_set, regex
+      node_set.find_all { |node| node['some_attribute'] =~ /#{regex}/ }
+    end
+  }.new
+)
+</code></pre>
+
+<p>See Searchable#xpath and Searchable#css for further usage help.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="shift-instance_method">
   
     #<strong>shift</strong>  ⇒ <tt>Object</tt> 
@@ -3938,7 +4147,7 @@ static VALUE set_union(VALUE self, VALUE rb_other)
 </div>
 
       <div id="footer">
-  Generated on Sun Feb  9 16:40:10 2020 by
+  Generated on Sun Feb 16 11:20:06 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.7.0).
 </div>
