@@ -597,6 +597,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#removed" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#changed" title="Changed" class="md-nav__link">
     Changed
   </a>
@@ -1981,7 +1988,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed" title="Removed" class="md-nav__link">
+  <a href="#removed_1" title="Removed" class="md-nav__link">
     Removed
   </a>
   
@@ -2197,7 +2204,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed_1" title="Removed" class="md-nav__link">
+  <a href="#removed_2" title="Removed" class="md-nav__link">
     Removed
   </a>
   
@@ -2810,6 +2817,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#removed" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#changed" title="Changed" class="md-nav__link">
     Changed
   </a>
@@ -4194,7 +4208,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed" title="Removed" class="md-nav__link">
+  <a href="#removed_1" title="Removed" class="md-nav__link">
     Removed
   </a>
   
@@ -4410,7 +4424,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed_1" title="Removed" class="md-nav__link">
+  <a href="#removed_2" title="Removed" class="md-nav__link">
     Removed
   </a>
   
@@ -4916,9 +4930,10 @@
 </ul>
 <h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
 <ul>
+<li>Add Node methods for manipulating keyword attributes (like <code>class</code> and <code>rel</code>): <code>#kwattr_values</code>, <code>#kwattr_add</code>, <code>#kwattr_append</code>, and <code>#kwattr_remove</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/2000">#2000</a>]</li>
 <li>Add support for CSS queries "a:has(&gt; b)", "a:has(~ b)", and "a:has(+ b)". [<a href="https://github.com/sparklemotion/nokogiri/issues/688">#688</a>] (Thanks, <a href="https://github.com/jonathanhefner">@jonathanhefner</a>!)</li>
 <li>Add <code>Node#value?</code> to better match expected semantics of a Hash-like object. [<a href="https://github.com/sparklemotion/nokogiri/issues/1838">#1838</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1840">#1840</a>] (Thanks, <a href="https://github.com/MatzFan">@MatzFan</a>!)</li>
-<li>[MRI] Add <code>Nokogiri::XML::Node#line=</code> for use by downstream libs like nokogumbo. [<a href="https://github.com/sparklemotion/nokogiri/issues/1918">#1918</a>] (Thanks, <a href="https://github.com/stevecheckoway">@stevecheckoway</a>!)</li>
+<li>[CRuby] Add <code>Nokogiri::XML::Node#line=</code> for use by downstream libs like nokogumbo. [<a href="https://github.com/sparklemotion/nokogiri/issues/1918">#1918</a>] (Thanks, <a href="https://github.com/stevecheckoway">@stevecheckoway</a>!)</li>
 </ul>
 <h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4930,9 +4945,15 @@
 </ul>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
+<li>The switch to turn off the CSS-to-XPath cache is now thread-local, rather than being shared mutable state. [<a href="https://github.com/sparklemotion/nokogiri/issues/1935">#1935</a>]</li>
 <li>[CRuby] Fixed installation on AIX with respect to <code>vasprintf</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/1908">#1908</a>]</li>
 <li>[JRuby] Standardize reading from IO like objects, including StringIO. [<a href="https://github.com/sparklemotion/nokogiri/issues/1888">#1888</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1897">#1897</a>]</li>
 <li>[JRuby] Change <code>NodeSet#to_a</code> to return a RubyArray instead of Object, for compilation under JRuby 9.2.9 and later. [<a href="https://github.com/sparklemotion/nokogiri/issues/1968">#1968</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1969">#1969</a>] (Thanks, <a href="https://github.com/headius">@headius</a>!)</li>
+</ul>
+<h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The internal method <code>Nokogiri::CSS::Parser.cache_on=</code> has been removed. Use <code>.set_cache</code> if you need to muck with the cache internals.</li>
+<li>The method <code>Nokogiri::CSS::Parser.parse</code> has been removed. This was originally deprecated in 2009 in 13db61b.</li>
 </ul>
 <h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
 <h4 id="versioninfo-and-the-output-of-nokogiri-v"><code>VersionInfo</code> and the output of <code>nokogiri -v</code><a class="headerlink" href="#versioninfo-and-the-output-of-nokogiri-v" title="Permanent link">&para;</a></h4>
@@ -5824,7 +5845,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Ruby 1.8.6 is deprecated. Nokogiri will install, but official support is ended.</li>
 <li>LibXML 2.6.16 and earlier are deprecated. Nokogiri will refuse to install.</li>
 </ul>
-<h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h3>
+<h3 id="removed_1">Removed<a class="headerlink" href="#removed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>FFI support is removed.</li>
 </ul>
@@ -5998,7 +6019,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Fixed SEGV when adding an XML::Document to NodeSet</li>
 <li>XML::SyntaxError can be duplicated. GH <a href="https://github.com/sparklemotion/nokogiri/issues/148">#148</a></li>
 </ul>
-<h3 id="removed_1">Removed<a class="headerlink" href="#removed_1" title="Permanent link">&para;</a></h3>
+<h3 id="removed_2">Removed<a class="headerlink" href="#removed_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Hpricot compatibility layer removed</li>
 </ul>

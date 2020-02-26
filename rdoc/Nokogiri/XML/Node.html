@@ -1242,7 +1242,7 @@ irb(main):010:0&gt;
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_class-instance_method" title="#add_class (instance method)">#<strong>add_class</strong>(name)  ⇒ Object </a>
+      <a href="#add_class-instance_method" title="#add_class (instance method)">#<strong>add_class</strong>(names)  ⇒ Node </a>
     
 
     
@@ -1257,7 +1257,7 @@ irb(main):010:0&gt;
 
   
     <span class="summary_desc"><div class="inline">
-<p>Add <code>name</code> to the “class” attribute value of this Node and return self.</p>
+<p>Ensure HTML CSS classes are present on a <code>Node</code>.</p>
 </div></span>
   
 </li>
@@ -1266,7 +1266,7 @@ irb(main):010:0&gt;
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#append_class-instance_method" title="#append_class (instance method)">#<strong>append_class</strong>(name)  ⇒ Object </a>
+      <a href="#append_class-instance_method" title="#append_class (instance method)">#<strong>append_class</strong>(names)  ⇒ Node </a>
     
 
     
@@ -1281,7 +1281,7 @@ irb(main):010:0&gt;
 
   
     <span class="summary_desc"><div class="inline">
-<p>Append <code>name</code> to the “class” attribute value of this Node and return self.</p>
+<p>Add HTML CSS classes to a <code>Node</code>, regardless of duplication.</p>
 </div></span>
   
 </li>
@@ -1314,7 +1314,7 @@ irb(main):010:0&gt;
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#classes-instance_method" title="#classes (instance method)">#<strong>classes</strong>  ⇒ Object </a>
+      <a href="#classes-instance_method" title="#classes (instance method)">#<strong>classes</strong>  ⇒ Array&lt;String&gt; </a>
     
 
     
@@ -1329,7 +1329,7 @@ irb(main):010:0&gt;
 
   
     <span class="summary_desc"><div class="inline">
-<p>Get the list of class names of this Node, without deduplication or sorting.</p>
+<p>Get the CSS class names of a Node.</p>
 </div></span>
   
 </li>
@@ -1386,6 +1386,102 @@ irb(main):010:0&gt;
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#kwattr_add-instance_method" title="#kwattr_add (instance method)">#<strong>kwattr_add</strong>(attribute_name, keywords)  ⇒ Node </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Ensure that values are present in a keyword attribute.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#kwattr_append-instance_method" title="#kwattr_append (instance method)">#<strong>kwattr_append</strong>(attribute_name, keywords)  ⇒ Node </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Add keywords to a Node's keyword attribute, regardless of duplication.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#kwattr_remove-instance_method" title="#kwattr_remove (instance method)">#<strong>kwattr_remove</strong>(attribute_name, keywords)  ⇒ Node </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Remove keywords from a keyword attribute.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#kwattr_values-instance_method" title="#kwattr_values (instance method)">#<strong>kwattr_values</strong>(attribute_name)  ⇒ Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Retrieve values from a keyword attribute of a Node.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#remove_attribute-instance_method" title="#remove_attribute (instance method)">#<strong>remove_attribute</strong>(name)  ⇒ Object </a>
     
 
@@ -1412,7 +1508,7 @@ irb(main):010:0&gt;
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_class-instance_method" title="#remove_class (instance method)">#<strong>remove_class</strong>(name = nil)  ⇒ Object </a>
+      <a href="#remove_class-instance_method" title="#remove_class (instance method)">#<strong>remove_class</strong>(names = nil)  ⇒ Node </a>
     
 
     
@@ -1427,7 +1523,7 @@ irb(main):010:0&gt;
 
   
     <span class="summary_desc"><div class="inline">
-<p>Remove <code>name</code> from the “class” attribute value of this Node and return self.</p>
+<p>Remove HTML CSS classes from a <code>Node</code>.</p>
 </div></span>
   
 </li>
@@ -3603,14 +3699,14 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-707
-708
-709
-710
-711</pre>
+984
+985
+986
+987
+988</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 707</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 984</span>
 
 <span class="kw">def</span> <span class="op">&lt;=&gt;</span><span class="lparen">(</span><span class="id identifier rubyid_other">other</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">unless</span> <span class="id identifier rubyid_other">other</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="rparen">)</span>
@@ -3650,14 +3746,14 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-698
-699
-700
-701
-702</pre>
+975
+976
+977
+978
+979</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 698</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 975</span>
 
 <span class="kw">def</span> <span class="op">==</span><span class="lparen">(</span><span class="id identifier rubyid_other">other</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">false</span> <span class="kw">unless</span> <span class="id identifier rubyid_other">other</span>
@@ -3836,12 +3932,12 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-692
-693
-694</pre>
+969
+970
+971</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 692</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 969</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_accept">accept</span><span class="lparen">(</span><span class="id identifier rubyid_visitor">visitor</span><span class="rparen">)</span>
   <span class="id identifier rubyid_visitor">visitor</span><span class="period">.</span><span class="id identifier rubyid_visit">visit</span><span class="lparen">(</span><span class="kw">self</span><span class="rparen">)</span>
@@ -3913,7 +4009,7 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <div class="method_details ">
   <h3 class="signature " id="add_class-instance_method">
   
-    #<strong>add_class</strong>(name)  ⇒ <tt>Object</tt> 
+    #<strong>add_class</strong>(names)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt> 
   
 
   
@@ -3923,15 +4019,104 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 <div class="docstring">
   <div class="discussion">
     
-<p>Add <code>name</code> to the “class” attribute value of this Node and return self.  If the value is already in the current value, it is not added.  If no “class” attribute exists yet, one is created with the given value.</p>
+<p>Ensure HTML CSS classes are present on a <code>Node</code>. Any CSS classes in <code>names</code> that already exist in the <code>Node</code>'s <code>class</code> attribute are <em>not</em> added. Note that any existing duplicates in the <code>class</code> attribute are not removed. Compare with <span class="object_link"><a href="#append_class-instance_method" title="Nokogiri::XML::Node#append_class (method)">#append_class</a></span>.</p>
 
-<p>More than one class may be added at a time, separated by a space.</p>
+<p>This is a convenience function and is equivalent to:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
+</code></pre>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Ensure that a <code>Node</code> has CSS class “section”</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                      <span class="comment"># =&gt; &lt;div&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_add_class">add_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_add_class">add_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section"&gt;&lt;/div&gt; # duplicate not added</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Ensure that a <code>Node</code> has CSS classes “section” and “header”, via a String argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                             <span class="comment"># =&gt; &lt;div class="section section"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_add_class">add_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section header</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section section header"&gt;&lt;/div&gt;
+</span><span class="comment"># Note that the CSS class "section" is not added because it is already present.
+</span><span class="comment"># Note also that the pre-existing duplicate CSS class "section" is not removed.</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Ensure that a <code>Node</code> has CSS classes “section” and “header”, via an Array argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                  <span class="comment"># =&gt; &lt;div&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_add_class">add_class</span><span class="lparen">(</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">header</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section header"&gt;&lt;/div&gt;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class="name">names</span>
+      
+      
+        <span class="type">(<tt>String</tt>, <tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>CSS class names to be added to the Node's <code>class</code> attribute. May be a string containing whitespace-delimited names, or an Array of String names. Any class names already present will not be added. Any class names not present will be added. If no <code>class</code> attribute exists, one is created.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Returns <code>self</code> for ease of chaining method calls.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#kwattr_add-instance_method" title="Nokogiri::XML::Node#kwattr_add (method)">#kwattr_add</a></span></li>
+    
+      <li><span class="object_link"><a href="#classes-instance_method" title="Nokogiri::XML::Node#classes (method)">#classes</a></span></li>
+    
+      <li><span class="object_link"><a href="#append_class-instance_method" title="Nokogiri::XML::Node#append_class (method)">#append_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#remove_class-instance_method" title="Nokogiri::XML::Node#remove_class (method)">#remove_class</a></span></li>
+    
+  </ul>
 
 </div>
 <table class="source_code">
@@ -3940,19 +4125,15 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-445
-446
-447
-448
-449</pre>
+501
+502
+503</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 445</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 501</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_add_class">add_class</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="rparen">)</span>
-  <span class="id identifier rubyid_names">names</span> <span class="op">=</span> <span class="id identifier rubyid_classes">classes</span>
-  <span class="kw">self</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="lparen">(</span><span class="id identifier rubyid_names">names</span> <span class="op">+</span> <span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="period">.</span><span class="id identifier rubyid_scan">scan</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\S+</span><span class="regexp_end">/</span></span><span class="rparen">)</span> <span class="op">-</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span>
-  <span class="kw">self</span>
+<span class="kw">def</span> <span class="id identifier rubyid_add_class">add_class</span><span class="lparen">(</span><span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -4277,29 +4458,29 @@ static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
       <pre class="lines">
 
 
-662
-663
-664
-665
-666
-667
-668
-669
-670
-671
-672
-673
-674
-675
-676
-677
-678
-679
-680
-681</pre>
+939
+940
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950
+951
+952
+953
+954
+955
+956
+957
+958</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 662</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 939</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_ancestors">ancestors</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="const"><span class="object_link"><a href="NodeSet.html" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="NodeSet.html#initialize-instance_method" title="Nokogiri::XML::NodeSet#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:parent</span><span class="rparen">)</span>
@@ -4329,7 +4510,7 @@ static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
       <div class="method_details ">
   <h3 class="signature " id="append_class-instance_method">
   
-    #<strong>append_class</strong>(name)  ⇒ <tt>Object</tt> 
+    #<strong>append_class</strong>(names)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt> 
   
 
   
@@ -4339,15 +4520,104 @@ static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
 <div class="docstring">
   <div class="discussion">
     
-<p>Append <code>name</code> to the “class” attribute value of this Node and return self.  The value is simply appended without checking if it is already in the current value.  If no “class” attribute exists yet, one is created with the given value.</p>
+<p>Add HTML CSS classes to a <code>Node</code>, regardless of duplication. Compare with <span class="object_link"><a href="#add_class-instance_method" title="Nokogiri::XML::Node#add_class (method)">#add_class</a></span>.</p>
 
-<p>More than one class may be appended at a time, separated by a space.</p>
+<p>This is a convenience function and is equivalent to:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
+</code></pre>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Append “section” to a <code>Node</code>'s CSS <code>class</code> attriubute</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                         <span class="comment"># =&gt; &lt;div&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section section"&gt;&lt;/div&gt; # duplicate added!</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Append “section” and “header” to a <code>Node</code>'s CSS <code>class</code> attribute, via a String argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                <span class="comment"># =&gt; &lt;div class="section section"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section header</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section section section header"&gt;&lt;/div&gt;
+</span><span class="comment"># Note that the CSS class "section" is appended even though it is already present.</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Append “section” and “header” to a <code>Node</code>'s CSS <code>class</code> attribute, via an Array argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                     <span class="comment"># =&gt; &lt;div&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">header</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section header"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">header</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="section header section header"&gt;&lt;/div&gt;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class="name">names</span>
+      
+      
+        <span class="type">(<tt>String</tt>, <tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>CSS class names to be appended to the Node's <code>class</code> attribute. May be a string containing whitespace-delimited names, or an Array of String names. All class names passed in will be appended to the <code>class</code> attribute even if they are already present in the attribute value. If no <code>class</code> attribute exists, one is created.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Returns <code>self</code> for ease of chaining method calls.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#kwattr_append-instance_method" title="Nokogiri::XML::Node#kwattr_append (method)">#kwattr_append</a></span></li>
+    
+      <li><span class="object_link"><a href="#classes-instance_method" title="Nokogiri::XML::Node#classes (method)">#classes</a></span></li>
+    
+      <li><span class="object_link"><a href="#add_class-instance_method" title="Nokogiri::XML::Node#add_class (method)">#add_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#remove_class-instance_method" title="Nokogiri::XML::Node#remove_class (method)">#remove_class</a></span></li>
+    
+  </ul>
 
 </div>
 <table class="source_code">
@@ -4356,17 +4626,15 @@ static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
       <pre class="lines">
 
 
-459
-460
-461
-462</pre>
+542
+543
+544</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 459</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 542</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="rparen">)</span>
-  <span class="kw">self</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="lparen">(</span><span class="id identifier rubyid_classes">classes</span> <span class="op">+</span> <span class="id identifier rubyid_name">name</span><span class="period">.</span><span class="id identifier rubyid_scan">scan</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\S+</span><span class="regexp_end">/</span></span><span class="rparen">)</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span>
-  <span class="kw">self</span>
+<span class="kw">def</span> <span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -4837,16 +5105,16 @@ static VALUE blank_eh(VALUE self)
       <pre class="lines">
 
 
-844
-845
-846
-847
-848
-849
-850</pre>
+1121
+1122
+1123
+1124
+1125
+1126
+1127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 844</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1121</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_canonicalize">canonicalize</span><span class="lparen">(</span><span class="id identifier rubyid_mode">mode</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html#XML_C14N_1_0-constant" title="Nokogiri::XML::XML_C14N_1_0 (constant)">XML_C14N_1_0</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_inclusive_namespaces">inclusive_namespaces</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_with_comments">with_comments</span> <span class="op">=</span> <span class="kw">false</span><span class="rparen">)</span>
   <span class="id identifier rubyid_c14n_root">c14n_root</span> <span class="op">=</span> <span class="kw">self</span>
@@ -4901,12 +5169,12 @@ static VALUE blank_eh(VALUE self)
       <pre class="lines">
 
 
-584
-585
-586</pre>
+861
+862
+863</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 584</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 861</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_cdata?">cdata?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#CDATA_SECTION_NODE-constant" title="Nokogiri::XML::Node::CDATA_SECTION_NODE (constant)">CDATA_SECTION_NODE</a></span></span>
@@ -5132,7 +5400,7 @@ static VALUE children(VALUE self)
       <div class="method_details ">
   <h3 class="signature " id="classes-instance_method">
   
-    #<strong>classes</strong>  ⇒ <tt>Object</tt> 
+    #<strong>classes</strong>  ⇒ <tt>Array&lt;String&gt;</tt> 
   
 
   
@@ -5142,13 +5410,58 @@ static VALUE children(VALUE self)
 <div class="docstring">
   <div class="discussion">
     
-<p>Get the list of class names of this Node, without deduplication or sorting.</p>
+<p>Get the CSS class names of a Node.</p>
+
+<p>This is a convenience function and is equivalent to:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+</code></pre>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>         <span class="comment"># =&gt; &lt;div class="section title header"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_classes">classes</span> <span class="comment"># =&gt; ["section", "title", "header"]</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>The CSS classes present in the Node's <code>class</code> attribute. If the attribute is empty or non-existent, the return value is an empty array.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#kwattr_values-instance_method" title="Nokogiri::XML::Node#kwattr_values (method)">#kwattr_values</a></span></li>
+    
+      <li><span class="object_link"><a href="#add_class-instance_method" title="Nokogiri::XML::Node#add_class (method)">#add_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#append_class-instance_method" title="Nokogiri::XML::Node#append_class (method)">#append_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#remove_class-instance_method" title="Nokogiri::XML::Node#remove_class (method)">#remove_class</a></span></li>
+    
+  </ul>
 
 </div>
 <table class="source_code">
@@ -5157,15 +5470,15 @@ static VALUE children(VALUE self)
       <pre class="lines">
 
 
-433
-434
-435</pre>
+458
+459
+460</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 433</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 458</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_classes">classes</span>
-  <span class="kw">self</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="period">.</span><span class="id identifier rubyid_scan">scan</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\S+</span><span class="regexp_end">/</span></span><span class="rparen">)</span>
+  <span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -5213,12 +5526,12 @@ static VALUE children(VALUE self)
       <pre class="lines">
 
 
-579
-580
-581</pre>
+856
+857
+858</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 579</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 856</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_comment?">comment?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#COMMENT_NODE-constant" title="Nokogiri::XML::Node::COMMENT_NODE (constant)">COMMENT_NODE</a></span></span>
@@ -5609,14 +5922,14 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
       <pre class="lines">
 
 
-653
-654
-655
-656
-657</pre>
+930
+931
+932
+933
+934</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 653</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 930</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_css_path">css_path</span>
   <span class="id identifier rubyid_path">path</span><span class="period">.</span><span class="id identifier rubyid_split">split</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\/</span><span class="regexp_end">/</span></span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_part">part</span><span class="op">|</span>
@@ -5742,13 +6055,13 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
       <pre class="lines">
 
 
-621
-622
-623
-624</pre>
+898
+899
+900
+901</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 621</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 898</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_description">description</span>
   <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">if</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_xml?">xml?</span>
@@ -5919,12 +6232,12 @@ static VALUE document(VALUE self)
       <pre class="lines">
 
 
-599
-600
-601</pre>
+876
+877
+878</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 599</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 876</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_document?">document?</span>
   <span class="id identifier rubyid_is_a?">is_a?</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::XML::Document (class)">Document</a></span></span>
@@ -6133,12 +6446,12 @@ static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-634
-635
-636</pre>
+911
+912
+913</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 634</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 911</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_element?">element?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#ELEMENT_NODE-constant" title="Nokogiri::XML::Node::ELEMENT_NODE (constant)">ELEMENT_NODE</a></span></span>
@@ -6488,13 +6801,13 @@ static VALUE first_element_child(VALUE self)
       <pre class="lines">
 
 
-513
-514
-515
-516</pre>
+790
+791
+792
+793</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 513</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 790</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_tags">tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">=</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_html?">html?</span> <span class="op">?</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span> <span class="op">:</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
@@ -6546,12 +6859,12 @@ static VALUE first_element_child(VALUE self)
       <pre class="lines">
 
 
-614
-615
-616</pre>
+891
+892
+893</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 614</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 891</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_fragment?">fragment?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#DOCUMENT_FRAG_NODE-constant" title="Nokogiri::XML::Node::DOCUMENT_FRAG_NODE (constant)">DOCUMENT_FRAG_NODE</a></span></span>
@@ -6602,12 +6915,12 @@ static VALUE first_element_child(VALUE self)
       <pre class="lines">
 
 
-594
-595
-596</pre>
+871
+872
+873</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 594</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 871</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_html?">html?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#HTML_DOCUMENT_NODE-constant" title="Nokogiri::XML::Node::HTML_DOCUMENT_NODE (constant)">HTML_DOCUMENT_NODE</a></span></span>
@@ -6645,12 +6958,12 @@ static VALUE first_element_child(VALUE self)
       <pre class="lines">
 
 
-648
-649
-650</pre>
+925
+926
+927</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 648</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 925</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inner_html">inner_html</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
   <span class="id identifier rubyid_children">children</span><span class="period">.</span><span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_x">x</span><span class="period">.</span><span class="id identifier rubyid_to_html">to_html</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span> <span class="rbrace">}</span><span class="period">.</span><span class="id identifier rubyid_join">join</span>
@@ -6922,6 +7235,636 @@ static VALUE key_eh(VALUE self, VALUE attribute)
 
 <span class="kw">def</span> <span class="id identifier rubyid_keys">keys</span>
   <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_map">map</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:node_name</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="kwattr_add-instance_method">
+  
+    #<strong>kwattr_add</strong>(attribute_name, keywords)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Ensure that values are present in a keyword attribute.</p>
+
+<p>Any values in <code>keywords</code> that already exist in the <code>Node</code>'s attribute values are <em>not</em> added. Note that any existing duplicates in the attribute values are not removed. Compare with <span class="object_link"><a href="#kwattr_append-instance_method" title="Nokogiri::XML::Node#kwattr_append (method)">#kwattr_append</a></span>.</p>
+
+<p>A “keyword attribute” is a node attribute that contains a set of space-delimited values. Perhaps the most familiar example of this is the HTML <code>class</code> attribute used to contain CSS classes. But other keyword attributes exist, for instance [`rel`](<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel">developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel</a>).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Ensure that a <code>Node</code> has “nofollow” in its <code>rel</code> attribute.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                               <span class="comment"># =&gt; &lt;a&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow"&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow"&gt;&lt;/a&gt; # duplicate not added</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Ensure that a <code>Node</code> has “nofollow” and “noreferrer” in its <code>rel</code> attribute, via a String argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                          <span class="comment"># =&gt; &lt;a rel="nofollow nofollow"&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow noreferrer</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow nofollow noreferrer"&gt;&lt;/a&gt;
+</span><span class="comment"># Note that "nofollow" is not added because it is already present.
+</span><span class="comment"># Note also that the pre-existing duplicate "nofollow" is not removed.</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Ensure that a <code>Node</code> has “nofollow” and “noreferrer” in its <code>rel</code> attribute, via an Array argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                               <span class="comment"># =&gt; &lt;a&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">noreferrer</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow noreferrer"&gt;&lt;/a&gt;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class="name">attribute_name</span>
+      
+      
+        <span class="type">(<tt>String</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>The name of the keyword attribute to be modified.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class="name">keywords</span>
+      
+      
+        <span class="type">(<tt>String</tt>, <tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Keywords to be added to the attribute named <code>attribute_name</code>. May be a string containing whitespace-delimited values, or an Array of String values. Any values already present will not be added. Any values not present will be added. If the named attribute does not exist, it is created.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Returns <code>self</code> for ease of chaining method calls.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#add_class-instance_method" title="Nokogiri::XML::Node#add_class (method)">#add_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_values-instance_method" title="Nokogiri::XML::Node#kwattr_values (method)">#kwattr_values</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_append-instance_method" title="Nokogiri::XML::Node#kwattr_append (method)">#kwattr_append</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_remove-instance_method" title="Nokogiri::XML::Node#kwattr_remove (method)">#kwattr_remove</a></span></li>
+    
+  </ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.11.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+658
+659
+660
+661
+662
+663
+664</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 658</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_keywords">keywords</span> <span class="op">=</span> <span class="id identifier rubyid_keywordify">keywordify</span><span class="lparen">(</span><span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_current_kws">current_kws</span> <span class="op">=</span> <span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_new_kws">new_kws</span> <span class="op">=</span> <span class="lparen">(</span><span class="id identifier rubyid_current_kws">current_kws</span> <span class="op">+</span> <span class="lparen">(</span><span class="id identifier rubyid_keywords">keywords</span> <span class="op">-</span> <span class="id identifier rubyid_current_kws">current_kws</span><span class="rparen">)</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+  <span class="id identifier rubyid_set_attribute">set_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_new_kws">new_kws</span><span class="rparen">)</span>
+  <span class="kw">self</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="kwattr_append-instance_method">
+  
+    #<strong>kwattr_append</strong>(attribute_name, keywords)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Add keywords to a Node's keyword attribute, regardless of duplication. Compare with <span class="object_link"><a href="#kwattr_add-instance_method" title="Nokogiri::XML::Node#kwattr_add (method)">#kwattr_add</a></span>.</p>
+
+<p>A “keyword attribute” is a node attribute that contains a set of space-delimited values. Perhaps the most familiar example of this is the HTML <code>class</code> attribute used to contain CSS classes. But other keyword attributes exist, for instance [`rel`](<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel">developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel</a>).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Append “nofollow” to the <code>rel</code> attribute.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                  <span class="comment"># =&gt; &lt;a&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow"&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow nofollow"&gt;&lt;/a&gt; # duplicate added!</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Append “nofollow” and “noreferrer” to the <code>rel</code> attribute, via a String argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                             <span class="comment"># =&gt; &lt;a rel="nofollow"&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow noreferrer</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow nofollow noreferrer"&gt;&lt;/a&gt;
+</span><span class="comment"># Note that "nofollow" is appended even though it is already present.</span></code></pre>
+    
+      
+        <p class="example_title"></p>
+<div class="inline">
+<p>Append “nofollow” and “noreferrer” to the <code>rel</code> attribute, via an Array argument.</p>
+</div>
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                                  <span class="comment"># =&gt; &lt;a&gt;&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">noreferrer</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a rel="nofollow noreferrer"&gt;&lt;/a&gt;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class="name">attribute_name</span>
+      
+      
+        <span class="type">(<tt>String</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>The name of the keyword attribute to be modified.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class="name">keywords</span>
+      
+      
+        <span class="type">(<tt>String</tt>, <tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Keywords to be added to the attribute named <code>attribute_name</code>. May be a string containing whitespace-delimited values, or an Array of String values. All values passed in will be appended to the named attribute even if they are already present in the attribute. If the named attribute does not exist, it is created.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Returns <code>self</code> for ease of chaining method calls.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#append_class-instance_method" title="Nokogiri::XML::Node#append_class (method)">#append_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_values-instance_method" title="Nokogiri::XML::Node#kwattr_values (method)">#kwattr_values</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_add-instance_method" title="Nokogiri::XML::Node#kwattr_add (method)">#kwattr_add</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_remove-instance_method" title="Nokogiri::XML::Node#kwattr_remove (method)">#kwattr_remove</a></span></li>
+    
+  </ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.11.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+710
+711
+712
+713
+714
+715
+716</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 710</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_keywords">keywords</span> <span class="op">=</span> <span class="id identifier rubyid_keywordify">keywordify</span><span class="lparen">(</span><span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_current_kws">current_kws</span> <span class="op">=</span> <span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_new_kws">new_kws</span> <span class="op">=</span> <span class="lparen">(</span><span class="id identifier rubyid_current_kws">current_kws</span> <span class="op">+</span> <span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+  <span class="id identifier rubyid_set_attribute">set_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_new_kws">new_kws</span><span class="rparen">)</span>
+  <span class="kw">self</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="kwattr_remove-instance_method">
+  
+    #<strong>kwattr_remove</strong>(attribute_name, keywords)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Remove keywords from a keyword attribute. Any matching keywords that exist in the named attribute are removed, including any multiple entries.</p>
+
+<p>If no keywords remain after this operation, or if <code>keywords</code> is <code>nil</code>, the attribute is deleted from the node.</p>
+
+<p>A “keyword attribute” is a node attribute that contains a set of space-delimited values. Perhaps the most familiar example of this is the HTML <code>class</code> attribute used to contain CSS classes. But other keyword attributes exist, for instance [`rel`](<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel">developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel</a>).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                                    <span class="comment"># =&gt; &lt;a rel="nofollow noreferrer"&gt;link&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_remove">kwattr_remove</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">nofollow</span><span class="tstring_end">"</span></span><span class="rparen">)</span>   <span class="comment"># =&gt; &lt;a rel="noreferrer"&gt;link&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_remove">kwattr_remove</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">noreferrer</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;a&gt;link&lt;/a&gt; # attribute is deleted when empty</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class="name">attribute_name</span>
+      
+      
+        <span class="type">(<tt>String</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>The name of the keyword attribute to be modified.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class="name">keywords</span>
+      
+      
+        <span class="type">(<tt>String</tt>, <tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Keywords to be removed from the attribute named <code>attribute_name</code>. May be a string containing whitespace-delimited values, or an Array of String values. Any keywords present in the named attribute will be removed. If no keywords remain, or if <code>keywords</code> is nil, the attribute is deleted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Returns <code>self</code> for ease of chaining method calls.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#remove_class-instance_method" title="Nokogiri::XML::Node#remove_class (method)">#remove_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_values-instance_method" title="Nokogiri::XML::Node#kwattr_values (method)">#kwattr_values</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_add-instance_method" title="Nokogiri::XML::Node#kwattr_add (method)">#kwattr_add</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_append-instance_method" title="Nokogiri::XML::Node#kwattr_append (method)">#kwattr_append</a></span></li>
+    
+  </ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.11.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 756</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_kwattr_remove">kwattr_remove</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_keywords">keywords</span><span class="period">.</span><span class="id identifier rubyid_nil?">nil?</span>
+    <span class="id identifier rubyid_remove_attribute">remove_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span>
+    <span class="kw">return</span> <span class="kw">self</span>
+  <span class="kw">end</span>
+
+  <span class="id identifier rubyid_keywords">keywords</span> <span class="op">=</span> <span class="id identifier rubyid_keywordify">keywordify</span><span class="lparen">(</span><span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_current_kws">current_kws</span> <span class="op">=</span> <span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_new_kws">new_kws</span> <span class="op">=</span> <span class="id identifier rubyid_current_kws">current_kws</span> <span class="op">-</span> <span class="id identifier rubyid_keywords">keywords</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_new_kws">new_kws</span><span class="period">.</span><span class="id identifier rubyid_empty?">empty?</span>
+    <span class="id identifier rubyid_remove_attribute">remove_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span>
+  <span class="kw">else</span>
+    <span class="id identifier rubyid_set_attribute">set_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_new_kws">new_kws</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span><span class="rparen">)</span>
+  <span class="kw">end</span>
+  <span class="kw">self</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="kwattr_values-instance_method">
+  
+    #<strong>kwattr_values</strong>(attribute_name)  ⇒ <tt>Array&lt;String&gt;</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Retrieve values from a keyword attribute of a Node.</p>
+
+<p>A “keyword attribute” is a node attribute that contains a set of space-delimited values. Perhaps the most familiar example of this is the HTML <code>class</code> attribute used to contain CSS classes. But other keyword attributes exist, for instance [`rel`](<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel">developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel</a>).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                      <span class="comment"># =&gt; &lt;a rel="nofollow noopener external"&gt;link&lt;/a&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">rel</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; ["nofollow", "noopener", "external"]</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class="name">attribute_name</span>
+      
+      
+        <span class="type">(<tt>String</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>The name of the keyword attribute to be inspected.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>The values present in the Node's <code>attribute_name</code> attribute. If the attribute is empty or non-existent, the return value is an empty array.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#classes-instance_method" title="Nokogiri::XML::Node#classes (method)">#classes</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_add-instance_method" title="Nokogiri::XML::Node#kwattr_add (method)">#kwattr_add</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_append-instance_method" title="Nokogiri::XML::Node#kwattr_append (method)">#kwattr_append</a></span></li>
+    
+      <li><span class="object_link"><a href="#kwattr_remove-instance_method" title="Nokogiri::XML::Node#kwattr_remove (method)">#kwattr_remove</a></span></li>
+    
+  </ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.11.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+606
+607
+608</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 606</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_keywordify">keywordify</span><span class="lparen">(</span><span class="id identifier rubyid_get_attribute">get_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span> <span class="op">||</span> <span class="lbracket">[</span><span class="rbracket">]</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -7285,12 +8228,12 @@ static VALUE set_line(VALUE self, VALUE num)
       <pre class="lines">
 
 
-506
-507
-508</pre>
+783
+784
+785</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 506</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 783</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_matches?">matches?</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="rparen">)</span>
   <span class="id identifier rubyid_ancestors">ancestors</span><span class="period">.</span><span class="id identifier rubyid_last">last</span><span class="period">.</span><span class="id identifier rubyid_search">search</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_include?">include?</span><span class="lparen">(</span><span class="kw">self</span><span class="rparen">)</span>
@@ -7690,16 +8633,16 @@ static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
       <pre class="lines">
 
 
-570
-571
-572
-573
-574
-575
-576</pre>
+847
+848
+849
+850
+851
+852
+853</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 570</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 847</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_namespaces">namespaces</span>
   <span class="id identifier rubyid_namespace_scopes">namespace_scopes</span><span class="period">.</span><span class="id identifier rubyid_each_with_object">each_with_object</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_ns">ns</span><span class="comma">,</span> <span class="id identifier rubyid_hash">hash</span><span class="op">|</span>
@@ -8224,42 +9167,42 @@ static VALUE get_parent(VALUE self)
       <pre class="lines">
 
 
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531
-532
-533
-534
-535
-536
-537
-538
-539
-540
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
-553
-554</pre>
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 522</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 799</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="comment">##
@@ -8682,12 +9625,12 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-604
-605
-606</pre>
+881
+882
+883</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 604</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 881</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_processing_instruction?">processing_instruction?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#PI_NODE-constant" title="Nokogiri::XML::Node::PI_NODE (constant)">PI_NODE</a></span></span>
@@ -8738,13 +9681,13 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-628
-629
-630
-631</pre>
+905
+906
+907
+908</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 628</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 905</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_read_only?">read_only?</span>  <span class="comment"># According to gdome2, these are read-only node types
 </span>
@@ -8787,14 +9730,14 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-490
-491
-492
-493
-494</pre>
+432
+433
+434
+435
+436</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 490</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 432</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_remove_attribute">remove_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="rparen">)</span>
   <span class="id identifier rubyid_attr">attr</span> <span class="op">=</span> <span class="id identifier rubyid_attributes">attributes</span><span class="lbracket">[</span><span class="id identifier rubyid_name">name</span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_remove">remove</span> <span class="kw">if</span> <span class="id identifier rubyid_key?">key?</span> <span class="id identifier rubyid_name">name</span>
@@ -8809,7 +9752,7 @@ static VALUE previous_sibling(VALUE self)
       <div class="method_details ">
   <h3 class="signature " id="remove_class-instance_method">
   
-    #<strong>remove_class</strong>(name = nil)  ⇒ <tt>Object</tt> 
+    #<strong>remove_class</strong>(names = nil)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt> 
   
 
   
@@ -8819,17 +9762,83 @@ static VALUE previous_sibling(VALUE self)
 <div class="docstring">
   <div class="discussion">
     
-<p>Remove <code>name</code> from the “class” attribute value of this Node and return self.  If there are many occurrences of the name, they are all removed.</p>
+<p>Remove HTML CSS classes from a <code>Node</code>. Any CSS classes in <code>names</code> that exist in the <code>Node</code>'s <code>class</code> attribute are removed, including any multiple entries.</p>
 
-<p>More than one class may be removed at a time, separated by a space.</p>
+<p>If no CSS classes remain after this operation, or if <code>names</code> is <code>nil</code>, the <code>class</code> attribute is deleted from the node.</p>
 
-<p>If no class name is left after removal, or when <code>name</code> is nil, the “class” attribute is removed from this Node.</p>
+<p>This is a convenience function and is equivalent to:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_kwattr_remove">kwattr_remove</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
+</code></pre>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class="id identifier rubyid_node">node</span>                         <span class="comment"># =&gt; &lt;div class="section header"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_remove_class">remove_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">section</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="comment"># =&gt; &lt;div class="header"&gt;&lt;/div&gt;
+</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_remove_class">remove_class</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">header</span><span class="tstring_end">"</span></span><span class="rparen">)</span>  <span class="comment"># =&gt; &lt;div&gt;&lt;/div&gt; # attribute is deleted when empty</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class="name">names</span>
+      
+      
+        <span class="type">(<tt>String</tt>, <tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        —
+        <div class="inline">
+<p>CSS class names to be removed from the Node's <code>class</code> attribute. May be a string containing whitespace-delimited names, or an Array of String names. Any class names already present will be removed. If no CSS classes remain, the <code>class</code> attribute is deleted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>Returns <code>self</code> for ease of chaining method calls.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#kwattr_remove-instance_method" title="Nokogiri::XML::Node#kwattr_remove (method)">#kwattr_remove</a></span></li>
+    
+      <li><span class="object_link"><a href="#classes-instance_method" title="Nokogiri::XML::Node#classes (method)">#classes</a></span></li>
+    
+      <li><span class="object_link"><a href="#add_class-instance_method" title="Nokogiri::XML::Node#add_class (method)">#add_class</a></span></li>
+    
+      <li><span class="object_link"><a href="#append_class-instance_method" title="Nokogiri::XML::Node#append_class (method)">#append_class</a></span></li>
+    
+  </ul>
 
 </div>
 <table class="source_code">
@@ -8838,35 +9847,15 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483
-484
-485
-486</pre>
+575
+576
+577</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 474</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 575</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_remove_class">remove_class</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
-  <span class="kw">if</span> <span class="id identifier rubyid_name">name</span>
-    <span class="id identifier rubyid_names">names</span> <span class="op">=</span> <span class="id identifier rubyid_classes">classes</span> <span class="op">-</span> <span class="id identifier rubyid_name">name</span><span class="period">.</span><span class="id identifier rubyid_scan">scan</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\S+</span><span class="regexp_end">/</span></span><span class="rparen">)</span>
-    <span class="kw">if</span> <span class="id identifier rubyid_names">names</span><span class="period">.</span><span class="id identifier rubyid_empty?">empty?</span>
-      <span class="id identifier rubyid_delete">delete</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span>
-    <span class="kw">else</span>
-      <span class="kw">self</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_names">names</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span>
-    <span class="kw">end</span>
-  <span class="kw">else</span>
-    <span class="id identifier rubyid_delete">delete</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span>
-  <span class="kw">end</span>
-  <span class="kw">self</span>
+<span class="kw">def</span> <span class="id identifier rubyid_remove_class">remove_class</span><span class="lparen">(</span><span class="id identifier rubyid_names">names</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_kwattr_remove">kwattr_remove</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -9060,24 +10049,24 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-729
-730
-731
-732
-733
-734
-735
-736
-737
-738
-739
-740
-741
-742
-743</pre>
+1006
+1007
+1008
+1009
+1010
+1011
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 729</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1006</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_serialize">serialize</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_first">first</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const">Hash</span><span class="rparen">)</span> <span class="op">?</span> <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_shift">shift</span> <span class="op">:</span> <span class="lbrace">{</span>
@@ -9189,12 +10178,12 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-609
-610
-611</pre>
+886
+887
+888</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 609</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 886</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_text?">text?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#TEXT_NODE-constant" title="Nokogiri::XML::Node::TEXT_NODE (constant)">TEXT_NODE</a></span></span>
@@ -9237,12 +10226,12 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-752
-753
-754</pre>
+1029
+1030
+1031</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 752</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1029</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_html">to_html</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_to_format">to_format</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_HTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_HTML (constant)">DEFAULT_HTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -9280,12 +10269,12 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-643
-644
-645</pre>
+920
+921
+922</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 643</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 920</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_s">to_s</span>
   <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_xml?">xml?</span> <span class="op">?</span> <span class="id identifier rubyid_to_xml">to_xml</span> <span class="op">:</span> <span class="id identifier rubyid_to_html">to_html</span>
@@ -9328,12 +10317,12 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-773
-774
-775</pre>
+1050
+1051
+1052</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 773</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1050</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_xhtml">to_xhtml</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_to_format">to_format</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XHTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XHTML (constant)">DEFAULT_XHTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -9376,13 +10365,13 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-762
-763
-764
-765</pre>
+1039
+1040
+1041
+1042</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 762</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1039</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_xml">to_xml</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:save_with</span><span class="rbracket">]</span> <span class="op">||=</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span>
@@ -9421,13 +10410,13 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-685
-686
-687
-688</pre>
+962
+963
+964
+965</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 685</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 962</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_traverse">traverse</span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="id identifier rubyid_children">children</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_j">j</span><span class="op">|</span> <span class="id identifier rubyid_j">j</span><span class="period">.</span><span class="id identifier rubyid_traverse">traverse</span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span> <span class="rbrace">}</span>
@@ -9677,12 +10666,12 @@ static VALUE unlink_node(VALUE self)
       <pre class="lines">
 
 
-821
-822
-823</pre>
+1098
+1099
+1100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 821</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1098</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_html_to">write_html_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_write_format_to">write_format_to</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_HTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_HTML (constant)">DEFAULT_HTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -9757,31 +10746,31 @@ static VALUE unlink_node(VALUE self)
       <pre class="lines">
 
 
-794
-795
-796
-797
-798
-799
-800
-801
-802
-803
-804
-805
-806
-807
-808
-809
-810
-811
-812
-813
-814
-815</pre>
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081
+1082
+1083
+1084
+1085
+1086
+1087
+1088
+1089
+1090
+1091
+1092</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 794</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1071</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_to">write_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_first">first</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const">Hash</span><span class="rparen">)</span> <span class="op">?</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_shift">shift</span> <span class="op">:</span> <span class="lbrace">{</span><span class="rbrace">}</span>
@@ -9840,12 +10829,12 @@ static VALUE unlink_node(VALUE self)
       <pre class="lines">
 
 
-829
-830
-831</pre>
+1106
+1107
+1108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 829</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1106</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_xhtml_to">write_xhtml_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_write_format_to">write_format_to</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XHTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XHTML (constant)">DEFAULT_XHTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -9888,13 +10877,13 @@ static VALUE unlink_node(VALUE self)
       <pre class="lines">
 
 
-839
-840
-841
-842</pre>
+1116
+1117
+1118
+1119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 839</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1116</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_xml_to">write_xml_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:save_with</span><span class="rbracket">]</span> <span class="op">||=</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span>
@@ -9946,12 +10935,12 @@ static VALUE unlink_node(VALUE self)
       <pre class="lines">
 
 
-589
-590
-591</pre>
+866
+867
+868</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 589</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 866</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_xml?">xml?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#DOCUMENT_NODE-constant" title="Nokogiri::XML::Node::DOCUMENT_NODE (constant)">DOCUMENT_NODE</a></span></span>
@@ -10020,7 +11009,7 @@ static VALUE unlink_node(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sun Feb 16 11:20:05 2020 by
+  Generated on Wed Feb 26 12:46:56 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.7.0).
 </div>

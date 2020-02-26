@@ -206,46 +206,16 @@
         </dt>
         <dd><pre class="code"><span class="kw">false</span></pre></dd>
       
+        <dt id="CACHE_SWITCH_NAME-constant" class="">CACHE_SWITCH_NAME =
+          
+        </dt>
+        <dd><pre class="code"><span class="symbol">:nokogiri_css_parser_cache_is_off</span></pre></dd>
+      
     </dl>
   
 
 
 
-
-  <h2>Class Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small>
-</h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#cache_on-class_method" title="cache_on (class method)">.<strong>cache_on</strong>  ⇒ Object </a>
-    
-
-    
-      (also: cache_on?)
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Turn on CSS parse caching.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
 
 
 
@@ -309,7 +279,31 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#clear_cache-class_method" title="clear_cache (class method)">.<strong>clear_cache</strong>  ⇒ Object </a>
+      <a href="#cache_on%3F-class_method" title="cache_on? (class method)">.<strong>cache_on?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Return a thread-local boolean indicating whether the CSS-to-XPath cache is active.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear_cache-class_method" title="clear_cache (class method)">.<strong>clear_cache</strong>(create_new_object = false)  ⇒ Object </a>
     
 
     
@@ -333,7 +327,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(selector)  ⇒ Object </a>
+      <a href="#set_cache-class_method" title="set_cache (class method)">.<strong>set_cache</strong>(value)  ⇒ Object </a>
     
 
     
@@ -348,7 +342,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Parse this CSS selector in <code>selector</code>.</p>
+<p>Set a thread-local boolean to turn cacheing on and off.</p>
 </div></span>
   
 </li>
@@ -1858,17 +1852,17 @@
       <pre class="lines">
 
 
-55
-56
 57
 58
-59</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 57</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="id identifier rubyid_namespaces">namespaces</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span>
-  <span class="ivar">@tokenizer</span>  <span class="op">=</span> <span class="const"><span class="object_link"><a href="Tokenizer.html" title="Nokogiri::CSS::Tokenizer (class)">Tokenizer</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span>
+<span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_namespaces">namespaces</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
+  <span class="ivar">@tokenizer</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="Tokenizer.html" title="Nokogiri::CSS::Tokenizer (class)">Tokenizer</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span>
   <span class="ivar">@namespaces</span> <span class="op">=</span> <span class="id identifier rubyid_namespaces">namespaces</span>
   <span class="kw">super</span><span class="lparen">(</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
@@ -1878,60 +1872,6 @@
 </div>
   
 </div>
-
-  <div id="class_attr_details" class="attr_details">
-    <h2>Class Attribute Details</h2>
-    
-      
-      <span id="cache_on=-class_method"></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="cache_on-class_method">
-  
-    .<strong>cache_on</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-    <span class="aliases">Also known as:
-    <span class="names"><span id="cache_on?-class_method">cache_on?</span></span>
-    </span>
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Turn on CSS parse caching</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-13
-14
-15</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 13</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_cache_on">cache_on</span>
-  <span class="ivar">@cache_on</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
 
   <div id="class_method_details" class="method_details_list">
@@ -1966,16 +1906,16 @@
       <pre class="lines">
 
 
-18
-19
-20
-21</pre>
+24
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 24</span>
 
-<span class="kw">def</span> <span class="op">[]</span> <span class="id identifier rubyid_string">string</span>
-  <span class="kw">return</span> <span class="kw">unless</span> <span class="ivar">@cache_on</span>
+<span class="kw">def</span> <span class="op">[]</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
+  <span class="kw">return</span> <span class="kw">unless</span> <span class="id identifier rubyid_cache_on?">cache_on?</span>
   <span class="ivar">@mutex</span><span class="period">.</span><span class="id identifier rubyid_synchronize">synchronize</span> <span class="lbrace">{</span> <span class="ivar">@cache</span><span class="lbracket">[</span><span class="id identifier rubyid_string">string</span><span class="rbracket">]</span> <span class="rbrace">}</span>
 <span class="kw">end</span></pre>
     </td>
@@ -2011,17 +1951,73 @@
       <pre class="lines">
 
 
-24
-25
-26
-27</pre>
+30
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 30</span>
 
-<span class="kw">def</span> <span class="op">[]=</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_value">value</span>
-  <span class="kw">return</span> <span class="id identifier rubyid_value">value</span> <span class="kw">unless</span> <span class="ivar">@cache_on</span>
+<span class="kw">def</span> <span class="op">[]=</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_value">value</span><span class="rparen">)</span>
+  <span class="kw">return</span> <span class="id identifier rubyid_value">value</span> <span class="kw">unless</span> <span class="id identifier rubyid_cache_on?">cache_on?</span>
   <span class="ivar">@mutex</span><span class="period">.</span><span class="id identifier rubyid_synchronize">synchronize</span> <span class="lbrace">{</span> <span class="ivar">@cache</span><span class="lbracket">[</span><span class="id identifier rubyid_string">string</span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_value">value</span> <span class="rbrace">}</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cache_on?-class_method">
+  
+    .<strong>cache_on?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Return a thread-local boolean indicating whether the CSS-to-XPath cache is active. (Default is `true`.)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 14</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_cache_on?">cache_on?</span>
+  <span class="op">!</span><span class="const">Thread</span><span class="period">.</span><span class="id identifier rubyid_current">current</span><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#CACHE_SWITCH_NAME-constant" title="Nokogiri::CSS::Parser::CACHE_SWITCH_NAME (constant)">CACHE_SWITCH_NAME</a></span></span><span class="rbracket">]</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -2031,7 +2027,7 @@
       <div class="method_details ">
   <h3 class="signature " id="clear_cache-class_method">
   
-    .<strong>clear_cache</strong>  ⇒ <tt>Object</tt> 
+    .<strong>clear_cache</strong>(create_new_object = false)  ⇒ <tt>Object</tt> 
   
 
   
@@ -2056,15 +2052,27 @@
       <pre class="lines">
 
 
-30
-31
-32</pre>
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 36</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_clear_cache">clear_cache</span>
-  <span class="ivar">@mutex</span><span class="period">.</span><span class="id identifier rubyid_synchronize">synchronize</span> <span class="lbrace">{</span> <span class="ivar">@cache</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span> <span class="rbrace">}</span>
+<span class="kw">def</span> <span class="id identifier rubyid_clear_cache">clear_cache</span><span class="lparen">(</span><span class="id identifier rubyid_create_new_object">create_new_object</span> <span class="op">=</span> <span class="kw">false</span><span class="rparen">)</span>
+  <span class="ivar">@mutex</span><span class="period">.</span><span class="id identifier rubyid_synchronize">synchronize</span> <span class="kw">do</span>
+    <span class="kw">if</span> <span class="id identifier rubyid_create_new_object">create_new_object</span>
+      <span class="ivar">@cache</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span>
+    <span class="kw">else</span>
+      <span class="ivar">@cache</span><span class="period">.</span><span class="id identifier rubyid_clear">clear</span>
+    <span class="kw">end</span>
+  <span class="kw">end</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -2072,9 +2080,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="parse-class_method">
+  <h3 class="signature " id="set_cache-class_method">
   
-    .<strong>parse</strong>(selector)  ⇒ <tt>Object</tt> 
+    .<strong>set_cache</strong>(value)  ⇒ <tt>Object</tt> 
   
 
   
@@ -2084,7 +2092,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Parse this CSS selector in <code>selector</code>.  Returns an AST.</p>
+<p>Set a thread-local boolean to turn cacheing on and off. Truthy values turn the cache on, falsey values turn the cache off.</p>
 
 
   </div>
@@ -2099,25 +2107,15 @@
       <pre class="lines">
 
 
-44
-45
-46
-47
-48
-49
-50
-51</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 19</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_selector">selector</span>
-  <span class="ivar">@warned</span> <span class="op">||=</span> <span class="kw">false</span>
-  <span class="kw">unless</span> <span class="ivar">@warned</span>
-    <span class="gvar">$stderr</span><span class="period">.</span><span class="id identifier rubyid_puts">puts</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">Nokogiri::CSS::Parser.parse is deprecated, call Nokogiri::CSS.parse(), this will be removed August 1st or version 1.4.0 (whichever is first)</span><span class="tstring_end">'</span></span><span class="rparen">)</span>
-    <span class="ivar">@warned</span> <span class="op">=</span> <span class="kw">true</span>
-  <span class="kw">end</span>
-  <span class="id identifier rubyid_new">new</span><span class="period">.</span><span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_selector">selector</span>
+<span class="kw">def</span> <span class="id identifier rubyid_set_cache">set_cache</span><span class="lparen">(</span><span class="id identifier rubyid_value">value</span><span class="rparen">)</span>
+  <span class="const">Thread</span><span class="period">.</span><span class="id identifier rubyid_current">current</span><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#CACHE_SWITCH_NAME-constant" title="Nokogiri::CSS::Parser::CACHE_SWITCH_NAME (constant)">CACHE_SWITCH_NAME</a></span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="op">!</span><span class="id identifier rubyid_value">value</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -2152,21 +2150,23 @@
       <pre class="lines">
 
 
-35
-36
-37
-38
-39
-40</pre>
+47
+48
+49
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 47</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_without_cache">without_cache</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
-  <span class="id identifier rubyid_tmp">tmp</span> <span class="op">=</span> <span class="ivar">@cache_on</span>
-  <span class="ivar">@cache_on</span> <span class="op">=</span> <span class="kw">false</span>
+<span class="kw">def</span> <span class="id identifier rubyid_without_cache">without_cache</span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_original_cache_setting">original_cache_setting</span> <span class="op">=</span> <span class="id identifier rubyid_cache_on?">cache_on?</span>
+  <span class="id identifier rubyid_set_cache">set_cache</span> <span class="kw">false</span>
   <span class="id identifier rubyid_block">block</span><span class="period">.</span><span class="id identifier rubyid_call">call</span>
-  <span class="ivar">@cache_on</span> <span class="op">=</span> <span class="id identifier rubyid_tmp">tmp</span>
+<span class="kw">ensure</span>
+  <span class="id identifier rubyid_set_cache">set_cache</span> <span class="id identifier rubyid_original_cache_setting">original_cache_setting</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -4378,12 +4378,12 @@
       <pre class="lines">
 
 
-66
-67
-68</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 68</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_next_token">next_token</span>
   <span class="ivar">@tokenizer</span><span class="period">.</span><span class="id identifier rubyid_next_token">next_token</span>
@@ -4434,15 +4434,15 @@
       <pre class="lines">
 
 
-86
-87
 88
-89</pre>
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 88</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_on_error">on_error</span> <span class="id identifier rubyid_error_token_id">error_token_id</span><span class="comma">,</span> <span class="id identifier rubyid_error_value">error_value</span><span class="comma">,</span> <span class="id identifier rubyid_value_stack">value_stack</span>
+<span class="kw">def</span> <span class="id identifier rubyid_on_error">on_error</span><span class="lparen">(</span><span class="id identifier rubyid_error_token_id">error_token_id</span><span class="comma">,</span> <span class="id identifier rubyid_error_value">error_value</span><span class="comma">,</span> <span class="id identifier rubyid_value_stack">value_stack</span><span class="rparen">)</span>
   <span class="id identifier rubyid_after">after</span> <span class="op">=</span> <span class="id identifier rubyid_value_stack">value_stack</span><span class="period">.</span><span class="id identifier rubyid_compact">compact</span><span class="period">.</span><span class="id identifier rubyid_last">last</span>
   <span class="id identifier rubyid_raise">raise</span> <span class="const"><span class="object_link"><a href="SyntaxError.html" title="Nokogiri::CSS::SyntaxError (class)">SyntaxError</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">unexpected '</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_error_value">error_value</span><span class="embexpr_end">}</span><span class="tstring_content">' after '</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_after">after</span><span class="embexpr_end">}</span><span class="tstring_content">'</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
@@ -4467,15 +4467,15 @@
       <pre class="lines">
 
 
-61
-62
 63
-64</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 63</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_string">string</span>
+<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
   <span class="ivar">@tokenizer</span><span class="period">.</span><span class="id identifier rubyid_scan_setup">scan_setup</span> <span class="id identifier rubyid_string">string</span>
   <span class="id identifier rubyid_do_parse">do_parse</span>
 <span class="kw">end</span></pre>
@@ -4586,8 +4586,6 @@
       <pre class="lines">
 
 
-71
-72
 73
 74
 75
@@ -4598,19 +4596,21 @@
 80
 81
 82
-83</pre>
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser_extras.rb', line 73</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_xpath_for">xpath_for</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="op">=</span><span class="lbrace">{</span><span class="rbrace">}</span>
+<span class="kw">def</span> <span class="id identifier rubyid_xpath_for">xpath_for</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_key">key</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">"</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_string">string</span><span class="embexpr_end">}</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:ns</span><span class="rbracket">]</span><span class="embexpr_end">}</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:prefix</span><span class="rbracket">]</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span>
   <span class="id identifier rubyid_v">v</span> <span class="op">=</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_class">class</span><span class="lbracket">[</span><span class="id identifier rubyid_key">key</span><span class="rbracket">]</span>
   <span class="kw">return</span> <span class="id identifier rubyid_v">v</span> <span class="kw">if</span> <span class="id identifier rubyid_v">v</span>
 
   <span class="id identifier rubyid_args">args</span> <span class="op">=</span> <span class="lbracket">[</span>
-    <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:prefix</span><span class="rbracket">]</span> <span class="op">||</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">//</span><span class="tstring_end">'</span></span><span class="comma">,</span>
-    <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:visitor</span><span class="rbracket">]</span> <span class="op">||</span> <span class="const"><span class="object_link"><a href="XPathVisitor.html" title="Nokogiri::CSS::XPathVisitor (class)">XPathVisitor</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span>
+    <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:prefix</span><span class="rbracket">]</span> <span class="op">||</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">//</span><span class="tstring_end">"</span></span><span class="comma">,</span>
+    <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:visitor</span><span class="rbracket">]</span> <span class="op">||</span> <span class="const"><span class="object_link"><a href="XPathVisitor.html" title="Nokogiri::CSS::XPathVisitor (class)">XPathVisitor</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="comma">,</span>
   <span class="rbracket">]</span>
   <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_class">class</span><span class="lbracket">[</span><span class="id identifier rubyid_key">key</span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_ast">ast</span><span class="op">|</span>
     <span class="id identifier rubyid_ast">ast</span><span class="period">.</span><span class="id identifier rubyid_to_xpath">to_xpath</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
@@ -4626,7 +4626,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Feb 16 11:20:06 2020 by
+  Generated on Wed Feb 26 12:46:57 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.7.0).
 </div>
