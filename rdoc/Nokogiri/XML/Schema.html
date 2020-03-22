@@ -403,31 +403,6 @@
       <pre class="lines">
 
 
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
 167
 168
 169
@@ -450,10 +425,39 @@
 186
 187
 188
-189</pre>
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_schema.c', line 142</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_schema.c', line 167</span>
 
 static VALUE from_document(VALUE klass, VALUE document)
 {
@@ -467,6 +471,10 @@ static VALUE from_document(VALUE klass, VALUE document)
 
   /* In case someone passes us a node. ugh. */
   doc = doc-&gt;doc;
+
+  if (has_blank_nodes_p(DOC_NODE_CACHE(doc))) {
+    rb_raise(rb_eArgError, "Creating a schema from a document that has blank nodes exposed to Ruby is dangerous");
+  }
 
   ctx = xmlSchemaNewDocParserCtxt(doc);
 
@@ -790,7 +798,7 @@ static VALUE read_memory(VALUE klass, VALUE content)
 </div>
 
       <div id="footer">
-  Generated on Wed Feb 26 12:46:57 2020 by
+  Generated on Sun Mar 22 12:44:24 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.7.0).
 </div>
