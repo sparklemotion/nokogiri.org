@@ -76,21 +76,12 @@ gem install nokogiri --platform=ruby -- --use-system-libraries
   [RubyInstaller]: https://rubyinstaller.org/
 
 
-### Fedora
+### Fedora, Red Hat, and CentOS
 
-Install Nokogiri on Fedora from system repositories using:
+Install Nokogiri on a brand new Fedora, Red Hat, or CentOS system with these commands:
 
-```sh
-sudo dnf install -y rubygem-nokogiri
-```
-
-### Red Hat / CentOS
-
-Install Nokogiri on a brand new Red Had / CentOS system with these commands:
-
-```sh
-sudo yum install -y gcc ruby-devel zlib-devel
-# sudo dnf install -y rpm-build # This may be required
+``` sh
+dnf install -y make gcc rpm-build ruby-devel zlib-devel
 gem install nokogiri
 ```
 
@@ -98,11 +89,12 @@ Alternatively, you may install the appropriate [epel-release][] and get the
 Nokogiri package from [EPEL][] using:
 
 ```sh
-sudo yum install -y rubygem-nokogiri
+sudo dnf install -y rubygem-nokogiri
 ```
 
   [EPEL]: http://fedoraproject.org/wiki/EPEL
   [epel-release]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
+
 
 ### GNU Guix
 
