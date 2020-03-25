@@ -53,20 +53,28 @@ gem install nokogiri
 
 ### Windows
 
-Use [RubyInstaller][] to install our binary gem distribution in a flash!
+#### Precompiled Gems
+
+If you're using [RubyInstaller][] to install Ruby, then you can install Nokogiri's pre-compiled gem to avoid having to install a compiler toolchain:
 
 ```sh
 gem install nokogiri
 ```
 
-Nokogiri source gems can also be installed on RubyInstaller+Devkit.
-This can be necessary if the binary gem doesn't fit to your ruby version.
-Install Nokogiri with builtin libxml/libxslt sources:
+Note that `gem` will download and use a version of the gem appropriate for your system and architecture (e.g., `x64-mingw32`, `x86-mingw32`, etc.).
+
+
+#### Compiling From Source
+
+Nokogiri source gems can also be compiled and installed using RubyInstaller plus Devkit. This might be necessary if the binary gem doesn't work with your ruby version. (However, if a brand new Ruby version has just come out, give the maintainers a week or so to cut a compatible version of the gem!)
+
+Install Nokogiri by compiling the vendored libxml/libxslt libraries:
 
 ```sh
 gem install nokogiri --platform=ruby
 ```
-Install Nokogiri and link to MSYS2 libraries:
+
+Alternatively, install Nokogiri by linking to MSYS2 system libraries:
 
 ```sh
 ridk exec pacman -S mingw-w64-x86_64-libxslt
