@@ -406,18 +406,31 @@
     Windows
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fedora" title="Fedora" class="md-nav__link">
-    Fedora
+  <a href="#precompiled-gems" title="Precompiled Gems" class="md-nav__link">
+    Precompiled Gems
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#red-hat-centos" title="Red Hat / CentOS" class="md-nav__link">
-    Red Hat / CentOS
+  <a href="#compiling-from-source" title="Compiling From Source" class="md-nav__link">
+    Compiling From Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora-red-hat-and-centos" title="Fedora, Red Hat, and CentOS" class="md-nav__link">
+    Fedora, Red Hat, and CentOS
   </a>
   
 </li>
@@ -860,18 +873,31 @@
     Windows
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fedora" title="Fedora" class="md-nav__link">
-    Fedora
+  <a href="#precompiled-gems" title="Precompiled Gems" class="md-nav__link">
+    Precompiled Gems
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#red-hat-centos" title="Red Hat / CentOS" class="md-nav__link">
-    Red Hat / CentOS
+  <a href="#compiling-from-source" title="Compiling From Source" class="md-nav__link">
+    Compiling From Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora-red-hat-and-centos" title="Fedora, Red Hat, and CentOS" class="md-nav__link">
+    Fedora, Red Hat, and CentOS
   </a>
   
 </li>
@@ -1057,41 +1083,36 @@ gem install nokogiri
 
 
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
-<p>Use <a href="https://rubyinstaller.org/">RubyInstaller</a> to install our binary gem distribution in a flash!</p>
+<h4 id="precompiled-gems">Precompiled Gems<a class="headerlink" href="#precompiled-gems" title="Permanent link">&para;</a></h4>
+<p>If you're using <a href="https://rubyinstaller.org/">RubyInstaller</a> to install Ruby, then you can install Nokogiri's pre-compiled gem to avoid having to install a compiler toolchain:</p>
 <div class="codehilite"><pre><span></span>gem install nokogiri
 </pre></div>
 
 
-<p>Nokogiri source gems can also be installed on RubyInstaller+Devkit.
-This can be necessary if the binary gem doesn't fit to your ruby version.
-Install Nokogiri with builtin libxml/libxslt sources:</p>
+<p>Note that <code>gem</code> will download and use a version of the gem appropriate for your system and architecture (e.g., <code>x64-mingw32</code>, <code>x86-mingw32</code>, etc.).</p>
+<h4 id="compiling-from-source">Compiling From Source<a class="headerlink" href="#compiling-from-source" title="Permanent link">&para;</a></h4>
+<p>Nokogiri source gems can also be compiled and installed using RubyInstaller plus Devkit. This might be necessary if the binary gem doesn't work with your ruby version. (However, if a brand new Ruby version has just come out, give the maintainers a week or so to cut a compatible version of the gem!)</p>
+<p>Install Nokogiri by compiling the vendored libxml/libxslt libraries:</p>
 <div class="codehilite"><pre><span></span>gem install nokogiri --platform<span class="o">=</span>ruby
 </pre></div>
 
 
-<p>Install Nokogiri and link to MSYS2 libraries:</p>
+<p>Alternatively, install Nokogiri by linking to MSYS2 system libraries:</p>
 <div class="codehilite"><pre><span></span>ridk <span class="nb">exec</span> pacman -S mingw-w64-x86_64-libxslt
 gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
 </pre></div>
 
 
-<h3 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">&para;</a></h3>
-<p>Install Nokogiri on Fedora from system repositories using:</p>
-<div class="codehilite"><pre><span></span>sudo dnf install -y rubygem-nokogiri
-</pre></div>
-
-
-<h3 id="red-hat-centos">Red Hat / CentOS<a class="headerlink" href="#red-hat-centos" title="Permanent link">&para;</a></h3>
-<p>Install Nokogiri on a brand new Red Had / CentOS system with these commands:</p>
-<div class="codehilite"><pre><span></span>sudo yum install -y gcc ruby-devel zlib-devel
-<span class="c1"># sudo dnf install -y rpm-build # This may be required</span>
+<h3 id="fedora-red-hat-and-centos">Fedora, Red Hat, and CentOS<a class="headerlink" href="#fedora-red-hat-and-centos" title="Permanent link">&para;</a></h3>
+<p>Install Nokogiri on a brand new Fedora, Red Hat, or CentOS system with these commands:</p>
+<div class="codehilite"><pre><span></span>dnf install -y make gcc rpm-build ruby-devel zlib-devel
 gem install nokogiri
 </pre></div>
 
 
 <p>Alternatively, you may install the appropriate <a href="http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">epel-release</a> and get the
 Nokogiri package from <a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> using:</p>
-<div class="codehilite"><pre><span></span>sudo yum install -y rubygem-nokogiri
+<div class="codehilite"><pre><span></span>sudo dnf install -y rubygem-nokogiri
 </pre></div>
 
 
