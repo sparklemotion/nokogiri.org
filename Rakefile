@@ -12,13 +12,13 @@ require_relative "tasks/nokogiri_tasks"
 namespace :dev do
   desc "Set up system dependencies to develop this site."
   task :setup do
-    system "pip install --user mkdocs pygments mkdocs-material pymdown-extensions"
+    sh "pip3 install --user mkdocs pygments mkdocs-material pymdown-extensions"
   end
 end
 
 desc "Push everything to Github Pages"
 task :deploy => :generate do
-  system "mkdocs gh-deploy"
+  sh "mkdocs gh-deploy"
 end
 
 namespace :tutorials do
@@ -31,7 +31,7 @@ namespace :tutorials do
   task :clean do
     Bundler.with_clean_env do
       Dir.chdir TUTORIALS_DIR do
-        system "rake clean"
+        sh "rake clean"
       end
     end
   end
@@ -47,7 +47,7 @@ end
 namespace :mkdocs do
   desc "Use mkdocs to generate a static site"
   task :generate do
-    system "mkdocs build"
+    sh "mkdocs build"
   end
 
   desc "Use mkdocs to generate a static site"
@@ -56,7 +56,7 @@ namespace :mkdocs do
       sleep 1
       Launchy.open "http://localhost:8000"
     end
-    system "mkdocs serve"
+    sh "mkdocs serve"
   end
 end
 
