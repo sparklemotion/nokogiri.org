@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::EntityReference
   
-    — Documentation by YARD 0.9.24
+    — Documentation by YARD 0.9.25
   
 </title>
 
@@ -354,13 +354,13 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/entity_reference.rb', line 5</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_children">children</span>  <span class="comment"># libxml2 will create a malformed child node for predefined
+<span class="kw">def</span> <span class="id identifier rubyid_children">children</span>
+  <span class="comment"># libxml2 will create a malformed child node for predefined
 </span>  <span class="comment"># entities. because any use of that child is likely to cause a
 </span>  <span class="comment"># segfault, we shall pretend that it doesn't exist.
 </span>  <span class="comment">#
 </span>  <span class="comment"># see https://github.com/sparklemotion/nokogiri/issues/1238 for details
-</span>
-  <span class="const"><span class="object_link"><a href="NodeSet.html" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="NodeSet.html#initialize-instance_method" title="Nokogiri::XML::NodeSet#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="rparen">)</span>
+</span>  <span class="const"><span class="object_link"><a href="NodeSet.html" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="NodeSet.html#initialize-instance_method" title="Nokogiri::XML::NodeSet#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -403,9 +403,9 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 22 12:44:26 2020 by
+  Generated on Mon Jul  6 10:01:47 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.24 (ruby-2.7.0).
+  0.9.25 (ruby-2.6.5).
 </div>
 
     </div>

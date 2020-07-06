@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::HTML::Document::EncodingReader
   
-    — Documentation by YARD 0.9.24
+    — Documentation by YARD 0.9.25
   
 </title>
 
@@ -528,9 +528,9 @@
     <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX.html" title="Nokogiri::HTML::SAX (module)">SAX</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX/Parser.html" title="Nokogiri::HTML::SAX::Parser (class)">Parser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../../XML/SAX/Parser.html#initialize-instance_method" title="Nokogiri::XML::SAX::Parser#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="EncodingReader/JumpSAXHandler.html" title="Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler (class)">JumpSAXHandler</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="EncodingReader/JumpSAXHandler.html#initialize-instance_method" title="Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="symbol">:encoding_found</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="rparen">)</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="../../XML/SAX/Parser.html#parse-instance_method" title="Nokogiri::XML::SAX::Parser#parse (method)">parse</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_chunk">chunk</span><span class="rparen">)</span>
     <span class="kw">nil</span>
   <span class="rbrace">}</span>
-<span class="kw">rescue</span> <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../SyntaxError.html" title="Nokogiri::SyntaxError (class)">SyntaxError</a></span></span><span class="comma">,</span> <span class="const">RuntimeError</span>  <span class="comment"># Ignore parser errors that nokogiri may raise
-</span>
-  <span class="kw">nil</span>
+<span class="kw">rescue</span> <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../SyntaxError.html" title="Nokogiri::SyntaxError (class)">SyntaxError</a></span></span><span class="comma">,</span> <span class="const">RuntimeError</span>
+  <span class="comment"># Ignore parser errors that nokogiri may raise
+</span>  <span class="kw">nil</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -652,9 +652,9 @@
     <span class="comment"># This implementation expects that the first call from
 </span>    <span class="comment"># htmlReadIO() is made with a length long enough (~1KB) to
 </span>    <span class="comment"># achieve advanced encoding detection.
-</span>    <span class="kw">if</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="" title="Nokogiri::HTML::Document::EncodingReader (class)">EncodingReader</a></span></span><span class="period">.</span><span class="id identifier rubyid_detect_encoding"><span class="object_link"><a href="#detect_encoding-class_method" title="Nokogiri::HTML::Document::EncodingReader.detect_encoding (method)">detect_encoding</a></span></span><span class="lparen">(</span><span class="ivar">@firstchunk</span><span class="rparen">)</span>      <span class="comment"># The first chunk is stored for the next read in retry.
-</span>
-      <span class="id identifier rubyid_raise">raise</span> <span class="ivar">@encoding_found</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="EncodingFound.html" title="Nokogiri::HTML::Document::EncodingFound (class)">EncodingFound</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../Document.html#new-class_method" title="Nokogiri::HTML::Document.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
+</span>    <span class="kw">if</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="" title="Nokogiri::HTML::Document::EncodingReader (class)">EncodingReader</a></span></span><span class="period">.</span><span class="id identifier rubyid_detect_encoding"><span class="object_link"><a href="#detect_encoding-class_method" title="Nokogiri::HTML::Document::EncodingReader.detect_encoding (method)">detect_encoding</a></span></span><span class="lparen">(</span><span class="ivar">@firstchunk</span><span class="rparen">)</span>
+      <span class="comment"># The first chunk is stored for the next read in retry.
+</span>      <span class="id identifier rubyid_raise">raise</span> <span class="ivar">@encoding_found</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="EncodingFound.html" title="Nokogiri::HTML::Document::EncodingFound (class)">EncodingFound</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../Document.html#new-class_method" title="Nokogiri::HTML::Document.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
     <span class="kw">end</span>
   <span class="kw">end</span>
   <span class="ivar">@encoding_found</span> <span class="op">=</span> <span class="kw">nil</span>
@@ -679,9 +679,9 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 22 12:44:25 2020 by
+  Generated on Mon Jul  6 10:01:47 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.24 (ruby-2.7.0).
+  0.9.25 (ruby-2.6.5).
 </div>
 
     </div>

@@ -1,14 +1,12 @@
 
 
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="The Official Tutorial Archive™ of Nokogiri®">
       
@@ -18,27 +16,8 @@
       
         <meta name="author" content="Mike Dalessio">
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
       <link rel="shortcut icon" href="images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -46,111 +25,98 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
-    
-      <script src="assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Menlo">
-        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CMenlo&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="stylesheets/tidelift.css">
     
     
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","nokogiri.org"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
   </head>
+  
   
     <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#nokogiri-changelog" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nokogiri-changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://nokogiri.org" title="Nokogiri" class="md-header-nav__button md-logo">
-          
-            <img src="images/nokogiri-serif-white.svg" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://nokogiri.org" title="Nokogiri" class="md-header-nav__button md-logo" aria-label="Nokogiri">
+      
+  <img src="images/nokogiri-serif-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Nokogiri
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
             
-              <span class="md-header-nav__topic">
-                Nokogiri
-              </span>
-              <span class="md-header-nav__topic">
-                Changelog
-              </span>
+              Changelog
             
-          
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -158,151 +124,59 @@
     </div>
   </div>
 </div>
-          
+    
+    
+      <div class="md-header-nav__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
     
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sparklemotion/nokogiri
+  </div>
+</a>
       </div>
     
-    <div class="md-source__repository">
-      sparklemotion/nokogiri
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
       
-        
-  <li class="md-tabs__item">
-    
-      <a href="index.html" title="Readme" class="md-tabs__link">
-        Readme
-      </a>
-    
-  </li>
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="tutorials/installing_nokogiri.html" title="Support" class="md-tabs__link">
-          Support
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="tutorials/toc.html" title="Tutorials" class="md-tabs__link">
-          Tutorials
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="CHANGELOG.html" title="About" class="md-tabs__link md-tabs__link--active">
-          About
-        </a>
-      
-    </li>
-  
-
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="rdoc/index.html" title="RDoc" class="md-tabs__link">
-        RDoc
-      </a>
-    
-  </li>
-
-      
-    </ul>
-  </div>
-</nav>
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://nokogiri.org" title="Nokogiri" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://nokogiri.org" title="Nokogiri" class="md-nav__button md-logo" aria-label="Nokogiri">
       
-        <img src="images/nokogiri-serif-white.svg" width="48" height="48">
-      
+  <img src="images/nokogiri-serif-white.svg" alt="logo">
+
     </a>
     Nokogiri
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-
-  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
     
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      sparklemotion/nokogiri
-    </div>
-  </a>
-
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sparklemotion/nokogiri
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -326,13 +200,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Support
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Support" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Support
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -410,13 +290,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Tutorials
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Tutorials
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -496,13 +382,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       About
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="About" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -517,13 +409,16 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Changelog
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
     <a href="CHANGELOG.html" title="Changelog" class="md-nav__link md-nav__link--active">
@@ -531,33 +426,38 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unreleased-will-be-v1110" title="Unreleased (will be v1.11.0)" class="md-nav__link">
+  <a href="#unreleased-will-be-v1110" class="md-nav__link">
     Unreleased (will be v1.11.0)
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Unreleased (will be v1.11.0)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     Notes
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#experiment-pre-compiled-native-linux-gems" title="Experiment: Pre-Compiled Native Linux Gems" class="md-nav__link">
+  <a href="#experiment-pre-compiled-native-linux-gems" class="md-nav__link">
     Experiment: Pre-Compiled Native Linux Gems
   </a>
   
@@ -569,22 +469,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Dependencies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ruby" title="Ruby" class="md-nav__link">
+  <a href="#ruby" class="md-nav__link">
     Ruby
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gems" title="Gems" class="md-nav__link">
+  <a href="#gems" class="md-nav__link">
     Gems
   </a>
   
@@ -596,43 +496,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#added" title="Added" class="md-nav__link">
+  <a href="#added" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved" title="Improved" class="md-nav__link">
+  <a href="#improved" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed" title="Fixed" class="md-nav__link">
+  <a href="#fixed" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed" title="Removed" class="md-nav__link">
+  <a href="#removed" class="md-nav__link">
     Removed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed" title="Changed" class="md-nav__link">
+  <a href="#changed" class="md-nav__link">
     Changed
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Changed">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#versioninfo-and-the-output-of-nokogiri-v" title="VersionInfo and the output of nokogiri -v" class="md-nav__link">
+  <a href="#versioninfo-and-the-output-of-nokogiri-v" class="md-nav__link">
     VersionInfo and the output of nokogiri -v
   </a>
   
@@ -649,15 +549,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1109-2020-03-01" title="1.10.9 / 2020-03-01" class="md-nav__link">
+  <a href="#11010-2020-07-06" class="md-nav__link">
+    1.10.10 / 2020-07-06
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.10 / 2020-07-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1109-2020-03-01" class="md-nav__link">
     1.10.9 / 2020-03-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.9 / 2020-03-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_1" title="Fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     Fixed
   </a>
   
@@ -669,15 +589,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1108-2020-02-10" title="1.10.8 / 2020-02-10" class="md-nav__link">
+  <a href="#1108-2020-02-10" class="md-nav__link">
     1.10.8 / 2020-02-10
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.8 / 2020-02-10">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security" title="Security" class="md-nav__link">
+  <a href="#security" class="md-nav__link">
     Security
   </a>
   
@@ -689,15 +609,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1107-2019-12-03" title="1.10.7 / 2019-12-03" class="md-nav__link">
+  <a href="#1107-2019-12-03" class="md-nav__link">
     1.10.7 / 2019-12-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.7 / 2019-12-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_2" title="Fixed" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     Fixed
   </a>
   
@@ -709,15 +629,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1106-2019-12-03" title="1.10.6 / 2019-12-03" class="md-nav__link">
+  <a href="#1106-2019-12-03" class="md-nav__link">
     1.10.6 / 2019-12-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.6 / 2019-12-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_3" title="Fixed" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     Fixed
   </a>
   
@@ -729,22 +649,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1105-2019-10-31" title="1.10.5 / 2019-10-31" class="md-nav__link">
+  <a href="#1105-2019-10-31" class="md-nav__link">
     1.10.5 / 2019-10-31
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.5 / 2019-10-31">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_1" title="Security" class="md-nav__link">
+  <a href="#security_1" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_1" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_1" class="md-nav__link">
     Dependencies
   </a>
   
@@ -756,15 +676,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1104-2019-08-11" title="1.10.4 / 2019-08-11" class="md-nav__link">
+  <a href="#1104-2019-08-11" class="md-nav__link">
     1.10.4 / 2019-08-11
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.4 / 2019-08-11">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_2" title="Security" class="md-nav__link">
+  <a href="#security_2" class="md-nav__link">
     Security
   </a>
   
@@ -776,15 +696,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1103-2019-04-22" title="1.10.3 / 2019-04-22" class="md-nav__link">
+  <a href="#1103-2019-04-22" class="md-nav__link">
     1.10.3 / 2019-04-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.3 / 2019-04-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_3" title="Security" class="md-nav__link">
+  <a href="#security_3" class="md-nav__link">
     Security
   </a>
   
@@ -796,22 +716,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1102-2019-03-24" title="1.10.2 / 2019-03-24" class="md-nav__link">
+  <a href="#1102-2019-03-24" class="md-nav__link">
     1.10.2 / 2019-03-24
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.2 / 2019-03-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_4" title="Security" class="md-nav__link">
+  <a href="#security_4" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_4" title="Fixed" class="md-nav__link">
+  <a href="#fixed_4" class="md-nav__link">
     Fixed
   </a>
   
@@ -823,22 +743,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1101-2019-01-13" title="1.10.1 / 2019-01-13" class="md-nav__link">
+  <a href="#1101-2019-01-13" class="md-nav__link">
     1.10.1 / 2019-01-13
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.1 / 2019-01-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_1" title="Added" class="md-nav__link">
+  <a href="#added_1" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_5" title="Fixed" class="md-nav__link">
+  <a href="#fixed_5" class="md-nav__link">
     Fixed
   </a>
   
@@ -850,22 +770,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1100-2019-01-04" title="1.10.0 / 2019-01-04" class="md-nav__link">
+  <a href="#1100-2019-01-04" class="md-nav__link">
     1.10.0 / 2019-01-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.0 / 2019-01-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_2" title="Added" class="md-nav__link">
+  <a href="#added_2" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_2" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_2" class="md-nav__link">
     Dependencies
   </a>
   
@@ -877,15 +797,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#191-2018-12-17" title="1.9.1 / 2018-12-17" class="md-nav__link">
+  <a href="#191-2018-12-17" class="md-nav__link">
     1.9.1 / 2018-12-17
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.9.1 / 2018-12-17">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_6" title="Fixed" class="md-nav__link">
+  <a href="#fixed_6" class="md-nav__link">
     Fixed
   </a>
   
@@ -897,43 +817,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#190-2018-12-17" title="1.9.0 / 2018-12-17" class="md-nav__link">
+  <a href="#190-2018-12-17" class="md-nav__link">
     1.9.0 / 2018-12-17
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.9.0 / 2018-12-17">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_5" title="Security" class="md-nav__link">
+  <a href="#security_5" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_1" title="Improved" class="md-nav__link">
+  <a href="#improved_1" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_3" title="Added" class="md-nav__link">
+  <a href="#added_3" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_7" title="Fixed" class="md-nav__link">
+  <a href="#fixed_7" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_3" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_3" class="md-nav__link">
     Dependencies
   </a>
   
@@ -945,22 +865,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#185-2018-10-04" title="1.8.5 / 2018-10-04" class="md-nav__link">
+  <a href="#185-2018-10-04" class="md-nav__link">
     1.8.5 / 2018-10-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.5 / 2018-10-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_6" title="Security" class="md-nav__link">
+  <a href="#security_6" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_8" title="Fixed" class="md-nav__link">
+  <a href="#fixed_8" class="md-nav__link">
     Fixed
   </a>
   
@@ -972,15 +892,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#184-2018-07-03" title="1.8.4 / 2018-07-03" class="md-nav__link">
+  <a href="#184-2018-07-03" class="md-nav__link">
     1.8.4 / 2018-07-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.4 / 2018-07-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_9" title="Fixed" class="md-nav__link">
+  <a href="#fixed_9" class="md-nav__link">
     Fixed
   </a>
   
@@ -992,43 +912,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#183-2018-06-16" title="1.8.3 / 2018-06-16" class="md-nav__link">
+  <a href="#183-2018-06-16" class="md-nav__link">
     1.8.3 / 2018-06-16
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.3 / 2018-06-16">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_7" title="Security" class="md-nav__link">
+  <a href="#security_7" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#more-security" title="More Security" class="md-nav__link">
+  <a href="#more-security" class="md-nav__link">
     More Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_4" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_4" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_4" title="Added" class="md-nav__link">
+  <a href="#added_4" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_10" title="Fixed" class="md-nav__link">
+  <a href="#fixed_10" class="md-nav__link">
     Fixed
   </a>
   
@@ -1040,36 +960,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#182-2018-01-29" title="1.8.2 / 2018-01-29" class="md-nav__link">
+  <a href="#182-2018-01-29" class="md-nav__link">
     1.8.2 / 2018-01-29
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.2 / 2018-01-29">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_8" title="Security" class="md-nav__link">
+  <a href="#security_8" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_5" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_5" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_5" title="Added" class="md-nav__link">
+  <a href="#added_5" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_11" title="Fixed" class="md-nav__link">
+  <a href="#fixed_11" class="md-nav__link">
     Fixed
   </a>
   
@@ -1081,22 +1001,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#181-2017-09-19" title="1.8.1 / 2017-09-19" class="md-nav__link">
+  <a href="#181-2017-09-19" class="md-nav__link">
     1.8.1 / 2017-09-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.1 / 2017-09-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_6" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_6" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_12" title="Fixed" class="md-nav__link">
+  <a href="#fixed_12" class="md-nav__link">
     Fixed
   </a>
   
@@ -1108,36 +1028,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#180-2017-06-04" title="1.8.0 / 2017-06-04" class="md-nav__link">
+  <a href="#180-2017-06-04" class="md-nav__link">
     1.8.0 / 2017-06-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.0 / 2017-06-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_7" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_7" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_8" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_8" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_6" title="Added" class="md-nav__link">
+  <a href="#added_6" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_13" title="Fixed" class="md-nav__link">
+  <a href="#fixed_13" class="md-nav__link">
     Fixed
   </a>
   
@@ -1149,15 +1069,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#172-2017-05-09" title="1.7.2 / 2017-05-09" class="md-nav__link">
+  <a href="#172-2017-05-09" class="md-nav__link">
     1.7.2 / 2017-05-09
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.2 / 2017-05-09">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_9" title="Security" class="md-nav__link">
+  <a href="#security_9" class="md-nav__link">
     Security
   </a>
   
@@ -1169,15 +1089,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#171-2017-03-19" title="1.7.1 / 2017-03-19" class="md-nav__link">
+  <a href="#171-2017-03-19" class="md-nav__link">
     1.7.1 / 2017-03-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.1 / 2017-03-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_10" title="Security" class="md-nav__link">
+  <a href="#security_10" class="md-nav__link">
     Security
   </a>
   
@@ -1189,15 +1109,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1701-2017-01-04" title="1.7.0.1 / 2017-01-04" class="md-nav__link">
+  <a href="#1701-2017-01-04" class="md-nav__link">
     1.7.0.1 / 2017-01-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.0.1 / 2017-01-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_14" title="Fixed" class="md-nav__link">
+  <a href="#fixed_14" class="md-nav__link">
     Fixed
   </a>
   
@@ -1209,22 +1129,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#170-2016-12-26" title="1.7.0 / 2016-12-26" class="md-nav__link">
+  <a href="#170-2016-12-26" class="md-nav__link">
     1.7.0 / 2016-12-26
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.0 / 2016-12-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_7" title="Added" class="md-nav__link">
+  <a href="#added_7" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_9" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_9" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1236,15 +1156,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1681-2016-10-03" title="1.6.8.1 / 2016-10-03" class="md-nav__link">
+  <a href="#1681-2016-10-03" class="md-nav__link">
     1.6.8.1 / 2016-10-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.8.1 / 2016-10-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_10" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_10" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1256,36 +1176,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#168-2016-06-06" title="1.6.8 / 2016-06-06" class="md-nav__link">
+  <a href="#168-2016-06-06" class="md-nav__link">
     1.6.8 / 2016-06-06
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.8 / 2016-06-06">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_11" title="Security" class="md-nav__link">
+  <a href="#security_11" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_8" title="Added" class="md-nav__link">
+  <a href="#added_8" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_15" title="Fixed" class="md-nav__link">
+  <a href="#fixed_15" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_1" title="Notes" class="md-nav__link">
+  <a href="#notes_1" class="md-nav__link">
     Notes
   </a>
   
@@ -1297,50 +1217,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1672-2016-01-20" title="1.6.7.2 / 2016-01-20" class="md-nav__link">
+  <a href="#1672-2016-01-20" class="md-nav__link">
     1.6.7.2 / 2016-01-20
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1671-2015-12-16" title="1.6.7.1 / 2015-12-16" class="md-nav__link">
+  <a href="#1671-2015-12-16" class="md-nav__link">
     1.6.7.1 / 2015-12-16
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#167-2015-11-29" title="1.6.7 / 2015-11-29" class="md-nav__link">
+  <a href="#167-2015-11-29" class="md-nav__link">
     1.6.7 / 2015-11-29
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.7 / 2015-11-29">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_9" title="Added" class="md-nav__link">
+  <a href="#added_9" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#security_12" title="Security" class="md-nav__link">
+  <a href="#security_12" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_10" title="Added" class="md-nav__link">
+  <a href="#added_10" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_16" title="Fixed" class="md-nav__link">
+  <a href="#fixed_16" class="md-nav__link">
     Fixed
   </a>
   
@@ -1352,29 +1272,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1664-2015-11-19" title="1.6.6.4 / 2015-11-19" class="md-nav__link">
+  <a href="#1664-2015-11-19" class="md-nav__link">
     1.6.6.4 / 2015-11-19
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1663-2015-11-16" title="1.6.6.3 / 2015-11-16" class="md-nav__link">
+  <a href="#1663-2015-11-16" class="md-nav__link">
     1.6.6.3 / 2015-11-16
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1662-2015-01-23" title="1.6.6.2 / 2015-01-23" class="md-nav__link">
+  <a href="#1662-2015-01-23" class="md-nav__link">
     1.6.6.2 / 2015-01-23
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.6.2 / 2015-01-23">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_17" title="Fixed" class="md-nav__link">
+  <a href="#fixed_17" class="md-nav__link">
     Fixed
   </a>
   
@@ -1386,22 +1306,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1661-2015-01-22" title="1.6.6.1 / 2015-01-22" class="md-nav__link">
+  <a href="#1661-2015-01-22" class="md-nav__link">
     1.6.6.1 / 2015-01-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.6.1 / 2015-01-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_11" title="Added" class="md-nav__link">
+  <a href="#added_11" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_18" title="Fixed" class="md-nav__link">
+  <a href="#fixed_18" class="md-nav__link">
     Fixed
   </a>
   
@@ -1413,22 +1333,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#165-2014-11-26" title="1.6.5 / 2014-11-26" class="md-nav__link">
+  <a href="#165-2014-11-26" class="md-nav__link">
     1.6.5 / 2014-11-26
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.5 / 2014-11-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_12" title="Added" class="md-nav__link">
+  <a href="#added_12" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_19" title="Fixed" class="md-nav__link">
+  <a href="#fixed_19" class="md-nav__link">
     Fixed
   </a>
   
@@ -1440,15 +1360,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1641-2014-11-05" title="1.6.4.1 / 2014-11-05" class="md-nav__link">
+  <a href="#1641-2014-11-05" class="md-nav__link">
     1.6.4.1 / 2014-11-05
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.4.1 / 2014-11-05">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_20" title="Fixed" class="md-nav__link">
+  <a href="#fixed_20" class="md-nav__link">
     Fixed
   </a>
   
@@ -1460,22 +1380,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#164-2014-11-04" title="1.6.4 / 2014-11-04" class="md-nav__link">
+  <a href="#164-2014-11-04" class="md-nav__link">
     1.6.4 / 2014-11-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.4 / 2014-11-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_13" title="Added" class="md-nav__link">
+  <a href="#added_13" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_21" title="Fixed" class="md-nav__link">
+  <a href="#fixed_21" class="md-nav__link">
     Fixed
   </a>
   
@@ -1487,15 +1407,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1631-2014-07-21" title="1.6.3.1 / 2014-07-21" class="md-nav__link">
+  <a href="#1631-2014-07-21" class="md-nav__link">
     1.6.3.1 / 2014-07-21
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.3.1 / 2014-07-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_22" title="Fixed" class="md-nav__link">
+  <a href="#fixed_22" class="md-nav__link">
     Fixed
   </a>
   
@@ -1507,22 +1427,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#163-2014-07-20" title="1.6.3 / 2014-07-20" class="md-nav__link">
+  <a href="#163-2014-07-20" class="md-nav__link">
     1.6.3 / 2014-07-20
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.3 / 2014-07-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_14" title="Added" class="md-nav__link">
+  <a href="#added_14" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_23" title="Fixed" class="md-nav__link">
+  <a href="#fixed_23" class="md-nav__link">
     Fixed
   </a>
   
@@ -1534,15 +1454,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1621-2014-05-13" title="1.6.2.1 / 2014-05-13" class="md-nav__link">
+  <a href="#1621-2014-05-13" class="md-nav__link">
     1.6.2.1 / 2014-05-13
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.2.1 / 2014-05-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_24" title="Fixed" class="md-nav__link">
+  <a href="#fixed_24" class="md-nav__link">
     Fixed
   </a>
   
@@ -1554,36 +1474,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#162-2014-05-12" title="1.6.2 / 2014-05-12" class="md-nav__link">
+  <a href="#162-2014-05-12" class="md-nav__link">
     1.6.2 / 2014-05-12
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.2 / 2014-05-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_13" title="Security" class="md-nav__link">
+  <a href="#security_13" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_11" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_11" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_15" title="Added" class="md-nav__link">
+  <a href="#added_15" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_25" title="Fixed" class="md-nav__link">
+  <a href="#fixed_25" class="md-nav__link">
     Fixed
   </a>
   
@@ -1595,15 +1515,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#161-2013-12-14" title="1.6.1 / 2013-12-14" class="md-nav__link">
+  <a href="#161-2013-12-14" class="md-nav__link">
     1.6.1 / 2013-12-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.1 / 2013-12-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_26" title="Fixed" class="md-nav__link">
+  <a href="#fixed_26" class="md-nav__link">
     Fixed
   </a>
   
@@ -1615,15 +1535,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#160-2013-06-08" title="1.6.0 / 2013-06-08" class="md-nav__link">
+  <a href="#160-2013-06-08" class="md-nav__link">
     1.6.0 / 2013-06-08
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.0 / 2013-06-08">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deprecations" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations" class="md-nav__link">
     Deprecations
   </a>
   
@@ -1635,29 +1555,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#160rc1-2013-04-14" title="1.6.0.rc1 / 2013-04-14" class="md-nav__link">
+  <a href="#160rc1-2013-04-14" class="md-nav__link">
     1.6.0.rc1 / 2013-04-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.0.rc1 / 2013-04-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_2" title="Notes" class="md-nav__link">
+  <a href="#notes_2" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_16" title="Added" class="md-nav__link">
+  <a href="#added_16" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_12" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_12" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1669,15 +1589,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1511-2013-12-14" title="1.5.11 / 2013-12-14" class="md-nav__link">
+  <a href="#1511-2013-12-14" class="md-nav__link">
     1.5.11 / 2013-12-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.11 / 2013-12-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_27" title="Fixed" class="md-nav__link">
+  <a href="#fixed_27" class="md-nav__link">
     Fixed
   </a>
   
@@ -1689,22 +1609,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1510-2013-06-07" title="1.5.10 / 2013-06-07" class="md-nav__link">
+  <a href="#1510-2013-06-07" class="md-nav__link">
     1.5.10 / 2013-06-07
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.10 / 2013-06-07">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_28" title="Fixed" class="md-nav__link">
+  <a href="#fixed_28" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_3" title="Notes" class="md-nav__link">
+  <a href="#notes_3" class="md-nav__link">
     Notes
   </a>
   
@@ -1716,15 +1636,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#159-2013-03-21" title="1.5.9 / 2013-03-21" class="md-nav__link">
+  <a href="#159-2013-03-21" class="md-nav__link">
     1.5.9 / 2013-03-21
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.9 / 2013-03-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_29" title="Fixed" class="md-nav__link">
+  <a href="#fixed_29" class="md-nav__link">
     Fixed
   </a>
   
@@ -1736,15 +1656,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#158-2013-03-19" title="1.5.8 / 2013-03-19" class="md-nav__link">
+  <a href="#158-2013-03-19" class="md-nav__link">
     1.5.8 / 2013-03-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.8 / 2013-03-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_30" title="Fixed" class="md-nav__link">
+  <a href="#fixed_30" class="md-nav__link">
     Fixed
   </a>
   
@@ -1756,22 +1676,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#157-2013-03-18" title="1.5.7 / 2013-03-18" class="md-nav__link">
+  <a href="#157-2013-03-18" class="md-nav__link">
     1.5.7 / 2013-03-18
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.7 / 2013-03-18">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_17" title="Added" class="md-nav__link">
+  <a href="#added_17" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_31" title="Fixed" class="md-nav__link">
+  <a href="#fixed_31" class="md-nav__link">
     Fixed
   </a>
   
@@ -1783,22 +1703,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#156-2012-12-19" title="1.5.6 / 2012-12-19" class="md-nav__link">
+  <a href="#156-2012-12-19" class="md-nav__link">
     1.5.6 / 2012-12-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.6 / 2012-12-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_18" title="Added" class="md-nav__link">
+  <a href="#added_18" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_32" title="Fixed" class="md-nav__link">
+  <a href="#fixed_32" class="md-nav__link">
     Fixed
   </a>
   
@@ -1810,22 +1730,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#155-2012-06-24" title="1.5.5 / 2012-06-24" class="md-nav__link">
+  <a href="#155-2012-06-24" class="md-nav__link">
     1.5.5 / 2012-06-24
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.5 / 2012-06-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_19" title="Added" class="md-nav__link">
+  <a href="#added_19" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_33" title="Fixed" class="md-nav__link">
+  <a href="#fixed_33" class="md-nav__link">
     Fixed
   </a>
   
@@ -1837,29 +1757,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#154-2012-06-12" title="1.5.4 / 2012-06-12" class="md-nav__link">
+  <a href="#154-2012-06-12" class="md-nav__link">
     1.5.4 / 2012-06-12
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.4 / 2012-06-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_20" title="Added" class="md-nav__link">
+  <a href="#added_20" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_34" title="Fixed" class="md-nav__link">
+  <a href="#fixed_34" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#security_14" title="Security" class="md-nav__link">
+  <a href="#security_14" class="md-nav__link">
     Security
   </a>
   
@@ -1871,22 +1791,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#153-2012-06-01" title="1.5.3 / 2012-06-01" class="md-nav__link">
+  <a href="#153-2012-06-01" class="md-nav__link">
     1.5.3 / 2012-06-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.3 / 2012-06-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_21" title="Added" class="md-nav__link">
+  <a href="#added_21" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_35" title="Fixed" class="md-nav__link">
+  <a href="#fixed_35" class="md-nav__link">
     Fixed
   </a>
   
@@ -1898,29 +1818,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#152-2012-03-09" title="1.5.2 / 2012-03-09" class="md-nav__link">
+  <a href="#152-2012-03-09" class="md-nav__link">
     1.5.2 / 2012-03-09
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#151-2012-03-09" title="1.5.1 / 2012-03-09" class="md-nav__link">
+  <a href="#151-2012-03-09" class="md-nav__link">
     1.5.1 / 2012-03-09
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.1 / 2012-03-09">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_22" title="Added" class="md-nav__link">
+  <a href="#added_22" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_36" title="Fixed" class="md-nav__link">
+  <a href="#fixed_36" class="md-nav__link">
     Fixed
   </a>
   
@@ -1932,29 +1852,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-2011-07-01" title="1.5.0 / 2011-07-01" class="md-nav__link">
+  <a href="#150-2011-07-01" class="md-nav__link">
     1.5.0 / 2011-07-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 / 2011-07-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_4" title="Notes" class="md-nav__link">
+  <a href="#notes_4" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_23" title="Added" class="md-nav__link">
+  <a href="#added_23" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_37" title="Fixed" class="md-nav__link">
+  <a href="#fixed_37" class="md-nav__link">
     Fixed
   </a>
   
@@ -1966,22 +1886,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-beta3-2010-12-02" title="1.5.0 beta3 / 2010-12-02" class="md-nav__link">
+  <a href="#150-beta3-2010-12-02" class="md-nav__link">
     1.5.0 beta3 / 2010-12-02
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 beta3 / 2010-12-02">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_5" title="Notes" class="md-nav__link">
+  <a href="#notes_5" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_38" title="Fixed" class="md-nav__link">
+  <a href="#fixed_38" class="md-nav__link">
     Fixed
   </a>
   
@@ -1993,15 +1913,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-beta2-2010-07-30" title="1.5.0 beta2 / 2010-07-30" class="md-nav__link">
+  <a href="#150-beta2-2010-07-30" class="md-nav__link">
     1.5.0 beta2 / 2010-07-30
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 beta2 / 2010-07-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_6" title="Notes" class="md-nav__link">
+  <a href="#notes_6" class="md-nav__link">
     Notes
   </a>
   
@@ -2013,29 +1933,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-beta1-2010-05-22" title="1.5.0 beta1 / 2010-05-22" class="md-nav__link">
+  <a href="#150-beta1-2010-05-22" class="md-nav__link">
     1.5.0 beta1 / 2010-05-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 beta1 / 2010-05-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_7" title="Notes" class="md-nav__link">
+  <a href="#notes_7" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_13" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_13" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed_1" title="Removed" class="md-nav__link">
+  <a href="#removed_1" class="md-nav__link">
     Removed
   </a>
   
@@ -2047,15 +1967,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#147-2011-07-01" title="1.4.7 / 2011-07-01" class="md-nav__link">
+  <a href="#147-2011-07-01" class="md-nav__link">
     1.4.7 / 2011-07-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.7 / 2011-07-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_39" title="Fixed" class="md-nav__link">
+  <a href="#fixed_39" class="md-nav__link">
     Fixed
   </a>
   
@@ -2067,15 +1987,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#146-2011-06-19" title="1.4.6 / 2011-06-19" class="md-nav__link">
+  <a href="#146-2011-06-19" class="md-nav__link">
     1.4.6 / 2011-06-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.6 / 2011-06-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_8" title="Notes" class="md-nav__link">
+  <a href="#notes_8" class="md-nav__link">
     Notes
   </a>
   
@@ -2087,22 +2007,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#145-2011-05-19" title="1.4.5 / 2011-05-19" class="md-nav__link">
+  <a href="#145-2011-05-19" class="md-nav__link">
     1.4.5 / 2011-05-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.5 / 2011-05-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_24" title="Added" class="md-nav__link">
+  <a href="#added_24" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_40" title="Fixed" class="md-nav__link">
+  <a href="#fixed_40" class="md-nav__link">
     Fixed
   </a>
   
@@ -2114,22 +2034,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#144-2010-11-15" title="1.4.4 / 2010-11-15" class="md-nav__link">
+  <a href="#144-2010-11-15" class="md-nav__link">
     1.4.4 / 2010-11-15
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.4 / 2010-11-15">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_25" title="Added" class="md-nav__link">
+  <a href="#added_25" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_41" title="Fixed" class="md-nav__link">
+  <a href="#fixed_41" class="md-nav__link">
     Fixed
   </a>
   
@@ -2141,22 +2061,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#143-2010-07-28" title="1.4.3 / 2010-07-28" class="md-nav__link">
+  <a href="#143-2010-07-28" class="md-nav__link">
     1.4.3 / 2010-07-28
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.3 / 2010-07-28">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_26" title="Added" class="md-nav__link">
+  <a href="#added_26" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_42" title="Fixed" class="md-nav__link">
+  <a href="#fixed_42" class="md-nav__link">
     Fixed
   </a>
   
@@ -2168,29 +2088,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#142-2010-05-22" title="1.4.2 / 2010-05-22" class="md-nav__link">
+  <a href="#142-2010-05-22" class="md-nav__link">
     1.4.2 / 2010-05-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.2 / 2010-05-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_27" title="Added" class="md-nav__link">
+  <a href="#added_27" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_43" title="Fixed" class="md-nav__link">
+  <a href="#fixed_43" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_9" title="Notes" class="md-nav__link">
+  <a href="#notes_9" class="md-nav__link">
     Notes
   </a>
   
@@ -2202,22 +2122,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#141-2009-12-10" title="1.4.1 / 2009-12-10" class="md-nav__link">
+  <a href="#141-2009-12-10" class="md-nav__link">
     1.4.1 / 2009-12-10
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.1 / 2009-12-10">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_28" title="Added" class="md-nav__link">
+  <a href="#added_28" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_44" title="Fixed" class="md-nav__link">
+  <a href="#fixed_44" class="md-nav__link">
     Fixed
   </a>
   
@@ -2229,29 +2149,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#140-2009-10-30" title="1.4.0 / 2009-10-30" class="md-nav__link">
+  <a href="#140-2009-10-30" class="md-nav__link">
     1.4.0 / 2009-10-30
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.0 / 2009-10-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_29" title="Added" class="md-nav__link">
+  <a href="#added_29" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_45" title="Fixed" class="md-nav__link">
+  <a href="#fixed_45" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed_2" title="Removed" class="md-nav__link">
+  <a href="#removed_2" class="md-nav__link">
     Removed
   </a>
   
@@ -2263,29 +2183,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#133-2009-07-26" title="1.3.3 / 2009-07-26" class="md-nav__link">
+  <a href="#133-2009-07-26" class="md-nav__link">
     1.3.3 / 2009-07-26
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.3 / 2009-07-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_30" title="Added" class="md-nav__link">
+  <a href="#added_30" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_46" title="Fixed" class="md-nav__link">
+  <a href="#fixed_46" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations_1" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations_1" class="md-nav__link">
     Deprecations
   </a>
   
@@ -2297,29 +2217,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#132-2009-06-22" title="1.3.2 / 2009-06-22" class="md-nav__link">
+  <a href="#132-2009-06-22" class="md-nav__link">
     1.3.2 / 2009-06-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.2 / 2009-06-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_31" title="Added" class="md-nav__link">
+  <a href="#added_31" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_47" title="Fixed" class="md-nav__link">
+  <a href="#fixed_47" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations_2" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations_2" class="md-nav__link">
     Deprecations
   </a>
   
@@ -2331,15 +2251,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#131-2009-06-07" title="1.3.1 / 2009-06-07" class="md-nav__link">
+  <a href="#131-2009-06-07" class="md-nav__link">
     1.3.1 / 2009-06-07
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.1 / 2009-06-07">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_48" title="Fixed" class="md-nav__link">
+  <a href="#fixed_48" class="md-nav__link">
     Fixed
   </a>
   
@@ -2351,22 +2271,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#130-2009-05-30" title="1.3.0 / 2009-05-30" class="md-nav__link">
+  <a href="#130-2009-05-30" class="md-nav__link">
     1.3.0 / 2009-05-30
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.0 / 2009-05-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_32" title="Added" class="md-nav__link">
+  <a href="#added_32" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_49" title="Fixed" class="md-nav__link">
+  <a href="#fixed_49" class="md-nav__link">
     Fixed
   </a>
   
@@ -2378,15 +2298,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#123-2009-03-22" title="1.2.3 / 2009-03-22" class="md-nav__link">
+  <a href="#123-2009-03-22" class="md-nav__link">
     1.2.3 / 2009-03-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.3 / 2009-03-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_50" title="Fixed" class="md-nav__link">
+  <a href="#fixed_50" class="md-nav__link">
     Fixed
   </a>
   
@@ -2398,22 +2318,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#122-2009-03-14" title="1.2.2 / 2009-03-14" class="md-nav__link">
+  <a href="#122-2009-03-14" class="md-nav__link">
     1.2.2 / 2009-03-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.2 / 2009-03-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_33" title="Added" class="md-nav__link">
+  <a href="#added_33" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_51" title="Fixed" class="md-nav__link">
+  <a href="#fixed_51" class="md-nav__link">
     Fixed
   </a>
   
@@ -2425,15 +2345,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#121-2009-02-23" title="1.2.1 / 2009-02-23" class="md-nav__link">
+  <a href="#121-2009-02-23" class="md-nav__link">
     1.2.1 / 2009-02-23
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.1 / 2009-02-23">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_52" title="Fixed" class="md-nav__link">
+  <a href="#fixed_52" class="md-nav__link">
     Fixed
   </a>
   
@@ -2445,36 +2365,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#120-2009-02-22" title="1.2.0 / 2009-02-22" class="md-nav__link">
+  <a href="#120-2009-02-22" class="md-nav__link">
     1.2.0 / 2009-02-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.0 / 2009-02-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_34" title="Added" class="md-nav__link">
+  <a href="#added_34" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_53" title="Fixed" class="md-nav__link">
+  <a href="#fixed_53" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations_3" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations_3" class="md-nav__link">
     Deprecations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed_1" title="Changed" class="md-nav__link">
+  <a href="#changed_1" class="md-nav__link">
     Changed
   </a>
   
@@ -2486,22 +2406,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#111" title="1.1.1" class="md-nav__link">
+  <a href="#111" class="md-nav__link">
     1.1.1
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.1.1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_35" title="Added" class="md-nav__link">
+  <a href="#added_35" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_54" title="Fixed" class="md-nav__link">
+  <a href="#fixed_54" class="md-nav__link">
     Fixed
   </a>
   
@@ -2513,22 +2433,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#110" title="1.1.0" class="md-nav__link">
+  <a href="#110" class="md-nav__link">
     1.1.0
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.1.0">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_36" title="Added" class="md-nav__link">
+  <a href="#added_36" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_55" title="Fixed" class="md-nav__link">
+  <a href="#fixed_55" class="md-nav__link">
     Fixed
   </a>
   
@@ -2540,15 +2460,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#107" title="1.0.7" class="md-nav__link">
+  <a href="#107" class="md-nav__link">
     1.0.7
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.7">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_56" title="Fixed" class="md-nav__link">
+  <a href="#fixed_56" class="md-nav__link">
     Fixed
   </a>
   
@@ -2560,15 +2480,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#106" title="1.0.6" class="md-nav__link">
+  <a href="#106" class="md-nav__link">
     1.0.6
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.6">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_57" title="Fixed" class="md-nav__link">
+  <a href="#fixed_57" class="md-nav__link">
     Fixed
   </a>
   
@@ -2580,15 +2500,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#105" title="1.0.5" class="md-nav__link">
+  <a href="#105" class="md-nav__link">
     1.0.5
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.5">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_58" title="Fixed" class="md-nav__link">
+  <a href="#fixed_58" class="md-nav__link">
     Fixed
   </a>
   
@@ -2600,15 +2520,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#104" title="1.0.4" class="md-nav__link">
+  <a href="#104" class="md-nav__link">
     1.0.4
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.4">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_59" title="Fixed" class="md-nav__link">
+  <a href="#fixed_59" class="md-nav__link">
     Fixed
   </a>
   
@@ -2620,15 +2540,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#103" title="1.0.3" class="md-nav__link">
+  <a href="#103" class="md-nav__link">
     1.0.3
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.3">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_60" title="Fixed" class="md-nav__link">
+  <a href="#fixed_60" class="md-nav__link">
     Fixed
   </a>
   
@@ -2640,15 +2560,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#102" title="1.0.2" class="md-nav__link">
+  <a href="#102" class="md-nav__link">
     1.0.2
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_61" title="Fixed" class="md-nav__link">
+  <a href="#fixed_61" class="md-nav__link">
     Fixed
   </a>
   
@@ -2660,15 +2580,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#101" title="1.0.1" class="md-nav__link">
+  <a href="#101" class="md-nav__link">
     1.0.1
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_62" title="Fixed" class="md-nav__link">
+  <a href="#fixed_62" class="md-nav__link">
     Fixed
   </a>
   
@@ -2680,15 +2600,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#100-2008-07-13" title="1.0.0 / 2008-07-13" class="md-nav__link">
+  <a href="#100-2008-07-13" class="md-nav__link">
     1.0.0 / 2008-07-13
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.0 / 2008-07-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_37" title="Added" class="md-nav__link">
+  <a href="#added_37" class="md-nav__link">
     Added
   </a>
   
@@ -2698,10 +2618,6 @@
     </nav>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -2798,33 +2714,38 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unreleased-will-be-v1110" title="Unreleased (will be v1.11.0)" class="md-nav__link">
+  <a href="#unreleased-will-be-v1110" class="md-nav__link">
     Unreleased (will be v1.11.0)
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Unreleased (will be v1.11.0)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     Notes
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#experiment-pre-compiled-native-linux-gems" title="Experiment: Pre-Compiled Native Linux Gems" class="md-nav__link">
+  <a href="#experiment-pre-compiled-native-linux-gems" class="md-nav__link">
     Experiment: Pre-Compiled Native Linux Gems
   </a>
   
@@ -2836,22 +2757,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Dependencies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ruby" title="Ruby" class="md-nav__link">
+  <a href="#ruby" class="md-nav__link">
     Ruby
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gems" title="Gems" class="md-nav__link">
+  <a href="#gems" class="md-nav__link">
     Gems
   </a>
   
@@ -2863,43 +2784,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#added" title="Added" class="md-nav__link">
+  <a href="#added" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved" title="Improved" class="md-nav__link">
+  <a href="#improved" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed" title="Fixed" class="md-nav__link">
+  <a href="#fixed" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed" title="Removed" class="md-nav__link">
+  <a href="#removed" class="md-nav__link">
     Removed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed" title="Changed" class="md-nav__link">
+  <a href="#changed" class="md-nav__link">
     Changed
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Changed">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#versioninfo-and-the-output-of-nokogiri-v" title="VersionInfo and the output of nokogiri -v" class="md-nav__link">
+  <a href="#versioninfo-and-the-output-of-nokogiri-v" class="md-nav__link">
     VersionInfo and the output of nokogiri -v
   </a>
   
@@ -2916,15 +2837,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1109-2020-03-01" title="1.10.9 / 2020-03-01" class="md-nav__link">
+  <a href="#11010-2020-07-06" class="md-nav__link">
+    1.10.10 / 2020-07-06
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.10 / 2020-07-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1109-2020-03-01" class="md-nav__link">
     1.10.9 / 2020-03-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.9 / 2020-03-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_1" title="Fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     Fixed
   </a>
   
@@ -2936,15 +2877,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1108-2020-02-10" title="1.10.8 / 2020-02-10" class="md-nav__link">
+  <a href="#1108-2020-02-10" class="md-nav__link">
     1.10.8 / 2020-02-10
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.8 / 2020-02-10">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security" title="Security" class="md-nav__link">
+  <a href="#security" class="md-nav__link">
     Security
   </a>
   
@@ -2956,15 +2897,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1107-2019-12-03" title="1.10.7 / 2019-12-03" class="md-nav__link">
+  <a href="#1107-2019-12-03" class="md-nav__link">
     1.10.7 / 2019-12-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.7 / 2019-12-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_2" title="Fixed" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     Fixed
   </a>
   
@@ -2976,15 +2917,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1106-2019-12-03" title="1.10.6 / 2019-12-03" class="md-nav__link">
+  <a href="#1106-2019-12-03" class="md-nav__link">
     1.10.6 / 2019-12-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.6 / 2019-12-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_3" title="Fixed" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     Fixed
   </a>
   
@@ -2996,22 +2937,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1105-2019-10-31" title="1.10.5 / 2019-10-31" class="md-nav__link">
+  <a href="#1105-2019-10-31" class="md-nav__link">
     1.10.5 / 2019-10-31
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.5 / 2019-10-31">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_1" title="Security" class="md-nav__link">
+  <a href="#security_1" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_1" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_1" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3023,15 +2964,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1104-2019-08-11" title="1.10.4 / 2019-08-11" class="md-nav__link">
+  <a href="#1104-2019-08-11" class="md-nav__link">
     1.10.4 / 2019-08-11
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.4 / 2019-08-11">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_2" title="Security" class="md-nav__link">
+  <a href="#security_2" class="md-nav__link">
     Security
   </a>
   
@@ -3043,15 +2984,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1103-2019-04-22" title="1.10.3 / 2019-04-22" class="md-nav__link">
+  <a href="#1103-2019-04-22" class="md-nav__link">
     1.10.3 / 2019-04-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.3 / 2019-04-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_3" title="Security" class="md-nav__link">
+  <a href="#security_3" class="md-nav__link">
     Security
   </a>
   
@@ -3063,22 +3004,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1102-2019-03-24" title="1.10.2 / 2019-03-24" class="md-nav__link">
+  <a href="#1102-2019-03-24" class="md-nav__link">
     1.10.2 / 2019-03-24
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.2 / 2019-03-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_4" title="Security" class="md-nav__link">
+  <a href="#security_4" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_4" title="Fixed" class="md-nav__link">
+  <a href="#fixed_4" class="md-nav__link">
     Fixed
   </a>
   
@@ -3090,22 +3031,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1101-2019-01-13" title="1.10.1 / 2019-01-13" class="md-nav__link">
+  <a href="#1101-2019-01-13" class="md-nav__link">
     1.10.1 / 2019-01-13
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.1 / 2019-01-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_1" title="Added" class="md-nav__link">
+  <a href="#added_1" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_5" title="Fixed" class="md-nav__link">
+  <a href="#fixed_5" class="md-nav__link">
     Fixed
   </a>
   
@@ -3117,22 +3058,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1100-2019-01-04" title="1.10.0 / 2019-01-04" class="md-nav__link">
+  <a href="#1100-2019-01-04" class="md-nav__link">
     1.10.0 / 2019-01-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.10.0 / 2019-01-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_2" title="Added" class="md-nav__link">
+  <a href="#added_2" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_2" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_2" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3144,15 +3085,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#191-2018-12-17" title="1.9.1 / 2018-12-17" class="md-nav__link">
+  <a href="#191-2018-12-17" class="md-nav__link">
     1.9.1 / 2018-12-17
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.9.1 / 2018-12-17">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_6" title="Fixed" class="md-nav__link">
+  <a href="#fixed_6" class="md-nav__link">
     Fixed
   </a>
   
@@ -3164,43 +3105,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#190-2018-12-17" title="1.9.0 / 2018-12-17" class="md-nav__link">
+  <a href="#190-2018-12-17" class="md-nav__link">
     1.9.0 / 2018-12-17
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.9.0 / 2018-12-17">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_5" title="Security" class="md-nav__link">
+  <a href="#security_5" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_1" title="Improved" class="md-nav__link">
+  <a href="#improved_1" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_3" title="Added" class="md-nav__link">
+  <a href="#added_3" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_7" title="Fixed" class="md-nav__link">
+  <a href="#fixed_7" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_3" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_3" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3212,22 +3153,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#185-2018-10-04" title="1.8.5 / 2018-10-04" class="md-nav__link">
+  <a href="#185-2018-10-04" class="md-nav__link">
     1.8.5 / 2018-10-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.5 / 2018-10-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_6" title="Security" class="md-nav__link">
+  <a href="#security_6" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_8" title="Fixed" class="md-nav__link">
+  <a href="#fixed_8" class="md-nav__link">
     Fixed
   </a>
   
@@ -3239,15 +3180,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#184-2018-07-03" title="1.8.4 / 2018-07-03" class="md-nav__link">
+  <a href="#184-2018-07-03" class="md-nav__link">
     1.8.4 / 2018-07-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.4 / 2018-07-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_9" title="Fixed" class="md-nav__link">
+  <a href="#fixed_9" class="md-nav__link">
     Fixed
   </a>
   
@@ -3259,43 +3200,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#183-2018-06-16" title="1.8.3 / 2018-06-16" class="md-nav__link">
+  <a href="#183-2018-06-16" class="md-nav__link">
     1.8.3 / 2018-06-16
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.3 / 2018-06-16">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_7" title="Security" class="md-nav__link">
+  <a href="#security_7" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#more-security" title="More Security" class="md-nav__link">
+  <a href="#more-security" class="md-nav__link">
     More Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_4" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_4" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_4" title="Added" class="md-nav__link">
+  <a href="#added_4" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_10" title="Fixed" class="md-nav__link">
+  <a href="#fixed_10" class="md-nav__link">
     Fixed
   </a>
   
@@ -3307,36 +3248,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#182-2018-01-29" title="1.8.2 / 2018-01-29" class="md-nav__link">
+  <a href="#182-2018-01-29" class="md-nav__link">
     1.8.2 / 2018-01-29
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.2 / 2018-01-29">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_8" title="Security" class="md-nav__link">
+  <a href="#security_8" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_5" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_5" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_5" title="Added" class="md-nav__link">
+  <a href="#added_5" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_11" title="Fixed" class="md-nav__link">
+  <a href="#fixed_11" class="md-nav__link">
     Fixed
   </a>
   
@@ -3348,22 +3289,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#181-2017-09-19" title="1.8.1 / 2017-09-19" class="md-nav__link">
+  <a href="#181-2017-09-19" class="md-nav__link">
     1.8.1 / 2017-09-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.1 / 2017-09-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_6" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_6" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_12" title="Fixed" class="md-nav__link">
+  <a href="#fixed_12" class="md-nav__link">
     Fixed
   </a>
   
@@ -3375,36 +3316,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#180-2017-06-04" title="1.8.0 / 2017-06-04" class="md-nav__link">
+  <a href="#180-2017-06-04" class="md-nav__link">
     1.8.0 / 2017-06-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.8.0 / 2017-06-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_7" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_7" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_8" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_8" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_6" title="Added" class="md-nav__link">
+  <a href="#added_6" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_13" title="Fixed" class="md-nav__link">
+  <a href="#fixed_13" class="md-nav__link">
     Fixed
   </a>
   
@@ -3416,15 +3357,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#172-2017-05-09" title="1.7.2 / 2017-05-09" class="md-nav__link">
+  <a href="#172-2017-05-09" class="md-nav__link">
     1.7.2 / 2017-05-09
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.2 / 2017-05-09">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_9" title="Security" class="md-nav__link">
+  <a href="#security_9" class="md-nav__link">
     Security
   </a>
   
@@ -3436,15 +3377,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#171-2017-03-19" title="1.7.1 / 2017-03-19" class="md-nav__link">
+  <a href="#171-2017-03-19" class="md-nav__link">
     1.7.1 / 2017-03-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.1 / 2017-03-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_10" title="Security" class="md-nav__link">
+  <a href="#security_10" class="md-nav__link">
     Security
   </a>
   
@@ -3456,15 +3397,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1701-2017-01-04" title="1.7.0.1 / 2017-01-04" class="md-nav__link">
+  <a href="#1701-2017-01-04" class="md-nav__link">
     1.7.0.1 / 2017-01-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.0.1 / 2017-01-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_14" title="Fixed" class="md-nav__link">
+  <a href="#fixed_14" class="md-nav__link">
     Fixed
   </a>
   
@@ -3476,22 +3417,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#170-2016-12-26" title="1.7.0 / 2016-12-26" class="md-nav__link">
+  <a href="#170-2016-12-26" class="md-nav__link">
     1.7.0 / 2016-12-26
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.7.0 / 2016-12-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_7" title="Added" class="md-nav__link">
+  <a href="#added_7" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_9" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_9" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3503,15 +3444,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1681-2016-10-03" title="1.6.8.1 / 2016-10-03" class="md-nav__link">
+  <a href="#1681-2016-10-03" class="md-nav__link">
     1.6.8.1 / 2016-10-03
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.8.1 / 2016-10-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_10" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_10" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3523,36 +3464,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#168-2016-06-06" title="1.6.8 / 2016-06-06" class="md-nav__link">
+  <a href="#168-2016-06-06" class="md-nav__link">
     1.6.8 / 2016-06-06
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.8 / 2016-06-06">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_11" title="Security" class="md-nav__link">
+  <a href="#security_11" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_8" title="Added" class="md-nav__link">
+  <a href="#added_8" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_15" title="Fixed" class="md-nav__link">
+  <a href="#fixed_15" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_1" title="Notes" class="md-nav__link">
+  <a href="#notes_1" class="md-nav__link">
     Notes
   </a>
   
@@ -3564,50 +3505,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1672-2016-01-20" title="1.6.7.2 / 2016-01-20" class="md-nav__link">
+  <a href="#1672-2016-01-20" class="md-nav__link">
     1.6.7.2 / 2016-01-20
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1671-2015-12-16" title="1.6.7.1 / 2015-12-16" class="md-nav__link">
+  <a href="#1671-2015-12-16" class="md-nav__link">
     1.6.7.1 / 2015-12-16
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#167-2015-11-29" title="1.6.7 / 2015-11-29" class="md-nav__link">
+  <a href="#167-2015-11-29" class="md-nav__link">
     1.6.7 / 2015-11-29
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.7 / 2015-11-29">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_9" title="Added" class="md-nav__link">
+  <a href="#added_9" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#security_12" title="Security" class="md-nav__link">
+  <a href="#security_12" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_10" title="Added" class="md-nav__link">
+  <a href="#added_10" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_16" title="Fixed" class="md-nav__link">
+  <a href="#fixed_16" class="md-nav__link">
     Fixed
   </a>
   
@@ -3619,29 +3560,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1664-2015-11-19" title="1.6.6.4 / 2015-11-19" class="md-nav__link">
+  <a href="#1664-2015-11-19" class="md-nav__link">
     1.6.6.4 / 2015-11-19
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1663-2015-11-16" title="1.6.6.3 / 2015-11-16" class="md-nav__link">
+  <a href="#1663-2015-11-16" class="md-nav__link">
     1.6.6.3 / 2015-11-16
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1662-2015-01-23" title="1.6.6.2 / 2015-01-23" class="md-nav__link">
+  <a href="#1662-2015-01-23" class="md-nav__link">
     1.6.6.2 / 2015-01-23
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.6.2 / 2015-01-23">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_17" title="Fixed" class="md-nav__link">
+  <a href="#fixed_17" class="md-nav__link">
     Fixed
   </a>
   
@@ -3653,22 +3594,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1661-2015-01-22" title="1.6.6.1 / 2015-01-22" class="md-nav__link">
+  <a href="#1661-2015-01-22" class="md-nav__link">
     1.6.6.1 / 2015-01-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.6.1 / 2015-01-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_11" title="Added" class="md-nav__link">
+  <a href="#added_11" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_18" title="Fixed" class="md-nav__link">
+  <a href="#fixed_18" class="md-nav__link">
     Fixed
   </a>
   
@@ -3680,22 +3621,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#165-2014-11-26" title="1.6.5 / 2014-11-26" class="md-nav__link">
+  <a href="#165-2014-11-26" class="md-nav__link">
     1.6.5 / 2014-11-26
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.5 / 2014-11-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_12" title="Added" class="md-nav__link">
+  <a href="#added_12" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_19" title="Fixed" class="md-nav__link">
+  <a href="#fixed_19" class="md-nav__link">
     Fixed
   </a>
   
@@ -3707,15 +3648,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1641-2014-11-05" title="1.6.4.1 / 2014-11-05" class="md-nav__link">
+  <a href="#1641-2014-11-05" class="md-nav__link">
     1.6.4.1 / 2014-11-05
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.4.1 / 2014-11-05">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_20" title="Fixed" class="md-nav__link">
+  <a href="#fixed_20" class="md-nav__link">
     Fixed
   </a>
   
@@ -3727,22 +3668,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#164-2014-11-04" title="1.6.4 / 2014-11-04" class="md-nav__link">
+  <a href="#164-2014-11-04" class="md-nav__link">
     1.6.4 / 2014-11-04
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.4 / 2014-11-04">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_13" title="Added" class="md-nav__link">
+  <a href="#added_13" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_21" title="Fixed" class="md-nav__link">
+  <a href="#fixed_21" class="md-nav__link">
     Fixed
   </a>
   
@@ -3754,15 +3695,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1631-2014-07-21" title="1.6.3.1 / 2014-07-21" class="md-nav__link">
+  <a href="#1631-2014-07-21" class="md-nav__link">
     1.6.3.1 / 2014-07-21
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.3.1 / 2014-07-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_22" title="Fixed" class="md-nav__link">
+  <a href="#fixed_22" class="md-nav__link">
     Fixed
   </a>
   
@@ -3774,22 +3715,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#163-2014-07-20" title="1.6.3 / 2014-07-20" class="md-nav__link">
+  <a href="#163-2014-07-20" class="md-nav__link">
     1.6.3 / 2014-07-20
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.3 / 2014-07-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_14" title="Added" class="md-nav__link">
+  <a href="#added_14" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_23" title="Fixed" class="md-nav__link">
+  <a href="#fixed_23" class="md-nav__link">
     Fixed
   </a>
   
@@ -3801,15 +3742,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1621-2014-05-13" title="1.6.2.1 / 2014-05-13" class="md-nav__link">
+  <a href="#1621-2014-05-13" class="md-nav__link">
     1.6.2.1 / 2014-05-13
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.2.1 / 2014-05-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_24" title="Fixed" class="md-nav__link">
+  <a href="#fixed_24" class="md-nav__link">
     Fixed
   </a>
   
@@ -3821,36 +3762,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#162-2014-05-12" title="1.6.2 / 2014-05-12" class="md-nav__link">
+  <a href="#162-2014-05-12" class="md-nav__link">
     1.6.2 / 2014-05-12
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.2 / 2014-05-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security_13" title="Security" class="md-nav__link">
+  <a href="#security_13" class="md-nav__link">
     Security
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_11" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_11" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_15" title="Added" class="md-nav__link">
+  <a href="#added_15" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_25" title="Fixed" class="md-nav__link">
+  <a href="#fixed_25" class="md-nav__link">
     Fixed
   </a>
   
@@ -3862,15 +3803,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#161-2013-12-14" title="1.6.1 / 2013-12-14" class="md-nav__link">
+  <a href="#161-2013-12-14" class="md-nav__link">
     1.6.1 / 2013-12-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.1 / 2013-12-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_26" title="Fixed" class="md-nav__link">
+  <a href="#fixed_26" class="md-nav__link">
     Fixed
   </a>
   
@@ -3882,15 +3823,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#160-2013-06-08" title="1.6.0 / 2013-06-08" class="md-nav__link">
+  <a href="#160-2013-06-08" class="md-nav__link">
     1.6.0 / 2013-06-08
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.0 / 2013-06-08">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deprecations" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations" class="md-nav__link">
     Deprecations
   </a>
   
@@ -3902,29 +3843,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#160rc1-2013-04-14" title="1.6.0.rc1 / 2013-04-14" class="md-nav__link">
+  <a href="#160rc1-2013-04-14" class="md-nav__link">
     1.6.0.rc1 / 2013-04-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.6.0.rc1 / 2013-04-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_2" title="Notes" class="md-nav__link">
+  <a href="#notes_2" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_16" title="Added" class="md-nav__link">
+  <a href="#added_16" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_12" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_12" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3936,15 +3877,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1511-2013-12-14" title="1.5.11 / 2013-12-14" class="md-nav__link">
+  <a href="#1511-2013-12-14" class="md-nav__link">
     1.5.11 / 2013-12-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.11 / 2013-12-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_27" title="Fixed" class="md-nav__link">
+  <a href="#fixed_27" class="md-nav__link">
     Fixed
   </a>
   
@@ -3956,22 +3897,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1510-2013-06-07" title="1.5.10 / 2013-06-07" class="md-nav__link">
+  <a href="#1510-2013-06-07" class="md-nav__link">
     1.5.10 / 2013-06-07
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.10 / 2013-06-07">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_28" title="Fixed" class="md-nav__link">
+  <a href="#fixed_28" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_3" title="Notes" class="md-nav__link">
+  <a href="#notes_3" class="md-nav__link">
     Notes
   </a>
   
@@ -3983,15 +3924,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#159-2013-03-21" title="1.5.9 / 2013-03-21" class="md-nav__link">
+  <a href="#159-2013-03-21" class="md-nav__link">
     1.5.9 / 2013-03-21
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.9 / 2013-03-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_29" title="Fixed" class="md-nav__link">
+  <a href="#fixed_29" class="md-nav__link">
     Fixed
   </a>
   
@@ -4003,15 +3944,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#158-2013-03-19" title="1.5.8 / 2013-03-19" class="md-nav__link">
+  <a href="#158-2013-03-19" class="md-nav__link">
     1.5.8 / 2013-03-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.8 / 2013-03-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_30" title="Fixed" class="md-nav__link">
+  <a href="#fixed_30" class="md-nav__link">
     Fixed
   </a>
   
@@ -4023,22 +3964,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#157-2013-03-18" title="1.5.7 / 2013-03-18" class="md-nav__link">
+  <a href="#157-2013-03-18" class="md-nav__link">
     1.5.7 / 2013-03-18
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.7 / 2013-03-18">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_17" title="Added" class="md-nav__link">
+  <a href="#added_17" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_31" title="Fixed" class="md-nav__link">
+  <a href="#fixed_31" class="md-nav__link">
     Fixed
   </a>
   
@@ -4050,22 +3991,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#156-2012-12-19" title="1.5.6 / 2012-12-19" class="md-nav__link">
+  <a href="#156-2012-12-19" class="md-nav__link">
     1.5.6 / 2012-12-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.6 / 2012-12-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_18" title="Added" class="md-nav__link">
+  <a href="#added_18" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_32" title="Fixed" class="md-nav__link">
+  <a href="#fixed_32" class="md-nav__link">
     Fixed
   </a>
   
@@ -4077,22 +4018,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#155-2012-06-24" title="1.5.5 / 2012-06-24" class="md-nav__link">
+  <a href="#155-2012-06-24" class="md-nav__link">
     1.5.5 / 2012-06-24
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.5 / 2012-06-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_19" title="Added" class="md-nav__link">
+  <a href="#added_19" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_33" title="Fixed" class="md-nav__link">
+  <a href="#fixed_33" class="md-nav__link">
     Fixed
   </a>
   
@@ -4104,29 +4045,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#154-2012-06-12" title="1.5.4 / 2012-06-12" class="md-nav__link">
+  <a href="#154-2012-06-12" class="md-nav__link">
     1.5.4 / 2012-06-12
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.4 / 2012-06-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_20" title="Added" class="md-nav__link">
+  <a href="#added_20" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_34" title="Fixed" class="md-nav__link">
+  <a href="#fixed_34" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#security_14" title="Security" class="md-nav__link">
+  <a href="#security_14" class="md-nav__link">
     Security
   </a>
   
@@ -4138,22 +4079,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#153-2012-06-01" title="1.5.3 / 2012-06-01" class="md-nav__link">
+  <a href="#153-2012-06-01" class="md-nav__link">
     1.5.3 / 2012-06-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.3 / 2012-06-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_21" title="Added" class="md-nav__link">
+  <a href="#added_21" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_35" title="Fixed" class="md-nav__link">
+  <a href="#fixed_35" class="md-nav__link">
     Fixed
   </a>
   
@@ -4165,29 +4106,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#152-2012-03-09" title="1.5.2 / 2012-03-09" class="md-nav__link">
+  <a href="#152-2012-03-09" class="md-nav__link">
     1.5.2 / 2012-03-09
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#151-2012-03-09" title="1.5.1 / 2012-03-09" class="md-nav__link">
+  <a href="#151-2012-03-09" class="md-nav__link">
     1.5.1 / 2012-03-09
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.1 / 2012-03-09">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_22" title="Added" class="md-nav__link">
+  <a href="#added_22" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_36" title="Fixed" class="md-nav__link">
+  <a href="#fixed_36" class="md-nav__link">
     Fixed
   </a>
   
@@ -4199,29 +4140,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-2011-07-01" title="1.5.0 / 2011-07-01" class="md-nav__link">
+  <a href="#150-2011-07-01" class="md-nav__link">
     1.5.0 / 2011-07-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 / 2011-07-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_4" title="Notes" class="md-nav__link">
+  <a href="#notes_4" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#added_23" title="Added" class="md-nav__link">
+  <a href="#added_23" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_37" title="Fixed" class="md-nav__link">
+  <a href="#fixed_37" class="md-nav__link">
     Fixed
   </a>
   
@@ -4233,22 +4174,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-beta3-2010-12-02" title="1.5.0 beta3 / 2010-12-02" class="md-nav__link">
+  <a href="#150-beta3-2010-12-02" class="md-nav__link">
     1.5.0 beta3 / 2010-12-02
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 beta3 / 2010-12-02">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_5" title="Notes" class="md-nav__link">
+  <a href="#notes_5" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_38" title="Fixed" class="md-nav__link">
+  <a href="#fixed_38" class="md-nav__link">
     Fixed
   </a>
   
@@ -4260,15 +4201,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-beta2-2010-07-30" title="1.5.0 beta2 / 2010-07-30" class="md-nav__link">
+  <a href="#150-beta2-2010-07-30" class="md-nav__link">
     1.5.0 beta2 / 2010-07-30
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 beta2 / 2010-07-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_6" title="Notes" class="md-nav__link">
+  <a href="#notes_6" class="md-nav__link">
     Notes
   </a>
   
@@ -4280,29 +4221,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#150-beta1-2010-05-22" title="1.5.0 beta1 / 2010-05-22" class="md-nav__link">
+  <a href="#150-beta1-2010-05-22" class="md-nav__link">
     1.5.0 beta1 / 2010-05-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.5.0 beta1 / 2010-05-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_7" title="Notes" class="md-nav__link">
+  <a href="#notes_7" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_13" title="Dependencies" class="md-nav__link">
+  <a href="#dependencies_13" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed_1" title="Removed" class="md-nav__link">
+  <a href="#removed_1" class="md-nav__link">
     Removed
   </a>
   
@@ -4314,15 +4255,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#147-2011-07-01" title="1.4.7 / 2011-07-01" class="md-nav__link">
+  <a href="#147-2011-07-01" class="md-nav__link">
     1.4.7 / 2011-07-01
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.7 / 2011-07-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_39" title="Fixed" class="md-nav__link">
+  <a href="#fixed_39" class="md-nav__link">
     Fixed
   </a>
   
@@ -4334,15 +4275,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#146-2011-06-19" title="1.4.6 / 2011-06-19" class="md-nav__link">
+  <a href="#146-2011-06-19" class="md-nav__link">
     1.4.6 / 2011-06-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.6 / 2011-06-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_8" title="Notes" class="md-nav__link">
+  <a href="#notes_8" class="md-nav__link">
     Notes
   </a>
   
@@ -4354,22 +4295,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#145-2011-05-19" title="1.4.5 / 2011-05-19" class="md-nav__link">
+  <a href="#145-2011-05-19" class="md-nav__link">
     1.4.5 / 2011-05-19
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.5 / 2011-05-19">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_24" title="Added" class="md-nav__link">
+  <a href="#added_24" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_40" title="Fixed" class="md-nav__link">
+  <a href="#fixed_40" class="md-nav__link">
     Fixed
   </a>
   
@@ -4381,22 +4322,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#144-2010-11-15" title="1.4.4 / 2010-11-15" class="md-nav__link">
+  <a href="#144-2010-11-15" class="md-nav__link">
     1.4.4 / 2010-11-15
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.4 / 2010-11-15">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_25" title="Added" class="md-nav__link">
+  <a href="#added_25" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_41" title="Fixed" class="md-nav__link">
+  <a href="#fixed_41" class="md-nav__link">
     Fixed
   </a>
   
@@ -4408,22 +4349,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#143-2010-07-28" title="1.4.3 / 2010-07-28" class="md-nav__link">
+  <a href="#143-2010-07-28" class="md-nav__link">
     1.4.3 / 2010-07-28
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.3 / 2010-07-28">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_26" title="Added" class="md-nav__link">
+  <a href="#added_26" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_42" title="Fixed" class="md-nav__link">
+  <a href="#fixed_42" class="md-nav__link">
     Fixed
   </a>
   
@@ -4435,29 +4376,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#142-2010-05-22" title="1.4.2 / 2010-05-22" class="md-nav__link">
+  <a href="#142-2010-05-22" class="md-nav__link">
     1.4.2 / 2010-05-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.2 / 2010-05-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_27" title="Added" class="md-nav__link">
+  <a href="#added_27" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_43" title="Fixed" class="md-nav__link">
+  <a href="#fixed_43" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_9" title="Notes" class="md-nav__link">
+  <a href="#notes_9" class="md-nav__link">
     Notes
   </a>
   
@@ -4469,22 +4410,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#141-2009-12-10" title="1.4.1 / 2009-12-10" class="md-nav__link">
+  <a href="#141-2009-12-10" class="md-nav__link">
     1.4.1 / 2009-12-10
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.1 / 2009-12-10">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_28" title="Added" class="md-nav__link">
+  <a href="#added_28" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_44" title="Fixed" class="md-nav__link">
+  <a href="#fixed_44" class="md-nav__link">
     Fixed
   </a>
   
@@ -4496,29 +4437,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#140-2009-10-30" title="1.4.0 / 2009-10-30" class="md-nav__link">
+  <a href="#140-2009-10-30" class="md-nav__link">
     1.4.0 / 2009-10-30
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.4.0 / 2009-10-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_29" title="Added" class="md-nav__link">
+  <a href="#added_29" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_45" title="Fixed" class="md-nav__link">
+  <a href="#fixed_45" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#removed_2" title="Removed" class="md-nav__link">
+  <a href="#removed_2" class="md-nav__link">
     Removed
   </a>
   
@@ -4530,29 +4471,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#133-2009-07-26" title="1.3.3 / 2009-07-26" class="md-nav__link">
+  <a href="#133-2009-07-26" class="md-nav__link">
     1.3.3 / 2009-07-26
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.3 / 2009-07-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_30" title="Added" class="md-nav__link">
+  <a href="#added_30" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_46" title="Fixed" class="md-nav__link">
+  <a href="#fixed_46" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations_1" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations_1" class="md-nav__link">
     Deprecations
   </a>
   
@@ -4564,29 +4505,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#132-2009-06-22" title="1.3.2 / 2009-06-22" class="md-nav__link">
+  <a href="#132-2009-06-22" class="md-nav__link">
     1.3.2 / 2009-06-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.2 / 2009-06-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_31" title="Added" class="md-nav__link">
+  <a href="#added_31" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_47" title="Fixed" class="md-nav__link">
+  <a href="#fixed_47" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations_2" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations_2" class="md-nav__link">
     Deprecations
   </a>
   
@@ -4598,15 +4539,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#131-2009-06-07" title="1.3.1 / 2009-06-07" class="md-nav__link">
+  <a href="#131-2009-06-07" class="md-nav__link">
     1.3.1 / 2009-06-07
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.1 / 2009-06-07">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_48" title="Fixed" class="md-nav__link">
+  <a href="#fixed_48" class="md-nav__link">
     Fixed
   </a>
   
@@ -4618,22 +4559,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#130-2009-05-30" title="1.3.0 / 2009-05-30" class="md-nav__link">
+  <a href="#130-2009-05-30" class="md-nav__link">
     1.3.0 / 2009-05-30
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.3.0 / 2009-05-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_32" title="Added" class="md-nav__link">
+  <a href="#added_32" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_49" title="Fixed" class="md-nav__link">
+  <a href="#fixed_49" class="md-nav__link">
     Fixed
   </a>
   
@@ -4645,15 +4586,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#123-2009-03-22" title="1.2.3 / 2009-03-22" class="md-nav__link">
+  <a href="#123-2009-03-22" class="md-nav__link">
     1.2.3 / 2009-03-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.3 / 2009-03-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_50" title="Fixed" class="md-nav__link">
+  <a href="#fixed_50" class="md-nav__link">
     Fixed
   </a>
   
@@ -4665,22 +4606,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#122-2009-03-14" title="1.2.2 / 2009-03-14" class="md-nav__link">
+  <a href="#122-2009-03-14" class="md-nav__link">
     1.2.2 / 2009-03-14
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.2 / 2009-03-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_33" title="Added" class="md-nav__link">
+  <a href="#added_33" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_51" title="Fixed" class="md-nav__link">
+  <a href="#fixed_51" class="md-nav__link">
     Fixed
   </a>
   
@@ -4692,15 +4633,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#121-2009-02-23" title="1.2.1 / 2009-02-23" class="md-nav__link">
+  <a href="#121-2009-02-23" class="md-nav__link">
     1.2.1 / 2009-02-23
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.1 / 2009-02-23">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_52" title="Fixed" class="md-nav__link">
+  <a href="#fixed_52" class="md-nav__link">
     Fixed
   </a>
   
@@ -4712,36 +4653,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#120-2009-02-22" title="1.2.0 / 2009-02-22" class="md-nav__link">
+  <a href="#120-2009-02-22" class="md-nav__link">
     1.2.0 / 2009-02-22
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.2.0 / 2009-02-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_34" title="Added" class="md-nav__link">
+  <a href="#added_34" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_53" title="Fixed" class="md-nav__link">
+  <a href="#fixed_53" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecations_3" title="Deprecations" class="md-nav__link">
+  <a href="#deprecations_3" class="md-nav__link">
     Deprecations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed_1" title="Changed" class="md-nav__link">
+  <a href="#changed_1" class="md-nav__link">
     Changed
   </a>
   
@@ -4753,22 +4694,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#111" title="1.1.1" class="md-nav__link">
+  <a href="#111" class="md-nav__link">
     1.1.1
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.1.1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_35" title="Added" class="md-nav__link">
+  <a href="#added_35" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_54" title="Fixed" class="md-nav__link">
+  <a href="#fixed_54" class="md-nav__link">
     Fixed
   </a>
   
@@ -4780,22 +4721,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#110" title="1.1.0" class="md-nav__link">
+  <a href="#110" class="md-nav__link">
     1.1.0
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.1.0">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_36" title="Added" class="md-nav__link">
+  <a href="#added_36" class="md-nav__link">
     Added
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_55" title="Fixed" class="md-nav__link">
+  <a href="#fixed_55" class="md-nav__link">
     Fixed
   </a>
   
@@ -4807,15 +4748,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#107" title="1.0.7" class="md-nav__link">
+  <a href="#107" class="md-nav__link">
     1.0.7
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.7">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_56" title="Fixed" class="md-nav__link">
+  <a href="#fixed_56" class="md-nav__link">
     Fixed
   </a>
   
@@ -4827,15 +4768,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#106" title="1.0.6" class="md-nav__link">
+  <a href="#106" class="md-nav__link">
     1.0.6
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.6">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_57" title="Fixed" class="md-nav__link">
+  <a href="#fixed_57" class="md-nav__link">
     Fixed
   </a>
   
@@ -4847,15 +4788,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#105" title="1.0.5" class="md-nav__link">
+  <a href="#105" class="md-nav__link">
     1.0.5
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.5">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_58" title="Fixed" class="md-nav__link">
+  <a href="#fixed_58" class="md-nav__link">
     Fixed
   </a>
   
@@ -4867,15 +4808,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#104" title="1.0.4" class="md-nav__link">
+  <a href="#104" class="md-nav__link">
     1.0.4
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.4">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_59" title="Fixed" class="md-nav__link">
+  <a href="#fixed_59" class="md-nav__link">
     Fixed
   </a>
   
@@ -4887,15 +4828,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#103" title="1.0.3" class="md-nav__link">
+  <a href="#103" class="md-nav__link">
     1.0.3
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.3">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_60" title="Fixed" class="md-nav__link">
+  <a href="#fixed_60" class="md-nav__link">
     Fixed
   </a>
   
@@ -4907,15 +4848,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#102" title="1.0.2" class="md-nav__link">
+  <a href="#102" class="md-nav__link">
     1.0.2
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_61" title="Fixed" class="md-nav__link">
+  <a href="#fixed_61" class="md-nav__link">
     Fixed
   </a>
   
@@ -4927,15 +4868,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#101" title="1.0.1" class="md-nav__link">
+  <a href="#101" class="md-nav__link">
     1.0.1
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_62" title="Fixed" class="md-nav__link">
+  <a href="#fixed_62" class="md-nav__link">
     Fixed
   </a>
   
@@ -4947,15 +4888,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#100-2008-07-13" title="1.0.0 / 2008-07-13" class="md-nav__link">
+  <a href="#100-2008-07-13" class="md-nav__link">
     1.0.0 / 2008-07-13
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1.0.0 / 2008-07-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_37" title="Added" class="md-nav__link">
+  <a href="#added_37" class="md-nav__link">
     Added
   </a>
   
@@ -4965,10 +4906,6 @@
     </nav>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -4981,6 +4918,9 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
+                
+                
+                  
                 
                 
                 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
@@ -5059,29 +4999,29 @@
 <code>Nokogiri::VersionInfo</code>, see <a href="https://github.com/sparklemotion/nokogiri/issues/1482">#1482</a> and <a href="https://github.com/sparklemotion/nokogiri/issues/1974">#1974</a> for background. Note that
 the output of <code>nokogiri -v</code> will also reflect these changes.</p>
 <p><code>Nokogiri::VersionInfo</code> will no longer contain the following keys (previously these were set only when vendored libraries were being used)
-<em> <code>libxml/libxml2_path</code>
-</em> <code>libxml/libxslt_path</code></p>
+* <code>libxml/libxml2_path</code>
+* <code>libxml/libxslt_path</code></p>
 <p><code>Nokogiri::VersionInfo</code> now contains version metadata for libxslt:
-<em> <code>libxslt/source</code> (either "packaged" or "system", similar to <code>libxml/source</code>)
-</em> <code>libxslt/compiled</code> (the version of libxslt compiled at installation time, similar to <code>libxml/compiled</code>)
-<em> <code>libxslt/loaded</code> (the version of libxslt loaded at runtime, similar to <code>libxml/loaded</code>)
-</em> <code>libxslt/patches</code> moved from <code>libxml/libxslt_patches</code></p>
+* <code>libxslt/source</code> (either "packaged" or "system", similar to <code>libxml/source</code>)
+* <code>libxslt/compiled</code> (the version of libxslt compiled at installation time, similar to <code>libxml/compiled</code>)
+* <code>libxslt/loaded</code> (the version of libxslt loaded at runtime, similar to <code>libxml/loaded</code>)
+* <code>libxslt/patches</code> moved from <code>libxml/libxslt_patches</code></p>
 <p><code>Nokogiri::VersionInfo</code> key <code>libxml/libxml2_patches</code> has been renamed to <code>libxml/patches</code></p>
 <p>These C macros will no longer be defined:
-<em> <code>NOKOGIRI_LIBXML2_PATH</code>
-</em> <code>NOKOGIRI_LIBXSLT_PATH</code></p>
+* <code>NOKOGIRI_LIBXML2_PATH</code>
+* <code>NOKOGIRI_LIBXSLT_PATH</code></p>
 <p>These global variables will no longer be defined:
-<em> <code>NOKOGIRI_LIBXML2_PATH</code>
-</em> <code>NOKOGIRI_LIBXSLT_PATH</code></p>
+* <code>NOKOGIRI_LIBXML2_PATH</code>
+* <code>NOKOGIRI_LIBXSLT_PATH</code></p>
 <p>These constants have been renamed:
-<em> <code>Nokogiri::LIBXML_VERSION</code> is now <code>Nokogiri::LIBXML_COMPILED_VERSION</code>
-</em> <code>Nokogiri::LIBXML_PARSER_VERSION</code> is now <code>Nokogiri::LIBXML_LOADED_VERSION</code></p>
+* <code>Nokogiri::LIBXML_VERSION</code> is now <code>Nokogiri::LIBXML_COMPILED_VERSION</code>
+* <code>Nokogiri::LIBXML_PARSER_VERSION</code> is now <code>Nokogiri::LIBXML_LOADED_VERSION</code></p>
 <p>These methods have been renamed and the return type changed from <code>String</code> to <code>Gem::Version</code>:
-<em> <code>VersionInfo#loaded_parser_version</code> is now <code>#loaded_libxml_version</code>
-</em> <code>VersionInfo#compiled_parser_version</code> is now <code>#compiled_libxml_version</code></p>
+* <code>VersionInfo#loaded_parser_version</code> is now <code>#loaded_libxml_version</code>
+* <code>VersionInfo#compiled_parser_version</code> is now <code>#compiled_libxml_version</code></p>
 <p><code>Nokogiri.uses_libxml?</code> now accepts an optional requirement string which is interpreted as a <code>Gem::Requirement</code> and tested against the loaded libxml2 version (the value in <code>VersionInfo</code> key <code>libxml/loaded</code>). This greatly simplifies much of the version-dependent branching logic in both the implementation and the tests.</p>
 <p>To sum these changes up, the output from CRuby when using vendored libraries was something like:</p>
-<div class="codehilite"><pre><span></span># Nokogiri (1.10.7)
+<div class="codehilite"><pre><span></span><code># Nokogiri (1.10.7)
     ---
     warnings: []
     nokogiri: 1.10.7
@@ -5103,11 +5043,11 @@ the output of <code>nokogiri -v</code> will also reflect these changes.</p>
       libxslt_patches: []
       compiled: 2.9.10
       loaded: 2.9.10
-</pre></div>
+</code></pre></div>
 
 
 <p>but now looks like:</p>
-<div class="codehilite"><pre><span></span># Nokogiri (1.11.0)
+<div class="codehilite"><pre><span></span><code># Nokogiri (1.11.0)
     ---
     warnings: []
     nokogiri: 1.11.0
@@ -5130,11 +5070,11 @@ the output of <code>nokogiri -v</code> will also reflect these changes.</p>
       patches: []
       compiled: 1.1.34
       loaded: 1.1.34
-</pre></div>
+</code></pre></div>
 
 
 <p>and the output from using system libraries now looks like:</p>
-<div class="codehilite"><pre><span></span># Nokogiri (1.11.0)
+<div class="codehilite"><pre><span></span><code># Nokogiri (1.11.0)
     ---
     warnings: []
     nokogiri: 1.11.0
@@ -5151,9 +5091,14 @@ the output of <code>nokogiri -v</code> will also reflect these changes.</p>
       source: system
       compiled: 1.1.29
       loaded: 1.1.29
-</pre></div>
+</code></pre></div>
 
 
+<h2 id="11010-2020-07-06">1.10.10 / 2020-07-06<a class="headerlink" href="#11010-2020-07-06" title="Permanent link">&para;</a></h2>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[MRI] Cross-built Windows gems now support Ruby 2.7 [<a href="https://github.com/sparklemotion/nokogiri/issues/2029">#2029</a>]. Note that prior to this release, the v1.11.x prereleases provided this support.</li>
+</ul>
 <h2 id="1109-2020-03-01">1.10.9 / 2020-03-01<a class="headerlink" href="#1109-2020-03-01" title="Permanent link">&para;</a></h2>
 <h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5850,8 +5795,8 @@ mentioned in the notes for v1.5.10.</p>
 <h3 id="security_14">Security<a class="headerlink" href="#security_14" title="Permanent link">&para;</a></h3>
 <p>(MRI) Default parse options for XML documents were changed to not make network connections during document parsing, to avoid XXE vulnerability. <a href="https://github.com/sparklemotion/nokogiri/issues/693">#693</a></p>
 <p>To re-enable this behavior, the configuration method <code>nononet</code> may be called, like this:</p>
-<div class="codehilite"><pre><span></span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span> <span class="n">config</span><span class="o">.</span><span class="n">nononet</span> <span class="p">}</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span> <span class="n">config</span><span class="o">.</span><span class="n">nononet</span> <span class="p">}</span>
+</code></pre></div>
 
 
 <p>Insert your own joke about double-negatives here.</p>
@@ -6375,8 +6320,6 @@ mentioned in the notes for v1.5.10.</p>
 <li>Birthday!</li>
 </ul>
                 
-                  
-                
               
               
                 
@@ -6450,14 +6393,18 @@ mentioned in the notes for v1.5.10.</p>
       
     </div>
     
-      <script src="assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-1260604-8","nokogiri.org"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
     
   </body>

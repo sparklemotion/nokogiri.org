@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::Document
   
-    — Documentation by YARD 0.9.24
+    — Documentation by YARD 0.9.25
   
 </title>
 
@@ -1242,9 +1242,9 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 45</span>
 
 <span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span>
-  <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">if</span> <span class="const">Integer</span> <span class="op">===</span> <span class="id identifier rubyid_options">options</span>  <span class="comment"># Give the options to the user
-</span>
-  <span class="kw">yield</span> <span class="id identifier rubyid_options">options</span> <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
+  <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">if</span> <span class="const">Integer</span> <span class="op">===</span> <span class="id identifier rubyid_options">options</span>
+  <span class="comment"># Give the options to the user
+</span>  <span class="kw">yield</span> <span class="id identifier rubyid_options">options</span> <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
 
   <span class="kw">if</span> <span class="id identifier rubyid_empty_doc?">empty_doc?</span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="rparen">)</span>
     <span class="kw">if</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_strict?">strict?</span>
@@ -3202,9 +3202,9 @@ static VALUE version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 22 12:44:25 2020 by
+  Generated on Mon Jul  6 10:01:46 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.24 (ruby-2.7.0).
+  0.9.25 (ruby-2.6.5).
 </div>
 
     </div>

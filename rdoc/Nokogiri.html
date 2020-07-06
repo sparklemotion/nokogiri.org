@@ -7,7 +7,7 @@
 <title>
   Module: Nokogiri
   
-    — Documentation by YARD 0.9.24
+    — Documentation by YARD 0.9.25
   
 </title>
 
@@ -143,7 +143,7 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">1.11.0.rc1</span><span class="tstring_end">"</span></span></pre></dd>
+        <dd><pre class="code"><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">1.11.0.rc2</span><span class="tstring_end">"</span></span></pre></dd>
       
         <dt id="VERSION_INFO-constant" class="">VERSION_INFO =
           <div class="docstring">
@@ -473,10 +473,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 101</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_install_default_aliases">install_default_aliases</span>  <span class="comment"># Make sure to support some popular encoding aliases not known by
+<span class="kw">def</span> <span class="id identifier rubyid_install_default_aliases">install_default_aliases</span>
+  <span class="comment"># Make sure to support some popular encoding aliases not known by
 </span>  <span class="comment"># all iconv implementations.
-</span>
-  <span class="lbrace">{</span>
+</span>  <span class="lbrace">{</span>
     <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">Windows-31J</span><span class="tstring_end">'</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">CP932</span><span class="tstring_end">'</span></span><span class="comma">,</span>	<span class="comment"># Windows-31J is the IANA registered name of CP932.
 </span>  <span class="rbrace">}</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_alias_name">alias_name</span><span class="comma">,</span> <span class="id identifier rubyid_name">name</span><span class="op">|</span>
     <span class="const"><span class="object_link"><a href="Nokogiri/EncodingHandler.html" title="Nokogiri::EncodingHandler (class)">EncodingHandler</a></span></span><span class="period">.</span><span class="id identifier rubyid_alias"><span class="object_link"><a href="Nokogiri/EncodingHandler.html#alias-class_method" title="Nokogiri::EncodingHandler.alias (method)">alias</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_alias_name">alias_name</span><span class="rparen">)</span> <span class="kw">if</span> <span class="const"><span class="object_link"><a href="Nokogiri/EncodingHandler.html" title="Nokogiri::EncodingHandler (class)">EncodingHandler</a></span></span><span class="lbracket">[</span><span class="id identifier rubyid_alias_name">alias_name</span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_nil?">nil?</span>
@@ -643,11 +643,11 @@
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="kw">nil</span>
   <span class="kw">if</span> <span class="id identifier rubyid_string">string</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:read</span><span class="rparen">)</span> <span class="op">||</span>
-      <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">^\s*&lt;(?:!DOCTYPE\s+)?html[\s&gt;]</span><span class="regexp_end">/i</span></span> <span class="op">===</span> <span class="id identifier rubyid_string">string</span><span class="lbracket">[</span><span class="int">0</span><span class="comma">,</span> <span class="int">512</span><span class="rbracket">]</span>    <span class="comment"># Expect an HTML indicator to appear within the first 512
+      <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">^\s*&lt;(?:!DOCTYPE\s+)?html[\s&gt;]</span><span class="regexp_end">/i</span></span> <span class="op">===</span> <span class="id identifier rubyid_string">string</span><span class="lbracket">[</span><span class="int">0</span><span class="comma">,</span> <span class="int">512</span><span class="rbracket">]</span>
+    <span class="comment"># Expect an HTML indicator to appear within the first 512
 </span>    <span class="comment"># characters of a document. (&lt;?xml ?&gt; + &lt;?xml-stylesheet ?&gt;
 </span>    <span class="comment"># shouldn't be that long)
-</span>
-    <span class="const"><span class="object_link"><a href="" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const"><span class="object_link"><a href="#HTML-class_method" title="Nokogiri.HTML (method)">HTML</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span>
+</span>    <span class="const"><span class="object_link"><a href="" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const"><span class="object_link"><a href="#HTML-class_method" title="Nokogiri.HTML (method)">HTML</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span>
       <span class="id identifier rubyid_options">options</span> <span class="op">||</span> <span class="const"><span class="object_link"><a href="Nokogiri/XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/XML/ParseOptions.html#DEFAULT_HTML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_HTML (constant)">DEFAULT_HTML</a></span></span><span class="rparen">)</span>
   <span class="kw">else</span>
     <span class="const"><span class="object_link"><a href="" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const"><span class="object_link"><a href="#XML-class_method" title="Nokogiri.XML (method)">XML</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span>
@@ -871,9 +871,9 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 22 12:44:22 2020 by
+  Generated on Mon Jul  6 10:01:45 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.24 (ruby-2.7.0).
+  0.9.25 (ruby-2.6.5).
 </div>
 
     </div>

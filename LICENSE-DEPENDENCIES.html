@@ -1,14 +1,12 @@
 
 
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="The Official Tutorial Archive™ of Nokogiri®">
       
@@ -18,27 +16,8 @@
       
         <meta name="author" content="Mike Dalessio">
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
       <link rel="shortcut icon" href="images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -46,111 +25,98 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
-    
-      <script src="assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Menlo">
-        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CMenlo&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="stylesheets/tidelift.css">
     
     
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","nokogiri.org"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
   </head>
+  
   
     <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#vendored-dependency-licenses" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vendored-dependency-licenses" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://nokogiri.org" title="Nokogiri" class="md-header-nav__button md-logo">
-          
-            <img src="images/nokogiri-serif-white.svg" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://nokogiri.org" title="Nokogiri" class="md-header-nav__button md-logo" aria-label="Nokogiri">
+      
+  <img src="images/nokogiri-serif-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Nokogiri
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
             
-              <span class="md-header-nav__topic">
-                Nokogiri
-              </span>
-              <span class="md-header-nav__topic">
-                Dependencies
-              </span>
+              Dependencies
             
-          
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -158,151 +124,59 @@
     </div>
   </div>
 </div>
-          
+    
+    
+      <div class="md-header-nav__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
     
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sparklemotion/nokogiri
+  </div>
+</a>
       </div>
     
-    <div class="md-source__repository">
-      sparklemotion/nokogiri
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
       
-        
-  <li class="md-tabs__item">
-    
-      <a href="index.html" title="Readme" class="md-tabs__link">
-        Readme
-      </a>
-    
-  </li>
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="tutorials/installing_nokogiri.html" title="Support" class="md-tabs__link">
-          Support
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="tutorials/toc.html" title="Tutorials" class="md-tabs__link">
-          Tutorials
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="CHANGELOG.html" title="About" class="md-tabs__link md-tabs__link--active">
-          About
-        </a>
-      
-    </li>
-  
-
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="rdoc/index.html" title="RDoc" class="md-tabs__link">
-        RDoc
-      </a>
-    
-  </li>
-
-      
-    </ul>
-  </div>
-</nav>
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://nokogiri.org" title="Nokogiri" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://nokogiri.org" title="Nokogiri" class="md-nav__button md-logo" aria-label="Nokogiri">
       
-        <img src="images/nokogiri-serif-white.svg" width="48" height="48">
-      
+  <img src="images/nokogiri-serif-white.svg" alt="logo">
+
     </a>
     Nokogiri
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-
-  <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
     
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      sparklemotion/nokogiri
-    </div>
-  </a>
-
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sparklemotion/nokogiri
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -326,13 +200,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Support
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Support" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Support
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -410,13 +290,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Tutorials
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Tutorials
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -496,13 +382,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       About
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="About" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -565,11 +457,14 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Dependencies
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
     <a href="LICENSE-DEPENDENCIES.html" title="Dependencies" class="md-nav__link md-nav__link--active">
@@ -577,37 +472,42 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vendored-dependency-licenses" title="Vendored Dependency Licenses" class="md-nav__link">
+  <a href="#vendored-dependency-licenses" class="md-nav__link">
     Vendored Dependency Licenses
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-platform-release" title="default platform release" class="md-nav__link">
+  <a href="#default-platform-release" class="md-nav__link">
     default platform release
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="default platform release">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#libxml2" title="libxml2" class="md-nav__link">
+  <a href="#libxml2" class="md-nav__link">
     libxml2
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#libxslt" title="libxslt" class="md-nav__link">
+  <a href="#libxslt" class="md-nav__link">
     libxslt
   </a>
   
@@ -619,57 +519,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#java-platform-release" title="java platform release" class="md-nav__link">
+  <a href="#java-platform-release" class="md-nav__link">
     java platform release
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="java platform release">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#isorelax" title="isorelax" class="md-nav__link">
+  <a href="#isorelax" class="md-nav__link">
     isorelax
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#jing" title="jing" class="md-nav__link">
+  <a href="#jing" class="md-nav__link">
     jing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nekodtd" title="nekodtd" class="md-nav__link">
+  <a href="#nekodtd" class="md-nav__link">
     nekodtd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nekohtml" title="nekohtml" class="md-nav__link">
+  <a href="#nekohtml" class="md-nav__link">
     nekohtml
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#xalan" title="xalan" class="md-nav__link">
+  <a href="#xalan" class="md-nav__link">
     xalan
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#xerces" title="xerces" class="md-nav__link">
+  <a href="#xerces" class="md-nav__link">
     xerces
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#xml-apis" title="xml-apis" class="md-nav__link">
+  <a href="#xml-apis" class="md-nav__link">
     xml-apis
   </a>
   
@@ -681,22 +581,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binary-windows-release" title="binary windows release" class="md-nav__link">
+  <a href="#binary-windows-release" class="md-nav__link">
     binary windows release
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="binary windows release">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#zlib" title="zlib" class="md-nav__link">
+  <a href="#zlib" class="md-nav__link">
     zlib
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#libiconv" title="libiconv" class="md-nav__link">
+  <a href="#libiconv" class="md-nav__link">
     libiconv
   </a>
   
@@ -706,10 +606,6 @@
     </nav>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -758,37 +654,42 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vendored-dependency-licenses" title="Vendored Dependency Licenses" class="md-nav__link">
+  <a href="#vendored-dependency-licenses" class="md-nav__link">
     Vendored Dependency Licenses
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-platform-release" title="default platform release" class="md-nav__link">
+  <a href="#default-platform-release" class="md-nav__link">
     default platform release
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="default platform release">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#libxml2" title="libxml2" class="md-nav__link">
+  <a href="#libxml2" class="md-nav__link">
     libxml2
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#libxslt" title="libxslt" class="md-nav__link">
+  <a href="#libxslt" class="md-nav__link">
     libxslt
   </a>
   
@@ -800,57 +701,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#java-platform-release" title="java platform release" class="md-nav__link">
+  <a href="#java-platform-release" class="md-nav__link">
     java platform release
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="java platform release">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#isorelax" title="isorelax" class="md-nav__link">
+  <a href="#isorelax" class="md-nav__link">
     isorelax
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#jing" title="jing" class="md-nav__link">
+  <a href="#jing" class="md-nav__link">
     jing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nekodtd" title="nekodtd" class="md-nav__link">
+  <a href="#nekodtd" class="md-nav__link">
     nekodtd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nekohtml" title="nekohtml" class="md-nav__link">
+  <a href="#nekohtml" class="md-nav__link">
     nekohtml
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#xalan" title="xalan" class="md-nav__link">
+  <a href="#xalan" class="md-nav__link">
     xalan
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#xerces" title="xerces" class="md-nav__link">
+  <a href="#xerces" class="md-nav__link">
     xerces
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#xml-apis" title="xml-apis" class="md-nav__link">
+  <a href="#xml-apis" class="md-nav__link">
     xml-apis
   </a>
   
@@ -862,22 +763,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binary-windows-release" title="binary windows release" class="md-nav__link">
+  <a href="#binary-windows-release" class="md-nav__link">
     binary windows release
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="binary windows release">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#zlib" title="zlib" class="md-nav__link">
+  <a href="#zlib" class="md-nav__link">
     zlib
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#libiconv" title="libiconv" class="md-nav__link">
+  <a href="#libiconv" class="md-nav__link">
     libiconv
   </a>
   
@@ -887,10 +788,6 @@
     </nav>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -903,6 +800,9 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
+                
+                
+                  
                 
                 
                   <h1>Dependencies</h1>
@@ -930,7 +830,7 @@ present in any non-Windows releases.</p>
 <h3 id="libxml2">libxml2<a class="headerlink" href="#libxml2" title="Permanent link">&para;</a></h3>
 <p>MIT</p>
 <p><a href="http://xmlsoft.org/">http://xmlsoft.org/</a></p>
-<div class="codehilite"><pre><span></span>Except where otherwise noted in the source code (e.g. the files hash.c,
+<div class="codehilite"><pre><span></span><code>Except where otherwise noted in the source code (e.g. the files hash.c,
 list.c and the trio files, which are covered by a similar licence but
 with different Copyright notices) all the files are:
 
@@ -953,13 +853,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="libxslt">libxslt<a class="headerlink" href="#libxslt" title="Permanent link">&para;</a></h3>
 <p>MIT</p>
 <p><a href="http://xmlsoft.org/libxslt/">http://xmlsoft.org/libxslt/</a></p>
-<div class="codehilite"><pre><span></span>Licence for libxslt except libexslt
+<div class="codehilite"><pre><span></span><code>Licence for libxslt except libexslt
 ----------------------------------------------------------------------
  Copyright (C) 2001-2002 Daniel Veillard.  All Rights Reserved.
 
@@ -1012,14 +912,14 @@ Except as contained in this notice, the name of the authors shall not
 be used in advertising or otherwise to promote the sale, use or other deal-
 ings in this Software without prior written authorization from him.
 ----------------------------------------------------------------------
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="java-platform-release"><code>java</code> platform release<a class="headerlink" href="#java-platform-release" title="Permanent link">&para;</a></h2>
 <h3 id="isorelax">isorelax<a class="headerlink" href="#isorelax" title="Permanent link">&para;</a></h3>
 <p>MIT</p>
 <p><a href="http://iso-relax.sourceforge.net/">http://iso-relax.sourceforge.net/</a></p>
-<div class="codehilite"><pre><span></span>Copyright (c) 2001-2002, SourceForge ISO-RELAX Project (ASAMI
+<div class="codehilite"><pre><span></span><code>Copyright (c) 2001-2002, SourceForge ISO-RELAX Project (ASAMI
 Tomoharu, Daisuke Okajima, Kohsuke Kawaguchi, and MURATA Makoto)
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -1040,13 +940,13 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="jing">jing<a class="headerlink" href="#jing" title="Permanent link">&para;</a></h3>
 <p>BSD-3-Clause</p>
 <p><a href="http://www.thaiopensource.com/relaxng/jing.html">http://www.thaiopensource.com/relaxng/jing.html</a></p>
-<div class="codehilite"><pre><span></span>Copyright (c) 2001-2003 Thai Open Source Software Center Ltd
+<div class="codehilite"><pre><span></span><code>Copyright (c) 2001-2003 Thai Open Source Software Center Ltd
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -1079,13 +979,13 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="nekodtd">nekodtd<a class="headerlink" href="#nekodtd" title="Permanent link">&para;</a></h3>
 <p>Apache 1.0-derived</p>
 <p><a href="https://people.apache.org/~andyc/neko/doc/dtd/">https://people.apache.org/~andyc/neko/doc/dtd/</a></p>
-<div class="codehilite"><pre><span></span>The CyberNeko Software License, Version 1.0
+<div class="codehilite"><pre><span></span><code>The CyberNeko Software License, Version 1.0
 
 (C) Copyright 2002-2005, Andy Clark.  All rights reserved.
 
@@ -1131,13 +1031,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ====================================================================
 
 This license is based on the Apache Software License, version 1.1.
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="nekohtml">nekohtml<a class="headerlink" href="#nekohtml" title="Permanent link">&para;</a></h3>
 <p>Apache 2.0</p>
 <p><a href="http://nekohtml.sourceforge.net/">http://nekohtml.sourceforge.net/</a></p>
-<div class="codehilite"><pre><span></span>                                 Apache License
+<div class="codehilite"><pre><span></span><code>                                 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
@@ -1338,14 +1238,14 @@ This license is based on the Apache Software License, version 1.1.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="xalan">xalan<a class="headerlink" href="#xalan" title="Permanent link">&para;</a></h3>
 <p>Apache 2.0</p>
 <p><a href="https://xml.apache.org/xalan-j/">https://xml.apache.org/xalan-j/</a></p>
 <p>covers xalan.jar and serializer.jar</p>
-<div class="codehilite"><pre><span></span>                                Apache License
+<div class="codehilite"><pre><span></span><code>                                Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
@@ -1546,13 +1446,13 @@ This license is based on the Apache Software License, version 1.1.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="xerces">xerces<a class="headerlink" href="#xerces" title="Permanent link">&para;</a></h3>
 <p>Apache 2.0</p>
 <p><a href="https://xerces.apache.org/xerces2-j/">https://xerces.apache.org/xerces2-j/</a></p>
-<div class="codehilite"><pre><span></span>                                 Apache License
+<div class="codehilite"><pre><span></span><code>                                 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
@@ -1753,13 +1653,13 @@ This license is based on the Apache Software License, version 1.1.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="xml-apis">xml-apis<a class="headerlink" href="#xml-apis" title="Permanent link">&para;</a></h3>
 <p>Apache 2.0</p>
 <p><a href="https://xerces.apache.org/xml-commons/">https://xerces.apache.org/xml-commons/</a></p>
-<div class="codehilite"><pre><span></span>Unless otherwise noted all files in XML Commons are covered under the
+<div class="codehilite"><pre><span></span><code>Unless otherwise noted all files in XML Commons are covered under the
 Apache License Version 2.0. Please read the LICENSE and NOTICE files.
 
 XML Commons contains some software and documentation that is covered
@@ -1971,7 +1871,7 @@ descriptions.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="binary-windows-release">binary windows release<a class="headerlink" href="#binary-windows-release" title="Permanent link">&para;</a></h2>
@@ -1981,7 +1881,7 @@ and x64-mingw32.</p>
 <h3 id="zlib">zlib<a class="headerlink" href="#zlib" title="Permanent link">&para;</a></h3>
 <p>zlib license</p>
 <p><a href="http://www.zlib.net/zlib_license.html">http://www.zlib.net/zlib_license.html</a></p>
-<div class="codehilite"><pre><span></span>  Copyright (C) 1995-2017 Jean-loup Gailly and Mark Adler
+<div class="codehilite"><pre><span></span><code>  Copyright (C) 1995-2017 Jean-loup Gailly and Mark Adler
 
   This software is provided &#39;as-is&#39;, without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -2001,13 +1901,13 @@ and x64-mingw32.</p>
 
   Jean-loup Gailly        Mark Adler
   jloup@gzip.org          madler@alumni.caltech.edu
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="libiconv">libiconv<a class="headerlink" href="#libiconv" title="Permanent link">&para;</a></h3>
 <p>LGPL</p>
 <p><a href="https://www.gnu.org/software/libiconv/">https://www.gnu.org/software/libiconv/</a></p>
-<div class="codehilite"><pre><span></span>          GNU LIBRARY GENERAL PUBLIC LICENSE
+<div class="codehilite"><pre><span></span><code>          GNU LIBRARY GENERAL PUBLIC LICENSE
                Version 2, June 1991
 
  Copyright (C) 1991 Free Software Foundation, Inc.
@@ -2458,8 +2358,8 @@ safest to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least the
 &quot;copyright&quot; line and a pointer to where the full notice is found.
 
-    &amp;lt;one line to give the library&#39;s name and a brief idea of what it does.&amp;gt;
-    Copyright (C) &amp;lt;year&amp;gt;  &amp;lt;name of author&amp;gt;
+    &lt;one line to give the library&#39;s name and a brief idea of what it does.&gt;
+    Copyright (C) &lt;year&gt;  &lt;name of author&gt;
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -2485,13 +2385,11 @@ necessary.  Here is a sample; alter the names:
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   library `Frob&#39; (a library for tweaking knobs) written by James Random Hacker.
 
-  &amp;lt;signature of Ty Coon&amp;gt;, 1 April 1990
+  &lt;signature of Ty Coon&gt;, 1 April 1990
   Ty Coon, President of Vice
 
 That&#39;s all there is to it!
-</pre></div>
-                
-                  
+</code></pre></div>
                 
               
               
@@ -2566,14 +2464,18 @@ That&#39;s all there is to it!
       
     </div>
     
-      <script src="assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-1260604-8","nokogiri.org"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
     
   </body>
