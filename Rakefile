@@ -26,15 +26,6 @@ namespace :tutorials do
 
   desc "Pull in tutorial content"
   task :generate => tasks
-
-  desc "recursively clean the tutorials submodule"
-  task :clean do
-    Bundler.with_clean_env do
-      Dir.chdir TUTORIALS_DIR do
-        sh "rake clean"
-      end
-    end
-  end
 end
 
 namespace :nokogiri do
