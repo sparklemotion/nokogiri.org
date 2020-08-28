@@ -35,7 +35,7 @@ World Wide Web.
 
 ```ruby
 require 'open-uri'
-doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
+doc = Nokogiri::HTML(URI.open("http://www.threescompany.com/"))
 ```
 
 ## Parse Options
