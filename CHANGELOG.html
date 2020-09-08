@@ -441,6 +441,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#versioning-policy" class="md-nav__link">
+    Versioning Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unreleased-will-be-v1110" class="md-nav__link">
     Unreleased (will be v1.11.0)
   </a>
@@ -457,8 +464,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#experiment-pre-compiled-native-linux-gems" class="md-nav__link">
-    Experiment: Pre-Compiled Native Linux Gems
+  <a href="#experiment-pre-compiled-native-gems-for-linux-and-osxdarwin" class="md-nav__link">
+    Experiment: Pre-Compiled Native Gems for Linux and OSX/Darwin
   </a>
   
 </li>
@@ -2729,6 +2736,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#versioning-policy" class="md-nav__link">
+    Versioning Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unreleased-will-be-v1110" class="md-nav__link">
     Unreleased (will be v1.11.0)
   </a>
@@ -2745,8 +2759,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#experiment-pre-compiled-native-linux-gems" class="md-nav__link">
-    Experiment: Pre-Compiled Native Linux Gems
+  <a href="#experiment-pre-compiled-native-gems-for-linux-and-osxdarwin" class="md-nav__link">
+    Experiment: Pre-Compiled Native Gems for Linux and OSX/Darwin
   </a>
   
 </li>
@@ -4924,6 +4938,7 @@
                 
                 
                 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
+<h2 id="versioning-policy">Versioning Policy<a class="headerlink" href="#versioning-policy" title="Permanent link">&para;</a></h2>
 <p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a> (since 2017 or so). Note that we occasionally drop support for EOLed Rubies in Minor releases, which <a href="https://github.com/sparklemotion/nokogiri/issues/1568">some folks find objectionable</a>, but SemVer says <a href="https://semver.org/#what-should-i-do-if-i-update-my-own-dependencies-without-changing-the-public-api">this is OK if the public API hasn't changed</a>.</p>
 <p>Here's what Dependabot thinks about Nokogiri's SemVer score: <a href="https://dependabot.com/compatibility-score/?dependency-name=nokogiri&amp;package-manager=bundler"><img alt="SemVer compatibility" src="https://api.dependabot.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;version-scheme=semver" /></a></p>
 <p>We bump <code>Major.Minor.Patch</code> versions following this guidance:</p>
@@ -4945,13 +4960,23 @@
 </ul>
 <hr />
 <h2 id="unreleased-will-be-v1110">Unreleased (will be v1.11.0)<a class="headerlink" href="#unreleased-will-be-v1110" title="Permanent link">&para;</a></h2>
-<p>To try out release candidates, use <code>gem install --prerelease</code>. Latest is <code>v1.11.0.rc2</code>.</p>
+<p>Latest is <code>v1.11.0.rc3</code>.</p>
+<p>To try out release candidates, use <code>gem install --prerelease</code> or <code>gem install nokogiri -v1.11.0.rc3</code></p>
+<p>If you're using bundler, try updating your Gemfile with:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">gem</span> <span class="s2">&quot;nokogiri&quot;</span><span class="p">,</span> <span class="s2">&quot;~&gt; 1.11.0.rc3&quot;</span><span class="sb">`</span>
+</code></pre></div>
+
+
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
-<h4 id="experiment-pre-compiled-native-linux-gems">Experiment: Pre-Compiled Native Linux Gems<a class="headerlink" href="#experiment-pre-compiled-native-linux-gems" title="Permanent link">&para;</a></h4>
-<p>With the v1.11.0 release candidates, we are experimenting with shipping <strong>pre-compiled native Linux gems</strong> for the <code>x86-linux</code> and <code>x86_64-linux</code> platforms. Note that v1.11.0.rc2 and later also support musl systems (e.g., alpine).</p>
+<h4 id="experiment-pre-compiled-native-gems-for-linux-and-osxdarwin">Experiment: Pre-Compiled Native Gems for Linux and OSX/Darwin<a class="headerlink" href="#experiment-pre-compiled-native-gems-for-linux-and-osxdarwin" title="Permanent link">&para;</a></h4>
+<p>With the v1.11.0 release candidates, we are experimenting with shipping <strong>pre-compiled native gems</strong> for these platforms:</p>
+<ul>
+<li>Linux: <code>x86-linux</code> and <code>x86_64-linux</code> including musl platforms like alpine</li>
+<li>OSX/Darwin: <code>x86_64-darwin19</code></li>
+</ul>
 <p>If this works properly for you, it will speed up installation time on Linux.</p>
-<p>If this doesn't work for you, please drop us a note at <a href="https://github.com/sparklemotion/nokogiri/issues/1983">#1983</a>, we may reach out to you for more information on your distro and configuration.</p>
-<p>Either way, we'd appreciate some feedback at <a href="https://github.com/sparklemotion/nokogiri/issues/1983">#1983</a>.</p>
+<p>If this doesn't work for you, please drop us a note at <a href="https://github.com/sparklemotion/nokogiri/issues/2075">#2075</a>, we may reach out to you for more information on your distro and configuration.</p>
+<p>Either way, we'd appreciate your thoughts and feedback at <a href="https://github.com/sparklemotion/nokogiri/issues/2075">#2075</a>.</p>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
 <h4 id="ruby">Ruby<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h4>
 <p>This release introduces support for:</p>
@@ -4987,6 +5012,7 @@
 <li>The switch to turn off the CSS-to-XPath cache is now thread-local, rather than being shared mutable state. [<a href="https://github.com/sparklemotion/nokogiri/issues/1935">#1935</a>]</li>
 <li>[CRuby] Fixed installation on AIX with respect to <code>vasprintf</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/1908">#1908</a>]</li>
 <li>[JRuby] Standardize reading from IO like objects, including StringIO. [<a href="https://github.com/sparklemotion/nokogiri/issues/1888">#1888</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1897">#1897</a>]</li>
+<li>[Windows Visual C++] Fixed compiler warnings and errors. [<a href="https://github.com/sparklemotion/nokogiri/issues/2061">#2061</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2068">#2068</a>]</li>
 </ul>
 <h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h3>
 <ul>
