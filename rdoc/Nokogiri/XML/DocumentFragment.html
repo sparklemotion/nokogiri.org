@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::DocumentFragment
   
-    — Documentation by YARD 0.9.25
+    — Documentation by YARD 0.9.26
   
 </title>
 
@@ -279,6 +279,28 @@
     <span class="summary_desc"><div class="inline">
 <p>:nodoc:.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fragment-instance_method" title="#fragment (instance method)">#<strong>fragment</strong>(data)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline"></div></span>
   
 </li>
 
@@ -868,6 +890,37 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="fragment-instance_method">
+  
+    #<strong>fragment</strong>(data)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document_fragment.rb', line 144</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_data">data</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_data">data</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="name-instance_method">
   
     #<strong>name</strong>  ⇒ <tt>Object</tt> 
@@ -1182,9 +1235,9 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 26 14:46:22 2020 by
+  Generated on Tue Dec 29 11:51:41 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.25 (ruby-2.7.2).
+  0.9.26 (ruby-2.7.2).
 </div>
 
     </div>

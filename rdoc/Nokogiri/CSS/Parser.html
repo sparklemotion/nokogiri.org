@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::CSS::Parser
   
-    — Documentation by YARD 0.9.25
+    — Documentation by YARD 0.9.26
   
 </title>
 
@@ -2803,7 +2803,7 @@
       <pre class="code"><span class="info file"># File 'lib/nokogiri/css/parser.rb', line 478</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid__reduce_27">_reduce_27</span><span class="lparen">(</span><span class="id identifier rubyid_val">val</span><span class="comma">,</span> <span class="id identifier rubyid__values">_values</span><span class="comma">,</span> <span class="id identifier rubyid_result">result</span><span class="rparen">)</span>
-        <span class="comment"># Non standard, but hpricot supports it.
+        <span class="comment"># non-standard, from hpricot
 </span>        <span class="id identifier rubyid_result">result</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="Node.html" title="Nokogiri::CSS::Node (class)">Node</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Node.html#initialize-instance_method" title="Nokogiri::CSS::Node#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="symbol">:PSEUDO_CLASS</span><span class="comma">,</span>
           <span class="lbracket">[</span><span class="const"><span class="object_link"><a href="Node.html" title="Nokogiri::CSS::Node (class)">Node</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Node.html#initialize-instance_method" title="Nokogiri::CSS::Node#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="symbol">:FUNCTION</span><span class="comma">,</span> <span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">nth-child(</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="id identifier rubyid_val">val</span><span class="lbracket">[</span><span class="int">1</span><span class="rbracket">]</span><span class="rbracket">]</span><span class="rparen">)</span><span class="rbracket">]</span>
         <span class="rparen">)</span>
@@ -3292,7 +3292,7 @@
         <span class="kw">when</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">n</span><span class="tstring_end">'</span></span>
           <span class="id identifier rubyid_result">result</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="Node.html" title="Nokogiri::CSS::Node (class)">Node</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Node.html#initialize-instance_method" title="Nokogiri::CSS::Node#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="symbol">:NTH</span><span class="comma">,</span> <span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">1</span><span class="tstring_end">'</span></span><span class="comma">,</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">n</span><span class="tstring_end">'</span></span><span class="comma">,</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">+</span><span class="tstring_end">'</span></span><span class="comma">,</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">0</span><span class="tstring_end">'</span></span><span class="rbracket">]</span><span class="rparen">)</span>
         <span class="kw">else</span>
-          <span class="comment"># This is not CSS standard.  It allows us to support this:
+          <span class="comment"># non-standard to support custom functions:
 </span>          <span class="comment"># assert_xpath("//a[foo(., @href)]", @parser.parse('a:foo(@href)'))
 </span>          <span class="comment"># assert_xpath("//a[foo(., @a, b)]", @parser.parse('a:foo(@a, b)'))
 </span>          <span class="comment"># assert_xpath("//a[foo(., a, 10)]", @parser.parse('a:foo(a, 10)'))
@@ -4626,9 +4626,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 26 14:46:19 2020 by
+  Generated on Tue Dec 29 11:51:39 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.25 (ruby-2.7.2).
+  0.9.26 (ruby-2.7.2).
 </div>
 
     </div>

@@ -7,7 +7,7 @@
 <title>
   Top Level Namespace
   
-    — Documentation by YARD 0.9.25
+    — Documentation by YARD 0.9.26
   
 </title>
 
@@ -149,6 +149,116 @@
         </dt>
         <dd><pre class="code"><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">~&gt; 2.5.0</span><span class="tstring_end">"</span></span></pre></dd>
       
+        <dt id="REQUIRED_PKG_CONFIG_VERSION-constant" class="">REQUIRED_PKG_CONFIG_VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">~&gt; 1.1</span><span class="tstring_end">"</span></span></pre></dd>
+      
+        <dt id="OTHER_LIBRARY_VERSIONS-constant" class="">OTHER_LIBRARY_VERSIONS =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Keep track of what versions of what libraries we build against</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbrace">{</span><span class="rbrace">}</span></pre></dd>
+      
+        <dt id="NOKOGIRI_HELP_MESSAGE-constant" class="">NOKOGIRI_HELP_MESSAGE =
+          
+        </dt>
+        <dd><pre class="code"><span class="heredoc_beg">&lt;&lt;~HELP</span>
+<span class="tstring_content">  USAGE: ruby </span><span class="embexpr_beg">#{</span><span class="gvar">$0</span><span class="embexpr_end">}</span><span class="tstring_content"> [options]
+</span><span class="tstring_content">
+</span><span class="tstring_content">    Flags that are always valid:
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --use-system-libraries
+</span><span class="tstring_content">          Use system libraries instead of building and using the packaged libraries
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --disable-clean
+</span><span class="tstring_content">          Do not clean out intermediate files after successful build
+</span><span class="tstring_content">
+</span><span class="tstring_content">
+</span><span class="tstring_content">    Flags only used when using system libraries:
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-opt-dir=DIRECTORY
+</span><span class="tstring_content">          Look for headers and libraries in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-zlib-dir=DIR
+</span><span class="tstring_content">          Look for zlib header and library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-iconv-dir=DIRECTORY
+</span><span class="tstring_content">          Look for iconv header and library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-xml2-dir=DIRECTORY
+</span><span class="tstring_content">          Look for xml2 headers and library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-xml2-lib=DIRECTORY
+</span><span class="tstring_content">          Look for xml2 library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-xslt-include=DIRECTORY
+</span><span class="tstring_content">          Look for xslt headers in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-xslt-dir=DIRECTORY
+</span><span class="tstring_content">          Look for xslt headers and library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-xslt-lib=DIRECTORY
+</span><span class="tstring_content">          Look for xslt library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-xslt-include=DIRECTORY
+</span><span class="tstring_content">          Look for xslt headers in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-exslt-dir=DIRECTORY
+</span><span class="tstring_content">          Look for exslt headers and library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-exslt-lib=DIRECTORY
+</span><span class="tstring_content">          Look for exslt library in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --with-exslt-include=DIRECTORY
+</span><span class="tstring_content">          Look for exslt headers in DIRECTORY
+</span><span class="tstring_content">
+</span><span class="tstring_content">
+</span><span class="tstring_content">    Flags only used when building and using the packaged libraries:
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --disable-static
+</span><span class="tstring_content">          Do not statically link packaged libraries, instead use shared libraries
+</span><span class="tstring_content">
+</span><span class="tstring_content">      --enable-cross-build
+</span><span class="tstring_content">          Enable cross-build mode. (You probably do not want to set this manually.)
+</span><span class="tstring_content">
+</span><span class="tstring_content">    Environment variables used:
+</span><span class="tstring_content">
+</span><span class="tstring_content">      NOKOGIRI_USE_SYSTEM_LIBRARIES
+</span><span class="tstring_content">          When set, even if nil or blank, use system libraries instead of building and using the
+</span><span class="tstring_content">          packaged libraries. Equivalent to `--use-system-libraries`.
+</span><span class="tstring_content">
+</span><span class="tstring_content">      CC
+</span><span class="tstring_content">          Use this path to invoke the compiler instead of `RbConfig::CONFIG['CC']`
+</span><span class="tstring_content">
+</span><span class="tstring_content">      CPPFLAGS
+</span><span class="tstring_content">          If this string is accepted by the C preprocessor, add it to the flags passed to the C preprocessor
+</span><span class="tstring_content">
+</span><span class="tstring_content">      CFLAGS
+</span><span class="tstring_content">          If this string is accepted by the compiler, add it to the flags passed to the compiler
+</span><span class="tstring_content">
+</span><span class="tstring_content">      LDFLAGS
+</span><span class="tstring_content">          If this string is accepted by the linker, add it to the flags passed to the linker
+</span><span class="tstring_content">
+</span><span class="tstring_content">      LIBS
+</span><span class="tstring_content">          Add this string to the flags passed to the linker
+</span><span class="heredoc_end">HELP</span></pre></dd>
+      
+        <dt id="LOCAL_PACKAGE_RESPONSE-constant" class="">LOCAL_PACKAGE_RESPONSE =
+          
+        </dt>
+        <dd><pre class="code"><span class="const">Object</span><span class="period">.</span><span class="id identifier rubyid_new">new</span></pre></dd>
+      
     </dl>
   
 
@@ -257,6 +367,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="top-level-namespace.html#copy_packaged_libraries_headers-instance_method" title="#copy_packaged_libraries_headers (instance method)">#<strong>copy_packaged_libraries_headers</strong>(to_path:, from_recipes:)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline"></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="top-level-namespace.html#darwin%3F-instance_method" title="#darwin? (instance method)">#<strong>darwin?</strong>  ⇒ Boolean </a>
     
 
@@ -323,6 +455,50 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="top-level-namespace.html#ensure_func-instance_method" title="#ensure_func (instance method)">#<strong>ensure_func</strong>(func, headers = nil)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline"></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#ensure_package_configuration-instance_method" title="#ensure_package_configuration (instance method)">#<strong>ensure_package_configuration</strong>(opt: nil, pc: nil, lib:, func:, headers:)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline"></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="top-level-namespace.html#have_libxml_headers%3F-instance_method" title="#have_libxml_headers? (instance method)">#<strong>have_libxml_headers?</strong>(version = nil)  ⇒ Boolean </a>
     
 
@@ -338,6 +514,30 @@
 
   
     <span class="summary_desc"><div class="inline"></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#have_package_configuration-instance_method" title="#have_package_configuration (instance method)">#<strong>have_package_configuration</strong>(opt: nil, pc: nil, lib:, func:, headers:)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>set up mkmf to link against the library if we can find it.</p>
+</div></span>
   
 </li>
 
@@ -368,6 +568,28 @@
   <span class="summary_signature">
     
       <a href="top-level-namespace.html#libflag_to_filename-instance_method" title="#libflag_to_filename (instance method)">#<strong>libflag_to_filename</strong>(ldflag)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline"></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#local_have_library-instance_method" title="#local_have_library (instance method)">#<strong>local_have_library</strong>(lib, func = nil, headers = nil)  ⇒ Object </a>
     
 
     
@@ -426,7 +648,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Parser a document contained in <code>args</code>.</p>
+<p>Parse a document contained in <code>args</code>.</p>
 </div></span>
   
 </li>
@@ -436,28 +658,6 @@
   <span class="summary_signature">
     
       <a href="top-level-namespace.html#openbsd%3F-instance_method" title="#openbsd? (instance method)">#<strong>openbsd?</strong>  ⇒ Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline"></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="top-level-namespace.html#package_config-instance_method" title="#package_config (instance method)">#<strong>package_config</strong>(pkg, options = {})  ⇒ Object </a>
     
 
     
@@ -589,6 +789,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="top-level-namespace.html#try_package_configuration-instance_method" title="#try_package_configuration (instance method)">#<strong>try_package_configuration</strong>(pc)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>wrapper around MakeMakefil#pkg_config and the PKGConfig gem.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="top-level-namespace.html#using_system_libraries%3F-instance_method" title="#using_system_libraries? (instance method)">#<strong>using_system_libraries?</strong>  ⇒ Boolean </a>
     
 
@@ -657,15 +881,15 @@
       <pre class="lines">
 
 
-93
-94
-95</pre>
+214
+215
+216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 214</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_abort_could_not_find_library">abort_could_not_find_library</span><span class="lparen">(</span><span class="id identifier rubyid_lib">lib</span><span class="rparen">)</span>
-  <span class="id identifier rubyid_abort">abort</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">-----\n</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_lib">lib</span><span class="embexpr_end">}</span><span class="tstring_content"> is missing.  Please locate mkmf.log to investigate how it is failing.\n-----</span><span class="tstring_end">"</span></span>
+  <span class="id identifier rubyid_abort">abort</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">-----\n</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_caller">caller</span><span class="lbracket">[</span><span class="int">0</span><span class="rbracket">]</span><span class="embexpr_end">}</span><span class="tstring_content">\n</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_lib">lib</span><span class="embexpr_end">}</span><span class="tstring_content"> is missing. Please locate mkmf.log to investigate how it is failing.\n-----</span><span class="tstring_end">"</span></span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -711,12 +935,12 @@
       <pre class="lines">
 
 
-40
-41
-42</pre>
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 125</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_aix?">aix?</span>
   <span class="const">RbConfig</span><span class="op">::</span><span class="const">CONFIG</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">target_os</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=~</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">aix</span><span class="regexp_end">/</span></span>
@@ -742,18 +966,18 @@
       <pre class="lines">
 
 
-97
-98
-99
-100
-101
-102
-103
-104
-105</pre>
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 218</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_chdir_for_build">chdir_for_build</span>
   <span class="comment"># When using rake-compiler-dock on Windows, the underlying Virtualbox shared
@@ -785,15 +1009,54 @@
       <pre class="lines">
 
 
-48
-49
-50</pre>
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 133</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_concat_flags">concat_flags</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span>
   <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_compact">compact</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="copy_packaged_libraries_headers-instance_method">
+  
+    #<strong>copy_packaged_libraries_headers</strong>(to_path:, from_recipes:)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+455
+456
+457
+458
+459
+460
+461</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 455</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_copy_packaged_libraries_headers">copy_packaged_libraries_headers</span><span class="lparen">(</span><span class="label">to_path:</span><span class="comma">,</span> <span class="label">from_recipes:</span><span class="rparen">)</span>
+  <span class="const">FileUtils</span><span class="period">.</span><span class="id identifier rubyid_rm_rf">rm_rf</span><span class="lparen">(</span><span class="id identifier rubyid_to_path">to_path</span><span class="comma">,</span> <span class="label">secure:</span> <span class="kw">true</span><span class="rparen">)</span>
+  <span class="const">FileUtils</span><span class="period">.</span><span class="id identifier rubyid_mkdir">mkdir</span><span class="lparen">(</span><span class="id identifier rubyid_to_path">to_path</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_from_recipes">from_recipes</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_recipe">recipe</span><span class="op">|</span>
+    <span class="const">FileUtils</span><span class="period">.</span><span class="id identifier rubyid_cp_r">cp_r</span><span class="lparen">(</span><span class="const">Dir</span><span class="lbracket">[</span><span class="const">File</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="id identifier rubyid_recipe">recipe</span><span class="period">.</span><span class="id identifier rubyid_path">path</span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">include/*</span><span class="tstring_end">'</span></span><span class="rparen">)</span><span class="rbracket">]</span><span class="comma">,</span> <span class="id identifier rubyid_to_path">to_path</span><span class="rparen">)</span>
+  <span class="kw">end</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -839,12 +1102,12 @@
       <pre class="lines">
 
 
-32
-33
-34</pre>
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 117</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_darwin?">darwin?</span>
   <span class="const">RbConfig</span><span class="op">::</span><span class="const">CONFIG</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">target_os</span><span class="tstring_end">'</span></span><span class="rbracket">]</span> <span class="op">=~</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">darwin</span><span class="regexp_end">/</span></span>
@@ -870,35 +1133,35 @@
       <pre class="lines">
 
 
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380
-381
-382
-383
-384
-385
-386</pre>
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 361</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 468</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_do_clean">do_clean</span>
   <span class="id identifier rubyid_root"><span class="object_link"><a href="" title="Top Level Namespace (root)">root</a></span></span> <span class="op">=</span> <span class="const">Pathname</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="#PACKAGE_ROOT_DIR-constant" title="PACKAGE_ROOT_DIR (constant)">PACKAGE_ROOT_DIR</a></span></span><span class="rparen">)</span>
@@ -947,69 +1210,81 @@
       <pre class="lines">
 
 
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359</pre>
+463
+464
+465
+466</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 330</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 463</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_do_help">do_help</span>
-  <span class="id identifier rubyid_print">print</span> <span class="heredoc_beg">&lt;&lt;~HELP</span>
-<span class="tstring_content">    usage: ruby </span><span class="embexpr_beg">#{</span><span class="gvar">$0</span><span class="embexpr_end">}</span><span class="tstring_content"> [options]
-</span><span class="tstring_content">
-</span><span class="tstring_content">        --disable-clean
-</span><span class="tstring_content">            Do not clean out intermediate files after successful build.
-</span><span class="tstring_content">
-</span><span class="tstring_content">        --disable-static
-</span><span class="tstring_content">            Do not statically link bundled libraries.
-</span><span class="tstring_content">
-</span><span class="tstring_content">        --with-iconv-dir=DIR
-</span><span class="tstring_content">            Use the iconv library placed under DIR.
-</span><span class="tstring_content">
-</span><span class="tstring_content">        --with-zlib-dir=DIR
-</span><span class="tstring_content">            Use the zlib library placed under DIR.
-</span><span class="tstring_content">
-</span><span class="tstring_content">        --use-system-libraries
-</span><span class="tstring_content">            Use system libraries instead of building and using the bundled
-</span><span class="tstring_content">            libraries.
-</span><span class="tstring_content">
-</span><span class="tstring_content">        --with-xml2-dir=DIR / --with-xml2-config=CONFIG
-</span><span class="tstring_content">        --with-xslt-dir=DIR / --with-xslt-config=CONFIG
-</span><span class="tstring_content">        --with-exslt-dir=DIR / --with-exslt-config=CONFIG
-</span><span class="tstring_content">            Use libxml2/libxslt/libexslt as specified.
-</span><span class="tstring_content">
-</span><span class="tstring_content">        --enable-cross-build
-</span><span class="tstring_content">            Do cross-build.
-</span><span class="heredoc_end">  HELP
-</span>  <span class="id identifier rubyid_exit!">exit!</span> <span class="int">0</span>
+  <span class="id identifier rubyid_print">print</span> <span class="const"><span class="object_link"><a href="#NOKOGIRI_HELP_MESSAGE-constant" title="NOKOGIRI_HELP_MESSAGE (constant)">NOKOGIRI_HELP_MESSAGE</a></span></span>
+  <span class="id identifier rubyid_exit!">exit!</span> <span class="int">0</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ensure_func-instance_method">
+  
+    #<strong>ensure_func</strong>(func, headers = nil)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 203</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_ensure_func">ensure_func</span><span class="lparen">(</span><span class="id identifier rubyid_func">func</span><span class="comma">,</span> <span class="id identifier rubyid_headers">headers</span><span class="op">=</span><span class="kw">nil</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_have_func">have_func</span><span class="lparen">(</span><span class="id identifier rubyid_func">func</span><span class="comma">,</span> <span class="id identifier rubyid_headers">headers</span><span class="rparen">)</span> <span class="kw">or</span> <span class="id identifier rubyid_abort_could_not_find_library"><span class="object_link"><a href="#abort_could_not_find_library-instance_method" title="#abort_could_not_find_library (method)">abort_could_not_find_library</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_lib">lib</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ensure_package_configuration-instance_method">
+  
+    #<strong>ensure_package_configuration</strong>(opt: nil, pc: nil, lib:, func:, headers:)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+198
+199
+200
+201</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 198</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_ensure_package_configuration">ensure_package_configuration</span><span class="lparen">(</span><span class="label">opt:</span> <span class="kw">nil</span><span class="comma">,</span> <span class="label">pc:</span> <span class="kw">nil</span><span class="comma">,</span> <span class="label">lib:</span><span class="comma">,</span> <span class="label">func:</span><span class="comma">,</span> <span class="label">headers:</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_have_package_configuration"><span class="object_link"><a href="#have_package_configuration-instance_method" title="#have_package_configuration (method)">have_package_configuration</a></span></span><span class="lparen">(</span><span class="label">opt:</span> <span class="id identifier rubyid_opt">opt</span><span class="comma">,</span> <span class="label">pc:</span> <span class="id identifier rubyid_pc">pc</span><span class="comma">,</span> <span class="label">lib:</span> <span class="id identifier rubyid_lib">lib</span><span class="comma">,</span> <span class="label">func:</span> <span class="id identifier rubyid_func">func</span><span class="comma">,</span> <span class="label">headers:</span> <span class="id identifier rubyid_headers">headers</span><span class="rparen">)</span> <span class="kw">or</span>
+    <span class="id identifier rubyid_abort_could_not_find_library"><span class="object_link"><a href="#abort_could_not_find_library-instance_method" title="#abort_could_not_find_library (method)">abort_could_not_find_library</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_lib">lib</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -1055,26 +1330,26 @@
       <pre class="lines">
 
 
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157</pre>
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 141</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 262</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_have_libxml_headers?">have_libxml_headers?</span><span class="lparen">(</span><span class="id identifier rubyid_version">version</span><span class="op">=</span><span class="kw">nil</span><span class="rparen">)</span>
   <span class="id identifier rubyid_source">source</span> <span class="op">=</span> <span class="kw">if</span> <span class="id identifier rubyid_version">version</span><span class="period">.</span><span class="id identifier rubyid_nil?">nil?</span>
@@ -1099,22 +1374,33 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="iconv_configure_flags-instance_method">
+  <h3 class="signature " id="have_package_configuration-instance_method">
   
-    #<strong>iconv_configure_flags</strong>  ⇒ <tt>Object</tt> 
+    #<strong>have_package_configuration</strong>(opt: nil, pc: nil, lib:, func:, headers:)  ⇒ <tt>Object</tt> 
   
 
   
 
   
 </h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>set up mkmf to link against the library if we can find it</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 <table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-180
 181
 182
 183
@@ -1130,30 +1416,88 @@
 193
 194
 195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216</pre>
+196</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 181</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_have_package_configuration">have_package_configuration</span><span class="lparen">(</span><span class="label">opt:</span> <span class="kw">nil</span><span class="comma">,</span> <span class="label">pc:</span> <span class="kw">nil</span><span class="comma">,</span> <span class="label">lib:</span><span class="comma">,</span> <span class="label">func:</span><span class="comma">,</span> <span class="label">headers:</span><span class="rparen">)</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_opt">opt</span>
+    <span class="id identifier rubyid_dir_config">dir_config</span><span class="lparen">(</span><span class="id identifier rubyid_opt">opt</span><span class="rparen">)</span>
+    <span class="id identifier rubyid_dir_config">dir_config</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">opt</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+  <span class="kw">end</span>
+
+  <span class="comment"># see if we have enough path info to do this without trying any harder
+</span>  <span class="kw">if</span> <span class="op">!</span><span class="const">ENV</span><span class="period">.</span><span class="id identifier rubyid_key?">key?</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">NOKOGIRI_TEST_PKG_CONFIG</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+    <span class="kw">return</span> <span class="kw">true</span> <span class="kw">if</span> <span class="id identifier rubyid_local_have_library"><span class="object_link"><a href="#local_have_library-instance_method" title="#local_have_library (method)">local_have_library</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_lib">lib</span><span class="comma">,</span> <span class="id identifier rubyid_func">func</span><span class="comma">,</span> <span class="id identifier rubyid_headers">headers</span><span class="rparen">)</span>
+  <span class="kw">end</span>
+
+  <span class="id identifier rubyid_try_package_configuration"><span class="object_link"><a href="#try_package_configuration-instance_method" title="#try_package_configuration (method)">try_package_configuration</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_pc">pc</span><span class="rparen">)</span> <span class="kw">if</span> <span class="id identifier rubyid_pc">pc</span>
+
+  <span class="comment"># verify that we can compile and link against the library
+</span>  <span class="id identifier rubyid_local_have_library"><span class="object_link"><a href="#local_have_library-instance_method" title="#local_have_library (method)">local_have_library</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_lib">lib</span><span class="comma">,</span> <span class="id identifier rubyid_func">func</span><span class="comma">,</span> <span class="id identifier rubyid_headers">headers</span><span class="rparen">)</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="iconv_configure_flags-instance_method">
+  
+    #<strong>iconv_configure_flags</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 301</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_iconv_configure_flags">iconv_configure_flags</span>
   <span class="comment"># give --with-iconv-dir and --with-opt-dir first priority
@@ -1178,8 +1522,8 @@
     <span class="kw">return</span> <span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">--with-iconv=yes</span><span class="tstring_end">'</span></span><span class="rbracket">]</span>
   <span class="kw">end</span>
 
-  <span class="id identifier rubyid_config">config</span> <span class="op">=</span> <span class="id identifier rubyid_preserving_globals"><span class="object_link"><a href="#preserving_globals-instance_method" title="#preserving_globals (method)">preserving_globals</a></span></span> <span class="lbrace">{</span> <span class="id identifier rubyid_package_config"><span class="object_link"><a href="#package_config-instance_method" title="#package_config (method)">package_config</a></span></span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">libiconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="rbrace">}</span>
-  <span class="kw">if</span> <span class="id identifier rubyid_config">config</span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_try_link_iconv"><span class="object_link"><a href="#try_link_iconv-instance_method" title="#try_link_iconv (method)">try_link_iconv</a></span></span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pkg-config libiconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="lbrace">{</span> <span class="id identifier rubyid_package_config"><span class="object_link"><a href="#package_config-instance_method" title="#package_config (method)">package_config</a></span></span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">libiconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="rbrace">}</span>
+  <span class="id identifier rubyid_config">config</span> <span class="op">=</span> <span class="id identifier rubyid_preserving_globals"><span class="object_link"><a href="#preserving_globals-instance_method" title="#preserving_globals (method)">preserving_globals</a></span></span> <span class="lbrace">{</span> <span class="id identifier rubyid_have_package_configuration"><span class="object_link"><a href="#have_package_configuration-instance_method" title="#have_package_configuration (method)">have_package_configuration</a></span></span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">libiconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="rbrace">}</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_config">config</span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_try_link_iconv"><span class="object_link"><a href="#try_link_iconv-instance_method" title="#try_link_iconv (method)">try_link_iconv</a></span></span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pkg-config libiconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="lbrace">{</span> <span class="id identifier rubyid_have_package_configuration"><span class="object_link"><a href="#have_package_configuration-instance_method" title="#have_package_configuration (method)">have_package_configuration</a></span></span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">libiconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="rbrace">}</span>
     <span class="id identifier rubyid_cflags">cflags</span><span class="comma">,</span> <span class="id identifier rubyid_ldflags">ldflags</span><span class="comma">,</span> <span class="id identifier rubyid_libs">libs</span> <span class="op">=</span> <span class="id identifier rubyid_config">config</span>
 
     <span class="kw">return</span> <span class="lbracket">[</span>
@@ -1213,21 +1557,52 @@
       <pre class="lines">
 
 
-129
-130
-131
-132
-133
-134</pre>
+250
+251
+252
+253
+254
+255</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 250</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_libflag_to_filename">libflag_to_filename</span><span class="lparen">(</span><span class="id identifier rubyid_ldflag">ldflag</span><span class="rparen">)</span>
   <span class="kw">case</span> <span class="id identifier rubyid_ldflag">ldflag</span>
   <span class="kw">when</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\A-l(.+)</span><span class="regexp_end">/</span></span>
     <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">lib</span><span class="embexpr_beg">#{</span><span class="backref">$1</span><span class="embexpr_end">}</span><span class="tstring_content">.</span><span class="embexpr_beg">#{</span><span class="gvar">$LIBEXT</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span>
   <span class="kw">end</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="local_have_library-instance_method">
+  
+    #<strong>local_have_library</strong>(lib, func = nil, headers = nil)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 137</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_local_have_library">local_have_library</span><span class="lparen">(</span><span class="id identifier rubyid_lib">lib</span><span class="comma">,</span> <span class="id identifier rubyid_func">func</span><span class="op">=</span><span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_headers">headers</span><span class="op">=</span><span class="kw">nil</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_have_library">have_library</span><span class="lparen">(</span><span class="id identifier rubyid_lib">lib</span><span class="comma">,</span> <span class="id identifier rubyid_func">func</span><span class="comma">,</span> <span class="id identifier rubyid_headers">headers</span><span class="rparen">)</span> <span class="kw">or</span> <span class="id identifier rubyid_have_library">have_library</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">lib</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_lib">lib</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_func">func</span><span class="comma">,</span> <span class="id identifier rubyid_headers">headers</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -1273,12 +1648,12 @@
       <pre class="lines">
 
 
-44
-45
-46</pre>
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 129</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_nix?">nix?</span>
   <span class="op">!</span> <span class="lparen">(</span><span class="id identifier rubyid_windows?"><span class="object_link"><a href="#windows%3F-instance_method" title="#windows? (method)">windows?</a></span></span> <span class="op">||</span> <span class="id identifier rubyid_solaris?"><span class="object_link"><a href="#solaris%3F-instance_method" title="#solaris? (method)">solaris?</a></span></span> <span class="op">||</span> <span class="id identifier rubyid_darwin?"><span class="object_link"><a href="#darwin%3F-instance_method" title="#darwin? (method)">darwin?</a></span></span><span class="rparen">)</span>
@@ -1301,7 +1676,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Parser a document contained in <code>args</code>.  Nokogiri will try to guess what type of document you are attempting to parse.  For more information, see Nokogiri.parse</p>
+<p>Parse a document contained in <code>args</code>.  Nokogiri will try to guess what type of document you are attempting to parse.  For more information, see Nokogiri.parse</p>
 
 <p>To specify the type of document, use Nokogiri.XML or Nokogiri.HTML.</p>
 
@@ -1380,106 +1755,15 @@
       <pre class="lines">
 
 
-36
-37
-38</pre>
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 121</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_openbsd?">openbsd?</span>
   <span class="const">RbConfig</span><span class="op">::</span><span class="const">CONFIG</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">target_os</span><span class="tstring_end">'</span></span><span class="rbracket">]</span> <span class="op">=~</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">openbsd</span><span class="regexp_end">/</span></span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="package_config-instance_method">
-  
-    #<strong>package_config</strong>(pkg, options = {})  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 52</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_package_config">package_config</span> <span class="id identifier rubyid_pkg">pkg</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="op">=</span><span class="lbrace">{</span><span class="rbrace">}</span>
-  <span class="comment"># use MakeMakefile#pkg_config, which uses the system utility `pkg-config`.
-</span>  <span class="id identifier rubyid_package">package</span> <span class="op">=</span> <span class="id identifier rubyid_pkg_config">pkg_config</span><span class="lparen">(</span><span class="id identifier rubyid_pkg">pkg</span><span class="rparen">)</span>
-  <span class="kw">return</span> <span class="id identifier rubyid_package">package</span> <span class="kw">if</span> <span class="id identifier rubyid_package">package</span>
-
-  <span class="comment"># only if that utility isn't found do we fall back to the pkg-config gem, and
-</span>  <span class="comment"># wrap it with the same logic as MakeMakefile#pkg_config
-</span>  <span class="kw">begin</span>
-    <span class="id identifier rubyid_require">require</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rubygems</span><span class="tstring_end">'</span></span>
-    <span class="id identifier rubyid_gem">gem</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pkg-config</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="lparen">(</span><span class="id identifier rubyid_gem_ver">gem_ver</span><span class="op">=</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">~&gt; 1.1</span><span class="tstring_end">'</span></span><span class="rparen">)</span>
-    <span class="id identifier rubyid_require">require</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pkg-config</span><span class="tstring_end">'</span></span> <span class="kw">and</span> <span class="id identifier rubyid_message">message</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Using pkg-config gem version </span><span class="embexpr_beg">#{</span><span class="const">PKGConfig</span><span class="op">::</span><span class="const">VERSION</span><span class="embexpr_end">}</span><span class="tstring_content">\n</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
-  <span class="kw">rescue</span> <span class="const">LoadError</span>
-    <span class="id identifier rubyid_message">message</span> <span class="heredoc_beg">&lt;&lt;~EOM</span>
-<span class="tstring_content">      pkg-config could not be used to find </span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_pkg">pkg</span><span class="embexpr_end">}</span><span class="tstring_content">
-</span><span class="tstring_content">      Please install either `pkg-config` or the pkg-config gem per
-</span><span class="tstring_content">
-</span><span class="tstring_content">          gem install pkg-config -v </span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_gem_ver">gem_ver</span><span class="period">.</span><span class="id identifier rubyid_inspect">inspect</span><span class="embexpr_end">}</span><span class="tstring_content">
-</span><span class="tstring_content">
-</span><span class="heredoc_end">    EOM
-</span>    <span class="kw">return</span> <span class="kw">nil</span>
-  <span class="kw">end</span>
-
-  <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">unless</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_have_package">have_package</span><span class="lparen">(</span><span class="id identifier rubyid_pkg">pkg</span><span class="rparen">)</span>
-
-  <span class="id identifier rubyid_cflags">cflags</span>  <span class="op">=</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_cflags">cflags</span><span class="lparen">(</span><span class="id identifier rubyid_pkg">pkg</span><span class="rparen">)</span>
-  <span class="id identifier rubyid_ldflags">ldflags</span> <span class="op">=</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_libs_only_L">libs_only_L</span><span class="lparen">(</span><span class="id identifier rubyid_pkg">pkg</span><span class="rparen">)</span>
-  <span class="id identifier rubyid_libs">libs</span>    <span class="op">=</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_libs_only_l">libs_only_l</span><span class="lparen">(</span><span class="id identifier rubyid_pkg">pkg</span><span class="rparen">)</span>
-
-  <span class="const">Logging</span><span class="op">::</span><span class="id identifier rubyid_message">message</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">PKGConfig package configuration for %s\n</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_pkg">pkg</span>
-  <span class="const">Logging</span><span class="op">::</span><span class="id identifier rubyid_message">message</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">cflags: %s\nldflags: %s\nlibs: %s\n\n</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_cflags">cflags</span><span class="comma">,</span> <span class="id identifier rubyid_ldflags">ldflags</span><span class="comma">,</span> <span class="id identifier rubyid_libs">libs</span>
-
-  <span class="lbracket">[</span><span class="id identifier rubyid_cflags">cflags</span><span class="comma">,</span> <span class="id identifier rubyid_ldflags">ldflags</span><span class="comma">,</span> <span class="id identifier rubyid_libs">libs</span><span class="rbracket">]</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -1502,21 +1786,21 @@
       <pre class="lines">
 
 
-86
-87
-88
-89
-90
-91</pre>
+207
+208
+209
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 207</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_preserving_globals">preserving_globals</span>
-  <span class="id identifier rubyid_values">values</span> <span class="op">=</span> <span class="lbracket">[</span><span class="gvar">$arg_config</span><span class="comma">,</span> <span class="gvar">$CFLAGS</span><span class="comma">,</span> <span class="gvar">$CPPFLAGS</span><span class="comma">,</span> <span class="gvar">$LDFLAGS</span><span class="comma">,</span> <span class="gvar">$LIBPATH</span><span class="comma">,</span> <span class="gvar">$libs</span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_map">map</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:dup</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_values">values</span> <span class="op">=</span> <span class="lbracket">[</span><span class="gvar">$arg_config</span><span class="comma">,</span> <span class="gvar">$INCFLAGS</span><span class="comma">,</span> <span class="gvar">$CFLAGS</span><span class="comma">,</span> <span class="gvar">$CPPFLAGS</span><span class="comma">,</span> <span class="gvar">$LDFLAGS</span><span class="comma">,</span> <span class="gvar">$DLDFLAGS</span><span class="comma">,</span> <span class="gvar">$LIBPATH</span><span class="comma">,</span> <span class="gvar">$libs</span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_map">map</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:dup</span><span class="rparen">)</span>
   <span class="kw">yield</span>
 <span class="kw">ensure</span>
-  <span class="gvar">$arg_config</span><span class="comma">,</span> <span class="gvar">$CFLAGS</span><span class="comma">,</span> <span class="gvar">$CPPFLAGS</span><span class="comma">,</span> <span class="gvar">$LDFLAGS</span><span class="comma">,</span> <span class="gvar">$LIBPATH</span><span class="comma">,</span> <span class="gvar">$libs</span> <span class="op">=</span> <span class="id identifier rubyid_values">values</span>
+  <span class="gvar">$arg_config</span><span class="comma">,</span> <span class="gvar">$INCFLAGS</span><span class="comma">,</span> <span class="gvar">$CFLAGS</span><span class="comma">,</span> <span class="gvar">$CPPFLAGS</span><span class="comma">,</span> <span class="gvar">$LDFLAGS</span><span class="comma">,</span> <span class="gvar">$DLDFLAGS</span><span class="comma">,</span> <span class="gvar">$LIBPATH</span><span class="comma">,</span> <span class="gvar">$libs</span> <span class="op">=</span> <span class="id identifier rubyid_values">values</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -1539,126 +1823,134 @@
       <pre class="lines">
 
 
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316
-317
-318
-319
-320
-321
-322
-323
-324
-325
-326
-327
-328</pre>
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 218</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 339</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_process_recipe">process_recipe</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_version">version</span><span class="comma">,</span> <span class="id identifier rubyid_static_p">static_p</span><span class="comma">,</span> <span class="id identifier rubyid_cross_p">cross_p</span><span class="rparen">)</span>
   <span class="id identifier rubyid_require">require</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rubygems</span><span class="tstring_end">'</span></span>
   <span class="id identifier rubyid_gem">gem</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">mini_portile2</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#REQUIRED_MINI_PORTILE_VERSION-constant" title="REQUIRED_MINI_PORTILE_VERSION (constant)">REQUIRED_MINI_PORTILE_VERSION</a></span></span>
   <span class="id identifier rubyid_require">require</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">mini_portile2</span><span class="tstring_end">'</span></span>
   <span class="id identifier rubyid_message">message</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Using mini_portile version </span><span class="embexpr_beg">#{</span><span class="const">MiniPortile</span><span class="op">::</span><span class="const">VERSION</span><span class="embexpr_end">}</span><span class="tstring_content">\n</span><span class="tstring_end">"</span></span>
+
+  <span class="kw">if</span> <span class="id identifier rubyid_name">name</span> <span class="op">!=</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">libxml2</span><span class="tstring_end">"</span></span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_name">name</span> <span class="op">!=</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">libxslt</span><span class="tstring_end">"</span></span>
+    <span class="const"><span class="object_link"><a href="#OTHER_LIBRARY_VERSIONS-constant" title="OTHER_LIBRARY_VERSIONS (constant)">OTHER_LIBRARY_VERSIONS</a></span></span><span class="lbracket">[</span><span class="id identifier rubyid_name">name</span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_version">version</span>
+  <span class="kw">end</span>
 
   <span class="const">MiniPortile</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_version">version</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_tap">tap</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_recipe">recipe</span><span class="op">|</span>
     <span class="id identifier rubyid_recipe">recipe</span><span class="period">.</span><span class="id identifier rubyid_target">target</span> <span class="op">=</span> <span class="const">File</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="#PACKAGE_ROOT_DIR-constant" title="PACKAGE_ROOT_DIR (constant)">PACKAGE_ROOT_DIR</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">ports</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
@@ -1786,30 +2078,30 @@
       <pre class="lines">
 
 
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127</pre>
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 228</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_sh_export_path">sh_export_path</span> <span class="id identifier rubyid_path">path</span>
   <span class="comment"># because libxslt 1.1.29 configure.in uses AC_PATH_TOOL which treats ":"
@@ -1876,12 +2168,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 113</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_solaris?">solaris?</span>
   <span class="const">RbConfig</span><span class="op">::</span><span class="const">CONFIG</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">target_os</span><span class="tstring_end">'</span></span><span class="rbracket">]</span> <span class="op">=~</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">solaris</span><span class="regexp_end">/</span></span>
@@ -1907,6 +2199,95 @@
       <pre class="lines">
 
 
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 280</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_try_link_iconv">try_link_iconv</span><span class="lparen">(</span><span class="id identifier rubyid_using">using</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_checking_for">checking_for</span><span class="lparen">(</span><span class="id identifier rubyid_using">using</span> <span class="op">?</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">iconv using </span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_using">using</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span> <span class="op">:</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">iconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="kw">do</span>
+    <span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">-liconv</span><span class="tstring_end">'</span></span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_any?">any?</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_opt">opt</span><span class="op">|</span>
+      <span class="id identifier rubyid_preserving_globals"><span class="object_link"><a href="#preserving_globals-instance_method" title="#preserving_globals (method)">preserving_globals</a></span></span> <span class="kw">do</span>
+        <span class="kw">yield</span> <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
+
+        <span class="id identifier rubyid_try_link">try_link</span><span class="lparen">(</span><span class="heredoc_beg">&lt;&lt;~'SRC'</span><span class="comma">,</span> <span class="id identifier rubyid_opt">opt</span><span class="rparen">)</span>
+<span class="tstring_content">          #include &lt;stdlib.h&gt;
+</span><span class="tstring_content">          #include &lt;iconv.h&gt;
+</span><span class="tstring_content">          int main(void)
+</span><span class="tstring_content">          {
+</span><span class="tstring_content">              iconv_t cd = iconv_open("", "");
+</span><span class="tstring_content">              iconv(cd, NULL, NULL, NULL, NULL);
+</span><span class="tstring_content">              return EXIT_SUCCESS;
+</span><span class="tstring_content">          }
+</span><span class="heredoc_end">        SRC
+</span>      <span class="kw">end</span>
+    <span class="kw">end</span>
+  <span class="kw">end</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="try_package_configuration-instance_method">
+  
+    #<strong>try_package_configuration</strong>(pc)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>wrapper around MakeMakefil#pkg_config and the PKGConfig gem</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
 159
 160
 161
@@ -1929,26 +2310,38 @@
 178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 147</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_try_link_iconv">try_link_iconv</span><span class="lparen">(</span><span class="id identifier rubyid_using">using</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
-  <span class="id identifier rubyid_checking_for">checking_for</span><span class="lparen">(</span><span class="id identifier rubyid_using">using</span> <span class="op">?</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">iconv using </span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_using">using</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span> <span class="op">:</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">iconv</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="kw">do</span>
-    <span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">-liconv</span><span class="tstring_end">'</span></span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_any?">any?</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_opt">opt</span><span class="op">|</span>
-      <span class="id identifier rubyid_preserving_globals"><span class="object_link"><a href="#preserving_globals-instance_method" title="#preserving_globals (method)">preserving_globals</a></span></span> <span class="kw">do</span>
-        <span class="kw">yield</span> <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
-
-        <span class="id identifier rubyid_try_link">try_link</span><span class="lparen">(</span><span class="heredoc_beg">&lt;&lt;~'SRC'</span><span class="comma">,</span> <span class="id identifier rubyid_opt">opt</span><span class="rparen">)</span>
-<span class="tstring_content">          #include &lt;stdlib.h&gt;
-</span><span class="tstring_content">          #include &lt;iconv.h&gt;
-</span><span class="tstring_content">          int main(void)
-</span><span class="tstring_content">          {
-</span><span class="tstring_content">              iconv_t cd = iconv_open("", "");
-</span><span class="tstring_content">              iconv(cd, NULL, NULL, NULL, NULL);
-</span><span class="tstring_content">              return EXIT_SUCCESS;
-</span><span class="tstring_content">          }
-</span><span class="heredoc_end">        SRC
-</span>      <span class="kw">end</span>
+<span class="kw">def</span> <span class="id identifier rubyid_try_package_configuration">try_package_configuration</span><span class="lparen">(</span><span class="id identifier rubyid_pc">pc</span><span class="rparen">)</span>
+  <span class="kw">if</span> <span class="op">!</span><span class="const">ENV</span><span class="period">.</span><span class="id identifier rubyid_key?">key?</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">NOKOGIRI_TEST_PKG_CONFIG_GEM</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
+    <span class="comment"># try MakeMakefile#pkg_config, which uses the system utility `pkg-config`.
+</span>    <span class="kw">return</span> <span class="kw">if</span> <span class="id identifier rubyid_checking_for">checking_for</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_pc">pc</span><span class="embexpr_end">}</span><span class="tstring_content"> using `pkg_config`</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#LOCAL_PACKAGE_RESPONSE-constant" title="LOCAL_PACKAGE_RESPONSE (constant)">LOCAL_PACKAGE_RESPONSE</a></span></span><span class="rparen">)</span> <span class="kw">do</span>
+      <span class="id identifier rubyid_pkg_config">pkg_config</span><span class="lparen">(</span><span class="id identifier rubyid_pc">pc</span><span class="rparen">)</span>
     <span class="kw">end</span>
+  <span class="kw">end</span>
+
+  <span class="comment"># `pkg-config` probably isn't installed, which appears to be the case for lots of freebsd systems.
+</span>  <span class="comment"># let's fall back to the pkg-config gem, which knows how to parse .pc files, and wrap it with the
+</span>  <span class="comment"># same logic as MakeMakefile#pkg_config
+</span>  <span class="kw">begin</span>
+    <span class="id identifier rubyid_require">require</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rubygems</span><span class="tstring_end">'</span></span>
+    <span class="id identifier rubyid_gem">gem</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pkg-config</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#REQUIRED_PKG_CONFIG_VERSION-constant" title="REQUIRED_PKG_CONFIG_VERSION (constant)">REQUIRED_PKG_CONFIG_VERSION</a></span></span>
+    <span class="id identifier rubyid_require">require</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pkg-config</span><span class="tstring_end">'</span></span>
+
+    <span class="id identifier rubyid_checking_for">checking_for</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_pc">pc</span><span class="embexpr_end">}</span><span class="tstring_content"> using pkg-config gem version </span><span class="embexpr_beg">#{</span><span class="const">PKGConfig</span><span class="op">::</span><span class="const">VERSION</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#LOCAL_PACKAGE_RESPONSE-constant" title="LOCAL_PACKAGE_RESPONSE (constant)">LOCAL_PACKAGE_RESPONSE</a></span></span><span class="rparen">)</span> <span class="kw">do</span>
+      <span class="kw">if</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_have_package">have_package</span><span class="lparen">(</span><span class="id identifier rubyid_pc">pc</span><span class="rparen">)</span>
+        <span class="id identifier rubyid_cflags">cflags</span>  <span class="op">=</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_cflags">cflags</span><span class="lparen">(</span><span class="id identifier rubyid_pc">pc</span><span class="rparen">)</span>
+        <span class="id identifier rubyid_ldflags">ldflags</span> <span class="op">=</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_libs_only_L">libs_only_L</span><span class="lparen">(</span><span class="id identifier rubyid_pc">pc</span><span class="rparen">)</span>
+        <span class="id identifier rubyid_libs">libs</span>    <span class="op">=</span> <span class="const">PKGConfig</span><span class="period">.</span><span class="id identifier rubyid_libs_only_l">libs_only_l</span><span class="lparen">(</span><span class="id identifier rubyid_pc">pc</span><span class="rparen">)</span>
+
+        <span class="const">Logging</span><span class="op">::</span><span class="id identifier rubyid_message">message</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">pkg-config gem found package configuration for %s\n</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_pc">pc</span>
+        <span class="const">Logging</span><span class="op">::</span><span class="id identifier rubyid_message">message</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">cflags: %s\nldflags: %s\nlibs: %s\n\n</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_cflags">cflags</span><span class="comma">,</span> <span class="id identifier rubyid_ldflags">ldflags</span><span class="comma">,</span> <span class="id identifier rubyid_libs">libs</span>
+
+        <span class="lbracket">[</span><span class="id identifier rubyid_cflags">cflags</span><span class="comma">,</span> <span class="id identifier rubyid_ldflags">ldflags</span><span class="comma">,</span> <span class="id identifier rubyid_libs">libs</span><span class="rbracket">]</span>
+      <span class="kw">end</span>
+    <span class="kw">end</span>
+  <span class="kw">rescue</span> <span class="const">LoadError</span>
+    <span class="id identifier rubyid_message">message</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Please install either the `pkg-config` utility or the `pkg-config` rubygem.\n</span><span class="tstring_end">"</span></span>
   <span class="kw">end</span>
 <span class="kw">end</span></pre>
     </td>
@@ -1995,17 +2388,17 @@
       <pre class="lines">
 
 
-136
-137
-138
-139</pre>
+257
+258
+259
+260</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 257</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_using_system_libraries?">using_system_libraries?</span>
   <span class="comment"># NOTE: TruffleRuby uses this env var as it does not support using static libraries yet.
-</span>  <span class="id identifier rubyid_arg_config">arg_config</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">--use-system-libraries</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="op">!</span><span class="op">!</span><span class="const">ENV</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">NOKOGIRI_USE_SYSTEM_LIBRARIES</span><span class="tstring_end">'</span></span><span class="rbracket">]</span><span class="rparen">)</span>
+</span>  <span class="id identifier rubyid_arg_config">arg_config</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">--use-system-libraries</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="const">ENV</span><span class="period">.</span><span class="id identifier rubyid_key?">key?</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">NOKOGIRI_USE_SYSTEM_LIBRARIES</span><span class="tstring_end">"</span></span><span class="rparen">)</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -2053,12 +2446,12 @@
       <pre class="lines">
 
 
-24
-25
-26</pre>
+109
+110
+111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/extconf.rb', line 109</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_windows?">windows?</span>
   <span class="const">RbConfig</span><span class="op">::</span><span class="const">CONFIG</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">target_os</span><span class="tstring_end">'</span></span><span class="rbracket">]</span> <span class="op">=~</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">mingw32|mswin</span><span class="regexp_end">/</span></span>
@@ -2073,9 +2466,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 26 14:46:18 2020 by
+  Generated on Tue Dec 29 11:51:37 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.25 (ruby-2.7.2).
+  0.9.26 (ruby-2.7.2).
 </div>
 
     </div>

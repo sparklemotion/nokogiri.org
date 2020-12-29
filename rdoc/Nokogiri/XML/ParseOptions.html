@@ -7,7 +7,7 @@
 <title>
   Class: Nokogiri::XML::ParseOptions
   
-    — Documentation by YARD 0.9.25
+    — Documentation by YARD 0.9.26
   
 </title>
 
@@ -543,6 +543,22 @@
         </dt>
         <dd><pre class="code"><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOERROR-constant" title="Nokogiri::XML::ParseOptions::NOERROR (constant)">NOERROR</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOWARNING-constant" title="Nokogiri::XML::ParseOptions::NOWARNING (constant)">NOWARNING</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span></pre></dd>
       
+        <dt id="DEFAULT_SCHEMA-constant" class="">DEFAULT_SCHEMA =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>the default options used for parsing XML schemas</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span></pre></dd>
+      
     </dl>
   
 
@@ -594,6 +610,28 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline"></div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -721,12 +759,12 @@
       <pre class="lines">
 
 
-78
-79
-80</pre>
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 80</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
   <span class="ivar">@options</span> <span class="op">=</span> <span class="id identifier rubyid_options">options</span>
@@ -775,12 +813,12 @@
       <pre class="lines">
 
 
-77
-78
-79</pre>
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 79</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_options">options</span>
   <span class="ivar">@options</span>
@@ -798,9 +836,9 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="inspect-instance_method">
+  <h3 class="signature first" id="==-instance_method">
   
-    #<strong>inspect</strong>  ⇒ <tt>Object</tt> 
+    #<strong>==</strong>(other)  ⇒ <tt>Object</tt> 
   
 
   
@@ -815,14 +853,45 @@
 
 112
 113
-114
-115
-116
-117
-118</pre>
+114</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 112</span>
+
+<span class="kw">def</span> <span class="op">==</span><span class="lparen">(</span><span class="id identifier rubyid_other">other</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_other">other</span><span class="period">.</span><span class="id identifier rubyid_to_i">to_i</span> <span class="op">==</span> <span class="id identifier rubyid_to_i">to_i</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120
+121
+122
+123
+124</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 118</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inspect">inspect</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span>
@@ -852,13 +921,13 @@
       <pre class="lines">
 
 
-101
-102
 103
-104</pre>
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 103</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_strict">strict</span>
   <span class="ivar">@options</span> <span class="op">&amp;=</span> <span class="op">~</span><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span>
@@ -908,12 +977,12 @@
       <pre class="lines">
 
 
-106
-107
-108</pre>
+108
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 108</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_strict?">strict?</span>
   <span class="ivar">@options</span> <span class="op">&amp;</span> <span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
@@ -928,9 +997,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 26 14:46:21 2020 by
+  Generated on Tue Dec 29 11:51:40 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.25 (ruby-2.7.2).
+  0.9.26 (ruby-2.7.2).
 </div>
 
     </div>

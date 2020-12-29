@@ -7,7 +7,7 @@
 <title>
   Module: Nokogiri::XML
   
-    — Documentation by YARD 0.9.25
+    — Documentation by YARD 0.9.26
   
 </title>
 
@@ -256,7 +256,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#RelaxNG-class_method" title="RelaxNG (class method)">.<strong>RelaxNG</strong>(string_or_io)  ⇒ Object </a>
+      <a href="#RelaxNG-class_method" title="RelaxNG (class method)">.<strong>RelaxNG</strong>(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)  ⇒ Object </a>
     
 
     
@@ -280,7 +280,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#Schema-class_method" title="Schema (class method)">.<strong>Schema</strong>(string_or_io)  ⇒ Object </a>
+      <a href="#Schema-class_method" title="Schema (class method)">.<strong>Schema</strong>(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)  ⇒ Object </a>
     
 
     
@@ -471,7 +471,7 @@
       <div class="method_details ">
   <h3 class="signature " id="RelaxNG-class_method">
   
-    .<strong>RelaxNG</strong>(string_or_io)  ⇒ <tt>Object</tt> 
+    .<strong>RelaxNG</strong>(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)  ⇒ <tt>Object</tt> 
   
 
   
@@ -503,8 +503,8 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/relax_ng.rb', line 8</span>
 
-<span class="kw">def</span> <span class="const"><span class="object_link"><a href="XML/RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span></span> <span class="id identifier rubyid_string_or_io">string_or_io</span>
-  <span class="const"><span class="object_link"><a href="XML/RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="rparen">)</span>
+<span class="kw">def</span> <span class="const"><span class="object_link"><a href="XML/RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html#DEFAULT_SCHEMA-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_SCHEMA (constant)">DEFAULT_SCHEMA</a></span></span><span class="rparen">)</span>
+  <span class="const"><span class="object_link"><a href="XML/RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -514,7 +514,7 @@
       <div class="method_details ">
   <h3 class="signature " id="Schema-class_method">
   
-    .<strong>Schema</strong>(string_or_io)  ⇒ <tt>Object</tt> 
+    .<strong>Schema</strong>(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)  ⇒ <tt>Object</tt> 
   
 
   
@@ -546,8 +546,8 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/schema.rb', line 8</span>
 
-<span class="kw">def</span> <span class="const"><span class="object_link"><a href="XML/Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></span> <span class="id identifier rubyid_string_or_io">string_or_io</span>
-  <span class="const"><span class="object_link"><a href="XML/Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="XML/Schema.html#new-class_method" title="Nokogiri::XML::Schema.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="rparen">)</span>
+<span class="kw">def</span> <span class="const"><span class="object_link"><a href="XML/Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html#DEFAULT_SCHEMA-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_SCHEMA (constant)">DEFAULT_SCHEMA</a></span></span><span class="rparen">)</span>
+  <span class="const"><span class="object_link"><a href="XML/Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="XML/Schema.html#new-class_method" title="Nokogiri::XML::Schema.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -559,9 +559,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 26 14:46:18 2020 by
+  Generated on Tue Dec 29 11:51:38 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.25 (ruby-2.7.2).
+  0.9.26 (ruby-2.7.2).
 </div>
 
     </div>
