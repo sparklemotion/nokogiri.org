@@ -159,7 +159,7 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">1.11.0.rc4</span><span class="tstring_end">"</span></span></pre></dd>
+        <dd><pre class="code"><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">1.11.0</span><span class="tstring_end">"</span></span></pre></dd>
       
     </dl>
   
@@ -460,18 +460,18 @@
       <pre class="lines">
 
 
-101
-102
-103
-104
-105
-106
-107
-108
-109</pre>
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 118</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_install_default_aliases">install_default_aliases</span>
   <span class="comment"># Make sure to support some popular encoding aliases not known by
@@ -571,16 +571,16 @@
       <pre class="lines">
 
 
-74
-75
-76
-77
-78
-79
-80</pre>
+91
+92
+93
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 91</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_make">make</span> <span class="id identifier rubyid_input">input</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_opts">opts</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_blk">blk</span>
   <span class="kw">if</span> <span class="id identifier rubyid_input">input</span>
@@ -622,24 +622,24 @@
       <pre class="lines">
 
 
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70</pre>
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 73</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="kw">nil</span>
   <span class="kw">if</span> <span class="id identifier rubyid_string">string</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:read</span><span class="rparen">)</span> <span class="op">||</span>
@@ -700,12 +700,12 @@
       <pre class="lines">
 
 
-97
-98
-99</pre>
+114
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 114</span>
 
 <span class="kw">def</span> <span class="const">Slop</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="const"><span class="object_link"><a href="" title="Nokogiri (module)">Nokogiri</a></span></span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_slop!">slop!</span>
@@ -871,7 +871,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 29 11:51:37 2020 by
+  Generated on Sat Jan  2 13:26:20 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
