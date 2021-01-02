@@ -6,7 +6,7 @@ repo_url: https://github.com/sparklemotion/nokogiri
 edit_uri: ""
 site_description: "The Official Tutorial Archive™ of Nokogiri®"
 site_author: "Mike Dalessio"
-copyright: "Copyright Ⓒ 2009-2019 Mike Dalessio"
+copyright: "Copyright Ⓒ 2009-2020 Mike Dalessio"
 
 docs_dir: staging
 use_directory_urls: false
