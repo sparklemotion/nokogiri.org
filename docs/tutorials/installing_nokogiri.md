@@ -213,6 +213,19 @@ Do not attempt Bundler installation using Bundler versions before v1.8.3 (see [b
 
 ### Installing Third-Party Distributions of Nokogiri
 
+#### Debian
+
+See https://packages.debian.org/sid/ruby-nokogiri
+
+``` sh
+sudo apt-get install ruby-nokogiri
+```
+
+#### openSUSE/SLE
+
+See https://download.opensuse.org/repositories/devel:/languages:/ruby:/extensions/
+
+
 #### Fedora, Red Hat, and CentOS
 
 You may install the appropriate [epel-release][] and get the Nokogiri package from [EPEL][] using:
