@@ -12,7 +12,7 @@ require_relative "tasks/nokogiri_tasks"
 namespace :dev do
   desc "Set up system dependencies to develop this site."
   task :setup do
-    sh "pip3 install --user mkdocs pygments mkdocs-material pymdown-extensions"
+    sh "pip3 install --upgrade --user mkdocs pygments mkdocs-material pymdown-extensions"
   end
 end
 
