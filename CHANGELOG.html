@@ -463,18 +463,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#versioning-policy" class="md-nav__link">
-    Versioning Policy
+  <a href="#v1110-2021-01-03" class="md-nav__link">
+    v1.11.0 / 2021-01-03
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unreleased-will-be-v1110" class="md-nav__link">
-    Unreleased (will be v1.11.0)
-  </a>
-  
-    <nav class="md-nav" aria-label="Unreleased (will be v1.11.0)">
+    <nav class="md-nav" aria-label="v1.11.0 / 2021-01-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2791,18 +2784,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#versioning-policy" class="md-nav__link">
-    Versioning Policy
+  <a href="#v1110-2021-01-03" class="md-nav__link">
+    v1.11.0 / 2021-01-03
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unreleased-will-be-v1110" class="md-nav__link">
-    Unreleased (will be v1.11.0)
-  </a>
-  
-    <nav class="md-nav" aria-label="Unreleased (will be v1.11.0)">
+    <nav class="md-nav" aria-label="v1.11.0 / 2021-01-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5018,35 +5004,9 @@
                 
                 
                 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
-<h2 id="versioning-policy">Versioning Policy<a class="headerlink" href="#versioning-policy" title="Permanent link">&para;</a></h2>
-<p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a> (since 2017 or so). <a href="https://dependabot.com/compatibility-score/?dependency-name=nokogiri&amp;package-manager=bundler"><img alt="Dependabot's SemVer compatibility score for Nokogiri" src="https://api.dependabot.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;version-scheme=semver" /></a></p>
-<p>We bump <code>Major.Minor.Patch</code> versions following this guidance:</p>
-<p><code>Major</code>: (we've never done this)</p>
-<ul>
-<li>Significant backwards-incompatible changes to the public API that would require rewriting existing application code.</li>
-<li>Some examples of backwards-incompatible changes we might someday consider for a Major release are at <a href="ROADMAP.html"><code>ROADMAP.md</code></a>.</li>
-</ul>
-<p><code>Minor</code>:</p>
-<ul>
-<li>Features and bugfixes.</li>
-<li>Updating packaged libraries for non-security-related reasons.</li>
-<li>Dropping support for EOLed Ruby versions. <a href="https://github.com/sparklemotion/nokogiri/issues/1568">Some folks find this objectionable</a>, but <a href="https://semver.org/#what-should-i-do-if-i-update-my-own-dependencies-without-changing-the-public-api">SemVer says this is OK if the public API hasn't changed</a>.</li>
-<li>Backwards-incompatible changes to internal or private methods and constants. These are detailed in the "Changes" section of each changelog entry.</li>
-</ul>
-<p><code>Patch</code>:</p>
-<ul>
-<li>Bugfixes.</li>
-<li>Security updates.</li>
-<li>Updating packaged libraries for security-related reasons.</li>
-</ul>
+<p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a>, please see the <a href="README.md">README.md</a> for details.</p>
 <hr />
-<h2 id="unreleased-will-be-v1110">Unreleased (will be v1.11.0)<a class="headerlink" href="#unreleased-will-be-v1110" title="Permanent link">&para;</a></h2>
-<p>Latest is <code>v1.11.0.rc4</code> (2020-12-29). To try out release candidates, use <code>gem install --prerelease</code> or <code>gem install nokogiri -v1.11.0.rc4</code></p>
-<p>If you're using bundler, try updating your Gemfile with:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">gem</span> <span class="s2">&quot;nokogiri&quot;</span><span class="p">,</span> <span class="s2">&quot;~&gt; 1.11.0.rc4&quot;</span>
-</code></pre></div>
-
-
+<h2 id="v1110-2021-01-03">v1.11.0 / 2021-01-03<a class="headerlink" href="#v1110-2021-01-03" title="Permanent link">&para;</a></h2>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <h4 id="faster-more-reliable-installation-native-gems-for-linux-and-osxdarwin">Faster, more reliable installation: Native Gems for Linux and OSX/Darwin<a class="headerlink" href="#faster-more-reliable-installation-native-gems-for-linux-and-osxdarwin" title="Permanent link">&para;</a></h4>
 <p>"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know are the biggest headaches for Nokogiri users. </p>
