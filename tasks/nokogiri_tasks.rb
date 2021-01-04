@@ -32,6 +32,7 @@ def create_nokogiri_tasks(source_dir, dest_dir)
       else
         FileUtils.cp source_path, dest_path, verbose: true
       end
+      modify_readme_links(dest_path)
     end
   end
 
@@ -86,6 +87,15 @@ def nokogiri_add_ga_to_rdocs
     doc = Nokogiri::HTML.parse(html)
     doc.at_css("head").add_child(snippet)
     File.open(file_path, "w") { |f| f.write doc.to_html }
+  end
+end
+
+def modify_readme_links(dest_path)
+  contents = File.read(dest_path)
+  modified_contents = contents.gsub(/\]\(README.md\)/, "](index.md)")
+  if contents != modified_contents
+    puts "→ repointing a README.md link in #{dest_path}"
+    File.open(dest_path, "w") { |f| f.write modified_contents }
   end
 end
 
