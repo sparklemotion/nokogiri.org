@@ -629,6 +629,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cannot-install-racc" class="md-nav__link">
+    Cannot install racc
+  </a>
+  
+    <nav class="md-nav" aria-label="Cannot install racc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symptoms_4" class="md-nav__link">
+    Symptoms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-1-compiler-toolchain" class="md-nav__link">
+    Solution 1 - Compiler toolchain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-2-avoid-installing-racc" class="md-nav__link">
+    Solution 2 - Avoid installing Racc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1332,6 +1366,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cannot-install-racc" class="md-nav__link">
+    Cannot install racc
+  </a>
+  
+    <nav class="md-nav" aria-label="Cannot install racc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symptoms_4" class="md-nav__link">
+    Symptoms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-1-compiler-toolchain" class="md-nav__link">
+    Solution 1 - Compiler toolchain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-2-avoid-installing-racc" class="md-nav__link">
+    Solution 2 - Avoid installing Racc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1724,6 +1792,65 @@ Could not create Makefile due to some reason, probably lack of necessary librari
 <li>If you have multiple versions of Xcode installed, make sure you use the right <code>xcode-select</code>.</li>
 <li>Try <a href="#installing-using-standard-system-libraries">Installing Using Standard System Libraries</a>.</li>
 </ul>
+<h3 id="cannot-install-racc">Cannot install <code>racc</code><a class="headerlink" href="#cannot-install-racc" title="Permanent link">&para;</a></h3>
+<p>As of v1.11.0, Nokogiri is declaring an explicit dependency on <code>racc ~&gt; 1.4</code>, which itself is a C extension that users may have trouble installing.</p>
+<h4 id="symptoms_4">Symptoms<a class="headerlink" href="#symptoms_4" title="Permanent link">&para;</a></h4>
+<p>You may see an error message like this:</p>
+<div class="codehilite"><pre><span></span><code>Fetching racc <span class="m">1</span>.5.2
+Installing racc <span class="m">1</span>.5.2 with native extensions
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/Users/myuser2/.gem/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/opt/local/bin/ruby2.7 -I /opt/local/lib/ruby2.7/2.7.0 -r
+./siteconf20210104-30183-axgzet.rb extconf.rb
+checking <span class="k">for</span> rb_ary_subseq<span class="o">()</span>... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file <span class="k">for</span> more details.  You may
+need configuration options.
+
+Provided configuration options:
+       --with-opt-dir
+       --with-opt-include
+       --without-opt-include<span class="o">=</span><span class="si">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="si">}</span>/include
+       --with-opt-lib
+       --without-opt-lib<span class="o">=</span><span class="si">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="si">}</span>/lib
+       --with-make-prog
+       --without-make-prog
+       --srcdir<span class="o">=</span>.
+       --curdir
+       --ruby<span class="o">=</span>/opt/local/bin/<span class="k">$(</span>RUBY_BASE_NAME<span class="k">)</span><span class="m">2</span>.7
+/opt/local/lib/ruby2.7/2.7.0/mkmf.rb:471:in <span class="sb">`</span>try_do<span class="s1">&#39;: The compiler failed to</span>
+<span class="s1">generate an executable file. (RuntimeError)</span>
+<span class="s1">You have to install development tools first.</span>
+<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:564:in `try_link0&#39;</span>
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:582:in <span class="sb">`</span>try_link<span class="s1">&#39;</span>
+<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:794:in `try_func&#39;</span>
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1083:in <span class="sb">`</span>block in have_func<span class="s1">&#39;</span>
+<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:971:in `block in checking_for&#39;</span>
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in <span class="sb">`</span>block <span class="o">(</span><span class="m">2</span> levels<span class="o">)</span> in postpone<span class="s1">&#39;</span>
+<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open&#39;</span>
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in <span class="sb">`</span>block in postpone<span class="s1">&#39;</span>
+<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open&#39;</span>
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:357:in <span class="sb">`</span>postpone<span class="s1">&#39;</span>
+<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:970:in `checking_for&#39;</span>
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1082:in <span class="sb">`</span>have_func<span class="s1">&#39;</span>
+<span class="s1">       from extconf.rb:6:in `&lt;main&gt;&#39;</span>
+
+To see why this extension failed to compile, please check the mkmf.log which can
+be found here:
+
+/Users/myuser2/.gem/ruby/2.7.0/extensions/arm64-darwin-20/2.7.0/racc-1.5.2/mkmf.log
+
+extconf failed, <span class="nb">exit</span> code <span class="m">1</span>
+</code></pre></div>
+
+
+<h4 id="solution-1-compiler-toolchain">Solution 1 - Compiler toolchain<a class="headerlink" href="#solution-1-compiler-toolchain" title="Permanent link">&para;</a></h4>
+<p>Racc needs the same compiler toolchain to be present as any Gem with a C extension. See <a href="#appendix-a-the-compiler-toolchain">Appendix A: The Compiler Toolchain</a>.</p>
+<h4 id="solution-2-avoid-installing-racc">Solution 2 - Avoid installing Racc<a class="headerlink" href="#solution-2-avoid-installing-racc" title="Permanent link">&para;</a></h4>
+<p>Ruby 3.0 comes with Racc 1.5.x as a "builtin gem", so you could update to Ruby 3!</p>
+<p>Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like <code>gem "racc", "~&gt; 1.4.0"</code> to prevent bundler from trying to upgrade.</p>
 <h2 id="appendix-a-the-compiler-toolchain">Appendix A: The Compiler Toolchain<a class="headerlink" href="#appendix-a-the-compiler-toolchain" title="Permanent link">&para;</a></h2>
 <p>A good way to tell if you've got your basic Ruby C extension compiler toolchain installed correctly is to try installing the <code>bcrypt</code> gem which has a smaller, self-contained C extension. If you can <code>gem install bcrypt</code>, you're all set!</p>
 <p>Reminder: if you're installing a native gem, you don't need to do this.</p>

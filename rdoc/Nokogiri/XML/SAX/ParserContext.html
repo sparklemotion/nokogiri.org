@@ -691,8 +691,6 @@ parse_memory(VALUE klass, VALUE data)
       <pre class="lines">
 
 
-190
-191
 192
 193
 194
@@ -703,10 +701,12 @@ parse_memory(VALUE klass, VALUE data)
 199
 200
 201
-202</pre>
+202
+203
+204</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 190</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 192</span>
 
 static VALUE column(VALUE self)
 {
@@ -756,8 +756,6 @@ static VALUE column(VALUE self)
       <pre class="lines">
 
 
-171
-172
 173
 174
 175
@@ -768,10 +766,12 @@ static VALUE column(VALUE self)
 180
 181
 182
-183</pre>
+183
+184
+185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 171</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 173</span>
 
 static VALUE line(VALUE self)
 {
@@ -843,7 +843,9 @@ static VALUE line(VALUE self)
 123
 124
 125
-126</pre>
+126
+127
+128</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 104</span>
@@ -866,6 +868,8 @@ parse_with(VALUE self, VALUE sax_handler)
 
     ctxt-&gt;sax = sax;
     ctxt-&gt;userData = (void *)NOKOGIRI_SAX_TUPLE_NEW(ctxt, sax_handler);
+
+    xmlSetStructuredErrorFunc(NULL, NULL);
 
     rb_ensure(parse_doc, (VALUE)ctxt, parse_doc_finalize, (VALUE)ctxt);
 
@@ -906,8 +910,6 @@ parse_with(VALUE self, VALUE sax_handler)
       <pre class="lines">
 
 
-231
-232
 233
 234
 235
@@ -915,10 +917,12 @@ parse_with(VALUE self, VALUE sax_handler)
 237
 238
 239
-240</pre>
+240
+241
+242</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 231</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 233</span>
 
 static VALUE get_recovery(VALUE self)
 {
@@ -965,8 +969,6 @@ static VALUE get_recovery(VALUE self)
       <pre class="lines">
 
 
-211
-212
 213
 214
 215
@@ -976,10 +978,12 @@ static VALUE get_recovery(VALUE self)
 219
 220
 221
-222</pre>
+222
+223
+224</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 211</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 213</span>
 
 static VALUE set_recovery(VALUE self, VALUE value)
 {
@@ -1028,8 +1032,6 @@ static VALUE set_recovery(VALUE self, VALUE value)
       <pre class="lines">
 
 
-155
-156
 157
 158
 159
@@ -1037,10 +1039,12 @@ static VALUE set_recovery(VALUE self, VALUE value)
 161
 162
 163
-164</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 155</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 157</span>
 
 static VALUE get_replace_entities(VALUE self)
 {
@@ -1087,8 +1091,6 @@ static VALUE get_replace_entities(VALUE self)
       <pre class="lines">
 
 
-135
-136
 137
 138
 139
@@ -1098,10 +1100,12 @@ static VALUE get_replace_entities(VALUE self)
 143
 144
 145
-146</pre>
+146
+147
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 135</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 137</span>
 
 static VALUE set_replace_entities(VALUE self, VALUE value)
 {
@@ -1125,7 +1129,7 @@ static VALUE set_replace_entities(VALUE self, VALUE value)
 </div>
 
       <div id="footer">
-  Generated on Sun Jan  3 23:16:07 2021 by
+  Generated on Wed Jan  6 00:33:16 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
