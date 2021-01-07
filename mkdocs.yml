@@ -19,8 +19,17 @@ theme:
     code: "Menlo"
   logo: "images/nokogiri-serif-white.svg"
   favicon: "images/nokogiri-serif-black.png"
-  feature:
-    tabs: true
+  features: # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#configuration
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - toc.integrate
+  palette:
+    primary: black
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
 
 extra_css:
   - "stylesheets/tidelift.css"
@@ -31,6 +40,7 @@ markdown_extensions:
       "guess_lang": false
   - "toc":
       "permalink": true
+      "toc_depth": 3
   - "footnotes" # https://python-markdown.github.io/extensions/footnotes/
   - "pymdownx.magiclink"
 
