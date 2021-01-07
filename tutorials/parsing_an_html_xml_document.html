@@ -694,10 +694,9 @@
                 <h1 id="parsing-an-html-xml-document">Parsing an HTML / XML Document<a class="headerlink" href="#parsing-an-html-xml-document" title="Permanent link">&para;</a></h1>
 <h2 id="from-a-string">From a String<a class="headerlink" href="#from-a-string" title="Permanent link">&para;</a></h2>
 <p>We've tried to make this easy on you. Really! We're here to make your life easier.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">html_doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Mr. Belvedere Fan Club&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">html_doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Mr. Belvedere Fan Club&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="p">)</span>
 <span class="n">xml_doc</span>  <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="s2">&quot;&lt;root&gt;&lt;aliens&gt;&lt;alien&gt;&lt;name&gt;Alf&lt;/name&gt;&lt;/alien&gt;&lt;/aliens&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>The variables <code>html_doc</code> and <code>xml_doc</code> are Nokogiri documents, which
 have all kinds of interesting properties and methods that you <a href="https://nokogiri.org/rdoc/Nokogiri/XML/Document">can
@@ -705,18 +704,16 @@ read about here</a>. We'll cover the interesting bits in other
 chapters.</p>
 <h2 id="from-a-file">From a File<a class="headerlink" href="#from-a-file" title="Permanent link">&para;</a></h2>
 <p>Note that you don't need to read the file into a string variable. Nokogiri will do this for you.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div>
-
 
 <p>Clever Nokogiri! With the time you just saved, approach enlightenment by meditating on <a href="http://twitter.com/rjw1/status/2741916767">this koan</a>.</p>
 <h2 id="from-the-internets">From the Internets<a class="headerlink" href="#from-the-internets" title="Permanent link">&para;</a></h2>
 <p>I understand that there may be some HTML documents available on the
 World Wide Web.</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;http://www.threescompany.com/&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 
 <h2 id="parse-options">Parse Options<a class="headerlink" href="#parse-options" title="Permanent link">&para;</a></h2>
 <p>Nokogiri offers quite a few options that affect how a document is
@@ -734,32 +731,28 @@ parsed; you can read about them in the <a href="https://nokogiri.org/rdoc/Nokogi
 <li><code>HUGE</code> - use to skip hardcoded limits around document size or DOM depth; comes with a performance penalty</li>
 </ul>
 <p>You <em>could</em> use them by handcrafting an artisanal bitmap (not recommended):</p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">::</span><span class="no">STRICT</span> <span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">::</span><span class="no">NOBLANKS</span>
 <span class="k">end</span>
 </code></pre></div>
 
-
 <p>But it's more idiomatic to use the chainable shortcuts on the config object instead:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">strict</span><span class="o">.</span><span class="n">noblanks</span>
 <span class="k">end</span>
 </code></pre></div>
 
-
 <p>Notably, if you want to turn <em>off</em> an option that's set by default, you can prefix a "no" to the config shortcut:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">norecover</span>
 <span class="k">end</span>
 </code></pre></div>
 
-
 <p>Leading to the perhaps-surprising (but logical!) <code>nononet</code> to turn networking back on:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">nononet</span>
 <span class="k">end</span>
 </code></pre></div>
-
 
 <h2 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h2>
 <p>Strings are always stored as UTF-8 internally.  Methods that return
@@ -777,7 +770,7 @@ accuracy is not possible. libxml2 does its best, but it can't be right
 <p>If you want Nokogiri to handle the document encoding properly, your
 best bet is to explicitly set the encoding.  Here is an example of
 explicitly setting the encoding to EUC-JP on the parser:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;foo&gt;&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;foo&gt;&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
 </code></pre></div>
                 
               
@@ -859,7 +852,7 @@ explicitly setting the encoding to EUC-JP on the parser:</p>
       <script>
         app = initialize({
           base: "..",
-          features: ['navigation.tabs', 'navigation.tabs.sticky', 'toc.integrate'],
+          features: ['navigation.tabs', 'toc.integrate'],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)

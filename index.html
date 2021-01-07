@@ -944,26 +944,24 @@
 </ul>
 <p>To determine whether your system supports one of these gems, look at the output of <code>bundle platform</code> or <code>ruby -e 'puts Gem::Platform.local.to_s'</code>.</p>
 <p>If you're on a supported platform, either <code>gem install</code> or <code>bundle install</code> should install a native gem without any additional action on your part. This installation should only take a few seconds, and your output should look something like:</p>
-<div class="codehilite"><pre><span></span><code>$ gem install nokogiri
+<div class="highlight"><pre><span></span><code>$ gem install nokogiri
 Fetching nokogiri-1.11.0-x86_64-linux.gem
 Successfully installed nokogiri-1.11.0-x86_64-linux
 <span class="m">1</span> gem installed
 </code></pre></div>
 
-
 <h3 id="other-installation-options">Other Installation Options<a class="headerlink" href="#other-installation-options" title="Permanent link">&para;</a></h3>
 <p>Because Nokogiri is a C extension, it requires that you have a C compiler toolchain, Ruby development header files, and some system dependencies installed.</p>
 <p>The following may work for you if you have an appropriately-configured system:</p>
-<div class="codehilite"><pre><span></span><code>gem install nokogiri
+<div class="highlight"><pre><span></span><code>gem install nokogiri
 </code></pre></div>
-
 
 <p>If you have any issues, please visit <a href="https://nokogiri.org/tutorials/installing_nokogiri.html">Installing Nokogiri</a> for more complete instructions and troubleshooting.</p>
 <h2 id="how-to-use-nokogiri">How To Use Nokogiri<a class="headerlink" href="#how-to-use-nokogiri" title="Permanent link">&para;</a></h2>
 <p>Nokogiri is a large library, and so it's challenging to briefly summarize it. We've tried to provide long, real-world examples at <a href="https://nokogiri.org/tutorials/toc.html">Tutorials</a>.</p>
 <h3 id="parsing-and-querying">Parsing and Querying<a class="headerlink" href="#parsing-and-querying" title="Permanent link">&para;</a></h3>
 <p>Here is example usage for parsing and querying a document:</p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#! /usr/bin/env ruby</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /usr/bin/env ruby</span>
 
 <span class="nb">require</span> <span class="s1">&#39;nokogiri&#39;</span>
 <span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
@@ -987,7 +985,6 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 <span class="k">end</span>
 </code></pre></div>
 
-
 <h3 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h3>
 <p>Strings are always stored as UTF-8 internally.  Methods that return
 text values will always return UTF-8 encoded strings.  Methods that
@@ -1003,9 +1000,8 @@ possible. <code>libxml2</code> does its best, but it can't be right all the time
 <p>If you want Nokogiri to handle the document encoding properly, your
 best bet is to explicitly set the encoding.  Here is an example of
 explicitly setting the encoding to EUC-JP on the parser:</p>
-<div class="codehilite"><pre><span></span><code>  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;/foo&gt;&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;/foo&gt;&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <h2 id="technical-overview">Technical Overview<a class="headerlink" href="#technical-overview" title="Permanent link">&para;</a></h2>
 <h3 id="guiding-principles_1">Guiding Principles<a class="headerlink" href="#guiding-principles_1" title="Permanent link">&para;</a></h3>
@@ -1025,10 +1021,9 @@ explicitly setting the encoding to EUC-JP on the parser:</p>
 <p>These dependencies are provided by pre-compiled jar files packaged in the <code>java</code> platform gem.</p>
 <p>See <a href="LICENSE-DEPENDENCIES.html"><code>LICENSE-DEPENDENCIES.md</code></a> for more information on which dependencies are provided in which native and source gems.</p>
 <h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>bundle install
+<div class="highlight"><pre><span></span><code>bundle install
 bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 </code></pre></div>
-
 
 <h2 id="code-of-conduct">Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permanent link">&para;</a></h2>
 <p>We've adopted the Contributor Covenant code of conduct, which you can read in full in <a href="CODE_OF_CONDUCT.html"><code>CODE_OF_CONDUCT.md</code></a>.</p>
@@ -1116,7 +1111,7 @@ bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
       <script>
         app = initialize({
           base: ".",
-          features: ['navigation.tabs', 'navigation.tabs.sticky', 'toc.integrate'],
+          features: ['navigation.tabs', 'toc.integrate'],
           search: Object.assign({
             worker: "assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)

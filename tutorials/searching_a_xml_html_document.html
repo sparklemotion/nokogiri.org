@@ -694,7 +694,7 @@
                 <h1 id="searching-an-html-xml-document">Searching an HTML / XML Document<a class="headerlink" href="#searching-an-html-xml-document" title="Permanent link">&para;</a></h1>
 <h2 id="basic-searching">Basic Searching<a class="headerlink" href="#basic-searching" title="Permanent link">&para;</a></h2>
 <p>Let's suppose you have the following document:</p>
-<div class="codehilite"><pre><span></span><code>[shows.xml]
+<div class="highlight"><pre><span></span><code>[shows.xml]
 <span class="nt">&lt;root&gt;</span>
   <span class="nt">&lt;sitcoms&gt;</span>
     <span class="nt">&lt;sitcom&gt;</span>
@@ -727,10 +727,9 @@
 <span class="nt">&lt;/root&gt;</span>
 </code></pre></div>
 
-
 <p>Let's further suppose that you want a list of all the characters in
 all the shows in this document.</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;shows.xml&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;shows.xml&quot;</span><span class="p">))</span>
 <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//character&quot;</span><span class="p">)</span>
 <span class="c1"># =&gt; [&quot;&lt;character&gt;Al Bundy&lt;/character&gt;&quot;,</span>
 <span class="c1">#    &quot;&lt;character&gt;Bud Bundy&lt;/character&gt;&quot;,</span>
@@ -743,29 +742,25 @@ all the shows in this document.</p>
 <span class="c1">#    &quot;&lt;character&gt;\&quot;Howling Mad\&quot; Murdock&lt;/character&gt;&quot;]</span>
 </code></pre></div>
 
-
 <p>The <code>Node</code> methods <code>xpath</code> and <code>css</code> actually return a <a href="https://nokogiri.org/rdoc/Nokogiri/XML/NodeSet">NodeSet</a>,
 which acts very much like an array, and contains matching nodes from
 the document.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//character&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//character&quot;</span><span class="p">)</span>
 <span class="n">characters</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">to_s</span> <span class="c1"># =&gt; &quot;&lt;character&gt;Al Bundy&lt;/character&gt;&quot;</span>
 </code></pre></div>
 
-
 <p>You can use any XPath or CSS query you like (see the chapter on XPath
 and CSS syntax for more information).</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//dramas//character&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//dramas//character&quot;</span><span class="p">)</span>
 <span class="c1"># =&gt; [&quot;&lt;character&gt;John \&quot;Hannibal\&quot; Smith&lt;/character&gt;&quot;,</span>
 <span class="c1">#    &quot;&lt;character&gt;Templeton \&quot;Face\&quot; Peck&lt;/character&gt;&quot;,</span>
 <span class="c1">#    &quot;&lt;character&gt;\&quot;B.A.\&quot; Baracus&lt;/character&gt;&quot;,</span>
 <span class="c1">#    &quot;&lt;character&gt;\&quot;Howling Mad\&quot; Murdock&lt;/character&gt;&quot;]</span>
 </code></pre></div>
 
-
 <p>Notably, you can even use CSS queries in an XML document!</p>
-<div class="codehilite"><pre><span></span><code><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;sitcoms name&quot;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;name&gt;Married with Children&lt;/name&gt;&quot;, &quot;&lt;name&gt;Perfect Strangers&lt;/name&gt;&quot;]</span>
+<div class="highlight"><pre><span></span><code><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;sitcoms name&quot;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;name&gt;Married with Children&lt;/name&gt;&quot;, &quot;&lt;name&gt;Perfect Strangers&lt;/name&gt;&quot;]</span>
 </code></pre></div>
-
 
 <p>CSS queries are often the easiest and most succinct way to express
 what you're looking for, so don't be afraid to use them!</p>
@@ -773,10 +768,9 @@ what you're looking for, so don't be afraid to use them!</p>
 <p>If you know you're going to get only a single result back, you can use
 the shortcuts <code>at_css</code> and <code>at_xpath</code> instead of having to access the
 first element of a NodeSet.</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;dramas name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span> <span class="c1"># =&gt; &quot;&lt;name&gt;The A-Team&lt;/name&gt;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;dramas name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span> <span class="c1"># =&gt; &quot;&lt;name&gt;The A-Team&lt;/name&gt;&quot;</span>
 <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span><span class="p">(</span><span class="s2">&quot;dramas name&quot;</span><span class="p">)</span>    <span class="c1"># =&gt; &quot;&lt;name&gt;The A-Team&lt;/name&gt;&quot;</span>
 </code></pre></div>
-
 
 <h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h2>
 <p>Just like our Ruby code, XML can suffer from name collisions.  For example,
@@ -786,7 +780,7 @@ able to tell the difference between a <em>car tire</em> and a <em>bike tire</em>
 where namespaces come to the rescue.</p>
 <p>Namespaces associate tags with a unique URL.  Let's take a look at the autoparts
 store's XML versus the bike stores:</p>
-<div class="codehilite"><pre><span></span><code>[parts.xml]
+<div class="highlight"><pre><span></span><code>[parts.xml]
 <span class="nt">&lt;parts&gt;</span>
   <span class="c">&lt;!-- Alice&#39;s Auto Parts Store --&gt;</span>
   <span class="nt">&lt;inventory</span> <span class="na">xmlns=</span><span class="s">&quot;http://alicesautoparts.com/&quot;</span><span class="nt">&gt;</span>
@@ -803,10 +797,9 @@ store's XML versus the bike stores:</p>
 <span class="nt">&lt;/parts&gt;</span>
 </code></pre></div>
 
-
 <p>Since the URLs are unique, we can associate our query with a URL and get only
 the tires belonging to <em>that</em> url:</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;parts.xml&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;parts.xml&quot;</span><span class="p">))</span>
 
 <span class="n">car_tires</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//car:tire&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://alicesautoparts.com/&#39;</span><span class="p">)</span>
 <span class="c1"># =&gt; [&quot;&lt;tire&gt;all weather&lt;/tire&gt;&quot;,</span>
@@ -817,13 +810,12 @@ the tires belonging to <em>that</em> url:</p>
 <span class="c1"># =&gt; [&quot;&lt;tire&gt;street&lt;/tire&gt;&quot;, &quot;&lt;tire&gt;mountain&lt;/tire&gt;&quot;]</span>
 </code></pre></div>
 
-
 <p>To make this namespace registration a bit easier, nokogiri will automatically
 register any namespaces it finds on the root node <em>for you</em>.  Nokogiri will
 associate the name in the declaration with the supplied URL.  If we stick to
 this naming convention, we can shorten up our code.</p>
 <p>Let's take this atom feed for example:</p>
-<div class="codehilite"><pre><span></span><code>[atom.xml]
+<div class="highlight"><pre><span></span><code>[atom.xml]
 <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;feed</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
 
@@ -846,25 +838,21 @@ this naming convention, we can shorten up our code.</p>
 <span class="nt">&lt;/feed&gt;</span>
 </code></pre></div>
 
-
 <p>If we stick to the convention, we can grab all title tags like this</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//xmlns:title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//xmlns:title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
 </code></pre></div>
-
 
 <p>Don't be fooled though.  You <em>do not</em> have to use XPath to get the benefits of
 namespaces.  CSS selectors can be used as well.  CSS just uses the pipe symbol
 to indicate a namespace search.</p>
 <p>Let's see the previous search rewritten to use CSS:</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;xmlns|title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;xmlns|title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
 </code></pre></div>
-
 
 <p>When using CSS, if the namespace is called "xmlns", you can even omit the
 namespace name.  That means your CSS will reduce to:</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
 </code></pre></div>
-
 
 <p>Dealing with namespaces is a broad topic.  If you need more examples, be sure
 to check out <a href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/">this blog post</a> or send an email to the <a href="http://groups.google.com/group/nokogiri-talk">mailing list</a>, and
@@ -883,7 +871,7 @@ and attributes. If you like what <a href="http://xml-simple.rubyforge.org/">XmlS
 probably like Nokogiri's Slop mode.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p>Slop mode allows you to violate the Law of Demeter with extreme
 prejudice, by using <code>#method_missing</code> to introspect on a node's child tags.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">Slop</span> <span class="o">&lt;&lt;-</span><span class="dl">EOXML</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">Slop</span> <span class="o">&lt;&lt;-</span><span class="dl">EOXML</span>
 <span class="sh">&lt;employees&gt;</span>
 <span class="sh">  &lt;employee status=&quot;active&quot;&gt;</span>
 <span class="sh">    &lt;fullname&gt;Dean Martin&lt;/fullname&gt;</span>
@@ -908,7 +896,6 @@ prejudice, by using <code>#method_missing</code> to introspect on a node's child
 <span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="s2">&quot;[status=&#39;active&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
 <span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="ss">:css</span> <span class="o">=&gt;</span> <span class="s2">&quot;[status=&#39;active&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
 </code></pre></div>
-
 
 <p>Aww yeah. Can you feel the spirit of <a href="http://twitter.com/jbarnette">@jbarnette</a> and
 <a href="http://twitter.com/nakajima">@nakajima</a> flowing through you? That's the power of the
@@ -1010,7 +997,7 @@ prejudice, by using <code>#method_missing</code> to introspect on a node's child
       <script>
         app = initialize({
           base: "..",
-          features: ['navigation.tabs', 'navigation.tabs.sticky', 'toc.integrate'],
+          features: ['navigation.tabs', 'toc.integrate'],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)

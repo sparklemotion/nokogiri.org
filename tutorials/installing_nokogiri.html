@@ -877,12 +877,11 @@
 </ul>
 <p>To determine whether your system supports one of these gems, look at the output of <code>bundle platform</code> or <code>ruby -e 'puts Gem::Platform.local.to_s'</code>.</p>
 <p>If you're on a supported platform, either <code>gem install</code> or <code>bundle install</code> should install a native gem without any additional action on your part. This installation should only take a few seconds, and your output should look something like:</p>
-<div class="codehilite"><pre><span></span><code>$ gem install nokogiri
+<div class="highlight"><pre><span></span><code>$ gem install nokogiri
 Fetching nokogiri-1.11.0-x86_64-linux.gem
 Successfully installed nokogiri-1.11.0-x86_64-linux
-<span class="m">1</span> gem installed
+1 gem installed
 </code></pre></div>
-
 
 <h3 id="why-would-i-not-want-to-use-a-native-gem">Why would I not want to use a native gem?<a class="headerlink" href="#why-would-i-not-want-to-use-a-native-gem" title="Permanent link">&para;</a></h3>
 <p>I can imagine some folks might have trust issues; if this is you, please let us know in a comment at <a href="https://github.com/sparklemotion/nokogiri/issues/2013">RFC: Increase the level of trust in released gem files · Issue #2013 · sparklemotion/nokogiri</a>. What can we do to increase that trust? (I can imagine providing a chain of custody including public build logs with cryptographic hashes of artifacts, but I'd like to hear from real users.)</p>
@@ -902,55 +901,48 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 <p>Nokogiri packages its own updated and patched copies of <a href="http://xmlsoft.org/">libxml2</a> and <a href="http://xmlsoft.org/libxslt/">libxslt</a> source code. By default, installation of Nokogiri will compile and use these packaged libraries.</p>
 <p>If you don't see your operating system / distro in this section, then no additional setup is required beyond <a href="#appendix-a-the-compiler-toolchain">Appendix A: The Compiler Toolchain</a>. Just run <code>gem install nokogiri --platform=ruby</code>.</p>
 <h4>Ubuntu or Debian-based Distros</h4>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install zlib1g-dev liblzma-dev patch
+<div class="highlight"><pre><span></span><code>sudo apt-get install zlib1g-dev liblzma-dev patch
 gem install nokogiri --platform<span class="o">=</span>ruby
 </code></pre></div>
-
 
 <p>You may substitute <code>git</code> for <code>patch</code> (<code>mini_portile2</code> can use either for applying patches).</p>
 <h4>Fedora, Red Hat, and CentOS</h4>
-<div class="codehilite"><pre><span></span><code>dnf install -y zlib-devel
+<div class="highlight"><pre><span></span><code>dnf install -y zlib-devel
 gem install nokogiri --platform<span class="o">=</span>ruby
 </code></pre></div>
-
 
 <h4>OpenBSD &lt; 6.2</h4>
 <p>Use <code>gcc</code> from ports in order to compile the packaged libraries:</p>
-<div class="codehilite"><pre><span></span><code>pkg_add -v gcc
+<div class="highlight"><pre><span></span><code>pkg_add -v gcc
 gem install nokogiri --platform<span class="o">=</span>ruby
 </code></pre></div>
-
 
 <h3 id="installing-using-standard-system-libraries">Installing Using Standard System Libraries<a class="headerlink" href="#installing-using-standard-system-libraries" title="Permanent link">&para;</a></h3>
 <p>Rather than use Nokogiri's packaged versions, you may prefer to use your system's or distro's standard libxml2/libxslt libraries. This section will try to help you do that.</p>
 <p>Nokogiri will refuse to build against older, unsupported versions of <code>libxml2</code> and <code>libxslt</code>, and there may be some behavioral changes when using older versions. If you have installed libxml2 or libxslt to a custom location, please jump to the next section, <a href="#installing-with-custom-non-standard-libraries">Installing With Custom / Non-Standard Libraries</a>.</p>
 <p>If you don't see your operating system or distro listed below, then no additional setup is required beyond <a href="#appendix-a-the-compiler-toolchain">Appendix A: The Compiler Toolchain</a>. Just run <code>gem install nokogiri --platform=ruby -- --use-system-libraries</code>. Or, if you're using bundler, <code>bundle config build.nokogiri --use-system-libraries</code>.</p>
 <h4>Debian/Ubuntu</h4>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install pkg-config libxml2-dev libxslt-dev
-gem install nokogiri --platform=ruby -- --use-system-libraries
+<div class="highlight"><pre><span></span><code>sudo apt-get install pkg-config libxml2-dev libxslt-dev
+gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
 </code></pre></div>
-
 
 <h4>MacOS</h4>
 <p>If you're using homebrew:</p>
-<div class="codehilite"><pre><span></span><code>brew install libxml2 libxslt
+<div class="highlight"><pre><span></span><code>brew install libxml2 libxslt
 gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
 </code></pre></div>
-
 
 <p>If you're using macports and would like to contribute documentation, please open a GitHub issue or pull-request on <a href="https://github.com/sparklemotion/nokogiri.org/blob/master/docs/tutorials/installing_nokogiri.md">nokogiri.org/installing_nokogiri.md</a>.</p>
 <h4>FreeBSD</h4>
-<div class="codehilite"><pre><span></span><code>sudo pkg install pkgconf
-gem install nokogiri --platform=ruby -- --use-system-libraries
-</code></pre></div>
-
-
-<h4>Windows</h4>
-<p>We recommend installing Nokogiri against the MSYS2 system libraries:</p>
-<div class="codehilite"><pre><span></span><code>ridk <span class="nb">exec</span> pacman -S mingw-w64-x86_64-libxslt
+<div class="highlight"><pre><span></span><code>sudo pkg install pkgconf
 gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
 </code></pre></div>
 
+<h4>Windows</h4>
+<p>We recommend installing Nokogiri against the MSYS2 system libraries:</p>
+<div class="highlight"><pre><span></span><code>ridk <span class="nb">exec</span> pacman -S mingw-w64-x86_64-libxslt
+gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
+</code></pre></div>
 
 <h3 id="installing-with-custom-non-standard-libraries">Installing With Custom / Non-Standard Libraries<a class="headerlink" href="#installing-with-custom-non-standard-libraries" title="Permanent link">&para;</a></h3>
 <p>You may have your own custom version of libxml2/libxslt that you'd like to use. OK! Here we go.</p>
@@ -962,15 +954,14 @@ gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libr
 </ul>
 <p>... then you can use command-line parameters to the <code>gem install</code> command to specify build parameters.</p>
 <p>You can specify the installation root directory:</p>
-<div class="codehilite"><pre><span></span><code>gem install nokogiri -- <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>gem install nokogiri -- <span class="se">\</span>
     --use-system-libraries <span class="se">\</span>
     --with-xml2-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
     --with-xslt-dir<span class="o">=</span>/path/to/dir
 </code></pre></div>
 
-
 <p>or, you can specify include and library directories separately:</p>
-<div class="codehilite"><pre><span></span><code>gem install nokogiri -- <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>gem install nokogiri -- <span class="se">\</span>
     --use-system-libraries <span class="se">\</span>
     --with-xml2-lib<span class="o">=</span>/path/to/builds/lib <span class="se">\</span>
     --with-xml2-include<span class="o">=</span>/path/to/builds/include/libxml2 <span class="se">\</span>
@@ -978,10 +969,9 @@ gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libr
     --with-xslt-include<span class="o">=</span>/path/to/builds/include
 </code></pre></div>
 
-
 <p><em>Note: By default, libxslt header files are installed into the root include directory, but libxml2 header files are installed into a subdirectory thereof named <code>libxml2</code>.</em></p>
 <p>It's likely that you'll also need to specify the location of your <code>zlib</code> and <code>iconv</code> (and possibly <code>exslt</code>) install directories as well. In that case, you can add the options:</p>
-<div class="codehilite"><pre><span></span><code>gem install nokogiri -- <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>gem install nokogiri -- <span class="se">\</span>
     --use-system-libraries <span class="se">\</span>
     <span class="c1"># ...</span>
     --with-iconv-dir<span class="o">=</span>/path/to/dir <span class="se">\</span>
@@ -990,70 +980,62 @@ gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libr
     <span class="o">[</span>--with-exslt-config<span class="o">=</span>/path/to/exslt-config<span class="o">]</span>
 </code></pre></div>
 
-
 <p>You can also tell bundler to remember these configuration parameters:</p>
-<div class="codehilite"><pre><span></span><code>bundle config build.nokogiri \
-       --use-system-libraries \
-       --with-xml2-lib=/usr/local/lib \
-       --with-xml2-include=/usr/local/include/libxml2/libxml \
-       --with-xslt-lib=/usr/local/lib \
-       --with-xslt-include=/usr/local/include/libxslt \
-       --with-iconv-lib=/usr/local/lib \
-       --with-iconv-include=/usr/local/include
+<div class="highlight"><pre><span></span><code>bundle config build.nokogiri <span class="se">\</span>
+       --use-system-libraries <span class="se">\</span>
+       --with-xml2-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
+       --with-xml2-include<span class="o">=</span>/usr/local/include/libxml2/libxml <span class="se">\</span>
+       --with-xslt-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
+       --with-xslt-include<span class="o">=</span>/usr/local/include/libxslt <span class="se">\</span>
+       --with-iconv-lib<span class="o">=</span>/usr/local/lib <span class="se">\</span>
+       --with-iconv-include<span class="o">=</span>/usr/local/include
 </code></pre></div>
-
 
 <p>Do not attempt Bundler installation using Bundler versions before v1.8.3 (see <a href="https://github.com/bundler/bundler/issues/3053">bundler/bundler#3053</a> for details). If you really must, see earlier git history of <a href="https://github.com/sparklemotion/nokogiri.org/blob/master/docs/tutorials/installing_nokogiri.md">this file</a>, which includes a workaround.</p>
 <h3 id="installing-third-party-distributions-of-nokogiri">Installing Third-Party Distributions of Nokogiri<a class="headerlink" href="#installing-third-party-distributions-of-nokogiri" title="Permanent link">&para;</a></h3>
 <h4>Debian</h4>
 <p>See <a href="https://packages.debian.org/sid/ruby-nokogiri">https://packages.debian.org/sid/ruby-nokogiri</a></p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install ruby-nokogiri
+<div class="highlight"><pre><span></span><code>sudo apt-get install ruby-nokogiri
 </code></pre></div>
-
 
 <h4>openSUSE/SLE</h4>
 <p>See <a href="https://download.opensuse.org/repositories/devel:/languages:/ruby:/extensions/">https://download.opensuse.org/repositories/devel:/languages:/ruby:/extensions/</a></p>
 <h4>Fedora, Red Hat, and CentOS</h4>
 <p>You may install the appropriate <a href="http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">epel-release</a> and get the Nokogiri package from <a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> using:</p>
-<div class="codehilite"><pre><span></span><code>sudo dnf install -y rubygem-nokogiri
+<div class="highlight"><pre><span></span><code>sudo dnf install -y rubygem-nokogiri
 </code></pre></div>
-
 
 <h4>GNU Guix</h4>
 <p>Install on any Linux distribution using <a href="https://www.gnu.org/software/guix/">GNU Guix</a>, a reproducible binary software package management and distribution system.</p>
 <p>Use this command:</p>
-<div class="codehilite"><pre><span></span><code>guix package -i ruby-nokogiri
+<div class="highlight"><pre><span></span><code>guix package -i ruby-nokogiri
 </code></pre></div>
-
 
 <p><em>Note: source code is available <a href="http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/ruby.scm">here</a>. A short description of how Nokogiri was packaged can be found <a href="https://github.com/pjotrp/guix-notes/blob/master/RUBYGEMS-Nokogiri.org">here</a>.</em></p>
 <h3 id="other-installation-scenarios">Other Installation Scenarios<a class="headerlink" href="#other-installation-scenarios" title="Permanent link">&para;</a></h3>
 <h4>Alpine Docker Images</h4>
 <p>To just install the native gem:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
 
 <span class="k">RUN</span> gem install nokogiri
 </code></pre></div>
 
-
 <p>To compile with the packaged libraries:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
 
 <span class="k">RUN</span> apk add --no-cache build-base
 <span class="k">RUN</span> gem install nokogiri --platform<span class="o">=</span>ruby
 </code></pre></div>
 
-
 <p>To compile against Alpine's own XML libraries, add the necessary development tools and libraries to the image.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
 
 <span class="k">RUN</span> apk add --no-cache build-base libxml2-dev libxslt-dev
 <span class="k">RUN</span> gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
 </code></pre></div>
 
-
 <p>When optimizing the size of an Alpine image, the runtime libraries must be permanently added. Additionally, adding and removing development tooling can be chained with gem installation to ensure a small layer.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">ruby:3.0-alpine</span>
 
 <span class="k">RUN</span> apk add --no-cache libxml2 libxslt <span class="o">&amp;&amp;</span> <span class="se">\</span>
         apk add --no-cache --virtual .gem-installdeps build-base libxml2-dev libxslt-dev <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -1062,20 +1044,18 @@ gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libr
         apk del .gem-installdeps
 </code></pre></div>
 
-
 <p>This approach nets an 12.1 MB layer (versus 18.1 MB without <code>--use-system-libraries</code>)
 and saves over 170 MB in build tools.</p>
 <h4>TermUX</h4>
 <p>Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:</p>
-<div class="codehilite"><pre><span></span><code>pkg install ruby clang make pkg-config libxslt
+<div class="highlight"><pre><span></span><code>pkg install ruby clang make pkg-config libxslt
 gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
 </code></pre></div>
-
 
 <h4>SmartOS (Nonstandard)</h4>
 <p>SmartOS installation requires building and using libxml2/libxslt/libiconv in a nonstandard location. Building on the previous section, here's how to do it:</p>
 <p>(Note: <code>pkgsrc</code> is included in JPC SmartOS instances)</p>
-<div class="codehilite"><pre><span></span><code>pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
+<div class="highlight"><pre><span></span><code>pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
 ln -s /opt/local/gcc49/bin/gcc /opt/local/bin/gcc
 
 gem install nokogiri -- <span class="se">\</span>
@@ -1089,62 +1069,56 @@ gem install nokogiri -- <span class="se">\</span>
     --with-zlib-dir<span class="o">=</span>/opt/local/lib
 </code></pre></div>
 
-
 <p>See the previous section for guidance on how to instruct Bundler to use these options.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="using-vendorcache-to-deploy-to-another-architecture">Using <code>vendor/cache</code> to deploy to another architecture<a class="headerlink" href="#using-vendorcache-to-deploy-to-another-architecture" title="Permanent link">&para;</a></h3>
 <p>A common workflow is for a team to develop on a Mac but deploy to production on Linux. This workflow depends on Bundler caching an appropriate gem file in <code>vendor/cache</code>. Unfortunately, in this situation Bundler's default behavior is to cache only gems for the development system and not the production system, leading to an error at deploy time.</p>
 <h4>Symptoms</h4>
 <p>During deployment, the buildpack may fail to find a relevant gem in <code>vendor/cache</code> and emit an error like this (from Heroku):</p>
-<div class="codehilite"><pre><span></span><code>-----&gt; Ruby app detected
------&gt; Installing bundler <span class="m">2</span>.1.4
+<div class="highlight"><pre><span></span><code>-----&gt; Ruby app detected
+-----&gt; Installing bundler 2.1.4
 -----&gt; Removing BUNDLED WITH version in the Gemfile.lock
 -----&gt; Compiling Ruby/Rails
 -----&gt; Using Ruby version: ruby-2.7.2
------&gt; Installing dependencies using bundler <span class="m">2</span>.1.4
-       Running: <span class="nv">BUNDLE_WITHOUT</span><span class="o">=</span><span class="s1">&#39;development:test&#39;</span> <span class="nv">BUNDLE_PATH</span><span class="o">=</span>vendor/bundle <span class="nv">BUNDLE_BIN</span><span class="o">=</span>vendor/bundle/bin <span class="nv">BUNDLE_DEPLOYMENT</span><span class="o">=</span><span class="m">1</span> bundle install -j4
-       Some gems seem to be missing from your vendor/cache directory.
-       Could not find nokogiri-1.11.0 in any of the sources
-       Bundler Output: Some gems seem to be missing from your vendor/cache directory.
-       Could not find nokogiri-1.11.0 in any of the sources
- !
+-----&gt; Installing dependencies using bundler 2.1.4
+       Running: BUNDLE_WITHOUT=&#39;development:test&#39; BUNDLE_PATH=vendor/bundle BUNDLE_BIN=vendor/bundle/bin BUNDLE_DEPLOYMENT=1 bundle install -j4
+<span class="hll">       Some gems seem to be missing from your vendor/cache directory.
+</span><span class="hll">       Could not find nokogiri-1.11.0 in any of the sources
+</span><span class="hll">       Bundler Output: Some gems seem to be missing from your vendor/cache directory.
+</span><span class="hll">       Could not find nokogiri-1.11.0 in any of the sources
+</span> !
  !     Failed to install gems via Bundler.
  !
  !     Push rejected, failed to compile Ruby app.
  !     Push failed
 </code></pre></div>
 
-
 <h4>Solution</h4>
 <p>Bundler 2.2 and later has <em>great</em> multiplatform support and allows you to cache gems for multiple platforms. You can run commands like these to cause Bundler to fetch and cache gems for all the named platforms:</p>
-<div class="codehilite"><pre><span></span><code>bundle lock --add-platform x86_64-darwin
+<div class="highlight"><pre><span></span><code>bundle lock --add-platform x86_64-darwin
 bundle lock --add-platform x86_64-linux
 bundle package --all-platforms
 </code></pre></div>
 
-
 <p>For more information, please read <a href="https://blog.thegnar.co/caching-all-native-gem-platforms">this wonderful blog post</a> written by Kevin Murphy explaining this approach.</p>
 <h4>Fallback Solution</h4>
 <p>If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the <code>ruby</code> platform, which supports all platforms, but applies to <em>all</em> gems and comes with the installation challenges mentioned earlier in this guide. Here's how:</p>
-<div class="codehilite"><pre><span></span><code>rm -rf vendor/cache
+<div class="highlight"><pre><span></span><code>rm -rf vendor/cache
 bundle config <span class="nb">set</span> force_ruby_platform <span class="nb">true</span>
 bundle install
 </code></pre></div>
-
 
 <h3 id="linux-usrbinld-cannot-find-lgmp">[Linux] <code>/usr/bin/ld: cannot find -lgmp</code><a class="headerlink" href="#linux-usrbinld-cannot-find-lgmp" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem, and if you've installed Ruby using RVM, <a href="https://github.com/rvm/rvm/issues/3509">you may require libgmp</a>.</p>
 <h4>Symptoms</h4>
 <p>Gem installation fails with an error message like:</p>
-<div class="codehilite"><pre><span></span><code>/home/user/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/mkmf.rb:456:in <span class="sb">`</span>try_do<span class="err">&#39;</span>: The compiler failed to generate an executable file. <span class="o">(</span>RuntimeError<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>/home/user/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/mkmf.rb:456:in <span class="sb">`</span>try_do<span class="err">&#39;</span>: The compiler failed to generate an executable file. <span class="o">(</span>RuntimeError<span class="o">)</span>
 You have to install development tools first.
 </code></pre></div>
 
-
 <p>And examination of your <code>mkmf.log</code> file shows:</p>
-<div class="codehilite"><pre><span></span><code>/usr/bin/ld: cannot find -lgmp
+<div class="highlight"><pre><span></span><code>/usr/bin/ld: cannot find -lgmp
 </code></pre></div>
-
 
 <h4>Solution</h4>
 <p>Run <code>sudo apt-get install libgmp-dev</code>.</p>
@@ -1155,70 +1129,62 @@ You have to install development tools first.
 <p><img alt="xcode-select-network-problem" src="images/xcode-select-network-problem.png" /></p>
 <h4>Solution</h4>
 <p>Run this command to turn off forced-authentication with Apple Software Update:</p>
-<div class="codehilite"><pre><span></span><code>sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
+<div class="highlight"><pre><span></span><code>sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 </code></pre></div>
-
 
 <h3 id="macos-error-use-of-undeclared-identifier-lzma_ok">[MacOS] <code>error: use of undeclared identifier 'LZMA_OK'</code><a class="headerlink" href="#macos-error-use-of-undeclared-identifier-lzma_ok" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem ...</p>
 <h4>Symptoms</h4>
 <p>An error during Nokogiri installation mentions an undeclared identifier <code>LZMA_OK</code>:</p>
-<div class="codehilite"><pre><span></span><code>xmlIO.c:1450:52: error: use of undeclared identifier &#39;LZMA_OK&#39;
+<div class="highlight"><pre><span></span><code>xmlIO.c:1450:52: error: use of undeclared identifier &#39;LZMA_OK&#39;
     ret =  (__libxml2_xzclose((xzFile) context) == LZMA_OK ) ? 0 : -1;
                                                    ^
 1 error generated.
 </code></pre></div>
 
-
 <h4>Diagnosis</h4>
 <p>When using Homebrew, there are several libraries that use a formula called <code>xz</code> (including <code>the_silver_searcher</code> and <code>imagemagick</code>), which by default install a version of <code>liblzma</code> that is incompatible with most Ruby builds.  (Homebrew installs only the 64-bit version of the library, but most Ruby builds are universal.) This can be fixed in a couple of ways:</p>
 <h4>Solution 1</h4>
 <p>The most reliable solution appears to be temporarily unlinking <code>xz</code> and relinking it during an install of <code>nokogiri</code>:</p>
-<div class="codehilite"><pre><span></span><code>brew unlink xz
+<div class="highlight"><pre><span></span><code>brew unlink xz
 gem install nokogiri <span class="c1"># or bundle install</span>
 brew link xz
 </code></pre></div>
 
-
 <h4>Solution 2</h4>
 <p>The other solution is to use a Homebrew-installed <code>libxml2</code>, as suggested in <a href="#installing-using-standard-system-libraries">Installing Using Standard System Libraries</a>.</p>
-<div class="codehilite"><pre><span></span><code>brew install libxml2
+<div class="highlight"><pre><span></span><code>brew install libxml2
 gem install nokogiri -- --use-system-libraries <span class="se">\</span>
     --with-xml2-include<span class="o">=</span><span class="k">$(</span>brew --prefix libxml2<span class="k">)</span>/include/libxml2
 </code></pre></div>
 
-
 <p>or if you're using bundler:</p>
-<div class="codehilite"><pre><span></span><code>bundle config build.nokogiri --use-system-libraries <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>bundle config build.nokogiri --use-system-libraries <span class="se">\</span>
     --with-xml2-include<span class="o">=</span><span class="k">$(</span>brew --prefix libxml2<span class="k">)</span>/include/libxml2
 bundle install
 </code></pre></div>
-
 
 <p>When working with this, be certain to use <code>$(brew --prefix libxml2)</code> because it will use the correct location for your Homebrew install.</p>
 <h3 id="macos-libiconv-is-missing">[MacOS] <code>libiconv is missing</code><a class="headerlink" href="#macos-libiconv-is-missing" title="Permanent link">&para;</a></h3>
 <p>Xcode 10 on macOS Mojave <a href="https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624">moves the system headers</a> out of <code>/usr/include</code> and so Nokogiri will fail to build when you're compiling the <code>ruby</code> platform gem.</p>
 <h4>Symptoms</h4>
 <p>You'll see an error similar to this:</p>
-<div class="codehilite"><pre><span></span><code>Building nokogiri using packaged libraries.
+<div class="highlight"><pre><span></span><code>Building nokogiri using packaged libraries.
 
-libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html <span class="k">for</span> <span class="nb">help</span> with installing dependencies.
-
+<span class="hll">libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
+</span>
 *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary libraries and/or headers.
 </code></pre></div>
 
-
 <h4>Solution</h4>
 <p>A temporary workaround to allow previous releases of Nokogiri to build is to install the extra headers package mentioned in the Xcode 10 release notes:</p>
-<div class="codehilite"><pre><span></span><code>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+<div class="highlight"><pre><span></span><code>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 </code></pre></div>
-
 
 <p>You can also install the headers package from the command line (e.g. for a build script or a CI server):</p>
-<div class="codehilite"><pre><span></span><code>sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+<div class="highlight"><pre><span></span><code>sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 </code></pre></div>
-
 
 <h3 id="macos-general-macos-tips">[MacOS] General MacOS Tips<a class="headerlink" href="#macos-general-macos-tips" title="Permanent link">&para;</a></h3>
 <p>If you're seeing other problems:</p>
@@ -1232,55 +1198,53 @@ Could not create Makefile due to some reason, probably lack of necessary librari
 <p>As of v1.11.0, Nokogiri is declaring an explicit dependency on <code>racc ~&gt; 1.4</code>, which itself is a C extension that users may have trouble installing.</p>
 <h4>Symptoms</h4>
 <p>You may see an error message like this:</p>
-<div class="codehilite"><pre><span></span><code>Fetching racc <span class="m">1</span>.5.2
-Installing racc <span class="m">1</span>.5.2 with native extensions
-Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+<div class="highlight"><pre><span></span><code><span class="hll">Fetching racc 1.5.2
+</span><span class="hll">Installing racc 1.5.2 with native extensions
+</span>Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
 
 current directory:
 /Users/myuser2/.gem/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
 /opt/local/bin/ruby2.7 -I /opt/local/lib/ruby2.7/2.7.0 -r
 ./siteconf20210104-30183-axgzet.rb extconf.rb
-checking <span class="k">for</span> rb_ary_subseq<span class="o">()</span>... *** extconf.rb failed ***
+checking for rb_ary_subseq()... *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary
-libraries and/or headers.  Check the mkmf.log file <span class="k">for</span> more details.  You may
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
 need configuration options.
 
 Provided configuration options:
        --with-opt-dir
        --with-opt-include
-       --without-opt-include<span class="o">=</span><span class="si">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="si">}</span>/include
+       --without-opt-include=${opt-dir}/include
        --with-opt-lib
-       --without-opt-lib<span class="o">=</span><span class="si">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="si">}</span>/lib
+       --without-opt-lib=${opt-dir}/lib
        --with-make-prog
        --without-make-prog
-       --srcdir<span class="o">=</span>.
+       --srcdir=.
        --curdir
-       --ruby<span class="o">=</span>/opt/local/bin/<span class="k">$(</span>RUBY_BASE_NAME<span class="k">)</span><span class="m">2</span>.7
-/opt/local/lib/ruby2.7/2.7.0/mkmf.rb:471:in <span class="sb">`</span>try_do<span class="s1">&#39;: The compiler failed to</span>
-<span class="s1">generate an executable file. (RuntimeError)</span>
-<span class="s1">You have to install development tools first.</span>
-<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:564:in `try_link0&#39;</span>
-       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:582:in <span class="sb">`</span>try_link<span class="s1">&#39;</span>
-<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:794:in `try_func&#39;</span>
-       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1083:in <span class="sb">`</span>block in have_func<span class="s1">&#39;</span>
-<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:971:in `block in checking_for&#39;</span>
-       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in <span class="sb">`</span>block <span class="o">(</span><span class="m">2</span> levels<span class="o">)</span> in postpone<span class="s1">&#39;</span>
-<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open&#39;</span>
-       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in <span class="sb">`</span>block in postpone<span class="s1">&#39;</span>
-<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open&#39;</span>
-       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:357:in <span class="sb">`</span>postpone<span class="s1">&#39;</span>
-<span class="s1">       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:970:in `checking_for&#39;</span>
-       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1082:in <span class="sb">`</span>have_func<span class="s1">&#39;</span>
-<span class="s1">       from extconf.rb:6:in `&lt;main&gt;&#39;</span>
+       --ruby=/opt/local/bin/$(RUBY_BASE_NAME)2.7
+<span class="hll">/opt/local/lib/ruby2.7/2.7.0/mkmf.rb:471:in `try_do&#39;: The compiler failed to generate an executable file. (RuntimeError)
+</span><span class="hll">You have to install development tools first.
+</span>       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:564:in `try_link0&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:582:in `try_link&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:794:in `try_func&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1083:in `block in have_func&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:971:in `block in checking_for&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in `block (2 levels) in postpone&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in `block in postpone&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:357:in `postpone&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:970:in `checking_for&#39;
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1082:in `have_func&#39;
+       from extconf.rb:6:in `&lt;main&gt;&#39;
 
 To see why this extension failed to compile, please check the mkmf.log which can
 be found here:
 
 /Users/myuser2/.gem/ruby/2.7.0/extensions/arm64-darwin-20/2.7.0/racc-1.5.2/mkmf.log
 
-extconf failed, <span class="nb">exit</span> code <span class="m">1</span>
+extconf failed, exit code 1
 </code></pre></div>
-
 
 <h4>Solution 1 - Compiler toolchain</h4>
 <p>Racc needs the same compiler toolchain to be present as any Gem with a C extension. See <a href="#appendix-a-the-compiler-toolchain">Appendix A: The Compiler Toolchain</a>.</p>
@@ -1291,28 +1255,24 @@ extconf failed, <span class="nb">exit</span> code <span class="m">1</span>
 <p>A good way to tell if you've got your basic Ruby C extension compiler toolchain installed correctly is to try installing the <code>bcrypt</code> gem which has a smaller, self-contained C extension. If you can <code>gem install bcrypt</code>, you're all set!</p>
 <p>Reminder: if you're installing a native gem, you don't need to do this.</p>
 <h3 id="ubuntu-or-debian-based-distros">Ubuntu or Debian-based Distros<a class="headerlink" href="#ubuntu-or-debian-based-distros" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install build-essential ruby-dev
+<div class="highlight"><pre><span></span><code>sudo apt-get install build-essential ruby-dev
 </code></pre></div>
-
 
 <h3 id="fedora-red-hat-and-centos">Fedora, Red Hat, and CentOS<a class="headerlink" href="#fedora-red-hat-and-centos" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>dnf install -y make gcc rpm-build ruby-devel
+<div class="highlight"><pre><span></span><code>dnf install -y make gcc rpm-build ruby-devel
 </code></pre></div>
-
 
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>Please visit <a href="https://rubyinstaller.org/">RubyInstaller</a> and make sure you install a version "With Devkit".</p>
 <h3 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
 <p>First, make sure you have the latest version of RubyGems and xcode commandline tools:</p>
-<div class="codehilite"><pre><span></span><code>gem update --system
+<div class="highlight"><pre><span></span><code>gem update --system
 xcode-select --install <span class="c1"># Then agree to the terms, even if you have done this before!</span>
 </code></pre></div>
 
-
 <p>Agree to the Xcode license:</p>
-<div class="codehilite"><pre><span></span><code>sudo xcodebuild -license
+<div class="highlight"><pre><span></span><code>sudo xcodebuild -license
 </code></pre></div>
-
 
 <hr />
                 
@@ -1395,7 +1355,7 @@ xcode-select --install <span class="c1"># Then agree to the terms, even if you h
       <script>
         app = initialize({
           base: "..",
-          features: ['navigation.tabs', 'navigation.tabs.sticky', 'toc.integrate'],
+          features: ['navigation.tabs', 'toc.integrate'],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)

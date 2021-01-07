@@ -3621,9 +3621,8 @@ mentioned in the notes for v1.5.10.</p>
 <h3 id="security_15">Security<a class="headerlink" href="#security_15" title="Permanent link">&para;</a></h3>
 <p>(MRI) Default parse options for XML documents were changed to not make network connections during document parsing, to avoid XXE vulnerability. <a href="https://github.com/sparklemotion/nokogiri/issues/693">#693</a></p>
 <p>To re-enable this behavior, the configuration method <code>nononet</code> may be called, like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span> <span class="n">config</span><span class="o">.</span><span class="n">nononet</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span> <span class="n">config</span><span class="o">.</span><span class="n">nononet</span> <span class="p">}</span>
 </code></pre></div>
-
 
 <p>Insert your own joke about double-negatives here.</p>
 <h2 id="153-2012-06-01">1.5.3 / 2012-06-01<a class="headerlink" href="#153-2012-06-01" title="Permanent link">&para;</a></h2>
@@ -4225,7 +4224,7 @@ mentioned in the notes for v1.5.10.</p>
       <script>
         app = initialize({
           base: ".",
-          features: ['navigation.tabs', 'navigation.tabs.sticky', 'toc.integrate'],
+          features: ['navigation.tabs', 'toc.integrate'],
           search: Object.assign({
             worker: "assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)

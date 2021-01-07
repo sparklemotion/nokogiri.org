@@ -714,7 +714,7 @@
                 <h1 id="modifying-an-html-xml-document">Modifying an HTML / XML Document<a class="headerlink" href="#modifying-an-html-xml-document" title="Permanent link">&para;</a></h1>
 <h2 id="changing-text-contents">Changing text contents<a class="headerlink" href="#changing-text-contents" title="Permanent link">&para;</a></h2>
 <p>Assuming we have the following HTML document:</p>
-<div class="codehilite"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="o">::</span><span class="no">DocumentFragment</span><span class="o">.</span><span class="n">parse</span> <span class="o">&lt;&lt;-</span><span class="dl">EOHTML</span>
+<div class="highlight"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="o">::</span><span class="no">DocumentFragment</span><span class="o">.</span><span class="n">parse</span> <span class="o">&lt;&lt;-</span><span class="dl">EOHTML</span>
 <span class="sh">&lt;body&gt;</span>
 <span class="sh">  &lt;h1&gt;Three&#39;s Company&lt;/h1&gt;</span>
 <span class="sh">  &lt;div&gt;A love triangle.&lt;/div&gt;</span>
@@ -722,9 +722,8 @@
 <span class="dl">EOHTML</span>
 </code></pre></div>
 
-
 <p>Let's change the header's text contents:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">h1</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">h1</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
 <span class="n">h1</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;Snap, Crackle &amp; Pop&quot;</span>
 
 <span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
@@ -739,12 +738,11 @@
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
 
-
 <p>You'll notice that, when you use <code>#content=</code>, entities are properly
 escaped. Pow!</p>
 <h2 id="moving-nodes">Moving nodes<a class="headerlink" href="#moving-nodes" title="Permanent link">&para;</a></h2>
 <p>The simplest method of moving a node is assign its parent:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">h1</span>  <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">h1</span>  <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
 <span class="n">div</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;div&quot;</span>
 <span class="n">h1</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">div</span>
 
@@ -762,9 +760,8 @@ escaped. Pow!</p>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
 
-
 <p>But you could also arrange it next to other nodes:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">div</span><span class="o">.</span><span class="n">add_next_sibling</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">div</span><span class="o">.</span><span class="n">add_next_sibling</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
 
 <span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
 <span class="c1"># =&gt; &quot;&lt;body&gt;</span>
@@ -780,9 +777,8 @@ escaped. Pow!</p>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
 
-
 <h2 id="modifying-nodes-and-attributes">Modifying Nodes and Attributes<a class="headerlink" href="#modifying-nodes-and-attributes" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">h1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;h2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">h1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;h2&#39;</span>
 <span class="n">h1</span><span class="o">[</span><span class="s1">&#39;class&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;show-title&#39;</span>
 
 <span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
@@ -797,10 +793,9 @@ escaped. Pow!</p>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
 
-
 <h2 id="creating-new-nodes">Creating new nodes<a class="headerlink" href="#creating-new-nodes" title="Permanent link">&para;</a></h2>
 <p>Often the easiest thing to do is pass markup to one of the <code>Node</code> methods to create siblings:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">h1</span><span class="o">.</span><span class="n">add_next_sibling</span> <span class="s2">&quot;&lt;h3&gt;1977 - 1984&lt;/h3&gt;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">h1</span><span class="o">.</span><span class="n">add_next_sibling</span> <span class="s2">&quot;&lt;h3&gt;1977 - 1984&lt;/h3&gt;&quot;</span>
 
 <span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
 <span class="c1"># =&gt; &quot;&lt;body&gt;</span>
@@ -816,9 +811,8 @@ escaped. Pow!</p>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
 
-
 <p>or you can manually create a node object, if you're a detail-oriented person:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">h3</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Node</span><span class="o">.</span><span class="n">new</span> <span class="s2">&quot;h3&quot;</span><span class="p">,</span> <span class="vi">@doc</span>
+<div class="highlight"><pre><span></span><code><span class="n">h3</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Node</span><span class="o">.</span><span class="n">new</span> <span class="s2">&quot;h3&quot;</span><span class="p">,</span> <span class="vi">@doc</span>
 <span class="n">h3</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;1977 - 1984&quot;</span>
 <span class="n">h1</span><span class="o">.</span><span class="n">add_next_sibling</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span>
 
@@ -836,10 +830,9 @@ escaped. Pow!</p>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
 
-
 <h2 id="wrapping-a-nodeset">Wrapping a NodeSet<a class="headerlink" href="#wrapping-a-nodeset" title="Permanent link">&para;</a></h2>
 <p>If you wanted to wrap new HTML around each node in a Nodeset, here's an example of how to do it:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">nodes</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span> <span class="s2">&quot;h1,div&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">nodes</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span> <span class="s2">&quot;h1,div&quot;</span>
 <span class="n">nodes</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;container&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">)</span>
 
 <span class="vi">@doc</span><span class="o">.</span><span class="n">to_html</span>
@@ -854,14 +847,13 @@ escaped. Pow!</p>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
 
-
 <h2 id="adding-a-processing-instruction">Adding a Processing Instruction<a class="headerlink" href="#adding-a-processing-instruction" title="Permanent link">&para;</a></h2>
 <h3 id="like-xml-stylesheet">(like &lt;?xml-stylesheet?&gt;)<a class="headerlink" href="#like-xml-stylesheet" title="Permanent link">&para;</a></h3>
 <p>If you want to add a processing instruction (a.k.a. "PI node"), like
 an xml-stylesheet declaration, you should first create the node using
 <code>Nokogiri::XML::ProcessingInstruction.new</code> and then add it to the
 document as a previous-sibling of the root node:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span> <span class="s2">&quot;&lt;root&gt;foo&lt;/root&gt;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span> <span class="s2">&quot;&lt;root&gt;foo&lt;/root&gt;&quot;</span>
 <span class="n">doc</span><span class="o">.</span><span class="n">to_xml</span>
 <span class="c1"># =&gt; &quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;</span>
 <span class="c1"># &quot; + &quot;&lt;root&gt;foo&lt;/root&gt;</span>
@@ -958,7 +950,7 @@ document as a previous-sibling of the root node:</p>
       <script>
         app = initialize({
           base: "..",
-          features: ['navigation.tabs', 'navigation.tabs.sticky', 'toc.integrate'],
+          features: ['navigation.tabs', 'toc.integrate'],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
