@@ -333,6 +333,58 @@ See the previous section for guidance on how to instruct Bundler to use these op
 
 ## Troubleshooting
 
+### Using `vendor/cache` to deploy to another architecture
+
+A common workflow is for a team to develop on a Mac but deploy to production on Linux. This workflow depends on Bundler caching an appropriate gem file in `vendor/cache`. Unfortunately, in this situation Bundler's default behavior is to cache only gems for the development system and not the production system, leading to an error at deploy time.
+
+
+#### Symptoms
+
+During deployment, the buildpack may fail to find a relevant gem in `vendor/cache` and emit an error like this (from Heroku):
+
+``` sh
+-----> Ruby app detected
+-----> Installing bundler 2.1.4
+-----> Removing BUNDLED WITH version in the Gemfile.lock
+-----> Compiling Ruby/Rails
+-----> Using Ruby version: ruby-2.7.2
+-----> Installing dependencies using bundler 2.1.4
+       Running: BUNDLE_WITHOUT='development:test' BUNDLE_PATH=vendor/bundle BUNDLE_BIN=vendor/bundle/bin BUNDLE_DEPLOYMENT=1 bundle install -j4
+       Some gems seem to be missing from your vendor/cache directory.
+       Could not find nokogiri-1.11.0 in any of the sources
+       Bundler Output: Some gems seem to be missing from your vendor/cache directory.
+       Could not find nokogiri-1.11.0 in any of the sources
+ !
+ !     Failed to install gems via Bundler.
+ !
+ !     Push rejected, failed to compile Ruby app.
+ !     Push failed
+```
+
+#### Solution
+
+Bundler 2.2 and later has *great* multiplatform support and allows you to cache gems for multiple platforms. You can run commands like these to cause Bundler to fetch and cache gems for all the named platforms:
+
+``` sh
+bundle lock --add-platform x86_64-darwin
+bundle lock --add-platform x86_64-linux
+bundle package --all-platforms
+```
+
+For more information, please read [this wonderful blog post](https://blog.thegnar.co/caching-all-native-gem-platforms) written by Kevin Murphy explaining this approach.
+
+
+#### Fallback Solution
+
+If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide. Here's how:
+
+``` sh
+rm -rf vendor/cache
+bundle config set force_ruby_platform true
+bundle install
+```
+
+
 ### [Linux] `/usr/bin/ld: cannot find -lgmp`
 
 If you're compiling the `ruby` platform gem, and if you've installed Ruby using RVM, [you may require libgmp](https://github.com/rvm/rvm/issues/3509).
