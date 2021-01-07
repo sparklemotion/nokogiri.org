@@ -469,6 +469,78 @@ If you're seeing other problems:
 * Try [Installing Using Standard System Libraries](#installing-using-standard-system-libraries).
 
 
+### Cannot install `racc`
+
+As of v1.11.0, Nokogiri is declaring an explicit dependency on `racc ~> 1.4`, which itself is a C extension that users may have trouble installing.
+
+
+#### Symptoms
+
+You may see an error message like this:
+
+``` sh
+Fetching racc 1.5.2
+Installing racc 1.5.2 with native extensions
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/Users/myuser2/.gem/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/opt/local/bin/ruby2.7 -I /opt/local/lib/ruby2.7/2.7.0 -r
+./siteconf20210104-30183-axgzet.rb extconf.rb
+checking for rb_ary_subseq()... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+       --with-opt-dir
+       --with-opt-include
+       --without-opt-include=${opt-dir}/include
+       --with-opt-lib
+       --without-opt-lib=${opt-dir}/lib
+       --with-make-prog
+       --without-make-prog
+       --srcdir=.
+       --curdir
+       --ruby=/opt/local/bin/$(RUBY_BASE_NAME)2.7
+/opt/local/lib/ruby2.7/2.7.0/mkmf.rb:471:in `try_do': The compiler failed to
+generate an executable file. (RuntimeError)
+You have to install development tools first.
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:564:in `try_link0'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:582:in `try_link'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:794:in `try_func'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1083:in `block in have_func'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:971:in `block in checking_for'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in `block (2 levels) in postpone'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:361:in `block in postpone'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:331:in `open'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:357:in `postpone'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:970:in `checking_for'
+       from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:1082:in `have_func'
+       from extconf.rb:6:in `<main>'
+
+To see why this extension failed to compile, please check the mkmf.log which can
+be found here:
+
+/Users/myuser2/.gem/ruby/2.7.0/extensions/arm64-darwin-20/2.7.0/racc-1.5.2/mkmf.log
+
+extconf failed, exit code 1
+```
+
+#### Solution 1 - Compiler toolchain
+
+Racc needs the same compiler toolchain to be present as any Gem with a C extension. See [Appendix A: The Compiler Toolchain](#appendix-a-the-compiler-toolchain).
+
+
+#### Solution 2 - Avoid installing Racc
+
+Ruby 3.0 comes with Racc 1.5.x as a "builtin gem", so you could update to Ruby 3!
+
+Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like `gem "racc", "~> 1.4.0"` to prevent bundler from trying to upgrade.
+
+
+
 ## Appendix A: The Compiler Toolchain
 
 A good way to tell if you've got your basic Ruby C extension compiler toolchain installed correctly is to try installing the `bcrypt` gem which has a smaller, self-contained C extension. If you can `gem install bcrypt`, you're all set!
