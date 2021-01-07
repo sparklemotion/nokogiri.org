@@ -32,6 +32,7 @@ plugins:
 
 extra_css:
   - "stylesheets/tidelift.css"
+  - "stylesheets/custom.css"
 
 markdown_extensions:
   - admonition

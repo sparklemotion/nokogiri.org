@@ -1,0 +1,8 @@
+/*
+ *  make sure the nokogiri logo has some breathing room. default margin is 1em but only on the left
+ *  and bottom.
+ */
+div.md-content img[align="right"],
+div.md-content img[align="right"]:only-child {
+  margin: 1em ;
+}
