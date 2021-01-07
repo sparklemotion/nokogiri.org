@@ -32,7 +32,7 @@ To determine whether your system supports one of these gems, look at the output 
 
 If you're on a supported platform, either `gem install` or `bundle install` should install a native gem without any additional action on your part. This installation should only take a few seconds, and your output should look something like:
 
-``` sh
+``` text
 $ gem install nokogiri
 Fetching nokogiri-1.11.0-x86_64-linux.gem
 Successfully installed nokogiri-1.11.0-x86_64-linux
@@ -74,7 +74,7 @@ If you don't see your operating system / distro in this section, then no additio
 
 #### Ubuntu or Debian-based Distros
 
-```sh
+``` sh
 sudo apt-get install zlib1g-dev liblzma-dev patch
 gem install nokogiri --platform=ruby
 ```
@@ -94,7 +94,7 @@ gem install nokogiri --platform=ruby
 
 Use `gcc` from ports in order to compile the packaged libraries:
 
-```sh
+``` sh
 pkg_add -v gcc
 gem install nokogiri --platform=ruby
 ```
@@ -111,7 +111,7 @@ If you don't see your operating system or distro listed below, then no additiona
 
 #### Debian/Ubuntu
 
-```
+``` sh
 sudo apt-get install pkg-config libxml2-dev libxslt-dev
 gem install nokogiri --platform=ruby -- --use-system-libraries
 ```
@@ -132,7 +132,7 @@ If you're using macports and would like to contribute documentation, please open
 
 #### FreeBSD
 
-```
+``` sh
 sudo pkg install pkgconf
 gem install nokogiri --platform=ruby -- --use-system-libraries
 ```
@@ -163,7 +163,7 @@ But if:
 
 You can specify the installation root directory:
 
-```sh
+``` sh
 gem install nokogiri -- \
     --use-system-libraries \
     --with-xml2-dir=/path/to/dir \
@@ -172,7 +172,7 @@ gem install nokogiri -- \
 
 or, you can specify include and library directories separately:
 
-```sh
+``` sh
 gem install nokogiri -- \
     --use-system-libraries \
     --with-xml2-lib=/path/to/builds/lib \
@@ -185,7 +185,7 @@ gem install nokogiri -- \
 
 It's likely that you'll also need to specify the location of your `zlib` and `iconv` (and possibly `exslt`) install directories as well. In that case, you can add the options:
 
-```sh
+``` sh
 gem install nokogiri -- \
     --use-system-libraries \
     # ...
@@ -197,7 +197,7 @@ gem install nokogiri -- \
 
 You can also tell bundler to remember these configuration parameters:
 
-```
+``` sh
 bundle config build.nokogiri \
        --use-system-libraries \
        --with-xml2-lib=/usr/local/lib \
@@ -230,7 +230,7 @@ See https://download.opensuse.org/repositories/devel:/languages:/ruby:/extension
 
 You may install the appropriate [epel-release][] and get the Nokogiri package from [EPEL][] using:
 
-```sh
+``` sh
 sudo dnf install -y rubygem-nokogiri
 ```
 
@@ -244,7 +244,7 @@ Install on any Linux distribution using [GNU Guix](https://www.gnu.org/software/
 
 Use this command:
 
-```sh
+``` sh
 guix package -i ruby-nokogiri
 ```
 
@@ -283,7 +283,7 @@ RUN gem install nokogiri --platform=ruby -- --use-system-libraries
 
 When optimizing the size of an Alpine image, the runtime libraries must be permanently added. Additionally, adding and removing development tooling can be chained with gem installation to ensure a small layer.
 
-```Dockerfile
+``` Dockerfile
 FROM ruby:3.0-alpine
 
 RUN apk add --no-cache libxml2 libxslt && \
@@ -313,7 +313,7 @@ SmartOS installation requires building and using libxml2/libxslt/libiconv in a n
 
 (Note: `pkgsrc` is included in JPC SmartOS instances)
 
-```sh
+``` sh
 pkgin install ruby gcc49 libxml2 libxslt zlib libiconv ruby22-rake gmake
 ln -s /opt/local/gcc49/bin/gcc /opt/local/bin/gcc
 
@@ -342,7 +342,7 @@ A common workflow is for a team to develop on a Mac but deploy to production on 
 
 During deployment, the buildpack may fail to find a relevant gem in `vendor/cache` and emit an error like this (from Heroku):
 
-``` sh
+``` text hl_lines="8-11"
 -----> Ruby app detected
 -----> Installing bundler 2.1.4
 -----> Removing BUNDLED WITH version in the Gemfile.lock
@@ -423,7 +423,7 @@ You see this dialog when you run the commands to update xcode commandline tools:
 
 Run this command to turn off forced-authentication with Apple Software Update:
 
-```sh
+``` sh
 sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 ```
 
@@ -435,7 +435,7 @@ If you're compiling the `ruby` platform gem ...
 
 An error during Nokogiri installation mentions an undeclared identifier `LZMA_OK`:
 
-```
+``` text
 xmlIO.c:1450:52: error: use of undeclared identifier 'LZMA_OK'
     ret =  (__libxml2_xzclose((xzFile) context) == LZMA_OK ) ? 0 : -1;
                                                    ^
@@ -451,7 +451,7 @@ When using Homebrew, there are several libraries that use a formula called `xz` 
 
 The most reliable solution appears to be temporarily unlinking `xz` and relinking it during an install of `nokogiri`:
 
-```sh
+``` sh
 brew unlink xz
 gem install nokogiri # or bundle install
 brew link xz
@@ -461,7 +461,7 @@ brew link xz
 
 The other solution is to use a Homebrew-installed `libxml2`, as suggested in [Installing Using Standard System Libraries](#installing-using-standard-system-libraries).
 
-```sh
+``` sh
 brew install libxml2
 gem install nokogiri -- --use-system-libraries \
     --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
@@ -487,7 +487,7 @@ Xcode 10 on macOS Mojave [moves the system headers][xcode10] out of `/usr/includ
 
 You'll see an error similar to this:
 
-```sh
+``` text hl_lines="3"
 Building nokogiri using packaged libraries.
 
 libiconv is missing.  please visit http://nokogiri.org/tutorials/installing_nokogiri.html for help with installing dependencies.
@@ -500,13 +500,13 @@ Could not create Makefile due to some reason, probably lack of necessary librari
 
 A temporary workaround to allow previous releases of Nokogiri to build is to install the extra headers package mentioned in the Xcode 10 release notes:
 
-```sh
+``` sh
 open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 ```
 
 You can also install the headers package from the command line (e.g. for a build script or a CI server):
 
-```sh
+``` sh
 sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 ```
 
@@ -530,7 +530,7 @@ As of v1.11.0, Nokogiri is declaring an explicit dependency on `racc ~> 1.4`, wh
 
 You may see an error message like this:
 
-``` sh
+``` text hl_lines="1-2 25-26"
 Fetching racc 1.5.2
 Installing racc 1.5.2 with native extensions
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
@@ -555,8 +555,7 @@ Provided configuration options:
        --srcdir=.
        --curdir
        --ruby=/opt/local/bin/$(RUBY_BASE_NAME)2.7
-/opt/local/lib/ruby2.7/2.7.0/mkmf.rb:471:in `try_do': The compiler failed to
-generate an executable file. (RuntimeError)
+/opt/local/lib/ruby2.7/2.7.0/mkmf.rb:471:in `try_do': The compiler failed to generate an executable file. (RuntimeError)
 You have to install development tools first.
        from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:564:in `try_link0'
        from /opt/local/lib/ruby2.7/2.7.0/mkmf.rb:582:in `try_link'
@@ -602,7 +601,7 @@ Reminder: if you're installing a native gem, you don't need to do this.
 
 ### Ubuntu or Debian-based Distros
 
-```sh
+``` sh
 sudo apt-get install build-essential ruby-dev
 ```
 
@@ -623,14 +622,14 @@ Please visit [RubyInstaller](https://rubyinstaller.org/) and make sure you insta
 
 First, make sure you have the latest version of RubyGems and xcode commandline tools:
 
-```sh
+``` sh
 gem update --system
 xcode-select --install # Then agree to the terms, even if you have done this before!
 ```
 
 Agree to the Xcode license:
 
-```sh
+``` sh
 sudo xcodebuild -license
 ```
 
