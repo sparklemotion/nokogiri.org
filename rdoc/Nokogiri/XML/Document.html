@@ -1119,6 +1119,8 @@
       <pre class="lines">
 
 
+364
+365
 366
 367
 368
@@ -1129,13 +1131,10 @@
 373
 374
 375
-376
-377
-378
-379</pre>
+376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 366</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 364</span>
 
 static VALUE new(int argc, VALUE *argv, VALUE klass)
 {
@@ -1147,8 +1146,7 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
   if (NIL_P(version)) version = rb_str_new2("1.0");
 
   doc = xmlNewDoc((xmlChar *)StringValueCStr(version));
-  rb_doc = Nokogiri_wrap_xml_document(klass, doc);
-  rb_obj_call_init(rb_doc, argc, argv);
+  rb_doc = nokogiri_xml_document_wrap_with_init_args(klass, doc, argc, argv);
   return rb_doc ;
 }</pre>
     </td>
@@ -1402,7 +1400,7 @@ static VALUE read_io( VALUE klass,
     return Qnil;
   }
 
-  document = Nokogiri_wrap_xml_document(klass, doc);
+  document = nokogiri_xml_document_wrap(klass, doc);
   rb_iv_set(document, "@errors", error_list);
   return document;
 }</pre>
@@ -1515,7 +1513,7 @@ static VALUE read_memory( VALUE klass,
     return Qnil;
   }
 
-  document = Nokogiri_wrap_xml_document(klass, doc);
+  document = nokogiri_xml_document_wrap(klass, doc);
   rb_iv_set(document, "@errors", error_list);
   return document;
 }</pre>
@@ -1684,6 +1682,9 @@ static VALUE read_memory( VALUE klass,
       <pre class="lines">
 
 
+506
+507
+508
 509
 510
 511
@@ -1737,13 +1738,10 @@ static VALUE read_memory( VALUE klass,
 559
 560
 561
-562
-563
-564
-565</pre>
+562</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 509</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 506</span>
 
 static VALUE nokogiri_xml_document_canonicalize(int argc, VALUE* argv, VALUE self)
 {
@@ -2091,6 +2089,9 @@ doc.create_element "div" { |node| node['class'] = "container" } # &lt;div class=
       <pre class="lines">
 
 
+435
+436
+437
 438
 439
 440
@@ -2124,13 +2125,10 @@ doc.create_element "div" { |node| node['class'] = "container" } # &lt;div class=
 468
 469
 470
-471
-472
-473
-474</pre>
+471</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 438</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 435</span>
 
 static VALUE create_entity(int argc, VALUE *argv, VALUE self)
 {
@@ -2409,9 +2407,7 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
 353
 354
 355
-356
-357
-358</pre>
+356</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 337</span>
@@ -2421,7 +2417,6 @@ static VALUE duplicate_document(int argc, VALUE *argv, VALUE self)
   xmlDocPtr doc, dup;
   VALUE copy;
   VALUE level;
-  VALUE error_list;
 
   if(rb_scan_args(argc, argv, "01", &amp;level) == 0)
     level = INT2NUM((long)1);
@@ -2433,9 +2428,8 @@ static VALUE duplicate_document(int argc, VALUE *argv, VALUE self)
   if(dup == NULL) return Qnil;
 
   dup-&gt;type = doc-&gt;type;
-  copy = Nokogiri_wrap_xml_document(rb_obj_class(self), dup);
-  error_list = rb_iv_get(self, "@errors");
-  rb_iv_set(copy, "@errors", error_list);
+  copy = nokogiri_xml_document_wrap(rb_obj_class(self), dup);
+  rb_iv_set(copy, "@errors", rb_iv_get(self, "@errors"));
   return copy ;
 }</pre>
     </td>
@@ -2748,17 +2742,17 @@ static VALUE set_encoding(VALUE self, VALUE encoding)
       <pre class="lines">
 
 
+415
+416
+417
 418
 419
 420
 421
-422
-423
-424
-425</pre>
+422</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 418</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 415</span>
 
 VALUE remove_namespaces_bang(VALUE self)
 {
@@ -3216,7 +3210,7 @@ static VALUE version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Jan  6 20:28:29 2021 by
+  Generated on Sun Jan 17 17:04:06 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

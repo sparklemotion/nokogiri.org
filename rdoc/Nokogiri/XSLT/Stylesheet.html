@@ -612,7 +612,7 @@ static VALUE transform(int argc, VALUE* argv, VALUE self)
       rb_exc_raise(exception);
     }
 
-    return Nokogiri_wrap_xml_document((VALUE)0, result) ;
+    return nokogiri_xml_document_wrap((VALUE)0, result) ;
 }</pre>
     </td>
   </tr>
@@ -624,7 +624,7 @@ static VALUE transform(int argc, VALUE* argv, VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Jan  6 20:28:30 2021 by
+  Generated on Sun Jan 17 17:04:07 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
