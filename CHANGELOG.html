@@ -570,6 +570,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#improved" class="md-nav__link">
+    Improved
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -639,7 +646,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved" class="md-nav__link">
+  <a href="#improved_1" class="md-nav__link">
     Improved
   </a>
   
@@ -955,7 +962,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_1" class="md-nav__link">
+  <a href="#improved_2" class="md-nav__link">
     Improved
   </a>
   
@@ -2854,6 +2861,10 @@
 <li>[CRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was invoked twice on each object.</li>
 <li>[JRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was not called, which was a problem for subclassing such as done by <code>Loofah</code>.</li>
 </ul>
+<h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[JRuby] Update the algorithm used to calculate <code>Node#line</code> to be wrong less-often. The underlying parser, Xerces, does not track line numbers, and so we've always used a hacky solution for this method. [<a href="https://github.com/sparklemotion/nokogiri/issues/1223">#1223</a>]</li>
+</ul>
 <h2 id="v1111-2021-01-06">v1.11.1 / 2021-01-06<a class="headerlink" href="#v1111-2021-01-06" title="Permanent link">&para;</a></h2>
 <h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2904,7 +2915,7 @@
 <li>[JRuby] Lots of code cleanup and performance improvements. [<a href="https://github.com/sparklemotion/nokogiri/issues/1934">#1934</a>] (Thanks, <a href="https://github.com/kares">@kares</a>!)</li>
 <li>[CRuby] <code>RelaxNG.from_document</code> no longer leaks memory. [<a href="https://github.com/sparklemotion/nokogiri/issues/2114">#2114</a>]</li>
 </ul>
-<h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
+<h3 id="improved_1">Improved<a class="headerlink" href="#improved_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Handle incorrectly-closed HTML comments as WHATWG recommends for browsers. [<a href="https://github.com/sparklemotion/nokogiri/issues/2058">#2058</a>] (Thanks to HackerOne user <a href="https://hackerone.com/mayflower?type=user">mayflower</a> for reporting this!)</li>
 <li>{HTML,XML}::Document#parse now accept <code>Pathname</code> objects. Previously this worked only if the referenced file was less than 4096 bytes long; longer files resulted in undefined behavior because the <code>read</code> method would be repeatedly invoked. [<a href="https://github.com/sparklemotion/nokogiri/issues/1821">#1821</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2110">#2110</a>] (Thanks, <a href="https://github.com/doriantaylor">@doriantaylor</a> and <a href="https://github.com/phokz">@phokz</a>!)</li>
@@ -3041,7 +3052,7 @@
 <ul>
 <li>[JRuby] Upgrade Xerces dependency from 2.11.0 to 2.12.0 to address upstream vulnerability CVE-2012-0881 [<a href="https://github.com/sparklemotion/nokogiri/issues/1831">#1831</a>] (Thanks <a href="https://github.com/grajagandev">@grajagandev</a> for reporting.)</li>
 </ul>
-<h3 id="improved_1">Improved<a class="headerlink" href="#improved_1" title="Permanent link">&para;</a></h3>
+<h3 id="improved_2">Improved<a class="headerlink" href="#improved_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Decrease installation size by removing many unneeded files (e.g., <code>/test</code>) from the packaged gems. [<a href="https://github.com/sparklemotion/nokogiri/issues/1719">#1719</a>] (Thanks, <a href="https://github.com/stevecrozz">@stevecrozz</a>!)</li>
 </ul>

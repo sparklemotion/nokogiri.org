@@ -316,7 +316,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#wrap-class_method" title="wrap (class method)">.<strong>wrap</strong>(document)  ⇒ Object </a>
+      <a href="#wrap-class_method" title="wrap (class method)">.<strong>wrap</strong>(java_document)  ⇒ Nokogiri::XML::Document </a>
     
 
     
@@ -331,7 +331,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p><code>JRuby</code> Wraps Java's org.w3c.dom.document and returns Nokogiri::XML::Document.</p>
+<p>Create a <span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Document</a></span> using an existing Java DOM document object.</p>
 </div></span>
   
 </li>
@@ -881,7 +881,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_java-instance_method" title="#to_java (instance method)">#<strong>to_java</strong>  ⇒ Object </a>
+      <a href="#to_java-instance_method" title="#to_java (instance method)">#<strong>to_java</strong>  ⇒ Java::OrgW3cDom::Document </a>
     
 
     
@@ -896,7 +896,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p><code>JRuby</code> Returns Java's org.w3c.dom.document of this Document.</p>
+<p>Returns the underlying Java DOM document object for the <span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Document</a></span>.</p>
 </div></span>
   
 </li>
@@ -1015,13 +1015,13 @@
       <pre class="lines">
 
 
-85
-86
-87
-88</pre>
+115
+116
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 115</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span> <span class="comment"># :nodoc:
 </span>  <span class="ivar">@errors</span>     <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span>
@@ -1067,12 +1067,12 @@
       <pre class="lines">
 
 
-83
-84
-85</pre>
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 113</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_errors">errors</span>
   <span class="ivar">@errors</span>
@@ -1209,7 +1209,6 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-48
 49
 50
 51
@@ -1241,10 +1240,11 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 77
 78
 79
-80</pre>
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 49</span>
 
 <span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">if</span> <span class="const">Integer</span> <span class="op">===</span> <span class="id identifier rubyid_options">options</span>
@@ -1525,7 +1525,7 @@ static VALUE read_memory( VALUE klass,
       <div class="method_details ">
   <h3 class="signature " id="wrap-class_method">
   
-    .<strong>wrap</strong>(document)  ⇒ <tt>Object</tt> 
+    .<strong>wrap</strong>(java_document)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Nokogiri::XML::Document</a></span></tt> 
   
 
   
@@ -1535,13 +1535,65 @@ static VALUE read_memory( VALUE klass,
 <div class="docstring">
   <div class="discussion">
     
-<p><code>JRuby</code> Wraps Java's org.w3c.dom.document and returns Nokogiri::XML::Document</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class="inline">
+<p>This method is only available when running JRuby.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class="inline">
+<p>The class <code>Java::OrgW3cDom::Document</code> is also accessible as <code>org.w3c.dom.Document</code>.</p>
+</div>
+  </div>
+
+
+<p>Create a <span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Nokogiri::XML::Document</a></span> using an existing Java DOM document object.</p>
+
+<p>The returned <span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Nokogiri::XML::Document</a></span> shares the same underlying data structure as the Java object, so changes in one are reflected in the other.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class="name">java_document</span>
+      
+      
+        <span class="type">(<tt>Java::OrgW3cDom::Document</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt><span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Nokogiri::XML::Document</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#to_java-instance_method" title="Nokogiri::XML::Document#to_java (method)">#to_java</a></span></li>
+    
+  </ul>
 
 </div>
 <table class="source_code">
@@ -1550,12 +1602,12 @@ static VALUE read_memory( VALUE klass,
       <pre class="lines">
 
 
-268</pre>
+</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 268</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 83</span>
 
-<span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_wrap">wrap</span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="rparen">)</span> <span class="kw">end</span></pre>
+</pre>
     </td>
   </tr>
 </table>
@@ -1587,19 +1639,19 @@ static VALUE read_memory( VALUE klass,
       <pre class="lines">
 
 
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262</pre>
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 283</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_add_child">add_child</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span>
   <span class="id identifier rubyid_raise">raise</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">A document may not have multiple root nodes.</span><span class="tstring_end">"</span></span> <span class="kw">if</span> <span class="lparen">(</span><span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="period">.</span><span class="id identifier rubyid_name">name</span> <span class="op">!=</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">nokogiri_text_wrapper</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="period">.</span><span class="id identifier rubyid_comment?">comment?</span> <span class="op">||</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="period">.</span><span class="id identifier rubyid_processing_instruction?">processing_instruction?</span><span class="rparen">)</span>
@@ -1858,15 +1910,15 @@ static VALUE nokogiri_xml_document_canonicalize(int argc, VALUE* argv, VALUE sel
       <pre class="lines">
 
 
-178
-179
-180
-181
-182
-183</pre>
+208
+209
+210
+211
+212
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 208</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_collect_namespaces">collect_namespaces</span>
   <span class="id identifier rubyid_xpath">xpath</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">//namespace::*</span><span class="tstring_end">"</span></span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_inject">inject</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_hash">hash</span><span class="comma">,</span> <span class="id identifier rubyid_ns">ns</span><span class="op">|</span>
@@ -1907,12 +1959,12 @@ static VALUE nokogiri_xml_document_canonicalize(int argc, VALUE* argv, VALUE sel
       <pre class="lines">
 
 
-129
-130
-131</pre>
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 159</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_create_cdata">create_cdata</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
   <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="CDATA.html" title="Nokogiri::XML::CDATA (class)">CDATA</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="CDATA.html#new-class_method" title="Nokogiri::XML::CDATA.new (method)">new</a></span></span> <span class="kw">self</span><span class="comma">,</span> <span class="id identifier rubyid_string">string</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
@@ -1950,12 +2002,12 @@ static VALUE nokogiri_xml_document_canonicalize(int argc, VALUE* argv, VALUE sel
       <pre class="lines">
 
 
-134
-135
-136</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 164</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_create_comment">create_comment</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
   <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Comment.html" title="Nokogiri::XML::Comment (class)">Comment</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Comment.html#new-class_method" title="Nokogiri::XML::Comment.new (method)">new</a></span></span> <span class="kw">self</span><span class="comma">,</span> <span class="id identifier rubyid_string">string</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
@@ -2000,32 +2052,32 @@ doc.create_element "div" { |node| node['class'] = "container" } # &lt;div class=
       <pre class="lines">
 
 
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121</pre>
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 129</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_create_element">create_element</span> <span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
   <span class="id identifier rubyid_elm">elm</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Element.html" title="Nokogiri::XML::Element (class)">Element</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Node.html#new-class_method" title="Nokogiri::XML::Node.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="kw">self</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
@@ -2200,12 +2252,12 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-124
-125
-126</pre>
+154
+155
+156</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 154</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_create_text_node">create_text_node</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
   <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Text.html" title="Nokogiri::XML::Text (class)">Text</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Text.html#new-class_method" title="Nokogiri::XML::Text.new (method)">new</a></span></span> <span class="id identifier rubyid_string">string</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="comma">,</span> <span class="kw">self</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
@@ -2243,16 +2295,16 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-226
-227
-228
-229
-230
-231
-232</pre>
+256
+257
+258
+259
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 226</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 256</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_decorate">decorate</span> <span class="id identifier rubyid_node">node</span>
   <span class="kw">return</span> <span class="kw">unless</span> <span class="ivar">@decorators</span>
@@ -2294,13 +2346,13 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-186
-187
-188
-189</pre>
+216
+217
+218
+219</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 186</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 216</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_decorators">decorators</span> <span class="id identifier rubyid_key">key</span>
   <span class="ivar">@decorators</span> <span class="op">||=</span> <span class="const">Hash</span><span class="period">.</span><span class="id identifier rubyid_new">new</span>
@@ -2339,12 +2391,12 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-144
-145
-146</pre>
+174
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 174</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_document">document</span>
   <span class="kw">self</span>
@@ -2583,12 +2635,12 @@ static VALUE set_encoding(VALUE self, VALUE encoding)
       <pre class="lines">
 
 
-245
-246
-247</pre>
+275
+276
+277</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 275</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span> <span class="id identifier rubyid_tags">tags</span> <span class="op">=</span> <span class="kw">nil</span>
   <span class="const"><span class="object_link"><a href="DocumentFragment.html" title="Nokogiri::XML::DocumentFragment (class)">DocumentFragment</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="DocumentFragment.html#new-class_method" title="Nokogiri::XML::DocumentFragment.new (method)">new</a></span></span><span class="lparen">(</span><span class="kw">self</span><span class="comma">,</span> <span class="id identifier rubyid_tags">tags</span><span class="comma">,</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="rparen">)</span>
@@ -2626,12 +2678,12 @@ static VALUE set_encoding(VALUE self, VALUE encoding)
       <pre class="lines">
 
 
-139
-140
-141</pre>
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 169</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_name">name</span>
   <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">document</span><span class="tstring_end">'</span></span>
@@ -2669,12 +2721,12 @@ static VALUE set_encoding(VALUE self, VALUE encoding)
       <pre class="lines">
 
 
-238
-239
-240</pre>
+268
+269
+270</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 238</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 268</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_namespaces">namespaces</span>
   <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class="op">?</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="period">.</span><span class="id identifier rubyid_namespaces">namespaces</span> <span class="op">:</span> <span class="lbrace">{</span><span class="rbrace">}</span>
@@ -2984,17 +3036,17 @@ irb&gt; doc.slop!
       <pre class="lines">
 
 
-215
-216
-217
-218
-219
-220
-221
-222</pre>
+245
+246
+247
+248
+249
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 215</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 245</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_slop!">slop!</span>
   <span class="kw">unless</span> <span class="id identifier rubyid_decorators">decorators</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_include?">include?</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../Decorators.html" title="Nokogiri::Decorators (module)">Decorators</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../Decorators/Slop.html" title="Nokogiri::Decorators::Slop (module)">Slop</a></span></span>
@@ -3012,7 +3064,7 @@ irb&gt; doc.slop!
       <div class="method_details ">
   <h3 class="signature " id="to_java-instance_method">
   
-    #<strong>to_java</strong>  ⇒ <tt>Object</tt> 
+    #<strong>to_java</strong>  ⇒ <tt>Java::OrgW3cDom::Document</tt> 
   
 
   
@@ -3022,13 +3074,50 @@ irb&gt; doc.slop!
 <div class="docstring">
   <div class="discussion">
     
-<p><code>JRuby</code> Returns Java's org.w3c.dom.document of this Document.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class="inline">
+<p>This method is only available when running JRuby.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class="inline">
+<p>The class <code>Java::OrgW3cDom::Document</code> is also accessible as <code>org.w3c.dom.Document</code>.</p>
+</div>
+  </div>
+
+
+<p>Returns the underlying Java DOM document object for the <span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Nokogiri::XML::Document</a></span>.</p>
+
+<p>The returned Java object shares the same underlying data structure as the <span class="object_link"><a href="" title="Nokogiri::XML::Document (class)">Nokogiri::XML::Document</a></span>, so changes in one are reflected in the other.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Java::OrgW3cDom::Document</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class="object_link"><a href="#wrap-class_method" title="Nokogiri::XML::Document.wrap (method)">wrap</a></span></li>
+    
+  </ul>
 
 </div>
 <table class="source_code">
@@ -3037,12 +3126,12 @@ irb&gt; doc.slop!
       <pre class="lines">
 
 
-273</pre>
+</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 273</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 98</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_to_java">to_java</span><span class="semicolon">;</span> <span class="kw">end</span></pre>
+</pre>
     </td>
   </tr>
 </table>
@@ -3133,13 +3222,13 @@ static VALUE url(VALUE self)
       <pre class="lines">
 
 
-194
-195
-196
-197</pre>
+224
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 224</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_validate">validate</span>
   <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">unless</span> <span class="id identifier rubyid_internal_subset">internal_subset</span>
@@ -3210,7 +3299,7 @@ static VALUE version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sun Jan 17 17:04:06 2021 by
+  Generated on Fri Jan 22 23:08:37 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
