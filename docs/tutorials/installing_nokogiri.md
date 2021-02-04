@@ -55,7 +55,9 @@ The Nokogiri maintainers strongly urge you to use a native gem if at all possibl
 If you're on a platform that supports a native gem but you want to avoid using it in your project, do one of the following:
 
 - If you're not using bundler, then run `gem install nokogiri --platform=ruby`
-- If you are using bundler, then you'll need to run `bundle config set force_ruby_platform true`
+- If you are using Bundler
+  - version 2.1 or later, then you'll need to run `bundle config set force_ruby_platform true`,
+  - version 2.0 or earlier, then you'll need to run `bundle config force_ruby_platform true`
 
 
 ## Installing the `ruby` platform gem
