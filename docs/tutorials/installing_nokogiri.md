@@ -380,7 +380,7 @@ If you can't upgrade to Bundler 2.2 (or later), you can force older versions to 
 
 ``` sh
 rm -rf vendor/cache
-bundle config set force_ruby_platform true
+bundle config force_ruby_platform true
 bundle install
 ```
 
