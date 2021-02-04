@@ -376,7 +376,17 @@ For more information, please read [this wonderful blog post](https://blog.thegna
 
 #### Fallback Solution
 
-If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide. Here's how:
+If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide.
+
+Here's how to do this with Bundler 2.1 or later:
+
+``` sh
+rm -rf vendor/cache
+bundle config set force_ruby_platform true
+bundle install
+```
+
+Or if you're on version 2.0 or earlier:
 
 ``` sh
 rm -rf vendor/cache
