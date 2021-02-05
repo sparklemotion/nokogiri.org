@@ -893,8 +893,10 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 <p>The Nokogiri maintainers strongly urge you to use a native gem if at all possible. We expect it will be a much better experience for you and allow us to focus our efforts on improving functionality rather than diagnosing installation issues.</p>
 <p>If you're on a platform that supports a native gem but you want to avoid using it in your project, do one of the following:</p>
 <ul>
-<li>If you're not using bundler, then run <code>gem install nokogiri --platform=ruby</code></li>
-<li>If you are using bundler, then you'll need to run <code>bundle config set force_ruby_platform true</code></li>
+<li>If you're not using Bundler, then run <code>gem install nokogiri --platform=ruby</code></li>
+<li>If you are using Bundler</li>
+<li>version 2.1 or later, then you'll need to run <code>bundle config set force_ruby_platform true</code>,</li>
+<li>version 2.0 or earlier, then you'll need to run <code>bundle config force_ruby_platform true</code></li>
 </ul>
 <h2 id="installing-the-ruby-platform-gem">Installing the <code>ruby</code> platform gem<a class="headerlink" href="#installing-the-ruby-platform-gem" title="Permanent link">&para;</a></h2>
 <p>Again, we recommend that you upgrade to v1.11.x and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.</p>
@@ -1104,9 +1106,16 @@ bundle package --all-platforms
 
 <p>For more information, please read <a href="https://blog.thegnar.co/caching-all-native-gem-platforms">this wonderful blog post</a> written by Kevin Murphy explaining this approach.</p>
 <h4>Fallback Solution</h4>
-<p>If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the <code>ruby</code> platform, which supports all platforms, but applies to <em>all</em> gems and comes with the installation challenges mentioned earlier in this guide. Here's how:</p>
+<p>If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the <code>ruby</code> platform, which supports all platforms, but applies to <em>all</em> gems and comes with the installation challenges mentioned earlier in this guide.</p>
+<p>Here's how to do this with Bundler 2.1 or later:</p>
 <div class="highlight"><pre><span></span><code>rm -rf vendor/cache
 bundle config <span class="nb">set</span> force_ruby_platform <span class="nb">true</span>
+bundle install
+</code></pre></div>
+
+<p>Or if you're on version 2.0 or earlier:</p>
+<div class="highlight"><pre><span></span><code>rm -rf vendor/cache
+bundle config force_ruby_platform <span class="nb">true</span>
 bundle install
 </code></pre></div>
 
