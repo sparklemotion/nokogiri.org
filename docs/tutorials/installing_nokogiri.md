@@ -54,8 +54,10 @@ The Nokogiri maintainers strongly urge you to use a native gem if at all possibl
 
 If you're on a platform that supports a native gem but you want to avoid using it in your project, do one of the following:
 
-- If you're not using bundler, then run `gem install nokogiri --platform=ruby`
-- If you are using bundler, then you'll need to run `bundle config set force_ruby_platform true`
+- If you're not using Bundler, then run `gem install nokogiri --platform=ruby`
+- If you are using Bundler
+  - version 2.1 or later, then you'll need to run `bundle config set force_ruby_platform true`,
+  - version 2.0 or earlier, then you'll need to run `bundle config force_ruby_platform true`
 
 
 ## Installing the `ruby` platform gem
@@ -376,11 +378,21 @@ For more information, please read [this wonderful blog post](https://blog.thegna
 
 #### Fallback Solution
 
-If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide. Here's how:
+If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide.
+
+Here's how to do this with Bundler 2.1 or later:
 
 ``` sh
 rm -rf vendor/cache
 bundle config set force_ruby_platform true
+bundle install
+```
+
+Or if you're on version 2.0 or earlier:
+
+``` sh
+rm -rf vendor/cache
+bundle config force_ruby_platform true
 bundle install
 ```
 
