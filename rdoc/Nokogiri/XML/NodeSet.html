@@ -1535,37 +1535,41 @@
       <pre class="lines">
 
 
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149</pre>
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 136</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 198</span>
 
-static VALUE intersection(VALUE self, VALUE rb_other)
+static VALUE
+intersection(VALUE self, VALUE rb_other)
 {
   xmlNodeSetPtr node_set, other ;
   xmlNodeSetPtr intersection;
 
-  if(!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet))
+  if (!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet)) {
     rb_raise(rb_eArgError, "node_set must be a Nokogiri::XML::NodeSet");
+  }
 
   Data_Get_Struct(self, xmlNodeSet, node_set);
   Data_Get_Struct(rb_other, xmlNodeSet, other);
 
   intersection = xmlXPathIntersection(node_set, other);
-  return Nokogiri_wrap_xml_node_set(intersection, rb_iv_get(self, "@document"));
+  return noko_xml_node_set_wrap(intersection, rb_iv_get(self, "@document"));
 }</pre>
     </td>
   </tr>
@@ -1605,37 +1609,41 @@ static VALUE intersection(VALUE self, VALUE rb_other)
       <pre class="lines">
 
 
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221</pre>
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 203</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 270</span>
 
-static VALUE minus(VALUE self, VALUE rb_other)
+static VALUE
+minus(VALUE self, VALUE rb_other)
 {
   xmlNodeSetPtr node_set, other;
   xmlNodeSetPtr new;
   int j ;
 
-  if(!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet))
+  if (!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet)) {
     rb_raise(rb_eArgError, "node_set must be a Nokogiri::XML::NodeSet");
+  }
 
   Data_Get_Struct(self, xmlNodeSet, node_set);
   Data_Get_Struct(rb_other, xmlNodeSet, other);
@@ -1645,7 +1653,7 @@ static VALUE minus(VALUE self, VALUE rb_other)
     xpath_node_set_del(new, other-&gt;nodeTab[j]);
   }
 
-  return Nokogiri_wrap_xml_node_set(new, rb_iv_get(self, "@document"));
+  return noko_xml_node_set_wrap(new, rb_iv_get(self, "@document"));
 }</pre>
     </td>
   </tr>
@@ -1795,49 +1803,51 @@ slice(range) -&gt; NodeSet or nil
       <pre class="lines">
 
 
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313</pre>
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 276</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 347</span>
 
-static VALUE slice(int argc, VALUE *argv, VALUE self)
+static VALUE
+slice(int argc, VALUE *argv, VALUE self)
 {
   VALUE arg ;
   long beg, len ;
@@ -2433,29 +2443,29 @@ static VALUE slice(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127</pre>
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 111</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 173</span>
 
 static VALUE
-delete(VALUE self, VALUE rb_node)
+delete (VALUE self, VALUE rb_node)
 {
   xmlNodeSetPtr node_set;
   xmlNodePtr node;
@@ -2510,22 +2520,24 @@ delete(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66</pre>
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 56</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 115</span>
 
-static VALUE duplicate(VALUE self)
+static VALUE
+duplicate(VALUE self)
 {
   xmlNodeSetPtr node_set;
   xmlNodeSetPtr dupl;
@@ -2534,7 +2546,7 @@ static VALUE duplicate(VALUE self)
 
   dupl = xmlXPathNodeSetMerge(NULL, node_set);
 
-  return Nokogiri_wrap_xml_node_set(dupl, rb_iv_get(self, "@document"));
+  return noko_xml_node_set_wrap(dupl, rb_iv_get(self, "@document"));
 }</pre>
     </td>
   </tr>
@@ -2785,23 +2797,25 @@ static VALUE duplicate(VALUE self)
       <pre class="lines">
 
 
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169</pre>
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 158</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 222</span>
 
-static VALUE include_eh(VALUE self, VALUE rb_node)
+static VALUE
+include_eh(VALUE self, VALUE rb_node)
 {
   xmlNodeSetPtr node_set;
   xmlNodePtr node;
@@ -3096,19 +3110,21 @@ static VALUE include_eh(VALUE self, VALUE rb_node)
       <pre class="lines">
 
 
-74
-75
-76
-77
-78
-79
-80
-81</pre>
+134
+135
+136
+137
+138
+139
+140
+141
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 74</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 134</span>
 
-static VALUE length(VALUE self)
+static VALUE
+length(VALUE self)
 {
   xmlNodeSetPtr node_set;
 
@@ -3200,25 +3216,27 @@ static VALUE length(VALUE self)
       <pre class="lines">
 
 
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102</pre>
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 89</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 150</span>
 
-static VALUE push(VALUE self, VALUE rb_node)
+static VALUE
+push(VALUE self, VALUE rb_node)
 {
   xmlNodeSetPtr node_set;
   xmlNodePtr node;
@@ -3540,49 +3558,51 @@ slice(range) -&gt; NodeSet or nil
       <pre class="lines">
 
 
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313</pre>
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 276</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 347</span>
 
-static VALUE slice(int argc, VALUE *argv, VALUE self)
+static VALUE
+slice(int argc, VALUE *argv, VALUE self)
 {
   VALUE arg ;
   long beg, len ;
@@ -3659,27 +3679,29 @@ static VALUE slice(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-322
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337</pre>
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 322</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 394</span>
 
-static VALUE to_array(VALUE self)
+static VALUE
+to_array(VALUE self)
 {
   xmlNodeSetPtr node_set ;
   VALUE list;
@@ -3688,9 +3710,9 @@ static VALUE to_array(VALUE self)
   Data_Get_Struct(self, xmlNodeSet, node_set);
 
   list = rb_ary_new2(node_set-&gt;nodeNr);
-  for(i = 0; i &lt; node_set-&gt;nodeNr; i++) {
-    VALUE elt = Nokogiri_wrap_xml_node_set_node(node_set-&gt;nodeTab[i], self);
-    rb_ary_push( list, elt );
+  for (i = 0; i &lt; node_set-&gt;nodeNr; i++) {
+    VALUE elt = noko_xml_node_wrap_node_set_result(node_set-&gt;nodeTab[i], self);
+    rb_ary_push(list, elt);
   }
 
   return list;
@@ -3920,31 +3942,33 @@ static VALUE to_array(VALUE self)
       <pre class="lines">
 
 
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364</pre>
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 345</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 418</span>
 
-static VALUE unlink_nodeset(VALUE self)
+static VALUE
+unlink_nodeset(VALUE self)
 {
   xmlNodeSetPtr node_set;
   int j, nodeNr ;
@@ -3956,7 +3980,7 @@ static VALUE unlink_nodeset(VALUE self)
     if (! NOKOGIRI_NAMESPACE_EH(node_set-&gt;nodeTab[j])) {
       VALUE node ;
       xmlNodePtr node_ptr;
-      node = Nokogiri_wrap_xml_node(Qnil, node_set-&gt;nodeTab[j]);
+      node = noko_xml_node_wrap(Qnil, node_set-&gt;nodeTab[j]);
       rb_funcall(node, rb_intern("unlink"), 0); /* modifies the C struct out from under the object */
       Data_Get_Struct(node, xmlNode, node_ptr);
       node_set-&gt;nodeTab[j] = node_ptr ;
@@ -4101,41 +4125,45 @@ static VALUE unlink_nodeset(VALUE self)
       <pre class="lines">
 
 
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194</pre>
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 179</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node_set.c', line 244</span>
 
-static VALUE set_union(VALUE self, VALUE rb_other)
+static VALUE
+rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 {
-  xmlNodeSetPtr node_set, other;
-  xmlNodeSetPtr new;
+  xmlNodeSetPtr c_node_set, c_other;
+  xmlNodeSetPtr c_new_node_set;
 
-  if(!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet))
+  if (!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet)) {
     rb_raise(rb_eArgError, "node_set must be a Nokogiri::XML::NodeSet");
+  }
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
-  Data_Get_Struct(rb_other, xmlNodeSet, other);
+  Data_Get_Struct(rb_node_set, xmlNodeSet, c_node_set);
+  Data_Get_Struct(rb_other, xmlNodeSet, c_other);
 
-  new = xmlXPathNodeSetMerge(NULL, node_set);
-  new = xmlXPathNodeSetMerge(new, other);
+  c_new_node_set = xmlXPathNodeSetMerge(NULL, c_node_set);
+  c_new_node_set = xmlXPathNodeSetMerge(c_new_node_set, c_other);
 
-  return Nokogiri_wrap_xml_node_set(new, rb_iv_get(self, "@document"));
+  return noko_xml_node_set_wrap(c_new_node_set, rb_iv_get(rb_node_set, "@document"));
 }</pre>
     </td>
   </tr>
@@ -4147,7 +4175,7 @@ static VALUE set_union(VALUE self, VALUE rb_other)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:37 2021 by
+  Generated on Sun Feb 21 16:10:46 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

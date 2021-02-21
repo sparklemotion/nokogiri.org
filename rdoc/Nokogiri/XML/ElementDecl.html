@@ -274,9 +274,6 @@
       <pre class="lines">
 
 
-24
-25
-26
 27
 28
 29
@@ -285,22 +282,27 @@
 32
 33
 34
-35</pre>
+35
+36
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_decl.c', line 24</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_decl.c', line 27</span>
 
-static VALUE content(VALUE self)
+static VALUE
+content(VALUE self)
 {
   xmlElementPtr node;
   Data_Get_Struct(self, xmlElement, node);
 
-  if(!node-&gt;content) return Qnil;
+  if (!node-&gt;content) { return Qnil; }
 
-  return Nokogiri_wrap_element_content(
-      rb_funcall(self, id_document, 0),
-      node-&gt;content
-  );
+  return noko_xml_element_content_wrap(
+           rb_funcall(self, id_document, 0),
+           node-&gt;content
+         );
 }</pre>
     </td>
   </tr>
@@ -337,17 +339,19 @@ static VALUE content(VALUE self)
       <pre class="lines">
 
 
-11
-12
 13
 14
 15
-16</pre>
+16
+17
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_decl.c', line 11</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_decl.c', line 13</span>
 
-static VALUE element_type(VALUE self)
+static VALUE
+element_type(VALUE self)
 {
   xmlElementPtr node;
   Data_Get_Struct(self, xmlElement, node);
@@ -419,25 +423,27 @@ static VALUE element_type(VALUE self)
       <pre class="lines">
 
 
-43
-44
-45
-46
 47
 48
 49
 50
-51</pre>
+51
+52
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_decl.c', line 43</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_decl.c', line 47</span>
 
-static VALUE prefix(VALUE self)
+static VALUE
+prefix(VALUE self)
 {
   xmlElementPtr node;
   Data_Get_Struct(self, xmlElement, node);
 
-  if(!node-&gt;prefix) return Qnil;
+  if (!node-&gt;prefix) { return Qnil; }
 
   return NOKOGIRI_STR_NEW2(node-&gt;prefix);
 }</pre>
@@ -451,7 +457,7 @@ static VALUE prefix(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:46 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

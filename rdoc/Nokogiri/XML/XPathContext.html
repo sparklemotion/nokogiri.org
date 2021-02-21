@@ -294,31 +294,33 @@
       <pre class="lines">
 
 
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
 346
 347
 348
 349
 350
-351</pre>
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 332</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 346</span>
 
-static VALUE new(VALUE klass, VALUE nodeobj)
+static VALUE
+new (VALUE klass, VALUE nodeobj)
 {
   xmlNodePtr node;
   xmlXPathContextPtr ctx;
@@ -379,18 +381,6 @@ static VALUE new(VALUE klass, VALUE nodeobj)
       <pre class="lines">
 
 
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
 274
 275
 276
@@ -441,12 +431,27 @@ static VALUE new(VALUE klass, VALUE nodeobj)
 321
 322
 323
-324</pre>
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 262</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 274</span>
 
-static VALUE evaluate(int argc, VALUE *argv, VALUE self)
+static VALUE
+evaluate(int argc, VALUE *argv, VALUE self)
 {
   VALUE search_path, xpath_handler;
   VALUE thing = Qnil;
@@ -456,12 +461,13 @@ static VALUE evaluate(int argc, VALUE *argv, VALUE self)
 
   Data_Get_Struct(self, xmlXPathContext, ctx);
 
-  if(rb_scan_args(argc, argv, "11", &amp;search_path, &amp;xpath_handler) == 1)
+  if (rb_scan_args(argc, argv, "11", &amp;search_path, &amp;xpath_handler) == 1) {
     xpath_handler = Qnil;
+  }
 
   query = (xmlChar *)StringValueCStr(search_path);
 
-  if(Qnil != xpath_handler) {
+  if (Qnil != xpath_handler) {
     /* FIXME: not sure if this is the correct place to shove private data. */
     ctx-&gt;userData = (void *)xpath_handler;
     xmlXPathRegisterFuncLookup(ctx, lookup, (void *)xpath_handler);
@@ -478,7 +484,7 @@ static VALUE evaluate(int argc, VALUE *argv, VALUE self)
   xmlSetStructuredErrorFunc(NULL, NULL);
   xmlSetGenericErrorFunc(NULL, NULL);
 
-  if(xpath == NULL) {
+  if (xpath == NULL) {
     xmlErrorPtr error = xmlGetLastError();
     rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
   }
@@ -486,23 +492,23 @@ static VALUE evaluate(int argc, VALUE *argv, VALUE self)
   assert(ctx-&gt;doc);
   assert(DOC_RUBY_OBJECT_TEST(ctx-&gt;doc));
 
-  switch(xpath-&gt;type) {
-    case XPATH_STRING:
-      thing = NOKOGIRI_STR_NEW2(xpath-&gt;stringval);
-      xmlFree(xpath-&gt;stringval);
-      break;
-    case XPATH_NODESET:
-      thing = Nokogiri_wrap_xml_node_set(xpath-&gt;nodesetval,
-                                         DOC_RUBY_OBJECT(ctx-&gt;doc));
-      break;
-    case XPATH_NUMBER:
-      thing = rb_float_new(xpath-&gt;floatval);
-      break;
-    case XPATH_BOOLEAN:
-      thing = xpath-&gt;boolval == 1 ? Qtrue : Qfalse;
-      break;
-    default:
-      thing = Nokogiri_wrap_xml_node_set(NULL, DOC_RUBY_OBJECT(ctx-&gt;doc));
+  switch (xpath-&gt;type) {
+  case XPATH_STRING:
+    thing = NOKOGIRI_STR_NEW2(xpath-&gt;stringval);
+    xmlFree(xpath-&gt;stringval);
+    break;
+  case XPATH_NODESET:
+    thing = noko_xml_node_set_wrap(xpath-&gt;nodesetval,
+                                   DOC_RUBY_OBJECT(ctx-&gt;doc));
+    break;
+  case XPATH_NUMBER:
+    thing = rb_float_new(xpath-&gt;floatval);
+    break;
+  case XPATH_BOOLEAN:
+    thing = xpath-&gt;boolval == 1 ? Qtrue : Qfalse;
+    break;
+  default:
+    thing = noko_xml_node_set_wrap(NULL, DOC_RUBY_OBJECT(ctx-&gt;doc));
   }
 
   xmlXPathFreeNodeSetList(xpath);
@@ -593,30 +599,32 @@ static VALUE evaluate(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-90
-91
-92
-93
-94
 95
 96
 97
 98
 99
-100</pre>
+100
+101
+102
+103
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 90</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 95</span>
 
-static VALUE register_ns(VALUE self, VALUE prefix, VALUE uri)
+static VALUE
+register_ns(VALUE self, VALUE prefix, VALUE uri)
 {
   xmlXPathContextPtr ctx;
   Data_Get_Struct(self, xmlXPathContext, ctx);
 
-  xmlXPathRegisterNs( ctx,
-                      (const xmlChar *)StringValueCStr(prefix),
-                      (const xmlChar *)StringValueCStr(uri)
-  );
+  xmlXPathRegisterNs(ctx,
+                     (const xmlChar *)StringValueCStr(prefix),
+                     (const xmlChar *)StringValueCStr(uri)
+                    );
   return self;
 }</pre>
     </td>
@@ -654,12 +662,6 @@ static VALUE register_ns(VALUE self, VALUE prefix, VALUE uri)
       <pre class="lines">
 
 
-108
-109
-110
-111
-112
-113
 114
 115
 116
@@ -668,25 +670,33 @@ static VALUE register_ns(VALUE self, VALUE prefix, VALUE uri)
 119
 120
 121
-122</pre>
+122
+123
+124
+125
+126
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 108</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_xpath_context.c', line 114</span>
 
-static VALUE register_variable(VALUE self, VALUE name, VALUE value)
+static VALUE
+register_variable(VALUE self, VALUE name, VALUE value)
 {
-   xmlXPathContextPtr ctx;
-   xmlXPathObjectPtr xmlValue;
-   Data_Get_Struct(self, xmlXPathContext, ctx);
+  xmlXPathContextPtr ctx;
+  xmlXPathObjectPtr xmlValue;
+  Data_Get_Struct(self, xmlXPathContext, ctx);
 
-   xmlValue = xmlXPathNewCString(StringValueCStr(value));
+  xmlValue = xmlXPathNewCString(StringValueCStr(value));
 
-   xmlXPathRegisterVariable( ctx,
-      (const xmlChar *)StringValueCStr(name),
-      xmlValue
-   );
+  xmlXPathRegisterVariable(ctx,
+                           (const xmlChar *)StringValueCStr(name),
+                           xmlValue
+                          );
 
-   return self;
+  return self;
 }</pre>
     </td>
   </tr>
@@ -698,7 +708,7 @@ static VALUE register_variable(VALUE self, VALUE name, VALUE value)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

@@ -221,11 +221,23 @@
   
 
 
+  <li class="md-tabs__item">
+    <a href="CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
   
   
   
     <li class="md-tabs__item">
-      <a href="CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
+      <a href="CONTRIBUTING.html" class="md-tabs__link">
         About
       </a>
     </li>
@@ -495,32 +507,6 @@
       
       
       
-
-
-  
-
-
-  
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
-    <label class="md-nav__link" for="nav-4">
-      About
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="About" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
-        About
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
 
 
   
@@ -2755,6 +2741,43 @@
     
   </li>
 
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    
+    <label class="md-nav__link" for="nav-5">
+      About
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="About" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="CONTRIBUTING.html" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
         
           
           
@@ -2858,11 +2881,14 @@
 <h2 id="next-unreleased">next / unreleased<a class="headerlink" href="#next-unreleased" title="Permanent link">&para;</a></h2>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
+<li>[CRuby] <code>NodeSet</code> may now safely contain <code>Node</code> objects from multiple documents. Previously the GC lifecycle of the parent <code>Document</code> objects could lead to contained nodes being GCed while still in scope. [<a href="https://github.com/sparklemotion/nokogiri/issues/1952">#1952</a>]</li>
+<li>[CRuby] Patch libxml2 to avoid "huge input lookup" errors on large CDATA elements. (See upstream <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/200">GNOME/libxml2#200</a> and <a href="https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/100">GNOME/libxml2!100</a>.) [<a href="https://github.com/sparklemotion/nokogiri/issues/2132">#2132</a>].</li>
 <li>[CRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was invoked twice on each object.</li>
 <li>[JRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was not called, which was a problem for subclassing such as done by <code>Loofah</code>.</li>
 </ul>
 <h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
 <ul>
+<li>Reduce the number of object allocations needed when parsing an HTML::DocumentFragment. [<a href="https://github.com/sparklemotion/nokogiri/issues/2087">#2087</a>] (Thanks, <a href="https://github.com/ashmaroli">@ashmaroli</a>!)</li>
 <li>[JRuby] Update the algorithm used to calculate <code>Node#line</code> to be wrong less-often. The underlying parser, Xerces, does not track line numbers, and so we've always used a hacky solution for this method. [<a href="https://github.com/sparklemotion/nokogiri/issues/1223">#1223</a>]</li>
 </ul>
 <h2 id="v1111-2021-01-06">v1.11.1 / 2021-01-06<a class="headerlink" href="#v1111-2021-01-06" title="Permanent link">&para;</a></h2>
@@ -4216,13 +4242,13 @@ mentioned in the notes for v1.5.10.</p>
           </a>
         
         
-          <a href="CODE_OF_CONDUCT.html" title="Code of Conduct" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="CONTRIBUTING.html" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Code of Conduct
+                Contributing
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

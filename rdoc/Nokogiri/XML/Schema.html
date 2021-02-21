@@ -140,6 +140,11 @@
   
 
 </div>
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class="object_link"><a href="RelaxNG.html" title="Nokogiri::XML::RelaxNG (class)">RelaxNG</a></span></p>
+</div>
+
 
 
 
@@ -477,14 +482,6 @@
       <pre class="lines">
 
 
-189
-190
-191
-192
-193
-194
-195
-196
 197
 198
 199
@@ -548,12 +545,23 @@
 257
 258
 259
-260</pre>
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_schema.c', line 189</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_schema.c', line 197</span>
 
-static VALUE from_document(int argc, VALUE *argv, VALUE klass)
+static VALUE
+from_document(int argc, VALUE *argv, VALUE klass)
 {
   VALUE document;
   VALUE parse_options;
@@ -572,7 +580,7 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
   doc = doc-&gt;doc; /* In case someone passes us a node. ugh. */
 
   if (scanned_args == 1) {
-    parse_options = rb_const_get(rb_const_get(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
+    parse_options = rb_const_get_at(rb_const_get_at(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
   }
   parse_options_int = (int)NUM2INT(rb_funcall(parse_options, rb_intern("to_i"), 0));
 
@@ -607,12 +615,13 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
   xmlSetStructuredErrorFunc(NULL, NULL);
   xmlSchemaFreeParserCtxt(ctx);
 
-  if(NULL == schema) {
+  if (NULL == schema) {
     xmlErrorPtr error = xmlGetLastError();
-    if(error)
+    if (error) {
       Nokogiri_error_raise(NULL, error);
-    else
+    } else {
       rb_raise(rb_eRuntimeError, "Could not parse document");
+    }
 
     return Qnil;
   }
@@ -703,11 +712,6 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-96
-97
-98
-99
-100
 101
 102
 103
@@ -763,12 +767,20 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
 153
 154
 155
-156</pre>
+156
+157
+158
+159
+160
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_schema.c', line 96</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_schema.c', line 101</span>
 
-static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
+static VALUE
+read_memory(int argc, VALUE *argv, VALUE klass)
 {
   VALUE content;
   VALUE parse_options;
@@ -782,7 +794,7 @@ static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
 
   scanned_args = rb_scan_args(argc, argv, "11", &amp;content, &amp;parse_options);
   if (scanned_args == 1) {
-    parse_options = rb_const_get(rb_const_get(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
+    parse_options = rb_const_get_at(rb_const_get_at(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
   }
   parse_options_int = (int)NUM2INT(rb_funcall(parse_options, rb_intern("to_i"), 0));
 
@@ -796,7 +808,7 @@ static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
     ctx,
     Nokogiri_error_array_pusher,
     (void *)errors
-    );
+  );
 #endif
 
   if (parse_options_int &amp; XML_PARSE_NONET) {
@@ -813,12 +825,13 @@ static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
   xmlSetStructuredErrorFunc(NULL, NULL);
   xmlSchemaFreeParserCtxt(ctx);
 
-  if(NULL == schema) {
+  if (NULL == schema) {
     xmlErrorPtr error = xmlGetLastError();
-    if(error)
+    if (error) {
       Nokogiri_error_raise(NULL, error);
-    else
+    } else {
       rb_raise(rb_eRuntimeError, "Could not parse document");
+    }
 
     return Qnil;
   }
@@ -956,7 +969,7 @@ static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:37 2021 by
+  Generated on Sun Feb 21 16:10:45 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

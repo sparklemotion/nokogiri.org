@@ -105,7 +105,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/nokogiri/xml/sax/parser_context.rb<span class="defines">,<br>
-  ext/nokogiri/xml_sax_parser_context.c,<br> ext/nokogiri/html_sax_parser_context.c</span>
+  ext/nokogiri/xml_sax_parser_context.c</span>
 </dd>
   </dl>
   
@@ -453,16 +453,18 @@
       <pre class="lines">
 
 
-46
 47
 48
 49
-50</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 46</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 47</span>
 
-static VALUE parse_file(VALUE klass, VALUE filename)
+static VALUE
+parse_file(VALUE klass, VALUE filename)
 {
   xmlParserCtxtPtr ctxt = xmlCreateFileParserCtxt(StringValueCStr(filename));
   return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
@@ -502,7 +504,6 @@ static VALUE parse_file(VALUE klass, VALUE filename)
       <pre class="lines">
 
 
-22
 23
 24
 25
@@ -518,27 +519,28 @@ static VALUE parse_file(VALUE klass, VALUE filename)
 35
 36
 37
-38</pre>
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 22</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 23</span>
 
 static VALUE
 parse_io(VALUE klass, VALUE io, VALUE encoding)
 {
-    xmlParserCtxtPtr ctxt;
-    xmlCharEncoding enc = (xmlCharEncoding)NUM2INT(encoding);
+  xmlParserCtxtPtr ctxt;
+  xmlCharEncoding enc = (xmlCharEncoding)NUM2INT(encoding);
 
-    ctxt = xmlCreateIOParserCtxt(NULL, NULL,
-				 (xmlInputReadCallback)io_read_callback,
-				 (xmlInputCloseCallback)io_close_callback,
-				 (void *)io, enc);
-    if (ctxt-&gt;sax) {
-	xmlFree(ctxt-&gt;sax);
-	ctxt-&gt;sax = NULL;
-    }
+  ctxt = xmlCreateIOParserCtxt(NULL, NULL,
+                               (xmlInputReadCallback)noko_io_read,
+                               (xmlInputCloseCallback)noko_io_close,
+                               (void *)io, enc);
+  if (ctxt-&gt;sax) {
+    xmlFree(ctxt-&gt;sax);
+    ctxt-&gt;sax = NULL;
+  }
 
-    return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
+  return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
 }</pre>
     </td>
   </tr>
@@ -575,8 +577,6 @@ parse_io(VALUE klass, VALUE io, VALUE encoding)
       <pre class="lines">
 
 
-58
-59
 60
 61
 62
@@ -593,29 +593,35 @@ parse_io(VALUE klass, VALUE io, VALUE encoding)
 73
 74
 75
-76</pre>
+76
+77
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 58</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 60</span>
 
 static VALUE
 parse_memory(VALUE klass, VALUE data)
 {
-    xmlParserCtxtPtr ctxt;
+  xmlParserCtxtPtr ctxt;
 
-    if (NIL_P(data))
-	rb_raise(rb_eArgError, "data cannot be nil");
-    if (!(int)RSTRING_LEN(data))
-	rb_raise(rb_eRuntimeError, "data cannot be empty");
+  if (NIL_P(data)) {
+    rb_raise(rb_eArgError, "data cannot be nil");
+  }
+  if (!(int)RSTRING_LEN(data)) {
+    rb_raise(rb_eRuntimeError, "data cannot be empty");
+  }
 
-    ctxt = xmlCreateMemoryParserCtxt(StringValuePtr(data),
-				     (int)RSTRING_LEN(data));
-    if (ctxt-&gt;sax) {
-	xmlFree(ctxt-&gt;sax);
-	ctxt-&gt;sax = NULL;
-    }
+  ctxt = xmlCreateMemoryParserCtxt(StringValuePtr(data),
+                                   (int)RSTRING_LEN(data));
+  if (ctxt-&gt;sax) {
+    xmlFree(ctxt-&gt;sax);
+    ctxt-&gt;sax = NULL;
+  }
 
-    return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
+  return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
 }</pre>
     </td>
   </tr>
@@ -691,24 +697,27 @@ parse_memory(VALUE klass, VALUE data)
       <pre class="lines">
 
 
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204</pre>
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 192</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 205</span>
 
-static VALUE column(VALUE self)
+static VALUE
+column(VALUE self)
 {
   xmlParserCtxtPtr ctxt;
   xmlParserInputPtr io;
@@ -716,8 +725,9 @@ static VALUE column(VALUE self)
   Data_Get_Struct(self, xmlParserCtxt, ctxt);
 
   io = ctxt-&gt;input;
-  if(io)
+  if (io) {
     return INT2NUM(io-&gt;col);
+  }
 
   return Qnil;
 }</pre>
@@ -756,24 +766,27 @@ static VALUE column(VALUE self)
       <pre class="lines">
 
 
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
 184
-185</pre>
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 173</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 184</span>
 
-static VALUE line(VALUE self)
+static VALUE
+line(VALUE self)
 {
   xmlParserCtxtPtr ctxt;
   xmlParserInputPtr io;
@@ -781,8 +794,9 @@ static VALUE line(VALUE self)
   Data_Get_Struct(self, xmlParserCtxt, ctxt);
 
   io = ctxt-&gt;input;
-  if(io)
+  if (io) {
     return INT2NUM(io-&gt;line);
+  }
 
   return Qnil;
 }</pre>
@@ -821,11 +835,6 @@ static VALUE line(VALUE self)
       <pre class="lines">
 
 
-104
-105
-106
-107
-108
 109
 110
 111
@@ -845,35 +854,44 @@ static VALUE line(VALUE self)
 125
 126
 127
-128</pre>
+128
+129
+130
+131
+132
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 104</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 109</span>
 
 static VALUE
 parse_with(VALUE self, VALUE sax_handler)
 {
-    xmlParserCtxtPtr ctxt;
-    xmlSAXHandlerPtr sax;
+  xmlParserCtxtPtr ctxt;
+  xmlSAXHandlerPtr sax;
 
-    if (!rb_obj_is_kind_of(sax_handler, cNokogiriXmlSaxParser))
-	rb_raise(rb_eArgError, "argument must be a Nokogiri::XML::SAX::Parser");
+  if (!rb_obj_is_kind_of(sax_handler, cNokogiriXmlSaxParser)) {
+    rb_raise(rb_eArgError, "argument must be a Nokogiri::XML::SAX::Parser");
+  }
 
-    Data_Get_Struct(self, xmlParserCtxt, ctxt);
-    Data_Get_Struct(sax_handler, xmlSAXHandler, sax);
+  Data_Get_Struct(self, xmlParserCtxt, ctxt);
+  Data_Get_Struct(sax_handler, xmlSAXHandler, sax);
 
-    /* Free the sax handler since we'll assign our own */
-    if (ctxt-&gt;sax &amp;&amp; ctxt-&gt;sax != (xmlSAXHandlerPtr)&amp;xmlDefaultSAXHandler)
-	xmlFree(ctxt-&gt;sax);
+  /* Free the sax handler since we'll assign our own */
+  if (ctxt-&gt;sax &amp;&amp; ctxt-&gt;sax != (xmlSAXHandlerPtr)&amp;xmlDefaultSAXHandler) {
+    xmlFree(ctxt-&gt;sax);
+  }
 
-    ctxt-&gt;sax = sax;
-    ctxt-&gt;userData = (void *)NOKOGIRI_SAX_TUPLE_NEW(ctxt, sax_handler);
+  ctxt-&gt;sax = sax;
+  ctxt-&gt;userData = (void *)NOKOGIRI_SAX_TUPLE_NEW(ctxt, sax_handler);
 
-    xmlSetStructuredErrorFunc(NULL, NULL);
+  xmlSetStructuredErrorFunc(NULL, NULL);
 
-    rb_ensure(parse_doc, (VALUE)ctxt, parse_doc_finalize, (VALUE)ctxt);
+  rb_ensure(parse_doc, (VALUE)ctxt, parse_doc_finalize, (VALUE)ctxt);
 
-    return Qnil;
+  return Qnil;
 }</pre>
     </td>
   </tr>
@@ -910,29 +928,33 @@ parse_with(VALUE self, VALUE sax_handler)
       <pre class="lines">
 
 
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242</pre>
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 233</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 250</span>
 
-static VALUE get_recovery(VALUE self)
+static VALUE
+get_recovery(VALUE self)
 {
   xmlParserCtxtPtr ctxt;
   Data_Get_Struct(self, xmlParserCtxt, ctxt);
 
-  if(ctxt-&gt;recovery == 0)
+  if (ctxt-&gt;recovery == 0) {
     return Qfalse;
-  else
+  } else {
     return Qtrue;
+  }
 }</pre>
     </td>
   </tr>
@@ -969,31 +991,35 @@ static VALUE get_recovery(VALUE self)
       <pre class="lines">
 
 
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224</pre>
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 213</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 228</span>
 
-static VALUE set_recovery(VALUE self, VALUE value)
+static VALUE
+set_recovery(VALUE self, VALUE value)
 {
   xmlParserCtxtPtr ctxt;
   Data_Get_Struct(self, xmlParserCtxt, ctxt);
 
-  if(value == Qfalse)
+  if (value == Qfalse) {
     ctxt-&gt;recovery = 0;
-  else
+  } else {
     ctxt-&gt;recovery = 1;
+  }
 
   return value;
 }</pre>
@@ -1032,29 +1058,33 @@ static VALUE set_recovery(VALUE self, VALUE value)
       <pre class="lines">
 
 
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166</pre>
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 157</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 166</span>
 
-static VALUE get_replace_entities(VALUE self)
+static VALUE
+get_replace_entities(VALUE self)
 {
   xmlParserCtxtPtr ctxt;
   Data_Get_Struct(self, xmlParserCtxt, ctxt);
 
-  if(0 == ctxt-&gt;replaceEntities)
+  if (0 == ctxt-&gt;replaceEntities) {
     return Qfalse;
-  else
+  } else {
     return Qtrue;
+  }
 }</pre>
     </td>
   </tr>
@@ -1091,31 +1121,35 @@ static VALUE get_replace_entities(VALUE self)
       <pre class="lines">
 
 
-137
-138
-139
-140
-141
-142
-143
 144
 145
 146
 147
-148</pre>
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 137</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_parser_context.c', line 144</span>
 
-static VALUE set_replace_entities(VALUE self, VALUE value)
+static VALUE
+set_replace_entities(VALUE self, VALUE value)
 {
   xmlParserCtxtPtr ctxt;
   Data_Get_Struct(self, xmlParserCtxt, ctxt);
 
-  if(Qfalse == value)
+  if (Qfalse == value) {
     ctxt-&gt;replaceEntities = 0;
-  else
+  } else {
     ctxt-&gt;replaceEntities = 1;
+  }
 
   return value;
 }</pre>
@@ -1129,7 +1163,7 @@ static VALUE set_replace_entities(VALUE self, VALUE value)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:39 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

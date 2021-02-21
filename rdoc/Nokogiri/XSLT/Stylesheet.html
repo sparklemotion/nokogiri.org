@@ -290,6 +290,7 @@
       <pre class="lines">
 
 
+60
 61
 62
 63
@@ -316,31 +317,32 @@
 84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 61</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 60</span>
 
-static VALUE parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
+static VALUE
+parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
 {
-    xmlDocPtr xml, xml_cpy;
-    VALUE errstr, exception;
-    xsltStylesheetPtr ss ;
-    Data_Get_Struct(xmldocobj, xmlDoc, xml);
-    exsltRegisterAll();
+  xmlDocPtr xml, xml_cpy;
+  VALUE errstr, exception;
+  xsltStylesheetPtr ss ;
+  Data_Get_Struct(xmldocobj, xmlDoc, xml);
+  exsltRegisterAll();
 
-    errstr = rb_str_new(0, 0);
-    xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
+  errstr = rb_str_new(0, 0);
+  xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
 
-    xml_cpy = xmlCopyDoc(xml, 1); /* 1 =&gt; recursive */
-    ss = xsltParseStylesheetDoc(xml_cpy);
+  xml_cpy = xmlCopyDoc(xml, 1); /* 1 =&gt; recursive */
+  ss = xsltParseStylesheetDoc(xml_cpy);
 
-    xsltSetGenericErrorFunc(NULL, NULL);
+  xsltSetGenericErrorFunc(NULL, NULL);
 
-    if (!ss) {
-	xmlFreeDoc(xml_cpy);
-	exception = rb_exc_new3(rb_eRuntimeError, errstr);
-	rb_exc_raise(exception);
-    }
+  if (!ss) {
+    xmlFreeDoc(xml_cpy);
+    exception = rb_exc_new3(rb_eRuntimeError, errstr);
+    rb_exc_raise(exception);
+  }
 
-    return Nokogiri_wrap_xslt_stylesheet(ss);
+  return Nokogiri_wrap_xslt_stylesheet(ss);
 }</pre>
     </td>
   </tr>
@@ -440,25 +442,27 @@ static VALUE parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
 104
 105
 106
-107</pre>
+107
+108</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 93</span>
 
-static VALUE serialize(VALUE self, VALUE xmlobj)
+static VALUE
+serialize(VALUE self, VALUE xmlobj)
 {
-    xmlDocPtr xml ;
-    nokogiriXsltStylesheetTuple *wrapper;
-    xmlChar* doc_ptr ;
-    int doc_len ;
-    VALUE rval ;
+  xmlDocPtr xml ;
+  nokogiriXsltStylesheetTuple *wrapper;
+  xmlChar *doc_ptr ;
+  int doc_len ;
+  VALUE rval ;
 
-    Data_Get_Struct(xmlobj, xmlDoc, xml);
-    Data_Get_Struct(self, nokogiriXsltStylesheetTuple, wrapper);
-    xsltSaveResultToString(&amp;doc_ptr, &amp;doc_len, xml, wrapper-&gt;ss);
-    rval = NOKOGIRI_STR_NEW(doc_ptr, doc_len);
-    xmlFree(doc_ptr);
-    return rval ;
+  Data_Get_Struct(xmlobj, xmlDoc, xml);
+  Data_Get_Struct(self, nokogiriXsltStylesheetTuple, wrapper);
+  xsltSaveResultToString(&amp;doc_ptr, &amp;doc_len, xml, wrapper-&gt;ss);
+  rval = NOKOGIRI_STR_NEW(doc_ptr, doc_len);
+  xmlFree(doc_ptr);
+  return rval ;
 }</pre>
     </td>
   </tr>
@@ -502,7 +506,6 @@ static VALUE serialize(VALUE self, VALUE xmlobj)
       <pre class="lines">
 
 
-124
 125
 126
 127
@@ -555,64 +558,69 @@ static VALUE serialize(VALUE self, VALUE xmlobj)
 174
 175
 176
-177</pre>
+177
+178
+179
+180</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 124</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 125</span>
 
-static VALUE transform(int argc, VALUE* argv, VALUE self)
+static VALUE
+transform(int argc, VALUE *argv, VALUE self)
 {
-    VALUE xmldoc, paramobj, errstr, exception ;
-    xmlDocPtr xml ;
-    xmlDocPtr result ;
-    nokogiriXsltStylesheetTuple *wrapper;
-    const char** params ;
-    long param_len, j ;
-    int parse_error_occurred ;
+  VALUE xmldoc, paramobj, errstr, exception ;
+  xmlDocPtr xml ;
+  xmlDocPtr result ;
+  nokogiriXsltStylesheetTuple *wrapper;
+  const char **params ;
+  long param_len, j ;
+  int parse_error_occurred ;
 
-    rb_scan_args(argc, argv, "11", &amp;xmldoc, &amp;paramobj);
-    if (NIL_P(paramobj)) { paramobj = rb_ary_new2(0L) ; }
-    if (!rb_obj_is_kind_of(xmldoc, cNokogiriXmlDocument))
-      rb_raise(rb_eArgError, "argument must be a Nokogiri::XML::Document");
+  rb_scan_args(argc, argv, "11", &amp;xmldoc, &amp;paramobj);
+  if (NIL_P(paramobj)) { paramobj = rb_ary_new2(0L) ; }
+  if (!rb_obj_is_kind_of(xmldoc, cNokogiriXmlDocument)) {
+    rb_raise(rb_eArgError, "argument must be a Nokogiri::XML::Document");
+  }
 
-    /* handle hashes as arguments. */
-    if(T_HASH == TYPE(paramobj)) {
-      paramobj = rb_funcall(paramobj, rb_intern("to_a"), 0);
-      paramobj = rb_funcall(paramobj, rb_intern("flatten"), 0);
-    }
+  /* handle hashes as arguments. */
+  if (T_HASH == TYPE(paramobj)) {
+    paramobj = rb_funcall(paramobj, rb_intern("to_a"), 0);
+    paramobj = rb_funcall(paramobj, rb_intern("flatten"), 0);
+  }
 
-    Check_Type(paramobj, T_ARRAY);
+  Check_Type(paramobj, T_ARRAY);
 
-    Data_Get_Struct(xmldoc, xmlDoc, xml);
-    Data_Get_Struct(self, nokogiriXsltStylesheetTuple, wrapper);
+  Data_Get_Struct(xmldoc, xmlDoc, xml);
+  Data_Get_Struct(self, nokogiriXsltStylesheetTuple, wrapper);
 
-    param_len = RARRAY_LEN(paramobj);
-    params = calloc((size_t)param_len+1, sizeof(char*));
-    for (j = 0 ; j &lt; param_len ; j++) {
-      VALUE entry = rb_ary_entry(paramobj, j);
-      const char * ptr = StringValueCStr(entry);
-      params[j] = ptr;
-    }
-    params[param_len] = 0 ;
+  param_len = RARRAY_LEN(paramobj);
+  params = calloc((size_t)param_len + 1, sizeof(char *));
+  for (j = 0 ; j &lt; param_len ; j++) {
+    VALUE entry = rb_ary_entry(paramobj, j);
+    const char *ptr = StringValueCStr(entry);
+    params[j] = ptr;
+  }
+  params[param_len] = 0 ;
 
-    errstr = rb_str_new(0, 0);
-    xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
-    xmlSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
+  errstr = rb_str_new(0, 0);
+  xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
+  xmlSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
 
-    result = xsltApplyStylesheet(wrapper-&gt;ss, xml, params);
-    free(params);
+  result = xsltApplyStylesheet(wrapper-&gt;ss, xml, params);
+  free(params);
 
-    xsltSetGenericErrorFunc(NULL, NULL);
-    xmlSetGenericErrorFunc(NULL, NULL);
+  xsltSetGenericErrorFunc(NULL, NULL);
+  xmlSetGenericErrorFunc(NULL, NULL);
 
-    parse_error_occurred = (Qfalse == rb_funcall(errstr, rb_intern("empty?"), 0));
+  parse_error_occurred = (Qfalse == rb_funcall(errstr, rb_intern("empty?"), 0));
 
-    if (parse_error_occurred) {
-      exception = rb_exc_new3(rb_eRuntimeError, errstr);
-      rb_exc_raise(exception);
-    }
+  if (parse_error_occurred) {
+    exception = rb_exc_new3(rb_eRuntimeError, errstr);
+    rb_exc_raise(exception);
+  }
 
-    return nokogiri_xml_document_wrap((VALUE)0, result) ;
+  return noko_xml_document_wrap((VALUE)0, result) ;
 }</pre>
     </td>
   </tr>
@@ -624,7 +632,7 @@ static VALUE transform(int argc, VALUE* argv, VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:46 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

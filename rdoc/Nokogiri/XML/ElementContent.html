@@ -514,17 +514,19 @@
 15
 16
 17
-18</pre>
+18
+19</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_content.c', line 11</span>
 
-static VALUE get_name(VALUE self)
+static VALUE
+get_name(VALUE self)
 {
   xmlElementContentPtr elem;
   Data_Get_Struct(self, xmlElementContent, elem);
 
-  if(!elem-&gt;name) return Qnil;
+  if (!elem-&gt;name) { return Qnil; }
   return NOKOGIRI_STR_NEW2(elem-&gt;name);
 }</pre>
     </td>
@@ -562,18 +564,20 @@ static VALUE get_name(VALUE self)
       <pre class="lines">
 
 
-72
-73
-74
-75
 76
 77
-78</pre>
+78
+79
+80
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_content.c', line 72</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_content.c', line 76</span>
 
-static VALUE get_occur(VALUE self)
+static VALUE
+get_occur(VALUE self)
 {
   xmlElementContentPtr elem;
   Data_Get_Struct(self, xmlElementContent, elem);
@@ -615,25 +619,27 @@ static VALUE get_occur(VALUE self)
       <pre class="lines">
 
 
-86
-87
-88
-89
-90
 91
 92
 93
-94</pre>
+94
+95
+96
+97
+98
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_content.c', line 86</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_content.c', line 91</span>
 
-static VALUE get_prefix(VALUE self)
+static VALUE
+get_prefix(VALUE self)
 {
   xmlElementContentPtr elem;
   Data_Get_Struct(self, xmlElementContent, elem);
 
-  if(!elem-&gt;prefix) return Qnil;
+  if (!elem-&gt;prefix) { return Qnil; }
 
   return NOKOGIRI_STR_NEW2(elem-&gt;prefix);
 }</pre>
@@ -672,18 +678,20 @@ static VALUE get_prefix(VALUE self)
       <pre class="lines">
 
 
-27
 28
 29
 30
 31
 32
-33</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_content.c', line 27</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_element_content.c', line 28</span>
 
-static VALUE get_type(VALUE self)
+static VALUE
+get_type(VALUE self)
 {
   xmlElementContentPtr elem;
   Data_Get_Struct(self, xmlElementContent, elem);
@@ -700,7 +708,7 @@ static VALUE get_type(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

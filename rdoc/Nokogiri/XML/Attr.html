@@ -79,12 +79,12 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName"><span class="object_link"><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span>
+      <span class="inheritName">NokogiriXmlNode</span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next"><span class="object_link"><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></li>
+            <li class="next">NokogiriXmlNode</li>
           
             <li class="next">Nokogiri::XML::Attr</li>
           
@@ -192,18 +192,6 @@
 
 
   
-  
-  
-  
-  
-  
-  <div id="constructor_details" class="method_details_list">
-  <h2>Constructor Details</h2>
-  
-    <p class="notice">This class inherits a constructor from <span class="object_link"><a href="Node.html#initialize-instance_method" title="Nokogiri::XML::Node#initialize (method)">Nokogiri::XML::Node</a></span></p>
-  
-</div>
-
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -239,9 +227,6 @@
       <pre class="lines">
 
 
-52
-53
-54
 55
 56
 57
@@ -272,12 +257,17 @@
 82
 83
 84
-85</pre>
+85
+86
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_attr.c', line 52</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_attr.c', line 55</span>
 
-static VALUE new(int argc, VALUE *argv, VALUE klass)
+static VALUE
+new (int argc, VALUE *argv, VALUE klass)
 {
   xmlDocPtr xml_doc;
   VALUE document;
@@ -300,9 +290,9 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
            NULL
          );
 
-  nokogiri_root_node((xmlNodePtr)node);
+  noko_xml_document_pin_node((xmlNodePtr)node);
 
-  rb_node = Nokogiri_wrap_xml_node(klass, (xmlNodePtr)node);
+  rb_node = noko_xml_node_wrap(klass, (xmlNodePtr)node);
   rb_obj_call_init(rb_node, argc, argv);
 
   if (rb_block_given_p()) {
@@ -356,8 +346,6 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-10
-11
 12
 13
 14
@@ -390,12 +378,16 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 41
 42
 43
-44</pre>
+44
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_attr.c', line 10</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_attr.c', line 12</span>
 
-static VALUE set_value(VALUE self, VALUE content)
+static VALUE
+set_value(VALUE self, VALUE content)
 {
   xmlAttrPtr attr;
   xmlChar *value;
@@ -440,7 +432,7 @@ static VALUE set_value(VALUE self, VALUE content)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:35 2021 by
+  Generated on Sun Feb 21 16:10:44 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

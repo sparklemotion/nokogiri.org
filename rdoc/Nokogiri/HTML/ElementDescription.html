@@ -1203,26 +1203,28 @@
       <pre class="lines">
 
 
-245
-246
-247
-248
-249
-250
-251
-252
-253</pre>
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 245</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 261</span>
 
-static VALUE get_description(VALUE klass, VALUE tag_name)
+static VALUE
+get_description(VALUE klass, VALUE tag_name)
 {
-  const htmlElemDesc * description = htmlTagLookup(
-      (const xmlChar *)StringValueCStr(tag_name)
-  );
+  const htmlElemDesc *description = htmlTagLookup(
+                                      (const xmlChar *)StringValueCStr(tag_name)
+                                    );
 
-  if(NULL == description) return Qnil;
+  if (NULL == description) { return Qnil; }
   return Data_Wrap_Struct(klass, 0, 0, (void *)(uintptr_t)description);
 }</pre>
     </td>
@@ -1322,13 +1324,13 @@ static VALUE get_description(VALUE klass, VALUE tag_name)
       <pre class="lines">
 
 
-84
-85
-86
-87</pre>
+89
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 84</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 89</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_default_sub_element">default_sub_element</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1382,13 +1384,13 @@ static VALUE get_description(VALUE klass, VALUE tag_name)
       <pre class="lines">
 
 
-155
-156
-157
-158</pre>
+165
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 155</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 165</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_deprecated?">deprecated?</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1429,13 +1431,13 @@ static VALUE get_description(VALUE klass, VALUE tag_name)
       <pre class="lines">
 
 
-34
-35
-36
-37</pre>
+37
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 34</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 37</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_deprecated_attributes">deprecated_attributes</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1476,13 +1478,13 @@ static VALUE get_description(VALUE klass, VALUE tag_name)
       <pre class="lines">
 
 
-126
-127
-128
-129</pre>
+134
+135
+136
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 126</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 134</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_description">description</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1536,24 +1538,26 @@ static VALUE get_description(VALUE klass, VALUE tag_name)
       <pre class="lines">
 
 
-170
-171
-172
-173
-174
-175
-176
-177</pre>
+181
+182
+183
+184
+185
+186
+187
+188
+189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 170</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 181</span>
 
-static VALUE empty_eh(VALUE self)
+static VALUE
+empty_eh(VALUE self)
 {
-  const htmlElemDesc * description;
+  const htmlElemDesc *description;
   Data_Get_Struct(self, htmlElemDesc, description);
 
-  if(description-&gt;empty) return Qtrue;
+  if (description-&gt;empty) { return Qtrue; }
   return Qfalse;
 }</pre>
     </td>
@@ -1604,13 +1608,13 @@ static VALUE empty_eh(VALUE self)
       <pre class="lines">
 
 
-200
-201
-202
-203</pre>
+213
+214
+215
+216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 200</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 213</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_implied_end_tag?">implied_end_tag?</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1664,13 +1668,13 @@ static VALUE empty_eh(VALUE self)
       <pre class="lines">
 
 
-215
-216
-217
-218</pre>
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 215</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 229</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_implied_start_tag?">implied_start_tag?</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1724,24 +1728,26 @@ static VALUE empty_eh(VALUE self)
       <pre class="lines">
 
 
-140
-141
-142
-143
-144
-145
-146
-147</pre>
+149
+150
+151
+152
+153
+154
+155
+156
+157</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 140</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 149</span>
 
-static VALUE inline_eh(VALUE self)
+static VALUE
+inline_eh(VALUE self)
 {
-  const htmlElemDesc * description;
+  const htmlElemDesc *description;
   Data_Get_Struct(self, htmlElemDesc, description);
 
-  if(description-&gt;isinline) return Qtrue;
+  if (description-&gt;isinline) { return Qtrue; }
   return Qfalse;
 }</pre>
     </td>
@@ -1822,24 +1828,26 @@ static VALUE inline_eh(VALUE self)
       <pre class="lines">
 
 
-230
-231
-232
-233
-234
-235
-236
-237</pre>
+245
+246
+247
+248
+249
+250
+251
+252
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 230</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 245</span>
 
-static VALUE name(VALUE self)
+static VALUE
+name(VALUE self)
 {
-  const htmlElemDesc * description;
+  const htmlElemDesc *description;
   Data_Get_Struct(self, htmlElemDesc, description);
 
-  if(NULL == description-&gt;name) return Qnil;
+  if (NULL == description-&gt;name) { return Qnil; }
   return NOKOGIRI_STR_NEW2(description-&gt;name);
 }</pre>
     </td>
@@ -1877,13 +1885,13 @@ static VALUE name(VALUE self)
       <pre class="lines">
 
 
-59
-60
-61
-62</pre>
+63
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 59</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 63</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_optional_attributes">optional_attributes</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1924,13 +1932,13 @@ static VALUE name(VALUE self)
       <pre class="lines">
 
 
-9
-10
 11
-12</pre>
+12
+13
+14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 9</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 11</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_required_attributes">required_attributes</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -1984,13 +1992,13 @@ static VALUE name(VALUE self)
       <pre class="lines">
 
 
-185
-186
-187
-188</pre>
+197
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 185</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 197</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_save_end_tag?">save_end_tag?</span>
   <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
@@ -2031,13 +2039,6 @@ static VALUE name(VALUE self)
       <pre class="lines">
 
 
-101
-102
-103
-104
-105
-106
-107
 108
 109
 110
@@ -2048,14 +2049,23 @@ static VALUE name(VALUE self)
 115
 116
 117
-118</pre>
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 101</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_element_description.c', line 108</span>
 
-static VALUE sub_elements(VALUE self)
+static VALUE
+sub_elements(VALUE self)
 {
-  const htmlElemDesc * description;
+  const htmlElemDesc *description;
   VALUE list;
   int i;
 
@@ -2063,9 +2073,9 @@ static VALUE sub_elements(VALUE self)
 
   list = rb_ary_new();
 
-  if(NULL == description-&gt;subelts) return list;
+  if (NULL == description-&gt;subelts) { return list; }
 
-  for(i = 0; description-&gt;subelts[i]; i++) {
+  for (i = 0; description-&gt;subelts[i]; i++) {
     rb_ary_push(list, NOKOGIRI_STR_NEW2(description-&gt;subelts[i]));
   }
 
@@ -2124,7 +2134,7 @@ static VALUE sub_elements(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:39 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

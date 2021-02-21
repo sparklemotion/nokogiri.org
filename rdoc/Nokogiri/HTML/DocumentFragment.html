@@ -256,7 +256,7 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document_fragment.rb', line 26</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="id identifier rubyid_document">document</span><span class="comma">,</span> <span class="id identifier rubyid_tags">tags</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_ctx">ctx</span> <span class="op">=</span> <span class="kw">nil</span>
+<span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="comma">,</span> <span class="id identifier rubyid_tags">tags</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_ctx">ctx</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">self</span> <span class="kw">unless</span> <span class="id identifier rubyid_tags">tags</span>
 
   <span class="kw">if</span> <span class="id identifier rubyid_ctx">ctx</span>
@@ -266,13 +266,13 @@
     <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_errors">errors</span> <span class="op">=</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_errors">errors</span> <span class="op">-</span> <span class="id identifier rubyid_preexisting_errors">preexisting_errors</span>
   <span class="kw">else</span>
     <span class="comment"># This is a horrible hack, but I don't care
-</span>    <span class="kw">if</span> <span class="id identifier rubyid_tags">tags</span><span class="period">.</span><span class="id identifier rubyid_strip">strip</span> <span class="op">=~</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">^&lt;body</span><span class="regexp_end">/i</span></span>
-      <span class="id identifier rubyid_path">path</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">/html/body</span><span class="tstring_end">"</span></span>
+</span>    <span class="id identifier rubyid_path">path</span> <span class="op">=</span> <span class="kw">if</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">^\s*?&lt;body</span><span class="regexp_end">/i</span></span><span class="period">.</span><span class="id identifier rubyid_match?">match?</span><span class="lparen">(</span><span class="id identifier rubyid_tags">tags</span><span class="rparen">)</span>
+      <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">/html/body</span><span class="tstring_end">"</span></span>
     <span class="kw">else</span>
-      <span class="id identifier rubyid_path">path</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">/html/body/node()</span><span class="tstring_end">"</span></span>
+      <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">/html/body/node()</span><span class="tstring_end">"</span></span>
     <span class="kw">end</span>
 
-    <span class="id identifier rubyid_temp_doc">temp_doc</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="Document.html#parse-class_method" title="Nokogiri::HTML::Document.parse (method)">parse</a></span></span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">&lt;html&gt;&lt;body&gt;</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_tags">tags</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_encoding">encoding</span>
+    <span class="id identifier rubyid_temp_doc">temp_doc</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="Document.html#parse-class_method" title="Nokogiri::HTML::Document.parse (method)">parse</a></span></span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">&lt;html&gt;&lt;body&gt;</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_tags">tags</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
     <span class="id identifier rubyid_temp_doc">temp_doc</span><span class="period">.</span><span class="id identifier rubyid_xpath">xpath</span><span class="lparen">(</span><span class="id identifier rubyid_path">path</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_child">child</span><span class="op">|</span> <span class="id identifier rubyid_child">child</span><span class="period">.</span><span class="id identifier rubyid_parent">parent</span> <span class="op">=</span> <span class="kw">self</span> <span class="rbrace">}</span>
     <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_errors">errors</span> <span class="op">=</span> <span class="id identifier rubyid_temp_doc">temp_doc</span><span class="period">.</span><span class="id identifier rubyid_errors">errors</span>
   <span class="kw">end</span>
@@ -340,19 +340,19 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document_fragment.rb', line 7</span>
 
-<span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_tags">tags</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span>
+<span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_tags">tags</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="id identifier rubyid_doc">doc</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Document.html#new-class_method" title="Nokogiri::HTML::Document.new (method)">new</a></span></span>
 
   <span class="id identifier rubyid_encoding">encoding</span> <span class="op">||=</span> <span class="kw">if</span> <span class="id identifier rubyid_tags">tags</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:encoding</span><span class="rparen">)</span>
-                 <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="id identifier rubyid_tags">tags</span><span class="period">.</span><span class="id identifier rubyid_encoding">encoding</span>
-                 <span class="kw">if</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">==</span> <span class="op">::</span><span class="const">Encoding</span><span class="op">::</span><span class="const">ASCII_8BIT</span>
-                   <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">UTF-8</span><span class="tstring_end">'</span></span>
-                 <span class="kw">else</span>
-                   <span class="id identifier rubyid_encoding">encoding</span><span class="period">.</span><span class="id identifier rubyid_name">name</span>
-                 <span class="kw">end</span>
-               <span class="kw">else</span>
-                 <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">UTF-8</span><span class="tstring_end">'</span></span>
-               <span class="kw">end</span>
+    <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="id identifier rubyid_tags">tags</span><span class="period">.</span><span class="id identifier rubyid_encoding">encoding</span>
+    <span class="kw">if</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">==</span> <span class="op">::</span><span class="const">Encoding</span><span class="op">::</span><span class="const">ASCII_8BIT</span>
+      <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">UTF-8</span><span class="tstring_end">'</span></span>
+    <span class="kw">else</span>
+      <span class="id identifier rubyid_encoding">encoding</span><span class="period">.</span><span class="id identifier rubyid_name">name</span>
+    <span class="kw">end</span>
+  <span class="kw">else</span>
+    <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">UTF-8</span><span class="tstring_end">'</span></span>
+  <span class="kw">end</span>
 
   <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="id identifier rubyid_encoding">encoding</span>
 
@@ -368,7 +368,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:39 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

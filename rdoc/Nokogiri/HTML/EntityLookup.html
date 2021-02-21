@@ -256,8 +256,6 @@
       <pre class="lines">
 
 
-9
-10
 11
 12
 13
@@ -270,25 +268,35 @@
 20
 21
 22
-23</pre>
+23
+24
+25
+26
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_entity_lookup.c', line 9</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_entity_lookup.c', line 11</span>
 
-static VALUE get(VALUE self, VALUE key)
+static VALUE
+get(VALUE _, VALUE rb_entity_name)
 {
-  const htmlEntityDesc * desc =
-    htmlEntityLookup((const xmlChar *)StringValueCStr(key));
-  VALUE klass, args[3];
+  VALUE cNokogiriHtmlEntityDescription;
+  const htmlEntityDesc *c_entity_desc;
+  VALUE rb_constructor_args[3];
 
-  if(NULL == desc) return Qnil;
-  klass = rb_const_get(mNokogiriHtml, rb_intern("EntityDescription"));
+  c_entity_desc = htmlEntityLookup((const xmlChar *)StringValueCStr(rb_entity_name));
+  if (NULL == c_entity_desc) {
+    return Qnil;
+  }
 
-  args[0] = INT2NUM((long)desc-&gt;value);
-  args[1] = NOKOGIRI_STR_NEW2(desc-&gt;name);
-  args[2] = NOKOGIRI_STR_NEW2(desc-&gt;desc);
+  rb_constructor_args[0] = INT2NUM((long)c_entity_desc-&gt;value);
+  rb_constructor_args[1] = NOKOGIRI_STR_NEW2(c_entity_desc-&gt;name);
+  rb_constructor_args[2] = NOKOGIRI_STR_NEW2(c_entity_desc-&gt;desc);
 
-  return rb_class_new_instance(3, args, klass);
+  cNokogiriHtmlEntityDescription = rb_const_get_at(mNokogiriHtml, rb_intern("EntityDescription"));
+  return rb_class_new_instance(3, rb_constructor_args, cNokogiriHtmlEntityDescription);
 }</pre>
     </td>
   </tr>
@@ -300,7 +308,7 @@ static VALUE get(VALUE self, VALUE key)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

@@ -79,12 +79,12 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName">NokogiriXmlSchema</span>
+      <span class="inheritName"><span class="object_link"><a href="Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">NokogiriXmlSchema</li>
+            <li class="next"><span class="object_link"><a href="Schema.html" title="Nokogiri::XML::Schema (class)">Schema</a></span></li>
           
             <li class="next">Nokogiri::XML::RelaxNG</li>
           
@@ -209,6 +209,7 @@
 
 
   
+  
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -244,12 +245,6 @@
       <pre class="lines">
 
 
-112
-113
-114
-115
-116
-117
 118
 119
 120
@@ -297,12 +292,21 @@
 162
 163
 164
-165</pre>
+165
+166
+167
+168
+169
+170
+171
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_relax_ng.c', line 112</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_relax_ng.c', line 118</span>
 
-static VALUE from_document(int argc, VALUE *argv, VALUE klass)
+static VALUE
+from_document(int argc, VALUE *argv, VALUE klass)
 {
   VALUE document;
   VALUE parse_options;
@@ -319,7 +323,7 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
   doc = doc-&gt;doc; /* In case someone passes us a node. ugh. */
 
   if (scanned_args == 1) {
-    parse_options = rb_const_get(rb_const_get(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
+    parse_options = rb_const_get_at(rb_const_get_at(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
   }
 
   ctx = xmlRelaxNGNewDocParserCtxt(doc);
@@ -340,12 +344,13 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
   xmlSetStructuredErrorFunc(NULL, NULL);
   xmlRelaxNGFreeParserCtxt(ctx);
 
-  if(NULL == schema) {
+  if (NULL == schema) {
     xmlErrorPtr error = xmlGetLastError();
-    if(error)
+    if (error) {
       Nokogiri_error_raise(NULL, error);
-    else
+    } else {
       rb_raise(rb_eRuntimeError, "Could not parse document");
+    }
 
     return Qnil;
   }
@@ -391,10 +396,6 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-56
-57
-58
-59
 60
 61
 62
@@ -439,12 +440,19 @@ static VALUE from_document(int argc, VALUE *argv, VALUE klass)
 101
 102
 103
-104</pre>
+104
+105
+106
+107
+108
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_relax_ng.c', line 56</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_relax_ng.c', line 60</span>
 
-static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
+static VALUE
+read_memory(int argc, VALUE *argv, VALUE klass)
 {
   VALUE content;
   VALUE parse_options;
@@ -456,7 +464,7 @@ static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
 
   scanned_args = rb_scan_args(argc, argv, "11", &amp;content, &amp;parse_options);
   if (scanned_args == 1) {
-    parse_options = rb_const_get(rb_const_get(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
+    parse_options = rb_const_get_at(rb_const_get_at(mNokogiriXml, rb_intern("ParseOptions")), rb_intern("DEFAULT_SCHEMA"));
   }
 
   ctx = xmlRelaxNGNewMemParserCtxt((const char *)StringValuePtr(content), (int)RSTRING_LEN(content));
@@ -477,12 +485,13 @@ static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
   xmlSetStructuredErrorFunc(NULL, NULL);
   xmlRelaxNGFreeParserCtxt(ctx);
 
-  if(NULL == schema) {
+  if (NULL == schema) {
     xmlErrorPtr error = xmlGetLastError();
-    if(error)
+    if (error) {
       Nokogiri_error_raise(NULL, error);
-    else
+    } else {
       rb_raise(rb_eRuntimeError, "Could not parse document");
+    }
 
     return Qnil;
   }
@@ -503,7 +512,7 @@ static VALUE read_memory(int argc, VALUE *argv, VALUE klass)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:37 2021 by
+  Generated on Sun Feb 21 16:10:46 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

@@ -140,6 +140,11 @@
   
 
 </div>
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class="object_link"><a href="../../HTML/SAX/PushParser.html" title="Nokogiri::HTML::SAX::PushParser (class)">HTML::SAX::PushParser</a></span></p>
+</div>
+
 
 
 
@@ -530,18 +535,20 @@
       <pre class="lines">
 
 
-84
-85
-86
-87
-88
-89
-90</pre>
+90
+91
+92
+93
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 84</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 90</span>
 
-static VALUE get_options(VALUE self)
+static VALUE
+get_options(VALUE self)
 {
   xmlParserCtxtPtr ctx;
   Data_Get_Struct(self, xmlParserCtxt, ctx);
@@ -569,22 +576,24 @@ static VALUE get_options(VALUE self)
       <pre class="lines">
 
 
-92
-93
-94
-95
-96
-97
-98
 99
 100
 101
-102</pre>
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 92</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 99</span>
 
-static VALUE set_options(VALUE self, VALUE options)
+static VALUE
+set_options(VALUE self, VALUE options)
 {
   xmlParserCtxtPtr ctx;
   Data_Get_Struct(self, xmlParserCtxt, ctx);
@@ -630,22 +639,24 @@ static VALUE set_options(VALUE self, VALUE options)
       <pre class="lines">
 
 
-111
-112
-113
-114
-115
-116
-117
-118
 119
 120
-121</pre>
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 111</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 119</span>
 
-static VALUE get_replace_entities(VALUE self)
+static VALUE
+get_replace_entities(VALUE self)
 {
   xmlParserCtxtPtr ctx;
   Data_Get_Struct(self, xmlParserCtxt, ctx);
@@ -691,24 +702,26 @@ static VALUE get_replace_entities(VALUE self)
       <pre class="lines">
 
 
-130
-131
-132
-133
-134
-135
-136
-137
-138
 139
 140
 141
-142</pre>
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 130</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_sax_push_parser.c', line 139</span>
 
-static VALUE set_replace_entities(VALUE self, VALUE value)
+static VALUE
+set_replace_entities(VALUE self, VALUE value)
 {
   xmlParserCtxtPtr ctx;
   Data_Get_Struct(self, xmlParserCtxt, ctx);
@@ -778,7 +791,7 @@ static VALUE set_replace_entities(VALUE self, VALUE value)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

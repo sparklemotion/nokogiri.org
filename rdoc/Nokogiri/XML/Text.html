@@ -84,7 +84,7 @@
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next"><span class="object_link"><a href="Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></li>
+            <li class="next">NokogiriXmlNode</li>
           
             <li class="next"><span class="object_link"><a href="CharacterData.html" title="Nokogiri::XML::CharacterData (class)">CharacterData</a></span></li>
           
@@ -109,7 +109,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/nokogiri/xml/text.rb<span class="defines">,<br>
-  ext/nokogiri/xml_text.c,<br> ext/nokogiri/xml_cdata.c</span>
+  ext/nokogiri/xml_text.c</span>
 </dd>
   </dl>
   
@@ -198,18 +198,6 @@
   
   
   
-  
-  
-  
-  
-  
-  <div id="constructor_details" class="method_details_list">
-  <h2>Constructor Details</h2>
-  
-    <p class="notice">This class inherits a constructor from <span class="object_link"><a href="Node.html#initialize-instance_method" title="Nokogiri::XML::Node#initialize (method)">Nokogiri::XML::Node</a></span></p>
-  
-</div>
-
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -245,8 +233,6 @@
       <pre class="lines">
 
 
-9
-10
 11
 12
 13
@@ -269,12 +255,16 @@
 30
 31
 32
-33</pre>
+33
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_text.c', line 9</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_text.c', line 11</span>
 
-static VALUE new(int argc, VALUE *argv, VALUE klass)
+static VALUE
+new (int argc, VALUE *argv, VALUE klass)
 {
   xmlDocPtr doc;
   xmlNodePtr node;
@@ -290,12 +280,12 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
   node = xmlNewText((xmlChar *)StringValueCStr(string));
   node-&gt;doc = doc-&gt;doc;
 
-  nokogiri_root_node(node);
+  noko_xml_document_pin_node(node);
 
-  rb_node = Nokogiri_wrap_xml_node(klass, node) ;
+  rb_node = noko_xml_node_wrap(klass, node) ;
   rb_obj_call_init(rb_node, argc, argv);
 
-  if(rb_block_given_p()) rb_yield(rb_node);
+  if (rb_block_given_p()) { rb_yield(rb_node); }
 
   return rb_node;
 }</pre>
@@ -346,7 +336,7 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:36 2021 by
+  Generated on Sun Feb 21 16:10:45 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

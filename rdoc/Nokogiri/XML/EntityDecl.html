@@ -390,25 +390,27 @@
       <pre class="lines">
 
 
-25
-26
-27
 28
 29
 30
 31
 32
-33</pre>
+33
+34
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 25</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 28</span>
 
-static VALUE get_content(VALUE self)
+static VALUE
+get_content(VALUE self)
 {
   xmlEntityPtr node;
   Data_Get_Struct(self, xmlEntity, node);
 
-  if(!node-&gt;content) return Qnil;
+  if (!node-&gt;content) { return Qnil; }
 
   return NOKOGIRI_STR_NEW(node-&gt;content, node-&gt;length);
 }</pre>
@@ -447,18 +449,20 @@ static VALUE get_content(VALUE self)
       <pre class="lines">
 
 
-41
-42
-43
-44
 45
 46
-47</pre>
+47
+48
+49
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 41</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 45</span>
 
-static VALUE entity_type(VALUE self)
+static VALUE
+entity_type(VALUE self)
 {
   xmlEntityPtr node;
   Data_Get_Struct(self, xmlEntity, node);
@@ -500,25 +504,27 @@ static VALUE entity_type(VALUE self)
       <pre class="lines">
 
 
-55
-56
-57
-58
-59
 60
 61
 62
-63</pre>
+63
+64
+65
+66
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 55</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 60</span>
 
-static VALUE external_id(VALUE self)
+static VALUE
+external_id(VALUE self)
 {
   xmlEntityPtr node;
   Data_Get_Struct(self, xmlEntity, node);
 
-  if(!node-&gt;ExternalID) return Qnil;
+  if (!node-&gt;ExternalID) { return Qnil; }
 
   return NOKOGIRI_STR_NEW2(node-&gt;ExternalID);
 }</pre>
@@ -588,25 +594,27 @@ static VALUE external_id(VALUE self)
       <pre class="lines">
 
 
-9
-10
 11
 12
 13
 14
 15
 16
-17</pre>
+17
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 9</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 11</span>
 
-static VALUE original_content(VALUE self)
+static VALUE
+original_content(VALUE self)
 {
   xmlEntityPtr node;
   Data_Get_Struct(self, xmlEntity, node);
 
-  if(!node-&gt;orig) return Qnil;
+  if (!node-&gt;orig) { return Qnil; }
 
   return NOKOGIRI_STR_NEW2(node-&gt;orig);
 }</pre>
@@ -645,25 +653,27 @@ static VALUE original_content(VALUE self)
       <pre class="lines">
 
 
-71
-72
-73
-74
-75
-76
 77
 78
-79</pre>
+79
+80
+81
+82
+83
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 71</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 77</span>
 
-static VALUE system_id(VALUE self)
+static VALUE
+system_id(VALUE self)
 {
   xmlEntityPtr node;
   Data_Get_Struct(self, xmlEntity, node);
 
-  if(!node-&gt;SystemID) return Qnil;
+  if (!node-&gt;SystemID) { return Qnil; }
 
   return NOKOGIRI_STR_NEW2(node-&gt;SystemID);
 }</pre>
@@ -677,7 +687,7 @@ static VALUE system_id(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:46 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

@@ -107,7 +107,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/nokogiri/xml/document.rb<span class="defines">,<br>
-  ext/nokogiri/xml_document.c,<br> ext/nokogiri/html_document.c</span>
+  ext/nokogiri/xml_document.c</span>
 </dd>
   </dl>
   
@@ -1119,34 +1119,36 @@
       <pre class="lines">
 
 
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376</pre>
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 364</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 389</span>
 
-static VALUE new(int argc, VALUE *argv, VALUE klass)
+static VALUE
+new (int argc, VALUE *argv, VALUE klass)
 {
   xmlDocPtr doc;
   VALUE version, rest, rb_doc ;
 
   rb_scan_args(argc, argv, "0*", &amp;rest);
   version = rb_ary_entry(rest, (long)0);
-  if (NIL_P(version)) version = rb_str_new2("1.0");
+  if (NIL_P(version)) { version = rb_str_new2("1.0"); }
 
   doc = xmlNewDoc((xmlChar *)StringValueCStr(version));
-  rb_doc = nokogiri_xml_document_wrap_with_init_args(klass, doc, argc, argv);
+  rb_doc = noko_xml_document_wrap_with_init_args(klass, doc, argc, argv);
   return rb_doc ;
 }</pre>
     </td>
@@ -1314,25 +1316,6 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
 261
 262
 263
@@ -1356,19 +1339,41 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 281
 282
 283
-284</pre>
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 242</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 261</span>
 
-static VALUE read_io( VALUE klass,
-                      VALUE io,
-                      VALUE url,
-                      VALUE encoding,
-                      VALUE options )
+static VALUE
+read_io(VALUE klass,
+        VALUE io,
+        VALUE url,
+        VALUE encoding,
+        VALUE options)
 {
-  const char * c_url    = NIL_P(url)      ? NULL : StringValueCStr(url);
-  const char * c_enc    = NIL_P(encoding) ? NULL : StringValueCStr(encoding);
+  const char *c_url    = NIL_P(url)      ? NULL : StringValueCStr(url);
+  const char *c_enc    = NIL_P(encoding) ? NULL : StringValueCStr(encoding);
   VALUE error_list      = rb_ary_new();
   VALUE document;
   xmlDocPtr doc;
@@ -1377,30 +1382,31 @@ static VALUE read_io( VALUE klass,
   xmlSetStructuredErrorFunc((void *)error_list, Nokogiri_error_array_pusher);
 
   doc = xmlReadIO(
-      (xmlInputReadCallback)io_read_callback,
-      (xmlInputCloseCallback)io_close_callback,
-      (void *)io,
-      c_url,
-      c_enc,
-      (int)NUM2INT(options)
-  );
+          (xmlInputReadCallback)noko_io_read,
+          (xmlInputCloseCallback)noko_io_close,
+          (void *)io,
+          c_url,
+          c_enc,
+          (int)NUM2INT(options)
+        );
   xmlSetStructuredErrorFunc(NULL, NULL);
 
-  if(doc == NULL) {
+  if (doc == NULL) {
     xmlErrorPtr error;
 
     xmlFreeDoc(doc);
 
     error = xmlGetLastError();
-    if(error)
+    if (error) {
       rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
-    else
+    } else {
       rb_raise(rb_eRuntimeError, "Could not parse document");
+    }
 
     return Qnil;
   }
 
-  document = nokogiri_xml_document_wrap(klass, doc);
+  document = noko_xml_document_wrap(klass, doc);
   rb_iv_set(document, "@errors", error_list);
   return document;
 }</pre>
@@ -1439,27 +1445,6 @@ static VALUE read_io( VALUE klass,
       <pre class="lines">
 
 
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
 313
 314
 315
@@ -1475,20 +1460,44 @@ static VALUE read_io( VALUE klass,
 325
 326
 327
-328</pre>
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 292</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 313</span>
 
-static VALUE read_memory( VALUE klass,
-                          VALUE string,
-                          VALUE url,
-                          VALUE encoding,
-                          VALUE options )
+static VALUE
+read_memory(VALUE klass,
+            VALUE string,
+            VALUE url,
+            VALUE encoding,
+            VALUE options)
 {
-  const char * c_buffer = StringValuePtr(string);
-  const char * c_url    = NIL_P(url)      ? NULL : StringValueCStr(url);
-  const char * c_enc    = NIL_P(encoding) ? NULL : StringValueCStr(encoding);
+  const char *c_buffer = StringValuePtr(string);
+  const char *c_url    = NIL_P(url)      ? NULL : StringValueCStr(url);
+  const char *c_enc    = NIL_P(encoding) ? NULL : StringValueCStr(encoding);
   int len               = (int)RSTRING_LEN(string);
   VALUE error_list      = rb_ary_new();
   VALUE document;
@@ -1499,21 +1508,22 @@ static VALUE read_memory( VALUE klass,
   doc = xmlReadMemory(c_buffer, len, c_url, c_enc, (int)NUM2INT(options));
   xmlSetStructuredErrorFunc(NULL, NULL);
 
-  if(doc == NULL) {
+  if (doc == NULL) {
     xmlErrorPtr error;
 
     xmlFreeDoc(doc);
 
     error = xmlGetLastError();
-    if(error)
+    if (error) {
       rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
-    else
+    } else {
       rb_raise(rb_eRuntimeError, "Could not parse document");
+    }
 
     return Qnil;
   }
 
-  document = nokogiri_xml_document_wrap(klass, doc);
+  document = noko_xml_document_wrap(klass, doc);
   rb_iv_set(document, "@errors", error_list);
   return document;
 }</pre>
@@ -1734,32 +1744,6 @@ static VALUE read_memory( VALUE klass,
       <pre class="lines">
 
 
-506
-507
-508
-509
-510
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520
-521
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531
 532
 533
 534
@@ -1790,12 +1774,39 @@ static VALUE read_memory( VALUE klass,
 559
 560
 561
-562</pre>
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 506</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 532</span>
 
-static VALUE nokogiri_xml_document_canonicalize(int argc, VALUE* argv, VALUE self)
+static VALUE
+rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
 {
   VALUE mode;
   VALUE incl_ns;
@@ -1806,7 +1817,7 @@ static VALUE nokogiri_xml_document_canonicalize(int argc, VALUE* argv, VALUE sel
   xmlDocPtr doc;
   xmlOutputBufferPtr buf;
   xmlC14NIsVisibleCallback cb = NULL;
-  void * ctx = NULL;
+  void *ctx = NULL;
 
   VALUE rb_cStringIO;
   VALUE io;
@@ -1819,34 +1830,33 @@ static VALUE nokogiri_xml_document_canonicalize(int argc, VALUE* argv, VALUE sel
   io           = rb_class_new_instance(0, 0, rb_cStringIO);
   buf          = xmlAllocOutputBuffer(NULL);
 
-  buf-&gt;writecallback = (xmlOutputWriteCallback)io_write_callback;
-  buf-&gt;closecallback = (xmlOutputCloseCallback)io_close_callback;
+  buf-&gt;writecallback = (xmlOutputWriteCallback)noko_io_write;
+  buf-&gt;closecallback = (xmlOutputCloseCallback)noko_io_close;
   buf-&gt;context       = (void *)io;
 
-  if(rb_block_given_p()) {
+  if (rb_block_given_p()) {
     cb = block_caller;
     ctx = (void *)rb_block_proc();
   }
 
-  if(NIL_P(incl_ns)){
+  if (NIL_P(incl_ns)) {
     ns = NULL;
-  }
-  else{
+  } else {
     Check_Type(incl_ns, T_ARRAY);
     ns_len = RARRAY_LEN(incl_ns);
-    ns = calloc((size_t)ns_len+1, sizeof(xmlChar *));
+    ns = calloc((size_t)ns_len + 1, sizeof(xmlChar *));
     for (i = 0 ; i &lt; ns_len ; i++) {
       VALUE entry = rb_ary_entry(incl_ns, i);
-      ns[i] = (xmlChar*)StringValueCStr(entry);
+      ns[i] = (xmlChar *)StringValueCStr(entry);
     }
   }
 
 
   xmlC14NExecute(doc, cb, ctx,
-    (int)      (NIL_P(mode)        ? 0 : NUM2INT(mode)),
-    ns,
-    (int)      RTEST(with_comments),
-    buf);
+                 (int)(NIL_P(mode)        ? 0 : NUM2INT(mode)),
+                 ns,
+                 (int)      RTEST(with_comments),
+                 buf);
 
   xmlOutputBufferClose(buf);
 
@@ -2080,7 +2090,7 @@ doc.create_element "div" { |node| node['class'] = "container" } # &lt;div class=
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/document.rb', line 129</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_create_element">create_element</span> <span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
-  <span class="id identifier rubyid_elm">elm</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Element.html" title="Nokogiri::XML::Element (class)">Element</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Node.html#new-class_method" title="Nokogiri::XML::Node.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="kw">self</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
+  <span class="id identifier rubyid_elm">elm</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Element.html" title="Nokogiri::XML::Element (class)">Element</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="kw">self</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_arg">arg</span><span class="op">|</span>
     <span class="kw">case</span> <span class="id identifier rubyid_arg">arg</span>
     <span class="kw">when</span> <span class="const">Hash</span>
@@ -2141,33 +2151,6 @@ doc.create_element "div" { |node| node['class'] = "container" } # &lt;div class=
       <pre class="lines">
 
 
-435
-436
-437
-438
-439
-440
-441
-442
-443
-444
-445
-446
-447
-448
-449
-450
-451
-452
-453
-454
-455
-456
-457
-458
-459
-460
-461
 462
 463
 464
@@ -2177,12 +2160,42 @@ doc.create_element "div" { |node| node['class'] = "container" } # &lt;div class=
 468
 469
 470
-471</pre>
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 435</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 462</span>
 
-static VALUE create_entity(int argc, VALUE *argv, VALUE self)
+static VALUE
+create_entity(int argc, VALUE *argv, VALUE self)
 {
   VALUE name;
   VALUE type;
@@ -2195,29 +2208,30 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
   Data_Get_Struct(self, xmlDoc, doc);
 
   rb_scan_args(argc, argv, "14", &amp;name, &amp;type, &amp;external_id, &amp;system_id,
-      &amp;content);
+               &amp;content);
 
   xmlResetLastError();
   ptr = xmlAddDocEntity(
-      doc,
-      (xmlChar *)(NIL_P(name)        ? NULL                        : StringValueCStr(name)),
-      (int)      (NIL_P(type)        ? XML_INTERNAL_GENERAL_ENTITY : NUM2INT(type)),
-      (xmlChar *)(NIL_P(external_id) ? NULL                        : StringValueCStr(external_id)),
-      (xmlChar *)(NIL_P(system_id)   ? NULL                        : StringValueCStr(system_id)),
-      (xmlChar *)(NIL_P(content)     ? NULL                        : StringValueCStr(content))
-    );
+          doc,
+          (xmlChar *)(NIL_P(name)        ? NULL                        : StringValueCStr(name)),
+          (int)(NIL_P(type)        ? XML_INTERNAL_GENERAL_ENTITY : NUM2INT(type)),
+          (xmlChar *)(NIL_P(external_id) ? NULL                        : StringValueCStr(external_id)),
+          (xmlChar *)(NIL_P(system_id)   ? NULL                        : StringValueCStr(system_id)),
+          (xmlChar *)(NIL_P(content)     ? NULL                        : StringValueCStr(content))
+        );
 
-  if(NULL == ptr) {
+  if (NULL == ptr) {
     xmlErrorPtr error = xmlGetLastError();
-    if(error)
+    if (error) {
       rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
-    else
+    } else {
       rb_raise(rb_eRuntimeError, "Could not create entity");
+    }
 
     return Qnil;
   }
 
-  return Nokogiri_wrap_xml_node(cNokogiriXmlEntityDecl, (xmlNodePtr)ptr);
+  return noko_xml_node_wrap(cNokogiriXmlEntityDecl, (xmlNodePtr)ptr);
 }</pre>
     </td>
   </tr>
@@ -2440,47 +2454,51 @@ static VALUE create_entity(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356</pre>
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 337</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 360</span>
 
-static VALUE duplicate_document(int argc, VALUE *argv, VALUE self)
+static VALUE
+duplicate_document(int argc, VALUE *argv, VALUE self)
 {
   xmlDocPtr doc, dup;
   VALUE copy;
   VALUE level;
 
-  if(rb_scan_args(argc, argv, "01", &amp;level) == 0)
+  if (rb_scan_args(argc, argv, "01", &amp;level) == 0) {
     level = INT2NUM((long)1);
+  }
 
   Data_Get_Struct(self, xmlDoc, doc);
 
   dup = xmlCopyDoc(doc, (int)NUM2INT(level));
 
-  if(dup == NULL) return Qnil;
+  if (dup == NULL) { return Qnil; }
 
   dup-&gt;type = doc-&gt;type;
-  copy = nokogiri_xml_document_wrap(rb_obj_class(self), dup);
+  copy = noko_xml_document_wrap(rb_obj_class(self), dup);
   rb_iv_set(copy, "@errors", rb_iv_get(self, "@errors"));
   return copy ;
 }</pre>
@@ -2519,24 +2537,26 @@ static VALUE duplicate_document(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-212
-213
-214
-215
-216
-217
-218
-219</pre>
+229
+230
+231
+232
+233
+234
+235
+236
+237</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 212</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 229</span>
 
-static VALUE encoding(VALUE self)
+static VALUE
+encoding(VALUE self)
 {
   xmlDocPtr doc;
   Data_Get_Struct(self, xmlDoc, doc);
 
-  if(!doc-&gt;encoding) return Qnil;
+  if (!doc-&gt;encoding) { return Qnil; }
   return NOKOGIRI_STR_NEW2(doc-&gt;encoding);
 }</pre>
     </td>
@@ -2574,29 +2594,33 @@ static VALUE encoding(VALUE self)
       <pre class="lines">
 
 
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204</pre>
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 193</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 208</span>
 
-static VALUE set_encoding(VALUE self, VALUE encoding)
+static VALUE
+set_encoding(VALUE self, VALUE encoding)
 {
   xmlDocPtr doc;
   Data_Get_Struct(self, xmlDoc, doc);
 
-  if (doc-&gt;encoding)
-      free((char *)(uintptr_t) doc-&gt;encoding); /* avoid gcc cast warning */
+  if (doc-&gt;encoding) {
+    free((char *)(uintptr_t) doc-&gt;encoding);  /* avoid gcc cast warning */
+  }
 
   doc-&gt;encoding = xmlStrdup((xmlChar *)StringValueCStr(encoding));
 
@@ -2794,19 +2818,21 @@ static VALUE set_encoding(VALUE self, VALUE encoding)
       <pre class="lines">
 
 
-415
-416
-417
-418
-419
-420
-421
-422</pre>
+441
+442
+443
+444
+445
+446
+447
+448
+449</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 415</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 441</span>
 
-VALUE remove_namespaces_bang(VALUE self)
+static VALUE
+remove_namespaces_bang(VALUE self)
 {
   xmlDocPtr doc ;
   Data_Get_Struct(self, xmlDoc, doc);
@@ -2849,23 +2875,25 @@ VALUE remove_namespaces_bang(VALUE self)
       <pre class="lines">
 
 
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185</pre>
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 174</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 188</span>
 
-static VALUE root(VALUE self)
+static VALUE
+root(VALUE self)
 {
   xmlDocPtr doc;
   xmlNodePtr root;
@@ -2874,8 +2902,8 @@ static VALUE root(VALUE self)
 
   root = xmlDocGetRootElement(doc);
 
-  if(!root) return Qnil;
-  return Nokogiri_wrap_xml_node(Qnil, root) ;
+  if (!root) { return Qnil; }
+  return noko_xml_node_wrap(Qnil, root) ;
 }</pre>
     </td>
   </tr>
@@ -2912,19 +2940,6 @@ static VALUE root(VALUE self)
       <pre class="lines">
 
 
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
 143
 144
 145
@@ -2948,12 +2963,27 @@ static VALUE root(VALUE self)
 163
 164
 165
-166</pre>
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 130</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 143</span>
 
-static VALUE set_root(VALUE self, VALUE root)
+static VALUE
+set_root(VALUE self, VALUE root)
 {
   xmlDocPtr doc;
   xmlNodePtr new_root;
@@ -2963,12 +2993,12 @@ static VALUE set_root(VALUE self, VALUE root)
 
   old_root = NULL;
 
-  if(NIL_P(root)) {
+  if (NIL_P(root)) {
     old_root = xmlDocGetRootElement(doc);
 
-    if(old_root) {
+    if (old_root) {
       xmlUnlinkNode(old_root);
-      nokogiri_root_node(old_root);
+      noko_xml_document_pin_node(old_root);
     }
 
     return root;
@@ -2979,7 +3009,7 @@ static VALUE set_root(VALUE self, VALUE root)
 
   /* If the new root's document is not the same as the current document,
    * then we need to dup the node in to this document. */
-  if(new_root-&gt;doc != doc) {
+  if (new_root-&gt;doc != doc) {
     old_root = xmlDocGetRootElement(doc);
     if (!(new_root = xmlDocCopyNode(new_root, doc, 1))) {
       rb_raise(rb_eRuntimeError, "Could not reparent node (xmlDocCopyNode)");
@@ -2987,7 +3017,7 @@ static VALUE set_root(VALUE self, VALUE root)
   }
 
   xmlDocSetRootElement(doc, new_root);
-  if(old_root) nokogiri_root_node(old_root);
+  if (old_root) { noko_xml_document_pin_node(old_root); }
   return root;
 }</pre>
     </td>
@@ -3167,25 +3197,27 @@ irb&gt; doc.slop!
       <pre class="lines">
 
 
-114
-115
-116
-117
-118
-119
-120
-121
-122</pre>
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 114</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 126</span>
 
-static VALUE url(VALUE self)
+static VALUE
+url(VALUE self)
 {
   xmlDocPtr doc;
   Data_Get_Struct(self, xmlDoc, doc);
 
-  if(doc-&gt;URL) return NOKOGIRI_STR_NEW2(doc-&gt;URL);
+  if (doc-&gt;URL) { return NOKOGIRI_STR_NEW2(doc-&gt;URL); }
 
   return Qnil;
 }</pre>
@@ -3269,24 +3301,26 @@ static VALUE url(VALUE self)
       <pre class="lines">
 
 
-227
-228
-229
-230
-231
-232
-233
-234</pre>
+245
+246
+247
+248
+249
+250
+251
+252
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 227</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document.c', line 245</span>
 
-static VALUE version(VALUE self)
+static VALUE
+version(VALUE self)
 {
   xmlDocPtr doc;
   Data_Get_Struct(self, xmlDoc, doc);
 
-  if(!doc-&gt;version) return Qnil;
+  if (!doc-&gt;version) { return Qnil; }
   return NOKOGIRI_STR_NEW2(doc-&gt;version);
 }</pre>
     </td>
@@ -3299,7 +3333,7 @@ static VALUE version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:37 2021 by
+  Generated on Sun Feb 21 16:10:46 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

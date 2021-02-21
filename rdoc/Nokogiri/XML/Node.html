@@ -111,7 +111,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/nokogiri/xml/node.rb<span class="defines">,<br>
-  lib/nokogiri/xml/node/save_options.rb,<br> ext/nokogiri/xml_dtd.c,<br> ext/nokogiri/xml_attr.c,<br> ext/nokogiri/xml_node.c,<br> ext/nokogiri/xml_text.c,<br> ext/nokogiri/xml_cdata.c,<br> ext/nokogiri/xml_comment.c,<br> ext/nokogiri/xml_document.c,<br> ext/nokogiri/html_document.c,<br> ext/nokogiri/xml_entity_decl.c,<br> ext/nokogiri/xml_element_decl.c,<br> ext/nokogiri/xml_attribute_decl.c,<br> ext/nokogiri/xml_entity_reference.c,<br> ext/nokogiri/xml_document_fragment.c,<br> ext/nokogiri/xml_processing_instruction.c</span>
+  lib/nokogiri/xml/node/save_options.rb,<br> ext/nokogiri/xml_node.c</span>
 </dd>
   </dl>
   
@@ -171,7 +171,7 @@
 </div>
 <div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class="object_link"><a href="Attr.html" title="Nokogiri::XML::Attr (class)">Attr</a></span>, <span class="object_link"><a href="AttributeDecl.html" title="Nokogiri::XML::AttributeDecl (class)">AttributeDecl</a></span>, <span class="object_link"><a href="CharacterData.html" title="Nokogiri::XML::CharacterData (class)">CharacterData</a></span>, <span class="object_link"><a href="DTD.html" title="Nokogiri::XML::DTD (class)">DTD</a></span>, <span class="object_link"><a href="Document.html" title="Nokogiri::XML::Document (class)">Document</a></span>, <span class="object_link"><a href="DocumentFragment.html" title="Nokogiri::XML::DocumentFragment (class)">DocumentFragment</a></span>, <span class="object_link"><a href="Element.html" title="Nokogiri::XML::Element (class)">Element</a></span>, <span class="object_link"><a href="ElementDecl.html" title="Nokogiri::XML::ElementDecl (class)">ElementDecl</a></span>, <span class="object_link"><a href="EntityDecl.html" title="Nokogiri::XML::EntityDecl (class)">EntityDecl</a></span>, <span class="object_link"><a href="EntityReference.html" title="Nokogiri::XML::EntityReference (class)">EntityReference</a></span>, <span class="object_link"><a href="ProcessingInstruction.html" title="Nokogiri::XML::ProcessingInstruction (class)">ProcessingInstruction</a></span></p>
+  <p class="children"><span class="object_link"><a href="AttributeDecl.html" title="Nokogiri::XML::AttributeDecl (class)">AttributeDecl</a></span>, <span class="object_link"><a href="DTD.html" title="Nokogiri::XML::DTD (class)">DTD</a></span>, <span class="object_link"><a href="Document.html" title="Nokogiri::XML::Document (class)">Document</a></span>, <span class="object_link"><a href="DocumentFragment.html" title="Nokogiri::XML::DocumentFragment (class)">DocumentFragment</a></span>, <span class="object_link"><a href="ElementDecl.html" title="Nokogiri::XML::ElementDecl (class)">ElementDecl</a></span>, <span class="object_link"><a href="EntityDecl.html" title="Nokogiri::XML::EntityDecl (class)">EntityDecl</a></span>, <span class="object_link"><a href="EntityReference.html" title="Nokogiri::XML::EntityReference (class)">EntityReference</a></span>, <span class="object_link"><a href="ProcessingInstruction.html" title="Nokogiri::XML::ProcessingInstruction (class)">ProcessingInstruction</a></span></p>
 </div>
 <h2>Defined Under Namespace</h2>
 <p class="children">
@@ -1981,7 +1981,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attribute_nodes-instance_method" title="#attribute_nodes (instance method)">#<strong>attribute_nodes</strong>  ⇒ Object </a>
+      <a href="#attribute_nodes-instance_method" title="#attribute_nodes (instance method)">#<strong>attribute_nodes</strong>  ⇒ Array&lt;Nokogiri::XML::Attr&gt; </a>
     
 
     
@@ -1996,7 +1996,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>returns a list containing the Node attributes.</p>
+<p>Get the attributes for a Node.</p>
 </div></span>
   
 </li>
@@ -3631,37 +3631,37 @@
       <pre class="lines">
 
 
-1405
-1406
-1407
-1408
-1409
-1410
-1411
-1412
-1413
-1414
-1415
-1416
-1417
-1418
-1419
-1420
-1421
-1422
-1423
-1424
-1425
-1426
-1427
-1428
-1429
-1430
-1431
-1432</pre>
+1449
+1450
+1451
+1452
+1453
+1454
+1455
+1456
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464
+1465
+1466
+1467
+1468
+1469
+1470
+1471
+1472
+1473
+1474
+1475
+1476</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1405</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1449</span>
 
 static VALUE
 rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
@@ -3679,15 +3679,15 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
 
   node = xmlNewNode(NULL, (xmlChar *)StringValueCStr(name));
   node-&gt;doc = doc-&gt;doc;
-  nokogiri_root_node(node);
+  noko_xml_document_pin_node(node);
 
-  rb_node = Nokogiri_wrap_xml_node(
+  rb_node = noko_xml_node_wrap(
               klass == cNokogiriXmlNode ? (VALUE)NULL : klass,
               node
             );
   rb_obj_call_init(rb_node, argc, argv);
 
-  if(rb_block_given_p()) { rb_yield(rb_node); }
+  if (rb_block_given_p()) { rb_yield(rb_node); }
 
   return rb_node;
 }</pre>
@@ -4254,71 +4254,67 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-1365
-1366
-1367
-1368
-1369
-1370
-1371
-1372
-1373
-1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383
-1384
-1385
-1386
-1387
-1388
-1389
-1390
-1391
-1392
-1393
-1394
-1395</pre>
+1411
+1412
+1413
+1414
+1415
+1416
+1417
+1418
+1419
+1420
+1421
+1422
+1423
+1424
+1425
+1426
+1427
+1428
+1429
+1430
+1431
+1432
+1433
+1434
+1435
+1436
+1437
+1438
+1439</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1365</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1411</span>
 
-static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
+static VALUE
+add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_href)
 {
-  xmlNodePtr node, namespace;
-  xmlNsPtr ns;
+  xmlNodePtr c_node, element;
+  xmlNsPtr c_namespace;
+  const xmlChar *c_prefix = (const xmlChar *)(NIL_P(rb_prefix) ? NULL : StringValueCStr(rb_prefix));
 
-  Data_Get_Struct(self, xmlNode, node);
-  namespace = node ;
+  Data_Get_Struct(rb_node, xmlNode, c_node);
+  element = c_node ;
 
-  ns = xmlSearchNs(
-         node-&gt;doc,
-         node,
-         (const xmlChar *)(NIL_P(prefix) ? NULL : StringValueCStr(prefix))
-       );
+  c_namespace = xmlSearchNs(c_node-&gt;doc, c_node, c_prefix);
 
-  if(!ns) {
-    if (node-&gt;type != XML_ELEMENT_NODE) {
-      namespace = node-&gt;parent;
+  if (!c_namespace) {
+    if (c_node-&gt;type != XML_ELEMENT_NODE) {
+      element = c_node-&gt;parent;
     }
-    ns = xmlNewNs(
-           namespace,
-           (const xmlChar *)StringValueCStr(href),
-           (const xmlChar *)(NIL_P(prefix) ? NULL : StringValueCStr(prefix))
-         );
+    c_namespace = xmlNewNs(element, (const xmlChar *)StringValueCStr(rb_href), c_prefix);
   }
 
-  if (!ns) { return Qnil ; }
+  if (!c_namespace) {
+    return Qnil ;
+  }
 
-  if(NIL_P(prefix) || node != namespace) { xmlSetNs(node, ns); }
+  if (NIL_P(rb_prefix) || c_node != element) {
+    xmlSetNs(c_node, c_namespace);
+  }
 
-  return Nokogiri_wrap_xml_namespace(node-&gt;doc, ns);
+  return noko_xml_namespace_wrap(c_namespace, c_node-&gt;doc);
 }</pre>
     </td>
   </tr>
@@ -4854,29 +4850,31 @@ static VALUE add_namespace_definition(VALUE self, VALUE prefix, VALUE href)
       <pre class="lines">
 
 
-963
-964
-965
-966
-967
-968
-969
-970
-971
-972</pre>
+995
+996
+997
+998
+999
+1000
+1001
+1002
+1003
+1004
+1005</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 963</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 995</span>
 
-static VALUE attr(VALUE self, VALUE name)
+static VALUE
+attr(VALUE self, VALUE name)
 {
   xmlNodePtr node;
   xmlAttrPtr prop;
   Data_Get_Struct(self, xmlNode, node);
   prop = xmlHasProp(node, (xmlChar *)StringValueCStr(name));
 
-  if(! prop) { return Qnil; }
-  return Nokogiri_wrap_xml_node(Qnil, (xmlNodePtr)prop);
+  if (! prop) { return Qnil; }
+  return noko_xml_node_wrap(Qnil, (xmlNodePtr)prop);
 }</pre>
     </td>
   </tr>
@@ -4886,7 +4884,7 @@ static VALUE attr(VALUE self, VALUE name)
       <div class="method_details ">
   <h3 class="signature " id="attribute_nodes-instance_method">
   
-    #<strong>attribute_nodes</strong>  ⇒ <tt>Object</tt> 
+    #<strong>attribute_nodes</strong>  ⇒ <tt>Array&lt;<span class="object_link"><a href="Attr.html" title="Nokogiri::XML::Attr (class)">Nokogiri::XML::Attr</a></span>&gt;</tt> 
   
 
   
@@ -4896,14 +4894,41 @@ static VALUE attr(VALUE self, VALUE name)
 <div class="docstring">
   <div class="discussion">
     
-<p>returns a list containing the Node attributes.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Get the attributes for a Node</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
   
+    <li>
+      
+      
+        <span class="type">(<tt>Array&lt;<span class="object_link"><a href="Attr.html" title="Nokogiri::XML::Attr (class)">Nokogiri::XML::Attr</a></span>&gt;</tt>)</span>
+      
+      
+      
+        —
+        <div class="inline">
+<p>containing the Node's attributes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 
 
 </div>
@@ -4913,35 +4938,27 @@ static VALUE attr(VALUE self, VALUE name)
       <pre class="lines">
 
 
-998
-999
-1000
-1001
-1002
-1003
-1004
-1005
-1006
-1007
-1008
-1009
-1010</pre>
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038
+1039</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 998</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1031</span>
 
-static VALUE attribute_nodes(VALUE self)
+static VALUE
+attribute_nodes(VALUE rb_node)
 {
-  /* this code in the mode of xmlHasProp() */
-  xmlNodePtr node;
-  VALUE attr;
+  xmlNodePtr c_node;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Data_Get_Struct(rb_node, xmlNode, c_node);
 
-  attr = rb_ary_new();
-  Nokogiri_xml_node_properties(node, attr);
-
-  return attr ;
+  return noko_xml_node_attrs(c_node);
 }</pre>
     </td>
   </tr>
@@ -4978,22 +4995,24 @@ static VALUE attribute_nodes(VALUE self)
       <pre class="lines">
 
 
-980
-981
-982
-983
-984
-985
-986
-987
-988
-989
-990</pre>
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 980</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1013</span>
 
-static VALUE attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
+static VALUE
+attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
 {
   xmlNodePtr node;
   xmlAttrPtr prop;
@@ -5001,8 +5020,8 @@ static VALUE attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
   prop = xmlHasNsProp(node, (xmlChar *)StringValueCStr(name),
                       NIL_P(namespace) ? NULL : (xmlChar *)StringValueCStr(namespace));
 
-  if(! prop) { return Qnil; }
-  return Nokogiri_wrap_xml_node(Qnil, (xmlNodePtr)prop);
+  if (! prop) { return Qnil; }
+  return noko_xml_node_wrap(Qnil, (xmlNodePtr)prop);
 }</pre>
     </td>
   </tr>
@@ -5148,17 +5167,19 @@ static VALUE attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
       <pre class="lines">
 
 
-592
-593
-594
-595
-596
-597</pre>
+608
+609
+610
+611
+612
+613
+614</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 592</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 608</span>
 
-static VALUE blank_eh(VALUE self)
+static VALUE
+blank_eh(VALUE self)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
@@ -5294,29 +5315,31 @@ static VALUE blank_eh(VALUE self)
       <pre class="lines">
 
 
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774</pre>
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 765</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 789</span>
 
-static VALUE child(VALUE self)
+static VALUE
+child(VALUE self)
 {
   xmlNodePtr node, child;
   Data_Get_Struct(self, xmlNode, node);
 
   child = node-&gt;children;
-  if(!child) { return Qnil; }
+  if (!child) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, child);
+  return noko_xml_node_wrap(Qnil, child);
 }</pre>
     </td>
   </tr>
@@ -5353,38 +5376,40 @@ static VALUE child(VALUE self)
       <pre class="lines">
 
 
-692
-693
-694
-695
-696
-697
-698
-699
-700
-701
-702
-703
-704
-705
-706
-707
-708
-709
-710
-711
-712
-713
 714
 715
 716
 717
-718</pre>
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 692</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 714</span>
 
-static VALUE children(VALUE self)
+static VALUE
+children(VALUE self)
 {
   xmlNodePtr node;
   xmlNodePtr child;
@@ -5399,15 +5424,15 @@ static VALUE children(VALUE self)
 
   document = DOC_RUBY_OBJECT(node-&gt;doc);
 
-  if(!child) { return Nokogiri_wrap_xml_node_set(set, document); }
+  if (!child) { return noko_xml_node_set_wrap(set, document); }
 
   child = child-&gt;next;
-  while(NULL != child) {
+  while (NULL != child) {
     xmlXPathNodeSetAddUnique(set, child);
     child = child-&gt;next;
   }
 
-  node_set = Nokogiri_wrap_xml_node_set(set, document);
+  node_set = noko_xml_node_set_wrap(set, document);
 
   return node_set;
 }</pre>
@@ -5655,34 +5680,36 @@ static VALUE children(VALUE self)
       <pre class="lines">
 
 
-1135
-1136
-1137
-1138
-1139
-1140
-1141
-1142
-1143
-1144
-1145
-1146
-1147
-1148
-1149</pre>
+1168
+1169
+1170
+1171
+1172
+1173
+1174
+1175
+1176
+1177
+1178
+1179
+1180
+1181
+1182
+1183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1135</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1168</span>
 
-static VALUE get_native_content(VALUE self)
+static VALUE
+get_native_content(VALUE self)
 {
   xmlNodePtr node;
-  xmlChar * content;
+  xmlChar *content;
 
   Data_Get_Struct(self, xmlNode, node);
 
   content = xmlNodeGetContent(node);
-  if(content) {
+  if (content) {
     VALUE rval = NOKOGIRI_STR_NEW2(content);
     xmlFree(content);
     return rval;
@@ -5767,17 +5794,6 @@ static VALUE get_native_content(VALUE self)
       <pre class="lines">
 
 
-454
-455
-456
-457
-458
-459
-460
-461
-462
-463
-464
 465
 466
 467
@@ -5791,12 +5807,25 @@ static VALUE get_native_content(VALUE self)
 475
 476
 477
-478</pre>
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 454</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 465</span>
 
-static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
+static VALUE
+create_external_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
 {
   xmlNodePtr node;
   xmlDocPtr doc;
@@ -5806,7 +5835,7 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
 
   doc = node-&gt;doc;
 
-  if(doc-&gt;extSubset) {
+  if (doc-&gt;extSubset) {
     rb_raise(rb_eRuntimeError, "Document already has an external subset");
   }
 
@@ -5817,9 +5846,9 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
           NIL_P(system_id)   ? NULL : (const xmlChar *)StringValueCStr(system_id)
         );
 
-  if(!dtd) { return Qnil; }
+  if (!dtd) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, (xmlNodePtr)dtd);
+  return noko_xml_node_wrap(Qnil, (xmlNodePtr)dtd);
 }</pre>
     </td>
   </tr>
@@ -5863,16 +5892,6 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
       <pre class="lines">
 
 
-422
-423
-424
-425
-426
-427
-428
-429
-430
-431
 432
 433
 434
@@ -5887,12 +5906,24 @@ static VALUE create_external_subset(VALUE self, VALUE name, VALUE external_id, V
 443
 444
 445
-446</pre>
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 422</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 432</span>
 
-static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
+static VALUE
+create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_id)
 {
   xmlNodePtr node;
   xmlDocPtr doc;
@@ -5902,7 +5933,7 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
 
   doc = node-&gt;doc;
 
-  if(xmlGetIntSubset(doc)) {
+  if (xmlGetIntSubset(doc)) {
     rb_raise(rb_eRuntimeError, "Document already has an internal subset");
   }
 
@@ -5913,9 +5944,9 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
           NIL_P(system_id)   ? NULL : (const xmlChar *)StringValueCStr(system_id)
         );
 
-  if(!dtd) { return Qnil; }
+  if (!dtd) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, (xmlNodePtr)dtd);
+  return noko_xml_node_wrap(Qnil, (xmlNodePtr)dtd);
 }</pre>
     </td>
   </tr>
@@ -6250,17 +6281,19 @@ static VALUE create_internal_subset(VALUE self, VALUE name, VALUE external_id, V
       <pre class="lines">
 
 
-365
-366
-367
-368
-369
-370</pre>
+372
+373
+374
+375
+376
+377
+378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 365</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 372</span>
 
-static VALUE document(VALUE self)
+static VALUE
+document(VALUE self)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
@@ -6365,20 +6398,6 @@ static VALUE document(VALUE self)
       <pre class="lines">
 
 
-540
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
-553
 554
 555
 556
@@ -6394,12 +6413,28 @@ static VALUE document(VALUE self)
 566
 567
 568
-569</pre>
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 540</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 554</span>
 
-static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
+static VALUE
+duplicate_node(int argc, VALUE *argv, VALUE self)
 {
   VALUE r_level, r_new_parent_doc;
   int level;
@@ -6423,11 +6458,11 @@ static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
   }
 
   dup = xmlDocCopyNode(node, new_parent_doc, level);
-  if(dup == NULL) { return Qnil; }
+  if (dup == NULL) { return Qnil; }
 
-  nokogiri_root_node(dup);
+  noko_xml_document_pin_node(dup);
 
-  return Nokogiri_wrap_xml_node(rb_obj_class(self), dup);
+  return noko_xml_node_wrap(rb_obj_class(self), dup);
 }</pre>
     </td>
   </tr>
@@ -6580,38 +6615,40 @@ static VALUE duplicate_node(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
-731
-732
-733
-734
-735
-736
-737
-738
-739
-740
-741
-742
-743
-744
-745
-746
-747
-748
-749
-750
-751
-752
-753
 754
 755
 756
-757</pre>
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 731</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 754</span>
 
-static VALUE element_children(VALUE self)
+static VALUE
+element_children(VALUE self)
 {
   xmlNodePtr node;
   xmlNodePtr child;
@@ -6626,15 +6663,15 @@ static VALUE element_children(VALUE self)
 
   document = DOC_RUBY_OBJECT(node-&gt;doc);
 
-  if(!child) { return Nokogiri_wrap_xml_node_set(set, document); }
+  if (!child) { return noko_xml_node_set_wrap(set, document); }
 
   child = xmlNextElementSibling(child);
-  while(NULL != child) {
+  while (NULL != child) {
     xmlXPathNodeSetAddUnique(set, child);
     child = xmlNextElementSibling(child);
   }
 
-  node_set = Nokogiri_wrap_xml_node_set(set, document);
+  node_set = noko_xml_node_set_wrap(set, document);
 
   return node_set;
 }</pre>
@@ -6673,15 +6710,6 @@ static VALUE element_children(VALUE self)
       <pre class="lines">
 
 
-392
-393
-394
-395
-396
-397
-398
-399
-400
 401
 402
 403
@@ -6689,12 +6717,23 @@ static VALUE element_children(VALUE self)
 405
 406
 407
-408</pre>
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 392</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 401</span>
 
-static VALUE encode_special_chars(VALUE self, VALUE string)
+static VALUE
+encode_special_chars(VALUE self, VALUE string)
 {
   xmlNodePtr node;
   xmlChar *encoded;
@@ -6746,28 +6785,30 @@ static VALUE encode_special_chars(VALUE self, VALUE string)
       <pre class="lines">
 
 
-486
-487
-488
-489
-490
-491
-492
-493
-494
-495
-496
-497
 498
 499
 500
 501
-502</pre>
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 486</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 498</span>
 
-static VALUE external_subset(VALUE self)
+static VALUE
+external_subset(VALUE self)
 {
   xmlNodePtr node;
   xmlDocPtr doc;
@@ -6775,14 +6816,14 @@ static VALUE external_subset(VALUE self)
 
   Data_Get_Struct(self, xmlNode, node);
 
-  if(!node-&gt;doc) { return Qnil; }
+  if (!node-&gt;doc) { return Qnil; }
 
   doc = node-&gt;doc;
   dtd = doc-&gt;extSubset;
 
-  if(!dtd) { return Qnil; }
+  if (!dtd) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, (xmlNodePtr)dtd);
+  return noko_xml_node_wrap(Qnil, (xmlNodePtr)dtd);
 }</pre>
     </td>
   </tr>
@@ -6824,29 +6865,31 @@ static VALUE external_subset(VALUE self)
       <pre class="lines">
 
 
-786
-787
-788
-789
-790
-791
-792
-793
-794
-795</pre>
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 786</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 811</span>
 
-static VALUE first_element_child(VALUE self)
+static VALUE
+first_element_child(VALUE self)
 {
   xmlNodePtr node, child;
   Data_Get_Struct(self, xmlNode, node);
 
   child = xmlFirstElementChild(node);
-  if(!child) { return Qnil; }
+  if (!child) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, child);
+  return noko_xml_node_wrap(Qnil, child);
 }</pre>
     </td>
   </tr>
@@ -7161,28 +7204,30 @@ static VALUE first_element_child(VALUE self)
       <pre class="lines">
 
 
-510
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520
-521
-522
 523
 524
 525
-526</pre>
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 510</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 523</span>
 
-static VALUE internal_subset(VALUE self)
+static VALUE
+internal_subset(VALUE self)
 {
   xmlNodePtr node;
   xmlDocPtr doc;
@@ -7190,14 +7235,14 @@ static VALUE internal_subset(VALUE self)
 
   Data_Get_Struct(self, xmlNode, node);
 
-  if(!node-&gt;doc) { return Qnil; }
+  if (!node-&gt;doc) { return Qnil; }
 
   doc = node-&gt;doc;
   dtd = xmlGetIntSubset(doc);
 
-  if(!dtd) { return Qnil; }
+  if (!dtd) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, (xmlNodePtr)dtd);
+  return noko_xml_node_wrap(Qnil, (xmlNodePtr)dtd);
 }</pre>
     </td>
   </tr>
@@ -7251,24 +7296,26 @@ static VALUE internal_subset(VALUE self)
       <pre class="lines">
 
 
-824
-825
-826
-827
-828
-829
-830
-831
-832</pre>
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 824</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 851</span>
 
-static VALUE key_eh(VALUE self, VALUE attribute)
+static VALUE
+key_eh(VALUE self, VALUE attribute)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
-  if(xmlHasProp(node, (xmlChar *)StringValueCStr(attribute))) {
+  if (xmlHasProp(node, (xmlChar *)StringValueCStr(attribute))) {
     return Qtrue;
   }
   return Qfalse;
@@ -7981,31 +8028,33 @@ static VALUE key_eh(VALUE self, VALUE attribute)
       <pre class="lines">
 
 
-1177
-1178
-1179
-1180
-1181
-1182
-1183
-1184
-1185
-1186
-1187
-1188
-1189
-1190
-1191
-1192
-1193</pre>
+1212
+1213
+1214
+1215
+1216
+1217
+1218
+1219
+1220
+1221
+1222
+1223
+1224
+1225
+1226
+1227
+1228
+1229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1177</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1212</span>
 
-static VALUE get_lang(VALUE self_rb)
+static VALUE
+get_lang(VALUE self_rb)
 {
   xmlNodePtr self ;
-  xmlChar* lang ;
+  xmlChar *lang ;
   VALUE lang_rb ;
 
   Data_Get_Struct(self_rb, xmlNode, self);
@@ -8054,29 +8103,31 @@ static VALUE get_lang(VALUE self_rb)
       <pre class="lines">
 
 
-1157
-1158
-1159
-1160
-1161
-1162
-1163
-1164
-1165
-1166
-1167
-1168</pre>
+1191
+1192
+1193
+1194
+1195
+1196
+1197
+1198
+1199
+1200
+1201
+1202
+1203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1157</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1191</span>
 
-static VALUE set_lang(VALUE self_rb, VALUE lang_rb)
+static VALUE
+set_lang(VALUE self_rb, VALUE lang_rb)
 {
   xmlNodePtr self ;
-  xmlChar* lang ;
+  xmlChar *lang ;
 
   Data_Get_Struct(self_rb, xmlNode, self);
-  lang = (xmlChar*)StringValueCStr(lang_rb);
+  lang = (xmlChar *)StringValueCStr(lang_rb);
 
   xmlNodeSetLang(self, lang);
 
@@ -8122,29 +8173,31 @@ static VALUE set_lang(VALUE self_rb, VALUE lang_rb)
       <pre class="lines">
 
 
-807
-808
-809
-810
-811
-812
-813
-814
-815
-816</pre>
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 807</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 833</span>
 
-static VALUE last_element_child(VALUE self)
+static VALUE
+last_element_child(VALUE self)
 {
   xmlNodePtr node, child;
   Data_Get_Struct(self, xmlNode, node);
 
   child = xmlLastElementChild(node);
-  if(!child) { return Qnil; }
+  if (!child) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, child);
+  return noko_xml_node_wrap(Qnil, child);
 }</pre>
     </td>
   </tr>
@@ -8181,18 +8234,20 @@ static VALUE last_element_child(VALUE self)
       <pre class="lines">
 
 
-1327
-1328
-1329
-1330
-1331
-1332
-1333</pre>
+1371
+1372
+1373
+1374
+1375
+1376
+1377
+1378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1327</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1371</span>
 
-static VALUE line(VALUE self)
+static VALUE
+line(VALUE self)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
@@ -8234,28 +8289,30 @@ static VALUE line(VALUE self)
       <pre class="lines">
 
 
-1341
-1342
-1343
-1344
-1345
-1346
-1347
-1348
-1349
-1350
-1351
-1352</pre>
+1386
+1387
+1388
+1389
+1390
+1391
+1392
+1393
+1394
+1395
+1396
+1397
+1398</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1341</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1386</span>
 
-static VALUE set_line(VALUE self, VALUE num)
+static VALUE
+set_line(VALUE self, VALUE num)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
-
   int value = NUM2INT(num);
+
+  Data_Get_Struct(self, xmlNode, node);
   if (value &lt; 65535) {
     node-&gt;line = value;
   }
@@ -8353,31 +8410,33 @@ static VALUE set_line(VALUE self, VALUE num)
       <pre class="lines">
 
 
-1020
-1021
-1022
-1023
-1024
-1025
-1026
-1027
-1028
-1029
-1030</pre>
+1049
+1050
+1051
+1052
+1053
+1054
+1055
+1056
+1057
+1058
+1059
+1060</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1020</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1049</span>
 
-static VALUE namespace(VALUE self)
+static VALUE
+noko_xml_node_namespace(VALUE rb_node)
 {
-xmlNodePtr node ;
-Data_Get_Struct(self, xmlNode, node);
+  xmlNodePtr c_node ;
+  Data_Get_Struct(rb_node, xmlNode, c_node);
 
-if (node-&gt;ns) {
-  return Nokogiri_wrap_xml_namespace(node-&gt;doc, node-&gt;ns);
-}
+  if (c_node-&gt;ns) {
+    return noko_xml_namespace_wrap(c_node-&gt;ns, c_node-&gt;doc);
+  }
 
-return Qnil ;
+  return Qnil ;
 }</pre>
     </td>
   </tr>
@@ -8475,53 +8534,53 @@ return Qnil ;
       <pre class="lines">
 
 
-1038
-1039
-1040
-1041
-1042
-1043
-1044
-1045
-1046
-1047
-1048
-1049
-1050
-1051
-1052
-1053
-1054
-1055
-1056
-1057
-1058
-1059</pre>
+1068
+1069
+1070
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081
+1082
+1083
+1084
+1085
+1086
+1087
+1088
+1089</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1038</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1068</span>
 
-static VALUE namespace_definitions(VALUE self)
+static VALUE
+namespace_definitions(VALUE rb_node)
 {
   /* this code in the mode of xmlHasProp() */
-  xmlNodePtr node ;
-  VALUE list;
-  xmlNsPtr ns;
+  xmlNodePtr c_node ;
+  xmlNsPtr c_namespace;
+  VALUE definitions = rb_ary_new();
 
-  Data_Get_Struct(self, xmlNode, node);
+  Data_Get_Struct(rb_node, xmlNode, c_node);
 
-  list = rb_ary_new();
-
-  ns = node-&gt;nsDef;
-
-  if(!ns) { return list; }
-
-  while(NULL != ns) {
-    rb_ary_push(list, Nokogiri_wrap_xml_namespace(node-&gt;doc, ns));
-    ns = ns-&gt;next;
+  c_namespace = c_node-&gt;nsDef;
+  if (!c_namespace) {
+    return definitions;
   }
 
-  return list;
+  while (c_namespace != NULL) {
+    rb_ary_push(definitions, noko_xml_namespace_wrap(c_namespace, c_node-&gt;doc));
+    c_namespace = c_namespace-&gt;next;
+  }
+
+  return definitions;
 }</pre>
     </td>
   </tr>
@@ -8558,51 +8617,53 @@ static VALUE namespace_definitions(VALUE self)
       <pre class="lines">
 
 
-1070
-1071
-1072
-1073
-1074
-1075
-1076
-1077
-1078
-1079
-1080
-1081
-1082
-1083
-1084
-1085
-1086
-1087
-1088
-1089
-1090</pre>
+1100
+1101
+1102
+1103
+1104
+1105
+1106
+1107
+1108
+1109
+1110
+1111
+1112
+1113
+1114
+1115
+1116
+1117
+1118
+1119
+1120
+1121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1070</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1100</span>
 
-static VALUE namespace_scopes(VALUE self)
+static VALUE
+namespace_scopes(VALUE rb_node)
 {
-  xmlNodePtr node ;
-  VALUE list;
-  xmlNsPtr *ns_list;
+  xmlNodePtr c_node ;
+  xmlNsPtr *namespaces;
+  VALUE scopes = rb_ary_new();
   int j;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Data_Get_Struct(rb_node, xmlNode, c_node);
 
-  list = rb_ary_new();
-  ns_list = xmlGetNsList(node-&gt;doc, node);
-
-  if(!ns_list) { return list; }
-
-  for (j = 0 ; ns_list[j] != NULL ; ++j) {
-    rb_ary_push(list, Nokogiri_wrap_xml_namespace(node-&gt;doc, ns_list[j]));
+  namespaces = xmlGetNsList(c_node-&gt;doc, c_node);
+  if (!namespaces) {
+    return scopes;
   }
 
-  xmlFree(ns_list);
-  return list;
+  for (j = 0 ; namespaces[j] != NULL ; ++j) {
+    rb_ary_push(scopes, noko_xml_namespace_wrap(namespaces[j], c_node-&gt;doc));
+  }
+
+  xmlFree(namespaces);
+  return scopes;
 }</pre>
     </td>
   </tr>
@@ -8652,26 +8713,28 @@ static VALUE namespace_scopes(VALUE self)
       <pre class="lines">
 
 
-840
-841
-842
-843
-844
-845
-846
-847
-848
-849</pre>
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 840</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 868</span>
 
-static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
+static VALUE
+namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
-  if(xmlHasNsProp(node, (xmlChar *)StringValueCStr(attribute),
-                  NIL_P(namespace) ? NULL : (xmlChar *)StringValueCStr(namespace))) {
+  if (xmlHasNsProp(node, (xmlChar *)StringValueCStr(attribute),
+                   NIL_P(namespace) ? NULL : (xmlChar *)StringValueCStr(namespace))) {
     return Qtrue;
   }
   return Qfalse;
@@ -8766,27 +8829,29 @@ static VALUE namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
       <pre class="lines">
 
 
-1111
-1112
-1113
-1114
-1115
-1116
-1117
-1118
-1119
-1120
-1121
-1122
-1123
-1124
-1125
-1126</pre>
+1143
+1144
+1145
+1146
+1147
+1148
+1149
+1150
+1151
+1152
+1153
+1154
+1155
+1156
+1157
+1158
+1159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1111</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1143</span>
 
-static VALUE set_native_content(VALUE self, VALUE content)
+static VALUE
+set_native_content(VALUE self, VALUE content)
 {
   xmlNodePtr node, child, next ;
   Data_Get_Struct(self, xmlNode, node);
@@ -8795,7 +8860,7 @@ static VALUE set_native_content(VALUE self, VALUE content)
   while (NULL != child) {
     next = child-&gt;next ;
     xmlUnlinkNode(child) ;
-    nokogiri_root_node(child);
+    noko_xml_document_pin_node(child);
     child = next ;
   }
 
@@ -8837,29 +8902,31 @@ static VALUE set_native_content(VALUE self, VALUE content)
       <pre class="lines">
 
 
-639
-640
-641
-642
-643
-644
-645
-646
-647
-648</pre>
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 639</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 658</span>
 
-static VALUE next_element(VALUE self)
+static VALUE
+next_element(VALUE self)
 {
   xmlNodePtr node, sibling;
   Data_Get_Struct(self, xmlNode, node);
 
   sibling = xmlNextElementSibling(node);
-  if(!sibling) { return Qnil; }
+  if (!sibling) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, sibling);
+  return noko_xml_node_wrap(Qnil, sibling);
 }</pre>
     </td>
   </tr>
@@ -8900,29 +8967,31 @@ static VALUE next_element(VALUE self)
       <pre class="lines">
 
 
-605
-606
-607
-608
-609
-610
-611
-612
-613
-614</pre>
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 605</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 622</span>
 
-static VALUE next_sibling(VALUE self)
+static VALUE
+next_sibling(VALUE self)
 {
   xmlNodePtr node, sibling;
   Data_Get_Struct(self, xmlNode, node);
 
   sibling = node-&gt;next;
-  if(!sibling) { return Qnil; }
+  if (!sibling) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, sibling) ;
+  return noko_xml_node_wrap(Qnil, sibling) ;
 }</pre>
     </td>
   </tr>
@@ -8963,24 +9032,26 @@ static VALUE next_sibling(VALUE self)
       <pre class="lines">
 
 
-1238
-1239
-1240
-1241
-1242
-1243
-1244
-1245
-1246</pre>
+1277
+1278
+1279
+1280
+1281
+1282
+1283
+1284
+1285
+1286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1238</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1277</span>
 
-static VALUE get_name(VALUE self)
+static VALUE
+get_name(VALUE self)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
-  if(node-&gt;name) {
+  if (node-&gt;name) {
     return NOKOGIRI_STR_NEW2(node-&gt;name);
   }
   return Qnil;
@@ -9024,22 +9095,24 @@ static VALUE get_name(VALUE self)
       <pre class="lines">
 
 
-1224
-1225
-1226
-1227
-1228
-1229
-1230</pre>
+1262
+1263
+1264
+1265
+1266
+1267
+1268
+1269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1224</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1262</span>
 
-static VALUE set_name(VALUE self, VALUE new_name)
+static VALUE
+set_name(VALUE self, VALUE new_name)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
-  xmlNodeSetName(node, (xmlChar*)StringValueCStr(new_name));
+  xmlNodeSetName(node, (xmlChar *)StringValueCStr(new_name));
   return new_name;
 }</pre>
     </td>
@@ -9081,17 +9154,19 @@ static VALUE set_name(VALUE self, VALUE new_name)
       <pre class="lines">
 
 
-1098
-1099
-1100
-1101
-1102
-1103</pre>
+1129
+1130
+1131
+1132
+1133
+1134
+1135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1098</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1129</span>
 
-static VALUE node_type(VALUE self)
+static VALUE
+node_type(VALUE self)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
@@ -9132,29 +9207,31 @@ static VALUE node_type(VALUE self)
       <pre class="lines">
 
 
-1207
-1208
-1209
-1210
-1211
-1212
-1213
-1214
-1215
-1216</pre>
+1244
+1245
+1246
+1247
+1248
+1249
+1250
+1251
+1252
+1253
+1254</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1207</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1244</span>
 
-static VALUE get_parent(VALUE self)
+static VALUE
+get_parent(VALUE self)
 {
   xmlNodePtr node, parent;
   Data_Get_Struct(self, xmlNode, node);
 
   parent = node-&gt;parent;
-  if(!parent) { return Qnil; }
+  if (!parent) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, parent) ;
+  return noko_xml_node_wrap(Qnil, parent) ;
 }</pre>
     </td>
   </tr>
@@ -9386,24 +9463,26 @@ static VALUE get_parent(VALUE self)
       <pre class="lines">
 
 
-1254
-1255
-1256
-1257
-1258
-1259
-1260
-1261
-1262
-1263
-1264
-1265
-1266</pre>
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1254</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 1294</span>
 
-static VALUE path(VALUE self)
+static VALUE
+path(VALUE self)
 {
   xmlNodePtr node;
   xmlChar *path ;
@@ -9451,18 +9530,20 @@ static VALUE path(VALUE self)
       <pre class="lines">
 
 
-378
-379
-380
-381
-382
-383
-384</pre>
+386
+387
+388
+389
+390
+391
+392
+393</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 378</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 386</span>
 
-static VALUE pointer_id(VALUE self)
+static VALUE
+pointer_id(VALUE self)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
@@ -9592,28 +9673,30 @@ static VALUE pointer_id(VALUE self)
       <pre class="lines">
 
 
-656
-657
-658
-659
-660
-661
-662
-663
-664
-665
-666
-667
-668
-669
-670
-671
-672</pre>
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 656</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 676</span>
 
-static VALUE previous_element(VALUE self)
+static VALUE
+previous_element(VALUE self)
 {
   xmlNodePtr node, sibling;
   Data_Get_Struct(self, xmlNode, node);
@@ -9622,13 +9705,13 @@ static VALUE previous_element(VALUE self)
    *  note that we don't use xmlPreviousElementSibling here because it's buggy pre-2.7.7.
    */
   sibling = node-&gt;prev;
-  if(!sibling) { return Qnil; }
+  if (!sibling) { return Qnil; }
 
-  while(sibling &amp;&amp; sibling-&gt;type != XML_ELEMENT_NODE) {
+  while (sibling &amp;&amp; sibling-&gt;type != XML_ELEMENT_NODE) {
     sibling = sibling-&gt;prev;
   }
 
-  return sibling ? Nokogiri_wrap_xml_node(Qnil, sibling) : Qnil ;
+  return sibling ? noko_xml_node_wrap(Qnil, sibling) : Qnil ;
 }</pre>
     </td>
   </tr>
@@ -9669,29 +9752,31 @@ static VALUE previous_element(VALUE self)
       <pre class="lines">
 
 
-622
-623
-624
-625
-626
-627
-628
-629
-630
-631</pre>
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 622</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 640</span>
 
-static VALUE previous_sibling(VALUE self)
+static VALUE
+previous_sibling(VALUE self)
 {
   xmlNodePtr node, sibling;
   Data_Get_Struct(self, xmlNode, node);
 
   sibling = node-&gt;prev;
-  if(!sibling) { return Qnil; }
+  if (!sibling) { return Qnil; }
 
-  return Nokogiri_wrap_xml_node(Qnil, sibling);
+  return noko_xml_node_wrap(Qnil, sibling);
 }</pre>
     </td>
   </tr>
@@ -10579,24 +10664,26 @@ static VALUE previous_sibling(VALUE self)
       <pre class="lines">
 
 
-577
-578
-579
-580
-581
-582
-583
-584</pre>
+592
+593
+594
+595
+596
+597
+598
+599
+600</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 577</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_node.c', line 592</span>
 
-static VALUE unlink_node(VALUE self)
+static VALUE
+unlink_node(VALUE self)
 {
   xmlNodePtr node;
   Data_Get_Struct(self, xmlNode, node);
   xmlUnlinkNode(node);
-  nokogiri_root_node(node);
+  noko_xml_document_pin_node(node);
   return self;
 }</pre>
     </td>
@@ -11127,7 +11214,7 @@ static VALUE unlink_node(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:36 2021 by
+  Generated on Sun Feb 21 16:10:45 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

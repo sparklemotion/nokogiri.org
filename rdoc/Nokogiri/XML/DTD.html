@@ -240,7 +240,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Get the External ID for this DTD.</p>
+<p>Get the external identifier for PUBLIC.</p>
 </div></span>
   
 </li>
@@ -354,7 +354,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Get the System ID for this DTD.</p>
+<p>Get the URI for a SYSTEM or PUBLIC Entity.</p>
 </div></span>
   
 </li>
@@ -436,13 +436,6 @@
       <pre class="lines">
 
 
-80
-81
-82
-83
-84
-85
-86
 87
 88
 89
@@ -450,12 +443,21 @@
 91
 92
 93
-94</pre>
+94
+95
+96
+97
+98
+99
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 80</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 87</span>
 
-static VALUE attributes(VALUE self)
+static VALUE
+attributes(VALUE self)
 {
   xmlDtdPtr dtd;
   VALUE hash;
@@ -464,7 +466,7 @@ static VALUE attributes(VALUE self)
 
   hash = rb_hash_new();
 
-  if(!dtd-&gt;attributes) return hash;
+  if (!dtd-&gt;attributes) { return hash; }
 
   xmlHashScan((xmlHashTablePtr)dtd-&gt;attributes, element_copier, (void *)hash);
 
@@ -540,33 +542,35 @@ static VALUE attributes(VALUE self)
       <pre class="lines">
 
 
-102
-103
-104
-105
-106
-107
-108
-109
 110
 111
 112
 113
 114
 115
-116</pre>
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 102</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 110</span>
 
-static VALUE elements(VALUE self)
+static VALUE
+elements(VALUE self)
 {
   xmlDtdPtr dtd;
   VALUE hash;
 
   Data_Get_Struct(self, xmlDtd, dtd);
 
-  if(!dtd-&gt;elements) return Qnil;
+  if (!dtd-&gt;elements) { return Qnil; }
 
   hash = rb_hash_new();
 
@@ -609,11 +613,6 @@ static VALUE elements(VALUE self)
       <pre class="lines">
 
 
-36
-37
-38
-39
-40
 41
 42
 43
@@ -623,19 +622,26 @@ static VALUE elements(VALUE self)
 47
 48
 49
-50</pre>
+50
+51
+52
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 36</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 41</span>
 
-static VALUE entities(VALUE self)
+static VALUE
+entities(VALUE self)
 {
   xmlDtdPtr dtd;
   VALUE hash;
 
   Data_Get_Struct(self, xmlDtd, dtd);
 
-  if(!dtd-&gt;entities) return Qnil;
+  if (!dtd-&gt;entities) { return Qnil; }
 
   hash = rb_hash_new();
 
@@ -661,7 +667,7 @@ static VALUE entities(VALUE self)
 <div class="docstring">
   <div class="discussion">
     
-<p>Get the External ID for this DTD</p>
+<p>Get the external identifier for PUBLIC</p>
 
 
   </div>
@@ -678,27 +684,29 @@ static VALUE entities(VALUE self)
       <pre class="lines">
 
 
-170
-171
-172
-173
-174
-175
-176
-177
-178</pre>
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 170</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 60</span>
 
-static VALUE external_id(VALUE self)
+static VALUE
+external_id(VALUE self)
 {
-  xmlDtdPtr dtd;
-  Data_Get_Struct(self, xmlDtd, dtd);
+  xmlEntityPtr node;
+  Data_Get_Struct(self, xmlEntity, node);
 
-  if(!dtd-&gt;ExternalID) return Qnil;
+  if (!node-&gt;ExternalID) { return Qnil; }
 
-  return NOKOGIRI_STR_NEW2(dtd-&gt;ExternalID);
+  return NOKOGIRI_STR_NEW2(node-&gt;ExternalID);
 }</pre>
     </td>
   </tr>
@@ -878,12 +886,6 @@ static VALUE external_id(VALUE self)
       <pre class="lines">
 
 
-58
-59
-60
-61
-62
-63
 64
 65
 66
@@ -892,19 +894,27 @@ static VALUE external_id(VALUE self)
 69
 70
 71
-72</pre>
+72
+73
+74
+75
+76
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 58</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 64</span>
 
-static VALUE notations(VALUE self)
+static VALUE
+notations(VALUE self)
 {
   xmlDtdPtr dtd;
   VALUE hash;
 
   Data_Get_Struct(self, xmlDtd, dtd);
 
-  if(!dtd-&gt;notations) return Qnil;
+  if (!dtd-&gt;notations) { return Qnil; }
 
   hash = rb_hash_new();
 
@@ -930,7 +940,7 @@ static VALUE notations(VALUE self)
 <div class="docstring">
   <div class="discussion">
     
-<p>Get the System ID for this DTD</p>
+<p>Get the URI for a SYSTEM or PUBLIC Entity</p>
 
 
   </div>
@@ -947,27 +957,29 @@ static VALUE notations(VALUE self)
       <pre class="lines">
 
 
-154
-155
-156
-157
-158
-159
-160
-161
-162</pre>
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 154</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_entity_decl.c', line 77</span>
 
-static VALUE system_id(VALUE self)
+static VALUE
+system_id(VALUE self)
 {
-  xmlDtdPtr dtd;
-  Data_Get_Struct(self, xmlDtd, dtd);
+  xmlEntityPtr node;
+  Data_Get_Struct(self, xmlEntity, node);
 
-  if(!dtd-&gt;SystemID) return Qnil;
+  if (!node-&gt;SystemID) { return Qnil; }
 
-  return NOKOGIRI_STR_NEW2(dtd-&gt;SystemID);
+  return NOKOGIRI_STR_NEW2(node-&gt;SystemID);
 }</pre>
     </td>
   </tr>
@@ -1004,15 +1016,6 @@ static VALUE system_id(VALUE self)
       <pre class="lines">
 
 
-124
-125
-126
-127
-128
-129
-130
-131
-132
 133
 134
 135
@@ -1026,12 +1029,23 @@ static VALUE system_id(VALUE self)
 143
 144
 145
-146</pre>
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 124</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_dtd.c', line 133</span>
 
-static VALUE validate(VALUE self, VALUE document)
+static VALUE
+validate(VALUE self, VALUE document)
 {
   xmlDocPtr doc;
   xmlDtdPtr dtd;
@@ -1064,7 +1078,7 @@ static VALUE validate(VALUE self, VALUE document)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:35 2021 by
+  Generated on Sun Feb 21 16:10:44 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

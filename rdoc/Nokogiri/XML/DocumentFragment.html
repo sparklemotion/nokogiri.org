@@ -603,8 +603,6 @@ to +ctx+.
       <pre class="lines">
 
 
-9
-10
 11
 12
 13
@@ -625,12 +623,16 @@ to +ctx+.
 28
 29
 30
-31</pre>
+31
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document_fragment.c', line 9</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_document_fragment.c', line 11</span>
 
-static VALUE new(int argc, VALUE *argv, VALUE klass)
+static VALUE
+new (int argc, VALUE *argv, VALUE klass)
 {
   xmlDocPtr xml_doc;
   xmlNodePtr node;
@@ -644,12 +646,12 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 
   node = xmlNewDocFragment(xml_doc-&gt;doc);
 
-  nokogiri_root_node(node);
+  noko_xml_document_pin_node(node);
 
-  rb_node = Nokogiri_wrap_xml_node(klass, node);
+  rb_node = noko_xml_node_wrap(klass, node);
   rb_obj_call_init(rb_node, argc, argv);
 
-  if(rb_block_given_p()) rb_yield(rb_node);
+  if (rb_block_given_p()) { rb_yield(rb_node); }
 
   return rb_node;
 }</pre>
@@ -1235,7 +1237,7 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:39 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

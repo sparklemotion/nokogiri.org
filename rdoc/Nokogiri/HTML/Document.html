@@ -467,8 +467,6 @@
       <pre class="lines">
 
 
-12
-13
 14
 15
 16
@@ -483,10 +481,12 @@
 25
 26
 27
-28</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 12</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 14</span>
 
 static VALUE
 rb_html_document_s_new(int argc, VALUE *argv, VALUE klass)
@@ -502,7 +502,7 @@ rb_html_document_s_new(int argc, VALUE *argv, VALUE klass)
           RTEST(uri) ? (const xmlChar *)StringValueCStr(uri) : NULL,
           RTEST(external_id) ? (const xmlChar *)StringValueCStr(external_id) : NULL
         );
-  rb_doc = nokogiri_xml_document_wrap_with_init_args(klass, doc, argc, argv);
+  rb_doc = noko_xml_document_wrap_with_init_args(klass, doc, argc, argv);
   return rb_doc ;
 }</pre>
     </td>
@@ -692,8 +692,6 @@ rb_html_document_s_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
-37
-38
 39
 40
 41
@@ -741,10 +739,12 @@ rb_html_document_s_new(int argc, VALUE *argv, VALUE klass)
 83
 84
 85
-86</pre>
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 37</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 39</span>
 
 static VALUE
 rb_html_document_s_read_io(VALUE klass, VALUE rb_io, VALUE rb_url, VALUE rb_encoding, VALUE rb_options)
@@ -758,7 +758,7 @@ rb_html_document_s_read_io(VALUE klass, VALUE rb_io, VALUE rb_url, VALUE rb_enco
 
   xmlSetStructuredErrorFunc((void *)rb_error_list, Nokogiri_error_array_pusher);
 
-  c_doc = htmlReadIO(io_read_callback, io_close_callback, (void *)rb_io, c_url, c_encoding, options);
+  c_doc = htmlReadIO(noko_io_read, noko_io_close, (void *)rb_io, c_url, c_encoding, options);
 
   xmlSetStructuredErrorFunc(NULL, NULL);
 
@@ -792,7 +792,7 @@ rb_html_document_s_read_io(VALUE klass, VALUE rb_io, VALUE rb_url, VALUE rb_enco
     return Qnil;
   }
 
-  rb_doc = nokogiri_xml_document_wrap(klass, c_doc);
+  rb_doc = noko_xml_document_wrap(klass, c_doc);
   rb_iv_set(rb_doc, "@errors", rb_error_list);
   return rb_doc;
 }</pre>
@@ -831,8 +831,6 @@ rb_html_document_s_read_io(VALUE klass, VALUE rb_io, VALUE rb_url, VALUE rb_enco
       <pre class="lines">
 
 
-95
-96
 97
 98
 99
@@ -870,10 +868,12 @@ rb_html_document_s_read_io(VALUE klass, VALUE rb_io, VALUE rb_url, VALUE rb_enco
 131
 132
 133
-134</pre>
+134
+135
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 95</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 97</span>
 
 static VALUE
 rb_html_document_s_read_memory(VALUE klass, VALUE rb_html, VALUE rb_url, VALUE rb_encoding, VALUE rb_options)
@@ -911,7 +911,7 @@ rb_html_document_s_read_memory(VALUE klass, VALUE rb_html, VALUE rb_url, VALUE r
     return Qnil;
   }
 
-  rb_doc = nokogiri_xml_document_wrap(klass, c_doc);
+  rb_doc = noko_xml_document_wrap(klass, c_doc);
   rb_iv_set(rb_doc, "@errors", rb_error_list);
   return rb_doc;
 }</pre>
@@ -1326,16 +1326,16 @@ rb_html_document_s_read_memory(VALUE klass, VALUE rb_html, VALUE rb_url, VALUE r
       <pre class="lines">
 
 
-142
-143
 144
 145
 146
 147
-148</pre>
+148
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 142</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_document.c', line 144</span>
 
 static VALUE
 rb_html_document_type(VALUE self)
@@ -1354,7 +1354,7 @@ rb_html_document_type(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:38 2021 by
+  Generated on Sun Feb 21 16:10:46 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

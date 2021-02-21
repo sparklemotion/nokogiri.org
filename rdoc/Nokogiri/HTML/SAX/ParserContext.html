@@ -264,24 +264,26 @@
       <pre class="lines">
 
 
-47
-48
-49
 50
 51
 52
 53
-54</pre>
+54
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_sax_parser_context.c', line 47</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_sax_parser_context.c', line 50</span>
 
-static VALUE parse_file(VALUE klass, VALUE filename, VALUE encoding)
+static VALUE
+parse_file(VALUE klass, VALUE filename, VALUE encoding)
 {
   htmlParserCtxtPtr ctxt = htmlCreateFileParserCtxt(
-      StringValueCStr(filename),
-      StringValueCStr(encoding)
-  );
+                             StringValueCStr(filename),
+                             StringValueCStr(encoding)
+                           );
   return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
 }</pre>
     </td>
@@ -305,7 +307,6 @@ static VALUE parse_file(VALUE klass, VALUE filename, VALUE encoding)
       <pre class="lines">
 
 
-16
 17
 18
 19
@@ -334,40 +335,45 @@ static VALUE parse_file(VALUE klass, VALUE filename, VALUE encoding)
 42
 43
 44
-45</pre>
+45
+46
+47
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_sax_parser_context.c', line 16</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_sax_parser_context.c', line 17</span>
 
 static VALUE
 parse_memory(VALUE klass, VALUE data, VALUE encoding)
 {
-    htmlParserCtxtPtr ctxt;
+  htmlParserCtxtPtr ctxt;
 
-    if (NIL_P(data))
-	rb_raise(rb_eArgError, "data cannot be nil");
-    if (!(int)RSTRING_LEN(data))
-	rb_raise(rb_eRuntimeError, "data cannot be empty");
+  if (NIL_P(data)) {
+    rb_raise(rb_eArgError, "data cannot be nil");
+  }
+  if (!(int)RSTRING_LEN(data)) {
+    rb_raise(rb_eRuntimeError, "data cannot be empty");
+  }
 
-    ctxt = htmlCreateMemoryParserCtxt(StringValuePtr(data),
-				      (int)RSTRING_LEN(data));
-    if (ctxt-&gt;sax) {
-	xmlFree(ctxt-&gt;sax);
-	ctxt-&gt;sax = NULL;
+  ctxt = htmlCreateMemoryParserCtxt(StringValuePtr(data),
+                                    (int)RSTRING_LEN(data));
+  if (ctxt-&gt;sax) {
+    xmlFree(ctxt-&gt;sax);
+    ctxt-&gt;sax = NULL;
+  }
+
+  if (RTEST(encoding)) {
+    xmlCharEncodingHandlerPtr enc = xmlFindCharEncodingHandler(StringValueCStr(encoding));
+    if (enc != NULL) {
+      xmlSwitchToEncoding(ctxt, enc);
+      if (ctxt-&gt;errNo == XML_ERR_UNSUPPORTED_ENCODING) {
+        rb_raise(rb_eRuntimeError, "Unsupported encoding %s",
+                 StringValueCStr(encoding));
+      }
     }
+  }
 
-    if (RTEST(encoding)) {
-	xmlCharEncodingHandlerPtr enc = xmlFindCharEncodingHandler(StringValueCStr(encoding));
-	if (enc != NULL) {
-	    xmlSwitchToEncoding(ctxt, enc);
-	    if (ctxt-&gt;errNo == XML_ERR_UNSUPPORTED_ENCODING) {
-		rb_raise(rb_eRuntimeError, "Unsupported encoding %s",
-			 StringValueCStr(encoding));
-	    }
-	}
-    }
-
-    return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
+  return Data_Wrap_Struct(klass, NULL, deallocate, ctxt);
 }</pre>
     </td>
   </tr>
@@ -429,11 +435,6 @@ parse_memory(VALUE klass, VALUE data, VALUE encoding)
       <pre class="lines">
 
 
-76
-77
-78
-79
-80
 81
 82
 83
@@ -453,35 +454,44 @@ parse_memory(VALUE klass, VALUE data, VALUE encoding)
 97
 98
 99
-100</pre>
+100
+101
+102
+103
+104
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_sax_parser_context.c', line 76</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_sax_parser_context.c', line 81</span>
 
 static VALUE
 parse_with(VALUE self, VALUE sax_handler)
 {
-    htmlParserCtxtPtr ctxt;
-    htmlSAXHandlerPtr sax;
+  htmlParserCtxtPtr ctxt;
+  htmlSAXHandlerPtr sax;
 
-    if (!rb_obj_is_kind_of(sax_handler, cNokogiriXmlSaxParser))
-	rb_raise(rb_eArgError, "argument must be a Nokogiri::XML::SAX::Parser");
+  if (!rb_obj_is_kind_of(sax_handler, cNokogiriXmlSaxParser)) {
+    rb_raise(rb_eArgError, "argument must be a Nokogiri::XML::SAX::Parser");
+  }
 
-    Data_Get_Struct(self, htmlParserCtxt, ctxt);
-    Data_Get_Struct(sax_handler, htmlSAXHandler, sax);
+  Data_Get_Struct(self, htmlParserCtxt, ctxt);
+  Data_Get_Struct(sax_handler, htmlSAXHandler, sax);
 
-    /* Free the sax handler since we'll assign our own */
-    if (ctxt-&gt;sax &amp;&amp; ctxt-&gt;sax != (xmlSAXHandlerPtr)&amp;xmlDefaultSAXHandler)
-	xmlFree(ctxt-&gt;sax);
+  /* Free the sax handler since we'll assign our own */
+  if (ctxt-&gt;sax &amp;&amp; ctxt-&gt;sax != (xmlSAXHandlerPtr)&amp;xmlDefaultSAXHandler) {
+    xmlFree(ctxt-&gt;sax);
+  }
 
-    ctxt-&gt;sax = sax;
-    ctxt-&gt;userData = (void *)NOKOGIRI_SAX_TUPLE_NEW(ctxt, sax_handler);
+  ctxt-&gt;sax = sax;
+  ctxt-&gt;userData = (void *)NOKOGIRI_SAX_TUPLE_NEW(ctxt, sax_handler);
 
-    xmlSetStructuredErrorFunc(NULL, NULL);
+  xmlSetStructuredErrorFunc(NULL, NULL);
 
-    rb_ensure(parse_doc, (VALUE)ctxt, parse_doc_finalize, (VALUE)ctxt);
+  rb_ensure(parse_doc, (VALUE)ctxt, parse_doc_finalize, (VALUE)ctxt);
 
-    return self;
+  return self;
 }</pre>
     </td>
   </tr>
@@ -493,7 +503,7 @@ parse_with(VALUE self, VALUE sax_handler)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:39 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

@@ -89,7 +89,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/nokogiri/xslt.rb<span class="defines">,<br>
-  lib/nokogiri/xslt/stylesheet.rb,<br> ext/nokogiri/nokogiri.c,<br> ext/nokogiri/xslt_stylesheet.c</span>
+  lib/nokogiri/xslt/stylesheet.rb,<br> ext/nokogiri/nokogiri.c</span>
 </dd>
   </dl>
   
@@ -372,27 +372,29 @@
       <pre class="lines">
 
 
-235
-236
-237
-238
-239
-240
 241
 242
-243</pre>
+243
+244
+245
+246
+247
+248
+249
+250</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 235</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 241</span>
 
-static VALUE registr(VALUE self, VALUE uri, VALUE obj)
+static VALUE
+registr(VALUE self, VALUE uri, VALUE obj)
 {
-    VALUE modules = rb_iv_get(self, "@modules");
-    if(NIL_P(modules)) rb_raise(rb_eRuntimeError, "wtf! @modules isn't set");
+  VALUE modules = rb_iv_get(self, "@modules");
+  if (NIL_P(modules)) { rb_raise(rb_eRuntimeError, "wtf! @modules isn't set"); }
 
-    rb_hash_aset(modules, uri, obj);
-    xsltRegisterExtModule((unsigned char *)StringValueCStr(uri), initFunc, shutdownFunc);
-    return self;
+  rb_hash_aset(modules, uri, obj);
+  xsltRegisterExtModule((unsigned char *)StringValueCStr(uri), initFunc, shutdownFunc);
+  return self;
 }</pre>
     </td>
   </tr>
@@ -404,7 +406,7 @@ static VALUE registr(VALUE self, VALUE uri, VALUE obj)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:35 2021 by
+  Generated on Sun Feb 21 16:10:43 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

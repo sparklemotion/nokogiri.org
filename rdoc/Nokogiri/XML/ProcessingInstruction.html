@@ -278,8 +278,6 @@
       <pre class="lines">
 
 
-10
-11
 12
 13
 14
@@ -306,12 +304,16 @@
 35
 36
 37
-38</pre>
+38
+39
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_processing_instruction.c', line 10</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_processing_instruction.c', line 12</span>
 
-static VALUE new(int argc, VALUE *argv, VALUE klass)
+static VALUE
+new (int argc, VALUE *argv, VALUE klass)
 {
   xmlDocPtr xml_doc;
   xmlNodePtr node;
@@ -326,17 +328,17 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
   Data_Get_Struct(document, xmlDoc, xml_doc);
 
   node = xmlNewDocPI(
-      xml_doc,
-      (const xmlChar *)StringValueCStr(name),
-      (const xmlChar *)StringValueCStr(content)
-  );
+           xml_doc,
+           (const xmlChar *)StringValueCStr(name),
+           (const xmlChar *)StringValueCStr(content)
+         );
 
-  nokogiri_root_node(node);
+  noko_xml_document_pin_node(node);
 
-  rb_node = Nokogiri_wrap_xml_node(klass, node);
+  rb_node = noko_xml_node_wrap(klass, node);
   rb_obj_call_init(rb_node, argc, argv);
 
-  if(rb_block_given_p()) rb_yield(rb_node);
+  if (rb_block_given_p()) { rb_yield(rb_node); }
 
   return rb_node;
 }</pre>
@@ -350,7 +352,7 @@ static VALUE new(int argc, VALUE *argv, VALUE klass)
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 22 23:08:39 2021 by
+  Generated on Sun Feb 21 16:10:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
