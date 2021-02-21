@@ -37,4 +37,4 @@ Please use the "Bug Report" or "Installation Difficulties" templates.
 
 Please report vulnerabilities at https://hackerone.com/nokogiri
 
-Full information and description of our security policy is in [`SECURITY.md`](SECURITY.md)
+Full information and description of our security policy is in [`SECURITY.md`](/SECURITY.html)
