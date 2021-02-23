@@ -971,26 +971,38 @@
 <ul>
 <li>basic security sanity check: run rubocop</li>
 <li>fast feedback for obvious failures: run against system libraries on vanilla ubuntu</li>
-<li>run on all supported versions of CRuby:</li>
+<li>run on all supported versions of CRuby:<ul>
 <li>once with packaged libraries</li>
 <li>once with system libraries</li>
 <li>once on valgrind (to look for memory bugs)</li>
+</ul>
+</li>
 <li>run on JRuby</li>
-<li>run on a Musl (Alpine) system:</li>
+<li>run on a Musl (Alpine) system:<ul>
 <li>against system libraries</li>
 <li>with valgrind using packaged libraries</li>
-<li>run with libxml-ruby loaded (because this interacts with libxml2 in conflicting ways)</li>
+</ul>
+</li>
+<li>run with libxml-ruby loaded (because this interacts with libxml2 in conflicting ways)<ul>
 <li>against system libraries</li>
 <li>with valgrind using packaged libraries</li>
-<li>build a "ruby" platform gem</li>
+</ul>
+</li>
+<li>build a "ruby" platform gem<ul>
 <li>install and test on vanilla ubuntu</li>
 <li>install and test on musl</li>
-<li>build a native 64-bit linux gem</li>
+</ul>
+</li>
+<li>build a native 64-bit linux gem<ul>
 <li>install and test on vanilla ubuntu with all supported versions of CRuby</li>
 <li>install and test on musl</li>
-<li>build a native 32-bit linux gem</li>
+</ul>
+</li>
+<li>build a native 32-bit linux gem<ul>
 <li>install and test on vanilla ubuntu</li>
 <li>install and test on musl</li>
+</ul>
+</li>
 <li>build a jruby gem, install and test it</li>
 </ul>
 <p>These pipelines are configured in <code>/concourse/nokogiri.yml</code> and <code>nokogiri-pr.yml</code>. Those files file are ... nontrivial, and I'm sorry about that. See <a href="https://github.com/flavorjones/concourse-gem">https://github.com/flavorjones/concourse-gem</a> for help.</p>
