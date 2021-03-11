@@ -542,11 +542,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#next-unreleased" class="md-nav__link">
-    next / unreleased
+  <a href="#1112-2021-03-11" class="md-nav__link">
+    1.11.2 / 2021-03-11
   </a>
   
-    <nav class="md-nav" aria-label="next / unreleased">
+    <nav class="md-nav" aria-label="1.11.2 / 2021-03-11">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -563,17 +563,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#v1111-2021-01-06" class="md-nav__link">
-    v1.11.1 / 2021-01-06
+  <a href="#1111-2021-01-06" class="md-nav__link">
+    1.11.1 / 2021-01-06
   </a>
   
-    <nav class="md-nav" aria-label="v1.11.1 / 2021-01-06">
+    <nav class="md-nav" aria-label="1.11.1 / 2021-01-06">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -589,11 +596,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#v1110-2021-01-03" class="md-nav__link">
-    v1.11.0 / 2021-01-03
+  <a href="#1110-2021-01-03" class="md-nav__link">
+    1.11.0 / 2021-01-03
   </a>
   
-    <nav class="md-nav" aria-label="v1.11.0 / 2021-01-03">
+    <nav class="md-nav" aria-label="1.11.0 / 2021-01-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -653,7 +660,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed" class="md-nav__link">
+  <a href="#changed_1" class="md-nav__link">
     Changed
   </a>
   
@@ -2510,7 +2517,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed_1" class="md-nav__link">
+  <a href="#changed_2" class="md-nav__link">
     Changed
   </a>
   
@@ -2878,25 +2885,32 @@
                 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
 <p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a>, please see the <a href="index.html">README.md</a> for details.</p>
 <hr />
-<h2 id="next-unreleased">next / unreleased<a class="headerlink" href="#next-unreleased" title="Permanent link">&para;</a></h2>
+<h2 id="1112-2021-03-11">1.11.2 / 2021-03-11<a class="headerlink" href="#1112-2021-03-11" title="Permanent link">&para;</a></h2>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[CRuby] <code>NodeSet</code> may now safely contain <code>Node</code> objects from multiple documents. Previously the GC lifecycle of the parent <code>Document</code> objects could lead to contained nodes being GCed while still in scope. [<a href="https://github.com/sparklemotion/nokogiri/issues/1952">#1952</a>]</li>
+<li>[CRuby] <code>NodeSet</code> may now safely contain <code>Node</code> objects from multiple documents. Previously the GC lifecycle of the parent <code>Document</code> objects could lead to nodes being GCed while still in scope. [<a href="https://github.com/sparklemotion/nokogiri/issues/1952#issuecomment-770856928">#1952</a>]</li>
 <li>[CRuby] Patch libxml2 to avoid "huge input lookup" errors on large CDATA elements. (See upstream <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/200">GNOME/libxml2#200</a> and <a href="https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/100">GNOME/libxml2!100</a>.) [<a href="https://github.com/sparklemotion/nokogiri/issues/2132">#2132</a>].</li>
+<li>[CRuby+Windows] Enable Nokogumbo (and other downstream gems) to compile and link against <code>nokogiri.so</code> by including <code>LDFLAGS</code> in <code>Nokogiri::VERSION_INFO</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/2167">#2167</a>]</li>
 <li>[CRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was invoked twice on each object.</li>
 <li>[JRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was not called, which was a problem for subclassing such as done by <code>Loofah</code>.</li>
 </ul>
 <h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Reduce the number of object allocations needed when parsing an HTML::DocumentFragment. [<a href="https://github.com/sparklemotion/nokogiri/issues/2087">#2087</a>] (Thanks, <a href="https://github.com/ashmaroli">@ashmaroli</a>!)</li>
-<li>[JRuby] Update the algorithm used to calculate <code>Node#line</code> to be wrong less-often. The underlying parser, Xerces, does not track line numbers, and so we've always used a hacky solution for this method. [<a href="https://github.com/sparklemotion/nokogiri/issues/1223">#1223</a>]</li>
+<li>[JRuby] Update the algorithm used to calculate <code>Node#line</code> to be wrong less-often. The underlying parser, Xerces, does not track line numbers, and so we've always used a hacky solution for this method. [<a href="https://github.com/sparklemotion/nokogiri/issues/1223">#1223</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2177">#2177</a>]</li>
+<li>Introduce <code>--enable-system-libraries</code> and <code>--disable-system-libraries</code> flags to <code>extconf.rb</code>. These flags provide the same functionality as <code>--use-system-libraries</code> and the <code>NOKOGIRI_USE_SYSTEM_LIBRARIES</code> environment variable, but are more idiomatic. [<a href="https://github.com/sparklemotion/nokogiri/issues/2193">#2193</a>] (Thanks, <a href="https://github.com/eregon">@eregon</a>!)</li>
+<li>[TruffleRuby] <code>--disable-static</code> is now the default on TruffleRuby when the packaged libraries are used. This is more flexible and compiles faster. (Note, though, that the default on TR is still to use system libraries.) [<a href="https://github.com/sparklemotion/nokogiri/issues/2191#issuecomment-780724627">#2191</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2193">#2193</a>] (Thanks, <a href="https://github.com/eregon">@eregon</a>!)</li>
 </ul>
-<h2 id="v1111-2021-01-06">v1.11.1 / 2021-01-06<a class="headerlink" href="#v1111-2021-01-06" title="Permanent link">&para;</a></h2>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Nokogiri::XML::Path</code> is now a Module (previously it has been a Class). It has been acting solely as a Module since v1.0.0. See <a href="https://github.com/sparklemotion/nokogiri/commit/8461c74">8461c74</a>.</li>
+</ul>
+<h2 id="1111-2021-01-06">1.11.1 / 2021-01-06<a class="headerlink" href="#1111-2021-01-06" title="Permanent link">&para;</a></h2>
 <h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] If <code>libxml-ruby</code> is loaded before <code>nokogiri</code>, the SAX and Push parsers no longer call <code>libxml-ruby</code>'s handlers. Instead, they defensively override the libxml2 global handler before parsing. [<a href="https://github.com/sparklemotion/nokogiri/issues/2168">#2168</a>]</li>
 </ul>
-<h2 id="v1110-2021-01-03">v1.11.0 / 2021-01-03<a class="headerlink" href="#v1110-2021-01-03" title="Permanent link">&para;</a></h2>
+<h2 id="1110-2021-01-03">1.11.0 / 2021-01-03<a class="headerlink" href="#1110-2021-01-03" title="Permanent link">&para;</a></h2>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <h4>Faster, more reliable installation: Native Gems for Linux and OSX/Darwin</h4>
 <p>"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know are the biggest headaches for Nokogiri users. </p>
@@ -2972,7 +2986,7 @@
 <li>The internal method <code>Nokogiri::CSS::Parser.cache_on=</code> has been removed. Use <code>.set_cache</code> if you need to muck with the cache internals.</li>
 <li>The class method <code>Nokogiri::CSS::Parser.parse</code> has been removed. This was originally deprecated in 2009 in 13db61b. Use <code>Nokogiri::CSS.parse</code> instead.</li>
 </ul>
-<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
 <h4><code>XML::Schema</code> input is now "untrusted" by default</h4>
 <p>Address <a href="https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vr8q-g5c7-m54m">CVE-2020-26247</a>.</p>
 <p>In Nokogiri versions &lt;= 1.11.0.rc3, XML Schemas parsed by <code>Nokogiri::XML::Schema</code> were <strong>trusted</strong> by default, allowing external resources to be accessed over the network, potentially enabling XXE or SSRF attacks.</p>
@@ -4117,7 +4131,7 @@ mentioned in the notes for v1.5.10.</p>
 <ul>
 <li>Nokogiri::XML::Node.new_from_str will be deprecated in 1.3.0</li>
 </ul>
-<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
+<h3 id="changed_2">Changed<a class="headerlink" href="#changed_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Nokogiri::HTML.fragment now returns an XML::DocumentFragment (LH <a href="https://github.com/sparklemotion/nokogiri/issues/32">#32</a>)</li>
 </ul>
