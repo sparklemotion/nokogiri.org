@@ -51,7 +51,8 @@ google_analytics:
   - "nokogiri.org"
 
 nav:
-  - Readme: index.md
+  - Home: index.md
+  - API: rdoc/index.html
   - Support:
     - Installing Nokogiri: tutorials/installing_nokogiri.md
     - Nokogiri for Enterprise: tidelift-landing.md
@@ -72,4 +73,3 @@ nav:
     - License: LICENSE.md
     - Dependencies: LICENSE-DEPENDENCIES.md
     - Roadmap: ROADMAP.md
-  - RDoc: rdoc/index.html
