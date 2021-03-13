@@ -4,6 +4,10 @@
      <lastmod>2021-03-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://nokogiri.org/rdoc/index.html</loc>
+     <lastmod>2021-03-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://nokogiri.org/tutorials/installing_nokogiri.html</loc>
      <lastmod>2021-03-13</lastmod>
      <changefreq>daily</changefreq>
@@ -69,10 +73,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://nokogiri.org/ROADMAP.html</loc>
-     <lastmod>2021-03-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://nokogiri.org/rdoc/index.html</loc>
      <lastmod>2021-03-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
