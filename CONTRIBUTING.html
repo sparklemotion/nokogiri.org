@@ -929,17 +929,20 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># see failure messages immediately</span>
 <span class="nv">NOKOGIRI_TEST_FAIL_FAST</span><span class="o">=</span>t bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 
+<span class="c1"># ordinary GC behavior</span>
+<span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>normal bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
+
 <span class="c1"># minor GC after each test</span>
 <span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>minor bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 
-<span class="c1"># ordinary GC behavior</span>
-<span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>none bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
+<span class="c1"># major GC and a compaction after each test</span>
+<span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>compact bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
+
+<span class="c1"># verify references after compaction after every test</span>
+<span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>verify bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 
 <span class="c1"># run with GC &quot;stress mode&quot; on</span>
 <span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>stress bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
-
-<span class="c1"># verify references after compaction after every test</span>
-<span class="nv">NOKOGIRI_TEST_GC_COMPACTION</span><span class="o">=</span>t bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 </code></pre></div>
 
 <h3 id="libxml2-advanced-usage">libxml2 advanced usage<a class="headerlink" href="#libxml2-advanced-usage" title="Permanent link">&para;</a></h3>
