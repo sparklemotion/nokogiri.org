@@ -555,11 +555,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#next-unreleased" class="md-nav__link">
-    next / unreleased
+  <a href="#1113-2021-04-07" class="md-nav__link">
+    1.11.3 / 2021-04-07
   </a>
   
-    <nav class="md-nav" aria-label="next / unreleased">
+    <nav class="md-nav" aria-label="1.11.3 / 2021-04-07">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2905,11 +2905,12 @@
                 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
 <p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a>, please see the <a href="index.html">README.md</a> for details.</p>
 <hr />
-<h2 id="next-unreleased">next / unreleased<a class="headerlink" href="#next-unreleased" title="Permanent link">&para;</a></h2>
+<h2 id="1113-2021-04-07">1.11.3 / 2021-04-07<a class="headerlink" href="#1113-2021-04-07" title="Permanent link">&para;</a></h2>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Passing non-<code>Node</code> objects to <code>Document#root=</code> now raises an <code>ArgumentError</code> exception. Previously this likely segfaulted. [<a href="https://github.com/sparklemotion/nokogiri/issues/1900">#1900</a>]</li>
 <li>[JRuby] Passing non-<code>Node</code> objects to <code>Document#root=</code> now raises an <code>ArgumentError</code> exception. Previously this raised a <code>TypeError</code> exception.</li>
+<li>[CRuby] arm64/aarch64 systems (like Apple's M1) can now compile libxml2 and libxslt from source (though we continue to strongly advise users to install the native gems for the best possible experience)</li>
 </ul>
 <h2 id="1112-2021-03-11">1.11.2 / 2021-03-11<a class="headerlink" href="#1112-2021-03-11" title="Permanent link">&para;</a></h2>
 <h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
