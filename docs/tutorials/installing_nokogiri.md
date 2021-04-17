@@ -625,6 +625,13 @@ dnf install -y make gcc rpm-build ruby-devel
 ```
 
 
+### Alpine
+
+``` sh
+apk add build-base
+```
+
+
 ### Windows
 
 Please visit [RubyInstaller](https://rubyinstaller.org/) and make sure you install a version "With Devkit".
