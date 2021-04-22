@@ -277,7 +277,7 @@ RUN gem install nokogiri --platform=ruby
 To compile against Alpine's own XML libraries, add the necessary development tools and libraries to the image.
 
 ``` Dockerfile
-FROM ruby:3.0-alpine
+FROM ruby:3.0-alpine 
 
 RUN apk add --no-cache build-base libxml2-dev libxslt-dev
 RUN gem install nokogiri --platform=ruby -- --use-system-libraries
