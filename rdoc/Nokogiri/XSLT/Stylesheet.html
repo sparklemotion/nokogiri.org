@@ -390,7 +390,7 @@ parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/xslt/stylesheet.rb', line 21</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_apply_to">apply_to</span> <span class="id identifier rubyid_document">document</span><span class="comma">,</span> <span class="id identifier rubyid_params">params</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span>
+<span class="kw">def</span> <span class="id identifier rubyid_apply_to">apply_to</span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="comma">,</span> <span class="id identifier rubyid_params">params</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span><span class="rparen">)</span>
   <span class="id identifier rubyid_serialize">serialize</span><span class="lparen">(</span><span class="id identifier rubyid_transform">transform</span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="comma">,</span> <span class="id identifier rubyid_params">params</span><span class="rparen">)</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
@@ -632,7 +632,7 @@ transform(int argc, VALUE *argv, VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 13 12:01:25 2021 by
+  Generated on Sat May 15 12:09:17 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

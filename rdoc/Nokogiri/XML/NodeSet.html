@@ -1875,12 +1875,12 @@ slice(int argc, VALUE *argv, VALUE self)
 
   /* if arg is Range */
   switch (rb_range_beg_len(arg, &amp;beg, &amp;len, (long)node_set-&gt;nodeNr, 0)) {
-  case Qfalse:
-    break;
-  case Qnil:
-    return Qnil;
-  default:
-    return subseq(self, beg, len);
+    case Qfalse:
+      break;
+    case Qnil:
+      return Qnil;
+    default:
+      return subseq(self, beg, len);
   }
 
   return index_at(self, NUM2LONG(arg));
@@ -3630,12 +3630,12 @@ slice(int argc, VALUE *argv, VALUE self)
 
   /* if arg is Range */
   switch (rb_range_beg_len(arg, &amp;beg, &amp;len, (long)node_set-&gt;nodeNr, 0)) {
-  case Qfalse:
-    break;
-  case Qnil:
-    return Qnil;
-  default:
-    return subseq(self, beg, len);
+    case Qfalse:
+      break;
+    case Qnil:
+      return Qnil;
+    default:
+      return subseq(self, beg, len);
   }
 
   return index_at(self, NUM2LONG(arg));
@@ -4175,7 +4175,7 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 13 12:01:24 2021 by
+  Generated on Sat May 15 12:09:16 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

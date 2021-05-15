@@ -527,6 +527,22 @@
         </dt>
         <dd><pre class="code"><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span></pre></dd>
       
+        <dt id="DEFAULT_XSLT-constant" class="">DEFAULT_XSLT =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>the default options used for parsing XSLT stylesheets</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOENT-constant" title="Nokogiri::XML::ParseOptions::NOENT (constant)">NOENT</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#DTDLOAD-constant" title="Nokogiri::XML::ParseOptions::DTDLOAD (constant)">DTDLOAD</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#DTDATTR-constant" title="Nokogiri::XML::ParseOptions::DTDATTR (constant)">DTDATTR</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOCDATA-constant" title="Nokogiri::XML::ParseOptions::NOCDATA (constant)">NOCDATA</a></span></span></pre></dd>
+      
         <dt id="DEFAULT_HTML-constant" class="">DEFAULT_HTML =
           <div class="docstring">
   <div class="discussion">
@@ -759,12 +775,12 @@
       <pre class="lines">
 
 
-80
-81
-82</pre>
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 82</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
   <span class="ivar">@options</span> <span class="op">=</span> <span class="id identifier rubyid_options">options</span>
@@ -813,12 +829,12 @@
       <pre class="lines">
 
 
-79
-80
-81</pre>
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 81</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_options">options</span>
   <span class="ivar">@options</span>
@@ -851,12 +867,12 @@
       <pre class="lines">
 
 
-112
-113
-114</pre>
+114
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 114</span>
 
 <span class="kw">def</span> <span class="op">==</span><span class="lparen">(</span><span class="id identifier rubyid_other">other</span><span class="rparen">)</span>
   <span class="id identifier rubyid_other">other</span><span class="period">.</span><span class="id identifier rubyid_to_i">to_i</span> <span class="op">==</span> <span class="id identifier rubyid_to_i">to_i</span>
@@ -882,16 +898,16 @@
       <pre class="lines">
 
 
-118
-119
 120
 121
 122
 123
-124</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 118</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 120</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inspect">inspect</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span>
@@ -921,13 +937,13 @@
       <pre class="lines">
 
 
-103
-104
 105
-106</pre>
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 105</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_strict">strict</span>
   <span class="ivar">@options</span> <span class="op">&amp;=</span> <span class="op">~</span><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span>
@@ -977,12 +993,12 @@
       <pre class="lines">
 
 
-108
-109
-110</pre>
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 110</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_strict?">strict?</span>
   <span class="ivar">@options</span> <span class="op">&amp;</span> <span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
@@ -997,7 +1013,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 13 12:01:25 2021 by
+  Generated on Sat May 15 12:09:17 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

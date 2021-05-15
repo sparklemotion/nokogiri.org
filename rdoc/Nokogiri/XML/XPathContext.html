@@ -493,22 +493,22 @@ evaluate(int argc, VALUE *argv, VALUE self)
   assert(DOC_RUBY_OBJECT_TEST(ctx-&gt;doc));
 
   switch (xpath-&gt;type) {
-  case XPATH_STRING:
-    thing = NOKOGIRI_STR_NEW2(xpath-&gt;stringval);
-    xmlFree(xpath-&gt;stringval);
-    break;
-  case XPATH_NODESET:
-    thing = noko_xml_node_set_wrap(xpath-&gt;nodesetval,
-                                   DOC_RUBY_OBJECT(ctx-&gt;doc));
-    break;
-  case XPATH_NUMBER:
-    thing = rb_float_new(xpath-&gt;floatval);
-    break;
-  case XPATH_BOOLEAN:
-    thing = xpath-&gt;boolval == 1 ? Qtrue : Qfalse;
-    break;
-  default:
-    thing = noko_xml_node_set_wrap(NULL, DOC_RUBY_OBJECT(ctx-&gt;doc));
+    case XPATH_STRING:
+      thing = NOKOGIRI_STR_NEW2(xpath-&gt;stringval);
+      xmlFree(xpath-&gt;stringval);
+      break;
+    case XPATH_NODESET:
+      thing = noko_xml_node_set_wrap(xpath-&gt;nodesetval,
+                                     DOC_RUBY_OBJECT(ctx-&gt;doc));
+      break;
+    case XPATH_NUMBER:
+      thing = rb_float_new(xpath-&gt;floatval);
+      break;
+    case XPATH_BOOLEAN:
+      thing = xpath-&gt;boolval == 1 ? Qtrue : Qfalse;
+      break;
+    default:
+      thing = noko_xml_node_set_wrap(NULL, DOC_RUBY_OBJECT(ctx-&gt;doc));
   }
 
   xmlXPathFreeNodeSetList(xpath);
@@ -708,7 +708,7 @@ register_variable(VALUE self, VALUE name, VALUE value)
 </div>
 
       <div id="footer">
-  Generated on Sat Mar 13 12:01:25 2021 by
+  Generated on Sat May 15 12:09:17 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
