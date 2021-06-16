@@ -705,8 +705,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#concourse" class="md-nav__link">
-    Concourse
+  <a href="#coverage" class="md-nav__link">
+    Coverage
   </a>
   
 </li>
@@ -714,13 +714,6 @@
           <li class="md-nav__item">
   <a href="#valgrind" class="md-nav__link">
     Valgrind
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#truffleruby" class="md-nav__link">
-    TruffleRuby
   </a>
   
 </li>
@@ -909,7 +902,7 @@
 <h3 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h3>
 <p>Clone <a href="https://github.com/sparklemotion/nokogiri">https://github.com/sparklemotion/nokogiri</a> and run <code>bundle install</code>.</p>
 <h3 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h3>
-<p>Please install the latest or previous version of CRuby (e.g., 3.0 or 2.7 as of 2021-02), and a recent version of JRuby. We recommend using a Ruby manager like <code>rvm</code> or <code>chruby</code> to make it easy to switch.</p>
+<p>Please install the latest or previous version of CRuby (e.g., 3.0 or 2.7 as of 2021-02), and a recent version of JRuby. We recommend using <code>rbenv</code>, which is used in test scripts when necessary to test gems against multiple rubies.</p>
 <p>Please install a system version of libxml2/libxslt (see <a href="https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries">Installing Nokogiri</a> for details) so that you can test against both the packaged libraries and your system libraries.</p>
 <p>We recommend that you install <code>valgrind</code> if you can, but it's only necessary for debugging problems so feel free to wait until you need it. (I'm not sure valgrind is easily available on MacOS.)</p>
 <p>If you plan to package precompiled native gems, make sure <code>docker</code> is installed and is working properly.</p>
@@ -961,25 +954,16 @@
 <p>You can format the C and Java code with <code>rake format</code>. Maybe someday I'll auto-format Ruby, but not today.</p>
 <p>No, I don't want to talk to you about this.</p>
 <h2 id="how-continuous-integration-ci-is-configured">How Continuous Integration ("CI") is configured<a class="headerlink" href="#how-continuous-integration-ci-is-configured" title="Permanent link">&para;</a></h2>
-<p>This section could probably be an entire guide unto itself, so I'll try to be as brief as reasonable.</p>
-<p>We currently have CI tests running in three places:</p>
+<p>The bulk of CI is running in Github Actions since May 2021: <a href="https://github.com/sparklemotion/nokogiri/actions">https://github.com/sparklemotion/nokogiri/actions</a></p>
+<p>However, we also run tests against 32-bit windows (which aren't supported by GA as of this writing) in Appveyor: <a href="https://ci.appveyor.com/project/flavorjones/nokogiri">https://ci.appveyor.com/project/flavorjones/nokogiri</a></p>
+<p>Please note that there are some known holes in CI coverage due to <code>actions/download-artifact</code> (as well as other actions) not supporting systems other than 64-bit glibc:</p>
 <ul>
-<li><a href="https://ci.nokogiri.org/?search=nokogiri">Concourse</a>: Linux, including many debugging and integration test</li>
-<li><a href="https://github.com/sparklemotion/nokogiri/actions/workflows/macos.yml">Github Actions</a>: for MacOS only</li>
-<li><a href="https://ci.appveyor.com/project/flavorjones/nokogiri">Appveyor</a>: for Windows only</li>
+<li>installing ruby and native gems on Alpine/musl</li>
+<li>installing ruby and native gems on 32-bit Linux</li>
 </ul>
-<p>This is ... not great. I'd love to set up everything to be in one place, but each has its advantages. It might be possible to move Windows testing to Github Actions, but honestly I'm kinda waiting for someone from the Ruby Windows community to figure that out.</p>
-<p>I've set up "required" builds for the <code>main</code> branch in Github so that PRs can see and be bound by all these tests passing.</p>
-<h3 id="concourse">Concourse<a class="headerlink" href="#concourse" title="Permanent link">&para;</a></h3>
-<p>We run the bulk of our tests under Concourse. Concourse is great for me because</p>
-<ul>
-<li>I can hijack a container if a test fails and poke around in it</li>
-<li>I can conditionally trigger the builds like a real pipeline</li>
-<li>I can run it locally on my dev machine</li>
-<li>I have complete control over the images used</li>
-</ul>
-<p>The downside is, nobody in the Ruby community besides me and Dr. Nic know how to operate it or configure it.</p>
-<p>In any case, the general pipeline we use is the same for <code>main</code> and for PRs includes:</p>
+<p>For more information, please check out <a href="https://github.com/sparklemotion/nokogiri/issues/2244">#2244</a> and <a href="https://github.com/sparklemotion/nokogiri/issues/2247">#2247</a> which document the migration from Concourse to Github Actions.</p>
+<h3 id="coverage">Coverage<a class="headerlink" href="#coverage" title="Permanent link">&para;</a></h3>
+<p>The <code>ci.yml</code> pipeline includes jobs to:</p>
 <ul>
 <li>basic security sanity check: run rubocop</li>
 <li>fast feedback for obvious failures: run against system libraries on vanilla ubuntu</li>
@@ -1000,28 +984,28 @@
 <li>with valgrind using packaged libraries</li>
 </ul>
 </li>
+</ul>
+<p>The <code>upstream.yml</code> pipeline includes jobs to:</p>
+<ul>
+<li>run against CRuby head (linux, windows, macos) including valgrind</li>
+<li>run against JRuby head</li>
+<li>run against libxml2 and libxslt head (linux only today) including valgrind</li>
+</ul>
+<p>The <code>gem-install.yml</code> pipeline includes jobs to:</p>
+<ul>
 <li>build a "ruby" platform gem<ul>
-<li>install and test on vanilla ubuntu</li>
-<li>install and test on musl</li>
+<li>install and test on linux, macos, and windows</li>
 </ul>
 </li>
-<li>build a native 64-bit linux gem<ul>
-<li>install and test on vanilla ubuntu with all supported versions of CRuby</li>
-<li>install and test on musl</li>
-</ul>
-</li>
-<li>build a native 32-bit linux gem<ul>
-<li>install and test on vanilla ubuntu</li>
+<li>build a native 64-bit gem (linux, macos, windows)<ul>
+<li>install and test against all supported versions of CRuby</li>
 <li>install and test on musl</li>
 </ul>
 </li>
 <li>build a jruby gem, install and test it</li>
 </ul>
-<p>These pipelines are configured in <code>/concourse/nokogiri.yml</code> and <code>nokogiri-pr.yml</code>. Those files file are ... nontrivial, and I'm sorry about that. See <a href="https://github.com/flavorjones/concourse-gem">https://github.com/flavorjones/concourse-gem</a> for help.</p>
 <h3 id="valgrind">Valgrind<a class="headerlink" href="#valgrind" title="Permanent link">&para;</a></h3>
 <p>We rely heavily on Valgrind to catch memory bugs by running in combination with every version of CRuby. We use suppressions, too -- because some Rubies seem to have memory issues? See the files in the <code>/suppressions</code> directory and <code>/rakelib/test.rake</code> for more information.</p>
-<h3 id="truffleruby">TruffleRuby<a class="headerlink" href="#truffleruby" title="Permanent link">&para;</a></h3>
-<p>As of 2021-02, TruffleRuby tests are in a separate pipeline because they are failing in known ways that we haven't addressed yet, mostly related to error handling in SAX callbacks due to Sulong limitations.</p>
 <h2 id="building-gems">Building gems<a class="headerlink" href="#building-gems" title="Permanent link">&para;</a></h2>
 <p>As a prerequisite please make sure you have <code>docker</code> correctly installed.</p>
 <p>Run <code>scripts/build-gems</code> which will package gems for all supported platforms, and run some basic sanity tests on those packages using <code>scripts/test-gem-set</code>, <code>scripts/test-gem-file-contents</code>, and <code>scripts/test-gem-installation</code>.</p>

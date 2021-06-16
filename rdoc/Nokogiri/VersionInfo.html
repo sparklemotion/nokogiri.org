@@ -1128,7 +1128,8 @@
 167
 168
 169
-170</pre>
+170
+171</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/nokogiri/version/info.rb', line 83</span>
@@ -1190,6 +1191,7 @@
         <span class="kw">else</span>
           <span class="id identifier rubyid_libxml">libxml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">source</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">system</span><span class="tstring_end">"</span></span>
         <span class="kw">end</span>
+        <span class="id identifier rubyid_libxml">libxml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">memory_management</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const">LIBXML_MEMORY_MANAGEMENT</span>
         <span class="id identifier rubyid_libxml">libxml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">iconv_enabled</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_libxml2_has_iconv?">libxml2_has_iconv?</span>
         <span class="id identifier rubyid_libxml">libxml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">compiled</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_compiled_libxml_version">compiled_libxml_version</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span>
         <span class="id identifier rubyid_libxml">libxml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">loaded</span><span class="tstring_end">"</span></span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_loaded_libxml_version">loaded_libxml_version</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span>
@@ -1242,7 +1244,6 @@
       <pre class="lines">
 
 
-172
 173
 174
 175
@@ -1250,10 +1251,11 @@
 177
 178
 179
-180</pre>
+180
+181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/version/info.rb', line 172</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/version/info.rb', line 173</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_markdown">to_markdown</span>
   <span class="kw">begin</span>
@@ -1383,7 +1385,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat May 15 12:09:16 2021 by
+  Generated on Wed Jun  2 20:37:37 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
