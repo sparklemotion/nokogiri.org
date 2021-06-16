@@ -1004,6 +1004,7 @@
 </li>
 <li>build a jruby gem, install and test it</li>
 </ul>
+<p>The <code>truffle.yml</code> pipeline tests TruffleRuby nightlies with a few different compile-time flags. TruffleRuby support is still experimental due to Sulong limitations, and the test suite is exceedingly slow when run by TR, so this pipeline doesn't run on pushes and PRs. Instead, it runs periodically on a timer to give us some signal without slowing down developer feedback loops.</p>
 <h3 id="valgrind">Valgrind<a class="headerlink" href="#valgrind" title="Permanent link">&para;</a></h3>
 <p>We rely heavily on Valgrind to catch memory bugs by running in combination with every version of CRuby. We use suppressions, too -- because some Rubies seem to have memory issues? See the files in the <code>/suppressions</code> directory and <code>/rakelib/test.rake</code> for more information.</p>
 <h2 id="building-gems">Building gems<a class="headerlink" href="#building-gems" title="Permanent link">&para;</a></h2>
