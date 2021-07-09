@@ -35,11 +35,11 @@ describe "nokogiri.org" do
 
     it "should have a 'for enterprise' page in nav" do
       visit "/"
-      within("nav.md-nav[aria-label=Navigation]") do
+      within("nav.md-tabs[aria-label=Tabs]") do
         click_link("Support")
       end
-      within("nav.md-nav[aria-label=Support]") do
-        expect(page).to have_link("Nokogiri for Enterprise", href: "tidelift-landing.html")
+      within("nav.md-nav[aria-label=Navigation]") do
+        expect(page).to have_link("Nokogiri for Enterprise", href: "../tidelift-landing.html")
       end
     end
 
