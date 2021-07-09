@@ -62,6 +62,7 @@ nav:
   - Tutorials:
     - Table of Contents: tutorials/toc.md
     - Parsing an HTML/XML document: tutorials/parsing_an_html_xml_document.md
+    - Parsing an HTML5 document: tutorials/parsing_an_html5_document.md
     - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
     - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
     - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
