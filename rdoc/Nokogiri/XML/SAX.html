@@ -99,9 +99,9 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>SAX Parsers are event driven parsers.  Nokogiri provides two different event based parsers when dealing with XML.  If you want to do SAX style parsing using HTML, check out Nokogiri::HTML::SAX.</p>
+<p>SAX Parsers are event driven parsers. Nokogiri provides two different event based parsers when dealing with XML. If you want to do SAX style parsing using HTML, check out Nokogiri::HTML4::SAX.</p>
 
-<p>The basic way a SAX style parser works is by creating a parser, telling the parser about the events we're interested in, then giving the parser some XML to process.  The parser will notify you when it encounters events you said you would like to know about.</p>
+<p>The basic way a SAX style parser works is by creating a parser, telling the parser about the events we're interested in, then giving the parser some XML to process. The parser will notify you when it encounters events you said you would like to know about.</p>
 
 <p>To register for events, you simply subclass Nokogiri::XML::SAX::Document, and implement the methods for which you would like notification.</p>
 
@@ -127,9 +127,9 @@
 </span><span class="id identifier rubyid_parser">parser</span><span class="period">.</span><span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="const">File</span><span class="period">.</span><span class="id identifier rubyid_open">open</span><span class="lparen">(</span><span class="const">ARGV</span><span class="lbracket">[</span><span class="int">0</span><span class="rbracket">]</span><span class="rparen">)</span><span class="rparen">)</span>
 </code></pre>
 
-<p>Now my document handler will be called when each node starts, and when then document ends.  To see what kinds of events are available, take a look at Nokogiri::XML::SAX::Document.</p>
+<p>Now my document handler will be called when each node starts, and when then document ends. To see what kinds of events are available, take a look at Nokogiri::XML::SAX::Document.</p>
 
-<p>Two SAX parsers for XML are available, a parser that reads from a string or IO object as it feels necessary, and a parser that lets you spoon feed it XML.  If you want to let Nokogiri deal with reading your XML, use the Nokogiri::XML::SAX::Parser.  If you want to have fine grain control over the XML input, use the Nokogiri::XML::SAX::PushParser.</p>
+<p>Two SAX parsers for XML are available, a parser that reads from a string or IO object as it feels necessary, and a parser that lets you spoon feed it XML. If you want to let Nokogiri deal with reading your XML, use the Nokogiri::XML::SAX::Parser. If you want to have fine grain control over the XML input, use the Nokogiri::XML::SAX::PushParser.</p>
 
 
   </div>
@@ -160,9 +160,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:34 2021 by
+  Generated on Fri Jul  9 15:35:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

@@ -1,0 +1,5125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Nokogiri::HTML4::ElementDescription
+  
+    — Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "Nokogiri::HTML4::ElementDescription";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1260604-8');
+    </script>
+</head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (E)</a> »
+    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span>
+     » 
+    <span class="title">ElementDescription</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link" href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content">
+<h1>Class: Nokogiri::HTML4::ElementDescription
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Nokogiri::HTML4::ElementDescription</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/nokogiri/html4/element_description.rb<span class="defines">,<br>
+  lib/nokogiri/html4/element_description_defaults.rb,<br> ext/nokogiri/html4_element_description.c</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class="object_link"><a href="ElementDescription/Desc.html" title="Nokogiri::HTML4::ElementDescription::Desc (class)">Desc</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="DefaultDescriptions-constant" class="">DefaultDescriptions =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>This is filled in down below.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const">Hash</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="rparen">)</span></pre></dd>
+      
+        <dt id="FONTSTYLE-constant" class="">FONTSTYLE =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Attributes defined and categorized</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">tt</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">i</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">b</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">u</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">s</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">strike</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">big</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">small</span><span class="tstring_end">"</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="PHRASE-constant" class="">PHRASE =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">em</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">strong</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">dfn</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">code</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">samp</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">kbd</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">var</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">cite</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">abbr</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">acronym</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="SPECIAL-constant" class="">SPECIAL =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">a</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">img</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">applet</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">embed</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">object</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">font</span><span class="tstring_end">'</span></span><span class="comma">,</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">basefont</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">br</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">script</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">map</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">q</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">sub</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">sup</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">span</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bdo</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">iframe</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="PCDATA-constant" class="">PCDATA =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HEADING-constant" class="">HEADING =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">h1</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">h2</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">h3</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">h4</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">h5</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">h6</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="LIST-constant" class="">LIST =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">ul</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">ol</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">dir</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">menu</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FORMCTRL-constant" class="">FORMCTRL =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">input</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">select</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">textarea</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">label</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">button</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BLOCK-constant" class="">BLOCK =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#HEADING-constant" title="Nokogiri::HTML4::ElementDescription::HEADING (constant)">HEADING</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#LIST-constant" title="Nokogiri::HTML4::ElementDescription::LIST (constant)">LIST</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pre</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">p</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">dl</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">div</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">center</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">noscript</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">noframes</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">blockquote</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">form</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">isindex</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hr</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">table</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">fieldset</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">address</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="INLINE-constant" class="">INLINE =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#PCDATA-constant" title="Nokogiri::HTML4::ElementDescription::PCDATA (constant)">PCDATA</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#FONTSTYLE-constant" title="Nokogiri::HTML4::ElementDescription::FONTSTYLE (constant)">FONTSTYLE</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#PHRASE-constant" title="Nokogiri::HTML4::ElementDescription::PHRASE (constant)">PHRASE</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#SPECIAL-constant" title="Nokogiri::HTML4::ElementDescription::SPECIAL (constant)">SPECIAL</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#FORMCTRL-constant" title="Nokogiri::HTML4::ElementDescription::FORMCTRL (constant)">FORMCTRL</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FLOW-constant" class="">FLOW =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#BLOCK-constant" title="Nokogiri::HTML4::ElementDescription::BLOCK (constant)">BLOCK</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#INLINE-constant" title="Nokogiri::HTML4::ElementDescription::INLINE (constant)">INLINE</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="MODIFIER-constant" class="">MODIFIER =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="EMPTY-constant" class="">EMPTY =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HTML_FLOW-constant" class="">HTML_FLOW =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#FLOW-constant" title="Nokogiri::HTML4::ElementDescription::FLOW (constant)">FLOW</a></span></span></pre></dd>
+      
+        <dt id="HTML_INLINE-constant" class="">HTML_INLINE =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#INLINE-constant" title="Nokogiri::HTML4::ElementDescription::INLINE (constant)">INLINE</a></span></span></pre></dd>
+      
+        <dt id="HTML_PCDATA-constant" class="">HTML_PCDATA =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#PCDATA-constant" title="Nokogiri::HTML4::ElementDescription::PCDATA (constant)">PCDATA</a></span></span></pre></dd>
+      
+        <dt id="HTML_CDATA-constant" class="">HTML_CDATA =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#HTML_PCDATA-constant" title="Nokogiri::HTML4::ElementDescription::HTML_PCDATA (constant)">HTML_PCDATA</a></span></span></pre></dd>
+      
+        <dt id="COREATTRS-constant" class="">COREATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">id</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">class</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">style</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">title</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="I18N-constant" class="">I18N =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">lang</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">dir</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="EVENTS-constant" class="">EVENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onclick</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">ondblclick</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onmousedown</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onmouseup</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onmouseover</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onmouseout</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onkeypress</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onkeydown</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onkeyup</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="ATTRS-constant" class="">ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span><span class="comma">,</span><span class="const"><span class="object_link"><a href="#EVENTS-constant" title="Nokogiri::HTML4::ElementDescription::EVENTS (constant)">EVENTS</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="CELLHALIGN-constant" class="">CELLHALIGN =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">char</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">charoff</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="CELLVALIGN-constant" class="">CELLVALIGN =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">valign</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HTML_ATTRS-constant" class="">HTML_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span></pre></dd>
+      
+        <dt id="CORE_I18N_ATTRS-constant" class="">CORE_I18N_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="CORE_ATTRS-constant" class="">CORE_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span></pre></dd>
+      
+        <dt id="I18N_ATTRS-constant" class="">I18N_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span></pre></dd>
+      
+        <dt id="A_ATTRS-constant" class="">A_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">charset</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">href</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hreflang</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rel</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rev</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accesskey</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">shape</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">coords</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tabindex</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onfocus</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onblur</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TARGET_ATTR-constant" class="">TARGET_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">target</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="ROWS_COLS_ATTR-constant" class="">ROWS_COLS_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rows</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">cols</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="ALT_ATTR-constant" class="">ALT_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">alt</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="SRC_ALT_ATTRS-constant" class="">SRC_ALT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">src</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">alt</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HREF_ATTRS-constant" class="">HREF_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">href</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="CLEAR_ATTRS-constant" class="">CLEAR_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">clear</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="INLINE_P-constant" class="">INLINE_P =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#INLINE-constant" title="Nokogiri::HTML4::ElementDescription::INLINE (constant)">INLINE</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">p</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FLOW_PARAM-constant" class="">FLOW_PARAM =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#FLOW-constant" title="Nokogiri::HTML4::ElementDescription::FLOW (constant)">FLOW</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">param</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="APPLET_ATTRS-constant" class="">APPLET_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span> <span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">codebase</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">archive</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">alt</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">height</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hspace</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">vspace</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="AREA_ATTRS-constant" class="">AREA_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">shape</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">coords</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">href</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">nohref</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tabindex</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accesskey</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onfocus</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onblur</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BASEFONT_ATTRS-constant" class="">BASEFONT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">id</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">size</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">color</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">face</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="QUOTE_ATTRS-constant" class="">QUOTE_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">cite</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BODY_CONTENTS-constant" class="">BODY_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#FLOW-constant" title="Nokogiri::HTML4::ElementDescription::FLOW (constant)">FLOW</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">ins</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">del</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BODY_ATTRS-constant" class="">BODY_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onload</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onunload</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BODY_DEPR-constant" class="">BODY_DEPR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">background</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bgcolor</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">text</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">link</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">vlink</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">alink</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BUTTON_ATTRS-constant" class="">BUTTON_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">value</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">disabled</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tabindex</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accesskey</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onfocus</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onblur</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="COL_ATTRS-constant" class="">COL_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">span</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#CELLHALIGN-constant" title="Nokogiri::HTML4::ElementDescription::CELLHALIGN (constant)">CELLHALIGN</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#CELLVALIGN-constant" title="Nokogiri::HTML4::ElementDescription::CELLVALIGN (constant)">CELLVALIGN</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="COL_ELT-constant" class="">COL_ELT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">col</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="EDIT_ATTRS-constant" class="">EDIT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">datetime</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">cite</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="COMPACT_ATTRS-constant" class="">COMPACT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">compact</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="DL_CONTENTS-constant" class="">DL_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">dt</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">dd</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="COMPACT_ATTR-constant" class="">COMPACT_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">compact</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="LABEL_ATTR-constant" class="">LABEL_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">label</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FIELDSET_CONTENTS-constant" class="">FIELDSET_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#FLOW-constant" title="Nokogiri::HTML4::ElementDescription::FLOW (constant)">FLOW</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">legend</span><span class="tstring_end">'</span></span> <span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FONT_ATTRS-constant" class="">FONT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">size</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">color</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">face</span><span class="tstring_end">'</span></span> <span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FORM_CONTENTS-constant" class="">FORM_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#HEADING-constant" title="Nokogiri::HTML4::ElementDescription::HEADING (constant)">HEADING</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#LIST-constant" title="Nokogiri::HTML4::ElementDescription::LIST (constant)">LIST</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#INLINE-constant" title="Nokogiri::HTML4::ElementDescription::INLINE (constant)">INLINE</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pre</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">p</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">div</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">center</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">noscript</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">noframes</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">blockquote</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">isindex</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hr</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">table</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">fieldset</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">address</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FORM_ATTRS-constant" class="">FORM_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">method</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">enctype</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accept</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onsubmit</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onreset</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accept-charset</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FRAME_ATTRS-constant" class="">FRAME_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">longdesc</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">src</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">frameborder</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">marginwidth</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">marginheight</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">noresize</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">scrolling</span><span class="tstring_end">'</span></span> <span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FRAMESET_ATTRS-constant" class="">FRAMESET_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rows</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">cols</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onload</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onunload</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="FRAMESET_CONTENTS-constant" class="">FRAMESET_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">frameset</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">frame</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">noframes</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HEAD_ATTRS-constant" class="">HEAD_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">profile</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HEAD_CONTENTS-constant" class="">HEAD_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">title</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">isindex</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">base</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">script</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">style</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">meta</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">link</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">object</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HR_DEPR-constant" class="">HR_DEPR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">noshade</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">size</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="VERSION_ATTR-constant" class="">VERSION_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">version</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="HTML_CONTENT-constant" class="">HTML_CONTENT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">head</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">body</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">frameset</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="IFRAME_ATTRS-constant" class="">IFRAME_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">longdesc</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">src</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">frameborder</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">marginwidth</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">marginheight</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">scrolling</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">height</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="IMG_ATTRS-constant" class="">IMG_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">longdesc</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">height</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">usemap</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">ismap</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="EMBED_ATTRS-constant" class="">EMBED_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">alt</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">border</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">code</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">codebase</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">frameborder</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">height</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hidden</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hspace</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">palette</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pluginspace</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">pluginurl</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">src</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">units</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">vspace</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="INPUT_ATTRS-constant" class="">INPUT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">value</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">checked</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">disabled</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">readonly</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">size</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">maxlength</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">src</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">alt</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">usemap</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">ismap</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tabindex</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accesskey</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onfocus</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onblur</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onselect</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onchange</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accept</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="PROMPT_ATTRS-constant" class="">PROMPT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#COREATTRS-constant" title="Nokogiri::HTML4::ElementDescription::COREATTRS (constant)">COREATTRS</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">prompt</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="LABEL_ATTRS-constant" class="">LABEL_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">for</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accesskey</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onfocus</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onblur</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="LEGEND_ATTRS-constant" class="">LEGEND_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accesskey</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="ALIGN_ATTR-constant" class="">ALIGN_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="LINK_ATTRS-constant" class="">LINK_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">charset</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">href</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hreflang</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rel</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rev</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">media</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="MAP_CONTENTS-constant" class="">MAP_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#BLOCK-constant" title="Nokogiri::HTML4::ElementDescription::BLOCK (constant)">BLOCK</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">area</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="NAME_ATTR-constant" class="">NAME_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="ACTION_ATTR-constant" class="">ACTION_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">action</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BLOCKLI_ELT-constant" class="">BLOCKLI_ELT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#BLOCK-constant" title="Nokogiri::HTML4::ElementDescription::BLOCK (constant)">BLOCK</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">li</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="META_ATTRS-constant" class="">META_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">http-equiv</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">scheme</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="CONTENT_ATTR-constant" class="">CONTENT_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">content</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TYPE_ATTR-constant" class="">TYPE_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="NOFRAMES_CONTENT-constant" class="">NOFRAMES_CONTENT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">body</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#FLOW-constant" title="Nokogiri::HTML4::ElementDescription::FLOW (constant)">FLOW</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#MODIFIER-constant" title="Nokogiri::HTML4::ElementDescription::MODIFIER (constant)">MODIFIER</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="OBJECT_CONTENTS-constant" class="">OBJECT_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#FLOW-constant" title="Nokogiri::HTML4::ElementDescription::FLOW (constant)">FLOW</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">param</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="OBJECT_ATTRS-constant" class="">OBJECT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">declare</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">classid</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">codebase</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">data</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">codetype</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">archive</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">standby</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">height</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">usemap</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tabindex</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="OBJECT_DEPR-constant" class="">OBJECT_DEPR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">border</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">hspace</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">vspace</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="OL_ATTRS-constant" class="">OL_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">compact</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">start</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="OPTION_ELT-constant" class="">OPTION_ELT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">option</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="OPTGROUP_ATTRS-constant" class="">OPTGROUP_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">disabled</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="OPTION_ATTRS-constant" class="">OPTION_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">disabled</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">label</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">selected</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">value</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="PARAM_ATTRS-constant" class="">PARAM_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">id</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">value</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">valuetype</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="WIDTH_ATTR-constant" class="">WIDTH_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="PRE_CONTENT-constant" class="">PRE_CONTENT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#PHRASE-constant" title="Nokogiri::HTML4::ElementDescription::PHRASE (constant)">PHRASE</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tt</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">i</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">b</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">u</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">s</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">strike</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">a</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">br</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">script</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">map</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">q</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">span</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bdo</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">iframe</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="SCRIPT_ATTRS-constant" class="">SCRIPT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">charset</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">src</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">defer</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">event</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">for</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="LANGUAGE_ATTR-constant" class="">LANGUAGE_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">language</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="SELECT_CONTENT-constant" class="">SELECT_CONTENT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">optgroup</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">option</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="SELECT_ATTRS-constant" class="">SELECT_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">size</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">multiple</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">disabled</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tabindex</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onfocus</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onblur</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onchange</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="STYLE_ATTRS-constant" class="">STYLE_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#I18N-constant" title="Nokogiri::HTML4::ElementDescription::I18N (constant)">I18N</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">media</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">title</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TABLE_ATTRS-constant" class="">TABLE_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">summary</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">border</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">frame</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rules</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">cellspacing</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">cellpadding</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">datapagesize</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TABLE_DEPR-constant" class="">TABLE_DEPR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">align</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bgcolor</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TABLE_CONTENTS-constant" class="">TABLE_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">caption</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">col</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">colgroup</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">thead</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tfoot</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tbody</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tr</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TR_ELT-constant" class="">TR_ELT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tr</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TALIGN_ATTRS-constant" class="">TALIGN_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#CELLHALIGN-constant" title="Nokogiri::HTML4::ElementDescription::CELLHALIGN (constant)">CELLHALIGN</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#CELLVALIGN-constant" title="Nokogiri::HTML4::ElementDescription::CELLVALIGN (constant)">CELLVALIGN</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TH_TD_DEPR-constant" class="">TH_TD_DEPR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">nowrap</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bgcolor</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">width</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">height</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TH_TD_ATTR-constant" class="">TH_TD_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">abbr</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">axis</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">headers</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">scope</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">rowspan</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">colspan</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#CELLHALIGN-constant" title="Nokogiri::HTML4::ElementDescription::CELLHALIGN (constant)">CELLHALIGN</a></span></span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="#CELLVALIGN-constant" title="Nokogiri::HTML4::ElementDescription::CELLVALIGN (constant)">CELLVALIGN</a></span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TEXTAREA_ATTRS-constant" class="">TEXTAREA_ATTRS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="const"><span class="object_link"><a href="#ATTRS-constant" title="Nokogiri::HTML4::ElementDescription::ATTRS (constant)">ATTRS</a></span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">name</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">disabled</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">readonly</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">tabindex</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">accesskey</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onfocus</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onblur</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onselect</span><span class="tstring_end">'</span></span><span class="comma">,</span>
+<span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">onchange</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="TR_CONTENTS-constant" class="">TR_CONTENTS =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">th</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">td</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="BGCOLOR_ATTR-constant" class="">BGCOLOR_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">bgcolor</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="LI_ELT-constant" class="">LI_ELT =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">li</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="UL_DEPR-constant" class="">UL_DEPR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">type</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">compact</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+        <dt id="DIR_ATTR-constant" class="">DIR_ATTR =
+          <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">dir</span><span class="tstring_end">'</span></span><span class="rbracket">]</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D-class_method" title="[] (class method)">.<strong>[]</strong>(tag_name)  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Get ElemementDescription for <code>tag_name</code>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#block%3F-instance_method" title="#block? (instance method)">#<strong>block?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Is this element a block element?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_sub_element-instance_method" title="#default_sub_element (instance method)">#<strong>default_sub_element</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>The default sub element for this element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deprecated%3F-instance_method" title="#deprecated? (instance method)">#<strong>deprecated?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Is this element deprecated?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deprecated_attributes-instance_method" title="#deprecated_attributes (instance method)">#<strong>deprecated_attributes</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>A list of deprecated attributes for this element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#description-instance_method" title="#description (instance method)">#<strong>description</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>The description for this element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#empty%3F-instance_method" title="#empty? (instance method)">#<strong>empty?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Is this an empty element?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#implied_end_tag%3F-instance_method" title="#implied_end_tag? (instance method)">#<strong>implied_end_tag?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Can the end tag be implied for this tag?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#implied_start_tag%3F-instance_method" title="#implied_start_tag? (instance method)">#<strong>implied_start_tag?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Can the start tag be implied for this tag?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inline%3F-instance_method" title="#inline? (instance method)">#<strong>inline?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Is this element an inline element?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Inspection information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Get the tag name for this ElemementDescription.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#optional_attributes-instance_method" title="#optional_attributes (instance method)">#<strong>optional_attributes</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>A list of optional attributes for this element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#required_attributes-instance_method" title="#required_attributes (instance method)">#<strong>required_attributes</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>A list of required attributes for this element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save_end_tag%3F-instance_method" title="#save_end_tag? (instance method)">#<strong>save_end_tag?</strong>  ⇒ Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Should the end tag be saved?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sub_elements-instance_method" title="#sub_elements (instance method)">#<strong>sub_elements</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>A list of allowed sub elements for this element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  ⇒ Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class="inline">
+<p>Convert this description to a string.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]-class_method">
+  
+    .<strong>[]</strong>(tag_name)  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Get ElemementDescription for <code>tag_name</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 261</span>
+
+static VALUE
+get_description(VALUE klass, VALUE tag_name)
+{
+  const htmlElemDesc *description = htmlTagLookup(
+                                      (const xmlChar *)StringValueCStr(tag_name)
+                                    );
+
+  if (NULL == description) { return Qnil; }
+  return Data_Wrap_Struct(klass, 0, 0, (void *)(uintptr_t)description);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="block?-instance_method">
+  
+    #<strong>block?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Is this element a block element?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/element_description.rb', line 7</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_block?">block?</span>
+  <span class="op">!</span><span class="id identifier rubyid_inline?">inline?</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="default_sub_element-instance_method">
+  
+    #<strong>default_sub_element</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The default sub element for this element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 89</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_default_sub_element">default_sub_element</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_defaultsubelt">defaultsubelt</span> <span class="op">:</span> <span class="kw">nil</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deprecated?-instance_method">
+  
+    #<strong>deprecated?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Is this element deprecated?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167
+168</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 165</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_deprecated?">deprecated?</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_depr">depr</span> <span class="op">:</span> <span class="kw">nil</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deprecated_attributes-instance_method">
+  
+    #<strong>deprecated_attributes</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A list of deprecated attributes for this element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 37</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_deprecated_attributes">deprecated_attributes</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_attrs_depr">attrs_depr</span> <span class="op">:</span> <span class="lbracket">[</span><span class="rbracket">]</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="description-instance_method">
+  
+    #<strong>description</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The description for this element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136
+137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 134</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_description">description</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_desc">desc</span> <span class="op">:</span> <span class="kw">nil</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="empty?-instance_method">
+  
+    #<strong>empty?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Is this an empty element?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+181
+182
+183
+184
+185
+186
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 181</span>
+
+static VALUE
+empty_eh(VALUE self)
+{
+  const htmlElemDesc *description;
+  Data_Get_Struct(self, htmlElemDesc, description);
+
+  if (description-&gt;empty) { return Qtrue; }
+  return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="implied_end_tag?-instance_method">
+  
+    #<strong>implied_end_tag?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Can the end tag be implied for this tag?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+213
+214
+215
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 213</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_implied_end_tag?">implied_end_tag?</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_endTag">endTag</span> <span class="op">:</span> <span class="kw">nil</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="implied_start_tag?-instance_method">
+  
+    #<strong>implied_start_tag?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Can the start tag be implied for this tag?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+229
+230
+231
+232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 229</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_implied_start_tag?">implied_start_tag?</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_startTag">startTag</span> <span class="op">:</span> <span class="kw">nil</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inline?-instance_method">
+  
+    #<strong>inline?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Is this element an inline element?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149
+150
+151
+152
+153
+154
+155
+156
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 149</span>
+
+static VALUE
+inline_eh(VALUE self)
+{
+  const htmlElemDesc *description;
+  Data_Get_Struct(self, htmlElemDesc, description);
+
+  if (description-&gt;isinline) { return Qtrue; }
+  return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Inspection information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/element_description.rb', line 19</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_inspect">inspect</span>
+  <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">#&lt;</span><span class="embexpr_beg">#{</span><span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_class">class</span><span class="period">.</span><span class="id identifier rubyid_name">name</span><span class="embexpr_end">}</span><span class="tstring_content">: </span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_name">name</span><span class="embexpr_end">}</span><span class="tstring_content"> </span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_description">description</span><span class="embexpr_end">}</span><span class="tstring_content">&gt;</span><span class="tstring_end">"</span></span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    #<strong>name</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Get the tag name for this ElemementDescription</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+245
+246
+247
+248
+249
+250
+251
+252
+253</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 245</span>
+
+static VALUE
+name(VALUE self)
+{
+  const htmlElemDesc *description;
+  Data_Get_Struct(self, htmlElemDesc, description);
+
+  if (NULL == description-&gt;name) { return Qnil; }
+  return NOKOGIRI_STR_NEW2(description-&gt;name);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="optional_attributes-instance_method">
+  
+    #<strong>optional_attributes</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A list of optional attributes for this element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 63</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_optional_attributes">optional_attributes</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_attrs_opt">attrs_opt</span> <span class="op">:</span> <span class="lbracket">[</span><span class="rbracket">]</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="required_attributes-instance_method">
+  
+    #<strong>required_attributes</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A list of required attributes for this element</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 11</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_required_attributes">required_attributes</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_attrs_req">attrs_req</span> <span class="op">:</span> <span class="lbracket">[</span><span class="rbracket">]</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save_end_tag?-instance_method">
+  
+    #<strong>save_end_tag?</strong>  ⇒ <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Should the end tag be saved?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class="type">(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+197
+198
+199
+200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 197</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_save_end_tag?">save_end_tag?</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">=</span> <span class="id identifier rubyid_default_desc">default_desc</span>
+  <span class="id identifier rubyid_d">d</span> <span class="op">?</span> <span class="id identifier rubyid_d">d</span><span class="period">.</span><span class="id identifier rubyid_saveEndTag">saveEndTag</span> <span class="op">:</span> <span class="kw">nil</span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sub_elements-instance_method">
+  
+    #<strong>sub_elements</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A list of allowed sub elements for this element.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_element_description.c', line 108</span>
+
+static VALUE
+sub_elements(VALUE self)
+{
+  const htmlElemDesc *description;
+  VALUE list;
+  int i;
+
+  Data_Get_Struct(self, htmlElemDesc, description);
+
+  list = rb_ary_new();
+
+  if (NULL == description-&gt;subelts) { return list; }
+
+  for (i = 0; description-&gt;subelts[i]; i++) {
+    rb_ary_push(list, NOKOGIRI_STR_NEW2(description-&gt;subelts[i]));
+  }
+
+  return list;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  ⇒ <tt>Object</tt> 
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Convert this description to a string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/element_description.rb', line 13</span>
+
+<span class="kw">def</span> <span class="id identifier rubyid_to_s">to_s</span>
+  <span class="tstring"><span class="tstring_beg">"</span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_name">name</span><span class="embexpr_end">}</span><span class="tstring_content">: </span><span class="embexpr_beg">#{</span><span class="id identifier rubyid_description">description</span><span class="embexpr_end">}</span><span class="tstring_end">"</span></span>
+<span class="kw">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jul  9 15:35:51 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.1).
+</div>
+
+    </div>
+  </body>
+</html>

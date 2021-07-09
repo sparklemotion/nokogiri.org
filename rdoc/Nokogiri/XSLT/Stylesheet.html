@@ -313,8 +313,7 @@
 80
 81
 82
-83
-84</pre>
+83</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 60</span>
@@ -326,7 +325,6 @@ parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
   VALUE errstr, exception;
   xsltStylesheetPtr ss ;
   Data_Get_Struct(xmldocobj, xmlDoc, xml);
-  exsltRegisterAll();
 
   errstr = rb_str_new(0, 0);
   xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
@@ -428,6 +426,7 @@ parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
       <pre class="lines">
 
 
+92
 93
 94
 95
@@ -442,11 +441,10 @@ parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
 104
 105
 106
-107
-108</pre>
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 93</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 92</span>
 
 static VALUE
 serialize(VALUE self, VALUE xmlobj)
@@ -506,6 +504,7 @@ serialize(VALUE self, VALUE xmlobj)
       <pre class="lines">
 
 
+124
 125
 126
 127
@@ -560,11 +559,10 @@ serialize(VALUE self, VALUE xmlobj)
 176
 177
 178
-179
-180</pre>
+179</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 125</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/xslt_stylesheet.c', line 124</span>
 
 static VALUE
 transform(int argc, VALUE *argv, VALUE self)
@@ -632,9 +630,9 @@ transform(int argc, VALUE *argv, VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:39 2021 by
+  Generated on Fri Jul  9 15:35:50 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

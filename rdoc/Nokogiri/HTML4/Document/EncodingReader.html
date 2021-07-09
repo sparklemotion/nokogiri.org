@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Nokogiri::HTML::Document::EncodingReader
+  Class: Nokogiri::HTML4::Document::EncodingReader
   
     — Documentation by YARD 0.9.26
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
-  pathId = "Nokogiri::HTML::Document::EncodingReader";
+  pathId = "Nokogiri::HTML4::Document::EncodingReader";
   relpath = '../../../';
 </script>
 
@@ -47,7 +47,7 @@
         <div id="menu">
   
     <a href="../../../_index.html">Index (E)</a> »
-    <span class="title"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span> » <span class="title"><span class="object_link"><a href="../Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span></span>
+    <span class="title"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span> » <span class="title"><span class="object_link"><a href="../Document.html" title="Nokogiri::HTML4::Document (class)">Document</a></span></span>
      » 
     <span class="title">EncodingReader</span>
   
@@ -69,7 +69,7 @@
       </div>
 
       <div id="content">
-<h1>Class: Nokogiri::HTML::Document::EncodingReader
+<h1>Class: Nokogiri::HTML4::Document::EncodingReader
   
   
   
@@ -84,7 +84,7 @@
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Nokogiri::HTML::Document::EncodingReader</li>
+            <li class="next">Nokogiri::HTML4::Document::EncodingReader</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -104,7 +104,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/nokogiri/html/document.rb</dd>
+    <dd>lib/nokogiri/html4/document.rb</dd>
   </dl>
   
 </div>
@@ -120,6 +120,22 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <h2>Defined Under Namespace</h2>
@@ -128,7 +144,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class="object_link"><a href="EncodingReader/JumpSAXHandler.html" title="Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler (class)">JumpSAXHandler</a></span>, <span class="object_link"><a href="EncodingReader/SAXHandler.html" title="Nokogiri::HTML::Document::EncodingReader::SAXHandler (class)">SAXHandler</a></span>
+      <strong class="classes">Classes:</strong> <span class="object_link"><a href="EncodingReader/JumpSAXHandler.html" title="Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler (class)">JumpSAXHandler</a></span>, <span class="object_link"><a href="EncodingReader/SAXHandler.html" title="Nokogiri::HTML4::Document::EncodingReader::SAXHandler (class)">SAXHandler</a></span>
     
   
 </p>
@@ -163,7 +179,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>This method is used by the C extension so that Nokogiri::HTML::Document#read_io() does not leak memory when EncodingFound is raised.</p>
+<p>This method is used by the C extension so that Nokogiri::HTML4::Document#read_io() does not leak memory when EncodingFound is raised.</p>
 </div></span>
   
 </li>
@@ -270,7 +286,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(io)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::HTML::Document::EncodingReader (class)">EncodingReader</a></span></tt> 
+    #<strong>initialize</strong>(io)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::HTML4::Document::EncodingReader (class)">EncodingReader</a></span></tt> 
   
 
   
@@ -287,6 +303,22 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -302,7 +334,7 @@
 286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document.rb', line 282</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 282</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="rparen">)</span>
   <span class="ivar">@io</span> <span class="op">=</span> <span class="id identifier rubyid_io">io</span>
@@ -334,13 +366,29 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>This method is used by the C extension so that Nokogiri::HTML::Document#read_io() does not leak memory when EncodingFound is raised.</p>
+<p>This method is used by the C extension so that Nokogiri::HTML4::Document#read_io() does not leak memory when EncodingFound is raised.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -354,7 +402,7 @@
 293</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document.rb', line 291</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 291</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_encoding_found">encoding_found</span>
   <span class="ivar">@encoding_found</span>
@@ -381,6 +429,32 @@
 
   
 </h3>
+<div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 <table class="source_code">
   <tr>
     <td>
@@ -407,7 +481,7 @@
 280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 263</span>
 
 <span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_detect_encoding">detect_encoding</span><span class="lparen">(</span><span class="id identifier rubyid_chunk">chunk</span><span class="rparen">)</span>
   <span class="id identifier rubyid_m">m</span> <span class="op">=</span> <span class="id identifier rubyid_chunk">chunk</span><span class="period">.</span><span class="id identifier rubyid_match">match</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\A(&lt;\?xml[ \t\r\n]+[^&gt;]*&gt;)</span><span class="regexp_end">/</span></span><span class="rparen">)</span> <span class="kw">and</span>
@@ -417,12 +491,12 @@
     <span class="id identifier rubyid_m">m</span> <span class="op">=</span> <span class="id identifier rubyid_chunk">chunk</span><span class="period">.</span><span class="id identifier rubyid_match">match</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">(&lt;meta\s)(.*)(charset\s*=\s*([\w-]+))(.*)</span><span class="regexp_end">/i</span></span><span class="rparen">)</span> <span class="kw">and</span>
       <span class="kw">return</span> <span class="id identifier rubyid_m">m</span><span class="lbracket">[</span><span class="int">4</span><span class="rbracket">]</span>
     <span class="id identifier rubyid_catch">catch</span><span class="lparen">(</span><span class="symbol">:encoding_found</span><span class="rparen">)</span> <span class="lbrace">{</span>
-      <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX.html" title="Nokogiri::HTML::SAX (module)">SAX</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX/Parser.html" title="Nokogiri::HTML::SAX::Parser (class)">Parser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../../XML/SAX/Parser.html#initialize-instance_method" title="Nokogiri::XML::SAX::Parser#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="EncodingReader/JumpSAXHandler.html" title="Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler (class)">JumpSAXHandler</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="EncodingReader/JumpSAXHandler.html#initialize-instance_method" title="Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="symbol">:encoding_found</span><span class="rparen">)</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="../../XML/SAX/Parser.html#parse-instance_method" title="Nokogiri::XML::SAX::Parser#parse (method)">parse</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_chunk">chunk</span><span class="rparen">)</span>
+      <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX.html" title="Nokogiri::HTML4::SAX (module)">SAX</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX/Parser.html" title="Nokogiri::HTML4::SAX::Parser (class)">Parser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../../XML/SAX/Parser.html#initialize-instance_method" title="Nokogiri::XML::SAX::Parser#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="EncodingReader/JumpSAXHandler.html" title="Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler (class)">JumpSAXHandler</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="EncodingReader/JumpSAXHandler.html#initialize-instance_method" title="Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="symbol">:encoding_found</span><span class="rparen">)</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="../../XML/SAX/Parser.html#parse-instance_method" title="Nokogiri::XML::SAX::Parser#parse (method)">parse</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_chunk">chunk</span><span class="rparen">)</span>
       <span class="kw">nil</span>
     <span class="rbrace">}</span>
   <span class="kw">else</span>
-    <span class="id identifier rubyid_handler">handler</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="EncodingReader/SAXHandler.html" title="Nokogiri::HTML::Document::EncodingReader::SAXHandler (class)">SAXHandler</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="EncodingReader/SAXHandler.html#initialize-instance_method" title="Nokogiri::HTML::Document::EncodingReader::SAXHandler#initialize (method)">new</a></span></span>
-    <span class="id identifier rubyid_parser">parser</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX.html" title="Nokogiri::HTML::SAX (module)">SAX</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX/PushParser.html" title="Nokogiri::HTML::SAX::PushParser (class)">PushParser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../SAX/PushParser.html#initialize-instance_method" title="Nokogiri::HTML::SAX::PushParser#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_handler">handler</span><span class="rparen">)</span>
+    <span class="id identifier rubyid_handler">handler</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="EncodingReader/SAXHandler.html" title="Nokogiri::HTML4::Document::EncodingReader::SAXHandler (class)">SAXHandler</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="EncodingReader/SAXHandler.html#initialize-instance_method" title="Nokogiri::HTML4::Document::EncodingReader::SAXHandler#initialize (method)">new</a></span></span>
+    <span class="id identifier rubyid_parser">parser</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX.html" title="Nokogiri::HTML4::SAX (module)">SAX</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../SAX/PushParser.html" title="Nokogiri::HTML4::SAX::PushParser (class)">PushParser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../SAX/PushParser.html#initialize-instance_method" title="Nokogiri::HTML4::SAX::PushParser#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_handler">handler</span><span class="rparen">)</span>
     <span class="id identifier rubyid_parser">parser</span> <span class="op">&lt;&lt;</span> <span class="id identifier rubyid_chunk">chunk</span> <span class="kw">rescue</span> <span class="const"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../../SyntaxError.html" title="Nokogiri::SyntaxError (class)">SyntaxError</a></span></span>
     <span class="id identifier rubyid_handler">handler</span><span class="period">.</span><span class="id identifier rubyid_encoding">encoding</span>
   <span class="kw">end</span>
@@ -448,6 +522,32 @@
 
   
 </h3>
+<div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 <table class="source_code">
   <tr>
     <td>
@@ -482,7 +582,7 @@
 318</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document.rb', line 293</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 293</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_read">read</span><span class="lparen">(</span><span class="id identifier rubyid_len">len</span><span class="rparen">)</span>
   <span class="comment"># no support for a call without len
@@ -493,9 +593,9 @@
     <span class="comment"># This implementation expects that the first call from
 </span>    <span class="comment"># htmlReadIO() is made with a length long enough (~1KB) to
 </span>    <span class="comment"># achieve advanced encoding detection.
-</span>    <span class="kw">if</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="" title="Nokogiri::HTML::Document::EncodingReader (class)">EncodingReader</a></span></span><span class="period">.</span><span class="id identifier rubyid_detect_encoding"><span class="object_link"><a href="#detect_encoding-class_method" title="Nokogiri::HTML::Document::EncodingReader.detect_encoding (method)">detect_encoding</a></span></span><span class="lparen">(</span><span class="ivar">@firstchunk</span><span class="rparen">)</span>
+</span>    <span class="kw">if</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="" title="Nokogiri::HTML4::Document::EncodingReader (class)">EncodingReader</a></span></span><span class="period">.</span><span class="id identifier rubyid_detect_encoding"><span class="object_link"><a href="#detect_encoding-class_method" title="Nokogiri::HTML4::Document::EncodingReader.detect_encoding (method)">detect_encoding</a></span></span><span class="lparen">(</span><span class="ivar">@firstchunk</span><span class="rparen">)</span>
       <span class="comment"># The first chunk is stored for the next read in retry.
-</span>      <span class="id identifier rubyid_raise">raise</span> <span class="ivar">@encoding_found</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="EncodingFound.html" title="Nokogiri::HTML::Document::EncodingFound (class)">EncodingFound</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../Document.html#new-class_method" title="Nokogiri::HTML::Document.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
+</span>      <span class="id identifier rubyid_raise">raise</span> <span class="ivar">@encoding_found</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="EncodingFound.html" title="Nokogiri::HTML4::Document::EncodingFound (class)">EncodingFound</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../Document.html#new-class_method" title="Nokogiri::HTML4::Document.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
     <span class="kw">end</span>
   <span class="kw">end</span>
   <span class="ivar">@encoding_found</span> <span class="op">=</span> <span class="kw">nil</span>
@@ -520,9 +620,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:38 2021 by
+  Generated on Fri Jul  9 15:35:49 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

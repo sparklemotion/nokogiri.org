@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Nokogiri::HTML::EntityLookup
+  Class: Nokogiri::HTML4::EntityLookup
   
     — Documentation by YARD 0.9.26
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
 <script type="text/javascript">
-  pathId = "Nokogiri::HTML::EntityLookup";
+  pathId = "Nokogiri::HTML4::EntityLookup";
   relpath = '../../';
 </script>
 
@@ -47,7 +47,7 @@
         <div id="menu">
   
     <a href="../../_index.html">Index (E)</a> »
-    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span>
+    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span>
      » 
     <span class="title">EntityLookup</span>
   
@@ -69,7 +69,7 @@
       </div>
 
       <div id="content">
-<h1>Class: Nokogiri::HTML::EntityLookup
+<h1>Class: Nokogiri::HTML4::EntityLookup
   
   
   
@@ -84,7 +84,7 @@
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Nokogiri::HTML::EntityLookup</li>
+            <li class="next">Nokogiri::HTML4::EntityLookup</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -104,14 +104,40 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/nokogiri/html/entity_lookup.rb<span class="defines">,<br>
-  ext/nokogiri/html_entity_lookup.c</span>
+    <dd>lib/nokogiri/html4/entity_lookup.rb<span class="defines">,<br>
+  ext/nokogiri/html4_entity_lookup.c</span>
 </dd>
   </dl>
   
 </div>
 
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    
 
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 
 
 
@@ -168,7 +194,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Get the HTML::EntityDescription for <code>key</code>.</p>
+<p>Get the HTML4::EntityDescription for <code>key</code>.</p>
 </div></span>
   
 </li>
@@ -203,6 +229,22 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -216,7 +258,7 @@
 11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/entity_lookup.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/entity_lookup.rb', line 9</span>
 
 <span class="kw">def</span> <span class="op">[]</span> <span class="id identifier rubyid_name">name</span>
   <span class="lparen">(</span><span class="id identifier rubyid_val">val</span> <span class="op">=</span> <span class="id identifier rubyid_get">get</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="rparen">)</span><span class="rparen">)</span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_val">val</span><span class="period">.</span><span class="id identifier rubyid_value">value</span>
@@ -239,7 +281,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Get the HTML::EntityDescription for <code>key</code></p>
+<p>Get the HTML4::EntityDescription for <code>key</code></p>
 
 
   </div>
@@ -248,6 +290,22 @@
   
   
 
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -277,12 +335,12 @@
 29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/html_entity_lookup.c', line 11</span>
+      <pre class="code"><span class="info file"># File 'ext/nokogiri/html4_entity_lookup.c', line 11</span>
 
 static VALUE
 get(VALUE _, VALUE rb_entity_name)
 {
-  VALUE cNokogiriHtmlEntityDescription;
+  VALUE cNokogiriHtml4EntityDescription;
   const htmlEntityDesc *c_entity_desc;
   VALUE rb_constructor_args[3];
 
@@ -295,8 +353,8 @@ get(VALUE _, VALUE rb_entity_name)
   rb_constructor_args[1] = NOKOGIRI_STR_NEW2(c_entity_desc-&gt;name);
   rb_constructor_args[2] = NOKOGIRI_STR_NEW2(c_entity_desc-&gt;desc);
 
-  cNokogiriHtmlEntityDescription = rb_const_get_at(mNokogiriHtml, rb_intern("EntityDescription"));
-  return rb_class_new_instance(3, rb_constructor_args, cNokogiriHtmlEntityDescription);
+  cNokogiriHtml4EntityDescription = rb_const_get_at(mNokogiriHtml4, rb_intern("EntityDescription"));
+  return rb_class_new_instance(3, rb_constructor_args, cNokogiriHtml4EntityDescription);
 }</pre>
     </td>
   </tr>
@@ -308,9 +366,9 @@ get(VALUE _, VALUE rb_entity_name)
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:40 2021 by
+  Generated on Fri Jul  9 15:35:50 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

@@ -161,7 +161,7 @@
     
 <p>Parse a document contained in <code>args</code>.  Nokogiri will try to guess what type of document you are attempting to parse.  For more information, see Nokogiri.parse</p>
 
-<p>To specify the type of document, use Nokogiri.XML or Nokogiri.HTML.</p>
+<p>To specify the type of document, use <span class="object_link"><a href="Nokogiri.html#XML-class_method" title="Nokogiri.XML (method)">Nokogiri.XML</a></span>, <span class="object_link"><a href="Nokogiri.html#HTML4-class_method" title="Nokogiri.HTML4 (method)">Nokogiri.HTML4</a></span>, or <span class="object_link"><a href="Nokogiri.html#HTML5-class_method" title="Nokogiri.HTML5 (method)">Nokogiri.HTML5</a></span>.</p>
 
 
   </div>
@@ -176,20 +176,20 @@
       <pre class="lines">
 
 
-119
-120
-121
-122
-123
-124
-125</pre>
+107
+108
+109
+110
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri.rb', line 107</span>
 
 <span class="kw">def</span> <span class="const"><span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
-    <span class="const"><span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/HTML/Builder.html" title="Nokogiri::HTML::Builder (class)">Builder</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Nokogiri/XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_doc"><span class="object_link"><a href="Nokogiri/XML/Builder.html#doc-instance_method" title="Nokogiri::XML::Builder#doc (method)">doc</a></span></span><span class="period">.</span><span class="id identifier rubyid_root">root</span>
+    <span class="const"><span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Nokogiri/HTML4/Builder.html" title="Nokogiri::HTML4::Builder (class)">Builder</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="Nokogiri/XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_doc"><span class="object_link"><a href="Nokogiri/XML/Builder.html#doc-instance_method" title="Nokogiri::XML::Builder#doc (method)">doc</a></span></span><span class="period">.</span><span class="id identifier rubyid_root">root</span>
   <span class="kw">else</span>
     <span class="const"><span class="object_link"><a href="Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="Nokogiri.html#parse-class_method" title="Nokogiri.parse (method)">parse</a></span></span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
   <span class="kw">end</span>
@@ -204,9 +204,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:34 2021 by
+  Generated on Fri Jul  9 15:35:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

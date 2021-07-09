@@ -113,7 +113,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>This class is used for registering types of events you are interested in handling.  All of the methods on this class are available as possible events while parsing an XML document.  To register for any particular event, just subclass this class and implement the methods you are interested in knowing about.</p>
+<p>This class is used for registering types of events you are interested in handling. All of the methods on this class are available as possible events while parsing an XML document. To register for any particular event, just subclass this class and implement the methods you are interested in knowing about.</p>
 
 <p>To only be notified about start and end element events, write a class like this:</p>
 
@@ -128,7 +128,7 @@
 <span class="kw">end</span>
 </code></pre>
 
-<p>You can use this event handler for any SAX style parser included with Nokogiri.  See Nokogiri::XML::SAX, and Nokogiri::HTML::SAX.</p>
+<p>You can use this event handler for any SAX style parser included with Nokogiri. See Nokogiri::XML::SAX, and Nokogiri::HTML4::SAX.</p>
 
 
   </div>
@@ -139,7 +139,7 @@
 </div>
 <div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class="object_link"><a href="../../HTML/Document/EncodingReader/SAXHandler.html" title="Nokogiri::HTML::Document::EncodingReader::SAXHandler (class)">HTML::Document::EncodingReader::SAXHandler</a></span></p>
+  <p class="children"><span class="object_link"><a href="../../HTML4/Document/EncodingReader/SAXHandler.html" title="Nokogiri::HTML4::Document::EncodingReader::SAXHandler (class)">HTML4::Document::EncodingReader::SAXHandler</a></span></p>
 </div>
 
 
@@ -505,11 +505,11 @@
       <pre class="lines">
 
 
-160
-161</pre>
+154
+155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 160</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 154</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_cdata_block">cdata_block</span> <span class="id identifier rubyid_string">string</span>
 <span class="kw">end</span></pre>
@@ -531,7 +531,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Characters read between a tag.  This method might be called multiple times given one contiguous string of characters.</p>
+<p>Characters read between a tag. This method might be called multiple times given one contiguous string of characters.</p>
 
 <p><code>string</code> contains the character data</p>
 
@@ -548,11 +548,11 @@
       <pre class="lines">
 
 
-136
-137</pre>
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 130</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_characters">characters</span> <span class="id identifier rubyid_string">string</span>
 <span class="kw">end</span></pre>
@@ -589,11 +589,11 @@
       <pre class="lines">
 
 
-142
-143</pre>
+136
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 136</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_comment">comment</span> <span class="id identifier rubyid_string">string</span>
 <span class="kw">end</span></pre>
@@ -630,11 +630,11 @@
       <pre class="lines">
 
 
-84
-85</pre>
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 78</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_end_document">end_document</span>
 <span class="kw">end</span></pre>
@@ -671,11 +671,11 @@
       <pre class="lines">
 
 
-98
-99</pre>
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 92</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_end_element">end_element</span> <span class="id identifier rubyid_name">name</span>
 <span class="kw">end</span></pre>
@@ -712,14 +712,14 @@
       <pre class="lines">
 
 
-125
-126
-127
-128
-129</pre>
+119
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 125</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 119</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_end_element_namespace">end_element_namespace</span> <span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_prefix">prefix</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_uri">uri</span> <span class="op">=</span> <span class="kw">nil</span>
   <span class="comment">###
@@ -759,11 +759,11 @@
       <pre class="lines">
 
 
-154
-155</pre>
+148
+149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 148</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_error">error</span> <span class="id identifier rubyid_string">string</span>
 <span class="kw">end</span></pre>
@@ -800,11 +800,11 @@
       <pre class="lines">
 
 
-167
-168</pre>
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 161</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_processing_instruction">processing_instruction</span> <span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_content">content</span>
 <span class="kw">end</span></pre>
@@ -841,11 +841,11 @@
       <pre class="lines">
 
 
-79
-80</pre>
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 73</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_start_document">start_document</span>
 <span class="kw">end</span></pre>
@@ -893,11 +893,11 @@
       <pre class="lines">
 
 
-92
-93</pre>
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 86</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_start_element">start_element</span> <span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_attrs">attrs</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span>
 <span class="kw">end</span></pre>
@@ -934,20 +934,20 @@
       <pre class="lines">
 
 
+102
+103
+104
+105
+106
+107
 108
 109
 110
 111
-112
-113
-114
-115
-116
-117
-118</pre>
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 102</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_start_element_namespace">start_element_namespace</span> <span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_attrs">attrs</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span><span class="comma">,</span> <span class="id identifier rubyid_prefix">prefix</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_uri">uri</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_ns">ns</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span>
   <span class="comment">###
@@ -993,11 +993,11 @@
       <pre class="lines">
 
 
-148
-149</pre>
+142
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 142</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_warning">warning</span> <span class="id identifier rubyid_string">string</span>
 <span class="kw">end</span></pre>
@@ -1034,11 +1034,11 @@
       <pre class="lines">
 
 
-74
-75</pre>
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/sax/document.rb', line 68</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_xmldecl">xmldecl</span> <span class="id identifier rubyid_version">version</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span> <span class="id identifier rubyid_standalone">standalone</span>
 <span class="kw">end</span></pre>
@@ -1052,9 +1052,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:39 2021 by
+  Generated on Fri Jul  9 15:35:50 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

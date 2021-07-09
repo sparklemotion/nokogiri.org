@@ -338,14 +338,14 @@
       <pre class="lines">
 
 
-71
-72
-73</pre>
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 41</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span> <span class="id identifier rubyid_string">string</span>
+<span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
   <span class="const"><span class="object_link"><a href="" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/DocumentFragment.html" title="Nokogiri::XML::DocumentFragment (class)">DocumentFragment</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="XML/DocumentFragment.html#parse-class_method" title="Nokogiri::XML::DocumentFragment.parse (method)">parse</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
@@ -381,14 +381,14 @@
       <pre class="lines">
 
 
-65
-66
-67</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 35</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_thing">thing</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
+<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_thing">thing</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="const"><span class="object_link"><a href="XML/Document.html" title="Nokogiri::XML::Document (class)">Document</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="XML/Document.html#parse-class_method" title="Nokogiri::XML::Document.parse (method)">parse</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_thing">thing</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
@@ -437,28 +437,26 @@
       <pre class="lines">
 
 
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61</pre>
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml.rb', line 22</span>
 
-<span class="kw">def</span> <span class="const"><span class="object_link"><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span></span> <span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
-
+<span class="kw">def</span> <span class="const"><span class="object_link"><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="XML/ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">if</span> <span class="const">Integer</span> <span class="op">===</span> <span class="id identifier rubyid_options">options</span>
   <span class="comment"># Give the options to the user
 </span>  <span class="kw">yield</span> <span class="id identifier rubyid_options">options</span> <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
 
-  <span class="kw">if</span> <span class="id identifier rubyid_string_or_io">string_or_io</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span> <span class="symbol">:read</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_string_or_io">string_or_io</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:read</span><span class="rparen">)</span>
     <span class="kw">return</span> <span class="const"><span class="object_link"><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span></span><span class="period">.</span><span class="id identifier rubyid_from_io"><span class="object_link"><a href="XML/Reader.html#from_io-class_method" title="Nokogiri::XML::Reader.from_io (method)">from_io</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_to_i">to_i</span><span class="rparen">)</span>
   <span class="kw">end</span>
   <span class="const"><span class="object_link"><a href="XML/Reader.html" title="Nokogiri::XML::Reader (class)">Reader</a></span></span><span class="period">.</span><span class="id identifier rubyid_from_memory"><span class="object_link"><a href="XML/Reader.html#from_memory-class_method" title="Nokogiri::XML::Reader.from_memory (method)">from_memory</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_to_i">to_i</span><span class="rparen">)</span>
@@ -559,9 +557,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:34 2021 by
+  Generated on Fri Jul  9 15:35:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

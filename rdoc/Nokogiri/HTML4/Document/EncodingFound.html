@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Exception: Nokogiri::HTML::Document::EncodingFound
+  Exception: Nokogiri::HTML4::Document::EncodingFound
   
     — Documentation by YARD 0.9.26
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
-  pathId = "Nokogiri::HTML::Document::EncodingFound";
+  pathId = "Nokogiri::HTML4::Document::EncodingFound";
   relpath = '../../../';
 </script>
 
@@ -47,7 +47,7 @@
         <div id="menu">
   
     <a href="../../../_index.html">Index (E)</a> »
-    <span class="title"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span> » <span class="title"><span class="object_link"><a href="../Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span></span>
+    <span class="title"><span class="object_link"><a href="../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span> » <span class="title"><span class="object_link"><a href="../Document.html" title="Nokogiri::HTML4::Document (class)">Document</a></span></span>
      » 
     <span class="title">EncodingFound</span>
   
@@ -69,7 +69,7 @@
       </div>
 
       <div id="content">
-<h1>Exception: Nokogiri::HTML::Document::EncodingFound
+<h1>Exception: Nokogiri::HTML4::Document::EncodingFound
   
   
   
@@ -86,7 +86,7 @@
           
             <li class="next">StandardError</li>
           
-            <li class="next">Nokogiri::HTML::Document::EncodingFound</li>
+            <li class="next">Nokogiri::HTML4::Document::EncodingFound</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -106,7 +106,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/nokogiri/html/document.rb</dd>
+    <dd>lib/nokogiri/html4/document.rb</dd>
   </dl>
   
 </div>
@@ -122,6 +122,22 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 
@@ -153,9 +169,7 @@
   
 
   
-    <span class="summary_desc"><div class="inline">
-<p>Returns the value of attribute found_encoding.</p>
-</div></span>
+    <span class="summary_desc"><div class="inline"></div></span>
   
 </li>
 
@@ -209,7 +223,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(encoding)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::HTML::Document::EncodingFound (class)">EncodingFound</a></span></tt> 
+    #<strong>initialize</strong>(encoding)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::HTML4::Document::EncodingFound (class)">EncodingFound</a></span></tt> 
   
 
   
@@ -226,6 +240,22 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -240,7 +270,7 @@
 225</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 222</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_encoding">encoding</span><span class="rparen">)</span>
   <span class="ivar">@found_encoding</span> <span class="op">=</span> <span class="id identifier rubyid_encoding">encoding</span>
@@ -271,13 +301,27 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute found_encoding.</p>
-
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -291,7 +335,7 @@
 222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/document.rb', line 220</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 220</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_found_encoding">found_encoding</span>
   <span class="ivar">@found_encoding</span>
@@ -307,9 +351,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:38 2021 by
+  Generated on Fri Jul  9 15:35:49 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

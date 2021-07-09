@@ -98,7 +98,41 @@
   
 </div>
 
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class="inline">
+<p>HTML5 functionality is not available when running JRuby.</p>
+</div>
+  </div>
 
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 
 
 
@@ -112,30 +146,6 @@
     </h2>
 
     <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#add_child_node_and_reparent_attrs-instance_method" title="#add_child_node_and_reparent_attrs (instance method)">#<strong>add_child_node_and_reparent_attrs</strong>(node)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>HTML elements can have attributes that contain colons.</p>
-</div></span>
-  
-</li>
-
       
         <li class="public ">
   <span class="summary_signature">
@@ -213,9 +223,9 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="add_child_node_and_reparent_attrs-instance_method">
+  <h3 class="signature first" id="fragment-instance_method">
   
-    #<strong>add_child_node_and_reparent_attrs</strong>(node)  ⇒ <tt>Object</tt> 
+    #<strong>fragment</strong>(tags)  ⇒ <tt>Object</tt> 
   
 
   
@@ -225,13 +235,27 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>HTML elements can have attributes that contain colons. Nokogiri::XML::Node#[]= treats names with colons as a prefixed QName and tries to create an attribute in a namespace. This is especially annoying with attribute names like xml:lang since libxml2 will actually create the xml namespace if it doesn't exist already.</p>
-
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -240,64 +264,13 @@
       <pre class="lines">
 
 
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40</pre>
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html5/node.rb', line 28</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_add_child_node_and_reparent_attrs">add_child_node_and_reparent_attrs</span><span class="lparen">(</span><span class="id identifier rubyid_node">node</span><span class="rparen">)</span>
-  <span class="kw">return</span> <span class="kw">super</span><span class="lparen">(</span><span class="id identifier rubyid_node">node</span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../HTML5.html" title="Nokogiri::HTML5 (module)">HTML5</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::HTML5::Document (class)">Document</a></span></span><span class="rparen">)</span>
-  <span class="comment"># I'm not sure what this method is supposed to do. Reparenting
-</span>  <span class="comment"># namespaces is handled by libxml2, including child namespaces which
-</span>  <span class="comment"># this method wouldn't handle.
-</span>  <span class="comment"># https://github.com/sparklemotion/nokogiri/issues/1790
-</span>  <span class="id identifier rubyid_add_child_node">add_child_node</span><span class="lparen">(</span><span class="id identifier rubyid_node">node</span><span class="rparen">)</span>
-  <span class="comment">#node.attribute_nodes.find_all { |a| a.namespace }.each do |attr|
-</span>  <span class="comment">#  attr.remove
-</span>  <span class="comment">#  ns = attr.namespace
-</span>  <span class="comment">#  a["#{ns.prefix}:#{attr.name}"] = attr.value
-</span>  <span class="comment">#end
-</span><span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="fragment-instance_method">
-  
-    #<strong>fragment</strong>(tags)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-79
-80
-81
-82</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html5/node.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html5/node.rb', line 62</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_tags">tags</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">super</span><span class="lparen">(</span><span class="id identifier rubyid_tags">tags</span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../HTML5.html" title="Nokogiri::HTML5 (module)">HTML5</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::HTML5::Document (class)">Document</a></span></span><span class="rparen">)</span>
@@ -318,21 +291,47 @@
 
   
 </h3>
+<div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 <table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-42
-43
-44
-45
-46
-47</pre>
+25
+26
+27
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html5/node.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html5/node.rb', line 25</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inner_html">inner_html</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">super</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../HTML5.html" title="Nokogiri::HTML5 (module)">HTML5</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::HTML5::Document (class)">Document</a></span></span><span class="rparen">)</span>
@@ -376,6 +375,22 @@
     </li>
   
 </ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class="inline">
+<p>v1.12.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 <table class="source_code">
@@ -384,6 +399,23 @@
       <pre class="lines">
 
 
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
 49
 50
 51
@@ -395,27 +427,10 @@
 57
 58
 59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77</pre>
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html5/node.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/html5/node.rb', line 32</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_to">write_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">super</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../HTML5.html" title="Nokogiri::HTML5 (module)">HTML5</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::HTML5::Document (class)">Document</a></span></span><span class="rparen">)</span>
@@ -428,20 +443,20 @@
     <span class="id identifier rubyid_save_options">save_options</span> <span class="op">=</span> <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:save_with</span><span class="rbracket">]</span> <span class="op">||</span> <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="int">1</span><span class="rbracket">]</span> <span class="op">||</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html#FORMAT-constant" title="Nokogiri::XML::Node::SaveOptions::FORMAT (constant)">FORMAT</a></span></span>
     <span class="id identifier rubyid_indent_times">indent_times</span> <span class="op">=</span> <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:indent</span><span class="rbracket">]</span> <span class="op">||</span> <span class="int">2</span>
   <span class="kw">end</span>
-  <span class="id identifier rubyid_indent_string">indent_string</span> <span class="op">=</span> <span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:indent_text</span><span class="rbracket">]</span> <span class="op">||</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content"> </span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="op">*</span> <span class="id identifier rubyid_indent_times">indent_times</span>
+  <span class="id identifier rubyid_indent_string">indent_string</span> <span class="op">=</span> <span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:indent_text</span><span class="rbracket">]</span> <span class="op">||</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="op">*</span> <span class="id identifier rubyid_indent_times">indent_times</span>
 
   <span class="id identifier rubyid_config">config</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../XML/Node.html#new-class_method" title="Nokogiri::XML::Node.new (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_save_options">save_options</span><span class="period">.</span><span class="id identifier rubyid_to_i">to_i</span><span class="rparen">)</span>
   <span class="kw">yield</span> <span class="id identifier rubyid_config">config</span> <span class="kw">if</span> <span class="id identifier rubyid_block_given?">block_given?</span>
 
   <span class="id identifier rubyid_config_options">config_options</span> <span class="op">=</span> <span class="id identifier rubyid_config">config</span><span class="period">.</span><span class="id identifier rubyid_options">options</span>
-  <span class="kw">if</span> <span class="lparen">(</span><span class="id identifier rubyid_config_options">config_options</span> <span class="op">&amp;</span> <span class="lparen">(</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html#AS_XML-constant" title="Nokogiri::XML::Node::SaveOptions::AS_XML (constant)">AS_XML</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html#AS_XHTML-constant" title="Nokogiri::XML::Node::SaveOptions::AS_XHTML (constant)">AS_XHTML</a></span></span><span class="rparen">)</span> <span class="op">!=</span> <span class="int">0</span><span class="rparen">)</span>
+  <span class="kw">if</span> <span class="id identifier rubyid_config_options">config_options</span> <span class="op">&amp;</span> <span class="lparen">(</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html#AS_XML-constant" title="Nokogiri::XML::Node::SaveOptions::AS_XML (constant)">AS_XML</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node.html" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML/Node/SaveOptions.html#AS_XHTML-constant" title="Nokogiri::XML::Node::SaveOptions::AS_XHTML (constant)">AS_XHTML</a></span></span><span class="rparen">)</span> <span class="op">!=</span> <span class="int">0</span>
     <span class="comment"># Use Nokogiri's serializing code.
 </span>    <span class="id identifier rubyid_native_write_to">native_write_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span> <span class="id identifier rubyid_indent_string">indent_string</span><span class="comma">,</span> <span class="id identifier rubyid_config_options">config_options</span><span class="rparen">)</span>
   <span class="kw">else</span>
     <span class="comment"># Serialize including the current node.
 </span>    <span class="id identifier rubyid_encoding">encoding</span> <span class="op">||=</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_encoding">encoding</span> <span class="op">||</span> <span class="const">Encoding</span><span class="op">::</span><span class="const">UTF_8</span>
     <span class="id identifier rubyid_internal_ops">internal_ops</span> <span class="op">=</span> <span class="lbrace">{</span>
-      <span class="label">preserve_newline:</span> <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:preserve_newline</span><span class="rbracket">]</span> <span class="op">||</span> <span class="kw">false</span>
+      <span class="label">preserve_newline:</span> <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:preserve_newline</span><span class="rbracket">]</span> <span class="op">||</span> <span class="kw">false</span><span class="comma">,</span>
     <span class="rbrace">}</span>
     <span class="const"><span class="object_link"><a href="../HTML5.html" title="Nokogiri::HTML5 (module)">HTML5</a></span></span><span class="period">.</span><span class="id identifier rubyid_serialize_node_internal">serialize_node_internal</span><span class="lparen">(</span><span class="kw">self</span><span class="comma">,</span> <span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span> <span class="id identifier rubyid_internal_ops">internal_ops</span><span class="rparen">)</span>
   <span class="kw">end</span>
@@ -456,9 +471,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:34 2021 by
+  Generated on Fri Jul  9 15:35:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

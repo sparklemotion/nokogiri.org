@@ -89,7 +89,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/nokogiri/css.rb<span class="defines">,<br>
-  lib/nokogiri/css/node.rb,<br> lib/nokogiri/css/parser.rb,<br> lib/nokogiri/css/tokenizer.rb,<br> lib/nokogiri/css/syntax_error.rb,<br> lib/nokogiri/css/parser_extras.rb,<br> lib/nokogiri/css/xpath_visitor.rb</span>
+  lib/nokogiri/css/node.rb,<br> lib/nokogiri/css/syntax_error.rb,<br> lib/nokogiri/css/parser_extras.rb,<br> lib/nokogiri/css/xpath_visitor.rb</span>
 </dd>
   </dl>
   
@@ -101,7 +101,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class="object_link"><a href="CSS/Node.html" title="Nokogiri::CSS::Node (class)">Node</a></span>, <span class="object_link"><a href="CSS/Parser.html" title="Nokogiri::CSS::Parser (class)">Parser</a></span>, <span class="object_link"><a href="CSS/SyntaxError.html" title="Nokogiri::CSS::SyntaxError (class)">SyntaxError</a></span>, <span class="object_link"><a href="CSS/Tokenizer.html" title="Nokogiri::CSS::Tokenizer (class)">Tokenizer</a></span>, <span class="object_link"><a href="CSS/XPathVisitor.html" title="Nokogiri::CSS::XPathVisitor (class)">XPathVisitor</a></span>, <span class="object_link"><a href="CSS/XPathVisitorAlwaysUseBuiltins.html" title="Nokogiri::CSS::XPathVisitorAlwaysUseBuiltins (class)">XPathVisitorAlwaysUseBuiltins</a></span>, <span class="object_link"><a href="CSS/XPathVisitorOptimallyUseBuiltins.html" title="Nokogiri::CSS::XPathVisitorOptimallyUseBuiltins (class)">XPathVisitorOptimallyUseBuiltins</a></span>
+      <strong class="classes">Classes:</strong> <span class="object_link"><a href="CSS/Node.html" title="Nokogiri::CSS::Node (class)">Node</a></span>, <span class="object_link"><a href="CSS/Parser.html" title="Nokogiri::CSS::Parser (class)">Parser</a></span>, <span class="object_link"><a href="CSS/SyntaxError.html" title="Nokogiri::CSS::SyntaxError (class)">SyntaxError</a></span>, <span class="object_link"><a href="CSS/XPathVisitor.html" title="Nokogiri::CSS::XPathVisitor (class)">XPathVisitor</a></span>, <span class="object_link"><a href="CSS/XPathVisitorAlwaysUseBuiltins.html" title="Nokogiri::CSS::XPathVisitorAlwaysUseBuiltins (class)">XPathVisitorAlwaysUseBuiltins</a></span>, <span class="object_link"><a href="CSS/XPathVisitorOptimallyUseBuiltins.html" title="Nokogiri::CSS::XPathVisitorOptimallyUseBuiltins (class)">XPathVisitorOptimallyUseBuiltins</a></span>
     
   
 </p>
@@ -205,15 +205,15 @@
       <pre class="lines">
 
 
-17
-18
-19</pre>
+7
+8
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css.rb', line 7</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_selector">selector</span>
-  <span class="const"><span class="object_link"><a href="CSS/Parser.html" title="Nokogiri::CSS::Parser (class)">Parser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="CSS/Parser.html#initialize-instance_method" title="Nokogiri::CSS::Parser#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="CSS/Parser.html#parse-instance_method" title="Nokogiri::CSS::Parser#parse (method)">parse</a></span></span> <span class="id identifier rubyid_selector">selector</span>
+<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="rparen">)</span>
+  <span class="const"><span class="object_link"><a href="CSS/Parser.html" title="Nokogiri::CSS::Parser (class)">Parser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="CSS/Parser.html#initialize-instance_method" title="Nokogiri::CSS::Parser#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="CSS/Parser.html#parse-instance_method" title="Nokogiri::CSS::Parser#parse (method)">parse</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -248,15 +248,15 @@
       <pre class="lines">
 
 
-23
-24
-25</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/css.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/css.rb', line 13</span>
 
-<span class="kw">def</span> <span class="id identifier rubyid_xpath_for">xpath_for</span> <span class="id identifier rubyid_selector">selector</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="op">=</span><span class="lbrace">{</span><span class="rbrace">}</span>
-  <span class="const"><span class="object_link"><a href="CSS/Parser.html" title="Nokogiri::CSS::Parser (class)">Parser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="CSS/Parser.html#initialize-instance_method" title="Nokogiri::CSS::Parser#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:ns</span><span class="rbracket">]</span> <span class="op">||</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_xpath_for"><span class="object_link"><a href="CSS/Parser.html#xpath_for-instance_method" title="Nokogiri::CSS::Parser#xpath_for (method)">xpath_for</a></span></span> <span class="id identifier rubyid_selector">selector</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
+<span class="kw">def</span> <span class="id identifier rubyid_xpath_for">xpath_for</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
+  <span class="const"><span class="object_link"><a href="CSS/Parser.html" title="Nokogiri::CSS::Parser (class)">Parser</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="CSS/Parser.html#initialize-instance_method" title="Nokogiri::CSS::Parser#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:ns</span><span class="rbracket">]</span> <span class="op">||</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_xpath_for"><span class="object_link"><a href="CSS/Parser.html#xpath_for-instance_method" title="Nokogiri::CSS::Parser#xpath_for (method)">xpath_for</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -268,9 +268,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:34 2021 by
+  Generated on Fri Jul  9 15:35:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

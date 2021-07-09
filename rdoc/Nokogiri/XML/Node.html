@@ -2286,7 +2286,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Fetch the Nokogiri::HTML::ElementDescription for this node.</p>
+<p>Fetch the Nokogiri::HTML4::ElementDescription for this node.</p>
 </div></span>
   
 </li>
@@ -2556,7 +2556,7 @@
 
   
     <span class="summary_desc"><div class="inline">
-<p>Returns true if this is an HTML::Document node.</p>
+<p>Returns true if this is an HTML4::Document node.</p>
 </div></span>
   
 </li>
@@ -3539,12 +3539,12 @@
       <pre class="lines">
 
 
+98
 99
-100
-101</pre>
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 98</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_document">document</span><span class="rparen">)</span>
   <span class="comment"># This is intentionally empty.
@@ -3764,13 +3764,13 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+173
 174
 175
-176
-177</pre>
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 174</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 173</span>
 
 <span class="kw">def</span> <span class="op">&lt;&lt;</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_add_child">add_child</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span>
@@ -3809,14 +3809,14 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+999
 1000
 1001
 1002
-1003
-1004</pre>
+1003</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1000</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 999</span>
 
 <span class="kw">def</span> <span class="op">&lt;=&gt;</span><span class="lparen">(</span><span class="id identifier rubyid_other">other</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">unless</span> <span class="id identifier rubyid_other">other</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="" title="Nokogiri::XML::Node (class)">Node</a></span></span><span class="rparen">)</span>
@@ -3856,14 +3856,14 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+990
 991
 992
 993
-994
-995</pre>
+994</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 991</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 990</span>
 
 <span class="kw">def</span> <span class="op">==</span><span class="lparen">(</span><span class="id identifier rubyid_other">other</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="kw">false</span> <span class="kw">unless</span> <span class="id identifier rubyid_other">other</span>
@@ -3903,13 +3903,13 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+112
 113
 114
-115
-116</pre>
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 112</span>
 
 <span class="kw">def</span> <span class="op">&gt;</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="rparen">)</span>
   <span class="id identifier rubyid_ns">ns</span> <span class="op">=</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_root">root</span><span class="period">.</span><span class="id identifier rubyid_namespaces">namespaces</span>
@@ -3952,12 +3952,12 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+380
 381
-382
-383</pre>
+382</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 381</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 380</span>
 
 <span class="kw">def</span> <span class="op">[]</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="rparen">)</span>
   <span class="id identifier rubyid_get">get</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="rparen">)</span>
@@ -3999,12 +3999,12 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+386
 387
-388
-389</pre>
+388</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 387</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 386</span>
 
 <span class="kw">def</span> <span class="op">[]=</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_value">value</span><span class="rparen">)</span>
   <span class="id identifier rubyid_set">set</span> <span class="id identifier rubyid_name">name</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="comma">,</span> <span class="id identifier rubyid_value">value</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span>
@@ -4042,12 +4042,12 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+984
 985
-986
-987</pre>
+986</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 985</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 984</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_accept">accept</span><span class="lparen">(</span><span class="id identifier rubyid_visitor">visitor</span><span class="rparen">)</span>
   <span class="id identifier rubyid_visitor">visitor</span><span class="period">.</span><span class="id identifier rubyid_visit">visit</span><span class="lparen">(</span><span class="kw">self</span><span class="rparen">)</span>
@@ -4089,6 +4089,7 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+128
 129
 130
 131
@@ -4096,11 +4097,10 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
 133
 134
 135
-136
-137</pre>
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 128</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_add_child">add_child</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_node_or_tags">node_or_tags</span> <span class="op">=</span> <span class="id identifier rubyid_coerce">coerce</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
@@ -4235,12 +4235,12 @@ rb_xml_node_new(int argc, VALUE *argv, VALUE klass)
       <pre class="lines">
 
 
+499
 500
-501
-502</pre>
+501</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 500</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 499</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_add_class">add_class</span><span class="lparen">(</span><span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
   <span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
@@ -4400,14 +4400,14 @@ add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_href)
       <pre class="lines">
 
 
+198
 199
 200
 201
-202
-203</pre>
+202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 199</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 198</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_add_next_sibling">add_next_sibling</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_raise">raise</span> <span class="const">ArgumentError</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">A document may not have multiple root nodes.</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="kw">if</span> <span class="lparen">(</span><span class="id identifier rubyid_parent">parent</span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_parent">parent</span><span class="period">.</span><span class="id identifier rubyid_document?">document?</span><span class="rparen">)</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="period">.</span><span class="id identifier rubyid_comment?">comment?</span> <span class="op">||</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="period">.</span><span class="id identifier rubyid_processing_instruction?">processing_instruction?</span><span class="rparen">)</span>
@@ -4468,14 +4468,14 @@ add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_href)
       <pre class="lines">
 
 
+185
 186
 187
 188
-189
-190</pre>
+189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 186</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 185</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_add_previous_sibling">add_previous_sibling</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_raise">raise</span> <span class="const">ArgumentError</span><span class="period">.</span><span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">A document may not have multiple root nodes.</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="kw">if</span> <span class="lparen">(</span><span class="id identifier rubyid_parent">parent</span> <span class="op">&amp;&amp;</span> <span class="id identifier rubyid_parent">parent</span><span class="period">.</span><span class="id identifier rubyid_document?">document?</span><span class="rparen">)</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="period">.</span><span class="id identifier rubyid_comment?">comment?</span> <span class="op">||</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="period">.</span><span class="id identifier rubyid_processing_instruction?">processing_instruction?</span><span class="rparen">)</span>
@@ -4519,13 +4519,13 @@ add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_href)
       <pre class="lines">
 
 
+223
 224
 225
-226
-227</pre>
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 224</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 223</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_after">after</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_add_next_sibling">add_next_sibling</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span>
@@ -4564,6 +4564,7 @@ add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_href)
       <pre class="lines">
 
 
+954
 955
 956
 957
@@ -4582,11 +4583,10 @@ add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_href)
 970
 971
 972
-973
-974</pre>
+973</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 955</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 954</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_ancestors">ancestors</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="const"><span class="object_link"><a href="NodeSet.html" title="Nokogiri::XML::NodeSet (class)">NodeSet</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="NodeSet.html#initialize-instance_method" title="Nokogiri::XML::NodeSet#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="symbol">:parent</span><span class="rparen">)</span>
@@ -4732,12 +4732,12 @@ add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_href)
       <pre class="lines">
 
 
+540
 541
-542
-543</pre>
+542</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 541</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 540</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_append_class">append_class</span><span class="lparen">(</span><span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
   <span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
@@ -5086,14 +5086,14 @@ attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
       <pre class="lines">
 
 
+396
 397
 398
 399
-400
-401</pre>
+400</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 397</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 396</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_attributes">attributes</span>
   <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_each_with_object">each_with_object</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="comma">,</span> <span class="id identifier rubyid_hash">hash</span><span class="op">|</span>
@@ -5137,13 +5137,13 @@ attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
       <pre class="lines">
 
 
+211
 212
 213
-214
-215</pre>
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 212</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 211</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_before">before</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_add_previous_sibling">add_previous_sibling</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span>
@@ -5236,16 +5236,16 @@ blank_eh(VALUE self)
       <pre class="lines">
 
 
+1136
 1137
 1138
 1139
 1140
 1141
-1142
-1143</pre>
+1142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1137</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1136</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_canonicalize">canonicalize</span><span class="lparen">(</span><span class="id identifier rubyid_mode">mode</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html#XML_C14N_1_0-constant" title="Nokogiri::XML::XML_C14N_1_0 (constant)">XML_C14N_1_0</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_inclusive_namespaces">inclusive_namespaces</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_with_comments">with_comments</span> <span class="op">=</span> <span class="kw">false</span><span class="rparen">)</span>
   <span class="id identifier rubyid_c14n_root">c14n_root</span> <span class="op">=</span> <span class="kw">self</span>
@@ -5300,12 +5300,12 @@ blank_eh(VALUE self)
       <pre class="lines">
 
 
+876
 877
-878
-879</pre>
+878</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 877</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 876</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_cdata?">cdata?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#CDATA_SECTION_NODE-constant" title="Nokogiri::XML::Node::CDATA_SECTION_NODE (constant)">CDATA_SECTION_NODE</a></span></span>
@@ -5503,6 +5503,7 @@ children(VALUE self)
       <pre class="lines">
 
 
+247
 248
 249
 250
@@ -5511,11 +5512,10 @@ children(VALUE self)
 253
 254
 255
-256
-257</pre>
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 247</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_children=">children=</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_node_or_tags">node_or_tags</span> <span class="op">=</span> <span class="id identifier rubyid_coerce">coerce</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
@@ -5605,12 +5605,12 @@ children(VALUE self)
       <pre class="lines">
 
 
+456
 457
-458
-459</pre>
+458</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 457</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 456</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_classes">classes</span>
   <span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
@@ -5661,12 +5661,12 @@ children(VALUE self)
       <pre class="lines">
 
 
+871
 872
-873
-874</pre>
+873</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 872</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 871</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_comment?">comment?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#COMMENT_NODE-constant" title="Nokogiri::XML::Node::COMMENT_NODE (constant)">COMMENT_NODE</a></span></span>
@@ -5779,12 +5779,12 @@ get_native_content(VALUE self)
       <pre class="lines">
 
 
+304
 305
-306
-307</pre>
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 305</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 304</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_content=">content=</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
   <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_native_content">native_content</span> <span class="op">=</span> <span class="id identifier rubyid_encode_special_chars">encode_special_chars</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span><span class="rparen">)</span>
@@ -6063,14 +6063,14 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
       <pre class="lines">
 
 
+945
 946
 947
 948
-949
-950</pre>
+949</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 946</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 945</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_css_path">css_path</span>
   <span class="id identifier rubyid_path">path</span><span class="period">.</span><span class="id identifier rubyid_split">split</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\/</span><span class="regexp_end">/</span></span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_part">part</span><span class="op">|</span>
@@ -6110,12 +6110,12 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
       <pre class="lines">
 
 
+104
 105
-106
-107</pre>
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 104</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_decorate!">decorate!</span>
   <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_decorate">decorate</span><span class="lparen">(</span><span class="kw">self</span><span class="rparen">)</span>
@@ -6153,12 +6153,12 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
       <pre class="lines">
 
 
+321
 322
-323
-324</pre>
+323</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 322</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 321</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_default_namespace=">default_namespace=</span><span class="lparen">(</span><span class="id identifier rubyid_url">url</span><span class="rparen">)</span>
   <span class="id identifier rubyid_add_namespace_definition">add_namespace_definition</span><span class="lparen">(</span><span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="rparen">)</span>
@@ -6181,7 +6181,7 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
 <div class="docstring">
   <div class="discussion">
     
-<p>Fetch the Nokogiri::HTML::ElementDescription for this node.  Returns nil on XML documents and on unknown tags.</p>
+<p>Fetch the Nokogiri::HTML4::ElementDescription for this node.  Returns nil on XML documents and on unknown tags.</p>
 
 
   </div>
@@ -6196,17 +6196,17 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
       <pre class="lines">
 
 
+913
 914
 915
-916
-917</pre>
+916</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 914</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 913</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_description">description</span>
   <span class="kw">return</span> <span class="kw">nil</span> <span class="kw">if</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_xml?">xml?</span>
-  <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML/ElementDescription.html" title="Nokogiri::HTML::ElementDescription (class)">ElementDescription</a></span></span><span class="lbracket">[</span><span class="id identifier rubyid_name">name</span><span class="rbracket">]</span>
+  <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML4/ElementDescription.html" title="Nokogiri::HTML4::ElementDescription (class)">ElementDescription</a></span></span><span class="lbracket">[</span><span class="id identifier rubyid_name">name</span><span class="rbracket">]</span>
 <span class="kw">end</span></pre>
     </td>
   </tr>
@@ -6254,6 +6254,7 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
       <pre class="lines">
 
 
+348
 349
 350
 351
@@ -6261,11 +6262,10 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
 353
 354
 355
-356
-357</pre>
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 349</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 348</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_do_xinclude">do_xinclude</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="ParseOptions.html#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span> <span class="kw">if</span> <span class="const">Integer</span> <span class="op">===</span> <span class="id identifier rubyid_options">options</span>
@@ -6375,12 +6375,12 @@ document(VALUE self)
       <pre class="lines">
 
 
+891
 892
-893
-894</pre>
+893</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 892</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 891</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_document?">document?</span>
   <span class="id identifier rubyid_is_a?">is_a?</span> <span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Document.html" title="Nokogiri::XML::Document (class)">Document</a></span></span>
@@ -6527,14 +6527,14 @@ duplicate_node(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
+422
 423
 424
 425
-426
-427</pre>
+426</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 423</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 422</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_each">each</span>
   <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="op">|</span>
@@ -6591,12 +6591,12 @@ duplicate_node(int argc, VALUE *argv, VALUE self)
       <pre class="lines">
 
 
+926
 927
-928
-929</pre>
+928</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 927</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 926</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_element?">element?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#ELEMENT_NODE-constant" title="Nokogiri::XML::Node::ELEMENT_NODE (constant)">ELEMENT_NODE</a></span></span>
@@ -6954,13 +6954,13 @@ first_element_child(VALUE self)
       <pre class="lines">
 
 
+788
 789
 790
-791
-792</pre>
+791</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 789</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 788</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_tags">tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">=</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_html?">html?</span> <span class="op">?</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span> <span class="op">:</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
@@ -7012,12 +7012,12 @@ first_element_child(VALUE self)
       <pre class="lines">
 
 
+906
 907
-908
-909</pre>
+908</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 907</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 906</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_fragment?">fragment?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#DOCUMENT_FRAG_NODE-constant" title="Nokogiri::XML::Node::DOCUMENT_FRAG_NODE (constant)">DOCUMENT_FRAG_NODE</a></span></span>
@@ -7040,7 +7040,7 @@ first_element_child(VALUE self)
 <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if this is an HTML::Document node</p>
+<p>Returns true if this is an HTML4::Document node</p>
 
 
   </div>
@@ -7068,12 +7068,12 @@ first_element_child(VALUE self)
       <pre class="lines">
 
 
+886
 887
-888
-889</pre>
+888</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 887</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 886</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_html?">html?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#HTML_DOCUMENT_NODE-constant" title="Nokogiri::XML::Node::HTML_DOCUMENT_NODE (constant)">HTML_DOCUMENT_NODE</a></span></span>
@@ -7111,12 +7111,12 @@ first_element_child(VALUE self)
       <pre class="lines">
 
 
+940
 941
-942
-943</pre>
+942</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 941</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 940</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inner_html">inner_html</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
   <span class="id identifier rubyid_children">children</span><span class="period">.</span><span class="id identifier rubyid_map">map</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_x">x</span><span class="period">.</span><span class="id identifier rubyid_to_html">to_html</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span> <span class="rbrace">}</span><span class="period">.</span><span class="id identifier rubyid_join">join</span>
@@ -7158,13 +7158,13 @@ first_element_child(VALUE self)
       <pre class="lines">
 
 
+235
 236
 237
-238
-239</pre>
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 236</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 235</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_inner_html=">inner_html=</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_children">children</span> <span class="op">=</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span>
@@ -7383,12 +7383,12 @@ key_eh(VALUE self, VALUE attribute)
       <pre class="lines">
 
 
+416
 417
-418
-419</pre>
+418</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 417</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 416</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_keys">keys</span>
   <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_map">map</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:node_name</span><span class="rparen">)</span>
@@ -7548,16 +7548,16 @@ key_eh(VALUE self, VALUE attribute)
       <pre class="lines">
 
 
+656
 657
 658
 659
 660
 661
-662
-663</pre>
+662</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 657</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 656</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_kwattr_add">kwattr_add</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
   <span class="id identifier rubyid_keywords">keywords</span> <span class="op">=</span> <span class="id identifier rubyid_keywordify">keywordify</span><span class="lparen">(</span><span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
@@ -7718,16 +7718,16 @@ key_eh(VALUE self, VALUE attribute)
       <pre class="lines">
 
 
+708
 709
 710
 711
 712
 713
-714
-715</pre>
+714</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 709</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 708</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_kwattr_append">kwattr_append</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
   <span class="id identifier rubyid_keywords">keywords</span> <span class="op">=</span> <span class="id identifier rubyid_keywordify">keywordify</span><span class="lparen">(</span><span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
@@ -7866,6 +7866,7 @@ key_eh(VALUE self, VALUE attribute)
       <pre class="lines">
 
 
+754
 755
 756
 757
@@ -7880,11 +7881,10 @@ key_eh(VALUE self, VALUE attribute)
 766
 767
 768
-769
-770</pre>
+769</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 755</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 754</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_kwattr_remove">kwattr_remove</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="comma">,</span> <span class="id identifier rubyid_keywords">keywords</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="id identifier rubyid_keywords">keywords</span><span class="period">.</span><span class="id identifier rubyid_nil?">nil?</span>
@@ -8013,12 +8013,12 @@ key_eh(VALUE self, VALUE attribute)
       <pre class="lines">
 
 
+604
 605
-606
-607</pre>
+606</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 605</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 604</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_kwattr_values">kwattr_values</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span>
   <span class="id identifier rubyid_keywordify">keywordify</span><span class="lparen">(</span><span class="id identifier rubyid_get_attribute">get_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_attribute_name">attribute_name</span><span class="rparen">)</span> <span class="op">||</span> <span class="lbracket">[</span><span class="rbracket">]</span><span class="rparen">)</span>
@@ -8395,12 +8395,12 @@ set_line(VALUE self, VALUE num)
       <pre class="lines">
 
 
+781
 782
-783
-784</pre>
+783</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 782</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 781</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_matches?">matches?</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="rparen">)</span>
   <span class="id identifier rubyid_ancestors">ancestors</span><span class="period">.</span><span class="id identifier rubyid_last">last</span><span class="period">.</span><span class="id identifier rubyid_search">search</span><span class="lparen">(</span><span class="id identifier rubyid_selector">selector</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_include?">include?</span><span class="lparen">(</span><span class="kw">self</span><span class="rparen">)</span>
@@ -8501,6 +8501,7 @@ noko_xml_node_namespace(VALUE rb_node)
       <pre class="lines">
 
 
+331
 332
 333
 334
@@ -8511,11 +8512,10 @@ noko_xml_node_namespace(VALUE rb_node)
 339
 340
 341
-342
-343</pre>
+342</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 332</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 331</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_namespace=">namespace=</span><span class="lparen">(</span><span class="id identifier rubyid_ns">ns</span><span class="rparen">)</span>
   <span class="kw">return</span> <span class="id identifier rubyid_set_namespace">set_namespace</span><span class="lparen">(</span><span class="id identifier rubyid_ns">ns</span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_ns">ns</span>
@@ -8806,16 +8806,16 @@ namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
       <pre class="lines">
 
 
+862
 863
 864
 865
 866
 867
-868
-869</pre>
+868</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 863</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 862</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_namespaces">namespaces</span>
   <span class="id identifier rubyid_namespace_scopes">namespace_scopes</span><span class="period">.</span><span class="id identifier rubyid_each_with_object">each_with_object</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_ns">ns</span><span class="comma">,</span> <span class="id identifier rubyid_hash">hash</span><span class="op">|</span>
@@ -9296,13 +9296,13 @@ get_parent(VALUE self)
       <pre class="lines">
 
 
+310
 311
 312
-313
-314</pre>
+313</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 311</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 310</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parent=">parent=</span><span class="lparen">(</span><span class="id identifier rubyid_parent_node">parent_node</span><span class="rparen">)</span>
   <span class="id identifier rubyid_parent_node">parent_node</span><span class="period">.</span><span class="id identifier rubyid_add_child">add_child</span><span class="lparen">(</span><span class="kw">self</span><span class="rparen">)</span>
@@ -9354,6 +9354,7 @@ get_parent(VALUE self)
       <pre class="lines">
 
 
+797
 798
 799
 800
@@ -9402,11 +9403,10 @@ get_parent(VALUE self)
 843
 844
 845
-846
-847</pre>
+846</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 798</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 797</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_string_or_io">string_or_io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="comment">##
@@ -9450,7 +9450,7 @@ get_parent(VALUE self)
   <span class="id identifier rubyid_node_set">node_set</span> <span class="op">=</span> <span class="id identifier rubyid_in_context">in_context</span><span class="lparen">(</span><span class="id identifier rubyid_contents">contents</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_to_i">to_i</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="lparen">(</span><span class="id identifier rubyid_node_set">node_set</span><span class="period">.</span><span class="id identifier rubyid_empty?">empty?</span> <span class="op">&amp;&amp;</span> <span class="lparen">(</span><span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_errors">errors</span><span class="period">.</span><span class="id identifier rubyid_length">length</span> <span class="op">&gt;</span> <span class="id identifier rubyid_error_count">error_count</span><span class="rparen">)</span><span class="rparen">)</span>
     <span class="kw">if</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_recover?">recover?</span>
-      <span class="id identifier rubyid_fragment">fragment</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML/DocumentFragment.html" title="Nokogiri::HTML::DocumentFragment (class)">DocumentFragment</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="../HTML/DocumentFragment.html#parse-class_method" title="Nokogiri::HTML::DocumentFragment.parse (method)">parse</a></span></span> <span class="id identifier rubyid_contents">contents</span>
+      <span class="id identifier rubyid_fragment">fragment</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML4/DocumentFragment.html" title="Nokogiri::HTML4::DocumentFragment (class)">DocumentFragment</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="../HTML4/DocumentFragment.html#parse-class_method" title="Nokogiri::HTML4::DocumentFragment.parse (method)">parse</a></span></span> <span class="id identifier rubyid_contents">contents</span>
       <span class="id identifier rubyid_node_set">node_set</span> <span class="op">=</span> <span class="id identifier rubyid_fragment">fragment</span><span class="period">.</span><span class="id identifier rubyid_children">children</span>
     <span class="kw">else</span>
       <span class="id identifier rubyid_raise">raise</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_errors">errors</span><span class="lbracket">[</span><span class="id identifier rubyid_error_count">error_count</span><span class="rbracket">]</span>
@@ -9633,6 +9633,7 @@ pointer_id(VALUE self)
       <pre class="lines">
 
 
+145
 146
 147
 148
@@ -9640,11 +9641,10 @@ pointer_id(VALUE self)
 150
 151
 152
-153
-154</pre>
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 145</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_prepend_child">prepend_child</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="id identifier rubyid_first">first</span> <span class="op">=</span> <span class="id identifier rubyid_children">children</span><span class="period">.</span><span class="id identifier rubyid_first">first</span>
@@ -9870,12 +9870,12 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+896
 897
-898
-899</pre>
+898</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 897</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 896</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_processing_instruction?">processing_instruction?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#PI_NODE-constant" title="Nokogiri::XML::Node::PI_NODE (constant)">PI_NODE</a></span></span>
@@ -9926,13 +9926,13 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+920
 921
 922
-923
-924</pre>
+923</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 921</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 920</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_read_only?">read_only?</span>
   <span class="comment"># According to gdome2, these are read-only node types
@@ -9975,14 +9975,14 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+430
 431
 432
 433
-434
-435</pre>
+434</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 431</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 430</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_remove_attribute">remove_attribute</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="rparen">)</span>
   <span class="id identifier rubyid_attr">attr</span> <span class="op">=</span> <span class="id identifier rubyid_attributes">attributes</span><span class="lbracket">[</span><span class="id identifier rubyid_name">name</span><span class="rbracket">]</span><span class="period">.</span><span class="id identifier rubyid_remove">remove</span> <span class="kw">if</span> <span class="id identifier rubyid_key?">key?</span> <span class="id identifier rubyid_name">name</span>
@@ -10092,12 +10092,12 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+573
 574
-575
-576</pre>
+575</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 574</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 573</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_remove_class">remove_class</span><span class="lparen">(</span><span class="id identifier rubyid_names">names</span> <span class="op">=</span> <span class="kw">nil</span><span class="rparen">)</span>
   <span class="id identifier rubyid_kwattr_remove">kwattr_remove</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">class</span><span class="tstring_end">"</span></span><span class="comma">,</span> <span class="id identifier rubyid_names">names</span><span class="rparen">)</span>
@@ -10139,6 +10139,7 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+265
 266
 267
 268
@@ -10161,11 +10162,10 @@ previous_sibling(VALUE self)
 285
 286
 287
-288
-289</pre>
+288</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 266</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 265</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_replace">replace</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_raise">raise</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Cannot replace a node with no parent</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="kw">unless</span> <span class="id identifier rubyid_parent">parent</span>
@@ -10298,6 +10298,7 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+1021
 1022
 1023
 1024
@@ -10311,11 +10312,10 @@ previous_sibling(VALUE self)
 1032
 1033
 1034
-1035
-1036</pre>
+1035</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1022</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1021</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_serialize">serialize</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_first">first</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const">Hash</span><span class="rparen">)</span> <span class="op">?</span> <span class="id identifier rubyid_args">args</span><span class="period">.</span><span class="id identifier rubyid_shift">shift</span> <span class="op">:</span> <span class="lbrace">{</span>
@@ -10369,13 +10369,13 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+297
 298
 299
-300
-301</pre>
+300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 298</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 297</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_swap">swap</span><span class="lparen">(</span><span class="id identifier rubyid_node_or_tags">node_or_tags</span><span class="rparen">)</span>
   <span class="id identifier rubyid_replace">replace</span> <span class="id identifier rubyid_node_or_tags">node_or_tags</span>
@@ -10427,12 +10427,12 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+901
 902
-903
-904</pre>
+903</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 902</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 901</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_text?">text?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#TEXT_NODE-constant" title="Nokogiri::XML::Node::TEXT_NODE (constant)">TEXT_NODE</a></span></span>
@@ -10475,12 +10475,12 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+1044
 1045
-1046
-1047</pre>
+1046</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1045</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1044</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_html">to_html</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_to_format">to_format</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_HTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_HTML (constant)">DEFAULT_HTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -10518,12 +10518,12 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+935
 936
-937
-938</pre>
+937</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 936</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 935</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_s">to_s</span>
   <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_xml?">xml?</span> <span class="op">?</span> <span class="id identifier rubyid_to_xml">to_xml</span> <span class="op">:</span> <span class="id identifier rubyid_to_html">to_html</span>
@@ -10566,12 +10566,12 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+1065
 1066
-1067
-1068</pre>
+1067</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1066</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1065</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_xhtml">to_xhtml</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_to_format">to_format</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XHTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XHTML (constant)">DEFAULT_XHTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -10614,13 +10614,13 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+1054
 1055
 1056
-1057
-1058</pre>
+1057</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1055</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1054</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_xml">to_xml</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:save_with</span><span class="rbracket">]</span> <span class="op">||=</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span>
@@ -10659,13 +10659,13 @@ previous_sibling(VALUE self)
       <pre class="lines">
 
 
+977
 978
 979
-980
-981</pre>
+980</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 978</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 977</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_traverse">traverse</span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="id identifier rubyid_children">children</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_j">j</span><span class="op">|</span> <span class="id identifier rubyid_j">j</span><span class="period">.</span><span class="id identifier rubyid_traverse">traverse</span><span class="lparen">(</span><span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span> <span class="rbrace">}</span>
@@ -10778,12 +10778,12 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+410
 411
-412
-413</pre>
+412</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 411</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 410</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_value?">value?</span><span class="lparen">(</span><span class="id identifier rubyid_value">value</span><span class="rparen">)</span>
   <span class="id identifier rubyid_values">values</span><span class="period">.</span><span class="id identifier rubyid_include?">include?</span> <span class="id identifier rubyid_value">value</span>
@@ -10821,12 +10821,12 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+404
 405
-406
-407</pre>
+406</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 405</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 404</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_values">values</span>
   <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_map">map</span><span class="lparen">(</span><span class="op">&amp;</span><span class="symbol">:value</span><span class="rparen">)</span>
@@ -10866,15 +10866,15 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+159
 160
 161
 162
 163
-164
-165</pre>
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 160</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 159</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_wrap">wrap</span><span class="lparen">(</span><span class="id identifier rubyid_html">html</span><span class="rparen">)</span>
   <span class="id identifier rubyid_new_parent">new_parent</span> <span class="op">=</span> <span class="id identifier rubyid_document">document</span><span class="period">.</span><span class="id identifier rubyid_parse">parse</span><span class="lparen">(</span><span class="id identifier rubyid_html">html</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_first">first</span>
@@ -10917,12 +10917,12 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+1113
 1114
-1115
-1116</pre>
+1115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1114</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1113</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_html_to">write_html_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_write_format_to">write_format_to</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_HTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_HTML (constant)">DEFAULT_HTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -10997,6 +10997,7 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+1086
 1087
 1088
 1089
@@ -11017,11 +11018,10 @@ unlink_node(VALUE self)
 1104
 1105
 1106
-1107
-1108</pre>
+1107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1087</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1086</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_to">write_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_first">first</span><span class="period">.</span><span class="id identifier rubyid_is_a?">is_a?</span><span class="lparen">(</span><span class="const">Hash</span><span class="rparen">)</span> <span class="op">?</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_shift">shift</span> <span class="op">:</span> <span class="lbrace">{</span><span class="rbrace">}</span>
@@ -11080,12 +11080,12 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+1121
 1122
-1123
-1124</pre>
+1123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1122</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1121</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_xhtml_to">write_xhtml_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_write_format_to">write_format_to</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XHTML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XHTML (constant)">DEFAULT_XHTML</a></span></span><span class="comma">,</span> <span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span>
@@ -11128,13 +11128,13 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+1131
 1132
 1133
-1134
-1135</pre>
+1134</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1132</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 1131</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_write_xml_to">write_xml_to</span><span class="lparen">(</span><span class="id identifier rubyid_io">io</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span><span class="lbracket">[</span><span class="symbol">:save_with</span><span class="rbracket">]</span> <span class="op">||=</span> <span class="const"><span class="object_link"><a href="Node/SaveOptions.html" title="Nokogiri::XML::Node::SaveOptions (class)">SaveOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="Node/SaveOptions.html#DEFAULT_XML-constant" title="Nokogiri::XML::Node::SaveOptions::DEFAULT_XML (constant)">DEFAULT_XML</a></span></span>
@@ -11186,12 +11186,12 @@ unlink_node(VALUE self)
       <pre class="lines">
 
 
+881
 882
-883
-884</pre>
+883</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 882</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/node.rb', line 881</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_xml?">xml?</span>
   <span class="id identifier rubyid_type">type</span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#DOCUMENT_NODE-constant" title="Nokogiri::XML::Node::DOCUMENT_NODE (constant)">DOCUMENT_NODE</a></span></span>
@@ -11260,9 +11260,9 @@ unlink_node(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:36 2021 by
+  Generated on Fri Jul  9 15:35:48 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

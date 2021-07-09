@@ -15,8 +15,8 @@
       
         <link rel="canonical" href="https://nokogiri.org/LICENSE-DEPENDENCIES.html">
       
-      <link rel="shortcut icon" href="images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <link rel="icon" href="images/nokogiri-serif-black.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -41,7 +41,7 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CMenlo&display=fallback">
-        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Ubuntu";--md-code-font-family:"Menlo"}</style>
       
     
     
@@ -52,10 +52,19 @@
     
     
       
-        
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","nokogiri.org"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -67,8 +76,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
-      
   
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -85,26 +95,24 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://nokogiri.org" title="Nokogiri" class="md-header-nav__button md-logo" aria-label="Nokogiri">
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Nokogiri" class="md-header__button md-logo" aria-label="Nokogiri" data-md-component="logo">
       
   <img src="images/nokogiri-serif-white.svg" alt="logo">
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      <div class="md-header-nav__ellipsis">
-        <div class="md-header-nav__topic">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
           <span class="md-ellipsis">
             Nokogiri
           </span>
         </div>
-        <div class="md-header-nav__topic">
+        <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
               Dependencies
@@ -114,8 +122,10 @@
       </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
@@ -124,11 +134,11 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -145,9 +155,9 @@
 </div>
     
     
-      <div class="md-header-nav__source">
+      <div class="md-header__source">
         
-<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source">
+<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -266,12 +276,10 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-
-
 
   
 
@@ -280,7 +288,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://nokogiri.org" title="Nokogiri" class="md-nav__button md-logo" aria-label="Nokogiri">
+    <a href="index.html" title="Nokogiri" class="md-nav__button md-logo" aria-label="Nokogiri" data-md-component="logo">
       
   <img src="images/nokogiri-serif-white.svg" alt="logo">
 
@@ -290,7 +298,7 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source">
+<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -307,333 +315,339 @@
       
       
 
-
-
-  <li class="md-nav__item">
-    <a href="index.html" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-
-  <li class="md-nav__item">
-    <a href="rdoc/index.html" class="md-nav__link">
-      API
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
       
       
-
-
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+    <li class="md-nav__item">
+      <a href="rdoc/index.html" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
     
+      
+      
+      
+
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
-    
-    <label class="md-nav__link" for="nav-3">
-      Support
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Support" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
         Support
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Support" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/installing_nokogiri.html" class="md-nav__link">
+        Installing Nokogiri
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tidelift-landing.html" class="md-nav__link">
+        Nokogiri for Enterprise
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/getting_help.html" class="md-nav__link">
+        Getting Help
+      </a>
+    </li>
+  
 
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/installing_nokogiri.html" class="md-nav__link">
-      Installing Nokogiri
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/security.html" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/more_resources.html" class="md-nav__link">
+        More Resources
+      </a>
+    </li>
+  
+
           
-
-
-
-  <li class="md-nav__item">
-    <a href="tidelift-landing.html" class="md-nav__link">
-      Nokogiri for Enterprise
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/getting_help.html" class="md-nav__link">
-      Getting Help
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/security.html" class="md-nav__link">
-      Security
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/more_resources.html" class="md-nav__link">
-      More Resources
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
-
-
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
     
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
-    
-    <label class="md-nav__link" for="nav-4">
-      Tutorials
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
         Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/toc.html" class="md-nav__link">
-      Table of Contents
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/parsing_an_html_xml_document.html" class="md-nav__link">
-      Parsing an HTML/XML document
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/searching_a_xml_html_document.html" class="md-nav__link">
-      Searching a XML/HTML document
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/modifying_an_html_xml_document.html" class="md-nav__link">
-      Modifying an HTML/XML document
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/ensuring_well_formed_markup.html" class="md-nav__link">
-      Ensuring well-formed markup
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-
-  <li class="md-nav__item">
-    <a href="CHANGELOG.html" class="md-nav__link">
-      Changelog
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  
-
-
-  
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
-    
-    <label class="md-nav__link" for="nav-6">
-      About
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="About" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/toc.html" class="md-nav__link">
+        Table of Contents
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/parsing_an_html_xml_document.html" class="md-nav__link">
+        Parsing an HTML/XML document
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/parsing_an_html5_document.html" class="md-nav__link">
+        Parsing an HTML5 document
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/searching_a_xml_html_document.html" class="md-nav__link">
+        Searching a XML/HTML document
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/modifying_an_html_xml_document.html" class="md-nav__link">
+        Modifying an HTML/XML document
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/ensuring_well_formed_markup.html" class="md-nav__link">
+        Ensuring well-formed markup
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CHANGELOG.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
         About
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="CONTRIBUTING.html" class="md-nav__link">
-      Contributing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="CODE_OF_CONDUCT.html" class="md-nav__link">
-      Code of Conduct
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="SECURITY.html" class="md-nav__link">
-      Security
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="LICENSE.html" class="md-nav__link">
-      License
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Dependencies
         <span class="md-nav__icon md-icon"></span>
       </label>
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CONTRIBUTING.html" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CODE_OF_CONDUCT.html" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SECURITY.html" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LICENSE.html" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
-    <a href="LICENSE-DEPENDENCIES.html" class="md-nav__link md-nav__link--active">
-      Dependencies
-    </a>
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dependencies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="LICENSE-DEPENDENCIES.html" class="md-nav__link md-nav__link--active">
+        Dependencies
+      </a>
+      
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -643,40 +657,53 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#platform-releases" class="md-nav__link">
+    Platform Releases
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#default-platform-release-ruby" class="md-nav__link">
     Default platform release ("ruby")
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#native-linuxr-platform-releases-x86_64-linux-and-arm64-linux" class="md-nav__link">
     Native LinuxⓇ platform releases ("x86_64-linux" and "arm64-linux")
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#native-darwin-macosr-platform-releases-x86_64-darwin-and-arm64-darwin" class="md-nav__link">
     Native Darwin (macOSⓇ) platform releases ("x86_64-darwin" and "arm64-darwin")
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#native-windowsr-platform-releases-x86-mingw32-and-x64-mingw32" class="md-nav__link">
     Native WindowsⓇ platform releases ("x86-mingw32" and "x64-mingw32")
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#javar-jruby-platform-release-java" class="md-nav__link">
     JavaⓇ (JRuby) platform release ("java")
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -687,6 +714,13 @@
   
     <nav class="md-nav" aria-label="Appendix: Dependencies' License Texts">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#libgumbo-and-nokogumbo" class="md-nav__link">
+    libgumbo and nokogumbo
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#libxml2" class="md-nav__link">
@@ -773,26 +807,27 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ROADMAP.html" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
           
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="ROADMAP.html" class="md-nav__link">
-      Roadmap
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -803,7 +838,7 @@
             
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -811,15 +846,19 @@
                 <h1 id="vendored-dependency-licenses">Vendored Dependency Licenses<a class="headerlink" href="#vendored-dependency-licenses" title="Permanent link">&para;</a></h1>
 <p>Nokogiri ships with some third party dependencies, which are listed here along with their licenses.</p>
 <p>Note that this document is broken into multiple sections, each of which describes the dependencies of a different "platform release" of Nokogiri.</p>
+<!-- regenerate TOC with `markdown-toc -i` -->
+
 <!-- toc -->
 
 <ul>
+<li><a href="#platform-releases">Platform Releases</a></li>
 <li><a href="#default-platform-release-ruby">Default platform release ("ruby")</a></li>
 <li><a href="#native-linux%E2%93%A1-platform-releases-x86_64-linux-and-arm64-linux">Native LinuxⓇ platform releases ("x86_64-linux" and "arm64-linux")</a></li>
 <li><a href="#native-darwin-macos%E2%93%A1-platform-releases-x86_64-darwin-and-arm64-darwin">Native Darwin (macOSⓇ) platform releases ("x86_64-darwin" and "arm64-darwin")</a></li>
 <li><a href="#native-windows%E2%93%A1-platform-releases-x86-mingw32-and-x64-mingw32">Native WindowsⓇ platform releases ("x86-mingw32" and "x64-mingw32")</a></li>
 <li><a href="#java%E2%93%A1-jruby-platform-release-java">JavaⓇ (JRuby) platform release ("java")</a></li>
-<li><a href="#appendix-dependencies-license-texts">Appendix: Dependencies' License Texts</a><ul>
+<li><a href="#appendix-dependencies-license-texts">Appendix: Dependencies' License Texts</a></li>
+<li><a href="#libgumbo-and-nokogumbo">libgumbo and nokogumbo</a></li>
 <li><a href="#libxml2">libxml2</a></li>
 <li><a href="#libxslt">libxslt</a></li>
 <li><a href="#zlib">zlib</a></li>
@@ -832,47 +871,50 @@
 <li><a href="#xerces">xerces</a></li>
 <li><a href="#xml-apis">xml-apis</a></li>
 </ul>
-</li>
-</ul>
 <!-- tocstop -->
 
-<p>It's encouraged for anyone consuming this file via license-tracking software to understand which gem file you're downloading and using, so as not to misinterpret the contents of this file and the licenses of the software being distributed.</p>
+<p>Anyone consuming this file via license-tracking software should endeavor to understand which gem file you're downloading and using, so as not to misinterpret the contents of this file and the licenses of the software being distributed.</p>
 <p>You can double-check the dependencies in your gem file by examining the output of <code>nokogiri -v</code> after installation, which will emit the complete set of libraries in use (for versions <code>&gt;= 1.11.0.rc4</code>).</p>
 <p>In particular, I'm sure somebody's lawyer, somewhere, is going to freak out that the LGPL appears in this file; and so I'd like to take special note that the dependency covered by LGPL, <code>libiconv</code>, is only being redistributed in the native Windows and native Darwin platform releases. It's not present in default, JavaⓇ, or native LinuxⓇ releases.</p>
-<h2 id="default-platform-release-ruby">Default platform release ("ruby")<a class="headerlink" href="#default-platform-release-ruby" title="Permanent link">&para;</a></h2>
+<h2 id="platform-releases">Platform Releases<a class="headerlink" href="#platform-releases" title="Permanent link">&para;</a></h2>
+<h3 id="default-platform-release-ruby">Default platform release ("ruby")<a class="headerlink" href="#default-platform-release-ruby" title="Permanent link">&para;</a></h3>
 <p>The default platform release distributes the following dependencies in source form:</p>
 <ul>
 <li><a href="#libxml2">libxml2</a></li>
 <li><a href="#libxslt">libxslt</a></li>
+<li><a href="#libgumbo-and-nokogumbo">libgumbo and nokogumbo</a></li>
 </ul>
 <p>This distribution can be identified by inspecting the included Gem::Specification, which will have the value "ruby" for its "platform" attribute.</p>
-<h2 id="native-linuxr-platform-releases-x86_64-linux-and-arm64-linux">Native LinuxⓇ platform releases ("x86_64-linux" and "arm64-linux")<a class="headerlink" href="#native-linuxr-platform-releases-x86_64-linux-and-arm64-linux" title="Permanent link">&para;</a></h2>
+<h3 id="native-linuxr-platform-releases-x86_64-linux-and-arm64-linux">Native LinuxⓇ platform releases ("x86_64-linux" and "arm64-linux")<a class="headerlink" href="#native-linuxr-platform-releases-x86_64-linux-and-arm64-linux" title="Permanent link">&para;</a></h3>
 <p>The native LinuxⓇ platform release distributes the following dependencies in source form:</p>
 <ul>
 <li><a href="#libxml2">libxml2</a></li>
 <li><a href="#libxslt">libxslt</a></li>
+<li><a href="#libgumbo-and-nokogumbo">libgumbo and nokogumbo</a></li>
 <li><a href="#zlib">zlib</a></li>
 </ul>
 <p>This distribution can be identified by inspecting the included Gem::Specification, which will have a value similar to "x86_64-linux" or "x86-linux" for its "platform.cpu" attribute.</p>
-<h2 id="native-darwin-macosr-platform-releases-x86_64-darwin-and-arm64-darwin">Native Darwin (macOSⓇ) platform releases ("x86_64-darwin" and "arm64-darwin")<a class="headerlink" href="#native-darwin-macosr-platform-releases-x86_64-darwin-and-arm64-darwin" title="Permanent link">&para;</a></h2>
+<h3 id="native-darwin-macosr-platform-releases-x86_64-darwin-and-arm64-darwin">Native Darwin (macOSⓇ) platform releases ("x86_64-darwin" and "arm64-darwin")<a class="headerlink" href="#native-darwin-macosr-platform-releases-x86_64-darwin-and-arm64-darwin" title="Permanent link">&para;</a></h3>
 <p>The native Darwin platform release distributes the following dependencies in source form:</p>
 <ul>
 <li><a href="#libxml2">libxml2</a></li>
 <li><a href="#libxslt">libxslt</a></li>
+<li><a href="#libgumbo-and-nokogumbo">libgumbo and nokogumbo</a></li>
 <li><a href="#zlib">zlib</a></li>
 <li><a href="#libiconv">libiconv</a></li>
 </ul>
 <p>This distribution can be identified by inspecting the included Gem::Specification, which will have a value similar to "x86_64-darwin" or "arm64-darwin" for its "platform.cpu" attribute. Darwin is also known more familiarly as "OSX" or "macOSⓇ" and is the operating system for many AppleⓇ computers.</p>
-<h2 id="native-windowsr-platform-releases-x86-mingw32-and-x64-mingw32">Native WindowsⓇ platform releases ("x86-mingw32" and "x64-mingw32")<a class="headerlink" href="#native-windowsr-platform-releases-x86-mingw32-and-x64-mingw32" title="Permanent link">&para;</a></h2>
+<h3 id="native-windowsr-platform-releases-x86-mingw32-and-x64-mingw32">Native WindowsⓇ platform releases ("x86-mingw32" and "x64-mingw32")<a class="headerlink" href="#native-windowsr-platform-releases-x86-mingw32-and-x64-mingw32" title="Permanent link">&para;</a></h3>
 <p>The native WindowsⓇ platform release distributes the following dependencies in source form:</p>
 <ul>
 <li><a href="#libxml2">libxml2</a></li>
 <li><a href="#libxslt">libxslt</a></li>
+<li><a href="#libgumbo-and-nokogumbo">libgumbo and nokogumbo</a></li>
 <li><a href="#zlib">zlib</a></li>
 <li><a href="#libiconv">libiconv</a></li>
 </ul>
 <p>This distribution can be identified by inspecting the included Gem::Specification, which will have a value similar to "x64-mingw32" or "x86-mingw32" for its "platform.cpu" attribute.</p>
-<h2 id="javar-jruby-platform-release-java">JavaⓇ (JRuby) platform release ("java")<a class="headerlink" href="#javar-jruby-platform-release-java" title="Permanent link">&para;</a></h2>
+<h3 id="javar-jruby-platform-release-java">JavaⓇ (JRuby) platform release ("java")<a class="headerlink" href="#javar-jruby-platform-release-java" title="Permanent link">&para;</a></h3>
 <p>The Java platform release distributes the following dependencies as compiled jar files:</p>
 <ul>
 <li><a href="#isorelax">isorelax</a></li>
@@ -887,6 +929,213 @@
 <h2 id="appendix-dependencies-license-texts">Appendix: Dependencies' License Texts<a class="headerlink" href="#appendix-dependencies-license-texts" title="Permanent link">&para;</a></h2>
 <p>This section contains a subsection for each potentially-distributed dependency, which includes the name of the license and the license text.</p>
 <p>Please see previous sections to understand which of these potential dependencies is actually distributed in the gem file you're downloading and using.</p>
+<h3 id="libgumbo-and-nokogumbo">libgumbo and nokogumbo<a class="headerlink" href="#libgumbo-and-nokogumbo" title="Permanent link">&para;</a></h3>
+<p>Apache 2.0</p>
+<p><a href="https://github.com/rubys/nokogumbo/blob/f6a7412/LICENSE.txt">https://github.com/rubys/nokogumbo/blob/f6a7412/LICENSE.txt</a></p>
+<div class="codehilite"><pre><span></span><code>                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      &quot;License&quot; shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      &quot;Licensor&quot; shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      &quot;Legal Entity&quot; shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      &quot;control&quot; means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      &quot;You&quot; (or &quot;Your&quot;) shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      &quot;Source&quot; form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      &quot;Object&quot; form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      &quot;Work&quot; shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      &quot;Derivative Works&quot; shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      &quot;Contribution&quot; shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, &quot;submitted&quot;
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as &quot;Not a Contribution.&quot;
+
+      &quot;Contributor&quot; shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a &quot;NOTICE&quot; text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an &quot;AS IS&quot; BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets &quot;[]&quot;
+      replaced with your own identifying information. (Don&#39;t include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same &quot;printed page&quot; as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+</code></pre></div>
+
+
 <h3 id="libxml2">libxml2<a class="headerlink" href="#libxml2" title="Permanent link">&para;</a></h3>
 <p>MIT</p>
 <p><a href="http://xmlsoft.org/">http://xmlsoft.org/</a></p>
@@ -2455,6 +2704,7 @@ descriptions.
             </article>
           </div>
         </div>
+        
       </main>
       
         
@@ -2518,19 +2768,13 @@ descriptions.
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
-      <script src="assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: ".",
-          features: ['navigation.tabs', 'toc.integrate'],
-          search: Object.assign({
-            worker: "assets/javascripts/worker/search.8c7e0a7e.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="assets/javascripts/bundle.82b56eb2.min.js"></script>
       
     
   </body>

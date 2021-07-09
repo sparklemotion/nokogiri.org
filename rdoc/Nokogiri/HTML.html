@@ -88,13 +88,30 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/nokogiri/html.rb<span class="defines">,<br>
-  lib/nokogiri/html/builder.rb,<br> lib/nokogiri/html/document.rb,<br> lib/nokogiri/html/sax/parser.rb,<br> lib/nokogiri/html/entity_lookup.rb,<br> lib/nokogiri/html/sax/push_parser.rb,<br> lib/nokogiri/html/document_fragment.rb,<br> lib/nokogiri/html/sax/parser_context.rb,<br> lib/nokogiri/html/element_description.rb,<br> lib/nokogiri/html/element_description_defaults.rb,<br> ext/nokogiri/nokogiri.c</span>
-</dd>
+    <dd>lib/nokogiri/html.rb</dd>
   </dl>
   
 </div>
 
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class="inline">
+<p>This module/namespace is an alias for <span class="object_link"><a href="HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span> as of v1.12.0. Before v1.12.0, <span class="object_link"><a href="HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span> did not exist, and this was the module/namespace for all HTML-related classes.</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 <h2>Defined Under Namespace</h2>
 <p class="children">
   
@@ -103,37 +120,11 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class="object_link"><a href="HTML/Builder.html" title="Nokogiri::HTML::Builder (class)">Builder</a></span>, <span class="object_link"><a href="HTML/Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span>, <span class="object_link"><a href="HTML/DocumentFragment.html" title="Nokogiri::HTML::DocumentFragment (class)">DocumentFragment</a></span>, <span class="object_link"><a href="HTML/ElementDescription.html" title="Nokogiri::HTML::ElementDescription (class)">ElementDescription</a></span>, <span class="object_link"><a href="HTML/EntityDescription.html" title="Nokogiri::HTML::EntityDescription (class)">EntityDescription</a></span>, <span class="object_link"><a href="HTML/EntityLookup.html" title="Nokogiri::HTML::EntityLookup (class)">EntityLookup</a></span>
+      <strong class="classes">Classes:</strong> <span class="object_link"><a href="HTML/Builder.html" title="Nokogiri::HTML::Builder (class)">Builder</a></span>, <span class="object_link"><a href="HTML/Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span>, <span class="object_link"><a href="HTML/DocumentFragment.html" title="Nokogiri::HTML::DocumentFragment (class)">DocumentFragment</a></span>
     
   
 </p>
 
-  
-    <h2>
-      Constant Summary
-      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
-    </h2>
-
-    <dl class="constants">
-      
-        <dt id="NamedCharacters-constant" class="">NamedCharacters =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Instance of Nokogiri::HTML::EntityLookup</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="const"><span class="object_link"><a href="HTML/EntityLookup.html" title="Nokogiri::HTML::EntityLookup (class)">EntityLookup</a></span></span><span class="period">.</span><span class="id identifier rubyid_new">new</span></pre></dd>
-      
-    </dl>
-  
 
 
 
@@ -141,165 +132,13 @@
 
 
 
-  
-    <h2>
-      Class Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#fragment-class_method" title="fragment (class method)">.<strong>fragment</strong>(string, encoding = nil)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Parse a fragment from <code>string</code> in to a NodeSet.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(thing, url = nil, encoding = nil, options = XML::ParseOptions::DEFAULT_HTML, &amp;block)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Parse HTML.</p>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
-
-
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="fragment-class_method">
-  
-    .<strong>fragment</strong>(string, encoding = nil)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Parse a fragment from <code>string</code> in to a NodeSet.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-30
-31
-32</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html.rb', line 30</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_fragment">fragment</span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span>
-  <span class="const"><span class="object_link"><a href="" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="HTML/DocumentFragment.html" title="Nokogiri::HTML::DocumentFragment (class)">DocumentFragment</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="HTML/DocumentFragment.html#parse-class_method" title="Nokogiri::HTML::DocumentFragment.parse (method)">parse</a></span></span> <span class="id identifier rubyid_string">string</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="parse-class_method">
-  
-    .<strong>parse</strong>(thing, url = nil, encoding = nil, options = XML::ParseOptions::DEFAULT_HTML, &amp;block)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Parse HTML.  Convenience method for Nokogiri::HTML::Document.parse</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-24
-25
-26</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html.rb', line 24</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_parse">parse</span> <span class="id identifier rubyid_thing">thing</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="XML/ParseOptions.html#DEFAULT_HTML-constant" title="Nokogiri::XML::ParseOptions::DEFAULT_HTML (constant)">DEFAULT_HTML</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span>
-  <span class="const"><span class="object_link"><a href="HTML/Document.html" title="Nokogiri::HTML::Document (class)">Document</a></span></span><span class="period">.</span><span class="id identifier rubyid_parse"><span class="object_link"><a href="HTML/Document.html#parse-class_method" title="Nokogiri::HTML::Document.parse (method)">parse</a></span></span><span class="lparen">(</span><span class="id identifier rubyid_thing">thing</span><span class="comma">,</span> <span class="id identifier rubyid_url">url</span><span class="comma">,</span> <span class="id identifier rubyid_encoding">encoding</span><span class="comma">,</span> <span class="id identifier rubyid_options">options</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:34 2021 by
+  Generated on Fri Jul  9 15:35:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>

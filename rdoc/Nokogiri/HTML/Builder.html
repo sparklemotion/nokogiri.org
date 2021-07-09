@@ -106,7 +106,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/nokogiri/html/builder.rb</dd>
+    <dd>lib/nokogiri/html.rb</dd>
   </dl>
   
 </div>
@@ -115,25 +115,13 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Nokogiri HTML builder is used for building HTML documents.  It is very similar to the Nokogiri::XML::Builder.  In fact, you should go read the documentation for Nokogiri::XML::Builder before reading this documentation.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class="inline">
+<p>This class is an alias for <span class="object_link"><a href="../HTML4/Builder.html" title="Nokogiri::HTML4::Builder (class)">Nokogiri::HTML4::Builder</a></span> as of v1.12.0.</p>
+</div>
+  </div>
 
-<h2 id="label-Synopsis-3A">Synopsis:</h2>
-
-<p>Create an HTML document with a body that has an onload attribute, and a span tag with a class of “bold” that has content of “Hello world”.</p>
-
-<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_builder">builder</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../HTML.html" title="Nokogiri::HTML (module)">HTML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="../XML/Builder.html#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_doc">doc</span><span class="op">|</span>
-  <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_html">html</span> <span class="lbrace">{</span>
-    <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_body">body</span><span class="lparen">(</span><span class="symbol">:onload</span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">some_func();</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="lbrace">{</span>
-      <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_span">span</span><span class="period">.</span><span class="id identifier rubyid_bold">bold</span> <span class="lbrace">{</span>
-        <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_text">text</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">Hello world</span><span class="tstring_end">"</span></span>
-      <span class="rbrace">}</span>
-    <span class="rbrace">}</span>
-  <span class="rbrace">}</span>
-<span class="kw">end</span>
-<span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_builder">builder</span><span class="period">.</span><span class="id identifier rubyid_to_html">to_html</span>
-</code></pre>
-
-<p>The HTML builder inherits from the XML builder, so make sure to read the Nokogiri::XML::Builder documentation.</p>
 
 
   </div>
@@ -147,41 +135,6 @@
 
 
 
-
-  
-    <h2>
-      Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#to_html-instance_method" title="#to_html (instance method)">#<strong>to_html</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Convert the builder to HTML.</p>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
 
 
   
@@ -203,61 +156,12 @@
 </div>
 
 
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="to_html-instance_method">
-  
-    #<strong>to_html</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Convert the builder to HTML</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-31
-32
-33</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html/builder.rb', line 31</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_to_html">to_html</span>
-  <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_to_html">to_html</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  2 20:37:37 2021 by
+  Generated on Fri Jul  9 15:35:47 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-3.0.1).
 </div>
 
     </div>
