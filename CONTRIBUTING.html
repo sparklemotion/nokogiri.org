@@ -1070,12 +1070,12 @@ bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 <h2 id="making-a-release">Making a release<a class="headerlink" href="#making-a-release" title="Permanent link">&para;</a></h2>
 <p>A quick checklist:</p>
 <ul>
-<li>[x] make sure CI is green!</li>
-<li>[x] update <code>CHANGELOG.md</code> and <code>lib/nokogiri/version/constant.rb</code></li>
-<li>[x] create a git tag</li>
-<li>[x] run <code>scripts/build-gems</code> and make sure it completes and all the tests pass</li>
-<li>[x] <code>for g in gems/*.gem ; do gem push $g ; done</code></li>
-<li>[x] create a release at <a href="https://github.com/sparklemotion/nokogiri/releases">https://github.com/sparklemotion/nokogiri/releases</a> and provide sha2 checksums</li>
+<li>[ ] make sure CI is green!</li>
+<li>[ ] update <code>CHANGELOG.md</code> and <code>lib/nokogiri/version/constant.rb</code></li>
+<li>[ ] create a git tag</li>
+<li>[ ] run <code>scripts/build-gems</code> and make sure it completes and all the tests pass</li>
+<li>[ ] <code>for g in gems/*.gem ; do gem push $g ; done</code></li>
+<li>[ ] create a release at <a href="https://github.com/sparklemotion/nokogiri/releases">https://github.com/sparklemotion/nokogiri/releases</a> and provide sha2 checksums</li>
 <li>[ ] if security-related, email <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#117;&#98;&#121;&#45;&#115;&#101;&#99;&#117;&#114;&#105;&#116;&#121;&#45;&#97;&#110;&#110;&#64;&#103;&#111;&#111;&#103;&#108;&#101;&#103;&#114;&#111;&#117;&#112;&#115;&#46;&#99;&#111;&#109;">&#114;&#117;&#98;&#121;&#45;&#115;&#101;&#99;&#117;&#114;&#105;&#116;&#121;&#45;&#97;&#110;&#110;&#64;&#103;&#111;&#111;&#103;&#108;&#101;&#103;&#114;&#111;&#117;&#112;&#115;&#46;&#99;&#111;&#109;</a> and <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#117;&#98;&#121;&#45;&#116;&#97;&#108;&#107;&#64;&#114;&#117;&#98;&#121;&#45;&#108;&#97;&#110;&#103;&#46;&#111;&#114;&#103;">&#114;&#117;&#98;&#121;&#45;&#116;&#97;&#108;&#107;&#64;&#114;&#117;&#98;&#121;&#45;&#108;&#97;&#110;&#103;&#46;&#111;&#114;&#103;</a></li>
 <li>[ ] update nokogiri.org</li>
 </ul>
