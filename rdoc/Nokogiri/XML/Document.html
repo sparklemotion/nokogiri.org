@@ -2727,7 +2727,7 @@ set_encoding(VALUE self, VALUE encoding)
   Data_Get_Struct(self, xmlDoc, doc);
 
   if (doc-&gt;encoding) {
-    free((char *)(uintptr_t) doc-&gt;encoding);  /* avoid gcc cast warning */
+    xmlFree(DISCARD_CONST_QUAL_XMLCHAR(doc-&gt;encoding));
   }
 
   doc-&gt;encoding = xmlStrdup((xmlChar *)StringValueCStr(encoding));
@@ -3443,7 +3443,7 @@ version(VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Mon Aug  2 13:48:26 2021 by
+  Generated on Tue Aug 10 15:34:53 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.1).
 </div>
