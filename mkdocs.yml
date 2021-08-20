@@ -37,6 +37,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/sparklemotion/nokogiri.org
       name: sparklemotion/nokogiri.org
+  analytics:
+    provider: google
+    property: UA-1260604-8
 
 plugins:
   - search:
@@ -59,10 +62,6 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.highlight
   - pymdownx.superfences
-
-google_analytics:
-  - "UA-1260604-8"
-  - "nokogiri.org"
 
 nav:
   - Home: index.md
