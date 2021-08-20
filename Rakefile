@@ -10,12 +10,24 @@ require_relative "tasks/tutorial_tasks"
 require_relative "tasks/nokogiri_tasks"
 
 namespace :dev do
+  MKDOCS_DIR = "../mkdocs"
   MKDOCS_MATERIAL_INSIDERS_DIR = "mkdocs-material"
 
   desc "Set up system dependencies to develop this site."
   task :setup do
-    sh "pip3 install --upgrade --user mkdocs pygments pymdown-extensions"
-    sh "pip3 uninstall --yes mkdocs-material"
+    sh "pip3 install --upgrade --user pygments pymdown-extensions"
+    sh "pip3 uninstall --yes mkdocs mkdocs-material"
+
+    if File.directory?(MKDOCS_DIR)
+      Dir.chdir(File.join(MKDOCS_DIR, "..")) do
+        sh "ls"
+        sh "pip3 install --user -e mkdocs"
+      end
+    else
+      puts "WARNING: you don't have a custom mkdocs installed, using OSS version which will not index rdocs"
+      sh "pip3 install --upgrade --user mkdocs"
+    end
+
     if File.directory?(MKDOCS_MATERIAL_INSIDERS_DIR)
       Dir.chdir(MKDOCS_MATERIAL_INSIDERS_DIR) do
         sh "git pull --rebase"
