@@ -93,11 +93,11 @@ def nokogiri_add_ga_to_rdocs
     </script>
   EOJS
 
+  puts "→ adding google analytics snippet to #{files.length} rdoc files"
   files.each do |file_path|
     html = File.read(file_path)
     next if html.include?(snippet_tag)
 
-    puts "→ adding google analytics snippet to #{file_path}"
     doc = Nokogiri::HTML.parse(html)
 
     doc.at_css("head").add_child(snippet)
@@ -111,10 +111,10 @@ end
 def nokogiri_add_header_ids_to_rdocs
   files = Dir[File.join(RDOC_STAGING_DIR, "/**/*.html")]
 
+  puts "→ adding header ids to #{files.length} rdoc files"
   files.each do |file_path|
     html = File.read(file_path)
 
-    puts "→ adding header ids to #{file_path}"
     doc = Nokogiri::HTML.parse(html)
 
     doc.css("h1", "h2").each do |header|
