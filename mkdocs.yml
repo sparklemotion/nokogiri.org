@@ -71,7 +71,7 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
-  - Home: index.md
+  - Overview: index.md
   - API: rdoc/index.html
   - Support:
     - Installing Nokogiri: tutorials/installing_nokogiri.md
