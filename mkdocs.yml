@@ -39,7 +39,10 @@ extra:
       name: sparklemotion/nokogiri.org
 
 plugins:
-  - search
+  - search:
+      # include "." and "#" for ruby class and instance methods
+      # include ":" for ruby class names
+      separator: '[\s\-\.#:]'
 
 extra_css:
   - "stylesheets/tidelift.css"
