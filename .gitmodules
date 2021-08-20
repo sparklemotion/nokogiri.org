@@ -1,0 +1,3 @@
+[submodule "mkdocs-material-insiders"]
+	path = mkdocs-material
+	url = git@github.com:squidfunk/mkdocs-material-insiders.git

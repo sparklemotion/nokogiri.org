@@ -10,9 +10,21 @@ require_relative "tasks/tutorial_tasks"
 require_relative "tasks/nokogiri_tasks"
 
 namespace :dev do
+  MKDOCS_MATERIAL_INSIDERS_DIR = "mkdocs-material"
+
   desc "Set up system dependencies to develop this site."
   task :setup do
-    sh "pip3 install --upgrade --user mkdocs pygments mkdocs-material pymdown-extensions"
+    sh "pip3 install --upgrade --user mkdocs pygments pymdown-extensions"
+    sh "pip3 uninstall --yes mkdocs-material"
+    if File.directory?(MKDOCS_MATERIAL_INSIDERS_DIR)
+      Dir.chdir(MKDOCS_MATERIAL_INSIDERS_DIR) do
+        sh "git pull --rebase"
+      end
+      sh "pip3 install --user -e #{MKDOCS_MATERIAL_INSIDERS_DIR}"
+    else
+      puts "WARNING: you don't have mkdocs-material-insiders installed, using OSS version"
+      sh "pip3 install --upgrade --user mkdocs-material"
+    end
   end
 end
 
