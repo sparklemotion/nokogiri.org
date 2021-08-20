@@ -24,6 +24,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
+    - search.highlight
 #    - toc.integrate
   palette:
     primary: black
