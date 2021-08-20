@@ -1,5 +1,7 @@
 # coding: utf-8
 # frozen_string_literal: true
+require 'cgi'
+
 RDOC_STAGING_DIR = File.join(STAGING_DIR, "rdoc")
 
 def create_nokogiri_tasks(source_dir, dest_dir)
@@ -42,6 +44,7 @@ def create_nokogiri_tasks(source_dir, dest_dir)
   task(:rdoc) do
     nokogiri_generate_rdocs
     nokogiri_add_ga_to_rdocs
+    nokogiri_add_header_ids_to_rdocs
   end
   dest_paths << "nokogiri:rdoc"
 
@@ -96,7 +99,35 @@ def nokogiri_add_ga_to_rdocs
 
     puts "→ adding google analytics snippet to #{file_path}"
     doc = Nokogiri::HTML.parse(html)
+
     doc.at_css("head").add_child(snippet)
+
+    File.open(file_path, "w") { |f| f.write(doc.to_html) }
+  end
+end
+
+#  for mkdocs indexing to work properly, headers need ids (for section urls)
+#  note that yardoc adds ids to h3, but we need to do this for h1 and h2
+def nokogiri_add_header_ids_to_rdocs
+  files = Dir[File.join(RDOC_STAGING_DIR, "/**/*.html")]
+
+  files.each do |file_path|
+    html = File.read(file_path)
+
+    puts "→ adding header ids to #{file_path}"
+    doc = Nokogiri::HTML.parse(html)
+
+    doc.css("h1", "h2").each do |header|
+      next if header["id"]
+      id = case header.name
+           when "h1"
+             header.content.strip
+           when "h2"
+             header.children.find { |c| c.text? && c.content.strip.length > 0 }.content.strip
+           end
+      header["id"] = CGI.escape(id)
+    end
+
     File.open(file_path, "w") { |f| f.write(doc.to_html) }
   end
 end
