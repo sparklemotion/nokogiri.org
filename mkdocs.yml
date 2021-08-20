@@ -13,7 +13,6 @@ use_directory_urls: false
 
 theme:
   name: material
-  custom_dir: theme/extensions/material
   font:
     text: "Ubuntu"
     code: "Menlo"
@@ -26,6 +25,13 @@ theme:
     primary: black
   icon:
     repo: fontawesome/brands/github
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sparklemotion/nokogiri.org
+      name: sparklemotion/nokogiri.org
 
 plugins:
   - search
