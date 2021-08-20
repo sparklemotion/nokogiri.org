@@ -40,6 +40,12 @@ extra:
   analytics:
     provider: google
     property: UA-1260604-8
+  consent:
+    title: Cookie consent
+    description: |
+      This site uses cookies to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to make our
+      documentation better.
 
 plugins:
   - search:
@@ -87,3 +93,4 @@ nav:
     - License: LICENSE.md
     - Dependencies: LICENSE-DEPENDENCIES.md
     - Roadmap: ROADMAP.md
+    - Privacy Policy: privacy-policy.md
