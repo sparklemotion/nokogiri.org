@@ -52,6 +52,7 @@ plugins:
       # include "." and "#" for ruby class and instance methods
       # include ":" for ruby class names
       separator: '[\s\-\.#:]'
+  - social
 
 extra_css:
   - "stylesheets/tidelift.css"
