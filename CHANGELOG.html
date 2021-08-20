@@ -15,8 +15,11 @@
       
         <link rel="canonical" href="https://nokogiri.org/CHANGELOG.html">
       
+      
+        
+      
       <link rel="icon" href="images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4+insiders-2.13.0">
     
     
       
@@ -24,15 +27,17 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.06b57b5d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.1d832a92.min.css">
         
           
           
           <meta name="theme-color" content="#000000">
         
+      
+      <link rel="preload" as="style" href="assets/stylesheets/vendor/mermaid.733f213f.min.css">
       
     
     
@@ -50,21 +55,51 @@
     
       <link rel="stylesheet" href="stylesheets/custom.css">
     
+    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?".":"."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
     
       
+
+  
+
+
+  
+
   
 
 
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 
   
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
   
 
-
-
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
-
-
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Changelog - Nokogiri" >
+      
+        <meta  property="og:description"  content="The Official Tutorial Archive™ of Nokogiri®" >
+      
+        <meta  property="og:image"  content="https://nokogiri.org/assets/images/social/CHANGELOG.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://nokogiri.org/CHANGELOG.html" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Changelog - Nokogiri" >
+      
+        <meta  name="twitter:description"  content="The Official Tutorial Archive™ of Nokogiri®" >
+      
+        <meta  name="twitter:image"  content="https://nokogiri.org/assets/images/social/CHANGELOG.png" >
+      
     
     
   </head>
@@ -78,7 +113,6 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -95,7 +129,12 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="index.html" title="Nokogiri" class="md-header__button md-logo" aria-label="Nokogiri" data-md-component="logo">
       
@@ -132,14 +171,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -169,13 +212,9 @@
       </div>
     
   </nav>
-</header>
+  
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
@@ -269,6 +308,13 @@
     </ul>
   </div>
 </nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -284,9 +330,7 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="Nokogiri" class="md-nav__button md-logo" aria-label="Nokogiri" data-md-component="logo">
       
@@ -354,10 +398,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
-      <label class="md-nav__link" for="__nav_3">
-        Support
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Support" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -366,6 +414,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -376,8 +425,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -388,8 +439,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -400,8 +453,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -412,8 +467,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -424,6 +481,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -444,10 +502,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
-      <label class="md-nav__link" for="__nav_4">
-        Tutorials
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -456,6 +518,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -466,8 +529,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -478,8 +543,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -490,8 +557,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -502,8 +571,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -514,8 +585,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -526,6 +599,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -3038,10 +3112,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_6">
-        About
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="About" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -3050,6 +3128,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -3060,8 +3139,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3072,8 +3153,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3084,8 +3167,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3096,8 +3181,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3108,8 +3195,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3120,6 +3209,21 @@
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="privacy-policy.html" class="md-nav__link">
+        Privacy Policy
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -3134,10 +3238,2480 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1123-2021-08-10" class="md-nav__link">
+    1.12.3 / 2021-08-10
+  </a>
+  
+    <nav class="md-nav" aria-label="1.12.3 / 2021-08-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1122-2021-08-04" class="md-nav__link">
+    1.12.2 / 2021-08-04
+  </a>
+  
+    <nav class="md-nav" aria-label="1.12.2 / 2021-08-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1121-2021-08-03" class="md-nav__link">
+    1.12.1 / 2021-08-03
+  </a>
+  
+    <nav class="md-nav" aria-label="1.12.1 / 2021-08-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_2" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1120-2021-08-02" class="md-nav__link">
+    1.12.0 / 2021-08-02
+  </a>
+  
+    <nav class="md-nav" aria-label="1.12.0 / 2021-08-02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notable-addition-html5-support-cruby-only" class="md-nav__link">
+    Notable Addition: HTML5 Support (CRuby only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notable-change-nokogirihtml4-module-and-namespace" class="md-nav__link">
+    Notable Change: Nokogiri::HTML4 module and namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_3" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved" class="md-nav__link">
+    Improved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1117-2021-06-02" class="md-nav__link">
+    1.11.7 / 2021-06-02
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.7 / 2021-06-02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_4" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1116-2021-05-26" class="md-nav__link">
+    1.11.6 / 2021-05-26
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.6 / 2021-05-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_5" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1115-2021-05-19" class="md-nav__link">
+    1.11.5 / 2021-05-19
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.5 / 2021-05-19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_6" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1114-2021-05-14" class="md-nav__link">
+    1.11.4 / 2021-05-14
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.4 / 2021-05-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_1" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1113-2021-04-07" class="md-nav__link">
+    1.11.3 / 2021-04-07
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.3 / 2021-04-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_7" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1112-2021-03-11" class="md-nav__link">
+    1.11.2 / 2021-03-11
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.2 / 2021-03-11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_8" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved_1" class="md-nav__link">
+    Improved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1111-2021-01-06" class="md-nav__link">
+    1.11.1 / 2021-01-06
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.1 / 2021-01-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_9" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1110-2021-01-03" class="md-nav__link">
+    1.11.0 / 2021-01-03
+  </a>
+  
+    <nav class="md-nav" aria-label="1.11.0 / 2021-01-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_2" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security_1" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_2" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    Performance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved_2" class="md-nav__link">
+    Improved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_10" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_2" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11010-2020-07-06" class="md-nav__link">
+    1.10.10 / 2020-07-06
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.10 / 2020-07-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1109-2020-03-01" class="md-nav__link">
+    1.10.9 / 2020-03-01
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.9 / 2020-03-01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_11" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1108-2020-02-10" class="md-nav__link">
+    1.10.8 / 2020-02-10
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.8 / 2020-02-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_2" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1107-2019-12-03" class="md-nav__link">
+    1.10.7 / 2019-12-03
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.7 / 2019-12-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_12" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1106-2019-12-03" class="md-nav__link">
+    1.10.6 / 2019-12-03
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.6 / 2019-12-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_13" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1105-2019-10-31" class="md-nav__link">
+    1.10.5 / 2019-10-31
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.5 / 2019-10-31">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_3" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_3" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1104-2019-08-11" class="md-nav__link">
+    1.10.4 / 2019-08-11
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.4 / 2019-08-11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_4" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1103-2019-04-22" class="md-nav__link">
+    1.10.3 / 2019-04-22
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.3 / 2019-04-22">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_5" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1102-2019-03-24" class="md-nav__link">
+    1.10.2 / 2019-03-24
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.2 / 2019-03-24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_6" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_14" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1101-2019-01-13" class="md-nav__link">
+    1.10.1 / 2019-01-13
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.1 / 2019-01-13">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_3" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_15" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1100-2019-01-04" class="md-nav__link">
+    1.10.0 / 2019-01-04
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.0 / 2019-01-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_4" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_4" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#191-2018-12-17" class="md-nav__link">
+    1.9.1 / 2018-12-17
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9.1 / 2018-12-17">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_16" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#190-2018-12-17" class="md-nav__link">
+    1.9.0 / 2018-12-17
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9.0 / 2018-12-17">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_7" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved_3" class="md-nav__link">
+    Improved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_5" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_17" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_5" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#185-2018-10-04" class="md-nav__link">
+    1.8.5 / 2018-10-04
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8.5 / 2018-10-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_8" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_18" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#184-2018-07-03" class="md-nav__link">
+    1.8.4 / 2018-07-03
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8.4 / 2018-07-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_19" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183-2018-06-16" class="md-nav__link">
+    1.8.3 / 2018-06-16
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8.3 / 2018-06-16">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_9" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-security" class="md-nav__link">
+    More Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_6" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_6" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_20" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182-2018-01-29" class="md-nav__link">
+    1.8.2 / 2018-01-29
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8.2 / 2018-01-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_10" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_7" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_7" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_21" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#181-2017-09-19" class="md-nav__link">
+    1.8.1 / 2017-09-19
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8.1 / 2017-09-19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_8" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_22" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#180-2017-06-04" class="md-nav__link">
+    1.8.0 / 2017-06-04
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8.0 / 2017-06-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_9" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_10" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_8" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_23" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#172-2017-05-09" class="md-nav__link">
+    1.7.2 / 2017-05-09
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7.2 / 2017-05-09">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_11" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#171-2017-03-19" class="md-nav__link">
+    1.7.1 / 2017-03-19
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7.1 / 2017-03-19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_12" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1701-2017-01-04" class="md-nav__link">
+    1.7.0.1 / 2017-01-04
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7.0.1 / 2017-01-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_24" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#170-2016-12-26" class="md-nav__link">
+    1.7.0 / 2016-12-26
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7.0 / 2016-12-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_9" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_11" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1681-2016-10-03" class="md-nav__link">
+    1.6.8.1 / 2016-10-03
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.8.1 / 2016-10-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_12" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#168-2016-06-06" class="md-nav__link">
+    1.6.8 / 2016-06-06
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.8 / 2016-06-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_13" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_10" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_25" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1672-2016-01-20" class="md-nav__link">
+    1.6.7.2 / 2016-01-20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1671-2015-12-16" class="md-nav__link">
+    1.6.7.1 / 2015-12-16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#167-2015-11-29" class="md-nav__link">
+    1.6.7 / 2015-11-29
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.7 / 2015-11-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_11" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security_14" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_12" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_26" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1664-2015-11-19" class="md-nav__link">
+    1.6.6.4 / 2015-11-19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1663-2015-11-16" class="md-nav__link">
+    1.6.6.3 / 2015-11-16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1662-2015-01-23" class="md-nav__link">
+    1.6.6.2 / 2015-01-23
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.6.2 / 2015-01-23">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_27" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1661-2015-01-22" class="md-nav__link">
+    1.6.6.1 / 2015-01-22
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.6.1 / 2015-01-22">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_13" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_28" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-2014-11-26" class="md-nav__link">
+    1.6.5 / 2014-11-26
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.5 / 2014-11-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_14" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_29" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1641-2014-11-05" class="md-nav__link">
+    1.6.4.1 / 2014-11-05
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.4.1 / 2014-11-05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_30" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-2014-11-04" class="md-nav__link">
+    1.6.4 / 2014-11-04
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.4 / 2014-11-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_15" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_31" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1631-2014-07-21" class="md-nav__link">
+    1.6.3.1 / 2014-07-21
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.3.1 / 2014-07-21">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_32" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-2014-07-20" class="md-nav__link">
+    1.6.3 / 2014-07-20
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.3 / 2014-07-20">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_16" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_33" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1621-2014-05-13" class="md-nav__link">
+    1.6.2.1 / 2014-05-13
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.2.1 / 2014-05-13">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_34" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-2014-05-12" class="md-nav__link">
+    1.6.2 / 2014-05-12
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.2 / 2014-05-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security_15" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_13" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_17" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_35" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#161-2013-12-14" class="md-nav__link">
+    1.6.1 / 2013-12-14
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.1 / 2013-12-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_36" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160-2013-06-08" class="md-nav__link">
+    1.6.0 / 2013-06-08
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.0 / 2013-06-08">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecations" class="md-nav__link">
+    Deprecations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160rc1-2013-04-14" class="md-nav__link">
+    1.6.0.rc1 / 2013-04-14
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6.0.rc1 / 2013-04-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_2" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_18" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_14" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1511-2013-12-14" class="md-nav__link">
+    1.5.11 / 2013-12-14
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.11 / 2013-12-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_37" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1510-2013-06-07" class="md-nav__link">
+    1.5.10 / 2013-06-07
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.10 / 2013-06-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_38" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_3" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#159-2013-03-21" class="md-nav__link">
+    1.5.9 / 2013-03-21
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.9 / 2013-03-21">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_39" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#158-2013-03-19" class="md-nav__link">
+    1.5.8 / 2013-03-19
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.8 / 2013-03-19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_40" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#157-2013-03-18" class="md-nav__link">
+    1.5.7 / 2013-03-18
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.7 / 2013-03-18">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_19" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_41" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#156-2012-12-19" class="md-nav__link">
+    1.5.6 / 2012-12-19
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.6 / 2012-12-19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_20" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_42" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-2012-06-24" class="md-nav__link">
+    1.5.5 / 2012-06-24
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.5 / 2012-06-24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_21" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_43" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-2012-06-12" class="md-nav__link">
+    1.5.4 / 2012-06-12
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.4 / 2012-06-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_22" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_44" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security_16" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-2012-06-01" class="md-nav__link">
+    1.5.3 / 2012-06-01
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.3 / 2012-06-01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_23" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_45" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-2012-03-09" class="md-nav__link">
+    1.5.2 / 2012-03-09
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#151-2012-03-09" class="md-nav__link">
+    1.5.1 / 2012-03-09
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.1 / 2012-03-09">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_24" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_46" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-2011-07-01" class="md-nav__link">
+    1.5.0 / 2011-07-01
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.0 / 2011-07-01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_4" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_25" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_47" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta3-2010-12-02" class="md-nav__link">
+    1.5.0 beta3 / 2010-12-02
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.0 beta3 / 2010-12-02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_5" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_48" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta2-2010-07-30" class="md-nav__link">
+    1.5.0 beta2 / 2010-07-30
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.0 beta2 / 2010-07-30">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_6" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#150-beta1-2010-05-22" class="md-nav__link">
+    1.5.0 beta1 / 2010-05-22
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5.0 beta1 / 2010-05-22">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_7" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_15" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_1" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#147-2011-07-01" class="md-nav__link">
+    1.4.7 / 2011-07-01
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.7 / 2011-07-01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_49" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-2011-06-19" class="md-nav__link">
+    1.4.6 / 2011-06-19
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.6 / 2011-06-19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_8" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-2011-05-19" class="md-nav__link">
+    1.4.5 / 2011-05-19
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.5 / 2011-05-19">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_26" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_50" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-2010-11-15" class="md-nav__link">
+    1.4.4 / 2010-11-15
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.4 / 2010-11-15">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_27" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_51" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-2010-07-28" class="md-nav__link">
+    1.4.3 / 2010-07-28
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.3 / 2010-07-28">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_28" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_52" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-2010-05-22" class="md-nav__link">
+    1.4.2 / 2010-05-22
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.2 / 2010-05-22">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_29" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_53" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_9" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141-2009-12-10" class="md-nav__link">
+    1.4.1 / 2009-12-10
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.1 / 2009-12-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_30" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_54" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#140-2009-10-30" class="md-nav__link">
+    1.4.0 / 2009-10-30
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.0 / 2009-10-30">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_31" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_55" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_2" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-2009-07-26" class="md-nav__link">
+    1.3.3 / 2009-07-26
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.3 / 2009-07-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_32" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_56" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecations_1" class="md-nav__link">
+    Deprecations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-2009-06-22" class="md-nav__link">
+    1.3.2 / 2009-06-22
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.2 / 2009-06-22">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_33" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_57" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecations_2" class="md-nav__link">
+    Deprecations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-2009-06-07" class="md-nav__link">
+    1.3.1 / 2009-06-07
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.1 / 2009-06-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_58" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#130-2009-05-30" class="md-nav__link">
+    1.3.0 / 2009-05-30
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.0 / 2009-05-30">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_34" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_59" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-2009-03-22" class="md-nav__link">
+    1.2.3 / 2009-03-22
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.3 / 2009-03-22">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_60" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-2009-03-14" class="md-nav__link">
+    1.2.2 / 2009-03-14
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.2 / 2009-03-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_35" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_61" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121-2009-02-23" class="md-nav__link">
+    1.2.1 / 2009-02-23
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.1 / 2009-02-23">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_62" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#120-2009-02-22" class="md-nav__link">
+    1.2.0 / 2009-02-22
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.0 / 2009-02-22">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_36" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_63" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecations_3" class="md-nav__link">
+    Deprecations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_3" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    1.1.1
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_37" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_64" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    1.1.0
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_38" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_65" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107" class="md-nav__link">
+    1.0.7
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_66" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106" class="md-nav__link">
+    1.0.6
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_67" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    1.0.5
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_68" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    1.0.4
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_69" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    1.0.3
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_70" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    1.0.2
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_71" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    1.0.1
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_72" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#100-2008-07-13" class="md-nav__link">
+    1.0.0 / 2008-07-13
+  </a>
+  
+    <nav class="md-nav" aria-label="1.0.0 / 2008-07-13">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_39" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+                
                 
                 
                 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
@@ -3179,7 +5753,7 @@
 <h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Namespaced attributes are handled properly when their parent node is reparented into another document. Previously, the namespace may have gotten dropped. [<a href="https://github.com/sparklemotion/nokogiri/issues/2228">#2228</a>]</li>
-<li>[CRuby] Reparented nodes no longer inherit their parent's namespace. Previously, a node without a namespace was forced to adopt its parent's namespace. [<a href="https://github.com/sparklemotion/nokogiri/issues/1712">#1712</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/425">#425</a>]</li>
+<li>[CRuby] Reparented nodes no longer inherit their parent's namespace. Previously, a node without a namespace was forced to adopt its parent's namespace. [<a href="https://github.com/sparklemotion/nokogiri/issues/1712">#1712</a>]</li>
 </ul>
 <h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4573,6 +7147,8 @@ mentioned in the notes for v1.5.10.</p>
 <li>Birthday!</li>
 </ul>
                 
+                  
+                
               
               
                 
@@ -4580,67 +7156,77 @@ mentioned in the notes for v1.5.10.</p>
 
               
             </article>
+            
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
         
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
         
-          <a href="tutorials/ensuring_well_formed_markup.html" title="Ensuring well-formed markup" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Ensuring well-formed markup
+        <a href="tutorials/ensuring_well_formed_markup.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ensuring well-formed markup" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
               </span>
+              Ensuring well-formed markup
             </div>
-          </a>
+          </div>
+        </a>
+      
+      
         
-        
-          <a href="CONTRIBUTING.html" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Contributing
+        <a href="CONTRIBUTING.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
               </span>
+              Contributing
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright Ⓒ 2009-2020 Mike Dalessio
+            Copyright Ⓒ 2009-2021 Mike Dalessio
           </div>
         
-        <a href="https://github.com/sparklemotion/nokogiri.org">sparklemotion/nokogiri.org</a>
-        rendered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        
+        
       </div>
       
-        
+  <div class="md-footer-social">
+    
       
+      
+      <a href="https://github.com/sparklemotion/nokogiri.org" target="_blank" rel="noopener" title="sparklemotion/nokogiri.org" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>
@@ -4649,10 +7235,48 @@ mentioned in the notes for v1.5.10.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+<h4>Cookie consent</h4>
+<p>This site uses cookies to measure the effectiveness of our documentation and whether users
+find what they're searching for. With your consent, you're helping us to make our
+documentation better.
+</p>
+<input type="checkbox" class="md-toggle" id="__settings">
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        <label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  <label class="md-button" for="__settings">Manage settings</label>
+  <button class="md-button md-button--primary">Accept</button>
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.82b56eb2.min.js"></script>
+      <script src="assets/javascripts/bundle.d120d6e9.min.js"></script>
       
     
   </body>
