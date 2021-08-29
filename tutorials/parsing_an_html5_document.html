@@ -19,7 +19,7 @@
         
       
       <link rel="icon" href="../images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4+insiders-2.13.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5+insiders-2.13.2">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.06b57b5d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3c274924.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.1d832a92.min.css">
@@ -964,11 +964,9 @@ implement this support, or would like to know more, please see
 <p>Parse an HTML5 document:</p>
 <div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </code></pre></div>
-
 <p>Parse an HTML5 fragment:</p>
 <div class="highlight"><pre><span></span><code><span class="n">fragment</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="o">.</span><span class="n">fragment</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="parsing-options">Parsing options<a class="headerlink" href="#parsing-options" title="Permanent link">&para;</a></h2>
 <p>The document and fragment parsing methods support options that are different from Nokogiri's.</p>
 <ul>
@@ -991,7 +989,6 @@ are reported but this can be configured by passing the <code>:max_errors</code> 
   <span class="nb">puts</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <p>Emits:</p>
 <div class="highlight"><pre><span></span><code>1:1: ERROR: Expected a doctype token
 &lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;
@@ -1006,7 +1003,6 @@ are reported but this can be configured by passing the <code>:max_errors</code> 
 &lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;
                 ^
 </code></pre></div>
-
 <p>Using <code>max_errors: -1</code> results in an unlimited number of errors being returned.</p>
 <p>The <a href="https://html.spec.whatwg.org/multipage/parsing.html#parse-errors">HTML standard</a> defines a
 number of standard parse error codes. These error codes only cover the "tokenization" stage of
@@ -1023,7 +1019,6 @@ codes (yet).</p>
 <span class="c1">#    1:17: end-tag-with-trailing-solidus</span>
 <span class="c1">#    1:17: end-tag-with-attributes</span>
 </code></pre></div>
-
 <p>Note that the first error is <code>generic-parser</code> because it's an error from the tree construction
 stage and doesn't have a standardized error code.</p>
 <p>For the purposes of semantic versioning, the error messages, error locations, and error codes
@@ -1040,7 +1035,6 @@ by giving the option <code>max_tree_depth: -1</code>.</p>
 <span class="c1"># raises ArgumentError: Document tree depth limit exceeded</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="ss">max_tree_depth</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-
 <h3 id="attribute-limit-per-element">Attribute limit per element<a class="headerlink" href="#attribute-limit-per-element" title="Permanent link">&para;</a></h3>
 <p>The maximum number of attributes per DOM element is configurable by the <code>:max_attributes</code>
 option. If a given element would exceed this limit, then an <code>::ArgumentError</code> is thrown.</p>
@@ -1052,7 +1046,6 @@ by giving the option <code>max_attributes: -1</code>.</p>
 <span class="c1"># raises ArgumentError: Attributes per element limit exceeded</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="ss">max_attributes</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="html-serialization">HTML Serialization<a class="headerlink" href="#html-serialization" title="Permanent link">&para;</a></h2>
 <p>After parsing HTML, it may be serialized using any of the <code>Nokogiri::XML::Node</code> serialization
 methods. In particular, <code>XML::Node#serialize</code>, <code>#to_html</code>, and <code>#to_s</code> will
@@ -1063,7 +1056,6 @@ node. (This is the equivalent of JavaScript's <code>Element.innerHTML</code>.)</
 <span class="nb">puts</span> <span class="n">doc</span><span class="o">.</span><span class="n">serialize</span>
 <span class="c1"># =&gt; &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;span&gt;Hello world!&lt;/span&gt;&lt;/body&gt;&lt;/html&gt;</span>
 </code></pre></div>
-
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -1212,10 +1204,10 @@ documentation better.
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d120d6e9.min.js"></script>
+      <script src="../assets/javascripts/bundle.d9c629a2.min.js"></script>
       
     
   </body>

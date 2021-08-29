@@ -301,6 +301,40 @@
 
 <p>Note the “foo:object” tag.</p>
 
+<h3 id="label-Namespace+inheritance">Namespace inheritance</h3>
+
+<p>In the Builder context, children will inherit their parent's namespace. This is the same behavior as if the underlying <span class="object_link"><a href="Document.html" title="Nokogiri::XML::Document (class)">Document</a></span> set <code>namespace_inheritance</code> to <code>true</code>:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_result">result</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">soapenv</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="period">.</span><span class="const">Envelope</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">xmlns:soapenv</span><span class="tstring_end">"</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">http://schemas.xmlsoap.org/soap/envelope/</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="kw">do</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="const">Header</span>
+  <span class="kw">end</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_result">result</span><span class="period">.</span><span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
+<span class="comment"># =&gt; &lt;?xml version="1.0" encoding="utf-8"?&gt;
+</span><span class="comment">#    &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+</span><span class="comment">#      &lt;soapenv:Header/&gt;
+</span><span class="comment">#    &lt;/soapenv:Envelope&gt;
+</span></code></pre>
+
+<p>Users may turn this behavior off by passing a keyword argument <code>namespace_inheritance:false</code> to the initializer:</p>
+
+<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_result">result</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Builder</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::Builder#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="label">namespace_inheritance:</span> <span class="kw">false</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_xml">xml</span><span class="op">|</span>
+  <span class="id identifier rubyid_xml">xml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">soapenv</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="period">.</span><span class="const">Envelope</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">xmlns:soapenv</span><span class="tstring_end">"</span></span> <span class="op">=&gt;</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">http://schemas.xmlsoap.org/soap/envelope/</span><span class="tstring_end">"</span></span><span class="rparen">)</span> <span class="kw">do</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="period">.</span><span class="const">Header</span>
+    <span class="id identifier rubyid_xml">xml</span><span class="lbracket">[</span><span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">soapenv</span><span class="tstring_end">"</span></span><span class="rbracket">]</span><span class="period">.</span><span class="const">Body</span> <span class="comment"># users may explicitly opt into the namespace
+</span>  <span class="kw">end</span>
+<span class="kw">end</span>
+<span class="id identifier rubyid_result">result</span><span class="period">.</span><span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_to_xml">to_xml</span>
+<span class="comment"># =&gt; &lt;?xml version="1.0" encoding="utf-8"?&gt;
+</span><span class="comment">#    &lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+</span><span class="comment">#      &lt;Header/&gt;
+</span><span class="comment">#      &lt;soapenv:Body/&gt;
+</span><span class="comment">#    &lt;/soapenv:Envelope&gt;
+</span></code></pre>
+
+<p>For more information on namespace inheritance, please see <span class="object_link"><a href="Document.html#namespace_inheritance-instance_method" title="Nokogiri::XML::Document#namespace_inheritance (method)">Document#namespace_inheritance</a></span></p>
+
 <h2 id="label-Document+Types">Document Types</h2>
 
 <p>To create a document type (DTD), access use the Builder#doc method to get the current context document.  Then call Node#create_internal_subset to create the DTD node.</p>
@@ -351,6 +385,22 @@
     
   
 </p>
+
+  
+    <h2 id="Constant+Summary">
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="DEFAULT_DOCUMENT_OPTIONS-constant" class="">DEFAULT_DOCUMENT_OPTIONS =
+          
+        </dt>
+        <dd><pre class="code"><span class="lbrace">{</span><span class="label">namespace_inheritance:</span> <span class="kw">true</span><span class="rbrace">}</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -748,43 +798,44 @@ end
       <pre class="lines">
 
 
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300</pre>
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 267</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 304</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbrace">{</span><span class="rbrace">}</span><span class="comma">,</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span> <span class="op">=</span> <span class="kw">nil</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span>
@@ -804,6 +855,7 @@ end
   <span class="ivar">@arity</span> <span class="op">=</span> <span class="kw">nil</span>
   <span class="ivar">@ns</span> <span class="op">=</span> <span class="kw">nil</span>
 
+  <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="#DEFAULT_DOCUMENT_OPTIONS-constant" title="Nokogiri::XML::Builder::DEFAULT_DOCUMENT_OPTIONS (constant)">DEFAULT_DOCUMENT_OPTIONS</a></span></span><span class="period">.</span><span class="id identifier rubyid_merge">merge</span><span class="lparen">(</span><span class="id identifier rubyid_options">options</span><span class="rparen">)</span>
   <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_k">k</span><span class="comma">,</span> <span class="id identifier rubyid_v">v</span><span class="op">|</span>
     <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_send">send</span><span class="lparen">(</span><span class="symbol">:"#{</span><span class="id identifier rubyid_k">k</span><span class="embexpr_end">}</span><span class="tstring_content">=</span><span class="tstring_end">"</span><span class="comma">,</span> <span class="id identifier rubyid_v">v</span><span class="rparen">)</span>
   <span class="kw">end</span>
@@ -861,32 +913,32 @@ end
       <pre class="lines">
 
 
-358
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380</pre>
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 358</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 396</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_method_missing">method_missing</span><span class="lparen">(</span><span class="id identifier rubyid_method">method</span><span class="comma">,</span> <span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span> <span class="comment"># :nodoc:
 </span>  <span class="kw">if</span> <span class="ivar">@context</span> <span class="op">&amp;&amp;</span> <span class="ivar">@context</span><span class="period">.</span><span class="id identifier rubyid_respond_to?">respond_to?</span><span class="lparen">(</span><span class="id identifier rubyid_method">method</span><span class="rparen">)</span>
@@ -951,12 +1003,12 @@ end
       <pre class="lines">
 
 
-238
-239
-240</pre>
+275
+276
+277</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 238</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 275</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_arity">arity</span>
   <span class="ivar">@arity</span>
@@ -996,12 +1048,12 @@ end
       <pre class="lines">
 
 
-236
-237
-238</pre>
+273
+274
+275</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 236</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 273</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_context">context</span>
   <span class="ivar">@context</span>
@@ -1041,12 +1093,12 @@ end
       <pre class="lines">
 
 
-230
-231
-232</pre>
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 230</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 267</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_doc">doc</span>
   <span class="ivar">@doc</span>
@@ -1086,12 +1138,12 @@ end
       <pre class="lines">
 
 
-233
-234
-235</pre>
+270
+271
+272</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 270</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_parent">parent</span>
   <span class="ivar">@parent</span>
@@ -1145,12 +1197,12 @@ end
       <pre class="lines">
 
 
-254
-255
-256</pre>
+291
+292
+293</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 254</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 291</span>
 
 <span class="kw">def</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_with">with</span><span class="lparen">(</span><span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
   <span class="id identifier rubyid_new">new</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="comma">,</span> <span class="id identifier rubyid_root"><span class="object_link"><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class="comma">,</span> <span class="op">&amp;</span><span class="id identifier rubyid_block">block</span><span class="rparen">)</span>
@@ -1194,12 +1246,12 @@ end
       <pre class="lines">
 
 
-354
-355
-356</pre>
+392
+393
+394</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 354</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 392</span>
 
 <span class="kw">def</span> <span class="op">&lt;&lt;</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
   <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_fragment">fragment</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span><span class="period">.</span><span class="id identifier rubyid_children">children</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="lbrace">{</span> <span class="op">|</span><span class="id identifier rubyid_x">x</span><span class="op">|</span> <span class="id identifier rubyid_insert">insert</span><span class="lparen">(</span><span class="id identifier rubyid_x">x</span><span class="rparen">)</span> <span class="rbrace">}</span>
@@ -1237,24 +1289,24 @@ end
       <pre class="lines">
 
 
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337</pre>
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 323</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 361</span>
 
 <span class="kw">def</span> <span class="op">[]</span><span class="lparen">(</span><span class="id identifier rubyid_ns">ns</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="ivar">@parent</span> <span class="op">!=</span> <span class="ivar">@doc</span>
@@ -1304,12 +1356,12 @@ end
       <pre class="lines">
 
 
-310
-311
-312</pre>
+348
+349
+350</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 310</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 348</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_cdata">cdata</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
   <span class="id identifier rubyid_insert">insert</span> <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_create_cdata">create_cdata</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
@@ -1347,12 +1399,12 @@ end
       <pre class="lines">
 
 
-316
-317
-318</pre>
+354
+355
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 316</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 354</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_comment">comment</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
   <span class="id identifier rubyid_insert">insert</span> <span class="id identifier rubyid_doc">doc</span><span class="period">.</span><span class="id identifier rubyid_create_comment">create_comment</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
@@ -1390,12 +1442,12 @@ end
       <pre class="lines">
 
 
-304
-305
-306</pre>
+342
+343
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 304</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 342</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_text">text</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
   <span class="id identifier rubyid_insert">insert</span> <span class="ivar">@doc</span><span class="period">.</span><span class="id identifier rubyid_create_text_node">create_text_node</span><span class="lparen">(</span><span class="id identifier rubyid_string">string</span><span class="rparen">)</span>
@@ -1433,19 +1485,19 @@ end
       <pre class="lines">
 
 
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350</pre>
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 341</span>
+      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/builder.rb', line 379</span>
 
 <span class="kw">def</span> <span class="id identifier rubyid_to_xml">to_xml</span><span class="lparen">(</span><span class="op">*</span><span class="id identifier rubyid_args">args</span><span class="rparen">)</span>
   <span class="kw">if</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="id identifier rubyid_jruby?"><span class="object_link"><a href="../../Nokogiri.html#jruby%3F-class_method" title="Nokogiri.jruby? (method)">jruby?</a></span></span>
@@ -1467,7 +1519,7 @@ end
 </div>
 
       <div id="footer">
-  Generated on Fri Aug 20 14:43:06 2021 by
+  Generated on Sun Aug 29 16:11:33 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.1).
 </div>

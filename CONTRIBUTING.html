@@ -19,7 +19,7 @@
         
       
       <link rel="icon" href="images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4+insiders-2.13.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5+insiders-2.13.2">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.06b57b5d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.3c274924.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.1d832a92.min.css">
@@ -1249,21 +1249,17 @@
 <h3 id="the-short-version">The short version<a class="headerlink" href="#the-short-version" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 </code></pre></div>
-
 <h3 id="cruby-advanced-usage">CRuby advanced usage<a class="headerlink" href="#cruby-advanced-usage" title="Permanent link">&para;</a></h3>
 <p>Test using your system's libraries:</p>
 <div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> rake clean <span class="c1"># blow away pre-existing libraries using packaged libs</span>
 <span class="nv">NOKOGIRI_USE_SYSTEM_LIBRARIES</span><span class="o">=</span>t bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 </code></pre></div>
-
 <p>Run tests using valgrind:</p>
 <div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> rake compile test:valgrind
 </code></pre></div>
-
 <p>Run tests in the debugger:</p>
 <div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> rake compile test:gdb
 </code></pre></div>
-
 <p>Note that by default the test suite will run a major GC after each test completes. This has shown to be useful for localizing entire classes of memory bugs, but does slow the suite down. Some variations of the test suite behavior are available (see <code>test/helper.rb</code> for more info):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># see failure messages immediately</span>
 <span class="nv">NOKOGIRI_TEST_FAIL_FAST</span><span class="o">=</span>t bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
@@ -1287,7 +1283,6 @@
 <span class="c1"># run with GC &quot;stress mode&quot; on</span>
 <span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>stress bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 </code></pre></div>
-
 <h3 id="libxml2-advanced-usage">libxml2 advanced usage<a class="headerlink" href="#libxml2-advanced-usage" title="Permanent link">&para;</a></h3>
 <p>If you want to build Nokogiri against a modified version of libxml2, clone libxml2 to <code>../libxml2</code> and then run <code>scripts/compile-against-libxml2-source</code>.</p>
 <p>That script also takes an optional command to run with the proper environment variables set to use the local libxml2 library, which can be useful when trying to <code>git bisect</code> against libxml2.</p>
@@ -1295,12 +1290,10 @@
 <p>To run the test suite for the gumbo parser:</p>
 <div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> rake gumbo
 </code></pre></div>
-
 <p>To make sure to run additional html5lib tests for Nokogiri's HTML5 parser:</p>
 <div class="highlight"><pre><span></span><code>git submodule update --init <span class="c1"># test/html5lib-tests</span>
 bundle <span class="nb">exec</span> rake compile <span class="nb">test</span>
 </code></pre></div>
-
 <h2 id="style-guide">Style Guide<a class="headerlink" href="#style-guide" title="Permanent link">&para;</a></h2>
 <p>I don't feel very strongly about code style, but when possible I follow <a href="https://shopify.github.io/ruby-style-guide/">Shopify's Ruby Style Guide</a>, and for C and Java code I use the <code>astyle</code> settings laid out in <code>/rakelib/format.rake</code>.</p>
 <p>You can format the C and Java code with <code>rake format</code>. Maybe someday I'll auto-format Ruby, but not today.</p>
@@ -1520,10 +1513,10 @@ documentation better.
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d120d6e9.min.js"></script>
+      <script src="assets/javascripts/bundle.d9c629a2.min.js"></script>
       
     
   </body>

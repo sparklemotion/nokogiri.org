@@ -19,7 +19,7 @@
         
       
       <link rel="icon" href="../images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4+insiders-2.13.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5+insiders-2.13.2">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.06b57b5d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3c274924.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.1d832a92.min.css">
@@ -948,7 +948,6 @@
 <span class="sh">&lt;/body&gt;</span>
 <span class="dl">EOHTML</span>
 </code></pre></div>
-
 <p>Let's change the header's text contents:</p>
 <div class="highlight"><pre><span></span><code><span class="n">h1</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span> <span class="s2">&quot;h1&quot;</span>
 <span class="n">h1</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;Snap, Crackle &amp; Pop&quot;</span>
@@ -964,7 +963,6 @@
 <span class="c1"># &quot; +</span>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
-
 <p>You'll notice that, when you use <code>#content=</code>, entities are properly
 escaped. Pow!</p>
 <h2 id="moving-nodes">Moving nodes<a class="headerlink" href="#moving-nodes" title="Permanent link">&para;</a></h2>
@@ -986,7 +984,6 @@ escaped. Pow!</p>
 <span class="c1"># &quot; +</span>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
-
 <p>But you could also arrange it next to other nodes:</p>
 <div class="highlight"><pre><span></span><code><span class="n">div</span><span class="o">.</span><span class="n">add_next_sibling</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
 
@@ -1003,7 +1000,6 @@ escaped. Pow!</p>
 <span class="c1"># &quot; +</span>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
-
 <h2 id="modifying-nodes-and-attributes">Modifying Nodes and Attributes<a class="headerlink" href="#modifying-nodes-and-attributes" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">h1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;h2&#39;</span>
 <span class="n">h1</span><span class="o">[</span><span class="s1">&#39;class&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;show-title&#39;</span>
@@ -1019,7 +1015,6 @@ escaped. Pow!</p>
 <span class="c1"># &quot; +</span>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
-
 <h2 id="creating-new-nodes">Creating new nodes<a class="headerlink" href="#creating-new-nodes" title="Permanent link">&para;</a></h2>
 <p>Often the easiest thing to do is pass markup to one of the <code>Node</code> methods to create siblings:</p>
 <div class="highlight"><pre><span></span><code><span class="n">h1</span><span class="o">.</span><span class="n">add_next_sibling</span> <span class="s2">&quot;&lt;h3&gt;1977 - 1984&lt;/h3&gt;&quot;</span>
@@ -1037,7 +1032,6 @@ escaped. Pow!</p>
 <span class="c1"># &quot; +</span>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
-
 <p>or you can manually create a node object, if you're a detail-oriented person:</p>
 <div class="highlight"><pre><span></span><code><span class="n">h3</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">Node</span><span class="o">.</span><span class="n">new</span> <span class="s2">&quot;h3&quot;</span><span class="p">,</span> <span class="vi">@doc</span>
 <span class="n">h3</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;1977 - 1984&quot;</span>
@@ -1056,7 +1050,6 @@ escaped. Pow!</p>
 <span class="c1"># &quot; +</span>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
-
 <h2 id="wrapping-a-nodeset">Wrapping a NodeSet<a class="headerlink" href="#wrapping-a-nodeset" title="Permanent link">&para;</a></h2>
 <p>If you wanted to wrap new HTML around each node in a Nodeset, here's an example of how to do it:</p>
 <div class="highlight"><pre><span></span><code><span class="n">nodes</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span> <span class="s2">&quot;h1,div&quot;</span>
@@ -1073,7 +1066,6 @@ escaped. Pow!</p>
 <span class="c1"># &quot; +</span>
 <span class="c1">#    &quot;&lt;/body&gt;&quot;</span>
 </code></pre></div>
-
 <h2 id="adding-a-processing-instruction">Adding a Processing Instruction<a class="headerlink" href="#adding-a-processing-instruction" title="Permanent link">&para;</a></h2>
 <h3 id="like-xml-stylesheet">(like &lt;?xml-stylesheet?&gt;)<a class="headerlink" href="#like-xml-stylesheet" title="Permanent link">&para;</a></h3>
 <p>If you want to add a processing instruction (a.k.a. "PI node"), like
@@ -1224,10 +1216,10 @@ documentation better.
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d120d6e9.min.js"></script>
+      <script src="../assets/javascripts/bundle.d9c629a2.min.js"></script>
       
     
   </body>

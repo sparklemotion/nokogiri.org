@@ -19,7 +19,7 @@
         
       
       <link rel="icon" href="images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4+insiders-2.13.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5+insiders-2.13.2">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.06b57b5d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.3c274924.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.1d832a92.min.css">
@@ -1334,13 +1334,11 @@ Fetching nokogiri-1.11.0-x86_64-linux.gem
 Successfully installed nokogiri-1.11.0-x86_64-linux
 <span class="m">1</span> gem installed
 </code></pre></div>
-
 <h3 id="other-installation-options">Other Installation Options<a class="headerlink" href="#other-installation-options" title="Permanent link">&para;</a></h3>
 <p>Because Nokogiri is a C extension, it requires that you have a C compiler toolchain, Ruby development header files, and some system dependencies installed.</p>
 <p>The following may work for you if you have an appropriately-configured system:</p>
 <div class="highlight"><pre><span></span><code>gem install nokogiri
 </code></pre></div>
-
 <p>If you have any issues, please visit <a href="https://nokogiri.org/tutorials/installing_nokogiri.html">Installing Nokogiri</a> for more complete instructions and troubleshooting.</p>
 <h2 id="how-to-use-nokogiri">How To Use Nokogiri<a class="headerlink" href="#how-to-use-nokogiri" title="Permanent link">&para;</a></h2>
 <p>Nokogiri is a large library, and so it's challenging to briefly summarize it. We've tried to provide long, real-world examples at <a href="https://nokogiri.org/tutorials/toc.html">Tutorials</a>.</p>
@@ -1369,7 +1367,6 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
   <span class="nb">puts</span> <span class="n">link</span><span class="o">.</span><span class="n">content</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <h3 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h3>
 <p>Strings are always stored as UTF-8 internally.  Methods that return
 text values will always return UTF-8 encoded strings.  Methods that
@@ -1387,7 +1384,6 @@ best bet is to explicitly set the encoding.  Here is an example of
 explicitly setting the encoding to EUC-JP on the parser:</p>
 <div class="highlight"><pre><span></span><code>  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;/foo&gt;&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="technical-overview">Technical Overview<a class="headerlink" href="#technical-overview" title="Permanent link">&para;</a></h2>
 <h3 id="guiding-principles_1">Guiding Principles<a class="headerlink" href="#guiding-principles_1" title="Permanent link">&para;</a></h3>
 <p>As noted above, two guiding principles of the software are:</p>
@@ -1542,10 +1538,10 @@ documentation better.
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d120d6e9.min.js"></script>
+      <script src="assets/javascripts/bundle.d9c629a2.min.js"></script>
       
     
   </body>

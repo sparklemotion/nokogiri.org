@@ -19,7 +19,7 @@
         
       
       <link rel="icon" href="../images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4+insiders-2.13.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5+insiders-2.13.2">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.06b57b5d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3c274924.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.1d832a92.min.css">
@@ -933,7 +933,6 @@
   <span class="nt">&lt;/dramas&gt;</span>
 <span class="nt">&lt;/root&gt;</span>
 </code></pre></div>
-
 <p>Let's further suppose that you want a list of all the characters in
 all the shows in this document.</p>
 <div class="highlight"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;shows.xml&quot;</span><span class="p">))</span>
@@ -948,14 +947,12 @@ all the shows in this document.</p>
 <span class="c1">#    &quot;&lt;character&gt;\&quot;B.A.\&quot; Baracus&lt;/character&gt;&quot;,</span>
 <span class="c1">#    &quot;&lt;character&gt;\&quot;Howling Mad\&quot; Murdock&lt;/character&gt;&quot;]</span>
 </code></pre></div>
-
 <p>The <code>Node</code> methods <code>xpath</code> and <code>css</code> actually return a <a href="https://nokogiri.org/rdoc/Nokogiri/XML/NodeSet">NodeSet</a>,
 which acts very much like an array, and contains matching nodes from
 the document.</p>
 <div class="highlight"><pre><span></span><code><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//character&quot;</span><span class="p">)</span>
 <span class="n">characters</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">to_s</span> <span class="c1"># =&gt; &quot;&lt;character&gt;Al Bundy&lt;/character&gt;&quot;</span>
 </code></pre></div>
-
 <p>You can use any XPath or CSS query you like (see the chapter on XPath
 and CSS syntax for more information).</p>
 <div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//dramas//character&quot;</span><span class="p">)</span>
@@ -964,11 +961,9 @@ and CSS syntax for more information).</p>
 <span class="c1">#    &quot;&lt;character&gt;\&quot;B.A.\&quot; Baracus&lt;/character&gt;&quot;,</span>
 <span class="c1">#    &quot;&lt;character&gt;\&quot;Howling Mad\&quot; Murdock&lt;/character&gt;&quot;]</span>
 </code></pre></div>
-
 <p>Notably, you can even use CSS queries in an XML document!</p>
 <div class="highlight"><pre><span></span><code><span class="n">characters</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;sitcoms name&quot;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;name&gt;Married with Children&lt;/name&gt;&quot;, &quot;&lt;name&gt;Perfect Strangers&lt;/name&gt;&quot;]</span>
 </code></pre></div>
-
 <p>CSS queries are often the easiest and most succinct way to express
 what you're looking for, so don't be afraid to use them!</p>
 <h2 id="single-results">Single Results<a class="headerlink" href="#single-results" title="Permanent link">&para;</a></h2>
@@ -978,7 +973,6 @@ first element of a NodeSet.</p>
 <div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;dramas name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span> <span class="c1"># =&gt; &quot;&lt;name&gt;The A-Team&lt;/name&gt;&quot;</span>
 <span class="vi">@doc</span><span class="o">.</span><span class="n">at_css</span><span class="p">(</span><span class="s2">&quot;dramas name&quot;</span><span class="p">)</span>    <span class="c1"># =&gt; &quot;&lt;name&gt;The A-Team&lt;/name&gt;&quot;</span>
 </code></pre></div>
-
 <h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h2>
 <p>Just like our Ruby code, XML can suffer from name collisions.  For example,
 an autoparts dealer can sell tires and so can a bike dealer.  Both of them
@@ -1003,7 +997,6 @@ store's XML versus the bike stores:</p>
   <span class="nt">&lt;/inventory&gt;</span>
 <span class="nt">&lt;/parts&gt;</span>
 </code></pre></div>
-
 <p>Since the URLs are unique, we can associate our query with a URL and get only
 the tires belonging to <em>that</em> url:</p>
 <div class="highlight"><pre><span></span><code><span class="vi">@doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;parts.xml&quot;</span><span class="p">))</span>
@@ -1016,7 +1009,6 @@ the tires belonging to <em>that</em> url:</p>
 <span class="n">bike_tires</span> <span class="o">=</span> <span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//bike:tire&#39;</span><span class="p">,</span> <span class="s1">&#39;bike&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://bobsbikes.com/&#39;</span><span class="p">)</span>
 <span class="c1"># =&gt; [&quot;&lt;tire&gt;street&lt;/tire&gt;&quot;, &quot;&lt;tire&gt;mountain&lt;/tire&gt;&quot;]</span>
 </code></pre></div>
-
 <p>To make this namespace registration a bit easier, nokogiri will automatically
 register any namespaces it finds on the root node <em>for you</em>.  Nokogiri will
 associate the name in the declaration with the supplied URL.  If we stick to
@@ -1044,23 +1036,19 @@ this naming convention, we can shorten up our code.</p>
 
 <span class="nt">&lt;/feed&gt;</span>
 </code></pre></div>
-
 <p>If we stick to the convention, we can grab all title tags like this</p>
 <div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//xmlns:title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
 </code></pre></div>
-
 <p>Don't be fooled though.  You <em>do not</em> have to use XPath to get the benefits of
 namespaces.  CSS selectors can be used as well.  CSS just uses the pipe symbol
 to indicate a namespace search.</p>
 <p>Let's see the previous search rewritten to use CSS:</p>
 <div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;xmlns|title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
 </code></pre></div>
-
 <p>When using CSS, if the namespace is called "xmlns", you can even omit the
 namespace name.  That means your CSS will reduce to:</p>
 <div class="highlight"><pre><span></span><code><span class="vi">@doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="c1"># =&gt; [&quot;&lt;title&gt;Example Feed&lt;/title&gt;&quot;, &quot;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;&quot;]</span>
 </code></pre></div>
-
 <p>Dealing with namespaces is a broad topic.  If you need more examples, be sure
 to check out <a href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/">this blog post</a> or send an email to the <a href="http://groups.google.com/group/nokogiri-talk">mailing list</a>, and
 we can help out.</p>
@@ -1103,7 +1091,6 @@ prejudice, by using <code>#method_missing</code> to introspect on a node's child
 <span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="s2">&quot;[status=&#39;active&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
 <span class="n">doc</span><span class="o">.</span><span class="n">employees</span><span class="o">.</span><span class="n">employee</span><span class="p">(</span><span class="ss">:css</span> <span class="o">=&gt;</span> <span class="s2">&quot;[status=&#39;active&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fullname</span><span class="o">.</span><span class="n">content</span> <span class="c1"># =&gt; &quot;Dean Martin&quot;</span>
 </code></pre></div>
-
 <p>Aww yeah. Can you feel the spirit of <a href="http://twitter.com/jbarnette">@jbarnette</a> and
 <a href="http://twitter.com/nakajima">@nakajima</a> flowing through you? That's the power of the
 <em>slop</em>.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
@@ -1251,10 +1238,10 @@ documentation better.
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d120d6e9.min.js"></script>
+      <script src="../assets/javascripts/bundle.d9c629a2.min.js"></script>
       
     
   </body>

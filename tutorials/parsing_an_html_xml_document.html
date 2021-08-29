@@ -19,7 +19,7 @@
         
       
       <link rel="icon" href="../images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4+insiders-2.13.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5+insiders-2.13.2">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.06b57b5d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3c274924.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.1d832a92.min.css">
@@ -904,7 +904,6 @@
 <div class="highlight"><pre><span></span><code><span class="n">html_doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Mr. Belvedere Fan Club&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="p">)</span>
 <span class="n">xml_doc</span>  <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="s2">&quot;&lt;root&gt;&lt;aliens&gt;&lt;alien&gt;&lt;name&gt;Alf&lt;/name&gt;&lt;/alien&gt;&lt;/aliens&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>The variables <code>html_doc</code> and <code>xml_doc</code> are Nokogiri documents, which
 have all kinds of interesting properties and methods that you <a href="https://nokogiri.org/rdoc/Nokogiri/XML/Document">can
 read about here</a>. We'll cover the interesting bits in other
@@ -913,7 +912,6 @@ chapters.</p>
 <p>Note that you don't need to read the file into a string variable. Nokogiri will do this for you.</p>
 <div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div>
-
 <p>Clever Nokogiri! With the time you just saved, approach enlightenment by meditating on <a href="http://twitter.com/rjw1/status/2741916767">this koan</a>.</p>
 <h2 id="from-the-internets">From the Internets<a class="headerlink" href="#from-the-internets" title="Permanent link">&para;</a></h2>
 <p>I understand that there may be some HTML documents available on the
@@ -921,7 +919,6 @@ World Wide Web.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;http://www.threescompany.com/&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <h2 id="parse-options">Parse Options<a class="headerlink" href="#parse-options" title="Permanent link">&para;</a></h2>
 <p>Nokogiri offers quite a few options that affect how a document is
 parsed; you can read about them in the <a href="https://nokogiri.org/rdoc/Nokogiri/XML/ParseOptions">XML::ParseOptions docs</a>.</p>
@@ -942,25 +939,21 @@ parsed; you can read about them in the <a href="https://nokogiri.org/rdoc/Nokogi
   <span class="n">config</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">::</span><span class="no">STRICT</span> <span class="o">|</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">ParseOptions</span><span class="o">::</span><span class="no">NOBLANKS</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <p>But it's more idiomatic to use the chainable shortcuts on the config object instead:</p>
 <div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">strict</span><span class="o">.</span><span class="n">noblanks</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <p>Notably, if you want to turn <em>off</em> an option that's set by default, you can prefix a "no" to the config shortcut:</p>
 <div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">norecover</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <p>Leading to the perhaps-surprising (but logical!) <code>nononet</code> to turn networking back on:</p>
 <div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">nononet</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <h2 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h2>
 <p>Strings are always stored as UTF-8 internally.  Methods that return
 text values will always return UTF-8 encoded strings.  Methods that
@@ -1106,10 +1099,10 @@ documentation better.
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.d1f5481f.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d120d6e9.min.js"></script>
+      <script src="../assets/javascripts/bundle.d9c629a2.min.js"></script>
       
     
   </body>
