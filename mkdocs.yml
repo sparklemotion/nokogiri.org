@@ -72,7 +72,7 @@ markdown_extensions:
 
 nav:
   - Overview: index.md
-  - API: rdoc/index.html
+  - API: rdoc/_index.html
   - Support:
     - Installing Nokogiri: tutorials/installing_nokogiri.md
     - Nokogiri for Enterprise: tidelift-landing.md
