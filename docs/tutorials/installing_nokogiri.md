@@ -39,6 +39,9 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 1 gem installed
 ```
 
+If you're using Bundler v2.2+, check your lockfile knows about your platform(s): see `man bundle-lock` for details.
+
+
 ### Why would I not want to use a native gem?
 
 I can imagine some folks might have trust issues; if this is you, please let us know in a comment at [RFC: Increase the level of trust in released gem files · Issue #2013 · sparklemotion/nokogiri](https://github.com/sparklemotion/nokogiri/issues/2013). What can we do to increase that trust? (I can imagine providing a chain of custody including public build logs with cryptographic hashes of artifacts, but I'd like to hear from real users.)
