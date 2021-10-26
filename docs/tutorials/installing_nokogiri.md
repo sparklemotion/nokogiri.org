@@ -39,7 +39,14 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 1 gem installed
 ```
 
-If you're using Bundler v2.2+, check your lockfile knows about your platform(s): see `man bundle-lock` for details.
+If you're using Bundler v2.2+, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:
+
+``` sh
+bundle lock --add-platform x86_64-linux
+bundle install    # resolve dependencies for platform-specific gems
+```
+
+See `man bundle-lock` for details.
 
 
 ### Why would I not want to use a native gem?
