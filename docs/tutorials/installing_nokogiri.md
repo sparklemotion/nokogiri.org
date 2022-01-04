@@ -314,7 +314,7 @@ and saves over 170 MB in build tools.
 Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:
 
 ``` sh
-pkg install ruby clang make pkg-config libxslt
+pkg install ruby clang make pkg-config libxslt binutils
 gem install nokogiri --platform=ruby -- --use-system-libraries
 ```
 
