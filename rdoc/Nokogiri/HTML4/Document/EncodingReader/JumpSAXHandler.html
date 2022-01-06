@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-  Class: Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler
-  
-    — Documentation by YARD 0.9.26
-  
-</title>
+<meta charset="UTF-8">
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css">
-
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css">
+<title>class Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler - RDoc Documentation</title>
 
 <script type="text/javascript">
-  pathId = "Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler";
-  relpath = '../../../../';
+  var rdoc_rel_prefix = "../../../../";
+  var index_rel_prefix = "../../../../";
 </script>
 
+<script src="../../../../js/navigation.js" defer></script>
+<script src="../../../../js/search.js" defer></script>
+<script src="../../../../js/search_index.js" defer></script>
+<script src="../../../../js/searcher.js" defer></script>
+<script src="../../../../js/darkfish.js" defer></script>
 
-  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+<link href="../../../../rdoc-tweaks.css" rel="stylesheet">
 
-  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
 
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,321 +32,77 @@
       gtag('config', 'UA-1260604-8');
     </script>
 </head>
-  <body>
-    <div class="nav_wrap">
-      <iframe id="nav" src="../../../../class_list.html?1"></iframe>
-      <div id="resizer"></div>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results" type="text" name="search" placeholder="Search" spellcheck="false" title="Type to search, Up and Down to navigate, Enter to load">
     </div>
 
-    <div id="main" tabindex="-1">
-      <div id="header">
-        <div id="menu">
-  
-    <a href="../../../../_index.html">Index (J)</a> »
-    <span class="title"><span class="object_link"><a href="../../../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../../../HTML4.html" title="Nokogiri::HTML4 (module)">HTML4</a></span></span> » <span class="title"><span class="object_link"><a href="../../Document.html" title="Nokogiri::HTML4::Document (class)">Document</a></span></span> » <span class="title"><span class="object_link"><a href="../EncodingReader.html" title="Nokogiri::HTML4::Document::EncodingReader (class)">EncodingReader</a></span></span>
-     » 
-    <span class="title">JumpSAXHandler</span>
-  
+    <ul id="search-results" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="initially-hidden"></ul>
+  </form>
 </div>
-
-        <div id="search">
-  
-    <a class="full_list_link" id="class_list_link" href="../../../../class_list.html">
-
-        <svg width="24" height="24">
-          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
-        </svg>
-    </a>
-  
-</div>
-        <div class="clear"></div>
-      </div>
-
-      <div id="content">
-<h1 id="Class%3A+Nokogiri%3A%3AHTML4%3A%3ADocument%3A%3AEncodingReader%3A%3AJumpSAXHandler">Class: Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler
-  
-  
-  
-</h1>
-<div class="box_info">
-  
-  <dl>
-    <dt>Inherits:</dt>
-    <dd>
-      <span class="inheritName"><span class="object_link"><a href="SAXHandler.html" title="Nokogiri::HTML4::Document::EncodingReader::SAXHandler (class)">SAXHandler</a></span></span>
-      
-        <ul class="fullTree">
-          <li>Object</li>
-          
-            <li class="next"><span class="object_link"><a href="../../../XML/SAX/Document.html" title="Nokogiri::XML::SAX::Document (class)">XML::SAX::Document</a></span></li>
-          
-            <li class="next"><span class="object_link"><a href="SAXHandler.html" title="Nokogiri::HTML4::Document::EncodingReader::SAXHandler (class)">SAXHandler</a></span></li>
-          
-            <li class="next">Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler</li>
-          
-        </ul>
-        <a href="#" class="inheritanceTree">show all</a>
-      
-    </dd>
-  </dl>
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-  <dl>
-    <dt>Defined in:</dt>
-    <dd>lib/nokogiri/html4/document.rb</dd>
-  </dl>
-  
-</div>
-
-<h2 id="Overview">Overview</h2>
-<div class="docstring">
-  <div class="discussion">
-    
 
   </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Since:</p>
-<ul class="since">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class="inline">
-<p>v1.12.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-
-
-
-
-
 
   
-    <h2 id="Instance+Method+Summary">
-      Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
 
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
+  <div id="class-metadata">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(jumptag)  ⇒ JumpSAXHandler </a>
     
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="SAXHandler.html">Nokogiri::HTML4::Document::EncodingReader::SAXHandler</a>
+</p>
+</div>
 
     
-  </span>
-  
-  
-    <span class="note title constructor">constructor</span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>A new instance of JumpSAXHandler.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
     
-      <a href="#start_element-instance_method" title="#start_element (instance method)">#<strong>start_element</strong>(name, attrs = [])  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline"></div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
-
-  
-  
-  
-  <div id="constructor_details" class="method_details_list">
-  <h2 id="Constructor+Details">Constructor Details</h2>
-  
-    <div class="method_details first">
-  <h3 class="signature first" id="initialize-instance_method">
-  
-    #<strong>initialize</strong>(jumptag)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler (class)">JumpSAXHandler</a></span></tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Returns a new instance of JumpSAXHandler.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Since:</p>
-<ul class="since">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class="inline">
-<p>v1.12.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-251
-252
-253
-254</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 251</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span><span class="lparen">(</span><span class="id identifier rubyid_jumptag">jumptag</span><span class="rparen">)</span>
-  <span class="ivar">@jumptag</span> <span class="op">=</span> <span class="id identifier rubyid_jumptag">jumptag</span>
-  <span class="kw">super</span><span class="lparen">(</span><span class="rparen">)</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-  
-</div>
-
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2 id="Instance+Method+Details">Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="start_element-instance_method">
-  
-    #<strong>start_element</strong>(name, attrs = [])  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Since:</p>
-<ul class="since">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class="inline">
-<p>v1.12.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-256
-257
-258
-259
-260</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/html4/document.rb', line 256</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_start_element">start_element</span><span class="lparen">(</span><span class="id identifier rubyid_name">name</span><span class="comma">,</span> <span class="id identifier rubyid_attrs">attrs</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span><span class="rparen">)</span>
-  <span class="kw">super</span>
-  <span class="id identifier rubyid_throw">throw</span> <span class="ivar">@jumptag</span><span class="comma">,</span> <span class="ivar">@encoding</span> <span class="kw">if</span> <span class="ivar">@encoding</span>
-  <span class="id identifier rubyid_throw">throw</span> <span class="ivar">@jumptag</span><span class="comma">,</span> <span class="kw">nil</span> <span class="kw">if</span> <span class="id identifier rubyid_name">name</span> <span class="op">=~</span> <span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">\A(?:div|h1|img|p|br)\z</span><span class="regexp_end">/</span></span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
     
   </div>
+</nav>
 
-</div>
+<main role="main" aria-labelledby="class-Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler">
+  <h1 id="class-Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler" class="class">
+    class Nokogiri::HTML4::Document::EncodingReader::JumpSAXHandler
+  </h1>
 
-      <div id="footer">
-  Generated on Tue Oct 26 16:01:36 2021 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-3.0.2).
-</div>
+  <section class="description">
+    
+  </section>
 
-    </div>
-  </body>
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  </p>
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+  </p>
+<p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</p></footer>
+
+</body>
 </html>

@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-  Class: Nokogiri::XML::Reader
-  
-    — Documentation by YARD 0.9.26
-  
-</title>
+<meta charset="UTF-8">
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css">
-
-  <link rel="stylesheet" href="../../css/common.css" type="text/css">
+<title>class Nokogiri::XML::Reader - RDoc Documentation</title>
 
 <script type="text/javascript">
-  pathId = "Nokogiri::XML::Reader";
-  relpath = '../../';
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
 </script>
 
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
 
-  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+<link href="../../rdoc-tweaks.css" rel="stylesheet">
 
-  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
 
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,1395 +32,334 @@
       gtag('config', 'UA-1260604-8');
     </script>
 </head>
-  <body>
-    <div class="nav_wrap">
-      <iframe id="nav" src="../../class_list.html?1"></iframe>
-      <div id="resizer"></div>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results" type="text" name="search" placeholder="Search" spellcheck="false" title="Type to search, Up and Down to navigate, Enter to load">
     </div>
 
-    <div id="main" tabindex="-1">
-      <div id="header">
-        <div id="menu">
-  
-    <a href="../../_index.html">Index (R)</a> »
-    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
-     » 
-    <span class="title">Reader</span>
-  
+    <ul id="search-results" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="initially-hidden"></ul>
+  </form>
 </div>
 
-        <div id="search">
-  
-    <a class="full_list_link" id="class_list_link" href="../../class_list.html">
-
-        <svg width="24" height="24">
-          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
-        </svg>
-    </a>
-  
-</div>
-        <div class="clear"></div>
-      </div>
-
-      <div id="content">
-<h1 id="Class%3A+Nokogiri%3A%3AXML%3A%3AReader">Class: Nokogiri::XML::Reader
-  
-  
-  
-</h1>
-<div class="box_info">
-  
-  <dl>
-    <dt>Inherits:</dt>
-    <dd>
-      <span class="inheritName">Object</span>
-      
-        <ul class="fullTree">
-          <li>Object</li>
-          
-            <li class="next">Nokogiri::XML::Reader</li>
-          
-        </ul>
-        <a href="#" class="inheritanceTree">show all</a>
-      
-    </dd>
-  </dl>
-  
-
-  
-  
-  
-  
-  <dl>
-      <dt>Includes:</dt>
-      <dd>Enumerable</dd>
-  </dl>
-  
-  
+  </div>
 
   
 
-  
-  <dl>
-    <dt>Defined in:</dt>
-    <dd>lib/nokogiri/xml/reader.rb<span class="defines">,<br>
-  ext/nokogiri/xml_reader.c</span>
-</dd>
-  </dl>
-  
-</div>
-
-<h2 id="Overview">Overview</h2>
-<div class="docstring">
-  <div class="discussion">
+  <div id="class-metadata">
     
-<p>Nokogiri::XML::Reader parses an XML document similar to the way a cursor would move.  The Reader is given an XML document, and yields nodes to an each block.</p>
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="../../Object.html">Object</a>
+</p>
+</div>
+
+    
+<div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+    <li>
+<span class="include">Enumerable</span>
+  </li>
+</ul>
+</div>
+
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li>
+<a href="#method-c-from_io">::from_io</a>
+    </li>
+<li>
+<a href="#method-c-from_memory">::from_memory</a>
+    </li>
+<li>
+<a href="#method-i-attribute">#attribute</a>
+    </li>
+<li>
+<a href="#method-i-attribute_at">#attribute_at</a>
+    </li>
+<li>
+<a href="#method-i-attribute_count">#attribute_count</a>
+    </li>
+<li>
+<a href="#method-i-attribute_nodes">#attribute_nodes</a>
+    </li>
+<li>
+<a href="#method-i-attributes">#attributes</a>
+    </li>
+<li>
+<a href="#method-i-attributes-3F">#attributes?</a>
+    </li>
+<li>
+<a href="#method-i-base_uri">#base_uri</a>
+    </li>
+<li>
+<a href="#method-i-default-3F">#default?</a>
+    </li>
+<li>
+<a href="#method-i-depth">#depth</a>
+    </li>
+<li>
+<a href="#method-i-each">#each</a>
+    </li>
+<li>
+<a href="#method-i-empty_element-3F">#empty_element?</a>
+    </li>
+<li>
+<a href="#method-i-encoding">#encoding</a>
+    </li>
+<li>
+<a href="#method-i-inner_xml">#inner_xml</a>
+    </li>
+<li>
+<a href="#method-i-lang">#lang</a>
+    </li>
+<li>
+<a href="#method-i-local_name">#local_name</a>
+    </li>
+<li>
+<a href="#method-i-name">#name</a>
+    </li>
+<li>
+<a href="#method-i-namespace_uri">#namespace_uri</a>
+    </li>
+<li>
+<a href="#method-i-namespaces">#namespaces</a>
+    </li>
+<li>
+<a href="#method-i-node_type">#node_type</a>
+    </li>
+<li>
+<a href="#method-i-outer_xml">#outer_xml</a>
+    </li>
+<li>
+<a href="#method-i-prefix">#prefix</a>
+    </li>
+<li>
+<a href="#method-i-read">#read</a>
+    </li>
+<li>
+<a href="#method-i-self_closing-3F">#self_closing?</a>
+    </li>
+<li>
+<a href="#method-i-state">#state</a>
+    </li>
+<li>
+<a href="#method-i-value">#value</a>
+    </li>
+<li>
+<a href="#method-i-value-3F">#value?</a>
+    </li>
+<li>
+<a href="#method-i-xml_version">#xml_version</a>
+  </li>
+</ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Nokogiri::XML::Reader">
+  <h1 id="class-Nokogiri::XML::Reader" class="class">
+    class Nokogiri::XML::Reader
+  </h1>
+
+  <section class="description">
+    
+<p>The <a href="Reader.html"><code>Reader</code></a> parser allows you to effectively pull parse an <a href="../XML.html"><code>XML</code></a> document. Once instantiated, call <a href="Reader.html#method-i-each"><code>Nokogiri::XML::Reader#each</code></a> to iterate over each node.  Note that you may only iterate over the document once!</p>
+
+<p><a href="Reader.html"><code>Nokogiri::XML::Reader</code></a> parses an <a href="../XML.html"><code>XML</code></a> document similar to the way a cursor would move.  The <a href="Reader.html"><code>Reader</code></a> is given an <a href="../XML.html"><code>XML</code></a> document, and yields nodes to an each block.</p>
 
 <p>Here is an example of usage:</p>
 
-<pre class="code ruby"><code class="ruby"><span class="id identifier rubyid_reader">reader</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">Reader</span><span class="lparen">(</span><span class="heredoc_beg">&lt;&lt;-eoxml</span><span class="rparen">)</span>
-<span class="tstring_content">  &lt;x xmlns:tenderlove='http://tenderlovemaking.com/'&gt;
+<pre class="ruby"><span class="ruby-identifier">reader</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span>(<span class="ruby-identifier">&lt;&lt;-eoxml</span>)
+<span class="ruby-value">  &lt;x xmlns:tenderlove='http://tenderlovemaking.com/'&gt;
     &lt;tenderlove:foo awesome='true'&gt;snuggles!&lt;/tenderlove:foo&gt;
   &lt;/x&gt;
-</span><span class="heredoc_end">eoxml
-</span>
-<span class="id identifier rubyid_reader">reader</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="op">|</span>
+</span><span class="ruby-identifier">eoxml</span>
 
-  <span class="comment"># node is an instance of Nokogiri::XML::Reader
-</span>  <span class="id identifier rubyid_puts">puts</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_name">name</span>
+<span class="ruby-identifier">reader</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
 
-<span class="kw">end</span>
-</code></pre>
+  <span class="ruby-comment"># node is an instance of Nokogiri::XML::Reader</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>
 
-<p>Note that Nokogiri::XML::Reader#each can only be called once!!  Once the cursor moves through the entire document, you must parse the document again.  So make sure that you capture any information you need during the first iteration.</p>
+<span class="ruby-keyword">end</span>
+</pre>
 
-<p>The Reader parser is good for when you need the speed of a SAX parser, but do not want to write a Document handler.</p>
+<p>Note that <a href="Reader.html#method-i-each"><code>Nokogiri::XML::Reader#each</code></a> can only be called once!!  Once the cursor moves through the entire document, you must parse the document again.  So make sure that you capture any information you need during the first iteration.</p>
+
+<p>The <a href="Reader.html"><code>Reader</code></a> parser is good for when you need the speed of a <a href="SAX.html"><code>SAX</code></a> parser, but do not want to write a <a href="Document.html"><code>Document</code></a> handler.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
 
 
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-  
-    <h2 id="Constant+Summary">
-      Constant Summary
-      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
-    </h2>
-
-    <dl class="constants">
-      
-        <dt id="TYPE_NONE-constant" class="">TYPE_NONE =
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="TYPE_ATTRIBUTE">TYPE_ATTRIBUTE
+        </dt>
+<dd>
+          <p>Attribute node type</p>
+        </dd>
+<dt id="TYPE_CDATA">TYPE_CDATA
+        </dt>
+<dd>
+          <p><a href="CDATA.html"><code>CDATA</code></a> node type</p>
+        </dd>
+<dt id="TYPE_COMMENT">TYPE_COMMENT
+        </dt>
+<dd>
+          <p><a href="Comment.html"><code>Comment</code></a> node type</p>
+        </dd>
+<dt id="TYPE_DOCUMENT">TYPE_DOCUMENT
+        </dt>
+<dd>
+          <p><a href="Document.html"><code>Document</code></a> node type</p>
+        </dd>
+<dt id="TYPE_DOCUMENT_FRAGMENT">TYPE_DOCUMENT_FRAGMENT
+        </dt>
+<dd>
+          <p><a href="Document.html"><code>Document</code></a> Fragment node type</p>
+        </dd>
+<dt id="TYPE_DOCUMENT_TYPE">TYPE_DOCUMENT_TYPE
+        </dt>
+<dd>
+          <p><a href="Document.html"><code>Document</code></a> Type node type</p>
+        </dd>
+<dt id="TYPE_ELEMENT">TYPE_ELEMENT
+        </dt>
+<dd>
+          <p><a href="Element.html"><code>Element</code></a> node type</p>
+        </dd>
+<dt id="TYPE_END_ELEMENT">TYPE_END_ELEMENT
+        </dt>
+<dd>
+          <p><a href="Element.html"><code>Element</code></a> end node type</p>
+        </dd>
+<dt id="TYPE_END_ENTITY">TYPE_END_ENTITY
+        </dt>
+<dd>
+          <p>Entity end node type</p>
+        </dd>
+<dt id="TYPE_ENTITY">TYPE_ENTITY
+        </dt>
+<dd>
+          <p>Entity node type</p>
+        </dd>
+<dt id="TYPE_ENTITY_REFERENCE">TYPE_ENTITY_REFERENCE
+        </dt>
+<dd>
+          <p>Entity Reference node type</p>
+        </dd>
+<dt id="TYPE_NONE">TYPE_NONE
+        </dt>
+<dd>
           
+        </dd>
+<dt id="TYPE_NOTATION">TYPE_NOTATION
         </dt>
-        <dd><pre class="code"><span class="int">0</span></pre></dd>
-      
-        <dt id="TYPE_ELEMENT-constant" class="">TYPE_ELEMENT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Element node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p><a href="Notation.html"><code>Notation</code></a> node type</p>
+        </dd>
+<dt id="TYPE_PROCESSING_INSTRUCTION">TYPE_PROCESSING_INSTRUCTION
         </dt>
-        <dd><pre class="code"><span class="int">1</span></pre></dd>
-      
-        <dt id="TYPE_ATTRIBUTE-constant" class="">TYPE_ATTRIBUTE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Attribute node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>PI node type</p>
+        </dd>
+<dt id="TYPE_SIGNIFICANT_WHITESPACE">TYPE_SIGNIFICANT_WHITESPACE
         </dt>
-        <dd><pre class="code"><span class="int">2</span></pre></dd>
-      
-        <dt id="TYPE_TEXT-constant" class="">TYPE_TEXT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Text node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Significant Whitespace node type</p>
+        </dd>
+<dt id="TYPE_TEXT">TYPE_TEXT
         </dt>
-        <dd><pre class="code"><span class="int">3</span></pre></dd>
-      
-        <dt id="TYPE_CDATA-constant" class="">TYPE_CDATA =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>CDATA node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p><a href="Text.html"><code>Text</code></a> node type</p>
+        </dd>
+<dt id="TYPE_WHITESPACE">TYPE_WHITESPACE
         </dt>
-        <dd><pre class="code"><span class="int">4</span></pre></dd>
-      
-        <dt id="TYPE_ENTITY_REFERENCE-constant" class="">TYPE_ENTITY_REFERENCE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Entity Reference node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Whitespace node type</p>
+        </dd>
+<dt id="TYPE_XML_DECLARATION">TYPE_XML_DECLARATION
         </dt>
-        <dd><pre class="code"><span class="int">5</span></pre></dd>
-      
-        <dt id="TYPE_ENTITY-constant" class="">TYPE_ENTITY =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Entity node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">6</span></pre></dd>
-      
-        <dt id="TYPE_PROCESSING_INSTRUCTION-constant" class="">TYPE_PROCESSING_INSTRUCTION =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>PI node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">7</span></pre></dd>
-      
-        <dt id="TYPE_COMMENT-constant" class="">TYPE_COMMENT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Comment node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">8</span></pre></dd>
-      
-        <dt id="TYPE_DOCUMENT-constant" class="">TYPE_DOCUMENT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Document node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">9</span></pre></dd>
-      
-        <dt id="TYPE_DOCUMENT_TYPE-constant" class="">TYPE_DOCUMENT_TYPE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Document Type node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">10</span></pre></dd>
-      
-        <dt id="TYPE_DOCUMENT_FRAGMENT-constant" class="">TYPE_DOCUMENT_FRAGMENT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Document Fragment node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">11</span></pre></dd>
-      
-        <dt id="TYPE_NOTATION-constant" class="">TYPE_NOTATION =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Notation node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">12</span></pre></dd>
-      
-        <dt id="TYPE_WHITESPACE-constant" class="">TYPE_WHITESPACE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Whitespace node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">13</span></pre></dd>
-      
-        <dt id="TYPE_SIGNIFICANT_WHITESPACE-constant" class="">TYPE_SIGNIFICANT_WHITESPACE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Significant Whitespace node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">14</span></pre></dd>
-      
-        <dt id="TYPE_END_ELEMENT-constant" class="">TYPE_END_ELEMENT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Element end node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">15</span></pre></dd>
-      
-        <dt id="TYPE_END_ENTITY-constant" class="">TYPE_END_ENTITY =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Entity end node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">16</span></pre></dd>
-      
-        <dt id="TYPE_XML_DECLARATION-constant" class="">TYPE_XML_DECLARATION =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>XML Declaration node type</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class="int">17</span></pre></dd>
-      
-    </dl>
-  
-
-
-
-
-  <h2 id="Instance+Attribute+Summary">Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small>
-</h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#encoding-instance_method" title="#encoding (instance method)">#<strong>encoding</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>The encoding for the document.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#errors-instance_method" title="#errors (instance method)">#<strong>errors</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>A list of errors encountered while parsing.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#source-instance_method" title="#source (instance method)">#<strong>source</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>The XML source.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
-
-
-
-
-  
-    <h2 id="Class+Method+Summary">
-      Class Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#from_io-class_method" title="from_io (class method)">.<strong>from_io</strong>(io, url = nil, encoding = nil, options = 0)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Create a new reader that parses <code>io</code>.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#from_memory-class_method" title="from_memory (class method)">.<strong>from_memory</strong>(string, url = nil, encoding = nil, options = 0)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Create a new reader that parses <code>string</code>.</p>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
-    <h2 id="Instance+Method+Summary">
-      Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#attribute-instance_method" title="#attribute (instance method)">#<strong>attribute</strong>(name)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the value of attribute named <code>name</code>.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#attribute_at-instance_method" title="#attribute_at (instance method)">#<strong>attribute_at</strong>(index)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the value of attribute at <code>index</code>.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#attribute_count-instance_method" title="#attribute_count (instance method)">#<strong>attribute_count</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the number of attributes for the current node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#attribute_nodes-instance_method" title="#attribute_nodes (instance method)">#<strong>attribute_nodes</strong>  ⇒ Array&lt;Nokogiri::XML::Attr&gt; </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the attributes of the current node as an Array of Attr.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#attributes-instance_method" title="#attributes (instance method)">#<strong>attributes</strong>  ⇒ Hash&lt;String, String&gt; </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the attributes of the current node as a Hash.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#attributes%3F-instance_method" title="#attributes? (instance method)">#<strong>attributes?</strong>  ⇒ Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Does this node have attributes?.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#base_uri-instance_method" title="#base_uri (instance method)">#<strong>base_uri</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>base_uri.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#default%3F-instance_method" title="#default? (instance method)">#<strong>default?</strong>  ⇒ Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Was an attribute generated from the default value in the DTD or schema?.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#depth-instance_method" title="#depth (instance method)">#<strong>depth</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the depth of the node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Move the cursor through the document yielding the cursor to the block.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#empty_element%3F-instance_method" title="#empty_element? (instance method)">#<strong>empty_element?</strong>(#)  ⇒ Boolean </a>
-    
-
-    
-      (also: #self_closing?)
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Returns true if the current node is empty, otherwise false.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#inner_xml-instance_method" title="#inner_xml (instance method)">#<strong>inner_xml</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Read the contents of the current node, including child nodes and markup.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#lang-instance_method" title="#lang (instance method)">#<strong>lang</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the xml:lang scope within which the node resides.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#local_name-instance_method" title="#local_name (instance method)">#<strong>local_name</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the local name of the node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the name of the node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#namespace_uri-instance_method" title="#namespace_uri (instance method)">#<strong>namespace_uri</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the URI defining the namespace associated with the node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#namespaces-instance_method" title="#namespaces (instance method)">#<strong>namespaces</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get a hash of namespaces for this Node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#node_type-instance_method" title="#node_type (instance method)">#<strong>node_type</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the type of readers current node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#outer_xml-instance_method" title="#outer_xml (instance method)">#<strong>outer_xml</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Read the current node and its contents, including child nodes and markup.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#prefix-instance_method" title="#prefix (instance method)">#<strong>prefix</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the shorthand reference to the namespace associated with the node.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#read-instance_method" title="#read (instance method)">#<strong>read</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Move the Reader forward through the XML document.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#state-instance_method" title="#state (instance method)">#<strong>state</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the state of the reader.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#value-instance_method" title="#value (instance method)">#<strong>value</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the text value of the node if present.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#value%3F-instance_method" title="#value? (instance method)">#<strong>value?</strong>  ⇒ Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Does this node have a text value?.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#xml_version-instance_method" title="#xml_version (instance method)">#<strong>xml_version</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Get the XML version of the document being read.</p>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
-
-  
-  <div id="instance_attr_details" class="attr_details">
-    <h2 id="Instance+Attribute+Details">Instance Attribute Details</h2>
-    
-      
-      <span id=""></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="encoding-instance_method">
-  
-    #<strong>encoding</strong>  ⇒ <tt>Object</tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>The encoding for the document</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-74
-75
-76</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 74</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_encoding">encoding</span>
-  <span class="ivar">@encoding</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="errors=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="errors-instance_method">
-  
-    #<strong>errors</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>A list of errors encountered while parsing</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-71
-72
-73</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 71</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_errors">errors</span>
-  <span class="ivar">@errors</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="source-instance_method">
-  
-    #<strong>source</strong>  ⇒ <tt>Object</tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>The XML source</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-77
-78
-79</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 77</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_source">source</span>
-  <span class="ivar">@source</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
-
-  <div id="class_method_details" class="method_details_list">
-    <h2 id="Class+Method+Details">Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="from_io-class_method">
-  
-    .<strong>from_io</strong>(io, url = nil, encoding = nil, options = 0)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Create a new reader that parses <code>io</code></p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  
-
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-595
-596
-597
-598
-599
-600
-601
-602
-603
-604
-605
-606
-607
-608
-609
-610
-611
-612
-613
-614
-615
-616
-617
-618
-619
-620
-621
-622
-623
-624
-625
-626
-627
-628
-629
-630
-631
-632
-633</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 595</span>
-
-static VALUE
+<dd>
+          <p><a href="../XML.html"><code>XML</code></a> Declaration node type</p>
+      </dd>
+</dl>
+    </section>
+
+    <section class="attribute-method-details">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-errors" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">errors</span><span class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>A list of errors encountered while parsing</p>
+        </div>
+      </div>
+      <div id="attribute-i-source" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">source</span><span class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The <a href="../XML.html"><code>XML</code></a> source</p>
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-from_io" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            from_io(io, url = nil, encoding = nil, options = 0)
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Create a new reader that parses <code>io</code></p>
+
+          <div class="method-source-code" id="from_io-source">
+            <pre>static VALUE
 from_io(int argc, VALUE *argv, VALUE klass)
 {
   VALUE rb_io, rb_url, encoding, rb_options;
@@ -1463,84 +398,25 @@ from_io(int argc, VALUE *argv, VALUE klass)
 
   return rb_reader;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="from_memory-class_method">
-  
-    .<strong>from_memory</strong>(string, url = nil, encoding = nil, options = 0)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Create a new reader that parses <code>string</code></p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-c-from_memory" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            from_memory(string, url = nil, encoding = nil, options = 0)
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Create a new reader that parses <code>string</code></p>
 
-
-550
-551
-552
-553
-554
-555
-556
-557
-558
-559
-560
-561
-562
-563
-564
-565
-566
-567
-568
-569
-570
-571
-572
-573
-574
-575
-576
-577
-578
-579
-580
-581
-582
-583
-584
-585
-586
-587</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 550</span>
-
-static VALUE
+          <div class="method-source-code" id="from_memory-source">
+            <pre>static VALUE
 from_memory(int argc, VALUE *argv, VALUE klass)
 {
   VALUE rb_buffer, rb_url, encoding, rb_options;
@@ -1578,71 +454,32 @@ from_memory(int argc, VALUE *argv, VALUE klass)
 
   return rb_reader;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2 id="Instance+Method+Details">Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="attribute-instance_method">
-  
-    #<strong>attribute</strong>(name)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the value of attribute named <code>name</code></p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+    </section>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
+      <div id="method-i-attribute" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            attribute(name)
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 219</span>
+        <div class="method-description">
+          <p>Get the value of attribute named <code>name</code></p>
 
-static VALUE
+          <div class="method-source-code" id="attribute-source">
+            <pre>static VALUE
 reader_attribute(VALUE self, VALUE name)
 {
   xmlTextReaderPtr reader;
@@ -1661,68 +498,25 @@ reader_attribute(VALUE self, VALUE name)
   xmlFree(value);
   return rb_value;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="attribute_at-instance_method">
-  
-    #<strong>attribute_at</strong>(index)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the value of attribute at <code>index</code></p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-attribute_at" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            attribute_at(index)
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the value of attribute at <code>index</code></p>
 
-
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 190</span>
-
-static VALUE
+          <div class="method-source-code" id="attribute_at-source">
+            <pre>static VALUE
 attribute_at(VALUE self, VALUE index)
 {
   xmlTextReaderPtr reader;
@@ -1744,58 +538,25 @@ attribute_at(VALUE self, VALUE index)
   xmlFree(value);
   return rb_value;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="attribute_count-instance_method">
-  
-    #<strong>attribute_count</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the number of attributes for the current node</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-attribute_count" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            attribute_count
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the number of attributes for the current node</p>
 
-
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 245</span>
-
-static VALUE
+          <div class="method-source-code" id="attribute_count-source">
+            <pre>static VALUE
 attribute_count(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -1807,96 +568,25 @@ attribute_count(VALUE self)
 
   return INT2NUM((long)count);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="attribute_nodes-instance_method">
-  
-    #<strong>attribute_nodes</strong>  ⇒ <tt>Array&lt;<span class="object_link"><a href="Attr.html" title="Nokogiri::XML::Attr (class)">Nokogiri::XML::Attr</a></span>&gt;</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Get the attributes of the current node as an Array of Attr</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Array&lt;<span class="object_link"><a href="Attr.html" title="Nokogiri::XML::Attr (class)">Nokogiri::XML::Attr</a></span>&gt;</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
+      </div>
 
-</div>
+      <div id="method-i-attribute_nodes" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            attribute_nodes() → Array&lt;Nokogiri::XML::Attr&gt;
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
+        <div class="method-description">
+          <p>Get the attributes of the current node as an Array of <a href="Attr.html"><code>Attr</code></a></p>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 155</span>
-
-static VALUE
+          <div class="method-source-code" id="attribute_nodes-source">
+            <pre>static VALUE
 rb_xml_reader_attribute_nodes(VALUE rb_reader)
 {
   xmlTextReaderPtr c_reader;
@@ -1924,143 +614,57 @@ rb_xml_reader_attribute_nodes(VALUE rb_reader)
 
   return attr_nodes;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="attributes-instance_method">
-  
-    #<strong>attributes</strong>  ⇒ <tt>Hash&lt;String, String&gt;</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the attributes of the current node as a Hash</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Hash&lt;String, String&gt;</tt>)</span>
-      
-      
-      
-        —
-        <div class="inline">
-<p>Attribute names and values</p>
-</div>
-      
-    </li>
-  
-</ul>
+      </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+      <div id="method-i-attributes" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">attributes</span><span class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
+        <div class="method-description">
+          <p>Get the attributes of the current node as a Hash</p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>(Hash&lt;String, String&gt;) Attribute names and values</p>
+</dd>
+</dl>
 
-91
-92
-93
-94
-95
-96
-97
-98</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 91</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_attributes">attributes</span>
-  <span class="id identifier rubyid_attrs_hash">attrs_hash</span> <span class="op">=</span> <span class="id identifier rubyid_attribute_nodes">attribute_nodes</span><span class="period">.</span><span class="id identifier rubyid_each_with_object">each_with_object</span><span class="lparen">(</span><span class="lbrace">{</span><span class="rbrace">}</span><span class="rparen">)</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_node">node</span><span class="comma">,</span> <span class="id identifier rubyid_hash">hash</span><span class="op">|</span>
-                 <span class="id identifier rubyid_hash">hash</span><span class="lbracket">[</span><span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_name">name</span><span class="rbracket">]</span> <span class="op">=</span> <span class="id identifier rubyid_node">node</span><span class="period">.</span><span class="id identifier rubyid_to_s">to_s</span>
-               <span class="kw">end</span>
-  <span class="id identifier rubyid_ns">ns</span> <span class="op">=</span> <span class="id identifier rubyid_namespaces">namespaces</span>
-  <span class="id identifier rubyid_attrs_hash">attrs_hash</span><span class="period">.</span><span class="id identifier rubyid_merge!">merge!</span><span class="lparen">(</span><span class="id identifier rubyid_ns">ns</span><span class="rparen">)</span> <span class="kw">if</span> <span class="id identifier rubyid_ns">ns</span>
-  <span class="id identifier rubyid_attrs_hash">attrs_hash</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="attributes?-instance_method">
-  
-    #<strong>attributes?</strong>  ⇒ <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Does this node have attributes?</p>
+          <div class="method-source-code" id="attributes-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attributes</span>
+  <span class="ruby-identifier">attrs_hash</span> = <span class="ruby-identifier">attribute_nodes</span>.<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span>, <span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">ns</span> = <span class="ruby-identifier">namespaces</span>
+  <span class="ruby-identifier">attrs_hash</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">ns</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">ns</span>
+  <span class="ruby-identifier">attrs_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
+      <div id="method-i-attributes-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            attributes?
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Does this node have attributes?</p>
 
-
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 107</span>
-
-static VALUE
+          <div class="method-source-code" id="attributes-3F-source">
+            <pre>static VALUE
 attributes_eh(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2073,135 +677,62 @@ attributes_eh(VALUE self)
 
   return Qnil;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="base_uri-instance_method">
-  
-    #<strong>base_uri</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>base_uri</p>
-
-<p>Get the xml:base of the node</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
+      </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+      <div id="method-i-base_uri" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            base_uri
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
+        <div class="method-description">
+          <p>Get the xml:base of the node</p>
 
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 416</span>
-
-static VALUE
-base_uri(VALUE self)
+          <div class="method-source-code" id="base_uri-source">
+            <pre>static VALUE
+rb_xml_reader_base_uri(VALUE rb_reader)
 {
-  xmlTextReaderPtr reader;
-  const char *base_uri;
+  VALUE rb_base_uri;
+  xmlTextReaderPtr c_reader;
+  xmlChar *c_base_uri;
 
-  Data_Get_Struct(self, xmlTextReader, reader);
-  base_uri = (const char *)xmlTextReaderBaseUri(reader);
-  if (base_uri == NULL) { return Qnil; }
+  Data_Get_Struct(rb_reader, xmlTextReader, c_reader);
 
-  return NOKOGIRI_STR_NEW2(base_uri);
+  c_base_uri = xmlTextReaderBaseUri(c_reader);
+  if (c_base_uri == NULL) {
+    return Qnil;
+  }
+
+  rb_base_uri = NOKOGIRI_STR_NEW2(c_base_uri);
+  xmlFree(c_base_uri);
+
+  return rb_base_uri;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="default?-instance_method">
-  
-    #<strong>default?</strong>  ⇒ <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Was an attribute generated from the default value in the DTD or schema?</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
+      <div id="method-i-default-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            default?
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Was an attribute generated from the default value in the <a href="DTD.html"><code>DTD</code></a> or schema?</p>
 
-
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 67</span>
-
-static VALUE
+          <div class="method-source-code" id="default-3F-source">
+            <pre>static VALUE
 default_eh(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2214,58 +745,25 @@ default_eh(VALUE self)
 
   return Qnil;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="depth-instance_method">
-  
-    #<strong>depth</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the depth of the node</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-depth" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            depth
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the depth of the node</p>
 
-
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 264</span>
-
-static VALUE
+          <div class="method-source-code" id="depth-source">
+            <pre>static VALUE
 depth(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2277,132 +775,47 @@ depth(VALUE self)
 
   return INT2NUM((long)depth);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="each-instance_method">
-  
-    #<strong>each</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Move the cursor through the document yielding the cursor to the block</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
+      </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+      <div id="method-i-each" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">each</span><span class="method-args">() { |cursor| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
+        <div class="method-description">
+          <p>Move the cursor through the document yielding the cursor to the block</p>
 
-102
-103
-104
-105
-106</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/reader.rb', line 102</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_each">each</span>
-  <span class="kw">while</span> <span class="id identifier rubyid_cursor">cursor</span> <span class="op">=</span> <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_read">read</span>
-    <span class="kw">yield</span> <span class="id identifier rubyid_cursor">cursor</span>
-  <span class="kw">end</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="empty_element?-instance_method">
-  
-    #<strong>empty_element?</strong>(#)  ⇒ <tt>Boolean</tt> 
-  
-
-  
-    <span class="aliases">Also known as:
-    <span class="names"><span id="self_closing?-instance_method">self_closing?</span></span>
-    </span>
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Returns true if the current node is empty, otherwise false.</p>
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+  <span class="ruby-keyword">while</span> (<span class="ruby-identifier">cursor</span> = <span class="ruby-identifier">read</span>)
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">cursor</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="docstring">
-  <div class="discussion">
-    
+      </div>
 
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
+      <div id="method-i-empty_element-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            empty_element? # → true or false
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
+        <div class="method-description">
+          <p>Returns true if the current node is empty, otherwise false.</p>
 
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-641
-642
-643
-644
-645
-646
-647
-648
-649
-650
-651
-652
-653</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 641</span>
-
-static VALUE
+          <div class="method-source-code" id="empty_element-3F-source">
+            <pre>static VALUE
 empty_element_p(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2415,65 +828,61 @@ empty_element_p(VALUE self)
 
   return Qfalse;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="inner_xml-instance_method">
-  
-    #<strong>inner_xml</strong>  ⇒ <tt>Object</tt> 
-  
+          </div>
+        </div>
 
-  
+        <div class="aliases">
+          Also aliased as: <a href="Reader.html#method-i-self_closing-3F">self_closing?</a>
+        </div>
 
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Read the contents of the current node, including child nodes and markup. Returns a utf-8 encoded string.</p>
+      </div>
+
+      <div id="method-i-encoding" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">encoding</span><span class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="encoding-source">
+            <pre>static VALUE
+rb_xml_reader_encoding(VALUE rb_reader)
+{
+  xmlTextReaderPtr c_reader;
+  const char *parser_encoding;
+  VALUE constructor_encoding;
+
+  constructor_encoding = rb_iv_get(rb_reader, "@encoding");
+  if (RTEST(constructor_encoding)) {
+    return constructor_encoding;
+  }
+
+  Data_Get_Struct(rb_reader, xmlTextReader, c_reader);
+  parser_encoding = (const char *)xmlTextReaderConstEncoding(c_reader);
+  if (parser_encoding == NULL) { return Qnil; }
+  return NOKOGIRI_STR_NEW2(parser_encoding);
+}</pre>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-inner_xml" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            inner_xml
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Read the contents of the current node, including child nodes and markup. Returns a utf-8 encoded string.</p>
 
-
-499
-500
-501
-502
-503
-504
-505
-506
-507
-508
-509
-510
-511
-512
-513
-514
-515
-516
-517</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 499</span>
-
-static VALUE
+          <div class="method-source-code" id="inner_xml-source">
+            <pre>static VALUE
 inner_xml(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2492,58 +901,25 @@ inner_xml(VALUE self)
 
   return str;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="lang-instance_method">
-  
-    #<strong>lang</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the xml:lang scope within which the node resides.</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-lang" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            lang
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the xml:lang scope within which the node resides.</p>
 
-
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 302</span>
-
-static VALUE
+          <div class="method-source-code" id="lang-source">
+            <pre>static VALUE
 lang(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2555,58 +931,25 @@ lang(VALUE self)
 
   return NOKOGIRI_STR_NEW2(lang);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="local_name-instance_method">
-  
-    #<strong>local_name</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the local name of the node</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-local_name" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            local_name
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the local name of the node</p>
 
-
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387
-388
-389</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 378</span>
-
-static VALUE
+          <div class="method-source-code" id="local_name-source">
+            <pre>static VALUE
 local_name(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2618,58 +961,25 @@ local_name(VALUE self)
 
   return NOKOGIRI_STR_NEW2(name);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="name-instance_method">
-  
-    #<strong>name</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the name of the node. Returns a utf-8 encoded string.</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-name" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            name
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the name of the node. Returns a utf-8 encoded string.</p>
 
-
-397
-398
-399
-400
-401
-402
-403
-404
-405
-406
-407
-408</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 397</span>
-
-static VALUE
+          <div class="method-source-code" id="name-source">
+            <pre>static VALUE
 name(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2681,58 +991,25 @@ name(VALUE self)
 
   return NOKOGIRI_STR_NEW2(name);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="namespace_uri-instance_method">
-  
-    #<strong>namespace_uri</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the URI defining the namespace associated with the node</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-namespace_uri" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            namespace_uri
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the URI defining the namespace associated with the node</p>
 
-
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 359</span>
-
-static VALUE
+          <div class="method-source-code" id="namespace_uri-source">
+            <pre>static VALUE
 namespace_uri(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2744,68 +1021,25 @@ namespace_uri(VALUE self)
 
   return NOKOGIRI_STR_NEW2(uri);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="namespaces-instance_method">
-  
-    #<strong>namespaces</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get a hash of namespaces for this Node</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-namespaces" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            namespaces
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get a hash of namespaces for this <a href="Node.html"><code>Node</code></a></p>
 
-
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 127</span>
-
-static VALUE
+          <div class="method-source-code" id="namespaces-source">
+            <pre>static VALUE
 namespaces(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2827,116 +1061,50 @@ namespaces(VALUE self)
 
   return attr ;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="node_type-instance_method">
-  
-    #<strong>node_type</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the type of readers current node</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-node_type" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            node_type
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the type of readers current node</p>
 
-
-449
-450
-451
-452
-453
-454
-455</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 449</span>
-
-static VALUE
+          <div class="method-source-code" id="node_type-source">
+            <pre>static VALUE
 node_type(VALUE self)
 {
   xmlTextReaderPtr reader;
   Data_Get_Struct(self, xmlTextReader, reader);
   return INT2NUM((long)xmlTextReaderNodeType(reader));
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="outer_xml-instance_method">
-  
-    #<strong>outer_xml</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Read the current node and its contents, including child nodes and markup. Returns a utf-8 encoded string.</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-outer_xml" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            outer_xml
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Read the current node and its contents, including child nodes and markup. Returns a utf-8 encoded string.</p>
 
-
-526
-527
-528
-529
-530
-531
-532
-533
-534
-535
-536
-537
-538
-539
-540
-541
-542</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 526</span>
-
-static VALUE
+          <div class="method-source-code" id="outer_xml-source">
+            <pre>static VALUE
 outer_xml(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -2953,58 +1121,25 @@ outer_xml(VALUE self)
   }
   return str;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="prefix-instance_method">
-  
-    #<strong>prefix</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the shorthand reference to the namespace associated with the node.</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-prefix" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            prefix
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the shorthand reference to the namespace associated with the node.</p>
 
-
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 340</span>
-
-static VALUE
+          <div class="method-source-code" id="prefix-source">
+            <pre>static VALUE
 prefix(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -3016,74 +1151,25 @@ prefix(VALUE self)
 
   return NOKOGIRI_STR_NEW2(prefix);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="read-instance_method">
-  
-    #<strong>read</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Move the Reader forward through the XML document.</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-read" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            read
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Move the <a href="Reader.html"><code>Reader</code></a> forward through the <a href="../XML.html"><code>XML</code></a> document.</p>
 
-
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483
-484
-485
-486
-487
-488
-489
-490</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 463</span>
-
-static VALUE
+          <div class="method-source-code" id="read-source">
+            <pre>static VALUE
 read_more(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -3111,111 +1197,66 @@ read_more(VALUE self)
 
   return Qnil;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="state-instance_method">
-  
-    #<strong>state</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the state of the reader</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
+
+      <div id="method-i-self_closing-3F" class="method-detail method-alias">
+        <div class="method-heading">
+          <span class="method-name">self_closing?</span><span class="method-args">()</span>
+        </div>
+
+        <div class="method-description">
+          
+
+        </div>
 
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="aliases">
+          Alias for: <a href="Reader.html#method-i-empty_element-3F">empty_element?</a>
+        </div>
+      </div>
 
+      <div id="method-i-state" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            state
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-435
-436
-437
-438
-439
-440
-441</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 435</span>
+        <div class="method-description">
+          <p>Get the state of the reader</p>
 
-static VALUE
+          <div class="method-source-code" id="state-source">
+            <pre>static VALUE
 state(VALUE self)
 {
   xmlTextReaderPtr reader;
   Data_Get_Struct(self, xmlTextReader, reader);
   return INT2NUM((long)xmlTextReaderReadState(reader));
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="value-instance_method">
-  
-    #<strong>value</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the text value of the node if present. Returns a utf-8 encoded string.</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-value" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            value
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the text value of the node if present. Returns a utf-8 encoded string.</p>
 
-
-321
-322
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 321</span>
-
-static VALUE
+          <div class="method-source-code" id="value-source">
+            <pre>static VALUE
 value(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -3227,72 +1268,25 @@ value(VALUE self)
 
   return NOKOGIRI_STR_NEW2(value);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="value?-instance_method">
-  
-    #<strong>value?</strong>  ⇒ <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Does this node have a text value?</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
+      <div id="method-i-value-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            value?
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Does this node have a text value?</p>
 
-
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 87</span>
-
-static VALUE
+          <div class="method-source-code" id="value-3F-source">
+            <pre>static VALUE
 value_eh(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -3305,58 +1299,25 @@ value_eh(VALUE self)
 
   return Qnil;
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="xml_version-instance_method">
-  
-    #<strong>xml_version</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Get the XML version of the document being read</p>
+          </div>
+        </div>
 
 
-  </div>
-</div>
-<div class="tags">
-  
-  
+      </div>
 
+      <div id="method-i-xml_version" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            xml_version
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
 
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+        <div class="method-description">
+          <p>Get the <a href="../XML.html"><code>XML</code></a> version of the document being read</p>
 
-
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'ext/nokogiri/xml_reader.c', line 283</span>
-
-static VALUE
+          <div class="method-source-code" id="xml_version-source">
+            <pre>static VALUE
 xml_version(VALUE self)
 {
   xmlTextReaderPtr reader;
@@ -3368,21 +1329,25 @@ xml_version(VALUE self)
 
   return NOKOGIRI_STR_NEW2(version);
 }</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
+          </div>
+        </div>
 
-</div>
 
-      <div id="footer">
-  Generated on Tue Oct 26 16:01:33 2021 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-3.0.2).
-</div>
+      </div>
 
-    </div>
-  </body>
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  </p>
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+  </p>
+<p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</p></footer>
+
+</body>
 </html>

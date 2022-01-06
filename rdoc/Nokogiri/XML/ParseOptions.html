@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-  Class: Nokogiri::XML::ParseOptions
-  
-    — Documentation by YARD 0.9.26
-  
-</title>
+<meta charset="UTF-8">
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css">
-
-  <link rel="stylesheet" href="../../css/common.css" type="text/css">
+<title>class Nokogiri::XML::ParseOptions - RDoc Documentation</title>
 
 <script type="text/javascript">
-  pathId = "Nokogiri::XML::ParseOptions";
-  relpath = '../../';
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
 </script>
 
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
 
-  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+<link href="../../rdoc-tweaks.css" rel="stylesheet">
 
-  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
 
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,98 +32,110 @@
       gtag('config', 'UA-1260604-8');
     </script>
 </head>
-  <body>
-    <div class="nav_wrap">
-      <iframe id="nav" src="../../class_list.html?1"></iframe>
-      <div id="resizer"></div>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results" type="text" name="search" placeholder="Search" spellcheck="false" title="Type to search, Up and Down to navigate, Enter to load">
     </div>
 
-    <div id="main" tabindex="-1">
-      <div id="header">
-        <div id="menu">
-  
-    <a href="../../_index.html">Index (P)</a> »
-    <span class="title"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span> » <span class="title"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span>
-     » 
-    <span class="title">ParseOptions</span>
-  
+    <ul id="search-results" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="initially-hidden"></ul>
+  </form>
 </div>
 
-        <div id="search">
-  
-    <a class="full_list_link" id="class_list_link" href="../../class_list.html">
-
-        <svg width="24" height="24">
-          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
-        </svg>
-    </a>
-  
-</div>
-        <div class="clear"></div>
-      </div>
-
-      <div id="content">
-<h1 id="Class%3A+Nokogiri%3A%3AXML%3A%3AParseOptions">Class: Nokogiri::XML::ParseOptions
-  
-  
-  
-</h1>
-<div class="box_info">
-  
-  <dl>
-    <dt>Inherits:</dt>
-    <dd>
-      <span class="inheritName">Object</span>
-      
-        <ul class="fullTree">
-          <li>Object</li>
-          
-            <li class="next">Nokogiri::XML::ParseOptions</li>
-          
-        </ul>
-        <a href="#" class="inheritanceTree">show all</a>
-      
-    </dd>
-  </dl>
-  
+  </div>
 
   
-  
-  
-  
-  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
 
-  
-
-  
-  <dl>
-    <dt>Defined in:</dt>
-    <dd>lib/nokogiri/xml/parse_options.rb</dd>
-  </dl>
-  
+  <ul class="link-list" role="directory">
+    <li>
+<a href="#class-Nokogiri::XML::ParseOptions-label-Building+combinations+of+parse+options">Building combinations of parse options</a>
+    </li>
+<li>
+<a href="#class-Nokogiri::XML::ParseOptions-label-Removing+particular+parse+options">Removing particular parse options</a>
+  </li>
+</ul>
 </div>
 
-<h2 id="Overview">Overview</h2>
-<div class="docstring">
-  <div class="discussion">
+
+  <div id="class-metadata">
     
-<p>Parse options for passing to Nokogiri.XML or Nokogiri.HTML</p>
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
 
-<h2 id="label-Building+combinations+of+parse+options">Building combinations of parse options</h2>
+  <p class="link"><a href="../../Object.html">Object</a>
+</p>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li>
+<a href="#method-c-new">::new</a>
+    </li>
+<li>
+<a href="#method-i-3D-3D">#==</a>
+    </li>
+<li class="calls-super">
+<a href="#method-i-inspect">#inspect</a>
+    </li>
+<li>
+<a href="#method-i-strict">#strict</a>
+    </li>
+<li>
+<a href="#method-i-strict-3F">#strict?</a>
+  </li>
+</ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Nokogiri::XML::ParseOptions">
+  <h1 id="class-Nokogiri::XML::ParseOptions" class="class">
+    class Nokogiri::XML::ParseOptions
+  </h1>
+
+  <section class="description">
+    
+<p>Parse options for passing to <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.XML or <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.HTML</p>
+
+<h2 id="class-Nokogiri::XML::ParseOptions-label-Building+combinations+of+parse+options">Building combinations of parse options<span><a href="#class-Nokogiri::XML::ParseOptions-label-Building+combinations+of+parse+options">¶</a> <a href="#top">↑</a></span>
+</h2>
 
 <p>You can build your own combinations of these parse options by using any of the following methods: <strong>Note</strong>: All examples attempt to set the <code>RECOVER</code> &amp; <code>NOENT</code> options.</p>
 <dl class="rdoc-list label-list">
-<dt>Ruby's bitwise operators
+<dt>Ruby’s bitwise operators
 </dt>
 <dd>
 <p>You can use the Ruby bitwise operators to set various combinations.</p>
 </dd>
 </dl>
 
-<pre class="code ruby"><code class="ruby"><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const">XML</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">&lt;content&gt;Chapter 1&lt;/content</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="lparen">(</span><span class="lparen">(</span><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">0</span><span class="rparen">)</span> <span class="op">|</span> <span class="lparen">(</span><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">1</span><span class="rparen">)</span><span class="rparen">)</span><span class="rparen">)</span>
-</code></pre>
+<pre class="ruby"><span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-string">'&lt;content&gt;Chapter 1&lt;/content'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>((<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span>) <span class="ruby-operator">|</span> (<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">1</span>)))
+</pre>
 <dl class="rdoc-list label-list">
 <dt>Method chaining
 </dt>
@@ -136,888 +144,334 @@
 </dd>
 </dl>
 
-<pre class="code ruby"><code class="ruby"><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const">XML</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">&lt;content&gt;Chapter 1&lt;/content</span><span class="tstring_end">'</span></span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="kw">nil</span><span class="comma">,</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_recover">recover</span><span class="period">.</span><span class="id identifier rubyid_noent">noent</span><span class="rparen">)</span>
-</code></pre>
+<pre class="ruby"><span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-string">'&lt;content&gt;Chapter 1&lt;/content'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">recover</span>.<span class="ruby-identifier">noent</span>)
+</pre>
 <dl class="rdoc-list label-list">
 <dt>Using Ruby Blocks
 </dt>
 <dd>
-<p>You can also setup parse combinations in the block passed to Nokogiri.XML or Nokogiri.HTML</p>
+<p>You can also setup parse combinations in the block passed to <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.XML or <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.HTML</p>
 </dd>
 </dl>
 
-<pre class="code ruby"><code class="ruby"><span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="period">.</span><span class="const">XML</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">&lt;content&gt;Chapter 1&lt;/content</span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="lbrace">{</span><span class="op">|</span><span class="id identifier rubyid_config">config</span><span class="op">|</span> <span class="id identifier rubyid_config">config</span><span class="period">.</span><span class="id identifier rubyid_recover">recover</span><span class="period">.</span><span class="id identifier rubyid_noent">noent</span><span class="rbrace">}</span>
-</code></pre>
+<pre class="ruby"><span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-string">'&lt;content&gt;Chapter 1&lt;/content'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">recover</span>.<span class="ruby-identifier">noent</span>}
+</pre>
 
-<h2 id="label-Removing+particular+parse+options">Removing particular parse options</h2>
+<h2 id="class-Nokogiri::XML::ParseOptions-label-Removing+particular+parse+options">Removing particular parse options<span><a href="#class-Nokogiri::XML::ParseOptions-label-Removing+particular+parse+options">¶</a> <a href="#top">↑</a></span>
+</h2>
 
 <p>You can also remove options from an instance of <code>ParseOptions</code> dynamically. Every option has an equivalent <code>no{option}</code> method in lowercase. You can call these methods on an instance of <code>ParseOptions</code> to remove the option. Note that this is not available for <code>STRICT</code>.</p>
 
-<pre class="code ruby"><code class="ruby"><span class="comment"># Setting the RECOVER &amp; NOENT options...
-</span><span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="../../Nokogiri.html" title="Nokogiri (module)">Nokogiri</a></span></span><span class="op">::</span><span class="const"><span class="object_link"><a href="../XML.html" title="Nokogiri::XML (module)">XML</a></span></span><span class="op">::</span><span class="const">ParseOptions</span><span class="period">.</span><span class="id identifier rubyid_new"><span class="object_link"><a href="#initialize-instance_method" title="Nokogiri::XML::ParseOptions#initialize (method)">new</a></span></span><span class="period">.</span><span class="id identifier rubyid_recover">recover</span><span class="period">.</span><span class="id identifier rubyid_noent">noent</span>
-<span class="comment"># later...
-</span><span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_norecover">norecover</span> <span class="comment"># Removes the Nokogiri::XML::ParseOptions::RECOVER option
-</span><span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_nonoent">nonoent</span> <span class="comment"># Removes the Nokogiri::XML::ParseOptions::NOENT option
-</span></code></pre>
+<pre class="ruby"><span class="ruby-comment"># Setting the RECOVER &amp; NOENT options...</span>
+<span class="ruby-identifier">options</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">recover</span>.<span class="ruby-identifier">noent</span>
+<span class="ruby-comment"># later...</span>
+<span class="ruby-identifier">options</span>.<span class="ruby-identifier">norecover</span> <span class="ruby-comment"># Removes the Nokogiri::XML::ParseOptions::RECOVER option</span>
+<span class="ruby-identifier">options</span>.<span class="ruby-identifier">nonoent</span> <span class="ruby-comment"># Removes the Nokogiri::XML::ParseOptions::NOENT option</span>
+</pre>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
 
 
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-  
-    <h2 id="Constant+Summary">
-      Constant Summary
-      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
-    </h2>
-
-    <dl class="constants">
-      
-        <dt id="STRICT-constant" class="">STRICT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Strict parsing</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="BIG_LINES">BIG_LINES
         </dt>
-        <dd><pre class="code"><span class="int">0</span></pre></dd>
-      
-        <dt id="RECOVER-constant" class="">RECOVER =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Recover from errors</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>line numbers stored as long int (instead of a short int)</p>
+        </dd>
+<dt id="COMPACT">COMPACT
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">0</span></pre></dd>
-      
-        <dt id="NOENT-constant" class="">NOENT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Substitute entities</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>compact small text nodes; no modification of the tree allowed afterwards (will possibly crash if you try to modify the tree)</p>
+        </dd>
+<dt id="DEFAULT_HTML">DEFAULT_HTML
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">1</span></pre></dd>
-      
-        <dt id="DTDLOAD-constant" class="">DTDLOAD =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Load external subsets</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>the default options used for parsing <a href="../HTML4.html"><code>HTML</code></a> documents</p>
+        </dd>
+<dt id="DEFAULT_SCHEMA">DEFAULT_SCHEMA
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">2</span></pre></dd>
-      
-        <dt id="DTDATTR-constant" class="">DTDATTR =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Default DTD attributes</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>the default options used for parsing <a href="../XML.html"><code>XML</code></a> schemas</p>
+        </dd>
+<dt id="DEFAULT_XML">DEFAULT_XML
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">3</span></pre></dd>
-      
-        <dt id="DTDVALID-constant" class="">DTDVALID =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>validate with the DTD</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>the default options used for parsing <a href="../XML.html"><code>XML</code></a> documents</p>
+        </dd>
+<dt id="DEFAULT_XSLT">DEFAULT_XSLT
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">4</span></pre></dd>
-      
-        <dt id="NOERROR-constant" class="">NOERROR =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>suppress error reports</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>the default options used for parsing <a href="../XSLT.html"><code>XSLT</code></a> stylesheets</p>
+        </dd>
+<dt id="DTDATTR">DTDATTR
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">5</span></pre></dd>
-      
-        <dt id="NOWARNING-constant" class="">NOWARNING =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>suppress warning reports</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Default <a href="DTD.html"><code>DTD</code></a> attributes</p>
+        </dd>
+<dt id="DTDLOAD">DTDLOAD
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">6</span></pre></dd>
-      
-        <dt id="PEDANTIC-constant" class="">PEDANTIC =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>pedantic error reporting</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Load external subsets</p>
+        </dd>
+<dt id="DTDVALID">DTDVALID
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">7</span></pre></dd>
-      
-        <dt id="NOBLANKS-constant" class="">NOBLANKS =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>remove blank nodes</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>validate with the <a href="DTD.html"><code>DTD</code></a></p>
+        </dd>
+<dt id="HUGE">HUGE
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">8</span></pre></dd>
-      
-        <dt id="SAX1-constant" class="">SAX1 =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>use the SAX1 interface internally</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>relax any hardcoded limit from the parser</p>
+        </dd>
+<dt id="NOBASEFIX">NOBASEFIX
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">9</span></pre></dd>
-      
-        <dt id="XINCLUDE-constant" class="">XINCLUDE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Implement XInclude substitution</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>do not fixup <a href="ParseOptions.html#XINCLUDE"><code>XINCLUDE</code></a> xml:base uris</p>
+        </dd>
+<dt id="NOBLANKS">NOBLANKS
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">10</span></pre></dd>
-      
-        <dt id="NONET-constant" class="">NONET =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Forbid network access. Recommended for dealing with untrusted documents.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>remove blank nodes</p>
+        </dd>
+<dt id="NOCDATA">NOCDATA
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">11</span></pre></dd>
-      
-        <dt id="NODICT-constant" class="">NODICT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Do not reuse the context dictionary</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>merge <a href="CDATA.html"><code>CDATA</code></a> as text nodes</p>
+        </dd>
+<dt id="NODICT">NODICT
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">12</span></pre></dd>
-      
-        <dt id="NSCLEAN-constant" class="">NSCLEAN =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>remove redundant namespaces declarations</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Do not reuse the context dictionary</p>
+        </dd>
+<dt id="NOENT">NOENT
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">13</span></pre></dd>
-      
-        <dt id="NOCDATA-constant" class="">NOCDATA =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>merge CDATA as text nodes</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Substitute entities</p>
+        </dd>
+<dt id="NOERROR">NOERROR
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">14</span></pre></dd>
-      
-        <dt id="NOXINCNODE-constant" class="">NOXINCNODE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>do not generate XINCLUDE START/END nodes</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>suppress error reports</p>
+        </dd>
+<dt id="NONET">NONET
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">15</span></pre></dd>
-      
-        <dt id="COMPACT-constant" class="">COMPACT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>compact small text nodes; no modification of the tree allowed afterwards (will possibly crash if you try to modify the tree)</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Forbid network access. Recommended for dealing with untrusted documents.</p>
+        </dd>
+<dt id="NOWARNING">NOWARNING
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">16</span></pre></dd>
-      
-        <dt id="OLD10-constant" class="">OLD10 =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>parse using XML-1.0 before update 5</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>suppress warning reports</p>
+        </dd>
+<dt id="NOXINCNODE">NOXINCNODE
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">17</span></pre></dd>
-      
-        <dt id="NOBASEFIX-constant" class="">NOBASEFIX =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>do not fixup XINCLUDE xml:base uris</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>do not generate <a href="ParseOptions.html#XINCLUDE"><code>XINCLUDE</code></a> START/END nodes</p>
+        </dd>
+<dt id="NSCLEAN">NSCLEAN
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">18</span></pre></dd>
-      
-        <dt id="HUGE-constant" class="">HUGE =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>relax any hardcoded limit from the parser</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>remove redundant namespaces declarations</p>
+        </dd>
+<dt id="OLD10">OLD10
         </dt>
-        <dd><pre class="code"><span class="int">1</span> <span class="op">&lt;&lt;</span> <span class="int">19</span></pre></dd>
-      
-        <dt id="DEFAULT_XML-constant" class="">DEFAULT_XML =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>the default options used for parsing XML documents</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>parse using XML-1.0 before update 5</p>
+        </dd>
+<dt id="PEDANTIC">PEDANTIC
         </dt>
-        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span></pre></dd>
-      
-        <dt id="DEFAULT_XSLT-constant" class="">DEFAULT_XSLT =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>the default options used for parsing XSLT stylesheets</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>pedantic error reporting</p>
+        </dd>
+<dt id="RECOVER">RECOVER
         </dt>
-        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOENT-constant" title="Nokogiri::XML::ParseOptions::NOENT (constant)">NOENT</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#DTDLOAD-constant" title="Nokogiri::XML::ParseOptions::DTDLOAD (constant)">DTDLOAD</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#DTDATTR-constant" title="Nokogiri::XML::ParseOptions::DTDATTR (constant)">DTDATTR</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOCDATA-constant" title="Nokogiri::XML::ParseOptions::NOCDATA (constant)">NOCDATA</a></span></span></pre></dd>
-      
-        <dt id="DEFAULT_HTML-constant" class="">DEFAULT_HTML =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>the default options used for parsing HTML documents</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>Recover from errors</p>
+        </dd>
+<dt id="SAX1">SAX1
         </dt>
-        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOERROR-constant" title="Nokogiri::XML::ParseOptions::NOERROR (constant)">NOERROR</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NOWARNING-constant" title="Nokogiri::XML::ParseOptions::NOWARNING (constant)">NOWARNING</a></span></span> <span class="op">|</span> <span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span></pre></dd>
-      
-        <dt id="DEFAULT_SCHEMA-constant" class="">DEFAULT_SCHEMA =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>the default options used for parsing XML schemas</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+<dd>
+          <p>use the <a href="ParseOptions.html#SAX1"><code>SAX1</code></a> interface internally</p>
+        </dd>
+<dt id="STRICT">STRICT
         </dt>
-        <dd><pre class="code"><span class="const"><span class="object_link"><a href="#NONET-constant" title="Nokogiri::XML::ParseOptions::NONET (constant)">NONET</a></span></span></pre></dd>
-      
-    </dl>
-  
-
-
-
-
-  <h2 id="Instance+Attribute+Summary">Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small>
-</h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#options-instance_method" title="#options (instance method)">#<strong>options</strong>  ⇒ Object </a>
-    
-
-    
-      (also: #to_i)
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>Returns the value of attribute options.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
-
-
-
-
-  
-    <h2 id="Instance+Method+Summary">
-      Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline"></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(options = STRICT)  ⇒ ParseOptions </a>
-    
-
-    
-  </span>
-  
-  
-    <span class="note title constructor">constructor</span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline">
-<p>A new instance of ParseOptions.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline"></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#strict-instance_method" title="#strict (instance method)">#<strong>strict</strong>  ⇒ Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline"></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#strict%3F-instance_method" title="#strict? (instance method)">#<strong>strict?</strong>  ⇒ Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class="inline"></div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
-<div id="constructor_details" class="method_details_list">
-  <h2 id="Constructor+Details">Constructor Details</h2>
-  
-    <div class="method_details first">
-  <h3 class="signature first" id="initialize-instance_method">
-  
-    #<strong>initialize</strong>(options = STRICT)  ⇒ <tt><span class="object_link"><a href="" title="Nokogiri::XML::ParseOptions (class)">ParseOptions</a></span></tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Returns a new instance of ParseOptions.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-82
-83
-84</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 82</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_initialize">initialize</span> <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="const"><span class="object_link"><a href="#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
-  <span class="ivar">@options</span> <span class="op">=</span> <span class="id identifier rubyid_options">options</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-  
-</div>
-
-  <div id="instance_attr_details" class="attr_details">
-    <h2 id="Instance+Attribute+Details">Instance Attribute Details</h2>
-    
-      
-      <span id="options=-instance_method"></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="options-instance_method">
-  
-    #<strong>options</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-    <span class="aliases">Also known as:
-    <span class="names"><span id="to_i-instance_method">to_i</span></span>
-    </span>
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the value of attribute options.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-81
-82
-83</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 81</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_options">options</span>
-  <span class="ivar">@options</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2 id="Instance+Method+Details">Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="==-instance_method">
-  
-    #<strong>==</strong>(other)  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-114
-115
-116</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 114</span>
-
-<span class="kw">def</span> <span class="op">==</span><span class="lparen">(</span><span class="id identifier rubyid_other">other</span><span class="rparen">)</span>
-  <span class="id identifier rubyid_other">other</span><span class="period">.</span><span class="id identifier rubyid_to_i">to_i</span> <span class="op">==</span> <span class="id identifier rubyid_to_i">to_i</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="inspect-instance_method">
-  
-    #<strong>inspect</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-120
-121
-122
-123
-124
-125
-126</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 120</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_inspect">inspect</span>
-  <span class="id identifier rubyid_options">options</span> <span class="op">=</span> <span class="lbracket">[</span><span class="rbracket">]</span>
-  <span class="kw">self</span><span class="period">.</span><span class="id identifier rubyid_class">class</span><span class="period">.</span><span class="id identifier rubyid_constants">constants</span><span class="period">.</span><span class="id identifier rubyid_each">each</span> <span class="kw">do</span> <span class="op">|</span><span class="id identifier rubyid_k">k</span><span class="op">|</span>
-    <span class="id identifier rubyid_options">options</span> <span class="op">&lt;&lt;</span> <span class="id identifier rubyid_k">k</span><span class="period">.</span><span class="id identifier rubyid_downcase">downcase</span> <span class="kw">if</span> <span class="id identifier rubyid_send">send</span><span class="lparen">(</span><span class="symbol">:"#{</span><span class="id identifier rubyid_k">k</span><span class="period">.</span><span class="id identifier rubyid_downcase">downcase</span><span class="embexpr_end">}</span><span class="tstring_content">?</span><span class="tstring_end">"</span><span class="rparen">)</span>
-  <span class="kw">end</span>
-  <span class="kw">super</span><span class="period">.</span><span class="id identifier rubyid_sub">sub</span><span class="lparen">(</span><span class="tstring"><span class="regexp_beg">/</span><span class="tstring_content">&gt;$</span><span class="regexp_end">/</span></span><span class="comma">,</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content"> </span><span class="tstring_end">"</span></span> <span class="op">+</span> <span class="id identifier rubyid_options">options</span><span class="period">.</span><span class="id identifier rubyid_join">join</span><span class="lparen">(</span><span class="tstring"><span class="tstring_beg">'</span><span class="tstring_content">, </span><span class="tstring_end">'</span></span><span class="rparen">)</span> <span class="op">+</span> <span class="tstring"><span class="tstring_beg">"</span><span class="tstring_content">&gt;</span><span class="tstring_end">"</span></span><span class="rparen">)</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="strict-instance_method">
-  
-    #<strong>strict</strong>  ⇒ <tt>Object</tt> 
-  
-
-  
-
-  
-</h3>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-105
-106
-107
-108</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 105</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_strict">strict</span>
-  <span class="ivar">@options</span> <span class="op">&amp;=</span> <span class="op">~</span><span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span>
-  <span class="kw">self</span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="strict?-instance_method">
-  
-    #<strong>strict?</strong>  ⇒ <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class="type">(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div>
-<table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-110
-111
-112</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/nokogiri/xml/parse_options.rb', line 110</span>
-
-<span class="kw">def</span> <span class="id identifier rubyid_strict?">strict?</span>
-  <span class="ivar">@options</span> <span class="op">&amp;</span> <span class="const"><span class="object_link"><a href="#RECOVER-constant" title="Nokogiri::XML::ParseOptions::RECOVER (constant)">RECOVER</a></span></span> <span class="op">==</span> <span class="const"><span class="object_link"><a href="#STRICT-constant" title="Nokogiri::XML::ParseOptions::STRICT (constant)">STRICT</a></span></span>
-<span class="kw">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
-</div>
-
-      <div id="footer">
-  Generated on Tue Oct 26 16:01:37 2021 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-3.0.2).
-</div>
-
-    </div>
-  </body>
+<dd>
+          <p>Strict parsing</p>
+        </dd>
+<dt id="XINCLUDE">XINCLUDE
+        </dt>
+<dd>
+          <p>Implement XInclude substitution</p>
+      </dd>
+</dl>
+    </section>
+
+    <section class="attribute-method-details">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+      <div id="attribute-i-to_i" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">to_i</span><span class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span class="method-args">(options = STRICT)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = <span class="ruby-constant">STRICT</span>)
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-3D-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">==</span><span class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-inspect" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-identifier">options</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">options</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">send</span>(<span class="ruby-value">:"#{k.downcase}?"</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/&gt;$/</span>, <span class="ruby-string">" "</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">", "</span>) <span class="ruby-operator">+</span> <span class="ruby-string">"&gt;"</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-strict" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">strict</span><span class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="strict-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strict</span>
+  <span class="ruby-ivar">@options</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-operator">~</span><span class="ruby-constant">RECOVER</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-strict-3F" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">strict?</span><span class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="strict-3F-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strict?</span>
+  <span class="ruby-ivar">@options</span> <span class="ruby-operator">&amp;</span> <span class="ruby-constant">RECOVER</span> <span class="ruby-operator">==</span> <span class="ruby-constant">STRICT</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  </p>
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+  </p>
+<p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</p></footer>
+
+</body>
 </html>

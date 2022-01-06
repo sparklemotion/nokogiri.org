@@ -9,7 +9,6 @@
         <meta name="description" content="The Official Tutorial Archive™ of Nokogiri®">
       
       
-      
         <meta name="author" content="Mike Dalessio">
       
       
@@ -19,7 +18,7 @@
         
       
       <link rel="icon" href="images/nokogiri-serif-black.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.2.4+insiders-2.13.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4+insiders-4.5.1">
     
     
       
@@ -27,17 +26,17 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.06b57b5d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.f8ad3a65.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.1d832a92.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
           <meta name="theme-color" content="#000000">
         
       
-      <link rel="preload" as="style" href="assets/stylesheets/vendor/mermaid.733f213f.min.css">
+      <link rel="preload" as="style" href="assets/stylesheets/vendor/mermaid.9c0dc1da.min.css">
       
     
     
@@ -46,28 +45,25 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CMenlo&display=fallback">
-        <style>:root{--md-text-font-family:"Ubuntu";--md-code-font-family:"Menlo"}</style>
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Menlo"}</style>
       
-    
     
     
       <link rel="stylesheet" href="stylesheets/tidelift.css">
     
       <link rel="stylesheet" href="stylesheets/custom.css">
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?".":"."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
   
 
 
   
-
   
 
 
-  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1260604-8","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){if(document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document.forms.feedback){var e,a=document.forms.feedback;for(e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 
   
     <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
@@ -112,6 +108,48 @@
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
   
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -166,8 +204,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -199,8 +236,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -220,88 +256,130 @@
     <ul class="md-tabs__list">
       
         
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="index.html" class="md-tabs__link">
-      Overview
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="rdoc/_index.html" class="md-tabs__link">
-      API
-    </a>
-  </li>
-
-      
-        
-  
-  
 
 
   
+    
+    
   
   
     <li class="md-tabs__item">
-      <a href="tutorials/installing_nokogiri.html" class="md-tabs__link">
-        Support
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  Overview
+
       </a>
     </li>
   
 
       
         
-  
-  
 
 
   
+    
+    
   
   
     <li class="md-tabs__item">
-      <a href="tutorials/toc.html" class="md-tabs__link">
-        Tutorials
+      <a href="rdoc/index.html" class="md-tabs__link">
+        
+  
+  API
+
       </a>
     </li>
   
 
       
         
+
+
+  
+    
+    
   
   
     
+    
+    
+      <li class="md-tabs__item">
+        <a href="tutorials/installing_nokogiri.html" class="md-tabs__link">
+          
   
+  Support
 
-
-  <li class="md-tabs__item">
-    <a href="CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
-      Changelog
-    </a>
-  </li>
+        </a>
+      </li>
+    
+  
 
       
         
-  
-  
 
 
   
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="tutorials/toc.html" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+
+
+  
+    
+    
+      
+    
   
   
     <li class="md-tabs__item">
-      <a href="CONTRIBUTING.html" class="md-tabs__link">
-        About
+      <a href="CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
+        
+  
+  Changelog
+
       </a>
     </li>
+  
+
+      
+        
+
+
+  
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="CONTRIBUTING.html" class="md-tabs__link">
+          
+  
+  About
+
+        </a>
+      </li>
+    
   
 
       
@@ -341,8 +419,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/sparklemotion/nokogiri" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -359,12 +436,18 @@
       
       
 
+
   
   
   
     <li class="md-nav__item">
       <a href="index.html" class="md-nav__link">
-        Overview
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+
       </a>
     </li>
   
@@ -373,13 +456,19 @@
       
       
       
+
 
   
   
   
     <li class="md-nav__item">
-      <a href="rdoc/_index.html" class="md-nav__link">
-        API
+      <a href="rdoc/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+
       </a>
     </li>
   
@@ -388,6 +477,7 @@
       
       
       
+
 
   
   
@@ -402,7 +492,12 @@
       
       
         <label class="md-nav__link" for="__nav_3">
-          Support
+          
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -420,7 +515,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/installing_nokogiri.html" class="md-nav__link">
-        Installing Nokogiri
+        
+  
+  <span class="md-ellipsis">
+    Installing Nokogiri
+  </span>
+
       </a>
     </li>
   
@@ -434,7 +534,12 @@
   
     <li class="md-nav__item">
       <a href="tidelift-landing.html" class="md-nav__link">
-        Nokogiri for Enterprise
+        
+  
+  <span class="md-ellipsis">
+    Nokogiri for Enterprise
+  </span>
+
       </a>
     </li>
   
@@ -448,7 +553,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/getting_help.html" class="md-nav__link">
-        Getting Help
+        
+  
+  <span class="md-ellipsis">
+    Getting Help
+  </span>
+
       </a>
     </li>
   
@@ -462,7 +572,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/security.html" class="md-nav__link">
-        Security
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+
       </a>
     </li>
   
@@ -476,7 +591,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/more_resources.html" class="md-nav__link">
-        More Resources
+        
+  
+  <span class="md-ellipsis">
+    More Resources
+  </span>
+
       </a>
     </li>
   
@@ -493,6 +613,7 @@
       
       
 
+
   
   
   
@@ -506,7 +627,12 @@
       
       
         <label class="md-nav__link" for="__nav_4">
-          Tutorials
+          
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -524,7 +650,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/toc.html" class="md-nav__link">
-        Table of Contents
+        
+  
+  <span class="md-ellipsis">
+    Table of Contents
+  </span>
+
       </a>
     </li>
   
@@ -538,7 +669,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/parsing_an_html_xml_document.html" class="md-nav__link">
-        Parsing an HTML/XML document
+        
+  
+  <span class="md-ellipsis">
+    Parsing an HTML/XML document
+  </span>
+
       </a>
     </li>
   
@@ -552,7 +688,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/parsing_an_html5_document.html" class="md-nav__link">
-        Parsing an HTML5 document
+        
+  
+  <span class="md-ellipsis">
+    Parsing an HTML5 document
+  </span>
+
       </a>
     </li>
   
@@ -566,7 +707,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/searching_a_xml_html_document.html" class="md-nav__link">
-        Searching a XML/HTML document
+        
+  
+  <span class="md-ellipsis">
+    Searching a XML/HTML document
+  </span>
+
       </a>
     </li>
   
@@ -580,7 +726,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/modifying_an_html_xml_document.html" class="md-nav__link">
-        Modifying an HTML/XML document
+        
+  
+  <span class="md-ellipsis">
+    Modifying an HTML/XML document
+  </span>
+
       </a>
     </li>
   
@@ -594,7 +745,12 @@
   
     <li class="md-nav__item">
       <a href="tutorials/ensuring_well_formed_markup.html" class="md-nav__link">
-        Ensuring well-formed markup
+        
+  
+  <span class="md-ellipsis">
+    Ensuring well-formed markup
+  </span>
+
       </a>
     </li>
   
@@ -611,6 +767,7 @@
       
       
 
+
   
   
     
@@ -625,15 +782,26 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Changelog
+          
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="CHANGELOG.html" class="md-nav__link md-nav__link--active">
-        Changelog
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -646,6 +814,54 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1130-2022-01-06" class="md-nav__link">
+    1.13.0 / 2022-01-06
+  </a>
+  
+    <nav class="md-nav" aria-label="1.13.0 / 2022-01-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved" class="md-nav__link">
+    Improved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#1125-2021-09-27" class="md-nav__link">
@@ -663,7 +879,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     Fixed
   </a>
   
@@ -690,7 +906,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_1" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     Fixed
   </a>
   
@@ -710,7 +926,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_2" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     Fixed
   </a>
   
@@ -730,7 +946,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_3" class="md-nav__link">
+  <a href="#fixed_4" class="md-nav__link">
     Fixed
   </a>
   
@@ -750,7 +966,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_4" class="md-nav__link">
+  <a href="#fixed_5" class="md-nav__link">
     Fixed
   </a>
   
@@ -798,28 +1014,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_5" class="md-nav__link">
+  <a href="#fixed_6" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved" class="md-nav__link">
+  <a href="#improved_1" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecated" class="md-nav__link">
+  <a href="#deprecated_1" class="md-nav__link">
     Deprecated
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
+  <a href="#dependencies_1" class="md-nav__link">
     Dependencies
   </a>
   
@@ -839,7 +1055,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_6" class="md-nav__link">
+  <a href="#fixed_7" class="md-nav__link">
     Fixed
   </a>
   
@@ -859,7 +1075,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_7" class="md-nav__link">
+  <a href="#fixed_8" class="md-nav__link">
     Fixed
   </a>
   
@@ -879,7 +1095,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_8" class="md-nav__link">
+  <a href="#fixed_9" class="md-nav__link">
     Fixed
   </a>
   
@@ -913,7 +1129,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_1" class="md-nav__link">
+  <a href="#dependencies_2" class="md-nav__link">
     Dependencies
   </a>
   
@@ -933,7 +1149,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_9" class="md-nav__link">
+  <a href="#fixed_10" class="md-nav__link">
     Fixed
   </a>
   
@@ -953,14 +1169,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_10" class="md-nav__link">
+  <a href="#fixed_11" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_1" class="md-nav__link">
+  <a href="#improved_2" class="md-nav__link">
     Improved
   </a>
   
@@ -987,7 +1203,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_11" class="md-nav__link">
+  <a href="#fixed_12" class="md-nav__link">
     Fixed
   </a>
   
@@ -1007,14 +1223,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#notes_1" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_2" class="md-nav__link">
+  <a href="#dependencies_3" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1042,14 +1258,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_2" class="md-nav__link">
+  <a href="#improved_3" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_12" class="md-nav__link">
+  <a href="#fixed_13" class="md-nav__link">
     Fixed
   </a>
   
@@ -1103,7 +1319,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_13" class="md-nav__link">
+  <a href="#fixed_14" class="md-nav__link">
     Fixed
   </a>
   
@@ -1143,7 +1359,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_14" class="md-nav__link">
+  <a href="#fixed_15" class="md-nav__link">
     Fixed
   </a>
   
@@ -1163,7 +1379,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_15" class="md-nav__link">
+  <a href="#fixed_16" class="md-nav__link">
     Fixed
   </a>
   
@@ -1190,7 +1406,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_3" class="md-nav__link">
+  <a href="#dependencies_4" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1257,7 +1473,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_16" class="md-nav__link">
+  <a href="#fixed_17" class="md-nav__link">
     Fixed
   </a>
   
@@ -1284,7 +1500,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_17" class="md-nav__link">
+  <a href="#fixed_18" class="md-nav__link">
     Fixed
   </a>
   
@@ -1311,7 +1527,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_4" class="md-nav__link">
+  <a href="#dependencies_5" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1331,7 +1547,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_18" class="md-nav__link">
+  <a href="#fixed_19" class="md-nav__link">
     Fixed
   </a>
   
@@ -1358,7 +1574,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_3" class="md-nav__link">
+  <a href="#improved_4" class="md-nav__link">
     Improved
   </a>
   
@@ -1372,14 +1588,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_19" class="md-nav__link">
+  <a href="#fixed_20" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_5" class="md-nav__link">
+  <a href="#dependencies_6" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1406,7 +1622,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_20" class="md-nav__link">
+  <a href="#fixed_21" class="md-nav__link">
     Fixed
   </a>
   
@@ -1426,7 +1642,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_21" class="md-nav__link">
+  <a href="#fixed_22" class="md-nav__link">
     Fixed
   </a>
   
@@ -1460,7 +1676,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_6" class="md-nav__link">
+  <a href="#dependencies_7" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1474,7 +1690,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_22" class="md-nav__link">
+  <a href="#fixed_23" class="md-nav__link">
     Fixed
   </a>
   
@@ -1501,7 +1717,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_7" class="md-nav__link">
+  <a href="#dependencies_8" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1515,7 +1731,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_23" class="md-nav__link">
+  <a href="#fixed_24" class="md-nav__link">
     Fixed
   </a>
   
@@ -1535,14 +1751,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_8" class="md-nav__link">
+  <a href="#dependencies_9" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_24" class="md-nav__link">
+  <a href="#fixed_25" class="md-nav__link">
     Fixed
   </a>
   
@@ -1562,14 +1778,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_9" class="md-nav__link">
+  <a href="#dependencies_10" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_10" class="md-nav__link">
+  <a href="#dependencies_11" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1583,7 +1799,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_25" class="md-nav__link">
+  <a href="#fixed_26" class="md-nav__link">
     Fixed
   </a>
   
@@ -1643,7 +1859,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_26" class="md-nav__link">
+  <a href="#fixed_27" class="md-nav__link">
     Fixed
   </a>
   
@@ -1670,7 +1886,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_11" class="md-nav__link">
+  <a href="#dependencies_12" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1690,7 +1906,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_12" class="md-nav__link">
+  <a href="#dependencies_13" class="md-nav__link">
     Dependencies
   </a>
   
@@ -1724,14 +1940,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_27" class="md-nav__link">
+  <a href="#fixed_28" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_1" class="md-nav__link">
+  <a href="#notes_2" class="md-nav__link">
     Notes
   </a>
   
@@ -1786,7 +2002,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_28" class="md-nav__link">
+  <a href="#fixed_29" class="md-nav__link">
     Fixed
   </a>
   
@@ -1820,7 +2036,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_29" class="md-nav__link">
+  <a href="#fixed_30" class="md-nav__link">
     Fixed
   </a>
   
@@ -1847,7 +2063,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_30" class="md-nav__link">
+  <a href="#fixed_31" class="md-nav__link">
     Fixed
   </a>
   
@@ -1874,7 +2090,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_31" class="md-nav__link">
+  <a href="#fixed_32" class="md-nav__link">
     Fixed
   </a>
   
@@ -1894,7 +2110,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_32" class="md-nav__link">
+  <a href="#fixed_33" class="md-nav__link">
     Fixed
   </a>
   
@@ -1921,7 +2137,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_33" class="md-nav__link">
+  <a href="#fixed_34" class="md-nav__link">
     Fixed
   </a>
   
@@ -1941,7 +2157,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_34" class="md-nav__link">
+  <a href="#fixed_35" class="md-nav__link">
     Fixed
   </a>
   
@@ -1968,7 +2184,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_35" class="md-nav__link">
+  <a href="#fixed_36" class="md-nav__link">
     Fixed
   </a>
   
@@ -1988,7 +2204,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_36" class="md-nav__link">
+  <a href="#fixed_37" class="md-nav__link">
     Fixed
   </a>
   
@@ -2015,7 +2231,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_13" class="md-nav__link">
+  <a href="#dependencies_14" class="md-nav__link">
     Dependencies
   </a>
   
@@ -2029,7 +2245,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_37" class="md-nav__link">
+  <a href="#fixed_38" class="md-nav__link">
     Fixed
   </a>
   
@@ -2049,7 +2265,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_38" class="md-nav__link">
+  <a href="#fixed_39" class="md-nav__link">
     Fixed
   </a>
   
@@ -2089,7 +2305,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_2" class="md-nav__link">
+  <a href="#notes_3" class="md-nav__link">
     Notes
   </a>
   
@@ -2103,7 +2319,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_14" class="md-nav__link">
+  <a href="#dependencies_15" class="md-nav__link">
     Dependencies
   </a>
   
@@ -2123,7 +2339,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_39" class="md-nav__link">
+  <a href="#fixed_40" class="md-nav__link">
     Fixed
   </a>
   
@@ -2143,14 +2359,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_40" class="md-nav__link">
+  <a href="#fixed_41" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_3" class="md-nav__link">
+  <a href="#notes_4" class="md-nav__link">
     Notes
   </a>
   
@@ -2170,7 +2386,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_41" class="md-nav__link">
+  <a href="#fixed_42" class="md-nav__link">
     Fixed
   </a>
   
@@ -2190,7 +2406,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_42" class="md-nav__link">
+  <a href="#fixed_43" class="md-nav__link">
     Fixed
   </a>
   
@@ -2217,7 +2433,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_43" class="md-nav__link">
+  <a href="#fixed_44" class="md-nav__link">
     Fixed
   </a>
   
@@ -2244,7 +2460,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_44" class="md-nav__link">
+  <a href="#fixed_45" class="md-nav__link">
     Fixed
   </a>
   
@@ -2271,7 +2487,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_45" class="md-nav__link">
+  <a href="#fixed_46" class="md-nav__link">
     Fixed
   </a>
   
@@ -2298,7 +2514,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_46" class="md-nav__link">
+  <a href="#fixed_47" class="md-nav__link">
     Fixed
   </a>
   
@@ -2332,7 +2548,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_47" class="md-nav__link">
+  <a href="#fixed_48" class="md-nav__link">
     Fixed
   </a>
   
@@ -2366,7 +2582,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_48" class="md-nav__link">
+  <a href="#fixed_49" class="md-nav__link">
     Fixed
   </a>
   
@@ -2386,7 +2602,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_4" class="md-nav__link">
+  <a href="#notes_5" class="md-nav__link">
     Notes
   </a>
   
@@ -2400,7 +2616,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_49" class="md-nav__link">
+  <a href="#fixed_50" class="md-nav__link">
     Fixed
   </a>
   
@@ -2420,14 +2636,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_5" class="md-nav__link">
+  <a href="#notes_6" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_50" class="md-nav__link">
+  <a href="#fixed_51" class="md-nav__link">
     Fixed
   </a>
   
@@ -2447,7 +2663,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_6" class="md-nav__link">
+  <a href="#notes_7" class="md-nav__link">
     Notes
   </a>
   
@@ -2467,14 +2683,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_7" class="md-nav__link">
+  <a href="#notes_8" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_15" class="md-nav__link">
+  <a href="#dependencies_16" class="md-nav__link">
     Dependencies
   </a>
   
@@ -2501,7 +2717,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_51" class="md-nav__link">
+  <a href="#fixed_52" class="md-nav__link">
     Fixed
   </a>
   
@@ -2521,7 +2737,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_8" class="md-nav__link">
+  <a href="#notes_9" class="md-nav__link">
     Notes
   </a>
   
@@ -2548,7 +2764,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_52" class="md-nav__link">
+  <a href="#fixed_53" class="md-nav__link">
     Fixed
   </a>
   
@@ -2575,7 +2791,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_53" class="md-nav__link">
+  <a href="#fixed_54" class="md-nav__link">
     Fixed
   </a>
   
@@ -2602,7 +2818,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_54" class="md-nav__link">
+  <a href="#fixed_55" class="md-nav__link">
     Fixed
   </a>
   
@@ -2629,14 +2845,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_55" class="md-nav__link">
+  <a href="#fixed_56" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_9" class="md-nav__link">
+  <a href="#notes_10" class="md-nav__link">
     Notes
   </a>
   
@@ -2663,7 +2879,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_56" class="md-nav__link">
+  <a href="#fixed_57" class="md-nav__link">
     Fixed
   </a>
   
@@ -2690,7 +2906,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_57" class="md-nav__link">
+  <a href="#fixed_58" class="md-nav__link">
     Fixed
   </a>
   
@@ -2724,7 +2940,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_58" class="md-nav__link">
+  <a href="#fixed_59" class="md-nav__link">
     Fixed
   </a>
   
@@ -2758,7 +2974,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_59" class="md-nav__link">
+  <a href="#fixed_60" class="md-nav__link">
     Fixed
   </a>
   
@@ -2785,7 +3001,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_60" class="md-nav__link">
+  <a href="#fixed_61" class="md-nav__link">
     Fixed
   </a>
   
@@ -2812,7 +3028,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_61" class="md-nav__link">
+  <a href="#fixed_62" class="md-nav__link">
     Fixed
   </a>
   
@@ -2832,7 +3048,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_62" class="md-nav__link">
+  <a href="#fixed_63" class="md-nav__link">
     Fixed
   </a>
   
@@ -2859,7 +3075,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_63" class="md-nav__link">
+  <a href="#fixed_64" class="md-nav__link">
     Fixed
   </a>
   
@@ -2879,7 +3095,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_64" class="md-nav__link">
+  <a href="#fixed_65" class="md-nav__link">
     Fixed
   </a>
   
@@ -2906,7 +3122,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_65" class="md-nav__link">
+  <a href="#fixed_66" class="md-nav__link">
     Fixed
   </a>
   
@@ -2947,7 +3163,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_66" class="md-nav__link">
+  <a href="#fixed_67" class="md-nav__link">
     Fixed
   </a>
   
@@ -2974,7 +3190,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_67" class="md-nav__link">
+  <a href="#fixed_68" class="md-nav__link">
     Fixed
   </a>
   
@@ -2994,7 +3210,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_68" class="md-nav__link">
+  <a href="#fixed_69" class="md-nav__link">
     Fixed
   </a>
   
@@ -3014,7 +3230,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_69" class="md-nav__link">
+  <a href="#fixed_70" class="md-nav__link">
     Fixed
   </a>
   
@@ -3034,7 +3250,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_70" class="md-nav__link">
+  <a href="#fixed_71" class="md-nav__link">
     Fixed
   </a>
   
@@ -3054,7 +3270,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_71" class="md-nav__link">
+  <a href="#fixed_72" class="md-nav__link">
     Fixed
   </a>
   
@@ -3074,7 +3290,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_72" class="md-nav__link">
+  <a href="#fixed_73" class="md-nav__link">
     Fixed
   </a>
   
@@ -3094,7 +3310,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_73" class="md-nav__link">
+  <a href="#fixed_74" class="md-nav__link">
     Fixed
   </a>
   
@@ -3114,7 +3330,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_74" class="md-nav__link">
+  <a href="#fixed_75" class="md-nav__link">
     Fixed
   </a>
   
@@ -3157,6 +3373,7 @@
       
       
 
+
   
   
   
@@ -3170,7 +3387,12 @@
       
       
         <label class="md-nav__link" for="__nav_6">
-          About
+          
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -3188,7 +3410,12 @@
   
     <li class="md-nav__item">
       <a href="CONTRIBUTING.html" class="md-nav__link">
-        Contributing
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+
       </a>
     </li>
   
@@ -3202,7 +3429,12 @@
   
     <li class="md-nav__item">
       <a href="CODE_OF_CONDUCT.html" class="md-nav__link">
-        Code of Conduct
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+
       </a>
     </li>
   
@@ -3216,7 +3448,12 @@
   
     <li class="md-nav__item">
       <a href="SECURITY.html" class="md-nav__link">
-        Security
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+
       </a>
     </li>
   
@@ -3230,7 +3467,12 @@
   
     <li class="md-nav__item">
       <a href="LICENSE.html" class="md-nav__link">
-        License
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+
       </a>
     </li>
   
@@ -3244,7 +3486,12 @@
   
     <li class="md-nav__item">
       <a href="LICENSE-DEPENDENCIES.html" class="md-nav__link">
-        Dependencies
+        
+  
+  <span class="md-ellipsis">
+    Dependencies
+  </span>
+
       </a>
     </li>
   
@@ -3258,7 +3505,12 @@
   
     <li class="md-nav__item">
       <a href="ROADMAP.html" class="md-nav__link">
-        Roadmap
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+
       </a>
     </li>
   
@@ -3272,7 +3524,12 @@
   
     <li class="md-nav__item">
       <a href="privacy-policy.html" class="md-nav__link">
-        Privacy Policy
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+
       </a>
     </li>
   
@@ -3297,6 +3554,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -3309,6 +3567,54 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1130-2022-01-06" class="md-nav__link">
+    1.13.0 / 2022-01-06
+  </a>
+  
+    <nav class="md-nav" aria-label="1.13.0 / 2022-01-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved" class="md-nav__link">
+    Improved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#1125-2021-09-27" class="md-nav__link">
@@ -3326,7 +3632,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     Fixed
   </a>
   
@@ -3353,7 +3659,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_1" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     Fixed
   </a>
   
@@ -3373,7 +3679,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_2" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     Fixed
   </a>
   
@@ -3393,7 +3699,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_3" class="md-nav__link">
+  <a href="#fixed_4" class="md-nav__link">
     Fixed
   </a>
   
@@ -3413,7 +3719,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_4" class="md-nav__link">
+  <a href="#fixed_5" class="md-nav__link">
     Fixed
   </a>
   
@@ -3461,28 +3767,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_5" class="md-nav__link">
+  <a href="#fixed_6" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved" class="md-nav__link">
+  <a href="#improved_1" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecated" class="md-nav__link">
+  <a href="#deprecated_1" class="md-nav__link">
     Deprecated
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
+  <a href="#dependencies_1" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3502,7 +3808,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_6" class="md-nav__link">
+  <a href="#fixed_7" class="md-nav__link">
     Fixed
   </a>
   
@@ -3522,7 +3828,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_7" class="md-nav__link">
+  <a href="#fixed_8" class="md-nav__link">
     Fixed
   </a>
   
@@ -3542,7 +3848,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_8" class="md-nav__link">
+  <a href="#fixed_9" class="md-nav__link">
     Fixed
   </a>
   
@@ -3576,7 +3882,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_1" class="md-nav__link">
+  <a href="#dependencies_2" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3596,7 +3902,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_9" class="md-nav__link">
+  <a href="#fixed_10" class="md-nav__link">
     Fixed
   </a>
   
@@ -3616,14 +3922,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_10" class="md-nav__link">
+  <a href="#fixed_11" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_1" class="md-nav__link">
+  <a href="#improved_2" class="md-nav__link">
     Improved
   </a>
   
@@ -3650,7 +3956,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_11" class="md-nav__link">
+  <a href="#fixed_12" class="md-nav__link">
     Fixed
   </a>
   
@@ -3670,14 +3976,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#notes_1" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_2" class="md-nav__link">
+  <a href="#dependencies_3" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3705,14 +4011,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_2" class="md-nav__link">
+  <a href="#improved_3" class="md-nav__link">
     Improved
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_12" class="md-nav__link">
+  <a href="#fixed_13" class="md-nav__link">
     Fixed
   </a>
   
@@ -3766,7 +4072,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_13" class="md-nav__link">
+  <a href="#fixed_14" class="md-nav__link">
     Fixed
   </a>
   
@@ -3806,7 +4112,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_14" class="md-nav__link">
+  <a href="#fixed_15" class="md-nav__link">
     Fixed
   </a>
   
@@ -3826,7 +4132,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_15" class="md-nav__link">
+  <a href="#fixed_16" class="md-nav__link">
     Fixed
   </a>
   
@@ -3853,7 +4159,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_3" class="md-nav__link">
+  <a href="#dependencies_4" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3920,7 +4226,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_16" class="md-nav__link">
+  <a href="#fixed_17" class="md-nav__link">
     Fixed
   </a>
   
@@ -3947,7 +4253,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_17" class="md-nav__link">
+  <a href="#fixed_18" class="md-nav__link">
     Fixed
   </a>
   
@@ -3974,7 +4280,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_4" class="md-nav__link">
+  <a href="#dependencies_5" class="md-nav__link">
     Dependencies
   </a>
   
@@ -3994,7 +4300,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_18" class="md-nav__link">
+  <a href="#fixed_19" class="md-nav__link">
     Fixed
   </a>
   
@@ -4021,7 +4327,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved_3" class="md-nav__link">
+  <a href="#improved_4" class="md-nav__link">
     Improved
   </a>
   
@@ -4035,14 +4341,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_19" class="md-nav__link">
+  <a href="#fixed_20" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_5" class="md-nav__link">
+  <a href="#dependencies_6" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4069,7 +4375,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_20" class="md-nav__link">
+  <a href="#fixed_21" class="md-nav__link">
     Fixed
   </a>
   
@@ -4089,7 +4395,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_21" class="md-nav__link">
+  <a href="#fixed_22" class="md-nav__link">
     Fixed
   </a>
   
@@ -4123,7 +4429,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_6" class="md-nav__link">
+  <a href="#dependencies_7" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4137,7 +4443,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_22" class="md-nav__link">
+  <a href="#fixed_23" class="md-nav__link">
     Fixed
   </a>
   
@@ -4164,7 +4470,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_7" class="md-nav__link">
+  <a href="#dependencies_8" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4178,7 +4484,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_23" class="md-nav__link">
+  <a href="#fixed_24" class="md-nav__link">
     Fixed
   </a>
   
@@ -4198,14 +4504,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_8" class="md-nav__link">
+  <a href="#dependencies_9" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_24" class="md-nav__link">
+  <a href="#fixed_25" class="md-nav__link">
     Fixed
   </a>
   
@@ -4225,14 +4531,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_9" class="md-nav__link">
+  <a href="#dependencies_10" class="md-nav__link">
     Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_10" class="md-nav__link">
+  <a href="#dependencies_11" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4246,7 +4552,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_25" class="md-nav__link">
+  <a href="#fixed_26" class="md-nav__link">
     Fixed
   </a>
   
@@ -4306,7 +4612,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_26" class="md-nav__link">
+  <a href="#fixed_27" class="md-nav__link">
     Fixed
   </a>
   
@@ -4333,7 +4639,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_11" class="md-nav__link">
+  <a href="#dependencies_12" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4353,7 +4659,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dependencies_12" class="md-nav__link">
+  <a href="#dependencies_13" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4387,14 +4693,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_27" class="md-nav__link">
+  <a href="#fixed_28" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_1" class="md-nav__link">
+  <a href="#notes_2" class="md-nav__link">
     Notes
   </a>
   
@@ -4449,7 +4755,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_28" class="md-nav__link">
+  <a href="#fixed_29" class="md-nav__link">
     Fixed
   </a>
   
@@ -4483,7 +4789,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_29" class="md-nav__link">
+  <a href="#fixed_30" class="md-nav__link">
     Fixed
   </a>
   
@@ -4510,7 +4816,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_30" class="md-nav__link">
+  <a href="#fixed_31" class="md-nav__link">
     Fixed
   </a>
   
@@ -4537,7 +4843,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_31" class="md-nav__link">
+  <a href="#fixed_32" class="md-nav__link">
     Fixed
   </a>
   
@@ -4557,7 +4863,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_32" class="md-nav__link">
+  <a href="#fixed_33" class="md-nav__link">
     Fixed
   </a>
   
@@ -4584,7 +4890,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_33" class="md-nav__link">
+  <a href="#fixed_34" class="md-nav__link">
     Fixed
   </a>
   
@@ -4604,7 +4910,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_34" class="md-nav__link">
+  <a href="#fixed_35" class="md-nav__link">
     Fixed
   </a>
   
@@ -4631,7 +4937,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_35" class="md-nav__link">
+  <a href="#fixed_36" class="md-nav__link">
     Fixed
   </a>
   
@@ -4651,7 +4957,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_36" class="md-nav__link">
+  <a href="#fixed_37" class="md-nav__link">
     Fixed
   </a>
   
@@ -4678,7 +4984,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_13" class="md-nav__link">
+  <a href="#dependencies_14" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4692,7 +4998,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_37" class="md-nav__link">
+  <a href="#fixed_38" class="md-nav__link">
     Fixed
   </a>
   
@@ -4712,7 +5018,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_38" class="md-nav__link">
+  <a href="#fixed_39" class="md-nav__link">
     Fixed
   </a>
   
@@ -4752,7 +5058,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_2" class="md-nav__link">
+  <a href="#notes_3" class="md-nav__link">
     Notes
   </a>
   
@@ -4766,7 +5072,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_14" class="md-nav__link">
+  <a href="#dependencies_15" class="md-nav__link">
     Dependencies
   </a>
   
@@ -4786,7 +5092,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_39" class="md-nav__link">
+  <a href="#fixed_40" class="md-nav__link">
     Fixed
   </a>
   
@@ -4806,14 +5112,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_40" class="md-nav__link">
+  <a href="#fixed_41" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_3" class="md-nav__link">
+  <a href="#notes_4" class="md-nav__link">
     Notes
   </a>
   
@@ -4833,7 +5139,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_41" class="md-nav__link">
+  <a href="#fixed_42" class="md-nav__link">
     Fixed
   </a>
   
@@ -4853,7 +5159,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_42" class="md-nav__link">
+  <a href="#fixed_43" class="md-nav__link">
     Fixed
   </a>
   
@@ -4880,7 +5186,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_43" class="md-nav__link">
+  <a href="#fixed_44" class="md-nav__link">
     Fixed
   </a>
   
@@ -4907,7 +5213,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_44" class="md-nav__link">
+  <a href="#fixed_45" class="md-nav__link">
     Fixed
   </a>
   
@@ -4934,7 +5240,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_45" class="md-nav__link">
+  <a href="#fixed_46" class="md-nav__link">
     Fixed
   </a>
   
@@ -4961,7 +5267,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_46" class="md-nav__link">
+  <a href="#fixed_47" class="md-nav__link">
     Fixed
   </a>
   
@@ -4995,7 +5301,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_47" class="md-nav__link">
+  <a href="#fixed_48" class="md-nav__link">
     Fixed
   </a>
   
@@ -5029,7 +5335,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_48" class="md-nav__link">
+  <a href="#fixed_49" class="md-nav__link">
     Fixed
   </a>
   
@@ -5049,7 +5355,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_4" class="md-nav__link">
+  <a href="#notes_5" class="md-nav__link">
     Notes
   </a>
   
@@ -5063,7 +5369,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_49" class="md-nav__link">
+  <a href="#fixed_50" class="md-nav__link">
     Fixed
   </a>
   
@@ -5083,14 +5389,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_5" class="md-nav__link">
+  <a href="#notes_6" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_50" class="md-nav__link">
+  <a href="#fixed_51" class="md-nav__link">
     Fixed
   </a>
   
@@ -5110,7 +5416,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_6" class="md-nav__link">
+  <a href="#notes_7" class="md-nav__link">
     Notes
   </a>
   
@@ -5130,14 +5436,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_7" class="md-nav__link">
+  <a href="#notes_8" class="md-nav__link">
     Notes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies_15" class="md-nav__link">
+  <a href="#dependencies_16" class="md-nav__link">
     Dependencies
   </a>
   
@@ -5164,7 +5470,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_51" class="md-nav__link">
+  <a href="#fixed_52" class="md-nav__link">
     Fixed
   </a>
   
@@ -5184,7 +5490,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#notes_8" class="md-nav__link">
+  <a href="#notes_9" class="md-nav__link">
     Notes
   </a>
   
@@ -5211,7 +5517,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_52" class="md-nav__link">
+  <a href="#fixed_53" class="md-nav__link">
     Fixed
   </a>
   
@@ -5238,7 +5544,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_53" class="md-nav__link">
+  <a href="#fixed_54" class="md-nav__link">
     Fixed
   </a>
   
@@ -5265,7 +5571,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_54" class="md-nav__link">
+  <a href="#fixed_55" class="md-nav__link">
     Fixed
   </a>
   
@@ -5292,14 +5598,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_55" class="md-nav__link">
+  <a href="#fixed_56" class="md-nav__link">
     Fixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_9" class="md-nav__link">
+  <a href="#notes_10" class="md-nav__link">
     Notes
   </a>
   
@@ -5326,7 +5632,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_56" class="md-nav__link">
+  <a href="#fixed_57" class="md-nav__link">
     Fixed
   </a>
   
@@ -5353,7 +5659,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_57" class="md-nav__link">
+  <a href="#fixed_58" class="md-nav__link">
     Fixed
   </a>
   
@@ -5387,7 +5693,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_58" class="md-nav__link">
+  <a href="#fixed_59" class="md-nav__link">
     Fixed
   </a>
   
@@ -5421,7 +5727,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_59" class="md-nav__link">
+  <a href="#fixed_60" class="md-nav__link">
     Fixed
   </a>
   
@@ -5448,7 +5754,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_60" class="md-nav__link">
+  <a href="#fixed_61" class="md-nav__link">
     Fixed
   </a>
   
@@ -5475,7 +5781,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_61" class="md-nav__link">
+  <a href="#fixed_62" class="md-nav__link">
     Fixed
   </a>
   
@@ -5495,7 +5801,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_62" class="md-nav__link">
+  <a href="#fixed_63" class="md-nav__link">
     Fixed
   </a>
   
@@ -5522,7 +5828,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_63" class="md-nav__link">
+  <a href="#fixed_64" class="md-nav__link">
     Fixed
   </a>
   
@@ -5542,7 +5848,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_64" class="md-nav__link">
+  <a href="#fixed_65" class="md-nav__link">
     Fixed
   </a>
   
@@ -5569,7 +5875,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_65" class="md-nav__link">
+  <a href="#fixed_66" class="md-nav__link">
     Fixed
   </a>
   
@@ -5610,7 +5916,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_66" class="md-nav__link">
+  <a href="#fixed_67" class="md-nav__link">
     Fixed
   </a>
   
@@ -5637,7 +5943,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_67" class="md-nav__link">
+  <a href="#fixed_68" class="md-nav__link">
     Fixed
   </a>
   
@@ -5657,7 +5963,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_68" class="md-nav__link">
+  <a href="#fixed_69" class="md-nav__link">
     Fixed
   </a>
   
@@ -5677,7 +5983,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_69" class="md-nav__link">
+  <a href="#fixed_70" class="md-nav__link">
     Fixed
   </a>
   
@@ -5697,7 +6003,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_70" class="md-nav__link">
+  <a href="#fixed_71" class="md-nav__link">
     Fixed
   </a>
   
@@ -5717,7 +6023,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_71" class="md-nav__link">
+  <a href="#fixed_72" class="md-nav__link">
     Fixed
   </a>
   
@@ -5737,7 +6043,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_72" class="md-nav__link">
+  <a href="#fixed_73" class="md-nav__link">
     Fixed
   </a>
   
@@ -5757,7 +6063,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_73" class="md-nav__link">
+  <a href="#fixed_74" class="md-nav__link">
     Fixed
   </a>
   
@@ -5777,7 +6083,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_74" class="md-nav__link">
+  <a href="#fixed_75" class="md-nav__link">
     Fixed
   </a>
   
@@ -5820,16 +6126,69 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                
-                <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
+
+
+<h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
 <p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a>, please see the <a href="index.html">README.md</a> for details.</p>
+<hr />
+<h2 id="1130-2022-01-06">1.13.0 / 2022-01-06<a class="headerlink" href="#1130-2022-01-06" title="Permanent link">&para;</a></h2>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<h4 id="ruby">Ruby<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h4>
+<p>This release introduces native gem support for Ruby 3.1. Please note that Windows users should use the <code>x64-mingw-ucrt</code> platform gem for Ruby 3.1, and <code>x64-mingw32</code> for Ruby 2.6&ndash;3.0 (see <a href="https://rubyinstaller.org/2021/12/31/rubyinstaller-3.1.0-1-released.html">RubyInstaller 3.1.0 release notes</a>).</p>
+<p>This release ends support for:</p>
+<ul>
+<li>Ruby 2.5, for which <a href="https://www.ruby-lang.org/en/downloads/branches/">official support ended 2021-03-31</a>.</li>
+<li>JRuby 9.2, which is a Ruby 2.5-compatible release.</li>
+</ul>
+<h4 id="faster-more-reliable-installation-native-gem-for-arm64-linux">Faster, more reliable installation: Native Gem for ARM64 Linux<a class="headerlink" href="#faster-more-reliable-installation-native-gem-for-arm64-linux" title="Permanent link">&para;</a></h4>
+<p>This version of Nokogiri ships experimental native gem support for the <code>aarch64-linux</code> platform, which should support AWS Graviton and other ARM Linux platforms. We don't yet have CI running for this platform, and so we're interested in hearing back from y'all whether this is working, and what problems you're seeing. Please send us feedback here: <a href="https://github.com/sparklemotion/nokogiri/discussions/2359">Feedback: Have you used the <code>aarch64-linux</code> native gem?</a></p>
+<h4 id="publishing">Publishing<a class="headerlink" href="#publishing" title="Permanent link">&para;</a></h4>
+<p>This version of Nokogiri opts-in to the <a href="https://guides.rubygems.org/mfa-requirement-opt-in/">"MFA required to publish" setting</a> on Rubygems.org. This and all future Nokogiri gem files must be published to Rubygems by an account with multi-factor authentication enabled. This should provide some additional protection against supply-chain attacks.</p>
+<p>A related discussion about Trust exists at <a href="https://github.com/sparklemotion/nokogiri/issues/2357">#2357</a> in which I invite you to participate if you have feelings or opinions on this topic.</p>
+<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[CRuby] Vendored libiconv is updated from 1.15 to 1.16. (Note that libiconv is only redistributed in the native windows and native darwin gems, see <a href="LICENSE-DEPENDENCIES.html"><code>LICENSE-DEPENDENCIES.md</code></a> for more information.) [<a href="https://github.com/sparklemotion/nokogiri/issues/2206">#2206</a>]</li>
+<li>[CRuby] Upgrade mini_portile2 dependency from <code>~&gt; 2.6.1</code> to <code>~&gt; 2.7.0</code>. ("ruby" platform gem only.)</li>
+</ul>
+<h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>{XML,HTML4}::DocumentFragment</code> constructors all now take an optional parse options parameter or block (similar to Document constructors). [<a href="https://github.com/sparklemotion/nokogiri/issues/1692">#1692</a>] (Thanks, <a href="https://github.com/JackMc">@JackMc</a>!)</li>
+<li><code>Nokogiri::CSS.xpath_for</code> allows an <code>XPathVisitor</code> to be injected, for finer-grained control over how CSS queries are translated into XPath.</li>
+<li>[CRuby] <code>XML::Reader#encoding</code> will return the encoding detected by the parser when it's not passed to the constructor. [<a href="https://github.com/sparklemotion/nokogiri/issues/980">#980</a>]</li>
+<li>[CRuby] Handle abruptly-closed HTML comments as recommended by WHATWG. (Thanks to <a href="https://hackerone.com/tehryanx?type=user">tehryanx</a> for reporting!)</li>
+<li>[CRuby] <code>Node#line</code> is no longer capped at 65535. libxml v2.9.0 and later support a new parse option, exposed as <code>Nokogiri::XML::ParseOptions::PARSE_BIG_LINES</code>, which is turned on by default in <code>ParseOptions::DEFAULT_{XML,XSLT,HTML,SCHEMA}</code> (Note that JRuby already supported large line numbers.) [<a href="https://github.com/sparklemotion/nokogiri/issues/1764">#1764</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1493">#1493</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1617">#1617</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1505">#1505</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1003">#1003</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/533">#533</a>]</li>
+<li>[CRuby] If a cycle is introduced when reparenting a node (i.e., the node becomes its own ancestor), a <code>RuntimeError</code> is raised. libxml2 does no checking for this, which means cycles would otherwise result in infinite loops on subsequent operations. (Note that JRuby already did this.) [<a href="https://github.com/sparklemotion/nokogiri/issues/1912">#1912</a>]</li>
+<li>[CRuby] Source builds will download zlib and libiconv via HTTPS. ("ruby" platform gem only.) [<a href="https://github.com/sparklemotion/nokogiri/issues/2391">#2391</a>] (Thanks, <a href="https://github.com/jmartin-r7">@jmartin-r7</a>!)</li>
+<li>[JRuby] <code>Node#line</code> behavior has been modified to return the line number of the node in the <em>final DOM structure</em>. This behavior is different from CRuby, which returns the node's position in the <em>input string</em>. Ideally the two implementations would be the same, but at least is now officially documented and tested. The real-world impact of this change is that the value returned in JRuby is greater by 1 to account for the XML prolog in the output. [<a href="https://github.com/sparklemotion/nokogiri/issues/2380">#2380</a>] (Thanks, <a href="https://github.com/dabdine">@dabdine</a>!)</li>
+</ul>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CSS queries on HTML5 documents now correctly match foreign elements (SVG, MathML) when namespaces are not specified in the query. [<a href="https://github.com/sparklemotion/nokogiri/issues/2376">#2376</a>]</li>
+<li><code>XML::Builder</code> blocks restore context properly when exceptions are raised. [<a href="https://github.com/sparklemotion/nokogiri/issues/2372">#2372</a>] (Thanks, <a href="https://github.com/ric2b">@ric2b</a> and <a href="https://github.com/rinthedev">@rinthedev</a>!)</li>
+<li>The <code>Nokogiri::CSS::Parser</code> cache now uses the <code>XPathVisitor</code> configuration as part of the cache key, preventing incorrect cache results from being returned when multiple <code>XPathVisitor</code> options are being used.</li>
+<li>Error recovery from in-context parsing (e.g., <code>Node#parse</code>) now always uses the correct <code>DocumentFragment</code> class. Previously <code>Nokogiri::HTML4::DocumentFragment</code> was always used, even for XML documents. [<a href="https://github.com/sparklemotion/nokogiri/issues/1158">#1158</a>]</li>
+<li><code>DocumentFragment#&gt;</code> now works properly, matching a CSS selector against only the fragment roots. [<a href="https://github.com/sparklemotion/nokogiri/issues/1857">#1857</a>]</li>
+<li><code>XML::DocumentFragment#errors</code> now correctly contains any parsing errors encountered. Previously this was always empty. (Note that <code>HTML::DocumentFragment#errors</code> already did this.)</li>
+<li>[CRuby] Fix memory leak in <code>Document#canonicalize</code> when inclusive namespaces are passed in. [<a href="https://github.com/sparklemotion/nokogiri/issues/2345">#2345</a>]</li>
+<li>[CRuby] Fix memory leak in <code>Document#canonicalize</code> when an argument type error is raised. [<a href="https://github.com/sparklemotion/nokogiri/issues/2345">#2345</a>]</li>
+<li>[CRuby] Fix memory leak in <code>EncodingHandler</code> where iconv handlers were not being cleaned up. [<a href="https://github.com/sparklemotion/nokogiri/issues/2345">#2345</a>]</li>
+<li>[CRuby] Fix memory leak in XPath custom handlers where string arguments were not being cleaned up. [<a href="https://github.com/sparklemotion/nokogiri/issues/2345">#2345</a>]</li>
+<li>[CRuby] Fix memory leak in <code>Reader#base_uri</code> where the string returned by libxml2 was not freed. [<a href="https://github.com/sparklemotion/nokogiri/issues/2347">#2347</a>]</li>
+<li>[JRuby] Deleting a <code>Namespace</code> from a <code>NodeSet</code> no longer modifies the <code>href</code> to be the default namespace URL.</li>
+<li>[JRuby] Fix XHTML formatting of closing tags for non-container elements. [<a href="https://github.com/sparklemotion/nokogiri/issues/2355">#2355</a>]</li>
+</ul>
+<h3 id="deprecated">Deprecated<a class="headerlink" href="#deprecated" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Passing a <code>Nokogiri::XML::Node</code> as the second parameter to <code>Node.new</code> is deprecated and will generate a warning. This parameter should be a kind of <code>Nokogiri::XML::Document</code>. This will become an error in a future version of Nokogiri. [<a href="https://github.com/sparklemotion/nokogiri/issues/975">#975</a>]</li>
+<li><code>Nokogiri::CSS::Parser</code>, <code>Nokogiri::CSS::Tokenizer</code>, and <code>Nokogiri::CSS::Node</code> are now internal-only APIs that are no longer documented, and should not be considered stable. With the introduction of <code>XPathVisitor</code> injection into <code>Nokogiri::CSS.xpath_for</code> there should be no reason to rely on these internal APIs.</li>
+<li>CSS-to-XPath utility classes <code>Nokogiri::CSS::XPathVisitorAlwaysUseBuiltins</code> and <code>XPathVisitorOptimallyUseBuiltins</code> are deprecated. Prefer <code>Nokogiri::CSS::XPathVisitor</code> with appropriate constructor arguments. These classes will be removed in a future version of Nokogiri.</li>
+</ul>
 <h2 id="1125-2021-09-27">1.12.5 / 2021-09-27<a class="headerlink" href="#1125-2021-09-27" title="Permanent link">&para;</a></h2>
 <h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
 <p>[JRuby] Address CVE-2021-41098 (<a href="https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-2rr5-8q37-2w7h">GHSA-2rr5-8q37-2w7h</a>).</p>
 <p>In Nokogiri v1.12.4 and earlier, on JRuby only, the SAX parsers resolve external entities (XXE) by default. This fix turns off entity-resolution-by-default in the JRuby SAX parsers to match the CRuby SAX parsers' behavior.</p>
 <p>CRuby users are not affected by this CVE.</p>
-<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] <code>Document#to_xhtml</code> properly serializes self-closing tags in libxml &gt; 2.9.10. A behavior change introduced in libxml 2.9.11 resulted in emitting start and and tags (e.g., <code>&lt;br&gt;&lt;/br&gt;</code>) instead of a self-closing tag (e.g., <code>&lt;br/&gt;</code>) in previous Nokogiri versions. [<a href="https://github.com/sparklemotion/nokogiri/issues/2324">#2324</a>]</li>
 </ul>
@@ -5855,22 +6214,22 @@
   <span class="c1"># ...</span>
 <span class="k">end</span>
 </code></pre></div>
-<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[JRuby] Fix NPE in Schema parsing when an imported resource doesn't have a <code>systemId</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/2296">#2296</a>] (Thanks, <a href="https://github.com/pepijnve">@pepijnve</a>!)</li>
 </ul>
 <h2 id="1123-2021-08-10">1.12.3 / 2021-08-10<a class="headerlink" href="#1123-2021-08-10" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Fix compilation of libgumbo on older systems with versions of GCC that give errors on C99-isms. Affected systems include RHEL6, RHEL7, and SLES12. [<a href="https://github.com/sparklemotion/nokogiri/issues/2302">#2302</a>]</li>
 </ul>
 <h2 id="1122-2021-08-04">1.12.2 / 2021-08-04<a class="headerlink" href="#1122-2021-08-04" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_4">Fixed<a class="headerlink" href="#fixed_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Ensure that C extension files in non-native gem installations are loaded using <code>require</code> and rely on <code>$LOAD_PATH</code> instead of using <code>require_relative</code>. This issue only exists when deleting shared libraries that exist outside the extensions directory, something users occasionally do to conserve disk space. [<a href="https://github.com/sparklemotion/nokogiri/issues/2300">#2300</a>]</li>
 </ul>
 <h2 id="1121-2021-08-03">1.12.1 / 2021-08-03<a class="headerlink" href="#1121-2021-08-03" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_4">Fixed<a class="headerlink" href="#fixed_4" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_5">Fixed<a class="headerlink" href="#fixed_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Fix compilation of libgumbo on BSD systems by avoiding GNU-isms. [<a href="https://github.com/sparklemotion/nokogiri/issues/2298">#2298</a>]</li>
 </ul>
@@ -5892,35 +6251,35 @@
 <li>Introduce a new constant, <code>Nokogiri::XML::ParseOptions::DEFAULT_XSLT</code>, which adds the libxslt-preferred options of <code>NOENT | DTDLOAD | DTDATTR | NOCDATA</code> to <code>ParseOptions::DEFAULT_XML</code>.</li>
 <li><code>Nokogiri.XSLT</code> parses stylesheets using <code>ParseOptions::DEFAULT_XSLT</code>, which should make some edge-case XSL transformations match libxslt's default behavior. [<a href="https://github.com/sparklemotion/nokogiri/issues/1940">#1940</a>]</li>
 </ul>
-<h3 id="fixed_5">Fixed<a class="headerlink" href="#fixed_5" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_6">Fixed<a class="headerlink" href="#fixed_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Namespaced attributes are handled properly when their parent node is reparented into another document. Previously, the namespace may have gotten dropped. [<a href="https://github.com/sparklemotion/nokogiri/issues/2228">#2228</a>]</li>
-<li>[CRuby] Reparented nodes no longer inherit their parent's namespace. Previously, a node without a namespace was forced to adopt its parent's namespace. [<a href="https://github.com/sparklemotion/nokogiri/issues/1712">#1712</a>]</li>
+<li>[CRuby] Reparented nodes no longer inherit their parent's namespace. Previously, a node without a namespace was forced to adopt its parent's namespace. [<a href="https://github.com/sparklemotion/nokogiri/issues/1712">#1712</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/425">#425</a>]</li>
 </ul>
-<h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
+<h3 id="improved_1">Improved<a class="headerlink" href="#improved_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Speed up (slightly) the compile time of packaged libraries <code>libiconv</code>, <code>libxml2</code>, and <code>libxslt</code> by using autoconf's <code>--disable-dependency-tracking</code> option. ("ruby" platform gem only.)</li>
 </ul>
-<h3 id="deprecated">Deprecated<a class="headerlink" href="#deprecated" title="Permanent link">&para;</a></h3>
+<h3 id="deprecated_1">Deprecated<a class="headerlink" href="#deprecated_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Deprecating Nokogumbo's <code>Nokogiri::HTML5.get</code>. This method will be removed in a future version of Nokogiri.</li>
 </ul>
-<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_1">Dependencies<a class="headerlink" href="#dependencies_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Upgrade mini_portile2 dependency from <code>~&gt; 2.5.0</code> to <code>~&gt; 2.6.1</code>. ("ruby" platform gem only.)</li>
 </ul>
 <h2 id="1117-2021-06-02">1.11.7 / 2021-06-02<a class="headerlink" href="#1117-2021-06-02" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_6">Fixed<a class="headerlink" href="#fixed_6" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_7">Fixed<a class="headerlink" href="#fixed_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Backporting an upstream fix to XPath recursion depth limits which impacted some users of complex XPath queries. This issue is present in libxml 2.9.11 and 2.9.12. [<a href="https://github.com/sparklemotion/nokogiri/issues/2257">#2257</a>]</li>
 </ul>
 <h2 id="1116-2021-05-26">1.11.6 / 2021-05-26<a class="headerlink" href="#1116-2021-05-26" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_7">Fixed<a class="headerlink" href="#fixed_7" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_8">Fixed<a class="headerlink" href="#fixed_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] <code>DocumentFragment#path</code> now does proper error-checking to handle behavior introduced in libxml &gt; 2.9.10. In v1.11.4 and v1.11.5, calling <code>DocumentFragment#path</code> could result in a segfault.</li>
 </ul>
 <h2 id="1115-2021-05-19">1.11.5 / 2021-05-19<a class="headerlink" href="#1115-2021-05-19" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_8">Fixed<a class="headerlink" href="#fixed_8" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_9">Fixed<a class="headerlink" href="#fixed_9" title="Permanent link">&para;</a></h3>
 <p>[Windows CRuby] Work around segfault at process exit on Windows when using libxml2 system DLLs.</p>
 <p>libxml 2.9.12 introduced new behavior to avoid memory leaks when unloading libxml2 shared libraries (see <a href="https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/66">libxml/!66</a>). Early testing caught this segfault on non-Windows platforms (see <a href="https://github.com/sparklemotion/nokogiri/issues/2059">#2059</a> and <a href="https://gitlab.gnome.org/GNOME/libxml2/-/commit/956534e02ef280795a187c16f6ac04e107f23c5d">libxml@956534e</a>) but it was incompletely fixed and is still an issue on Windows platforms that are using system DLLs.</p>
 <p>We work around this by configuring libxml2 in this situation to use its default memory management functions. Note that if Nokogiri is not on Windows, or is not using shared system libraries, it will will continue to configure libxml2 to use Ruby's memory management functions. <code>Nokogiri::VERSION_INFO["libxml"]["memory_management"]</code> will allow you to verify when the default memory management functions are being used. [<a href="https://github.com/sparklemotion/nokogiri/issues/2241">#2241</a>]</p>
@@ -5939,19 +6298,19 @@
 </ul>
 <p>Note that two additional CVEs were addressed upstream but are not relevant to this release. <a href="https://security.archlinux.org/CVE-2021-3516">CVE-2021-3516</a> via <code>xmllint</code> is not present in Nokogiri, and <a href="https://security.archlinux.org/CVE-2020-7595">CVE-2020-7595</a> has been patched in Nokogiri since v1.10.8 (see <a href="https://github.com/sparklemotion/nokogiri/issues/1992">#1992</a>).</p>
 <p>Please see <a href="https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-7rrm-v45f-jp64">nokogiri/GHSA-7rrm-v45f-jp64 </a> or <a href="https://github.com/sparklemotion/nokogiri/issues/2233">#2233</a> for a more complete analysis of these CVEs and patches.</p>
-<h3 id="dependencies_1">Dependencies<a class="headerlink" href="#dependencies_1" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_2">Dependencies<a class="headerlink" href="#dependencies_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] vendored libxml2 is updated from 2.9.10 to 2.9.12. (Note that 2.9.11 was skipped because it was superseded by 2.9.12 a few hours after its release.)</li>
 </ul>
 <h2 id="1113-2021-04-07">1.11.3 / 2021-04-07<a class="headerlink" href="#1113-2021-04-07" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_9">Fixed<a class="headerlink" href="#fixed_9" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_10">Fixed<a class="headerlink" href="#fixed_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Passing non-<code>Node</code> objects to <code>Document#root=</code> now raises an <code>ArgumentError</code> exception. Previously this likely segfaulted. [<a href="https://github.com/sparklemotion/nokogiri/issues/1900">#1900</a>]</li>
 <li>[JRuby] Passing non-<code>Node</code> objects to <code>Document#root=</code> now raises an <code>ArgumentError</code> exception. Previously this raised a <code>TypeError</code> exception.</li>
 <li>[CRuby] arm64/aarch64 systems (like Apple's M1) can now compile libxml2 and libxslt from source (though we continue to strongly advise users to install the native gems for the best possible experience)</li>
 </ul>
 <h2 id="1112-2021-03-11">1.11.2 / 2021-03-11<a class="headerlink" href="#1112-2021-03-11" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_10">Fixed<a class="headerlink" href="#fixed_10" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_11">Fixed<a class="headerlink" href="#fixed_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] <code>NodeSet</code> may now safely contain <code>Node</code> objects from multiple documents. Previously the GC lifecycle of the parent <code>Document</code> objects could lead to nodes being GCed while still in scope. [<a href="https://github.com/sparklemotion/nokogiri/issues/1952#issuecomment-770856928">#1952</a>]</li>
 <li>[CRuby] Patch libxml2 to avoid "huge input lookup" errors on large CDATA elements. (See upstream <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/200">GNOME/libxml2#200</a> and <a href="https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/100">GNOME/libxml2!100</a>.) [<a href="https://github.com/sparklemotion/nokogiri/issues/2132">#2132</a>].</li>
@@ -5959,7 +6318,7 @@
 <li>[CRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was invoked twice on each object.</li>
 <li>[JRuby] <code>{XML,HTML}::Document.parse</code> now invokes <code>#initialize</code> exactly once. Previously <code>#initialize</code> was not called, which was a problem for subclassing such as done by <code>Loofah</code>.</li>
 </ul>
-<h3 id="improved_1">Improved<a class="headerlink" href="#improved_1" title="Permanent link">&para;</a></h3>
+<h3 id="improved_2">Improved<a class="headerlink" href="#improved_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Reduce the number of object allocations needed when parsing an <code>HTML::DocumentFragment</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/2087">#2087</a>] (Thanks, <a href="https://github.com/ashmaroli">@ashmaroli</a>!)</li>
 <li>[JRuby] Update the algorithm used to calculate <code>Node#line</code> to be wrong less-often. The underlying parser, Xerces, does not track line numbers, and so we've always used a hacky solution for this method. [<a href="https://github.com/sparklemotion/nokogiri/issues/1223">#1223</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2177">#2177</a>]</li>
@@ -5971,12 +6330,12 @@
 <li><code>Nokogiri::XML::Path</code> is now a Module (previously it has been a Class). It has been acting solely as a Module since v1.0.0. See <a href="https://github.com/sparklemotion/nokogiri/commit/8461c74">8461c74</a>.</li>
 </ul>
 <h2 id="1111-2021-01-06">1.11.1 / 2021-01-06<a class="headerlink" href="#1111-2021-01-06" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_11">Fixed<a class="headerlink" href="#fixed_11" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_12">Fixed<a class="headerlink" href="#fixed_12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] If <code>libxml-ruby</code> is loaded before <code>nokogiri</code>, the SAX and Push parsers no longer call <code>libxml-ruby</code>'s handlers. Instead, they defensively override the libxml2 global handler before parsing. [<a href="https://github.com/sparklemotion/nokogiri/issues/2168">#2168</a>]</li>
 </ul>
 <h2 id="1110-2021-01-03">1.11.0 / 2021-01-03<a class="headerlink" href="#1110-2021-01-03" title="Permanent link">&para;</a></h2>
-<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<h3 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">&para;</a></h3>
 <h4 id="faster-more-reliable-installation-native-gems-for-linux-and-osxdarwin">Faster, more reliable installation: Native Gems for Linux and OSX/Darwin<a class="headerlink" href="#faster-more-reliable-installation-native-gems-for-linux-and-osxdarwin" title="Permanent link">&para;</a></h4>
 <p>"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know are the biggest headaches for Nokogiri users. </p>
 <p>We've been shipping native Windows gems since 2009, but starting in v1.11.0 we are also shipping native gems for these platforms:</p>
@@ -5985,8 +6344,8 @@
 <li>OSX/Darwin: <code>x86_64-darwin</code> and <code>arm64-darwin</code></li>
 </ul>
 <p>We'd appreciate your thoughts and feedback on this work at <a href="https://github.com/sparklemotion/nokogiri/issues/2075">#2075</a>.</p>
-<h3 id="dependencies_2">Dependencies<a class="headerlink" href="#dependencies_2" title="Permanent link">&para;</a></h3>
-<h4 id="ruby">Ruby<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h4>
+<h3 id="dependencies_3">Dependencies<a class="headerlink" href="#dependencies_3" title="Permanent link">&para;</a></h3>
+<h4 id="ruby_1">Ruby<a class="headerlink" href="#ruby_1" title="Permanent link">&para;</a></h4>
 <p>This release introduces support for Ruby 2.7 and 3.0 in the precompiled native gems.</p>
 <p>This release ends support for:</p>
 <ul>
@@ -6020,7 +6379,7 @@
 <li>[JRuby] Lots of code cleanup and performance improvements. [<a href="https://github.com/sparklemotion/nokogiri/issues/1934">#1934</a>] (Thanks, <a href="https://github.com/kares">@kares</a>!)</li>
 <li>[CRuby] <code>RelaxNG.from_document</code> no longer leaks memory. [<a href="https://github.com/sparklemotion/nokogiri/issues/2114">#2114</a>]</li>
 </ul>
-<h3 id="improved_2">Improved<a class="headerlink" href="#improved_2" title="Permanent link">&para;</a></h3>
+<h3 id="improved_3">Improved<a class="headerlink" href="#improved_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Handle incorrectly-closed HTML comments as WHATWG recommends for browsers. [<a href="https://github.com/sparklemotion/nokogiri/issues/2058">#2058</a>] (Thanks to HackerOne user <a href="https://hackerone.com/mayflower?type=user">mayflower</a> for reporting this!)</li>
 <li><code>{HTML,XML}::Document#parse</code> now accept <code>Pathname</code> objects. Previously this worked only if the referenced file was less than 4096 bytes long; longer files resulted in undefined behavior because the <code>read</code> method would be repeatedly invoked. [<a href="https://github.com/sparklemotion/nokogiri/issues/1821">#1821</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2110">#2110</a>] (Thanks, <a href="https://github.com/doriantaylor">@doriantaylor</a> and <a href="https://github.com/phokz">@phokz</a>!)</li>
@@ -6028,7 +6387,7 @@
 <li>Add <code>frozen_string_literal: true</code> magic comment to all <code>lib</code> files. [<a href="https://github.com/sparklemotion/nokogiri/issues/1745">#1745</a>] (Thanks, <a href="https://github.com/oniofchaos">@oniofchaos</a>!)</li>
 <li>[JRuby] Clean up deprecated calls into JRuby. [<a href="https://github.com/sparklemotion/nokogiri/issues/2027">#2027</a>] (Thanks, <a href="https://github.com/headius">@headius</a>!)</li>
 </ul>
-<h3 id="fixed_12">Fixed<a class="headerlink" href="#fixed_12" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_13">Fixed<a class="headerlink" href="#fixed_13" title="Permanent link">&para;</a></h3>
 <ul>
 <li>HTML Parsing in "strict" mode (i.e., the <code>RECOVER</code> parse option not set) now correctly raises a <code>XML::SyntaxError</code> exception. Previously the value of the <code>RECOVER</code> bit was being ignored by CRuby and was misinterpreted by JRuby. [<a href="https://github.com/sparklemotion/nokogiri/issues/2130">#2130</a>]</li>
 <li>The CSS <code>~=</code> operator now correctly handles non-space whitespace in the <code>class</code> attribute. commit e45dedd</li>
@@ -6070,7 +6429,7 @@
 <li>[MRI] Cross-built Windows gems now support Ruby 2.7 [<a href="https://github.com/sparklemotion/nokogiri/issues/2029">#2029</a>]. Note that prior to this release, the v1.11.x prereleases provided this support.</li>
 </ul>
 <h2 id="1109-2020-03-01">1.10.9 / 2020-03-01<a class="headerlink" href="#1109-2020-03-01" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_13">Fixed<a class="headerlink" href="#fixed_13" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_14">Fixed<a class="headerlink" href="#fixed_14" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] Raise an exception when Nokogiri detects a specific libxml2 edge case involving blank Schema nodes wrapped by Ruby objects that would cause a segfault. Currently no fix is available upstream, so we're preventing a dangerous operation and informing users to code around it if possible. [<a href="https://github.com/sparklemotion/nokogiri/issues/1985">#1985</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2001">#2001</a>]</li>
 <li>[JRuby] Change <code>NodeSet#to_a</code> to return a RubyArray instead of Object, for compilation under JRuby 9.2.9 and later. [<a href="https://github.com/sparklemotion/nokogiri/issues/1968">#1968</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1969">#1969</a>] (Thanks, <a href="https://github.com/headius">@headius</a>!)</li>
@@ -6079,12 +6438,12 @@
 <h3 id="security_3">Security<a class="headerlink" href="#security_3" title="Permanent link">&para;</a></h3>
 <p>[MRI] Pulled in upstream patch from libxml that addresses CVE-2020-7595. Full details are available in <a href="https://github.com/sparklemotion/nokogiri/issues/1992">#1992</a>. Note that this patch is not yet (as of 2020-02-10) in an upstream release of libxml.</p>
 <h2 id="1107-2019-12-03">1.10.7 / 2019-12-03<a class="headerlink" href="#1107-2019-12-03" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_14">Fixed<a class="headerlink" href="#fixed_14" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_15">Fixed<a class="headerlink" href="#fixed_15" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] Ensure the patch applied in v1.10.6 works with GNU <code>patch</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/1954">#1954</a>]</li>
 </ul>
 <h2 id="1106-2019-12-03">1.10.6 / 2019-12-03<a class="headerlink" href="#1106-2019-12-03" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_15">Fixed<a class="headerlink" href="#fixed_15" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_16">Fixed<a class="headerlink" href="#fixed_16" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] Fix FreeBSD installation of vendored libxml2. [<a href="https://github.com/sparklemotion/nokogiri/issues/1941">#1941</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1953">#1953</a>] (Thanks, <a href="https://github.com/nurse">@nurse</a>!)</li>
 </ul>
@@ -6098,7 +6457,7 @@
 <li>CVE-2019-19956</li>
 </ul>
 <p>More details are available at <a href="https://github.com/sparklemotion/nokogiri/issues/1943">#1943</a>.</p>
-<h3 id="dependencies_3">Dependencies<a class="headerlink" href="#dependencies_3" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_4">Dependencies<a class="headerlink" href="#dependencies_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] vendored libxml2 is updated from 2.9.9 to 2.9.10</li>
 <li>[MRI] vendored libxslt is updated from 1.1.33 to 1.1.34</li>
@@ -6118,7 +6477,7 @@
 <li>[MRI] Remove support from vendored libxml2 for future script macros. [<a href="https://github.com/sparklemotion/nokogiri/issues/1871">#1871</a>]</li>
 <li>[MRI] Remove support from vendored libxml2 for server-side includes within attributes. [<a href="https://github.com/sparklemotion/nokogiri/issues/1877">#1877</a>]</li>
 </ul>
-<h3 id="fixed_16">Fixed<a class="headerlink" href="#fixed_16" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_17">Fixed<a class="headerlink" href="#fixed_17" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[JRuby] Fix node ownership in duplicated documents. [<a href="https://github.com/sparklemotion/nokogiri/issues/1060">#1060</a>]</li>
 <li>[JRuby] Rethrow exceptions caught by Java SAX handler. [<a href="https://github.com/sparklemotion/nokogiri/issues/1847">#1847</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1872">#1872</a>] (Thanks, <a href="https://github.com/adjam">@adjam</a>!)</li>
@@ -6129,7 +6488,7 @@
 <li>[MRI] During installation, handle Xcode 10's new library path. [<a href="https://github.com/sparklemotion/nokogiri/issues/1801">#1801</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1851">#1851</a>] (Thanks, <a href="https://github.com/mlj">@mlj</a> and <a href="https://github.com/deepj">@deepj</a>!)</li>
 <li>Avoid unnecessary creation of <code>Proc</code>s in many methods. [<a href="https://github.com/sparklemotion/nokogiri/issues/1776">#1776</a>] (Thanks, <a href="https://github.com/chopraanmol1">@chopraanmol1</a>!)</li>
 </ul>
-<h3 id="fixed_17">Fixed<a class="headerlink" href="#fixed_17" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_18">Fixed<a class="headerlink" href="#fixed_18" title="Permanent link">&para;</a></h3>
 <ul>
 <li>CSS selector <code>:has()</code> now correctly matches against any descendant. Previously this selector matched against only direct children). [<a href="https://github.com/sparklemotion/nokogiri/issues/350">#350</a>] (Thanks, <a href="https://github.com/Phrogz">@Phrogz</a>!)</li>
 <li><code>NodeSet#attr</code> now returns <code>nil</code> if it's empty. Previously this raised a NoMethodError.</li>
@@ -6140,7 +6499,7 @@
 <ul>
 <li>[MRI] Cross-built Windows gems now support Ruby 2.6 [<a href="https://github.com/sparklemotion/nokogiri/issues/1842">#1842</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1850">#1850</a>]</li>
 </ul>
-<h3 id="dependencies_4">Dependencies<a class="headerlink" href="#dependencies_4" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_5">Dependencies<a class="headerlink" href="#dependencies_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>This release ends support for Ruby 2.2, for which <a href="https://www.ruby-lang.org/en/news/2018/06/20/support-of-ruby-2-2-has-ended/">official support ended on 2018-03-31</a> [<a href="https://github.com/sparklemotion/nokogiri/issues/1841">#1841</a>]</li>
 <li>This release ends support for JRuby 1.7, for which <a href="https://github.com/jruby/jruby/issues/4112">official support ended on 2017-11-21</a> [<a href="https://github.com/sparklemotion/nokogiri/issues/1741">#1741</a>]</li>
@@ -6148,7 +6507,7 @@
 <li>[MRI] libxslt is updated from 1.1.32 to 1.1.33</li>
 </ul>
 <h2 id="191-2018-12-17">1.9.1 / 2018-12-17<a class="headerlink" href="#191-2018-12-17" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_18">Fixed<a class="headerlink" href="#fixed_18" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_19">Fixed<a class="headerlink" href="#fixed_19" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix a bug introduced in v1.9.0 where <code>XML::DocumentFragment#dup</code> no longer returned an instance of the callee's class, instead always returning an <code>XML::DocumentFragment</code>. This notably broke any subclass of <code>XML::DocumentFragment</code> including <code>HTML::DocumentFragment</code> as well as the Loofah gem's <code>Loofah::HTML::DocumentFragment</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/1846">#1846</a>]</li>
 </ul>
@@ -6157,7 +6516,7 @@
 <ul>
 <li>[JRuby] Upgrade Xerces dependency from 2.11.0 to 2.12.0 to address upstream vulnerability CVE-2012-0881 [<a href="https://github.com/sparklemotion/nokogiri/issues/1831">#1831</a>] (Thanks <a href="https://github.com/grajagandev">@grajagandev</a> for reporting.)</li>
 </ul>
-<h3 id="improved_3">Improved<a class="headerlink" href="#improved_3" title="Permanent link">&para;</a></h3>
+<h3 id="improved_4">Improved<a class="headerlink" href="#improved_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Decrease installation size by removing many unneeded files (e.g., <code>/test</code>) from the packaged gems. [<a href="https://github.com/sparklemotion/nokogiri/issues/1719">#1719</a>] (Thanks, <a href="https://github.com/stevecrozz">@stevecrozz</a>!)</li>
 </ul>
@@ -6170,7 +6529,7 @@
 <li>[MRI] <code>DocumentFragment#dup</code> is now more memory-efficient, avoiding making unnecessary copies. [<a href="https://github.com/sparklemotion/nokogiri/issues/1063">#1063</a>]</li>
 <li>[JRuby] <code>NodeSet</code> has been rewritten to improve performance! [<a href="https://github.com/sparklemotion/nokogiri/issues/1795">#1795</a>]</li>
 </ul>
-<h3 id="fixed_19">Fixed<a class="headerlink" href="#fixed_19" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_20">Fixed<a class="headerlink" href="#fixed_20" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>NodeSet#each</code> now returns <code>self</code> instead of zero. [<a href="https://github.com/sparklemotion/nokogiri/issues/1822">#1822</a>] (Thanks, <a href="https://github.com/olehif">@olehif</a>!)</li>
 <li>[MRI] Address a memory leak when using <code>XML::Builder</code> to create nodes with namespaces. [<a href="https://github.com/sparklemotion/nokogiri/issues/1810">#1810</a>]</li>
@@ -6181,20 +6540,20 @@
 <li>[JRuby] Fix default namespaces in nodes reparented into a different document [<a href="https://github.com/sparklemotion/nokogiri/issues/1774">#1774</a>]</li>
 <li>[JRuby] Fix support for Java 9. [<a href="https://github.com/sparklemotion/nokogiri/issues/1759">#1759</a>] (Thanks, <a href="https://github.com/Taywee">@Taywee</a>!)</li>
 </ul>
-<h3 id="dependencies_5">Dependencies<a class="headerlink" href="#dependencies_5" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_6">Dependencies<a class="headerlink" href="#dependencies_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] Upgrade mini_portile2 dependency from <code>~&gt; 2.3.0</code> to <code>~&gt; 2.4.0</code></li>
 </ul>
 <h2 id="185-2018-10-04">1.8.5 / 2018-10-04<a class="headerlink" href="#185-2018-10-04" title="Permanent link">&para;</a></h2>
 <h3 id="security_9">Security<a class="headerlink" href="#security_9" title="Permanent link">&para;</a></h3>
 <p>[MRI] Pulled in upstream patches from libxml2 that address CVE-2018-14404 and CVE-2018-14567. Full details are available in <a href="https://github.com/sparklemotion/nokogiri/issues/1785">#1785</a>. Note that these patches are not yet (as of 2018-10-04) in an upstream release of libxml2.</p>
-<h3 id="fixed_20">Fixed<a class="headerlink" href="#fixed_20" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_21">Fixed<a class="headerlink" href="#fixed_21" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] Fix regression in installation when building against system libraries, where some systems would not be able to find libxml2 or libxslt when present. (Regression introduced in v1.8.3.) [<a href="https://github.com/sparklemotion/nokogiri/issues/1722">#1722</a>]</li>
 <li>[JRuby] Fix node reparenting when the destination doc is empty. [<a href="https://github.com/sparklemotion/nokogiri/issues/1773">#1773</a>]</li>
 </ul>
 <h2 id="184-2018-07-03">1.8.4 / 2018-07-03<a class="headerlink" href="#184-2018-07-03" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_21">Fixed<a class="headerlink" href="#fixed_21" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_22">Fixed<a class="headerlink" href="#fixed_22" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] Fix memory leak when creating nodes with namespaces. (Introduced in v1.5.7) [<a href="https://github.com/sparklemotion/nokogiri/issues/1771">#1771</a>]</li>
 </ul>
@@ -6215,7 +6574,7 @@
 </blockquote>
 <h3 id="more-security">More Security<a class="headerlink" href="#more-security" title="Permanent link">&para;</a></h3>
 <p>[MRI] Vendored libxml2 upgraded to v2.9.8 which addresses CVE-2016-9318 [<a href="https://github.com/sparklemotion/nokogiri/issues/1582">#1582</a>].</p>
-<h3 id="dependencies_6">Dependencies<a class="headerlink" href="#dependencies_6" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_7">Dependencies<a class="headerlink" href="#dependencies_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] libxml2 is updated from 2.9.7 to 2.9.8</li>
 </ul>
@@ -6227,7 +6586,7 @@
 <li><code>NodeSet#each</code> now returns an <code>Enumerator</code> when no block is passed (Thanks, <a href="https://github.com/park53kr">@park53kr</a>!)</li>
 <li>[JRuby] General improvements in JRuby implementation (Thanks, <a href="https://github.com/kares">@kares</a>!)</li>
 </ul>
-<h3 id="fixed_22">Fixed<a class="headerlink" href="#fixed_22" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_23">Fixed<a class="headerlink" href="#fixed_23" title="Permanent link">&para;</a></h3>
 <ul>
 <li>CSS attribute selectors now gracefully handle queries using integers. [<a href="https://github.com/sparklemotion/nokogiri/issues/711">#711</a>]</li>
 <li>Handle ASCII-8BIT encoding on fragment input [<a href="https://github.com/sparklemotion/nokogiri/issues/553">#553</a>]</li>
@@ -6238,7 +6597,7 @@
 <h2 id="182-2018-01-29">1.8.2 / 2018-01-29<a class="headerlink" href="#182-2018-01-29" title="Permanent link">&para;</a></h2>
 <h3 id="security_11">Security<a class="headerlink" href="#security_11" title="Permanent link">&para;</a></h3>
 <p>[MRI] The update of vendored libxml2 from 2.9.5 to 2.9.7 addresses at least one published vulnerability, CVE-2017-15412. [<a href="https://github.com/sparklemotion/nokogiri/issues/1714">#1714</a> has complete details]</p>
-<h3 id="dependencies_7">Dependencies<a class="headerlink" href="#dependencies_7" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_8">Dependencies<a class="headerlink" href="#dependencies_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] libxml2 is updated from 2.9.5 to 2.9.7</li>
 <li>[MRI] libxslt is updated from 1.1.30 to 1.1.32</li>
@@ -6248,30 +6607,30 @@
 <li>[MRI] OpenBSD installation should be a bit easier now. [<a href="https://github.com/sparklemotion/nokogiri/issues/1685">#1685</a>] (Thanks, <a href="https://github.com/jeremyevans">@jeremyevans</a>!)</li>
 <li>[MRI] Cross-built Windows gems now support Ruby 2.5</li>
 </ul>
-<h3 id="fixed_23">Fixed<a class="headerlink" href="#fixed_23" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_24">Fixed<a class="headerlink" href="#fixed_24" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>Node#serialize</code> once again returns UTF-8-encoded strings. [<a href="https://github.com/sparklemotion/nokogiri/issues/1659">#1659</a>]</li>
 <li>[JRuby] made SAX parsing of characters consistent with C implementation [<a href="https://github.com/sparklemotion/nokogiri/issues/1676">#1676</a>] (Thanks, <a href="https://github.com/andrew-aladev">[@andrew](https://github.com/andrew)-aladev</a>!)</li>
 <li>[MRI] Predefined entities, when inspected, no longer cause a segfault. [<a href="https://github.com/sparklemotion/nokogiri/issues/1238">#1238</a>]</li>
 </ul>
 <h2 id="181-2017-09-19">1.8.1 / 2017-09-19<a class="headerlink" href="#181-2017-09-19" title="Permanent link">&para;</a></h2>
-<h3 id="dependencies_8">Dependencies<a class="headerlink" href="#dependencies_8" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_9">Dependencies<a class="headerlink" href="#dependencies_9" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[MRI] libxml2 is updated from 2.9.4 to 2.9.5.</li>
 <li>[MRI] libxslt is updated from 1.1.29 to 1.1.30.</li>
 <li>[MRI] optional dependency on the pkg-config gem has had its constraint loosened to <code>~&gt; 1.1</code> (from <code>~&gt; 1.1.7</code>). [<a href="https://github.com/sparklemotion/nokogiri/issues/1660">#1660</a>]</li>
 <li>[MRI] Upgrade mini_portile2 dependency from <code>~&gt; 2.2.0</code> to <code>~&gt; 2.3.0</code>, which will validate checksums on the vendored libxml2 and libxslt tarballs before using them.</li>
 </ul>
-<h3 id="fixed_24">Fixed<a class="headerlink" href="#fixed_24" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_25">Fixed<a class="headerlink" href="#fixed_25" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>NodeSet#first</code> with an integer argument longer than the length of the <code>NodeSet</code> now correctly clamps the length of the returned <code>NodeSet</code> to the original length. [<a href="https://github.com/sparklemotion/nokogiri/issues/1650">#1650</a>] (Thanks, <a href="https://github.com/Derenge">@Derenge</a>!)</li>
 <li>[MRI] Ensure CData.new raises TypeError if the <code>content</code> argument is not implicitly convertible into a string. [<a href="https://github.com/sparklemotion/nokogiri/issues/1669">#1669</a>]</li>
 </ul>
 <h2 id="180-2017-06-04">1.8.0 / 2017-06-04<a class="headerlink" href="#180-2017-06-04" title="Permanent link">&para;</a></h2>
-<h3 id="dependencies_9">Dependencies<a class="headerlink" href="#dependencies_9" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_10">Dependencies<a class="headerlink" href="#dependencies_10" title="Permanent link">&para;</a></h3>
 <p>This release ends support for Ruby 2.1 on Windows in the <code>x86-mingw32</code> and <code>x64-mingw32</code> platform gems (containing pre-compiled DLLs). Official support ended for Ruby 2.1 on 2017-04-01.</p>
 <p>Please note that this deprecation note only applies to the precompiled Windows gems. Ruby 2.1 continues to be supported (for now) in the default gem when compiled on installation.</p>
-<h3 id="dependencies_10">Dependencies<a class="headerlink" href="#dependencies_10" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_11">Dependencies<a class="headerlink" href="#dependencies_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[Windows] Upgrade iconv from 1.14 to 1.15 (unless --use-system-libraries)</li>
 <li>[Windows] Upgrade zlib from 1.2.8 to 1.2.11 (unless --use-system-libraries)</li>
@@ -6294,7 +6653,7 @@
 <li>[JRuby] (performance) remove unnecessary cloning of objects in XPath searches [<a href="https://github.com/sparklemotion/nokogiri/issues/1563">#1563</a>] (Thanks, <a href="https://github.com/kares">@kares</a>!)</li>
 <li>[JRuby] (performance) more performance improvements, particularly in XPath, Reader, XmlNode, and XmlNodeSet [<a href="https://github.com/sparklemotion/nokogiri/issues/1597">#1597</a>] (Thanks, <a href="https://github.com/kares">@kares</a>!)</li>
 </ul>
-<h3 id="fixed_25">Fixed<a class="headerlink" href="#fixed_25" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_26">Fixed<a class="headerlink" href="#fixed_26" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>HTML::SAX::Parser#parse_io</code> now correctly parses HTML and not XML [<a href="https://github.com/sparklemotion/nokogiri/issues/1577">#1577</a>] (Thanks for the test case, <a href="https://github.com/gregors">@gregors</a>!)</li>
 <li>Support installation on systems with a <code>lib64</code> site config. [<a href="https://github.com/sparklemotion/nokogiri/issues/1562">#1562</a>]</li>
@@ -6327,7 +6686,7 @@
 <li><a href="http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5131.html">http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5131.html</a></li>
 </ul>
 <h2 id="1701-2017-01-04">1.7.0.1 / 2017-01-04<a class="headerlink" href="#1701-2017-01-04" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_26">Fixed<a class="headerlink" href="#fixed_26" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_27">Fixed<a class="headerlink" href="#fixed_27" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix OpenBSD support. (<a href="https://github.com/sparklemotion/nokogiri/issues/1569">#1569</a>) (related to <a href="https://github.com/sparklemotion/nokogiri/issues/1543">#1543</a>)</li>
 </ul>
@@ -6337,7 +6696,7 @@
 <li>Remove deprecation warnings in Ruby 2.4.0 (<a href="https://github.com/sparklemotion/nokogiri/issues/1545">#1545</a>) (Thanks, <a href="https://github.com/matthewd">@matthewd</a>!)</li>
 <li>Support egcc compiler on OpenBSD (<a href="https://github.com/sparklemotion/nokogiri/issues/1543">#1543</a>) (Thanks, <a href="https://github.com/frenkel">@frenkel</a> and <a href="https://github.com/knu">@knu</a>!)</li>
 </ul>
-<h3 id="dependencies_11">Dependencies<a class="headerlink" href="#dependencies_11" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_12">Dependencies<a class="headerlink" href="#dependencies_12" title="Permanent link">&para;</a></h3>
 <p>This release ends support for:</p>
 <ul>
 <li>Ruby 1.9.2, for which official support ended on 2014-07-31</li>
@@ -6346,7 +6705,7 @@
 <li>MacRuby, which hasn't been actively supported since 2015-01-13 (see <a href="https://github.com/MacRuby/MacRuby/commit/f76b9d6e99c18236db617e8aceb12c27d593a483">https://github.com/MacRuby/MacRuby/commit/f76b9d6e99c18236db617e8aceb12c27d593a483</a>)</li>
 </ul>
 <h2 id="1681-2016-10-03">1.6.8.1 / 2016-10-03<a class="headerlink" href="#1681-2016-10-03" title="Permanent link">&para;</a></h2>
-<h3 id="dependencies_12">Dependencies<a class="headerlink" href="#dependencies_12" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_13">Dependencies<a class="headerlink" href="#dependencies_13" title="Permanent link">&para;</a></h3>
 <p>Removes required dependency on the <code>pkg-config</code> gem. This dependency
 was introduced in v1.6.8 and, because it's distributed under LGPL, was
 objectionable to many Nokogiri users (<a href="https://github.com/sparklemotion/nokogiri/issues/1488">#1488</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1496">#1496</a>).</p>
@@ -6380,7 +6739,7 @@ around its absence.</p>
 <li>Fall back to the <code>pkg-config</code> gem if we're having trouble finding the system libxml2. This should help many FreeBSD users. (<a href="https://github.com/sparklemotion/nokogiri/issues/1417">#1417</a>)</li>
 <li>Set document encoding appropriately even on blank document. (<a href="https://github.com/sparklemotion/nokogiri/issues/1043">#1043</a>) (Thanks, <a href="https://github.com/batter">@batter</a>!)</li>
 </ul>
-<h3 id="fixed_27">Fixed<a class="headerlink" href="#fixed_27" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_28">Fixed<a class="headerlink" href="#fixed_28" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[JRuby] fix slow add_child (<a href="https://github.com/sparklemotion/nokogiri/issues/692">#692</a>)</li>
 <li>[JRuby] fix load errors when deploying to JRuby/Torquebox (<a href="https://github.com/sparklemotion/nokogiri/issues/1114">#1114</a>) (Thanks, <a href="https://github.com/atambo">@atambo</a> and <a href="https://github.com/jvshahid">@jvshahid</a>!)</li>
@@ -6405,7 +6764,7 @@ around its absence.</p>
 <li>Fix encoding of xml node namespaces.</li>
 <li>Work around issue installing Nokogiri on overlayfs (commonly used in Docker containers). (<a href="https://github.com/sparklemotion/nokogiri/issues/1370">#1370</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1405">#1405</a>)</li>
 </ul>
-<h3 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">&para;</a></h3>
+<h3 id="notes_2">Notes<a class="headerlink" href="#notes_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Removed legacy code remaining from Ruby 1.8.x support.</li>
 <li>Removed legacy code remaining from REE support.</li>
@@ -6451,7 +6810,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li>[JRuby] fix error in validating files with jruby (<a href="https://github.com/sparklemotion/nokogiri/issues/1355">#1355</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1361">#1361</a>) (Thanks, <a href="https://github.com/twalpole">@twalpole</a>!)</li>
 <li>[MRI, OSX] Patch to handle nonstandard location of <code>iconv.h</code>. (<a href="https://github.com/sparklemotion/nokogiri/issues/1206">#1206</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1210">#1210</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1218">#1218</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/1345">#1345</a>) (Thanks, <a href="https://github.com/neonichu">@neonichu</a>!)</li>
 </ul>
-<h3 id="fixed_28">Fixed<a class="headerlink" href="#fixed_28" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_29">Fixed<a class="headerlink" href="#fixed_29" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[JRuby] reset the namespace cache when replacing the document's innerHtml (<a href="https://github.com/sparklemotion/nokogiri/issues/1265">#1265</a>) (Thanks, <a href="https://github.com/mkristian">@mkristian</a>!)</li>
 <li>[JRuby] <code>Document#parse</code> should support IO objects that respond to <code>#read</code>. (<a href="https://github.com/sparklemotion/nokogiri/issues/1124">#1124</a>) (Thanks, Jake Byman!)</li>
@@ -6478,7 +6837,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 </ul>
 <p>See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> for details.</p>
 <h2 id="1662-2015-01-23">1.6.6.2 / 2015-01-23<a class="headerlink" href="#1662-2015-01-23" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_29">Fixed<a class="headerlink" href="#fixed_29" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_30">Fixed<a class="headerlink" href="#fixed_30" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed installation issue affecting compiler arguments. (<a href="https://github.com/sparklemotion/nokogiri/issues/1230">#1230</a>)</li>
 </ul>
@@ -6494,7 +6853,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li><code>bin/nokogiri</code> can better handle urls from STDIN (aiding use of xargs). (<a href="https://github.com/sparklemotion/nokogiri/issues/1065">#1065</a>)</li>
 <li>JRuby 9K support.</li>
 </ul>
-<h3 id="fixed_30">Fixed<a class="headerlink" href="#fixed_30" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_31">Fixed<a class="headerlink" href="#fixed_31" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>DocumentFragment#search</code> now matches against root nodes. (<a href="https://github.com/sparklemotion/nokogiri/issues/1205">#1205</a>)</li>
 <li>(MRI) More fixes related to handling libxml2 parse errors during <code>DocumentFragment#dup</code>. (<a href="https://github.com/sparklemotion/nokogiri/issues/1196">#1196</a>)</li>
@@ -6511,13 +6870,13 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li>Implement <code>Slop#respond_to_missing?</code>. (<a href="https://github.com/sparklemotion/nokogiri/issues/1176">#1176</a>)</li>
 <li>Optimized the XPath query generated by an <code>an+b</code> CSS query.</li>
 </ul>
-<h3 id="fixed_31">Fixed<a class="headerlink" href="#fixed_31" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_32">Fixed<a class="headerlink" href="#fixed_32" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Capture non-parse errors from <code>Document#dup</code> in <code>Document#errors</code>. (<a href="https://github.com/sparklemotion/nokogiri/issues/1196">#1196</a>)</li>
 <li>(JRuby) <code>Document#canonicalize</code> parameters are now consistent with MRI. (<a href="https://github.com/sparklemotion/nokogiri/issues/1189">#1189</a>)</li>
 </ul>
 <h2 id="1641-2014-11-05">1.6.4.1 / 2014-11-05<a class="headerlink" href="#1641-2014-11-05" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_32">Fixed<a class="headerlink" href="#fixed_32" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_33">Fixed<a class="headerlink" href="#fixed_33" title="Permanent link">&para;</a></h3>
 <ul>
 <li>(MRI) Fix a bug where CFLAGS passed in are dropped. (<a href="https://github.com/sparklemotion/nokogiri/issues/1188">#1188</a>)</li>
 <li>Fix a bug where CSS selector :nth(n) did not work. (<a href="https://github.com/sparklemotion/nokogiri/issues/1187">#1187</a>)</li>
@@ -6531,13 +6890,13 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li>(MRI) Detect and help user fix a missing /usr/include/iconv.h on OS X. (<a href="https://github.com/sparklemotion/nokogiri/issues/1111">#1111</a>)</li>
 <li>(MRI) Improve the iconv detection for building libxml2.</li>
 </ul>
-<h3 id="fixed_33">Fixed<a class="headerlink" href="#fixed_33" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_34">Fixed<a class="headerlink" href="#fixed_34" title="Permanent link">&para;</a></h3>
 <ul>
 <li>(MRI) Fix <code>DocumentFragment#element_children</code> (<a href="https://github.com/sparklemotion/nokogiri/issues/1138">#1138</a>).</li>
 <li>Fix a bug with CSS attribute selector without any prefix where "foo [bar]" was treated as "foo[bar]". (<a href="https://github.com/sparklemotion/nokogiri/issues/1174">#1174</a>)</li>
 </ul>
 <h2 id="1631-2014-07-21">1.6.3.1 / 2014-07-21<a class="headerlink" href="#1631-2014-07-21" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_34">Fixed<a class="headerlink" href="#fixed_34" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_35">Fixed<a class="headerlink" href="#fixed_35" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Addressing an Apple Macintosh installation problem for GCC users. <a href="https://github.com/sparklemotion/nokogiri/issues/1130">#1130</a> (Thanks, <a href="https://github.com/zenspider">@zenspider</a>!)</li>
 </ul>
@@ -6546,7 +6905,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <ul>
 <li>Added <code>Node#document?</code> and <code>Node#processing_instruction?</code></li>
 </ul>
-<h3 id="fixed_35">Fixed<a class="headerlink" href="#fixed_35" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_36">Fixed<a class="headerlink" href="#fixed_36" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[JRuby] Fix Ruby memory exhaustion vulnerability. <a href="https://github.com/sparklemotion/nokogiri/issues/1087">#1087</a> (Thanks, <a href="https://github.com/ocher">@ocher</a>)</li>
 <li>[MRI] Fix segfault during GC when using <code>libxml-ruby</code> and <code>nokogiri</code> together in multi-threaded environment. <a href="https://github.com/sparklemotion/nokogiri/issues/895">#895</a> (Thanks, <a href="https://github.com/ender672">@ender672</a>!)</li>
@@ -6555,7 +6914,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li>Processing instructions can now be added via <code>Node#add_next_sibling</code>.</li>
 </ul>
 <h2 id="1621-2014-05-13">1.6.2.1 / 2014-05-13<a class="headerlink" href="#1621-2014-05-13" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_36">Fixed<a class="headerlink" href="#fixed_36" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_37">Fixed<a class="headerlink" href="#fixed_37" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix statically-linked libxml2 installation when using universal builds of Ruby. <a href="https://github.com/sparklemotion/nokogiri/issues/1104">#1104</a></li>
 <li>Patching <code>mini_portile</code> to address the git dependency detailed in <a href="https://github.com/sparklemotion/nokogiri/issues/1102">#1102</a>.</li>
@@ -6570,7 +6929,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li>CVE-2014-0191 <a href="https://git.gnome.org/browse/libxml2/commit/?id=9cd1c3cfbd32655d60572c0a413e017260c854df">https://git.gnome.org/browse/libxml2/commit/?id=9cd1c3cfbd32655d60572c0a413e017260c854df</a></li>
 </ul>
 <p>It is recommended that you upgrade from 1.6.x to this version as soon as possible.</p>
-<h3 id="dependencies_13">Dependencies<a class="headerlink" href="#dependencies_13" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_14">Dependencies<a class="headerlink" href="#dependencies_14" title="Permanent link">&para;</a></h3>
 <p>Now requires libxml &gt;= 2.6.21 (was previously &gt;= 2.6.17).</p>
 <h3 id="added_17">Added<a class="headerlink" href="#added_17" title="Permanent link">&para;</a></h3>
 <ul>
@@ -6591,7 +6950,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li>Fix documentation for <code>XML::Node#namespace</code>. <a href="https://github.com/sparklemotion/nokogiri/issues/803">#803</a> <a href="https://github.com/sparklemotion/nokogiri/issues/802">#802</a> (Thanks, Hoylen Sue)</li>
 <li>Allow <code>Nokogiri::XML::Node#parse</code> from unparented non-element nodes. <a href="https://github.com/sparklemotion/nokogiri/issues/407">#407</a></li>
 </ul>
-<h3 id="fixed_37">Fixed<a class="headerlink" href="#fixed_37" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_38">Fixed<a class="headerlink" href="#fixed_38" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Ensure :only-child pseudo class works within :not pseudo class. <a href="https://github.com/sparklemotion/nokogiri/issues/858">#858</a> (Thanks, Yamagishi Kazutoshi!)</li>
 <li>Don't call pkg_config when using bundled libraries in <code>extconf.rb</code> <a href="https://github.com/sparklemotion/nokogiri/issues/931">#931</a> (Thanks, Shota Fukumori!)</li>
@@ -6612,7 +6971,7 @@ See <a href="https://github.com/sparklemotion/nokogiri/issues/1374">#1374</a> an
 <li>(JRuby) JAXPExtensionsProvider / Java 7 / Secure Processing <a href="https://github.com/sparklemotion/nokogiri/issues/1070">#1070</a></li>
 </ul>
 <h2 id="161-2013-12-14">1.6.1 / 2013-12-14<a class="headerlink" href="#161-2013-12-14" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_38">Fixed<a class="headerlink" href="#fixed_38" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_39">Fixed<a class="headerlink" href="#fixed_39" title="Permanent link">&para;</a></h3>
 <ul>
 <li>(JRuby) Fix out of memory bug when certain invalid documents are parsed.</li>
 <li>(JRuby) Fix regression of billion-laughs vulnerability. <a href="https://github.com/sparklemotion/nokogiri/issues/586">#586</a></li>
@@ -6627,7 +6986,7 @@ mentioned in both.</p>
 <h2 id="160rc1-2013-04-14">1.6.0.rc1 / 2013-04-14<a class="headerlink" href="#160rc1-2013-04-14" title="Permanent link">&para;</a></h2>
 <p>This release was based on v1.5.9, and so does not contain any fixes
 mentioned in the notes for v1.5.10.</p>
-<h3 id="notes_2">Notes<a class="headerlink" href="#notes_2" title="Permanent link">&para;</a></h3>
+<h3 id="notes_3">Notes<a class="headerlink" href="#notes_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>mini_portile is now a runtime dependency</li>
 <li>Ruby 1.9.2 and higher now required</li>
@@ -6637,37 +6996,37 @@ mentioned in the notes for v1.5.10.</p>
 <li>(MRI) Source code for libxml 2.8.0 and libxslt 1.2.26 is packaged with the gem. These libraries are compiled at gem install time unless the environment variable NOKOGIRI_USE_SYSTEM_LIBRARIES is set. VERSION_INFO (also <code>nokogiri -v</code>) exposes whether libxml was compiled from packaged source, or the system library was used.</li>
 <li>(Windows) libxml upgraded to 2.8.0</li>
 </ul>
-<h3 id="dependencies_14">Dependencies<a class="headerlink" href="#dependencies_14" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_15">Dependencies<a class="headerlink" href="#dependencies_15" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Support for Ruby 1.8.7 and prior has been dropped</li>
 </ul>
 <h2 id="1511-2013-12-14">1.5.11 / 2013-12-14<a class="headerlink" href="#1511-2013-12-14" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_39">Fixed<a class="headerlink" href="#fixed_39" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_40">Fixed<a class="headerlink" href="#fixed_40" title="Permanent link">&para;</a></h3>
 <ul>
 <li>(JRuby) Fix out of memory bug when certain invalid documents are parsed.</li>
 <li>(JRuby) Fix regression of billion-laughs vulnerability. <a href="https://github.com/sparklemotion/nokogiri/issues/586">#586</a></li>
 </ul>
 <h2 id="1510-2013-06-07">1.5.10 / 2013-06-07<a class="headerlink" href="#1510-2013-06-07" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_40">Fixed<a class="headerlink" href="#fixed_40" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_41">Fixed<a class="headerlink" href="#fixed_41" title="Permanent link">&para;</a></h3>
 <ul>
 <li>(JRuby) Fix "null document" error when parsing an empty IO in jruby 1.7.3. <a href="https://github.com/sparklemotion/nokogiri/issues/883">#883</a></li>
 <li>(JRuby) Fix schema validation when XSD has DOCTYPE set to DTD. <a href="https://github.com/sparklemotion/nokogiri/issues/912">#912</a> (Thanks, Patrick Cheng!)</li>
 <li>(MRI) Fix segfault when there is no default subelement for an HTML node. <a href="https://github.com/sparklemotion/nokogiri/issues/917">#917</a></li>
 </ul>
-<h3 id="notes_3">Notes<a class="headerlink" href="#notes_3" title="Permanent link">&para;</a></h3>
+<h3 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Use rb_ary_entry instead of RARRAY_PTR (you know, for Rubinius). <a href="https://github.com/sparklemotion/nokogiri/issues/877">#877</a> (Thanks, Dirkjan Bussink!)</li>
 <li>Fix TypeError when running tests. <a href="https://github.com/sparklemotion/nokogiri/issues/900">#900</a> (Thanks, Cédric Boutillier!)</li>
 </ul>
 <h2 id="159-2013-03-21">1.5.9 / 2013-03-21<a class="headerlink" href="#159-2013-03-21" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_41">Fixed<a class="headerlink" href="#fixed_41" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_42">Fixed<a class="headerlink" href="#fixed_42" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Ensure that prefixed attributes are properly namespaced when reparented. <a href="https://github.com/sparklemotion/nokogiri/issues/869">#869</a></li>
 <li>Fix for inconsistent namespaced attribute access for SVG nested in HTML. <a href="https://github.com/sparklemotion/nokogiri/issues/861">#861</a></li>
 <li>(MRI) Fixed a memory leak in fragment parsing if nodes are not all subsequently reparented. <a href="https://github.com/sparklemotion/nokogiri/issues/856">#856</a></li>
 </ul>
 <h2 id="158-2013-03-19">1.5.8 / 2013-03-19<a class="headerlink" href="#158-2013-03-19" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_42">Fixed<a class="headerlink" href="#fixed_42" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_43">Fixed<a class="headerlink" href="#fixed_43" title="Permanent link">&para;</a></h3>
 <ul>
 <li>(JRuby) Fix EmptyStackException thrown by elements with xlink:href attributes and no base_uri <a href="https://github.com/sparklemotion/nokogiri/issues/534">#534</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/805">#805</a>. (Thanks, Patrick Quinn and Brian Hoffman!)</li>
 <li>Fixes duplicate attributes issue introduced in 1.5.7. <a href="https://github.com/sparklemotion/nokogiri/issues/865">#865</a></li>
@@ -6678,7 +7037,7 @@ mentioned in the notes for v1.5.10.</p>
 <ul>
 <li>Windows support for Ruby 2.0.</li>
 </ul>
-<h3 id="fixed_43">Fixed<a class="headerlink" href="#fixed_43" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_44">Fixed<a class="headerlink" href="#fixed_44" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>SAX::Parser.parse_io</code> throw an error when used with lower case encoding. <a href="https://github.com/sparklemotion/nokogiri/issues/828">#828</a></li>
 <li>(JRuby) Java Nokogiri is finally green (passes all tests) under 1.8 and 1.9 mode. High five everyone. <a href="https://github.com/sparklemotion/nokogiri/issues/798">#798</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/705">#705</a></li>
@@ -6705,7 +7064,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>bin/nokogiri -e</code> will execute a program from the command line</li>
 <li>(JRuby) <code>bin/nokogiri --version</code> will print the Xerces and NekoHTML versions.</li>
 </ul>
-<h3 id="fixed_44">Fixed<a class="headerlink" href="#fixed_44" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_45">Fixed<a class="headerlink" href="#fixed_45" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Nokogiri now detects XSLT transform errors. <a href="https://github.com/sparklemotion/nokogiri/issues/731">#731</a> (Thanks, Justin Fitzsimmons!)</li>
 <li>Don't throw an Error when trying to replace top-level text node in DocumentFragment. <a href="https://github.com/sparklemotion/nokogiri/issues/775">#775</a></li>
@@ -6734,7 +7093,7 @@ mentioned in the notes for v1.5.10.</p>
 <ul>
 <li>Much-improved support for JRuby in 1.9 mode! Yay!</li>
 </ul>
-<h3 id="fixed_45">Fixed<a class="headerlink" href="#fixed_45" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_46">Fixed<a class="headerlink" href="#fixed_46" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Regression in JRuby Nokogiri add_previous_sibling (1.5.0 -&gt; 1.5.1) <a href="https://github.com/sparklemotion/nokogiri/issues/691">#691</a> (Thanks, John Shahid!)</li>
 <li>JRuby unable to create HTML doc if URL arg provided <a href="https://github.com/sparklemotion/nokogiri/issues/674">#674</a> (Thanks, John Shahid!)</li>
@@ -6757,7 +7116,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Better build support for systems with pkg-config. <a href="https://github.com/sparklemotion/nokogiri/issues/584">#584</a></li>
 <li>Better build support for systems with multiple iconv installations.</li>
 </ul>
-<h3 id="fixed_46">Fixed<a class="headerlink" href="#fixed_46" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_47">Fixed<a class="headerlink" href="#fixed_47" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Segmentation fault when creating a comment node for a DocumentFragment. <a href="https://github.com/sparklemotion/nokogiri/issues/677">#677</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/678">#678</a>.</li>
 <li>Treat '.' as xpath in <code>at()</code> and <code>search()</code>. <a href="https://github.com/sparklemotion/nokogiri/issues/690">#690</a></li>
@@ -6774,7 +7133,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Support for "prefixless" CSS selectors ~, &gt; and + like jQuery supports. <a href="https://github.com/sparklemotion/nokogiri/issues/621">#621</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/623">#623</a>. (Thanks, David Lee!)</li>
 <li>Attempting to improve installation on homebrew 0.9 (with regards to iconv). Isn't package management convenient?</li>
 </ul>
-<h3 id="fixed_47">Fixed<a class="headerlink" href="#fixed_47" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_48">Fixed<a class="headerlink" href="#fixed_48" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Custom xpath functions with empty nodeset arguments cause a segfault. <a href="https://github.com/sparklemotion/nokogiri/issues/634">#634</a>.</li>
 <li><code>Nokogiri::XML::Node#css</code> now works for XML documents with default namespaces when the rule contains attribute selector without namespace.</li>
@@ -6797,7 +7156,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Java integration feature is added. Now, <code>XML::Document.wrap</code> and <code>XML::Document#to_java</code> methods are available.</li>
 <li>RelaxNG validator support in the <code>nokogiri</code> cli utility. <a href="https://github.com/sparklemotion/nokogiri/issues/591">#591</a> (thanks, Dan Radez!)</li>
 </ul>
-<h3 id="fixed_48">Fixed<a class="headerlink" href="#fixed_48" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_49">Fixed<a class="headerlink" href="#fixed_49" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix many memory leaks and segfault opportunities. Thanks, Tim Elliott!</li>
 <li>extconf searches homebrew paths if homebrew is installed.</li>
@@ -6824,7 +7183,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>C14n cleanup and <code>Node#canonicalize</code> (thanks, Ivan Pirlik!) <a href="https://github.com/sparklemotion/nokogiri/issues/563">#563</a></li>
 </ul>
 <h2 id="150-2011-07-01">1.5.0 / 2011-07-01<a class="headerlink" href="#150-2011-07-01" title="Permanent link">&para;</a></h2>
-<h3 id="notes_4">Notes<a class="headerlink" href="#notes_4" title="Permanent link">&para;</a></h3>
+<h3 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>See changelog from 1.4.7</li>
 </ul>
@@ -6832,7 +7191,7 @@ mentioned in the notes for v1.5.10.</p>
 <ul>
 <li>extracted sets of <code>Node::SaveOptions</code> into <code>Node::SaveOptions::DEFAULT_{X,H,XH}TML</code> (refactor)</li>
 </ul>
-<h3 id="fixed_49">Fixed<a class="headerlink" href="#fixed_49" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_50">Fixed<a class="headerlink" href="#fixed_50" title="Permanent link">&para;</a></h3>
 <ul>
 <li>default output of XML on JRuby is no longer formatted due to inconsistent whitespace handling. <a href="https://github.com/sparklemotion/nokogiri/issues/415">#415</a></li>
 <li>(JRuby) making empty <code>NodeSet</code>s with null <code>nodes</code> member safe to operate on. <a href="https://github.com/sparklemotion/nokogiri/issues/443">#443</a></li>
@@ -6840,26 +7199,26 @@ mentioned in the notes for v1.5.10.</p>
 <li>Add support for <code>&lt;meta charset="..."&gt;</code>.</li>
 </ul>
 <h2 id="150-beta3-2010-12-02">1.5.0 beta3 / 2010-12-02<a class="headerlink" href="#150-beta3-2010-12-02" title="Permanent link">&para;</a></h2>
-<h3 id="notes_5">Notes<a class="headerlink" href="#notes_5" title="Permanent link">&para;</a></h3>
+<h3 id="notes_6">Notes<a class="headerlink" href="#notes_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>JRuby performance tuning</li>
 <li>See changelog from 1.4.4</li>
 </ul>
-<h3 id="fixed_50">Fixed<a class="headerlink" href="#fixed_50" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_51">Fixed<a class="headerlink" href="#fixed_51" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>Node#inner_text</code> no longer returns nil. (JRuby) <a href="https://github.com/sparklemotion/nokogiri/issues/264">#264</a></li>
 </ul>
 <h2 id="150-beta2-2010-07-30">1.5.0 beta2 / 2010-07-30<a class="headerlink" href="#150-beta2-2010-07-30" title="Permanent link">&para;</a></h2>
-<h3 id="notes_6">Notes<a class="headerlink" href="#notes_6" title="Permanent link">&para;</a></h3>
+<h3 id="notes_7">Notes<a class="headerlink" href="#notes_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>See changelog from 1.4.3</li>
 </ul>
 <h2 id="150-beta1-2010-05-22">1.5.0 beta1 / 2010-05-22<a class="headerlink" href="#150-beta1-2010-05-22" title="Permanent link">&para;</a></h2>
-<h3 id="notes_7">Notes<a class="headerlink" href="#notes_7" title="Permanent link">&para;</a></h3>
+<h3 id="notes_8">Notes<a class="headerlink" href="#notes_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li>JRuby support is provided by a new pure-java backend.</li>
 </ul>
-<h3 id="dependencies_15">Dependencies<a class="headerlink" href="#dependencies_15" title="Permanent link">&para;</a></h3>
+<h3 id="dependencies_16">Dependencies<a class="headerlink" href="#dependencies_16" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Ruby 1.8.6 is deprecated. Nokogiri will install, but official support is ended.</li>
 <li>LibXML 2.6.16 and earlier are deprecated. Nokogiri will refuse to install.</li>
@@ -6869,12 +7228,12 @@ mentioned in the notes for v1.5.10.</p>
 <li>FFI support is removed.</li>
 </ul>
 <h2 id="147-2011-07-01">1.4.7 / 2011-07-01<a class="headerlink" href="#147-2011-07-01" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_51">Fixed<a class="headerlink" href="#fixed_51" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_52">Fixed<a class="headerlink" href="#fixed_52" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix a bug in advanced encoding detection that leads to partially duplicated document when parsing an HTML file with unknown encoding. Thanks, Timothy Elliott (<a href="https://github.com/ender672">@ender672</a>)! <a href="https://github.com/sparklemotion/nokogiri/issues/478">#478</a></li>
 </ul>
 <h2 id="146-2011-06-19">1.4.6 / 2011-06-19<a class="headerlink" href="#146-2011-06-19" title="Permanent link">&para;</a></h2>
-<h3 id="notes_8">Notes<a class="headerlink" href="#notes_8" title="Permanent link">&para;</a></h3>
+<h3 id="notes_9">Notes<a class="headerlink" href="#notes_9" title="Permanent link">&para;</a></h3>
 <ul>
 <li>This version is functionally identical to 1.4.5.</li>
 <li>Ruby 1.8.6 support has been restored.</li>
@@ -6886,7 +7245,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>extracted sets of <code>Node::SaveOptions</code> into <code>Node::SaveOptions::DEFAULT_{X,H,XH}TML</code> (refactor)</li>
 <li>Raise an exception if a string is passed to <code>Nokogiri::XML::Schema#validate</code>. <a href="https://github.com/sparklemotion/nokogiri/issues/406">#406</a></li>
 </ul>
-<h3 id="fixed_52">Fixed<a class="headerlink" href="#fixed_52" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_53">Fixed<a class="headerlink" href="#fixed_53" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>Node#serialize</code>-and-friends now accepts a <code>SaveOption</code> object as the, erm, save object.</li>
 <li><code>Nokogiri::CSS::Parser</code> has-a <code>Nokogiri::CSS::Tokenizer</code></li>
@@ -6907,7 +7266,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>XML::Reader</code> node type constants. <a href="https://github.com/sparklemotion/nokogiri/issues/369">#369</a></li>
 <li>SAX Parser context provides line and column information</li>
 </ul>
-<h3 id="fixed_53">Fixed<a class="headerlink" href="#fixed_53" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_54">Fixed<a class="headerlink" href="#fixed_54" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>XML::DTD#attributes</code> returns an empty hash instead of nil when there are no attributes.</li>
 <li><code>XML::DTD#{keys,each}</code> now work as expected. <a href="https://github.com/sparklemotion/nokogiri/issues/324">#324</a></li>
@@ -6930,7 +7289,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>Node#remove_namespaces!</code> now removes namespace <em>declarations</em> as well. <a href="https://github.com/sparklemotion/nokogiri/issues/294">#294</a></li>
 <li><code>NodeSet#at_xpath</code>, <code>NodeSet#at_css</code> and <code>NodeSet#&gt;</code> do what the corresponding methods of <code>Node</code> do.</li>
 </ul>
-<h3 id="fixed_54">Fixed<a class="headerlink" href="#fixed_54" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_55">Fixed<a class="headerlink" href="#fixed_55" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>XML::NodeSet#{include?,delete,push}</code> accept an <code>XML::Namespace</code></li>
 <li><code>XML::Document#parse</code> added for parsing in the context of a document</li>
@@ -6957,7 +7316,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>Nokogiri::XML::Node#add_child</code>, <code>#add_previous_sibling</code>, <code>#before</code>, <code>#add_next_sibling</code>, <code>#after</code>, <code>#inner_html</code>, <code>#swap</code> and <code>#replace</code> all now accept a <code>Node</code>, <code>DocumentFragment</code>, <code>NodeSet</code>, or a string containing markup.</li>
 <li><code>Node#fragment?</code> indicates whether a node is a <code>DocumentFragment</code>.</li>
 </ul>
-<h3 id="fixed_55">Fixed<a class="headerlink" href="#fixed_55" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_56">Fixed<a class="headerlink" href="#fixed_56" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>XML::NodeSet</code> is now always decorated (if the document has decorators). GH <a href="https://github.com/sparklemotion/nokogiri/issues/198">#198</a></li>
 <li><code>XML::NodeSet#slice</code> gracefully handles offset+length larger than the set length. GH <a href="https://github.com/sparklemotion/nokogiri/issues/200">#200</a></li>
@@ -6972,7 +7331,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Fixed a memory leak in xml reader. Thanks sdor! GH <a href="https://github.com/sparklemotion/nokogiri/issues/244">#244</a></li>
 <li><code>Node#replace</code> returns the new child node as claimed in the RDoc. Previously returned +self+.</li>
 </ul>
-<h3 id="notes_9">Notes<a class="headerlink" href="#notes_9" title="Permanent link">&para;</a></h3>
+<h3 id="notes_10">Notes<a class="headerlink" href="#notes_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The Windows gems now bundle DLLs for libxml 2.7.6 and libxslt 1.1.26. Prior to this release, libxml 2.7.3 and libxslt 1.1.24 were bundled.</li>
 </ul>
@@ -6991,7 +7350,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>XML::NodeSet#filter()</code> was added</li>
 <li><code>XML::Node.next=</code> and .previous= are aliases for add_next_sibling and add_previous_sibling. GH <a href="https://github.com/sparklemotion/nokogiri/issues/183">#183</a></li>
 </ul>
-<h3 id="fixed_56">Fixed<a class="headerlink" href="#fixed_56" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_57">Fixed<a class="headerlink" href="#fixed_57" title="Permanent link">&para;</a></h3>
 <ul>
 <li>XML fragments with namespaces do not raise an exception (regression in 1.4.0)</li>
 <li><code>Node#matches?</code> works in nodes contained by a <code>DocumentFragment</code>. GH <a href="https://github.com/sparklemotion/nokogiri/issues/158">#158</a></li>
@@ -7024,7 +7383,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>XML::SAX::ParserContext</code> added</li>
 <li><code>XML::Document#remove_namespaces!</code> for the namespace-impaired</li>
 </ul>
-<h3 id="fixed_57">Fixed<a class="headerlink" href="#fixed_57" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_58">Fixed<a class="headerlink" href="#fixed_58" title="Permanent link">&para;</a></h3>
 <ul>
 <li>returns nil when HTML documents do not declare a meta encoding tag. GH <a href="https://github.com/sparklemotion/nokogiri/issues/115">#115</a></li>
 <li>Uses <code>RbConfig::CONFIG['host_os']</code> to adjust <code>ENV['PATH']</code> GH <a href="https://github.com/sparklemotion/nokogiri/issues/113">#113</a></li>
@@ -7047,7 +7406,7 @@ mentioned in the notes for v1.5.10.</p>
 <ul>
 <li><code>NodeSet#children</code> returns all children of all nodes</li>
 </ul>
-<h3 id="fixed_58">Fixed<a class="headerlink" href="#fixed_58" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_59">Fixed<a class="headerlink" href="#fixed_59" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Override libxml-ruby's global error handler</li>
 <li><code>ParseOption#strict</code> fixed</li>
@@ -7066,7 +7425,7 @@ mentioned in the notes for v1.5.10.</p>
 <ul>
 <li><code>Nokogiri::XML::DTD#validate</code> will validate your document</li>
 </ul>
-<h3 id="fixed_59">Fixed<a class="headerlink" href="#fixed_59" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_60">Fixed<a class="headerlink" href="#fixed_60" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>Nokogiri::XML::NodeSet#search</code> will search top level nodes. GH <a href="https://github.com/sparklemotion/nokogiri/issues/73">#73</a></li>
 <li>Removed namespace related methods from <code>Nokogiri::XML::Document</code></li>
@@ -7082,7 +7441,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>Nokogiri::XML::SAX::Document#end_element_ns</code> is deprecated, please switch to <code>Nokogiri::XML::SAX::Document#end_element_namespace</code></li>
 </ul>
 <h2 id="131-2009-06-07">1.3.1 / 2009-06-07<a class="headerlink" href="#131-2009-06-07" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_60">Fixed<a class="headerlink" href="#fixed_60" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_61">Fixed<a class="headerlink" href="#fixed_61" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>extconf.rb</code> checks for optional RelaxNG and Schema functions</li>
 <li>Namespace nodes are added to the Document node cache</li>
@@ -7112,7 +7471,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>Nokogiri::XML::DocumentFragment</code> and <code>Nokogiri::HTML::DocumentFragment</code> have a sensible API and a more robust implementation.</li>
 <li>JRuby 1.3.0 support via FFI.</li>
 </ul>
-<h3 id="fixed_61">Fixed<a class="headerlink" href="#fixed_61" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_62">Fixed<a class="headerlink" href="#fixed_62" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed a problem with nil passed to CDATA constructor</li>
 <li>Fragment method deals with regular expression characters (Thanks Joel!) LH <a href="https://github.com/sparklemotion/nokogiri/issues/73">#73</a></li>
@@ -7124,7 +7483,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Fixed intolerance of HTML attributes without values in <code>Node#{before/after/inner_html=}</code>. (GH<a href="https://github.com/sparklemotion/nokogiri/issues/35">#35</a>)</li>
 </ul>
 <h2 id="123-2009-03-22">1.2.3 / 2009-03-22<a class="headerlink" href="#123-2009-03-22" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_62">Fixed<a class="headerlink" href="#fixed_62" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_63">Fixed<a class="headerlink" href="#fixed_63" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixing bug where a node is passed in to <code>Node#new</code></li>
 <li>Namespace should be assigned on DocumentFragment creation. LH <a href="https://github.com/sparklemotion/nokogiri/issues/66">#66</a></li>
@@ -7141,7 +7500,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Nokogiri builder interface improvements</li>
 <li><code>Nokogiri::XML::Node#swap</code> swaps html for current node (LH <a href="https://github.com/sparklemotion/nokogiri/issues/50">#50</a>)</li>
 </ul>
-<h3 id="fixed_63">Fixed<a class="headerlink" href="#fixed_63" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_64">Fixed<a class="headerlink" href="#fixed_64" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed a tag nesting problem in the Builder API (LH <a href="https://github.com/sparklemotion/nokogiri/issues/41">#41</a>)</li>
 <li><code>Nokogiri::HTML.fragment</code> will properly handle text only nodes (LH <a href="https://github.com/sparklemotion/nokogiri/issues/43">#43</a>)</li>
@@ -7159,7 +7518,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>Document</code> should not have a parent method (LH <a href="https://github.com/sparklemotion/nokogiri/issues/64">#64</a>)</li>
 </ul>
 <h2 id="121-2009-02-23">1.2.1 / 2009-02-23<a class="headerlink" href="#121-2009-02-23" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_64">Fixed<a class="headerlink" href="#fixed_64" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_65">Fixed<a class="headerlink" href="#fixed_65" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed a CSS selector space bug</li>
 <li>Fixed Ruby 1.9 String Encoding (Thanks 角谷さん！)</li>
@@ -7185,7 +7544,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>Nokogiri::XML::ProcessingInstruction.new</code></li>
 <li><code>Nokogiri::XML::SAX::PushParser</code> for all your push parsing needs.</li>
 </ul>
-<h3 id="fixed_65">Fixed<a class="headerlink" href="#fixed_65" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_66">Fixed<a class="headerlink" href="#fixed_66" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed <code>Nokogiri::XML::Document#dup</code></li>
 <li>Fixed header detection. Thanks rubikitch!</li>
@@ -7208,7 +7567,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>XML::Node#delete</code> added.</li>
 <li><code>XML::NodeSet#inner_html</code> added.</li>
 </ul>
-<h3 id="fixed_66">Fixed<a class="headerlink" href="#fixed_66" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_67">Fixed<a class="headerlink" href="#fixed_67" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Not including an HTML entity for \r for HTML nodes.</li>
 <li>Removed <code>CSS::SelectorHandler</code> and <code>XML::XPathHandler</code></li>
@@ -7222,7 +7581,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Custom CSS pseudo classes are now supported.  See <code>Nokogiri::XML::Node#css</code></li>
 <li><code>Nokogiri::XML::Node#&lt;&lt;</code> will add a child to the current node</li>
 </ul>
-<h3 id="fixed_67">Fixed<a class="headerlink" href="#fixed_67" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_68">Fixed<a class="headerlink" href="#fixed_68" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Mutex lock on CSS cache access</li>
 <li>Fixed build problems with GCC 3.3.5</li>
@@ -7231,7 +7590,7 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>XML::Node#add_previous_sibling</code> returns new sibling node.</li>
 </ul>
 <h2 id="107">1.0.7<a class="headerlink" href="#107" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_68">Fixed<a class="headerlink" href="#fixed_68" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_69">Fixed<a class="headerlink" href="#fixed_69" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed memory leak when using Dike</li>
 <li>SAX parser now parses IO streams</li>
@@ -7241,7 +7600,7 @@ mentioned in the notes for v1.5.10.</p>
 <li>Fixed a bug in complex CSS negation selectors</li>
 </ul>
 <h2 id="106">1.0.6<a class="headerlink" href="#106" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_69">Fixed<a class="headerlink" href="#fixed_69" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_70">Fixed<a class="headerlink" href="#fixed_70" title="Permanent link">&para;</a></h3>
 <ul>
 <li>XPath Parser raises a <code>SyntaxError</code> on parse failure</li>
 <li>CSS Parser raises a <code>SyntaxError</code> on parse failure</li>
@@ -7250,21 +7609,21 @@ mentioned in the notes for v1.5.10.</p>
 <li>CSS to XPath conversion is now cached</li>
 </ul>
 <h2 id="105">1.0.5<a class="headerlink" href="#105" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_70">Fixed<a class="headerlink" href="#fixed_70" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_71">Fixed<a class="headerlink" href="#fixed_71" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Added mailing list and ticket tracking information to the <code>README.txt</code></li>
 <li>Sets <code>ENV['PATH']</code> on windows if it doesn't exist</li>
 <li>Caching results of <code>NodeSet#[]</code> on <code>Document</code></li>
 </ul>
 <h2 id="104">1.0.4<a class="headerlink" href="#104" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_71">Fixed<a class="headerlink" href="#fixed_71" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_72">Fixed<a class="headerlink" href="#fixed_72" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Changed memory management from weak refs to document refs</li>
 <li>Plugged some memory leaks</li>
 <li>Builder blocks can call methods from surrounding contexts</li>
 </ul>
 <h2 id="103">1.0.3<a class="headerlink" href="#103" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_72">Fixed<a class="headerlink" href="#fixed_72" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_73">Fixed<a class="headerlink" href="#fixed_73" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>NodeSet</code> now implements <code>to_ary</code></li>
 <li><code>XML::Document</code> should not implement parent</li>
@@ -7273,12 +7632,12 @@ mentioned in the notes for v1.5.10.</p>
 <li><code>inner_html</code> fixed. (Thanks Yehuda!)</li>
 </ul>
 <h2 id="102">1.0.2<a class="headerlink" href="#102" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_73">Fixed<a class="headerlink" href="#fixed_73" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_74">Fixed<a class="headerlink" href="#fixed_74" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>extconf.rb</code> should not check for frex and racc</li>
 </ul>
 <h2 id="101">1.0.1<a class="headerlink" href="#101" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_74">Fixed<a class="headerlink" href="#fixed_74" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_75">Fixed<a class="headerlink" href="#fixed_75" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Made sure <code>extconf.rb</code> searched libdir and prefix so that ports libxml/ruby will link properly.  Thanks lucsky!</li>
 </ul>
@@ -7287,12 +7646,10 @@ mentioned in the notes for v1.5.10.</p>
 <ul>
 <li>Birthday!</li>
 </ul>
-                
-                  
-                
-              
-              
-                
+
+  
+
+
 
 
               
@@ -7301,15 +7658,14 @@ mentioned in the notes for v1.5.10.</p>
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-top--hidden md-icon" data-md-component="top">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
             Back to top
           </a>
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -7348,26 +7704,25 @@ mentioned in the notes for v1.5.10.</p>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright Ⓒ 2009-2021 Mike Dalessio
-          </div>
-        
-        
-        
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright Ⓒ 2009-2021 Mike Dalessio
+    </div>
+  
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
     
-      
-      
-      <a href="https://github.com/sparklemotion/nokogiri.org" target="_blank" rel="noopener" title="sparklemotion/nokogiri.org" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
     
-  </div>
-
+    <a href="https://github.com/sparklemotion/nokogiri.org" target="_blank" rel="noopener" title="sparklemotion/nokogiri.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -7395,6 +7750,10 @@ documentation better.
 <div class="md-consent__settings">
   <ul class="task-list">
     
+      
+        
+        
+      
       <li class="task-list-item">
         <label class="task-list-control">
           <input type="checkbox" name="analytics" checked>
@@ -7412,12 +7771,12 @@ documentation better.
           </form>
         </aside>
       </div>
-      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.reload()})</script>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var form=document.forms.consent;form.addEventListener("submit",function(n){n.preventDefault(),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(n){return[n,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.61ac8e46.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.e72f9a50.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.d120d6e9.min.js"></script>
+      <script src="assets/javascripts/bundle.568b24b3.min.js"></script>
       
     
   </body>
