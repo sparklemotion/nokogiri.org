@@ -51,7 +51,7 @@ plugins:
   - search:
       # include "." and "#" for ruby class and instance methods
       # include ":" for ruby class names
-      separator: '[\s\-\.#:]'
+      separator: '[\s\.#:]'
   - social
 
 extra_css:
@@ -72,7 +72,7 @@ markdown_extensions:
 
 nav:
   - Overview: index.md
-  - API: rdoc/_index.html
+  - API: rdoc/index.html
   - Support:
     - Installing Nokogiri: tutorials/installing_nokogiri.md
     - Nokogiri for Enterprise: tidelift-landing.md

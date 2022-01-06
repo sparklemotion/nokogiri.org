@@ -67,7 +67,9 @@ def nokogiri_generate_rdocs
 
   pwd = Dir.pwd
   Dir.chdir(nokogiri_dir) do
-    sh("yard doc --output-dir #{File.join(pwd, RDOC_STAGING_DIR)} --embed-mixins")
+    Bundler.with_clean_env do
+      sh("RDOC_DIR=#{File.join(pwd, RDOC_STAGING_DIR)} bundle exec rake rdoc")
+    end
   end
 end
 
@@ -123,9 +125,9 @@ def nokogiri_add_header_ids_to_rdocs
            when "h1"
              header.content.strip
            when "h2"
-             header.children.find { |c| c.text? && c.content.strip.length > 0 }.content.strip
+             header.children.find { |c| c.text? && c.content.strip.length > 0 }&.content&.strip
            end
-      header["id"] = CGI.escape(id)
+      header["id"] = CGI.escape(id) if id
     end
 
     File.open(file_path, "w") { |f| f.write(doc.to_html) }
