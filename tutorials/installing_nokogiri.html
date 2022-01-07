@@ -685,6 +685,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#linux-musl-error-loading-shared-library" class="md-nav__link">
+    [Linux musl] "Error loading shared library"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos-xcode-select-errors-with-a-network-problem" class="md-nav__link">
     [MacOS] xcode-select errors with a 'network problem'
   </a>
@@ -1356,6 +1363,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#linux-musl-error-loading-shared-library" class="md-nav__link">
+    [Linux musl] "Error loading shared library"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos-xcode-select-errors-with-a-network-problem" class="md-nav__link">
     [MacOS] xcode-select errors with a 'network problem'
   </a>
@@ -1760,18 +1774,32 @@ You have to install development tools first.
 </code></pre></div>
 <h4 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h4>
 <p>Run <code>sudo apt-get install libgmp-dev</code>.</p>
+<h3 id="linux-musl-error-loading-shared-library">[Linux musl] "Error loading shared library"<a class="headerlink" href="#linux-musl-error-loading-shared-library" title="Permanent link">&para;</a></h3>
+<p>Musl-based systems like Alpine may not have a glibc-compatible library installed.</p>
+<h4 id="symptoms_3">Symptoms<a class="headerlink" href="#symptoms_3" title="Permanent link">&para;</a></h4>
+<p>Depending on your machine architecture, you'll see an error like this:</p>
+<div class="highlight"><pre><span></span><code>Error loading shared library ld-linux-x86-64.so.2: No such file or directory
+</code></pre></div>
+<p>or like this if you're on ARM64:</p>
+<div class="highlight"><pre><span></span><code>Error loading shared library ld-linux-aarch64.so.1: No such file or directory
+</code></pre></div>
+<h4 id="solution_2">Solution<a class="headerlink" href="#solution_2" title="Permanent link">&para;</a></h4>
+<p>Install the glibc compatibility layer:</p>
+<div class="highlight"><pre><span></span><code>apk add gcompat
+</code></pre></div>
+<p>See <a href="https://wiki.alpinelinux.org/wiki/Running_glibc_programs">https://wiki.alpinelinux.org/wiki/Running_glibc_programs</a> for more details.</p>
 <h3 id="macos-xcode-select-errors-with-a-network-problem">[MacOS] <code>xcode-select</code> errors with a 'network problem'<a class="headerlink" href="#macos-xcode-select-errors-with-a-network-problem" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem ...</p>
-<h4 id="symptoms_3">Symptoms<a class="headerlink" href="#symptoms_3" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_4">Symptoms<a class="headerlink" href="#symptoms_4" title="Permanent link">&para;</a></h4>
 <p>You see this dialog when you run the commands to update xcode commandline tools:</p>
 <p><img alt="xcode-select-network-problem" src="images/xcode-select-network-problem.png" /></p>
-<h4 id="solution_2">Solution<a class="headerlink" href="#solution_2" title="Permanent link">&para;</a></h4>
+<h4 id="solution_3">Solution<a class="headerlink" href="#solution_3" title="Permanent link">&para;</a></h4>
 <p>Run this command to turn off forced-authentication with Apple Software Update:</p>
 <div class="highlight"><pre><span></span><code>sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 </code></pre></div>
 <h3 id="macos-error-use-of-undeclared-identifier-lzma_ok">[MacOS] <code>error: use of undeclared identifier 'LZMA_OK'</code><a class="headerlink" href="#macos-error-use-of-undeclared-identifier-lzma_ok" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem ...</p>
-<h4 id="symptoms_4">Symptoms<a class="headerlink" href="#symptoms_4" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_5">Symptoms<a class="headerlink" href="#symptoms_5" title="Permanent link">&para;</a></h4>
 <p>An error during Nokogiri installation mentions an undeclared identifier <code>LZMA_OK</code>:</p>
 <div class="highlight"><pre><span></span><code>xmlIO.c:1450:52: error: use of undeclared identifier &#39;LZMA_OK&#39;
     ret =  (__libxml2_xzclose((xzFile) context) == LZMA_OK ) ? 0 : -1;
@@ -1800,7 +1828,7 @@ bundle install
 <p>When working with this, be certain to use <code>$(brew --prefix libxml2)</code> because it will use the correct location for your Homebrew install.</p>
 <h3 id="macos-libiconv-is-missing">[MacOS] <code>libiconv is missing</code><a class="headerlink" href="#macos-libiconv-is-missing" title="Permanent link">&para;</a></h3>
 <p>Xcode 10 on macOS Mojave <a href="https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624">moves the system headers</a> out of <code>/usr/include</code> and so Nokogiri will fail to build when you're compiling the <code>ruby</code> platform gem.</p>
-<h4 id="symptoms_5">Symptoms<a class="headerlink" href="#symptoms_5" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_6">Symptoms<a class="headerlink" href="#symptoms_6" title="Permanent link">&para;</a></h4>
 <p>You'll see an error similar to this:</p>
 <div class="highlight"><pre><span></span><code>Building nokogiri using packaged libraries.
 
@@ -1809,7 +1837,7 @@ bundle install
 *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary libraries and/or headers.
 </code></pre></div>
-<h4 id="solution_3">Solution<a class="headerlink" href="#solution_3" title="Permanent link">&para;</a></h4>
+<h4 id="solution_4">Solution<a class="headerlink" href="#solution_4" title="Permanent link">&para;</a></h4>
 <p>A temporary workaround to allow previous releases of Nokogiri to build is to install the extra headers package mentioned in the Xcode 10 release notes:</p>
 <div class="highlight"><pre><span></span><code>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 </code></pre></div>
