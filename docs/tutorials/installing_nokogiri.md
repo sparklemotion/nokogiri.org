@@ -502,6 +502,35 @@ And examination of your `mkmf.log` file shows:
 Run `sudo apt-get install libgmp-dev`.
 
 
+### [Linux musl] "Error loading shared library"
+
+Musl-based systems like Alpine may not have a glibc-compatible library installed.
+
+#### Symptoms
+
+Depending on your machine architecture, you'll see an error like this:
+
+``` text
+Error loading shared library ld-linux-x86-64.so.2: No such file or directory
+```
+
+or like this if you're on ARM64:
+
+``` text
+Error loading shared library ld-linux-aarch64.so.1: No such file or directory
+```
+
+#### Solution
+
+Install the glibc compatibility layer:
+
+``` sh
+apk add gcompat
+```
+
+See https://wiki.alpinelinux.org/wiki/Running_glibc_programs for more details.
+
+
 ### [MacOS] `xcode-select` errors with a 'network problem'
 
 If you're compiling the `ruby` platform gem ...
