@@ -664,8 +664,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cannot-load-such-file-nokogirinokogiri-loaderror" class="md-nav__link">
+    cannot load such file -- nokogiri/nokogiri (LoadError)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#using-vendorcache-to-deploy-to-another-architecture" class="md-nav__link">
     Using vendor/cache to deploy to another architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-musl-error-loading-shared-library" class="md-nav__link">
+    [Linux musl] "Error loading shared library"
   </a>
   
 </li>
@@ -680,13 +694,6 @@
           <li class="md-nav__item">
   <a href="#linux-usrbinld-cannot-find-lgmp" class="md-nav__link">
     [Linux] /usr/bin/ld: cannot find -lgmp
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux-musl-error-loading-shared-library" class="md-nav__link">
-    [Linux musl] "Error loading shared library"
   </a>
   
 </li>
@@ -1342,8 +1349,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cannot-load-such-file-nokogirinokogiri-loaderror" class="md-nav__link">
+    cannot load such file -- nokogiri/nokogiri (LoadError)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#using-vendorcache-to-deploy-to-another-architecture" class="md-nav__link">
     Using vendor/cache to deploy to another architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-musl-error-loading-shared-library" class="md-nav__link">
+    [Linux musl] "Error loading shared library"
   </a>
   
 </li>
@@ -1358,13 +1379,6 @@
           <li class="md-nav__item">
   <a href="#linux-usrbinld-cannot-find-lgmp" class="md-nav__link">
     [Linux] /usr/bin/ld: cannot find -lgmp
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux-musl-error-loading-shared-library" class="md-nav__link">
-    [Linux musl] "Error loading shared library"
   </a>
   
 </li>
@@ -1666,9 +1680,18 @@ gem install nokogiri -- <span class="se">\</span>
 </code></pre></div>
 <p>See the previous section for guidance on how to instruct Bundler to use these options.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="cannot-load-such-file-nokogirinokogiri-loaderror"><code>cannot load such file -- nokogiri/nokogiri (LoadError)</code><a class="headerlink" href="#cannot-load-such-file-nokogirinokogiri-loaderror" title="Permanent link">&para;</a></h3>
+<p>Particularly when upgrading to a newer version of Ruby, this error appears at runtime.</p>
+<h4 id="symptoms">Symptoms<a class="headerlink" href="#symptoms" title="Permanent link">&para;</a></h4>
+<p>Installation succeeds, but then at runtime this error message is seen:</p>
+<div class="highlight"><pre><span></span><code>kernel_require.rb:23:in `require&#39;: cannot load such file -- nokogiri/nokogiri (LoadError)
+</code></pre></div>
+<h4 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h4>
+<p>Uninstall <em>all</em> versions of Nokogiri on your system, and then re-resolve your dependencies (using <code>bundle</code> or <code>gem install</code>).</p>
+<p>This error can occur when a version of Nokogiri installed for a different version of Ruby is used by an unsupported version of Ruby. For example, if Nokogiri v1.12.5-x86_64-linux installed by Ruby 3.0 is then used by Ruby 3.1, you'll see this error (note that nokogiri v1.12.5 native gems do not support Ruby 3.1).</p>
 <h3 id="using-vendorcache-to-deploy-to-another-architecture">Using <code>vendor/cache</code> to deploy to another architecture<a class="headerlink" href="#using-vendorcache-to-deploy-to-another-architecture" title="Permanent link">&para;</a></h3>
 <p>A common workflow is for a team to develop on a Mac but deploy to production on Linux. This workflow depends on Bundler caching an appropriate gem file in <code>vendor/cache</code>. Unfortunately, in this situation Bundler's default behavior is to cache only gems for the development system and not the production system, leading to an error at deploy time.</p>
-<h4 id="symptoms">Symptoms<a class="headerlink" href="#symptoms" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_1">Symptoms<a class="headerlink" href="#symptoms_1" title="Permanent link">&para;</a></h4>
 <p>During deployment, the buildpack may fail to find a relevant gem in <code>vendor/cache</code> and emit an error like this (from Heroku):</p>
 <div class="highlight"><pre><span></span><code>-----&gt; Ruby app detected
 -----&gt; Installing bundler 2.1.4
@@ -1687,7 +1710,7 @@ gem install nokogiri -- <span class="se">\</span>
  !     Push rejected, failed to compile Ruby app.
  !     Push failed
 </code></pre></div>
-<h4 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h4>
+<h4 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h4>
 <p>Bundler 2.2 and later has <em>great</em> multiplatform support and allows you to cache gems for multiple platforms. You can run commands like these to cause Bundler to fetch and cache gems for all the named platforms:</p>
 <div class="highlight"><pre><span></span><code>bundle lock --add-platform x86_64-darwin
 bundle lock --add-platform x86_64-linux
@@ -1706,9 +1729,23 @@ bundle install
 bundle config force_ruby_platform <span class="nb">true</span>
 bundle install
 </code></pre></div>
+<h3 id="linux-musl-error-loading-shared-library">[Linux musl] "Error loading shared library"<a class="headerlink" href="#linux-musl-error-loading-shared-library" title="Permanent link">&para;</a></h3>
+<p>Musl-based systems like Alpine may not have a glibc-compatible library installed, leading to problems running the precompiled native gems.</p>
+<h4 id="symptoms_2">Symptoms<a class="headerlink" href="#symptoms_2" title="Permanent link">&para;</a></h4>
+<p>Installation succeeds, but then at runtime you'll see an error like this:</p>
+<div class="highlight"><pre><span></span><code>Error loading shared library ld-linux-x86-64.so.2: No such file or directory
+</code></pre></div>
+<p>or like this if you're on ARM64:</p>
+<div class="highlight"><pre><span></span><code>Error loading shared library ld-linux-aarch64.so.1: No such file or directory
+</code></pre></div>
+<h4 id="solution_2">Solution<a class="headerlink" href="#solution_2" title="Permanent link">&para;</a></h4>
+<p>Install the glibc compatibility layer:</p>
+<div class="highlight"><pre><span></span><code>apk add gcompat
+</code></pre></div>
+<p>See <a href="https://wiki.alpinelinux.org/wiki/Running_glibc_programs">https://wiki.alpinelinux.org/wiki/Running_glibc_programs</a> for more details.</p>
 <h3 id="cannot-install-racc">Cannot install <code>racc</code><a class="headerlink" href="#cannot-install-racc" title="Permanent link">&para;</a></h3>
 <p>As of v1.11.0, Nokogiri is declaring an explicit dependency on <code>racc ~&gt; 1.4</code>, which itself is a C extension that users may have trouble installing.</p>
-<h4 id="symptoms_1">Symptoms<a class="headerlink" href="#symptoms_1" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_3">Symptoms<a class="headerlink" href="#symptoms_3" title="Permanent link">&para;</a></h4>
 <p>You may see an error message like this:</p>
 <div class="highlight"><pre><span></span><code><span class="hll">Fetching racc 1.5.2
 </span><span class="hll">Installing racc 1.5.2 with native extensions
@@ -1764,7 +1801,7 @@ extconf failed, exit code 1
 <p>Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like <code>gem "racc", "~&gt; 1.4.0"</code> to prevent bundler from trying to upgrade.</p>
 <h3 id="linux-usrbinld-cannot-find-lgmp">[Linux] <code>/usr/bin/ld: cannot find -lgmp</code><a class="headerlink" href="#linux-usrbinld-cannot-find-lgmp" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem, and if you've installed Ruby using RVM, <a href="https://github.com/rvm/rvm/issues/3509">you may require libgmp</a>.</p>
-<h4 id="symptoms_2">Symptoms<a class="headerlink" href="#symptoms_2" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_4">Symptoms<a class="headerlink" href="#symptoms_4" title="Permanent link">&para;</a></h4>
 <p>Gem installation fails with an error message like:</p>
 <div class="highlight"><pre><span></span><code>/home/user/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/mkmf.rb:456:in <span class="sb">`</span>try_do<span class="err">&#39;</span>: The compiler failed to generate an executable file. <span class="o">(</span>RuntimeError<span class="o">)</span>
 You have to install development tools first.
@@ -1772,34 +1809,20 @@ You have to install development tools first.
 <p>And examination of your <code>mkmf.log</code> file shows:</p>
 <div class="highlight"><pre><span></span><code>/usr/bin/ld: cannot find -lgmp
 </code></pre></div>
-<h4 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h4>
+<h4 id="solution_3">Solution<a class="headerlink" href="#solution_3" title="Permanent link">&para;</a></h4>
 <p>Run <code>sudo apt-get install libgmp-dev</code>.</p>
-<h3 id="linux-musl-error-loading-shared-library">[Linux musl] "Error loading shared library"<a class="headerlink" href="#linux-musl-error-loading-shared-library" title="Permanent link">&para;</a></h3>
-<p>Musl-based systems like Alpine may not have a glibc-compatible library installed.</p>
-<h4 id="symptoms_3">Symptoms<a class="headerlink" href="#symptoms_3" title="Permanent link">&para;</a></h4>
-<p>Depending on your machine architecture, you'll see an error like this:</p>
-<div class="highlight"><pre><span></span><code>Error loading shared library ld-linux-x86-64.so.2: No such file or directory
-</code></pre></div>
-<p>or like this if you're on ARM64:</p>
-<div class="highlight"><pre><span></span><code>Error loading shared library ld-linux-aarch64.so.1: No such file or directory
-</code></pre></div>
-<h4 id="solution_2">Solution<a class="headerlink" href="#solution_2" title="Permanent link">&para;</a></h4>
-<p>Install the glibc compatibility layer:</p>
-<div class="highlight"><pre><span></span><code>apk add gcompat
-</code></pre></div>
-<p>See <a href="https://wiki.alpinelinux.org/wiki/Running_glibc_programs">https://wiki.alpinelinux.org/wiki/Running_glibc_programs</a> for more details.</p>
 <h3 id="macos-xcode-select-errors-with-a-network-problem">[MacOS] <code>xcode-select</code> errors with a 'network problem'<a class="headerlink" href="#macos-xcode-select-errors-with-a-network-problem" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem ...</p>
-<h4 id="symptoms_4">Symptoms<a class="headerlink" href="#symptoms_4" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_5">Symptoms<a class="headerlink" href="#symptoms_5" title="Permanent link">&para;</a></h4>
 <p>You see this dialog when you run the commands to update xcode commandline tools:</p>
 <p><img alt="xcode-select-network-problem" src="images/xcode-select-network-problem.png" /></p>
-<h4 id="solution_3">Solution<a class="headerlink" href="#solution_3" title="Permanent link">&para;</a></h4>
+<h4 id="solution_4">Solution<a class="headerlink" href="#solution_4" title="Permanent link">&para;</a></h4>
 <p>Run this command to turn off forced-authentication with Apple Software Update:</p>
 <div class="highlight"><pre><span></span><code>sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 </code></pre></div>
 <h3 id="macos-error-use-of-undeclared-identifier-lzma_ok">[MacOS] <code>error: use of undeclared identifier 'LZMA_OK'</code><a class="headerlink" href="#macos-error-use-of-undeclared-identifier-lzma_ok" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem ...</p>
-<h4 id="symptoms_5">Symptoms<a class="headerlink" href="#symptoms_5" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_6">Symptoms<a class="headerlink" href="#symptoms_6" title="Permanent link">&para;</a></h4>
 <p>An error during Nokogiri installation mentions an undeclared identifier <code>LZMA_OK</code>:</p>
 <div class="highlight"><pre><span></span><code>xmlIO.c:1450:52: error: use of undeclared identifier &#39;LZMA_OK&#39;
     ret =  (__libxml2_xzclose((xzFile) context) == LZMA_OK ) ? 0 : -1;
@@ -1828,7 +1851,7 @@ bundle install
 <p>When working with this, be certain to use <code>$(brew --prefix libxml2)</code> because it will use the correct location for your Homebrew install.</p>
 <h3 id="macos-libiconv-is-missing">[MacOS] <code>libiconv is missing</code><a class="headerlink" href="#macos-libiconv-is-missing" title="Permanent link">&para;</a></h3>
 <p>Xcode 10 on macOS Mojave <a href="https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624">moves the system headers</a> out of <code>/usr/include</code> and so Nokogiri will fail to build when you're compiling the <code>ruby</code> platform gem.</p>
-<h4 id="symptoms_6">Symptoms<a class="headerlink" href="#symptoms_6" title="Permanent link">&para;</a></h4>
+<h4 id="symptoms_7">Symptoms<a class="headerlink" href="#symptoms_7" title="Permanent link">&para;</a></h4>
 <p>You'll see an error similar to this:</p>
 <div class="highlight"><pre><span></span><code>Building nokogiri using packaged libraries.
 
@@ -1837,7 +1860,7 @@ bundle install
 *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary libraries and/or headers.
 </code></pre></div>
-<h4 id="solution_4">Solution<a class="headerlink" href="#solution_4" title="Permanent link">&para;</a></h4>
+<h4 id="solution_5">Solution<a class="headerlink" href="#solution_5" title="Permanent link">&para;</a></h4>
 <p>A temporary workaround to allow previous releases of Nokogiri to build is to install the extra headers package mentioned in the Xcode 10 release notes:</p>
 <div class="highlight"><pre><span></span><code>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 </code></pre></div>
