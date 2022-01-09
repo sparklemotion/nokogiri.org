@@ -345,6 +345,25 @@ See the previous section for guidance on how to instruct Bundler to use these op
 
 ## Troubleshooting
 
+### `cannot load such file -- nokogiri/nokogiri (LoadError)`
+
+Particularly when upgrading to a newer version of Ruby, this error appears at runtime.
+
+#### Symptoms
+
+Installation succeeds, but then at runtime this error message is seen:
+
+``` text
+kernel_require.rb:23:in `require': cannot load such file -- nokogiri/nokogiri (LoadError)
+```
+
+#### Solution
+
+Uninstall *all* versions of Nokogiri on your system, and then re-resolve your dependencies (using `bundle` or `gem install`).
+
+This error can occur when a version of Nokogiri installed for a different version of Ruby is used by an unsupported version of Ruby. For example, if Nokogiri v1.12.5-x86_64-linux installed by Ruby 3.0 is then used by Ruby 3.1, you'll see this error (note that nokogiri v1.12.5 native gems do not support Ruby 3.1).
+
+
 ### Using `vendor/cache` to deploy to another architecture
 
 A common workflow is for a team to develop on a Mac but deploy to production on Linux. This workflow depends on Bundler caching an appropriate gem file in `vendor/cache`. Unfortunately, in this situation Bundler's default behavior is to cache only gems for the development system and not the production system, leading to an error at deploy time.
@@ -405,6 +424,35 @@ rm -rf vendor/cache
 bundle config force_ruby_platform true
 bundle install
 ```
+
+
+### [Linux musl] "Error loading shared library"
+
+Musl-based systems like Alpine may not have a glibc-compatible library installed, leading to problems running the precompiled native gems.
+
+#### Symptoms
+
+Installation succeeds, but then at runtime you'll see an error like this:
+
+``` text
+Error loading shared library ld-linux-x86-64.so.2: No such file or directory
+```
+
+or like this if you're on ARM64:
+
+``` text
+Error loading shared library ld-linux-aarch64.so.1: No such file or directory
+```
+
+#### Solution
+
+Install the glibc compatibility layer:
+
+``` sh
+apk add gcompat
+```
+
+See https://wiki.alpinelinux.org/wiki/Running_glibc_programs for more details.
 
 
 ### Cannot install `racc`
@@ -500,35 +548,6 @@ And examination of your `mkmf.log` file shows:
 #### Solution
 
 Run `sudo apt-get install libgmp-dev`.
-
-
-### [Linux musl] "Error loading shared library"
-
-Musl-based systems like Alpine may not have a glibc-compatible library installed.
-
-#### Symptoms
-
-Depending on your machine architecture, you'll see an error like this:
-
-``` text
-Error loading shared library ld-linux-x86-64.so.2: No such file or directory
-```
-
-or like this if you're on ARM64:
-
-``` text
-Error loading shared library ld-linux-aarch64.so.1: No such file or directory
-```
-
-#### Solution
-
-Install the glibc compatibility layer:
-
-``` sh
-apk add gcompat
-```
-
-See https://wiki.alpinelinux.org/wiki/Running_glibc_programs for more details.
 
 
 ### [MacOS] `xcode-select` errors with a 'network problem'
