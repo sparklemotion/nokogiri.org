@@ -116,7 +116,7 @@
           <p>Parse the stylesheet in <code>string</code>, register any <code>modules</code></p>
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xslt.rb, line 24</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xslt.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">modules</span> = {})
   <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">url</span>, <span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
     <span class="ruby-constant">XSLT</span>.<span class="ruby-identifier">register</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">klass</span>)
@@ -137,29 +137,43 @@
 
       <div id="method-c-quote_params" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">quote_params</span><span class="method-args">(params)</span>
+          <span class="method-callseq">
+            quote_params(params) → Array
+          </span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
-          <p>Quote parameters in <code>params</code> for stylesheet safety</p>
+          <p>Quote parameters in <code>params</code> for stylesheet safety. See <a href="XSLT/Stylesheet.html#method-i-transform"><code>Nokogiri::XSLT::Stylesheet.transform</code></a> for example usage.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>params</code> (Hash, Array) <a href="XSLT.html"><code>XSLT</code></a> parameters (key-&gt;value, or tuples of [key, value])</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>Array of string parameters, with quotes correctly escaped for use with <a href="XSLT/Stylesheet.html#method-i-transform"><code>XSLT::Stylesheet.transform</code></a></p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="quote_params-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xslt.rb, line 39</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xslt.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">quote_params</span>(<span class="ruby-identifier">params</span>)
-  <span class="ruby-identifier">parray</span> = (<span class="ruby-identifier">params</span>.<span class="ruby-identifier">instance_of?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">flatten</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>).<span class="ruby-identifier">dup</span>
-  <span class="ruby-identifier">parray</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">parray</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-regexp">/'/</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-identifier">v</span>)
-        <span class="ruby-node">"concat('#{v.gsub(/'/, %q{', "'", '})}')"</span>
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-node">"'#{v}'"</span>
-      <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each_slice</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">each_with_object</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">kv</span>, <span class="ruby-identifier">quoted_params</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span> = <span class="ruby-identifier">kv</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>)
+    <span class="ruby-identifier">value</span> = <span class="ruby-keyword">if</span> <span class="ruby-regexp">/'/</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-node">"concat('#{value.gsub(/'/, %q{', "'", '})}')"</span>
     <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-node">"'#{value}'"</span>
     <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">quoted_params</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>
+    <span class="ruby-identifier">quoted_params</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
   <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">parray</span>.<span class="ruby-identifier">flatten</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

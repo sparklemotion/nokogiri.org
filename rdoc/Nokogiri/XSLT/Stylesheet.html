@@ -233,20 +233,144 @@ serialize(VALUE self, VALUE xmlobj)
       <div id="method-i-transform" class="method-detail ">
         <div class="method-heading">
           <span class="method-callseq">
-            transform(document, params = [])
+            transform(document)
           </span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
+        <div class="method-heading">
+          <span class="method-callseq">
+            transform(document, params = {})
+          </span>
+        </div>
 
         <div class="method-description">
-          <p>Apply an <a href="../XSLT.html"><code>XSLT</code></a> stylesheet to an <a href="../XML/Document.html"><code>XML::Document</code></a>. <code>params</code> is an array of strings used as <a href="../XSLT.html"><code>XSLT</code></a> parameters. returns <a href="../XML/Document.html"><code>Nokogiri::XML::Document</code></a></p>
+          <p>Apply an <a href="../XSLT.html"><code>XSLT</code></a> stylesheet to an <a href="../XML/Document.html"><code>XML::Document</code></a>.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul>
+<li>
+<p><code>document</code> (<a href="../XML/Document.html"><code>Nokogiri::XML::Document</code></a>) the document to be transformed.</p>
+</li>
+<li>
+<p><code>params</code> (Hash, Array) strings used as <a href="../XSLT.html"><code>XSLT</code></a> parameters.</p>
+</li>
+</ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="../XML/Document.html"><code>Nokogiri::XML::Document</code></a></p>
+</dd>
+</dl>
 
-<p>Example:</p>
+<p><strong>Example</strong> of basic transformation:</p>
 
-<pre class="ruby"><span class="ruby-identifier">doc</span>   = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">ARGV</span>[<span class="ruby-value">0</span>]))
-<span class="ruby-identifier">xslt</span>  = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">ARGV</span>[<span class="ruby-value">1</span>]))
-<span class="ruby-identifier">puts</span> <span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>, [<span class="ruby-string">'key'</span>, <span class="ruby-string">'value'</span>])
+<pre class="ruby"><span class="ruby-identifier">xslt</span> = <span class="ruby-identifier">&lt;&lt;~XSLT</span>
+<span class="ruby-value">  &lt;xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:param name="title"/&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select="$title"/&gt;&lt;/h1&gt;
+        &lt;ol&gt;
+          &lt;xsl:for-each select="staff/employee"&gt;
+            &lt;li&gt;&lt;xsl:value-of select="employeeId"&gt;&lt;/li&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/ol&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:stylesheet&gt;
+</span><span class="ruby-identifier">XSLT</span>
+
+<span class="ruby-identifier">xml</span> = <span class="ruby-identifier">&lt;&lt;~XML</span>
+<span class="ruby-value">  &lt;?xml version="1.0"?&gt;
+  &lt;staff&gt;
+    &lt;employee&gt;
+      &lt;employeeId&gt;EMP0001&lt;/employeeId&gt;
+      &lt;position&gt;Accountant&lt;/position&gt;
+    &lt;/employee&gt;
+    &lt;employee&gt;
+      &lt;employeeId&gt;EMP0002&lt;/employeeId&gt;
+      &lt;position&gt;Developer&lt;/position&gt;
+    &lt;/employee&gt;
+  &lt;/staff&gt;
+</span><span class="ruby-identifier">XML</span>
+
+<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>)
+<span class="ruby-identifier">stylesheet</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xslt</span>)
 </pre>
+
+<p>⚠ Note that the <code>h1</code> element is empty because no param has been provided!</p>
+
+<pre class="ruby"><span class="ruby-identifier">stylesheet</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>).<span class="ruby-identifier">to_xml</span>
+<span class="ruby-comment"># =&gt; "&lt;html&gt;&lt;body&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;h1&gt;&lt;/h1&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0001&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0002&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/body&gt;&lt;/html&gt;\n"</span>
+</pre>
+
+<p><strong>Example</strong> of using an input parameter hash:</p>
+
+<p>⚠ The title is populated, but note how we need to quote-escape the value.</p>
+
+<pre class="ruby"><span class="ruby-identifier">stylesheet</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>, { <span class="ruby-string">"title"</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">"'Employee List'"</span> }).<span class="ruby-identifier">to_xml</span>
+<span class="ruby-comment"># =&gt; "&lt;html&gt;&lt;body&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;h1&gt;Employee List&lt;/h1&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0001&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0002&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/body&gt;&lt;/html&gt;\n"</span>
+</pre>
+
+<p><strong>Example</strong> using the <a href="../XSLT.html#method-c-quote_params"><code>XSLT.quote_params</code></a> helper method to safely quote-escape strings:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stylesheet</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>.<span class="ruby-identifier">quote_params</span>({ <span class="ruby-string">"title"</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">"Aaron's List"</span> })).<span class="ruby-identifier">to_xml</span>
+<span class="ruby-comment"># =&gt; "&lt;html&gt;&lt;body&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;h1&gt;Aaron's List&lt;/h1&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0001&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0002&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/body&gt;&lt;/html&gt;\n"</span>
+</pre>
+
+<p><strong>Example</strong> using an array of <a href="../XSLT.html"><code>XSLT</code></a> parameters</p>
+
+<p>You can also use an array if you want to.</p>
+
+<pre class="ruby"><span class="ruby-identifier">stylesheet</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>, [<span class="ruby-string">"title"</span>, <span class="ruby-string">"'Employee List'"</span>]).<span class="ruby-identifier">to_xml</span>
+<span class="ruby-comment"># =&gt; "&lt;html&gt;&lt;body&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;h1&gt;Employee List&lt;/h1&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0001&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0002&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/body&gt;&lt;/html&gt;\n"</span>
+</pre>
+
+<p>Or pass an array to <a href="../XSLT.html#method-c-quote_params"><code>XSLT.quote_params</code></a>:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stylesheet</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>.<span class="ruby-identifier">quote_params</span>([<span class="ruby-string">"title"</span>, <span class="ruby-string">"Aaron's List"</span>])).<span class="ruby-identifier">to_xml</span>
+<span class="ruby-comment"># =&gt; "&lt;html&gt;&lt;body&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;h1&gt;Aaron's List&lt;/h1&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0001&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;li&gt;EMP0002&lt;/li&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/ol&gt;\n" +</span>
+<span class="ruby-comment">#    "&lt;/body&gt;&lt;/html&gt;\n"</span>
+</pre>
+
+<p>See: <a href="../XSLT.html#method-c-quote_params"><code>Nokogiri::XSLT.quote_params</code></a></p>
 
           <div class="method-source-code" id="transform-source">
             <pre>static VALUE

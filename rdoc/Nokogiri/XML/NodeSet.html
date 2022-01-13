@@ -1781,7 +1781,7 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
           <p>Search this node’s immediate children using <a href="../CSS.html"><code>CSS</code></a> selector <code>selector</code></p>
 
           <div class="method-source-code" id="3E-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 185</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 196</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
   <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
   <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
@@ -1809,7 +1809,7 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 <p>See <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 128</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 140</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1836,7 +1836,7 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 177</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 188</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1874,20 +1874,20 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 <pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
 </pre>
 
-<p>Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define.  The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>.  Any other arguments are ones that you pass in.  Note that this class may appear anywhere in the argument list.  For example:</p>
+<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
 
-<pre>node.search('.//title[regex(., "\w+")]', 'div.employee:regex("[0-9]+")'
-  Class.new {
-    def regex node_set, regex
-      node_set.find_all { |node| node['some_attribute'] =~ /#{regex}/ }
-    end
-  }.new
-)</pre>
+<pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span> <span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>
+    <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
+  <span class="ruby-keyword">end</span>
+}.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
+</pre>
 
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> and <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for further usage help.</p>
 
           <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 54</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 
