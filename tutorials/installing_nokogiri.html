@@ -761,6 +761,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#termux_2" class="md-nav__link">
+    Termux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#windows_1" class="md-nav__link">
     Windows
   </a>
@@ -1446,6 +1453,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#termux_2" class="md-nav__link">
+    Termux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#windows_1" class="md-nav__link">
     Windows
   </a>
@@ -1513,6 +1527,7 @@ bundle install    <span class="c1"># resolve dependencies for platform-specific 
 <h3 id="why-would-i-not-want-to-use-a-native-gem">Why would I not want to use a native gem?<a class="headerlink" href="#why-would-i-not-want-to-use-a-native-gem" title="Permanent link">&para;</a></h3>
 <p>I can imagine some folks might have trust issues; if this is you, please let us know in a comment at <a href="https://github.com/sparklemotion/nokogiri/issues/2013">RFC: Increase the level of trust in released gem files · Issue #2013 · sparklemotion/nokogiri</a>. What can we do to increase that trust? (I can imagine providing a chain of custody including public build logs with cryptographic hashes of artifacts, but I'd like to hear from real users.)</p>
 <p>Anybody on a linux system old enough to not have <code>glibc &gt;= 2.17</code> will need to install from the <code>ruby</code> platform gem.</p>
+<p>If you're on Termux, you will need to install from the <code>ruby</code> platform gem (see <a href="https://wiki.termux.com/wiki/Differences_from_Linux">https://wiki.termux.com/wiki/Differences_from_Linux</a> for background).</p>
 <p>If you have other reasons for not wanting to use a precompiled native gem, let us know! (See <a href="https://nokogiri.org/tutorials/getting_help.html">Getting Help</a>.)</p>
 <h3 id="how-can-i-avoid-using-a-precompiled-native-gem">How can I avoid using a precompiled native gem?<a class="headerlink" href="#how-can-i-avoid-using-a-precompiled-native-gem" title="Permanent link">&para;</a></h3>
 <p>The Nokogiri maintainers strongly urge you to use a native gem if at all possible. We expect it will be a much better experience for you and allow us to focus our efforts on improving functionality rather than diagnosing installation issues.</p>
@@ -1543,6 +1558,16 @@ gem install nokogiri --platform<span class="o">=</span>ruby
 <div class="highlight"><pre><span></span><code>pkg_add -v gcc
 gem install nokogiri --platform<span class="o">=</span>ruby
 </code></pre></div>
+<h4 id="termux">Termux<a class="headerlink" href="#termux" title="Permanent link">&para;</a></h4>
+<p>If you're using Bundler:</p>
+<div class="highlight"><pre><span></span><code>pkg install ruby clang make binutils
+bundle config <span class="nb">set</span> force_ruby_platform <span class="nb">true</span>
+bundle install
+</code></pre></div>
+<p>If you're not using Bundler:</p>
+<div class="highlight"><pre><span></span><code>pkg install ruby clang make binutils
+gem install nokogiri --platform<span class="o">=</span>ruby
+</code></pre></div>
 <h3 id="installing-using-standard-system-libraries">Installing Using Standard System Libraries<a class="headerlink" href="#installing-using-standard-system-libraries" title="Permanent link">&para;</a></h3>
 <p>Rather than use Nokogiri's packaged versions, you may prefer to use your system's or distro's standard libxml2/libxslt libraries. This section will try to help you do that.</p>
 <p>Nokogiri will refuse to build against older, unsupported versions of <code>libxml2</code> and <code>libxslt</code>, and there may be some behavioral changes when using older versions. If you have installed libxml2 or libxslt to a custom location, please jump to the next section, <a href="#installing-with-custom-non-standard-libraries">Installing With Custom / Non-Standard Libraries</a>.</p>
@@ -1564,6 +1589,11 @@ gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libr
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>We recommend installing Nokogiri against the MSYS2 system libraries:</p>
 <div class="highlight"><pre><span></span><code>ridk <span class="nb">exec</span> pacman -S mingw-w64-x86_64-libxslt
+gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
+</code></pre></div>
+<h4 id="termux_1">Termux<a class="headerlink" href="#termux_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>pkg install ruby clang make binutils
+pkg install pkg-config libxslt binutils <span class="c1"># additional dependencies</span>
 gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
 </code></pre></div>
 <h3 id="installing-with-custom-non-standard-libraries">Installing With Custom / Non-Standard Libraries<a class="headerlink" href="#installing-with-custom-non-standard-libraries" title="Permanent link">&para;</a></h3>
@@ -1657,11 +1687,6 @@ gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libr
 </code></pre></div>
 <p>This approach nets an 12.1 MB layer (versus 18.1 MB without <code>--use-system-libraries</code>)
 and saves over 170 MB in build tools.</p>
-<h4 id="termux">TermUX<a class="headerlink" href="#termux" title="Permanent link">&para;</a></h4>
-<p>Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:</p>
-<div class="highlight"><pre><span></span><code>pkg install ruby clang make pkg-config libxslt binutils
-gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
-</code></pre></div>
 <h4 id="smartos-nonstandard">SmartOS (Nonstandard)<a class="headerlink" href="#smartos-nonstandard" title="Permanent link">&para;</a></h4>
 <p>SmartOS installation requires building and using libxml2/libxslt/libiconv in a nonstandard location. Building on the previous section, here's how to do it:</p>
 <p>(Note: <code>pkgsrc</code> is included in JPC SmartOS instances)</p>
@@ -1886,6 +1911,9 @@ Could not create Makefile due to some reason, probably lack of necessary librari
 </code></pre></div>
 <h3 id="alpine">Alpine<a class="headerlink" href="#alpine" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>apk add build-base
+</code></pre></div>
+<h3 id="termux_2">Termux<a class="headerlink" href="#termux_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>pkg install clang make binutils
 </code></pre></div>
 <h3 id="windows_1">Windows<a class="headerlink" href="#windows_1" title="Permanent link">&para;</a></h3>
 <p>Please visit <a href="https://rubyinstaller.org/">RubyInstaller</a> and make sure you install a version "With Devkit".</p>
