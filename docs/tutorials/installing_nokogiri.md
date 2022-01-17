@@ -55,6 +55,8 @@ I can imagine some folks might have trust issues; if this is you, please let us 
 
 Anybody on a linux system old enough to not have `glibc >= 2.17` will need to install from the `ruby` platform gem.
 
+If you're on Termux, you will need to install from the `ruby` platform gem (see https://wiki.termux.com/wiki/Differences_from_Linux for background).
+
 If you have other reasons for not wanting to use a precompiled native gem, let us know! (See [Getting Help](https://nokogiri.org/tutorials/getting_help.html).)
 
 
@@ -112,6 +114,24 @@ gem install nokogiri --platform=ruby
 ```
 
 
+#### Termux
+
+If you're using Bundler:
+
+``` sh
+pkg install ruby clang make binutils
+bundle config set force_ruby_platform true
+bundle install
+```
+
+If you're not using Bundler:
+
+``` sh
+pkg install ruby clang make binutils
+gem install nokogiri --platform=ruby
+```
+
+
 ### Installing Using Standard System Libraries
 
 Rather than use Nokogiri's packaged versions, you may prefer to use your system's or distro's standard libxml2/libxslt libraries. This section will try to help you do that.
@@ -158,6 +178,16 @@ We recommend installing Nokogiri against the MSYS2 system libraries:
 ridk exec pacman -S mingw-w64-x86_64-libxslt
 gem install nokogiri --platform=ruby -- --use-system-libraries
 ```
+
+
+#### Termux
+
+``` sh
+pkg install ruby clang make binutils
+pkg install pkg-config libxslt binutils # additional dependencies
+gem install nokogiri --platform=ruby -- --use-system-libraries
+```
+
 
 
 ### Installing With Custom / Non-Standard Libraries
@@ -307,16 +337,6 @@ RUN apk add --no-cache libxml2 libxslt && \
 
 This approach nets an 12.1 MB layer (versus 18.1 MB without `--use-system-libraries`)
 and saves over 170 MB in build tools.
-
-
-#### TermUX
-
-Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:
-
-``` sh
-pkg install ruby clang make pkg-config libxslt binutils
-gem install nokogiri --platform=ruby -- --use-system-libraries
-```
 
 
 #### SmartOS (Nonstandard)
@@ -687,6 +707,13 @@ dnf install -y make gcc rpm-build ruby-devel
 
 ``` sh
 apk add build-base
+```
+
+
+### Termux
+
+``` sh
+pkg install clang make binutils
 ```
 
 
