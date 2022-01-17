@@ -309,12 +309,13 @@ This approach nets an 12.1 MB layer (versus 18.1 MB without `--use-system-librar
 and saves over 170 MB in build tools.
 
 
-#### TermUX
+#### Termux
 
-Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:
+Although Termux isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:
 
 ``` sh
 pkg install ruby clang make pkg-config libxslt binutils
+bundle config set force_ruby_platform true
 gem install nokogiri --platform=ruby -- --use-system-libraries
 ```
 
