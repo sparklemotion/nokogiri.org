@@ -1,5 +1,5 @@
-Mon, 17 Jan 2022 08:18:50 -0500
-README.md	Sun, 16 Jan 2022 12:16:37 -0500
+Tue, 18 Jan 2022 09:39:12 -0500
+README.md	Tue, 18 Jan 2022 09:38:55 -0500
 lib/nokogiri.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/class_resolver.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/css.rb	Sun, 16 Jan 2022 12:16:37 -0500
@@ -10,7 +10,7 @@ lib/nokogiri/css/syntax_error.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/css/tokenizer.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/css/xpath_visitor.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/decorators/slop.rb	Sun, 16 Jan 2022 12:16:37 -0500
-lib/nokogiri/extension.rb	Sun, 16 Jan 2022 12:16:37 -0500
+lib/nokogiri/extension.rb	Tue, 18 Jan 2022 09:38:55 -0500
 lib/nokogiri/gumbo.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/html.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/html4.rb	Sun, 16 Jan 2022 12:16:37 -0500
@@ -30,7 +30,7 @@ lib/nokogiri/html5/node.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/jruby/dependencies.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/syntax_error.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/version.rb	Sun, 16 Jan 2022 12:16:37 -0500
-lib/nokogiri/version/constant.rb	Mon, 17 Jan 2022 07:25:12 -0500
+lib/nokogiri/version/constant.rb	Tue, 18 Jan 2022 09:38:55 -0500
 lib/nokogiri/version/info.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/xml.rb	Sun, 16 Jan 2022 12:16:37 -0500
 lib/nokogiri/xml/attr.rb	Sun, 16 Jan 2022 12:16:37 -0500

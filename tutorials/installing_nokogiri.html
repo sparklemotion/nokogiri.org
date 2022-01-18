@@ -1505,12 +1505,13 @@
 <h3 id="faster-more-reliable-installation">Faster, more reliable installation<a class="headerlink" href="#faster-more-reliable-installation" title="Permanent link">&para;</a></h3>
 <p>"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or for system dependencies to exist. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know are the biggest headaches for Nokogiri users.</p>
 <h3 id="supported-platforms">Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permanent link">&para;</a></h3>
-<p>As of v1.11.0, Nokogiri ships pre-compiled, "native" gems for the following platforms:</p>
+<p>Nokogiri ships pre-compiled, "native" gems for the following platforms:</p>
 <ul>
-<li>Linux: <code>x86-linux</code> and <code>x86_64-linux</code> (req: <code>glibc &gt;= 2.17</code>), including musl platforms like Alpine</li>
-<li>Darwin/MacOS: <code>x86_64-darwin</code> and <code>arm64-darwin</code></li>
-<li>Windows: <code>x86-mingw32</code> and <code>x64-mingw32</code></li>
-<li>Java: any platform running JRuby 9.2 or higher</li>
+<li>Linux <code>x86-linux</code> and <code>x86_64-linux</code> (req: <code>glibc &gt;= 2.17</code>) including musl/Alpine</li>
+<li>Linux <code>aarch64-linux</code> (req: <code>glibc &gt;= 2.29</code>) including musl/Alpine</li>
+<li>MacOS <code>x86_64-darwin</code> and <code>arm64-darwin</code></li>
+<li>Windows <code>x86-mingw32</code>, <code>x64-mingw32</code>, and <code>x64-mingw-ucrt</code></li>
+<li>Java any platform running JRuby 9.3 or higher</li>
 </ul>
 <p>To determine whether your system supports one of these gems, look at the output of <code>bundle platform</code> or <code>ruby -e 'puts Gem::Platform.local.to_s'</code>.</p>
 <p>If you're on a supported platform, either <code>gem install</code> or <code>bundle install</code> should install a native gem without any additional action on your part. This installation should only take a few seconds, and your output should look something like:</p>
@@ -1526,7 +1527,7 @@ bundle install    <span class="c1"># resolve dependencies for platform-specific 
 <p>See <code>man bundle-lock</code> for details.</p>
 <h3 id="why-would-i-not-want-to-use-a-native-gem">Why would I not want to use a native gem?<a class="headerlink" href="#why-would-i-not-want-to-use-a-native-gem" title="Permanent link">&para;</a></h3>
 <p>I can imagine some folks might have trust issues; if this is you, please let us know in a comment at <a href="https://github.com/sparklemotion/nokogiri/issues/2013">RFC: Increase the level of trust in released gem files · Issue #2013 · sparklemotion/nokogiri</a>. What can we do to increase that trust? (I can imagine providing a chain of custody including public build logs with cryptographic hashes of artifacts, but I'd like to hear from real users.)</p>
-<p>Anybody on a linux system old enough to not have <code>glibc &gt;= 2.17</code> will need to install from the <code>ruby</code> platform gem.</p>
+<p>Anybody on a linux system with an unsupported version of <code>glibc</code> (see <a href="#supported-platforms">Supported Platforms</a>) will need to install from the <code>ruby</code> platform gem.</p>
 <p>If you're on Termux, you will need to install from the <code>ruby</code> platform gem (see <a href="https://wiki.termux.com/wiki/Differences_from_Linux">https://wiki.termux.com/wiki/Differences_from_Linux</a> for background).</p>
 <p>If you have other reasons for not wanting to use a precompiled native gem, let us know! (See <a href="https://nokogiri.org/tutorials/getting_help.html">Getting Help</a>.)</p>
 <h3 id="how-can-i-avoid-using-a-precompiled-native-gem">How can I avoid using a precompiled native gem?<a class="headerlink" href="#how-can-i-avoid-using-a-precompiled-native-gem" title="Permanent link">&para;</a></h3>
