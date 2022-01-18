@@ -21,12 +21,15 @@ If you'd like to contribute improvements to this document, please open a GitHub 
 
 ### Supported Platforms
 
-As of v1.11.0, Nokogiri ships pre-compiled, "native" gems for the following platforms:
+Nokogiri ships pre-compiled, "native" gems for the following platforms:
 
-- Linux: `x86-linux` and `x86_64-linux` (req: `glibc >= 2.17`), including musl platforms like Alpine
+- Linux:
+  - `x86-linux` and `x86_64-linux` (req: `glibc >= 2.17`)
+  - `aarch64-linux` (req: `glibc >= 2.29`)
+  - Note that musl platforms like Alpine are supported
 - Darwin/MacOS: `x86_64-darwin` and `arm64-darwin`
-- Windows: `x86-mingw32` and `x64-mingw32`
-- Java: any platform running JRuby 9.2 or higher
+- Windows: `x86-mingw32`, `x64-mingw32`, and `x64-mingw-ucrt`
+- Java: any platform running JRuby 9.3 or higher
 
 To determine whether your system supports one of these gems, look at the output of `bundle platform` or `ruby -e 'puts Gem::Platform.local.to_s'`.
 
@@ -53,7 +56,7 @@ See `man bundle-lock` for details.
 
 I can imagine some folks might have trust issues; if this is you, please let us know in a comment at [RFC: Increase the level of trust in released gem files · Issue #2013 · sparklemotion/nokogiri](https://github.com/sparklemotion/nokogiri/issues/2013). What can we do to increase that trust? (I can imagine providing a chain of custody including public build logs with cryptographic hashes of artifacts, but I'd like to hear from real users.)
 
-Anybody on a linux system old enough to not have `glibc >= 2.17` will need to install from the `ruby` platform gem.
+Anybody on a linux system with an unsupported version of `glibc` (see [Supported Platforms](#supported-platforms)) will need to install from the `ruby` platform gem.
 
 If you're on Termux, you will need to install from the `ruby` platform gem (see https://wiki.termux.com/wiki/Differences_from_Linux for background).
 
