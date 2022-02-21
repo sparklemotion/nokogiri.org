@@ -142,9 +142,6 @@
 <a href="#method-i-comment">#comment</a>
     </li>
 <li>
-<a href="#method-i-related_class">#related_class</a>
-    </li>
-<li>
 <a href="#method-i-text">#text</a>
     </li>
 <li>
@@ -433,15 +430,6 @@
         <dt id="DEFAULT_DOCUMENT_OPTIONS">DEFAULT_DOCUMENT_OPTIONS
         </dt>
 <dd>
-          
-        </dd>
-<dt id="VALID_NAMESPACES">VALID_NAMESPACES
-        </dt>
-<dd>
-            <div class="mixin-from">
-              Included from <a href="../ClassResolver.html">Nokogiri::ClassResolver</a>
-            </div>
-          <p><a href="Builder.html#method-i-related_class"><code>related_class</code></a> restricts matching namespaces to those matching this set.</p>
       </dd>
 </dl>
     </section>
@@ -666,69 +654,6 @@ end</pre>
 
       </div>
 
-      <div id="method-i-related_class" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            related_class(class_name) → Class
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-            <div class="mixin-from">
-              Included from <a href="../ClassResolver.html">Nokogiri::ClassResolver</a>
-            </div>
-          <p>Find a class constant within the</p>
-
-<p>Some examples:</p>
-
-<pre class="ruby"><span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"DocumentFragment"</span>)
-<span class="ruby-comment"># =&gt; Nokogiri::XML::DocumentFragment</span>
-<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"DocumentFragment"</span>)
-<span class="ruby-comment"># =&gt; Nokogiri::HTML4::DocumentFragment</span>
-</pre>
-
-<p>Note this will also work for subclasses that follow the same convention, e.g.:</p>
-
-<pre class="ruby"><span class="ruby-constant">Loofah</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"DocumentFragment"</span>)
-<span class="ruby-comment"># =&gt; Loofah::HTML::DocumentFragment</span>
-</pre>
-
-<p>And even if it’s a subclass, this will iterate through the superclasses:</p>
-
-<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ThisIsATopLevelClass</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span> ; <span class="ruby-keyword">end</span>
-<span class="ruby-constant">ThisIsATopLevelClass</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"Document"</span>)
-<span class="ruby-comment"># =&gt; Nokogiri::HTML4::Document</span>
-</pre>
-
-          <div class="method-source-code" id="related_class-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/class_resolver.rb, line 46</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">related_class</span>(<span class="ruby-identifier">class_name</span>)
-  <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>
-  <span class="ruby-identifier">inspecting</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>
-
-  <span class="ruby-keyword">while</span> <span class="ruby-identifier">inspecting</span>
-    <span class="ruby-identifier">namespace_path</span> = <span class="ruby-identifier">inspecting</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">"::"</span>)[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>]
-    <span class="ruby-identifier">inspecting</span> = <span class="ruby-identifier">inspecting</span>.<span class="ruby-identifier">superclass</span>
-
-    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">VALID_NAMESPACES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">namespace_path</span>.<span class="ruby-identifier">last</span>)
-
-    <span class="ruby-identifier">related_class_name</span> = (<span class="ruby-identifier">namespace_path</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">class_name</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">"::"</span>)
-    <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">begin</span>
-      <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">related_class_name</span>)
-    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>
-      <span class="ruby-keyword">nil</span>
-    <span class="ruby-keyword">end</span>
-    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">klass</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
       <div id="method-i-text" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">text</span><span class="method-args">(string)</span>
@@ -785,7 +710,7 @@ end</pre>
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>
