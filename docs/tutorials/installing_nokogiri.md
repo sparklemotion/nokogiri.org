@@ -447,6 +447,37 @@ bundle install
 ```
 
 
+### `tar (child): xz: Cannot exec: No such file or directory`
+
+Starting in v1.13.2, the source archive used for libxml2 and libxslt is compressed with `xz` (previous versions were compressed with `gzip`. As a result, when compiling from source, your system will need to have `xz` installed in order to extract the source code for these libraries.
+
+
+#### Symptoms
+
+During installation, you may see error output similar to:
+
+``` text hl_lines="3"
+Extracting libxml2-2.9.13.tar.xz into tmp/armv7l-unknown-linux-gnueabihf/ports/libxml2/2.9.13... ERROR, review '/usr/local/ruby/lib/ruby/gems/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/armv7l-unknown-linux-gnueabihf/ports/libxml2/2.9.13/extract.log' to see what happened. Last lines are:
+========================================================================
+tar (child): xz: Cannot exec: No such file or directory
+tar (child): Error is not recoverable: exiting now
+/bin/tar: Child returned status 2
+/bin/tar: Error is not recoverable: exiting now
+========================================================================
+*** extconf.rb failed ***
+```
+
+#### Solution
+
+On Debian/Ubuntu:
+
+``` sh
+sudo apt-get install xz-utils
+```
+
+If you have this problem on another system, please open an issue and give us some details so we can update this page.
+
+
 ### [Linux musl] "Error loading shared library"
 
 Musl-based systems like Alpine may not have a glibc-compatible library installed, leading to problems running the precompiled native gems.
