@@ -475,6 +475,12 @@ On Debian/Ubuntu:
 sudo apt-get install xz-utils
 ```
 
+On Alpine:
+
+```sh
+apk add xz
+```
+
 If you have this problem on another system, please open an issue and give us some details so we can update this page.
 
 
