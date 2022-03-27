@@ -63,6 +63,15 @@
 
   <div id="class-metadata">
     
+<div id="sections-section" class="nav-section">
+  <h3>Sections</h3>
+
+  <ul class="link-list" role="directory">
+      <li><a href="#5Buntitled-5D"></a></li>
+      <li><a href="#Searching+via+XPath+or+CSS+Queries">Searching via XPath or CSS Queries</a></li>
+  </ul>
+</div>
+
     
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
@@ -108,10 +117,16 @@
 <a href="#method-i-2D">#-</a>
     </li>
 <li>
+<a href="#method-i-2F">#/</a>
+    </li>
+<li>
 <a href="#method-i-3C-3C">#&lt;&lt;</a>
     </li>
 <li>
 <a href="#method-i-3D-3D">#==</a>
+    </li>
+<li>
+<a href="#method-i-3E">#&gt;</a>
     </li>
 <li>
 <a href="#method-i-5B-5D">#[]</a>
@@ -127,6 +142,12 @@
     </li>
 <li class="calls-super">
 <a href="#method-i-at">#at</a>
+    </li>
+<li>
+<a href="#method-i-at_css">#at_css</a>
+    </li>
+<li>
+<a href="#method-i-at_xpath">#at_xpath</a>
     </li>
 <li>
 <a href="#method-i-attr">#attr</a>
@@ -207,6 +228,9 @@
 <a href="#method-i-reverse">#reverse</a>
     </li>
 <li>
+<a href="#method-i-search">#search</a>
+    </li>
+<li>
 <a href="#method-i-set">#set</a>
     </li>
 <li>
@@ -271,6 +295,21 @@
   <section id="5Buntitled-5D" class="documentation-section">
 
 
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="LOOKS_LIKE_XPATH">LOOKS_LIKE_XPATH
+        </dt>
+<dd>
+            <div class="mixin-from">
+              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
+            </div>
+          <p>Regular expression used by <a href="Searchable.html#method-i-search"><code>Searchable#search</code></a> to determine if a query string is <a href="../CSS.html"><code>CSS</code></a> or <a href="XPath.html"><code>XPath</code></a></p>
+      </dd>
+</dl>
+    </section>
 
     <section class="attribute-method-details">
       <header>
@@ -1689,13 +1728,194 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
     </section>
 
   </section>
+  <section id="Searching+via+XPath+or+CSS+Queries" class="documentation-section">
+    <header class="documentation-section-title">
+      <h2 id="Searching+via+XPath+or+CSS+Queries">
+        Searching via XPath or CSS Queries
+      </h2>
+      <span class="section-click-top">
+        <a href="#top">↑ top</a>
+      </span>
+    </header>
+
+
+
+
+
+     <section id="public-instance-Searching+via+XPath+or+CSS+Queries-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-2F" class="method-detail method-alias">
+        <div class="method-heading">
+          <span class="method-name">/</span><span class="method-args">(*args)</span>
+        </div>
+
+        <div class="method-description">
+            <div class="mixin-from">
+              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
+            </div>
+          
+
+        </div>
+
+
+        <div class="aliases">
+          Alias for: <a href="Searchable.html#method-i-search">search</a>
+        </div>
+      </div>
+
+      <div id="method-i-3E" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            &gt;(selector) → NodeSet
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+            <div class="mixin-from">
+              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
+            </div>
+          <p>Search this node’s immediate children using <a href="../CSS.html"><code>CSS</code></a> selector <code>selector</code></p>
+
+          <div class="method-source-code" id="3E-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
+  <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
+  <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-at_css" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            at_css(*rules, [namespace-bindings, custom-pseudo-class])
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+            <div class="mixin-from">
+              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
+            </div>
+          <p>Search this object for <a href="../CSS.html"><code>CSS</code></a> <code>rules</code>, and return only the first match. <code>rules</code> must be one or more <a href="../CSS.html"><code>CSS</code></a> selectors.</p>
+
+<p>See <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for more information.</p>
+
+          <div class="method-source-code" id="at_css-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-at_xpath" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            at_xpath(*paths, [namespace-bindings, variable-bindings, custom-handler-class])
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+            <div class="mixin-from">
+              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
+            </div>
+          <p>Search this node for <a href="XPath.html"><code>XPath</code></a> <code>paths</code>, and return only the first match. <code>paths</code> must be one or more <a href="XPath.html"><code>XPath</code></a> queries.</p>
+
+<p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> for more information.</p>
+
+          <div class="method-source-code" id="at_xpath-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-search" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            search(*paths, [namespace-bindings, xpath-variable-bindings, custom-handler-class])
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+            <div class="mixin-from">
+              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
+            </div>
+          <p>Search this object for <code>paths</code>. <code>paths</code> must be one or more <a href="XPath.html"><code>XPath</code></a> or <a href="../CSS.html"><code>CSS</code></a> queries:</p>
+
+<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">"div.employee"</span>, <span class="ruby-string">".//title"</span>)
+</pre>
+
+<p>A hash of namespace bindings may be appended:</p>
+
+<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//bike:tire'</span>, {<span class="ruby-string">'bike'</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'http://schwinn.com/'</span>})
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'bike|tire'</span>, {<span class="ruby-string">'bike'</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'http://schwinn.com/'</span>})
+</pre>
+
+<p>For <a href="XPath.html"><code>XPath</code></a> queries, a hash of variable bindings may also be appended to the namespace bindings. For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
+</pre>
+
+<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span> <span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>
+    <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
+  <span class="ruby-keyword">end</span>
+}.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
+</pre>
+
+<p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> and <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for further usage help.</p>
+
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
+
+  <span class="ruby-identifier">xpaths</span> = <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">LOOKS_LIKE_XPATH</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">xpath_query_from_css_rule</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">ns</span>)
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
+
+  <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span>(<span class="ruby-identifier">xpaths</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">ns</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">binds</span>].<span class="ruby-identifier">compact</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+        <div class="aliases">
+          Also aliased as: <a href="Searchable.html#method-i-2F">/</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </section>
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

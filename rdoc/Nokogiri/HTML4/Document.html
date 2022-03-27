@@ -139,7 +139,7 @@
           <p>Parse <a href="../HTML4.html"><code>HTML</code></a>.  <code>string_or_io</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO. <code>url</code> is resource where this document is located.  <code>encoding</code> is the encoding that should be used when processing the document. <code>options</code> is a number that sets options in the parser, such as Nokogiri::XML::ParseOptions::RECOVER.  See the constants in <a href="../XML/ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>.</p>
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 171</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 172</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Integer</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">options</span>
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
@@ -213,7 +213,7 @@
           <p>Create a <a href="../XML/DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code></p>
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 148</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 149</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">root</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -302,7 +302,9 @@
         </div>
 
         <div class="method-description">
-          <p>Serialize Node using <code>options</code>.  Save options can also be set using a block. See SaveOptions.</p>
+          <p>Serialize Node using <code>options</code>. Save options can also be set using a block.</p>
+
+<p>See also <a href="../XML/Node/SaveOptions.html"><code>Nokogiri::XML::Node::SaveOptions</code></a> and Node.</p>
 
 <p>These two statements are equivalent:</p>
 
@@ -321,7 +323,7 @@
             </div>
 
           <div class="method-source-code" id="serialize-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 141</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">serialize</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>
   <span class="ruby-keyword">super</span>
@@ -410,7 +412,7 @@
 <p>See XPathVisitor for more information.</p>
 
           <div class="method-source-code" id="xpath_doctype-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 158</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 159</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span>
 <span class="ruby-keyword">end</span></pre>
@@ -429,7 +431,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>
