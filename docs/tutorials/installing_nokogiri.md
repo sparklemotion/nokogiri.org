@@ -111,7 +111,16 @@ Use `gcc` from ports in order to compile the packaged libraries:
 
 ``` sh
 pkg_add -v gcc
-gem install nokogiri --platform=ruby
+gem install nokogiri
+```
+
+
+#### OpenBSD 7
+
+``` sh
+pkg_add libiconv gtar
+alias tar=gtar
+gem install nokogiri
 ```
 
 
@@ -167,7 +176,15 @@ If you're using macports and would like to contribute documentation, please open
 
 ``` sh
 sudo pkg install pkgconf
-gem install nokogiri --platform=ruby -- --use-system-libraries
+gem install nokogiri -- --use-system-libraries
+```
+
+
+#### OpenBSD
+
+``` sh
+pkg_add libxslt
+gem install nokogiri -- --use-system-libraries
 ```
 
 
@@ -479,6 +496,13 @@ On Alpine:
 
 ```sh
 apk add xz
+```
+
+On OpenBSD:
+
+``` sh
+pkg_add gtar
+alias tar=gtar
 ```
 
 If you have this problem on another system, please open an issue and give us some details so we can update this page.
