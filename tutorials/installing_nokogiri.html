@@ -1571,7 +1571,12 @@ gem install nokogiri --platform<span class="o">=</span>ruby
 <h4 id="openbsd-62">OpenBSD &lt; 6.2<a class="headerlink" href="#openbsd-62" title="Permanent link">&para;</a></h4>
 <p>Use <code>gcc</code> from ports in order to compile the packaged libraries:</p>
 <div class="highlight"><pre><span></span><code>pkg_add -v gcc
-gem install nokogiri --platform<span class="o">=</span>ruby
+gem install nokogiri
+</code></pre></div>
+<h4 id="openbsd-7">OpenBSD 7<a class="headerlink" href="#openbsd-7" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>pkg_add libiconv gtar
+<span class="nb">alias</span> <span class="nv">tar</span><span class="o">=</span>gtar
+gem install nokogiri
 </code></pre></div>
 <h4 id="termux">Termux<a class="headerlink" href="#termux" title="Permanent link">&para;</a></h4>
 <p>If you're using Bundler:</p>
@@ -1599,7 +1604,11 @@ gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libr
 <p>If you're using macports and would like to contribute documentation, please open a GitHub issue or pull-request on <a href="https://github.com/sparklemotion/nokogiri.org/blob/master/docs/tutorials/installing_nokogiri.md">nokogiri.org/installing_nokogiri.md</a>.</p>
 <h4 id="freebsd">FreeBSD<a class="headerlink" href="#freebsd" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>sudo pkg install pkgconf
-gem install nokogiri --platform<span class="o">=</span>ruby -- --use-system-libraries
+gem install nokogiri -- --use-system-libraries
+</code></pre></div>
+<h4 id="openbsd">OpenBSD<a class="headerlink" href="#openbsd" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>pkg_add libxslt
+gem install nokogiri -- --use-system-libraries
 </code></pre></div>
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>We recommend installing Nokogiri against the MSYS2 system libraries:</p>
@@ -1788,6 +1797,10 @@ bundle install
 </code></pre></div>
 <p>On Alpine:</p>
 <div class="highlight"><pre><span></span><code>apk add xz
+</code></pre></div>
+<p>On OpenBSD:</p>
+<div class="highlight"><pre><span></span><code>pkg_add gtar
+<span class="nb">alias</span> <span class="nv">tar</span><span class="o">=</span>gtar
 </code></pre></div>
 <p>If you have this problem on another system, please open an issue and give us some details so we can update this page.</p>
 <h3 id="linux-musl-error-loading-shared-library">[Linux musl] "Error loading shared library"<a class="headerlink" href="#linux-musl-error-loading-shared-library" title="Permanent link">&para;</a></h3>
