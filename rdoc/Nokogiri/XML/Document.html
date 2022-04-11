@@ -210,17 +210,15 @@
         <dt id="NCNAME_CHAR">NCNAME_CHAR
         </dt>
 <dd>
-          
         </dd>
 <dt id="NCNAME_RE">NCNAME_RE
         </dt>
 <dd>
-          
         </dd>
 <dt id="NCNAME_START_CHAR">NCNAME_START_CHAR
         </dt>
 <dd>
-          <p>See <a href="http://www.w3.org/TR/REC-xml-names/#ns-decl">www.w3.org/TR/REC-xml-names/#ns-decl</a> for more details. Note that we’re not attempting to handle unicode characters partly because libxml2 doesn’t handle unicode characters in NCNAMEs.</p>
+<p>See <a href="http://www.w3.org/TR/REC-xml-names/#ns-decl">www.w3.org/TR/REC-xml-names/#ns-decl</a> for more details. Note that we’re not attempting to handle unicode characters partly because libxml2 doesn’t handle unicode characters in NCNAMEs.</p>
       </dd>
 </dl>
     </section>
@@ -366,7 +364,7 @@ new (int argc, VALUE *argv, VALUE klass)
 
 <p>By default, <a href="../../Nokogiri.html"><code>Nokogiri</code></a> treats documents as untrusted, and so does not attempt to load DTDs or access the network. See <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> for a complete list of options; and that module’s DEFAULT_XML constant for what’s set (and not set) by default.</p>
 
-<p><a href="../../Nokogiri.html"><code>Nokogiri</code></a>.XML() is a convenience method which will call this method.</p>
+<p><a href="../../Nokogiri.html#method-c-XML"><code>Nokogiri.XML()</code></a> is a convenience method which will call this method.</p>
 
           <div class="method-source-code" id="parse-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 48</span>
@@ -606,12 +604,14 @@ read_memory(VALUE klass,
             </div>
 
           <div class="method-source-code" id="add_child-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 381</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 384</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_child</span>(<span class="ruby-identifier">node_or_tags</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-string">"A document may not have multiple root nodes."</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">root</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">!=</span> <span class="ruby-string">"nokogiri_text_wrapper"</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">comment?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">processing_instruction?</span>)
+
   <span class="ruby-identifier">node_or_tags</span> = <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">node_or_tags</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">NodeSet</span>)
     <span class="ruby-identifier">raise</span> <span class="ruby-string">"A document may not have multiple root nodes."</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+
     <span class="ruby-keyword">super</span>(<span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">first</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-keyword">super</span>
@@ -1017,11 +1017,13 @@ create_entity(int argc, VALUE *argv, VALUE self)
           <p>Apply any decorators to <code>node</code></p>
 
           <div class="method-source-code" id="decorate-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 354</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 355</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">decorate</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@decorators</span>
+
   <span class="ruby-ivar">@decorators</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>, <span class="ruby-identifier">list</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-identifier">klass</span>)
+
     <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">moodule</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-identifier">moodule</span>) }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1184,7 +1186,7 @@ set_encoding(VALUE self, VALUE encoding)
           <p>Create a <a href="DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code> Returns an empty fragment if <code>tags</code> is nil.</p>
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 373</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 376</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">root</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1224,7 +1226,7 @@ set_encoding(VALUE self, VALUE encoding)
           <p>Get the hash of namespaces on the root <a href="Node.html"><code>Nokogiri::XML::Node</code></a></p>
 
           <div class="method-source-code" id="namespaces-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 366</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 369</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">namespaces</span>
   <span class="ruby-identifier">root</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">:</span> {}
 <span class="ruby-keyword">end</span></pre>
@@ -1384,7 +1386,7 @@ rb_xml_document_root_set(VALUE self, VALUE rb_new_root)
         </div>
 
         <div class="method-description">
-          <p>Explore a document with shortcut methods. See Nokogiri::Slop for details.</p>
+          <p>Explore a document with shortcut methods. See <a href="../../Nokogiri.html#method-c-Slop"><code>Nokogiri::Slop</code></a> for details.</p>
 
 <p>Note that any nodes that have been instantiated before <a href="Document.html#method-i-slop-21"><code>#slop!</code></a> is called will not be decorated with sloppy behavior. So, if you’re in irb, the preferred idiom is:</p>
 
@@ -1398,7 +1400,7 @@ irb&gt; doc.slop!
 ... which does absolutely nothing.</pre>
 
           <div class="method-source-code" id="slop-21-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 343</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 344</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">slop!</span>
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>)
     <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>
@@ -1487,6 +1489,7 @@ url(VALUE self)
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 322</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">internal_subset</span>
+
   <span class="ruby-identifier">internal_subset</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -1542,7 +1545,7 @@ version(VALUE self)
 <p>See XPathVisitor for more information.</p>
 
           <div class="method-source-code" id="xpath_doctype-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 399</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 404</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1561,7 +1564,7 @@ version(VALUE self)
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

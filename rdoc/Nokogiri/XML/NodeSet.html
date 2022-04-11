@@ -63,15 +63,6 @@
 
   <div id="class-metadata">
     
-<div id="sections-section" class="nav-section">
-  <h3>Sections</h3>
-
-  <ul class="link-list" role="directory">
-      <li><a href="#5Buntitled-5D"></a></li>
-      <li><a href="#Searching+via+XPath+or+CSS+Queries">Searching via XPath or CSS Queries</a></li>
-  </ul>
-</div>
-
     
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
@@ -117,16 +108,10 @@
 <a href="#method-i-2D">#-</a>
     </li>
 <li>
-<a href="#method-i-2F">#/</a>
-    </li>
-<li>
 <a href="#method-i-3C-3C">#&lt;&lt;</a>
     </li>
 <li>
 <a href="#method-i-3D-3D">#==</a>
-    </li>
-<li>
-<a href="#method-i-3E">#&gt;</a>
     </li>
 <li>
 <a href="#method-i-5B-5D">#[]</a>
@@ -142,12 +127,6 @@
     </li>
 <li class="calls-super">
 <a href="#method-i-at">#at</a>
-    </li>
-<li>
-<a href="#method-i-at_css">#at_css</a>
-    </li>
-<li>
-<a href="#method-i-at_xpath">#at_xpath</a>
     </li>
 <li>
 <a href="#method-i-attr">#attr</a>
@@ -228,9 +207,6 @@
 <a href="#method-i-reverse">#reverse</a>
     </li>
 <li>
-<a href="#method-i-search">#search</a>
-    </li>
-<li>
 <a href="#method-i-set">#set</a>
     </li>
 <li>
@@ -295,21 +271,6 @@
   <section id="5Buntitled-5D" class="documentation-section">
 
 
-    <section class="constants-list">
-      <header>
-        <h3>Constants</h3>
-      </header>
-      <dl>
-        <dt id="LOOKS_LIKE_XPATH">LOOKS_LIKE_XPATH
-        </dt>
-<dd>
-            <div class="mixin-from">
-              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
-            </div>
-          <p>Regular expression used by <a href="Searchable.html#method-i-search"><code>Searchable#search</code></a> to determine if a query string is <a href="../CSS.html"><code>CSS</code></a> or <a href="XPath.html"><code>XPath</code></a></p>
-      </dd>
-</dl>
-    </section>
 
     <section class="attribute-method-details">
       <header>
@@ -496,10 +457,11 @@ minus(VALUE self, VALUE rb_other)
           <p>Equality – Two NodeSets are equal if the contain the same number of elements and if each element is equal to the corresponding element in the other <a href="NodeSet.html"><code>NodeSet</code></a></p>
 
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 322</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 325</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">NodeSet</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">length</span>
+
   <span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">node</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>[<span class="ruby-identifier">i</span>]
   <span class="ruby-keyword">end</span>
@@ -593,7 +555,7 @@ slice(int argc, VALUE *argv, VALUE self)
 <p>See <a href="Node.html#method-i-add_class"><code>Nokogiri::XML::Node#add_class</code></a> for more information.</p>
 
           <div class="method-source-code" id="add_class-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 137</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 138</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_class</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">el</span>.<span class="ruby-identifier">add_class</span>(<span class="ruby-identifier">name</span>)
@@ -616,7 +578,7 @@ slice(int argc, VALUE *argv, VALUE self)
           <p>Insert <code>datum</code> after the last <a href="Node.html"><code>Node</code></a> in this <a href="NodeSet.html"><code>NodeSet</code></a></p>
 
           <div class="method-source-code" id="after-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 67</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">after</span>(<span class="ruby-identifier">datum</span>)
   <span class="ruby-identifier">last</span>.<span class="ruby-identifier">after</span>(<span class="ruby-identifier">datum</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -638,7 +600,7 @@ slice(int argc, VALUE *argv, VALUE self)
 <p>See <a href="Node.html#method-i-append_class"><code>Nokogiri::XML::Node#append_class</code></a> for more information.</p>
 
           <div class="method-source-code" id="append_class-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 149</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 150</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">append_class</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">el</span>.<span class="ruby-identifier">append_class</span>(<span class="ruby-identifier">name</span>)
@@ -674,7 +636,7 @@ slice(int argc, VALUE *argv, VALUE self)
             </div>
 
           <div class="method-source-code" id="at-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 117</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 118</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
     <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>]
@@ -727,7 +689,7 @@ slice(int argc, VALUE *argv, VALUE self)
 </pre>
 
           <div class="method-source-code" id="attr-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 201</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 202</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attr</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">key</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">value</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">block</span>))
     <span class="ruby-keyword">return</span> <span class="ruby-identifier">first</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
@@ -778,7 +740,7 @@ slice(int argc, VALUE *argv, VALUE self)
           <p>Insert <code>datum</code> before the first <a href="Node.html"><code>Node</code></a> in this <a href="NodeSet.html"><code>NodeSet</code></a></p>
 
           <div class="method-source-code" id="before-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 61</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">before</span>(<span class="ruby-identifier">datum</span>)
   <span class="ruby-identifier">first</span>.<span class="ruby-identifier">before</span>(<span class="ruby-identifier">datum</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -798,7 +760,7 @@ slice(int argc, VALUE *argv, VALUE self)
           <p>Returns a new <a href="NodeSet.html"><code>NodeSet</code></a> containing all the children of all the nodes in the <a href="NodeSet.html"><code>NodeSet</code></a></p>
 
           <div class="method-source-code" id="children-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 334</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 338</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">children</span>
   <span class="ruby-identifier">node_set</span> = <span class="ruby-constant">NodeSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>)
   <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
@@ -842,7 +804,7 @@ slice(int argc, VALUE *argv, VALUE self)
 <p>For more information see <a href="Searchable.html#method-i-css"><code>Nokogiri::XML::Searchable#css</code></a></p>
 
           <div class="method-source-code" id="css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 81</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">rules</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">_</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span> = <span class="ruby-identifier">css_rules_to_xpath</span>(<span class="ruby-identifier">rules</span>, <span class="ruby-identifier">ns</span>)
@@ -935,7 +897,7 @@ duplicate(VALUE self)
           <p>Iterate over each node, yielding  to <code>block</code></p>
 
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 229</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 230</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_enum</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
@@ -960,7 +922,7 @@ duplicate(VALUE self)
           <p>Is this <a href="NodeSet.html"><code>NodeSet</code></a> empty?</p>
 
           <div class="method-source-code" id="empty-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 43</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span>
   <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
 <span class="ruby-keyword">end</span></pre>
@@ -980,7 +942,7 @@ duplicate(VALUE self)
           <p>Filter this list for nodes that match <code>expr</code></p>
 
           <div class="method-source-code" id="filter-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 128</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">filter</span>(<span class="ruby-identifier">expr</span>)
   <span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">matches?</span>(<span class="ruby-identifier">expr</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -1003,6 +965,7 @@ duplicate(VALUE self)
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">first</span>(<span class="ruby-identifier">n</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">0</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span>
+
   <span class="ruby-identifier">list</span> = []
   [<span class="ruby-identifier">n</span>, <span class="ruby-identifier">length</span>].<span class="ruby-identifier">min</span>.<span class="ruby-identifier">times</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>] }
   <span class="ruby-identifier">list</span>
@@ -1054,7 +1017,7 @@ include_eh(VALUE self, VALUE rb_node)
           <p>Returns the index of the first node in self that is == to <code>node</code> or meets the given block. Returns nil if no match is found.</p>
 
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>(<span class="ruby-identifier">node</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>
     <span class="ruby-identifier">warn</span>(<span class="ruby-string">"given block not used"</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
@@ -1080,7 +1043,7 @@ include_eh(VALUE self, VALUE rb_node)
           <p>Get the inner html of all contained <a href="Node.html"><code>Node</code></a> objects</p>
 
           <div class="method-source-code" id="inner_html-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 258</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 259</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">j</span>.<span class="ruby-identifier">inner_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-string">""</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1113,7 +1076,7 @@ include_eh(VALUE self, VALUE rb_node)
 <p>See <a href="Node.html#method-i-content"><code>Nokogiri::XML::Node#content</code></a> for more information.</p>
 
           <div class="method-source-code" id="inner_text-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 251</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 252</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_text</span>
   <span class="ruby-identifier">collect</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:inner_text</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">""</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1136,7 +1099,7 @@ include_eh(VALUE self, VALUE rb_node)
           <p>Return a nicely formated string representation</p>
 
           <div class="method-source-code" id="inspect-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 355</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 359</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
   <span class="ruby-node">"[#{map(&amp;:inspect).join(", ")}]"</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1156,7 +1119,7 @@ include_eh(VALUE self, VALUE rb_node)
           <p>Get the last element of the <a href="NodeSet.html"><code>NodeSet</code></a>.</p>
 
           <div class="method-source-code" id="last-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 37</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">last</span>
   <span class="ruby-keyword">self</span>[<span class="ruby-value">-1</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -1206,9 +1169,10 @@ length(VALUE self)
           <p>Removes the last element from set and returns it, or <code>nil</code> if the set is empty</p>
 
           <div class="method-source-code" id="pop-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 305</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 306</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+
   <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">last</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -1279,7 +1243,7 @@ push(VALUE self, VALUE rb_node)
           <p>Remove the attributed named <code>name</code> from all <a href="Node.html"><code>Node</code></a> objects in the <a href="NodeSet.html"><code>NodeSet</code></a></p>
 
           <div class="method-source-code" id="remove_attr-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 221</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 222</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_attr</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span> <span class="ruby-identifier">el</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">name</span>) }
   <span class="ruby-keyword">self</span>
@@ -1321,7 +1285,7 @@ push(VALUE self, VALUE rb_node)
 <p>See <a href="Node.html#method-i-remove_class"><code>Nokogiri::XML::Node#remove_class</code></a> for more information.</p>
 
           <div class="method-source-code" id="remove_class-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 161</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 162</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_class</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">el</span>.<span class="ruby-identifier">remove_class</span>(<span class="ruby-identifier">name</span>)
@@ -1344,7 +1308,7 @@ push(VALUE self, VALUE rb_node)
           <p>Returns a new <a href="NodeSet.html"><code>NodeSet</code></a> containing all the nodes in the <a href="NodeSet.html"><code>NodeSet</code></a> in reverse order</p>
 
           <div class="method-source-code" id="reverse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 345</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 349</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reverse</span>
   <span class="ruby-identifier">node_set</span> = <span class="ruby-constant">NodeSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>)
   (<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
@@ -1384,9 +1348,10 @@ push(VALUE self, VALUE rb_node)
           <p>Returns the first element of the <a href="NodeSet.html"><code>NodeSet</code></a> and removes it.  Returns <code>nil</code> if the set is empty.</p>
 
           <div class="method-source-code" id="shift-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 313</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 315</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">shift</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+
   <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">first</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -1519,7 +1484,7 @@ to_array(VALUE self)
           <p>Convert this <a href="NodeSet.html"><code>NodeSet</code></a> to <a href="../HTML4.html"><code>HTML</code></a></p>
 
           <div class="method-source-code" id="to_html-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 276</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 277</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-constant">Nokogiri</span>.<span class="ruby-identifier">jruby?</span>
     <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> {}
@@ -1546,7 +1511,7 @@ to_array(VALUE self)
           <p>Convert this <a href="NodeSet.html"><code>NodeSet</code></a> to a string.</p>
 
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 270</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 271</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>).<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1566,7 +1531,7 @@ to_array(VALUE self)
           <p>Convert this <a href="NodeSet.html"><code>NodeSet</code></a> to XHTML</p>
 
           <div class="method-source-code" id="to_xhtml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 289</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 290</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }.<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1586,7 +1551,7 @@ to_array(VALUE self)
           <p>Convert this <a href="NodeSet.html"><code>NodeSet</code></a> to <a href="../XML.html"><code>XML</code></a></p>
 
           <div class="method-source-code" id="to_xml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 295</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 296</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }.<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1648,7 +1613,7 @@ unlink_nodeset(VALUE self)
           <p>Wrap this <a href="NodeSet.html"><code>NodeSet</code></a> with <code>html</code></p>
 
           <div class="method-source-code" id="wrap-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 264</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 265</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wrap</span>(<span class="ruby-identifier">html</span>)
   <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">html</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -1672,7 +1637,7 @@ unlink_nodeset(VALUE self)
 <p>For more information see <a href="Searchable.html#method-i-xpath"><code>Nokogiri::XML::Searchable#xpath</code></a></p>
 
           <div class="method-source-code" id="xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 97</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 
@@ -1728,194 +1693,13 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
     </section>
 
   </section>
-  <section id="Searching+via+XPath+or+CSS+Queries" class="documentation-section">
-    <header class="documentation-section-title">
-      <h2 id="Searching+via+XPath+or+CSS+Queries">
-        Searching via XPath or CSS Queries
-      </h2>
-      <span class="section-click-top">
-        <a href="#top">↑ top</a>
-      </span>
-    </header>
-
-
-
-
-
-     <section id="public-instance-Searching+via+XPath+or+CSS+Queries-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
-
-      <div id="method-i-2F" class="method-detail method-alias">
-        <div class="method-heading">
-          <span class="method-name">/</span><span class="method-args">(*args)</span>
-        </div>
-
-        <div class="method-description">
-            <div class="mixin-from">
-              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
-            </div>
-          
-
-        </div>
-
-
-        <div class="aliases">
-          Alias for: <a href="Searchable.html#method-i-search">search</a>
-        </div>
-      </div>
-
-      <div id="method-i-3E" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            &gt;(selector) → NodeSet
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-            <div class="mixin-from">
-              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
-            </div>
-          <p>Search this node’s immediate children using <a href="../CSS.html"><code>CSS</code></a> selector <code>selector</code></p>
-
-          <div class="method-source-code" id="3E-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 196</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
-  <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
-  <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-at_css" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            at_css(*rules, [namespace-bindings, custom-pseudo-class])
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-            <div class="mixin-from">
-              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
-            </div>
-          <p>Search this object for <a href="../CSS.html"><code>CSS</code></a> <code>rules</code>, and return only the first match. <code>rules</code> must be one or more <a href="../CSS.html"><code>CSS</code></a> selectors.</p>
-
-<p>See <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for more information.</p>
-
-          <div class="method-source-code" id="at_css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 140</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-at_xpath" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            at_xpath(*paths, [namespace-bindings, variable-bindings, custom-handler-class])
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-            <div class="mixin-from">
-              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
-            </div>
-          <p>Search this node for <a href="XPath.html"><code>XPath</code></a> <code>paths</code>, and return only the first match. <code>paths</code> must be one or more <a href="XPath.html"><code>XPath</code></a> queries.</p>
-
-<p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> for more information.</p>
-
-          <div class="method-source-code" id="at_xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 188</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-search" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            search(*paths, [namespace-bindings, xpath-variable-bindings, custom-handler-class])
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-            <div class="mixin-from">
-              Included from <a href="Searchable.html">Nokogiri::XML::Searchable</a>
-            </div>
-          <p>Search this object for <code>paths</code>. <code>paths</code> must be one or more <a href="XPath.html"><code>XPath</code></a> or <a href="../CSS.html"><code>CSS</code></a> queries:</p>
-
-<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">"div.employee"</span>, <span class="ruby-string">".//title"</span>)
-</pre>
-
-<p>A hash of namespace bindings may be appended:</p>
-
-<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//bike:tire'</span>, {<span class="ruby-string">'bike'</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'http://schwinn.com/'</span>})
-<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'bike|tire'</span>, {<span class="ruby-string">'bike'</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'http://schwinn.com/'</span>})
-</pre>
-
-<p>For <a href="XPath.html"><code>XPath</code></a> queries, a hash of variable bindings may also be appended to the namespace bindings. For example:</p>
-
-<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
-</pre>
-
-<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
-
-<pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span> <span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>
-    <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
-  <span class="ruby-keyword">end</span>
-}.<span class="ruby-identifier">new</span>
-<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
-</pre>
-
-<p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> and <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for further usage help.</p>
-
-          <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 51</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
-
-  <span class="ruby-identifier">xpaths</span> = <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
-    <span class="ruby-constant">LOOKS_LIKE_XPATH</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">xpath_query_from_css_rule</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">ns</span>)
-  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
-
-  <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span>(<span class="ruby-identifier">xpaths</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">ns</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">binds</span>].<span class="ruby-identifier">compact</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-        <div class="aliases">
-          Also aliased as: <a href="Searchable.html#method-i-2F">/</a>
-        </div>
-
-      </div>
-
-    </section>
-
-  </section>
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>
