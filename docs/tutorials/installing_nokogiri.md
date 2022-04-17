@@ -21,12 +21,13 @@ If you'd like to contribute improvements to this document, please open a GitHub 
 
 ### Supported Platforms
 
-As of v1.11.0, Nokogiri ships pre-compiled, "native" gems for the following platforms:
+Nokogiri ships pre-compiled, "native" gems for the following platforms:
 
-- Linux: `x86-linux` and `x86_64-linux` (req: `glibc >= 2.17`), including musl platforms like Alpine
-- Darwin/MacOS: `x86_64-darwin` and `arm64-darwin`
-- Windows: `x86-mingw32` and `x64-mingw32`
-- Java: any platform running JRuby 9.2 or higher
+- Linux `x86-linux` and `x86_64-linux` (req: `glibc >= 2.17`) including musl/Alpine
+- Linux `aarch64-linux` (req: `glibc >= 2.29`) including musl/Alpine
+- MacOS `x86_64-darwin` and `arm64-darwin`
+- Windows `x86-mingw32`, `x64-mingw32`, and `x64-mingw-ucrt`
+- Java any platform running JRuby 9.3 or higher
 
 To determine whether your system supports one of these gems, look at the output of `bundle platform` or `ruby -e 'puts Gem::Platform.local.to_s'`.
 
@@ -39,11 +40,23 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 1 gem installed
 ```
 
+If you're using Bundler v2.2+, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:
+
+``` sh
+bundle lock --add-platform x86_64-linux
+bundle install    # resolve dependencies for platform-specific gems
+```
+
+See `man bundle-lock` for details.
+
+
 ### Why would I not want to use a native gem?
 
 I can imagine some folks might have trust issues; if this is you, please let us know in a comment at [RFC: Increase the level of trust in released gem files · Issue #2013 · sparklemotion/nokogiri](https://github.com/sparklemotion/nokogiri/issues/2013). What can we do to increase that trust? (I can imagine providing a chain of custody including public build logs with cryptographic hashes of artifacts, but I'd like to hear from real users.)
 
-Anybody on a linux system old enough to not have `glibc >= 2.17` will need to install from the `ruby` platform gem.
+Anybody on a linux system with an unsupported version of `glibc` (see [Supported Platforms](#supported-platforms)) will need to install from the `ruby` platform gem.
+
+If you're on Termux, you will need to install from the `ruby` platform gem (see https://wiki.termux.com/wiki/Differences_from_Linux for background).
 
 If you have other reasons for not wanting to use a precompiled native gem, let us know! (See [Getting Help](https://nokogiri.org/tutorials/getting_help.html).)
 
@@ -98,6 +111,33 @@ Use `gcc` from ports in order to compile the packaged libraries:
 
 ``` sh
 pkg_add -v gcc
+gem install nokogiri
+```
+
+
+#### OpenBSD 7
+
+``` sh
+pkg_add libiconv gtar
+alias tar=gtar
+gem install nokogiri
+```
+
+
+#### Termux
+
+If you're using Bundler:
+
+``` sh
+pkg install ruby clang make binutils
+bundle config set force_ruby_platform true
+bundle install
+```
+
+If you're not using Bundler:
+
+``` sh
+pkg install ruby clang make binutils
 gem install nokogiri --platform=ruby
 ```
 
@@ -136,7 +176,15 @@ If you're using macports and would like to contribute documentation, please open
 
 ``` sh
 sudo pkg install pkgconf
-gem install nokogiri --platform=ruby -- --use-system-libraries
+gem install nokogiri -- --use-system-libraries
+```
+
+
+#### OpenBSD
+
+``` sh
+pkg_add libxslt
+gem install nokogiri -- --use-system-libraries
 ```
 
 
@@ -148,6 +196,16 @@ We recommend installing Nokogiri against the MSYS2 system libraries:
 ridk exec pacman -S mingw-w64-x86_64-libxslt
 gem install nokogiri --platform=ruby -- --use-system-libraries
 ```
+
+
+#### Termux
+
+``` sh
+pkg install ruby clang make binutils
+pkg install pkg-config libxslt binutils # additional dependencies
+gem install nokogiri --platform=ruby -- --use-system-libraries
+```
+
 
 
 ### Installing With Custom / Non-Standard Libraries
@@ -299,16 +357,6 @@ This approach nets an 12.1 MB layer (versus 18.1 MB without `--use-system-librar
 and saves over 170 MB in build tools.
 
 
-#### TermUX
-
-Although TermUX isn't fully supported right now, some people have reported success getting Nokogiri installed on it by running these commands:
-
-``` sh
-pkg install ruby clang make pkg-config libxslt
-gem install nokogiri --platform=ruby -- --use-system-libraries
-```
-
-
 #### SmartOS (Nonstandard)
 
 SmartOS installation requires building and using libxml2/libxslt/libiconv in a nonstandard location. Building on the previous section, here's how to do it:
@@ -334,6 +382,25 @@ See the previous section for guidance on how to instruct Bundler to use these op
 
 
 ## Troubleshooting
+
+### `cannot load such file -- nokogiri/nokogiri (LoadError)`
+
+Particularly when upgrading to a newer version of Ruby, this error appears at runtime.
+
+#### Symptoms
+
+Installation succeeds, but then at runtime this error message is seen:
+
+``` text
+kernel_require.rb:23:in `require': cannot load such file -- nokogiri/nokogiri (LoadError)
+```
+
+#### Solution
+
+Uninstall *all* versions of Nokogiri on your system, and then re-resolve your dependencies (using `bundle` or `gem install`).
+
+This error can occur when a version of Nokogiri installed for a different version of Ruby is used by an unsupported version of Ruby. For example, if Nokogiri v1.12.5-x86_64-linux installed by Ruby 3.0 is then used by Ruby 3.1, you'll see this error (note that nokogiri v1.12.5 native gems do not support Ruby 3.1).
+
 
 ### Using `vendor/cache` to deploy to another architecture
 
@@ -395,6 +462,79 @@ rm -rf vendor/cache
 bundle config force_ruby_platform true
 bundle install
 ```
+
+
+### `tar (child): xz: Cannot exec: No such file or directory`
+
+Starting in v1.13.2, the source archive used for libxml2 and libxslt is compressed with `xz` (previous versions were compressed with `gzip`. As a result, when compiling from source, your system will need to have `xz` installed in order to extract the source code for these libraries.
+
+
+#### Symptoms
+
+During installation, you may see error output similar to:
+
+``` text hl_lines="3"
+Extracting libxml2-2.9.13.tar.xz into tmp/armv7l-unknown-linux-gnueabihf/ports/libxml2/2.9.13... ERROR, review '/usr/local/ruby/lib/ruby/gems/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/armv7l-unknown-linux-gnueabihf/ports/libxml2/2.9.13/extract.log' to see what happened. Last lines are:
+========================================================================
+tar (child): xz: Cannot exec: No such file or directory
+tar (child): Error is not recoverable: exiting now
+/bin/tar: Child returned status 2
+/bin/tar: Error is not recoverable: exiting now
+========================================================================
+*** extconf.rb failed ***
+```
+
+#### Solution
+
+On Debian/Ubuntu:
+
+``` sh
+sudo apt-get install xz-utils
+```
+
+On Alpine:
+
+```sh
+apk add xz
+```
+
+On OpenBSD:
+
+``` sh
+pkg_add gtar
+alias tar=gtar
+```
+
+If you have this problem on another system, please open an issue and give us some details so we can update this page.
+
+
+### [Linux musl] "Error loading shared library"
+
+Musl-based systems like Alpine may not have a glibc-compatible library installed, leading to problems running the precompiled native gems.
+
+#### Symptoms
+
+Installation succeeds, but then at runtime you'll see an error like this:
+
+``` text
+Error loading shared library ld-linux-x86-64.so.2: No such file or directory
+```
+
+or like this if you're on ARM64:
+
+``` text
+Error loading shared library ld-linux-aarch64.so.1: No such file or directory
+```
+
+#### Solution
+
+Install the glibc compatibility layer:
+
+``` sh
+apk add gcompat
+```
+
+See https://wiki.alpinelinux.org/wiki/Running_glibc_programs for more details.
 
 
 ### Cannot install `racc`
@@ -629,6 +769,13 @@ dnf install -y make gcc rpm-build ruby-devel
 
 ``` sh
 apk add build-base
+```
+
+
+### Termux
+
+``` sh
+pkg install clang make binutils
 ```
 
 

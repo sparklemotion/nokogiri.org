@@ -20,7 +20,6 @@ namespace :dev do
 
     if File.directory?(MKDOCS_DIR)
       Dir.chdir(File.join(MKDOCS_DIR, "..")) do
-        sh "ls"
         sh "pip3 install --user -e mkdocs"
       end
     else
