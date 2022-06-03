@@ -194,7 +194,7 @@
           <div class="method-source-code" id="parse_memory-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/sax/parser.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_memory</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">data</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">empty?</span>
 
   <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">memory</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">encoding</span>)
