@@ -678,8 +678,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tar-child-xz-cannot-exec-no-such-file-or-directory" class="md-nav__link">
-    tar (child): xz: Cannot exec: No such file or directory
+  <a href="#tar-and-xz-files" class="md-nav__link">
+    tar and xz files
   </a>
   
 </li>
@@ -1377,8 +1377,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tar-child-xz-cannot-exec-no-such-file-or-directory" class="md-nav__link">
-    tar (child): xz: Cannot exec: No such file or directory
+  <a href="#tar-and-xz-files" class="md-nav__link">
+    tar and xz files
   </a>
   
 </li>
@@ -1778,7 +1778,7 @@ bundle install
 bundle config force_ruby_platform <span class="nb">true</span>
 bundle install
 </code></pre></div>
-<h3 id="tar-child-xz-cannot-exec-no-such-file-or-directory"><code>tar (child): xz: Cannot exec: No such file or directory</code><a class="headerlink" href="#tar-child-xz-cannot-exec-no-such-file-or-directory" title="Permanent link">&para;</a></h3>
+<h3 id="tar-and-xz-files"><code>tar</code> and <code>xz</code> files<a class="headerlink" href="#tar-and-xz-files" title="Permanent link">&para;</a></h3>
 <p>Starting in v1.13.2, the source archive used for libxml2 and libxslt is compressed with <code>xz</code> (previous versions were compressed with <code>gzip</code>. As a result, when compiling from source, your system will need to have <code>xz</code> installed in order to extract the source code for these libraries.</p>
 <h4 id="symptoms_2">Symptoms<a class="headerlink" href="#symptoms_2" title="Permanent link">&para;</a></h4>
 <p>During installation, you may see error output similar to:</p>
@@ -1788,6 +1788,18 @@ bundle install
 </span>tar (child): Error is not recoverable: exiting now
 /bin/tar: Child returned status 2
 /bin/tar: Error is not recoverable: exiting now
+========================================================================
+*** extconf.rb failed ***
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code>Extracting libxml2-2.9.14.tar.xz into tmp/x86_64-unknown-openbsd7.1/ports/libxml2/2.9.14... ERROR, review &#39;/usr/local/lib/ruby/gems/3.0/gems/nokogiri-1.13.6/ext/nokogiri/tmp/x86_64-unknown-openbsd7.1/ports/libxml2/2.9.14/extract.log&#39; to see what happened. Last lines are:
+========================================================================
+<span class="hll">tar: unknown option J
+</span>usage: tar {crtux}[014578befHhjLmNOoPpqsvwXZz]
+           [blocking-factor | archive | replstr] [-C directory] [-I file]
+           [file ...]
+       tar {-crtux} [-014578eHhjLmNOoPpqvwXZz] [-b blocking-factor]
+           [-C directory] [-f archive] [-I file] [-s replstr] [file ...]
 ========================================================================
 *** extconf.rb failed ***
 </code></pre></div>
