@@ -464,7 +464,7 @@ bundle install
 ```
 
 
-### `tar (child): xz: Cannot exec: No such file or directory`
+### `tar` and `xz` files
 
 Starting in v1.13.2, the source archive used for libxml2 and libxslt is compressed with `xz` (previous versions were compressed with `gzip`. As a result, when compiling from source, your system will need to have `xz` installed in order to extract the source code for these libraries.
 
@@ -480,6 +480,21 @@ tar (child): xz: Cannot exec: No such file or directory
 tar (child): Error is not recoverable: exiting now
 /bin/tar: Child returned status 2
 /bin/tar: Error is not recoverable: exiting now
+========================================================================
+*** extconf.rb failed ***
+```
+
+or
+
+``` text hl_lines="3"
+Extracting libxml2-2.9.14.tar.xz into tmp/x86_64-unknown-openbsd7.1/ports/libxml2/2.9.14... ERROR, review '/usr/local/lib/ruby/gems/3.0/gems/nokogiri-1.13.6/ext/nokogiri/tmp/x86_64-unknown-openbsd7.1/ports/libxml2/2.9.14/extract.log' to see what happened. Last lines are:
+========================================================================
+tar: unknown option J
+usage: tar {crtux}[014578befHhjLmNOoPpqsvwXZz]
+           [blocking-factor | archive | replstr] [-C directory] [-I file]
+           [file ...]
+       tar {-crtux} [-014578eHhjLmNOoPpqvwXZz] [-b blocking-factor]
+           [-C directory] [-f archive] [-I file] [-s replstr] [file ...]
 ========================================================================
 *** extconf.rb failed ***
 ```
