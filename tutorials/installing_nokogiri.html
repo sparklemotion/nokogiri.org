@@ -1507,9 +1507,9 @@
 
 
 <h1 id="installing-nokogiri">Installing Nokogiri<a class="headerlink" href="#installing-nokogiri" title="Permanent link">&para;</a></h1>
-<p>Welcome! We've spent quite a bit of time over the past year trying to make Nokogiri v1.11 easy and reliable to install. This page should hopefully get you on your way quickly.</p>
+<p>Welcome! We've worked hard to make Nokogiri easy and reliable to install. This page should hopefully get you on your way quickly.</p>
 <h2 id="meta">Meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
-<p>The current version of this page focuses on the installation experience for Nokogiri v1.11.x. If you're trying to install an earlier version, please visit:</p>
+<p>The current version of this page focuses on the installation experience for Nokogiri v1.11 and later. If you're trying to install an earlier version, please visit:</p>
 <ul>
 <li><a href="https://github.com/sparklemotion/nokogiri.org/blob/91e624fa8d6c918d7905954fd8da7ea40f237d88/docs/tutorials/installing_nokogiri.md">Nokogiri v1.10.x installation instructions</a></li>
 </ul>
@@ -1517,7 +1517,7 @@
 <p>If you'd like to contribute improvements to this document, please open a GitHub issue or pull-request on <a href="https://github.com/sparklemotion/nokogiri.org/blob/master/docs/tutorials/installing_nokogiri.md">nokogiri.org/installing_nokogiri.md</a>.</p>
 <h2 id="installing-native-gems">Installing Native Gems<a class="headerlink" href="#installing-native-gems" title="Permanent link">&para;</a></h2>
 <h3 id="faster-more-reliable-installation">Faster, more reliable installation<a class="headerlink" href="#faster-more-reliable-installation" title="Permanent link">&para;</a></h3>
-<p>"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or for system dependencies to exist. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know are the biggest headaches for Nokogiri users.</p>
+<p>"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or to install system dependencies. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know have historically been challenging topics for Nokogiri users.</p>
 <h3 id="supported-platforms">Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permanent link">&para;</a></h3>
 <p>Nokogiri ships pre-compiled, "native" gems for the following platforms:</p>
 <ul>
@@ -1525,7 +1525,7 @@
 <li>Linux <code>aarch64-linux</code> (req: <code>glibc &gt;= 2.29</code>) including musl/Alpine</li>
 <li>MacOS <code>x86_64-darwin</code> and <code>arm64-darwin</code></li>
 <li>Windows <code>x86-mingw32</code>, <code>x64-mingw32</code>, and <code>x64-mingw-ucrt</code></li>
-<li>Java any platform running JRuby 9.3 or higher</li>
+<li>Java platforms running JRuby 9.3 or higher</li>
 </ul>
 <p>To determine whether your system supports one of these gems, look at the output of <code>bundle platform</code> or <code>ruby -e 'puts Gem::Platform.local.to_s'</code>.</p>
 <p>If you're on a supported platform, either <code>gem install</code> or <code>bundle install</code> should install a native gem without any additional action on your part. This installation should only take a few seconds, and your output should look something like:</p>
@@ -1554,7 +1554,7 @@ bundle install    <span class="c1"># resolve dependencies for platform-specific 
 <li>version 2.0 or earlier, then you'll need to run <code>bundle config force_ruby_platform true</code></li>
 </ul>
 <h2 id="installing-the-ruby-platform-gem">Installing the <code>ruby</code> platform gem<a class="headerlink" href="#installing-the-ruby-platform-gem" title="Permanent link">&para;</a></h2>
-<p>Again, we recommend that you upgrade to v1.11.x and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.</p>
+<p>Again, we recommend that you upgrade to v1.11 or later and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.</p>
 <p><strong>Before you begin, make sure you have the full compiler toolchain for compiling Ruby C Extensions.</strong> See <a href="#appendix-a-the-compiler-toolchain">Appendix A: The Compiler Toolchain</a>.</p>
 <h3 id="installing-using-the-packaged-libraries">Installing Using The Packaged Libraries<a class="headerlink" href="#installing-using-the-packaged-libraries" title="Permanent link">&para;</a></h3>
 <p>Nokogiri packages its own updated and patched copies of <a href="http://xmlsoft.org/">libxml2</a> and <a href="http://xmlsoft.org/libxslt/">libxslt</a> source code. By default, installation of Nokogiri will compile and use these packaged libraries.</p>
