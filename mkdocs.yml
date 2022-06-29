@@ -39,7 +39,7 @@ extra:
       name: sparklemotion/nokogiri.org
   analytics:
     provider: google
-    property: UA-1260604-8
+    property: G-BZR5RZN084
   consent:
     title: Cookie consent
     description: |

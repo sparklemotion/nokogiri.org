@@ -83,15 +83,15 @@ def nokogiri_add_ga_to_rdocs
   files = Dir[File.join(RDOC_STAGING_DIR, "/**/*.html")]
 
   snippet_tag = "Global site tag (gtag.js) - Google Analytics"
-  snippet = <<-EOJS
+  snippet = <<~EOJS
     <!-- #{snippet_tag} -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZR5RZN084"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-1260604-8');
+      gtag('config', 'G-BZR5RZN084');
     </script>
   EOJS
 
