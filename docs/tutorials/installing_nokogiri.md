@@ -1,10 +1,10 @@
 # Installing Nokogiri
 
-Welcome! We've spent quite a bit of time over the past year trying to make Nokogiri v1.11 easy and reliable to install. This page should hopefully get you on your way quickly.
+Welcome! We've worked hard to make Nokogiri easy and reliable to install. This page should hopefully get you on your way quickly.
 
 ## Meta
 
-The current version of this page focuses on the installation experience for Nokogiri v1.11.x. If you're trying to install an earlier version, please visit:
+The current version of this page focuses on the installation experience for Nokogiri v1.11 and later. If you're trying to install an earlier version, please visit:
 
 - [Nokogiri v1.10.x installation instructions](https://github.com/sparklemotion/nokogiri.org/blob/91e624fa8d6c918d7905954fd8da7ea40f237d88/docs/tutorials/installing_nokogiri.md)
 
@@ -17,7 +17,7 @@ If you'd like to contribute improvements to this document, please open a GitHub 
 
 ### Faster, more reliable installation
 
-"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or for system dependencies to exist. This results in **much faster installation** and **more reliable installation**, which as you probably know are the biggest headaches for Nokogiri users.
+"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or to install system dependencies. This results in **much faster installation** and **more reliable installation**, which as you probably know have historically been challenging topics for Nokogiri users.
 
 ### Supported Platforms
 
@@ -27,7 +27,7 @@ Nokogiri ships pre-compiled, "native" gems for the following platforms:
 - Linux `aarch64-linux` (req: `glibc >= 2.29`) including musl/Alpine
 - MacOS `x86_64-darwin` and `arm64-darwin`
 - Windows `x86-mingw32`, `x64-mingw32`, and `x64-mingw-ucrt`
-- Java any platform running JRuby 9.3 or higher
+- Java platforms running JRuby 9.3 or higher
 
 To determine whether your system supports one of these gems, look at the output of `bundle platform` or `ruby -e 'puts Gem::Platform.local.to_s'`.
 
@@ -75,7 +75,7 @@ If you're on a platform that supports a native gem but you want to avoid using i
 
 ## Installing the `ruby` platform gem
 
-Again, we recommend that you upgrade to v1.11.x and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.
+Again, we recommend that you upgrade to v1.11 or later and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.
 
 **Before you begin, make sure you have the full compiler toolchain for compiling Ruby C Extensions.** See [Appendix A: The Compiler Toolchain](#appendix-a-the-compiler-toolchain).
 
