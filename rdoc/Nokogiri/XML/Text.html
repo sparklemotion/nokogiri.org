@@ -137,7 +137,7 @@ new (int argc, VALUE *argv, VALUE klass)
 
   rb_scan_args(argc, argv, "2*", &amp;string, &amp;document, &amp;rest);
 
-  Data_Get_Struct(document, xmlDoc, doc);
+  Noko_Node_Get_Struct(document, xmlDoc, doc);
 
   node = xmlNewText((xmlChar *)StringValueCStr(string));
   node-&gt;doc = doc-&gt;doc;

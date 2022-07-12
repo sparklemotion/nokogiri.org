@@ -169,7 +169,7 @@
 get_content(VALUE self)
 {
   xmlEntityPtr node;
-  Data_Get_Struct(self, xmlEntity, node);
+  Noko_Node_Get_Struct(self, xmlEntity, node);
 
   if (!node-&gt;content) { return Qnil; }
 
@@ -197,7 +197,7 @@ get_content(VALUE self)
 entity_type(VALUE self)
 {
   xmlEntityPtr node;
-  Data_Get_Struct(self, xmlEntity, node);
+  Noko_Node_Get_Struct(self, xmlEntity, node);
 
   return INT2NUM((int)node-&gt;etype);
 }</pre>
@@ -223,7 +223,7 @@ entity_type(VALUE self)
 external_id(VALUE self)
 {
   xmlEntityPtr node;
-  Data_Get_Struct(self, xmlEntity, node);
+  Noko_Node_Get_Struct(self, xmlEntity, node);
 
   if (!node-&gt;ExternalID) { return Qnil; }
 
@@ -271,7 +271,7 @@ external_id(VALUE self)
 original_content(VALUE self)
 {
   xmlEntityPtr node;
-  Data_Get_Struct(self, xmlEntity, node);
+  Noko_Node_Get_Struct(self, xmlEntity, node);
 
   if (!node-&gt;orig) { return Qnil; }
 
@@ -299,7 +299,7 @@ original_content(VALUE self)
 system_id(VALUE self)
 {
   xmlEntityPtr node;
-  Data_Get_Struct(self, xmlEntity, node);
+  Noko_Node_Get_Struct(self, xmlEntity, node);
 
   if (!node-&gt;SystemID) { return Qnil; }
 

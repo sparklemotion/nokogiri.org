@@ -191,7 +191,7 @@ from_document(int argc, VALUE *argv, VALUE klass)
 
   scanned_args = rb_scan_args(argc, argv, "11", &amp;document, &amp;parse_options);
 
-  Data_Get_Struct(document, xmlDoc, doc);
+  Noko_Node_Get_Struct(document, xmlDoc, doc);
   doc = doc-&gt;doc; /* In case someone passes us a node. ugh. */
 
   if (scanned_args == 1) {

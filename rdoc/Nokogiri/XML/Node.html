@@ -911,7 +911,7 @@
 rb_xml_node_blank_eh(VALUE self)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   return (1 == xmlIsBlankNode(node)) ? Qtrue : Qfalse ;
 }</pre>
           </div>
@@ -1022,7 +1022,7 @@ rb_xml_node_content(VALUE self)
   xmlNodePtr node;
   xmlChar *content;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   content = xmlNodeGetContent(node);
   if (content) {
@@ -1060,7 +1060,7 @@ create_external_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
   xmlDocPtr doc;
   xmlDtdPtr dtd;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   doc = node-&gt;doc;
 
@@ -1111,7 +1111,7 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
   xmlDocPtr doc;
   xmlDtdPtr dtd;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   doc = node-&gt;doc;
 
@@ -1271,7 +1271,7 @@ duplicate_node(int argc, VALUE *argv, VALUE self)
   xmlDocPtr new_parent_doc;
   xmlNodePtr node, dup;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   n_args = rb_scan_args(argc, argv, "02", &amp;r_level, &amp;r_new_parent_doc);
 
@@ -1380,7 +1380,7 @@ rb_xml_node_element_children(VALUE self)
   VALUE document;
   VALUE node_set;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   child = xmlFirstElementChild(node);
   set = xmlXPathNodeSetCreate(child);
@@ -1445,7 +1445,7 @@ encode_special_chars(VALUE self, VALUE string)
   xmlChar *encoded;
   VALUE encoded_str;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   encoded = xmlEncodeSpecialChars(
               node-&gt;doc,
               (const xmlChar *)StringValueCStr(string)
@@ -1481,7 +1481,7 @@ external_subset(VALUE self)
   xmlDocPtr doc;
   xmlDtdPtr dtd;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   if (!node-&gt;doc) { return Qnil; }
 
@@ -1529,7 +1529,7 @@ external_subset(VALUE self)
 rb_xml_node_first_element_child(VALUE self)
 {
   xmlNodePtr node, child;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   child = xmlFirstElementChild(node);
   if (!child) { return Qnil; }
@@ -1657,7 +1657,7 @@ internal_subset(VALUE self)
   xmlDocPtr doc;
   xmlDtdPtr dtd;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   if (!node-&gt;doc) { return Qnil; }
 
@@ -1690,7 +1690,7 @@ internal_subset(VALUE self)
 key_eh(VALUE self, VALUE attribute)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   if (xmlHasProp(node, (xmlChar *)StringValueCStr(attribute))) {
     return Qtrue;
   }
@@ -1724,7 +1724,7 @@ get_lang(VALUE self_rb)
   xmlChar *lang ;
   VALUE lang_rb ;
 
-  Data_Get_Struct(self_rb, xmlNode, self);
+  Noko_Node_Get_Struct(self_rb, xmlNode, self);
 
   lang = xmlNodeGetLang(self);
   if (lang) {
@@ -1759,7 +1759,7 @@ set_lang(VALUE self_rb, VALUE lang_rb)
   xmlNodePtr self ;
   xmlChar *lang ;
 
-  Data_Get_Struct(self_rb, xmlNode, self);
+  Noko_Node_Get_Struct(self_rb, xmlNode, self);
   lang = (xmlChar *)StringValueCStr(lang_rb);
 
   xmlNodeSetLang(self, lang);
@@ -1803,7 +1803,7 @@ set_lang(VALUE self_rb, VALUE lang_rb)
 rb_xml_node_last_element_child(VALUE self)
 {
   xmlNodePtr node, child;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   child = xmlLastElementChild(node);
   if (!child) { return Qnil; }
@@ -1874,7 +1874,7 @@ rb_xml_node_last_element_child(VALUE self)
 rb_xml_node_line(VALUE rb_node)
 {
   xmlNodePtr c_node;
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
 
   return INT2NUM(xmlGetLineNo(c_node));
 }</pre>
@@ -1902,7 +1902,7 @@ rb_xml_node_line_set(VALUE rb_node, VALUE rb_line_number)
   xmlNodePtr c_node;
   int line_number = NUM2INT(rb_line_number);
 
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
 
   // libxml2 optionally uses xmlNode.psvi to store longer line numbers, but only for text nodes.
   // search for "psvi" in SAX2.c and tree.c to learn more.
@@ -2000,7 +2000,7 @@ rb_xml_node_line_set(VALUE rb_node, VALUE rb_line_number)
 rb_xml_node_namespace(VALUE rb_node)
 {
   xmlNodePtr c_node ;
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
 
   if (c_node-&gt;ns) {
     return noko_xml_namespace_wrap(c_node-&gt;ns, c_node-&gt;doc);
@@ -2061,7 +2061,7 @@ namespace_definitions(VALUE rb_node)
   xmlNsPtr c_namespace;
   VALUE definitions = rb_ary_new();
 
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
 
   c_namespace = c_node-&gt;nsDef;
   if (!c_namespace) {
@@ -2130,7 +2130,7 @@ rb_xml_node_namespace_scopes(VALUE rb_node)
   VALUE scopes = rb_ary_new();
   int j;
 
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
 
   namespaces = xmlGetNsList(c_node-&gt;doc, c_node);
   if (!namespaces) {
@@ -2166,7 +2166,7 @@ rb_xml_node_namespace_scopes(VALUE rb_node)
 namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   if (xmlHasNsProp(node, (xmlChar *)StringValueCStr(attribute),
                    NIL_P(namespace) ? NULL : (xmlChar *)StringValueCStr(namespace))) {
     return Qtrue;
@@ -2255,7 +2255,7 @@ namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 set_native_content(VALUE self, VALUE content)
 {
   xmlNodePtr node, child, next ;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   child = node-&gt;children;
   while (NULL != child) {
@@ -2290,7 +2290,7 @@ set_native_content(VALUE self, VALUE content)
 next_element(VALUE self)
 {
   xmlNodePtr node, sibling;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   sibling = xmlNextElementSibling(node);
   if (!sibling) { return Qnil; }
@@ -2317,7 +2317,7 @@ next_element(VALUE self)
 next_sibling(VALUE self)
 {
   xmlNodePtr node, sibling;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   sibling = node-&gt;next;
   if (!sibling) { return Qnil; }
@@ -2347,7 +2347,7 @@ next_sibling(VALUE self)
 get_name(VALUE self)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   if (node-&gt;name) {
     return NOKOGIRI_STR_NEW2(node-&gt;name);
   }
@@ -2376,7 +2376,7 @@ get_name(VALUE self)
 set_name(VALUE self, VALUE new_name)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   xmlNodeSetName(node, (xmlChar *)StringValueCStr(new_name));
   return new_name;
 }</pre>
@@ -2403,7 +2403,7 @@ set_name(VALUE self, VALUE new_name)
 node_type(VALUE self)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   return INT2NUM((long)node-&gt;type);
 }</pre>
           </div>
@@ -2431,7 +2431,7 @@ node_type(VALUE self)
 get_parent(VALUE self)
 {
   xmlNodePtr node, parent;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   parent = node-&gt;parent;
   if (!parent) { return Qnil; }
@@ -2529,7 +2529,7 @@ rb_xml_node_path(VALUE rb_node)
   xmlChar *c_path ;
   VALUE rval;
 
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
 
   c_path = xmlGetNodePath(c_node);
   if (c_path == NULL) {
@@ -2572,7 +2572,7 @@ rb_xml_node_path(VALUE rb_node)
 rb_xml_node_pointer_id(VALUE self)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   return INT2NUM((long)(node));
 }</pre>
@@ -2598,7 +2598,7 @@ rb_xml_node_pointer_id(VALUE self)
 previous_element(VALUE self)
 {
   xmlNodePtr node, sibling;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   /*
    *  note that we don't use xmlPreviousElementSibling here because it's buggy pre-2.7.7.
@@ -2632,7 +2632,7 @@ previous_element(VALUE self)
 previous_sibling(VALUE self)
 {
   xmlNodePtr node, sibling;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   sibling = node-&gt;prev;
   if (!sibling) { return Qnil; }
@@ -2818,7 +2818,7 @@ previous_sibling(VALUE self)
 unlink_node(VALUE self)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   xmlUnlinkNode(node);
   noko_xml_document_pin_node(node);
   return self;
@@ -3058,7 +3058,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
   xmlNsPtr c_namespace;
   const xmlChar *c_prefix = (const xmlChar *)(NIL_P(rb_prefix) ? NULL : StringValueCStr(rb_prefix));
 
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
   element = c_node ;
 
   c_namespace = xmlSearchNs(c_node-&gt;doc, c_node, c_prefix);
@@ -3942,7 +3942,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 rb_xml_node_child(VALUE self)
 {
   xmlNodePtr node, child;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   child = node-&gt;children;
   if (!child) { return Qnil; }
@@ -3982,7 +3982,7 @@ rb_xml_node_children(VALUE self)
   VALUE document;
   VALUE node_set;
 
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
 
   child = node-&gt;children;
   set = xmlXPathNodeSetCreate(child);
@@ -4029,7 +4029,7 @@ rb_xml_node_children(VALUE self)
 rb_xml_node_document(VALUE self)
 {
   xmlNodePtr node;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   return DOC_RUBY_OBJECT(node-&gt;doc);
 }</pre>
           </div>
@@ -4382,7 +4382,7 @@ rb_xml_node_attribute(VALUE self, VALUE name)
 {
   xmlNodePtr node;
   xmlAttrPtr prop;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   prop = xmlHasProp(node, (xmlChar *)StringValueCStr(name));
 
   if (! prop) { return Qnil; }
@@ -4448,7 +4448,7 @@ rb_xml_node_attribute_nodes(VALUE rb_node)
 {
   xmlNodePtr c_node;
 
-  Data_Get_Struct(rb_node, xmlNode, c_node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, c_node);
 
   return noko_xml_node_attrs(c_node);
 }</pre>
@@ -4519,7 +4519,7 @@ rb_xml_node_attribute_with_ns(VALUE self, VALUE name, VALUE namespace)
 {
   xmlNodePtr node;
   xmlAttrPtr prop;
-  Data_Get_Struct(self, xmlNode, node);
+  Noko_Node_Get_Struct(self, xmlNode, node);
   prop = xmlHasNsProp(node, (xmlChar *)StringValueCStr(name),
                       NIL_P(namespace) ? NULL : (xmlChar *)StringValueCStr(namespace));
 

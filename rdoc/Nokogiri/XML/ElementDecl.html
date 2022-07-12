@@ -133,7 +133,7 @@
 content(VALUE self)
 {
   xmlElementPtr node;
-  Data_Get_Struct(self, xmlElement, node);
+  Noko_Node_Get_Struct(self, xmlElement, node);
 
   if (!node-&gt;content) { return Qnil; }
 
@@ -164,7 +164,7 @@ content(VALUE self)
 element_type(VALUE self)
 {
   xmlElementPtr node;
-  Data_Get_Struct(self, xmlElement, node);
+  Noko_Node_Get_Struct(self, xmlElement, node);
   return INT2NUM((long)node-&gt;etype);
 }</pre>
           </div>
@@ -209,7 +209,7 @@ element_type(VALUE self)
 prefix(VALUE self)
 {
   xmlElementPtr node;
-  Data_Get_Struct(self, xmlElement, node);
+  Noko_Node_Get_Struct(self, xmlElement, node);
 
   if (!node-&gt;prefix) { return Qnil; }
 
