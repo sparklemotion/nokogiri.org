@@ -40,7 +40,7 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 1 gem installed
 ```
 
-If you're using Bundler v2.2+, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:
+If you're using Bundler `>= 2.2`, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:
 
 ``` sh
 bundle lock --add-platform x86_64-linux
@@ -67,10 +67,10 @@ The Nokogiri maintainers strongly urge you to use a native gem if at all possibl
 
 If you're on a platform that supports a native gem but you want to avoid using it in your project, do one of the following:
 
-- If you're not using Bundler, then run `gem install nokogiri --platform=ruby`
-- If you are using Bundler
-  - version 2.1 or later, then you'll need to run `bundle config set force_ruby_platform true`,
-  - version 2.0 or earlier, then you'll need to run `bundle config force_ruby_platform true`
+- With Bundler `>= 2.3.18`, then update your Gemfile with `gem "nokogiri", force_ruby_platform: true`
+- Else with Bundler`>= 2.1`, then run `bundle config set force_ruby_platform true`,
+- Else with Bundler `< 2.1`, then run `bundle config force_ruby_platform true`
+- If you're not using Bundler, then run `gem install nokogiri --platform=ruby`.
 
 
 ## Installing the `ruby` platform gem
@@ -126,7 +126,14 @@ gem install nokogiri
 
 #### Termux
 
-If you're using Bundler:
+If you're using Bundler `>= 2.3.18`:
+
+``` ruby
+# Gemfile
+gem "nokogiri", force_ruby_platform: true
+```
+
+else if you're using a version of Bundler `>= 2.1`:
 
 ``` sh
 pkg install ruby clang make binutils
@@ -134,7 +141,15 @@ bundle config set force_ruby_platform true
 bundle install
 ```
 
-If you're not using Bundler:
+else if you're using a version of Bundler `< 2.1`:
+
+``` sh
+pkg install ruby clang make binutils
+bundle config force_ruby_platform true
+bundle install
+```
+
+else if you're not using Bundler:
 
 ``` sh
 pkg install ruby clang make binutils
@@ -445,9 +460,9 @@ For more information, please read [this wonderful blog post](https://blog.thegna
 
 #### Fallback Solution
 
-If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide.
+If you can't upgrade to Bundler `>= 2.2`, you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide.
 
-Here's how to do this with Bundler 2.1 or later:
+Here's how to do this with Bundler `>= 2.1`:
 
 ``` sh
 rm -rf vendor/cache
@@ -455,7 +470,7 @@ bundle config set force_ruby_platform true
 bundle install
 ```
 
-Or if you're on version 2.0 or earlier:
+Or if you're using Bundler `< 2.1`:
 
 ``` sh
 rm -rf vendor/cache
@@ -619,7 +634,7 @@ Racc needs the same compiler toolchain to be present as any Gem with a C extensi
 
 Ruby 3.0 comes with Racc 1.5.x as a "builtin gem", so you could update to Ruby 3!
 
-Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like `gem "racc", "~> 1.4.0"` to prevent bundler from trying to upgrade.
+Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like `gem "racc", "~> 1.4.0"` to prevent Bundler from trying to upgrade.
 
 
 
@@ -705,7 +720,7 @@ gem install nokogiri -- --use-system-libraries \
     --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
 ```
 
-or if you're using bundler:
+or if you're using Bundler:
 
 ``` sh
 bundle config build.nokogiri --use-system-libraries \
