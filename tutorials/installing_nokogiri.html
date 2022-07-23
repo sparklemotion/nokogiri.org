@@ -1534,7 +1534,7 @@ Fetching nokogiri-1.11.0-x86_64-linux.gem
 Successfully installed nokogiri-1.11.0-x86_64-linux
 1 gem installed
 </code></pre></div>
-<p>If you're using Bundler v2.2+, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:</p>
+<p>If you're using Bundler <code>&gt;= 2.2</code>, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:</p>
 <div class="highlight"><pre><span></span><code>bundle lock --add-platform x86_64-linux
 bundle install    <span class="c1"># resolve dependencies for platform-specific gems</span>
 </code></pre></div>
@@ -1548,10 +1548,10 @@ bundle install    <span class="c1"># resolve dependencies for platform-specific 
 <p>The Nokogiri maintainers strongly urge you to use a native gem if at all possible. We expect it will be a much better experience for you and allow us to focus our efforts on improving functionality rather than diagnosing installation issues.</p>
 <p>If you're on a platform that supports a native gem but you want to avoid using it in your project, do one of the following:</p>
 <ul>
-<li>If you're not using Bundler, then run <code>gem install nokogiri --platform=ruby</code></li>
-<li>If you are using Bundler</li>
-<li>version 2.1 or later, then you'll need to run <code>bundle config set force_ruby_platform true</code>,</li>
-<li>version 2.0 or earlier, then you'll need to run <code>bundle config force_ruby_platform true</code></li>
+<li>With Bundler <code>&gt;= 2.3.18</code>, then update your Gemfile with <code>gem "nokogiri", force_ruby_platform: true</code></li>
+<li>Else with Bundler<code>&gt;= 2.1</code>, then run <code>bundle config set force_ruby_platform true</code>,</li>
+<li>Else with Bundler <code>&lt; 2.1</code>, then run <code>bundle config force_ruby_platform true</code></li>
+<li>If you're not using Bundler, then run <code>gem install nokogiri --platform=ruby</code>.</li>
 </ul>
 <h2 id="installing-the-ruby-platform-gem">Installing the <code>ruby</code> platform gem<a class="headerlink" href="#installing-the-ruby-platform-gem" title="Permanent link">&para;</a></h2>
 <p>Again, we recommend that you upgrade to v1.11 or later and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.</p>
@@ -1579,12 +1579,21 @@ gem install nokogiri
 gem install nokogiri
 </code></pre></div>
 <h4 id="termux">Termux<a class="headerlink" href="#termux" title="Permanent link">&para;</a></h4>
-<p>If you're using Bundler:</p>
+<p>If you're using Bundler <code>&gt;= 2.3.18</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s2">&quot;nokogiri&quot;</span><span class="p">,</span> <span class="ss">force_ruby_platform</span><span class="p">:</span> <span class="kp">true</span>
+</code></pre></div>
+<p>else if you're using a version of Bundler <code>&gt;= 2.1</code>:</p>
 <div class="highlight"><pre><span></span><code>pkg install ruby clang make binutils
 bundle config <span class="nb">set</span> force_ruby_platform <span class="nb">true</span>
 bundle install
 </code></pre></div>
-<p>If you're not using Bundler:</p>
+<p>else if you're using a version of Bundler <code>&lt; 2.1</code>:</p>
+<div class="highlight"><pre><span></span><code>pkg install ruby clang make binutils
+bundle config force_ruby_platform <span class="nb">true</span>
+bundle install
+</code></pre></div>
+<p>else if you're not using Bundler:</p>
 <div class="highlight"><pre><span></span><code>pkg install ruby clang make binutils
 gem install nokogiri --platform<span class="o">=</span>ruby
 </code></pre></div>
@@ -1767,13 +1776,13 @@ bundle package --all-platforms
 </code></pre></div>
 <p>For more information, please read <a href="https://blog.thegnar.co/caching-all-native-gem-platforms">this wonderful blog post</a> written by Kevin Murphy explaining this approach.</p>
 <h4 id="fallback-solution">Fallback Solution<a class="headerlink" href="#fallback-solution" title="Permanent link">&para;</a></h4>
-<p>If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the <code>ruby</code> platform, which supports all platforms, but applies to <em>all</em> gems and comes with the installation challenges mentioned earlier in this guide.</p>
-<p>Here's how to do this with Bundler 2.1 or later:</p>
+<p>If you can't upgrade to Bundler <code>&gt;= 2.2</code>, you can force older versions to always use the <code>ruby</code> platform, which supports all platforms, but applies to <em>all</em> gems and comes with the installation challenges mentioned earlier in this guide.</p>
+<p>Here's how to do this with Bundler <code>&gt;= 2.1</code>:</p>
 <div class="highlight"><pre><span></span><code>rm -rf vendor/cache
 bundle config <span class="nb">set</span> force_ruby_platform <span class="nb">true</span>
 bundle install
 </code></pre></div>
-<p>Or if you're on version 2.0 or earlier:</p>
+<p>Or if you're using Bundler <code>&lt; 2.1</code>:</p>
 <div class="highlight"><pre><span></span><code>rm -rf vendor/cache
 bundle config force_ruby_platform <span class="nb">true</span>
 bundle install
@@ -1884,7 +1893,7 @@ extconf failed, exit code 1
 <p>Racc needs the same compiler toolchain to be present as any Gem with a C extension. See <a href="#appendix-a-the-compiler-toolchain">Appendix A: The Compiler Toolchain</a>.</p>
 <h4 id="solution-2-avoid-installing-racc">Solution 2 - Avoid installing Racc<a class="headerlink" href="#solution-2-avoid-installing-racc" title="Permanent link">&para;</a></h4>
 <p>Ruby 3.0 comes with Racc 1.5.x as a "builtin gem", so you could update to Ruby 3!</p>
-<p>Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like <code>gem "racc", "~&gt; 1.4.0"</code> to prevent bundler from trying to upgrade.</p>
+<p>Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like <code>gem "racc", "~&gt; 1.4.0"</code> to prevent Bundler from trying to upgrade.</p>
 <h3 id="linux-usrbinld-cannot-find-lgmp">[Linux] <code>/usr/bin/ld: cannot find -lgmp</code><a class="headerlink" href="#linux-usrbinld-cannot-find-lgmp" title="Permanent link">&para;</a></h3>
 <p>If you're compiling the <code>ruby</code> platform gem, and if you've installed Ruby using RVM, <a href="https://github.com/rvm/rvm/issues/3509">you may require libgmp</a>.</p>
 <h4 id="symptoms_5">Symptoms<a class="headerlink" href="#symptoms_5" title="Permanent link">&para;</a></h4>
@@ -1929,7 +1938,7 @@ brew link xz
 gem install nokogiri -- --use-system-libraries <span class="se">\</span>
     --with-xml2-include<span class="o">=</span><span class="k">$(</span>brew --prefix libxml2<span class="k">)</span>/include/libxml2
 </code></pre></div>
-<p>or if you're using bundler:</p>
+<p>or if you're using Bundler:</p>
 <div class="highlight"><pre><span></span><code>bundle config build.nokogiri --use-system-libraries <span class="se">\</span>
     --with-xml2-include<span class="o">=</span><span class="k">$(</span>brew --prefix libxml2<span class="k">)</span>/include/libxml2
 bundle install

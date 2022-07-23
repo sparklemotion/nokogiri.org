@@ -1490,7 +1490,6 @@
 <h3 id="ask-for-help">Ask For Help<a class="headerlink" href="#ask-for-help" title="Permanent link">&para;</a></h3>
 <p>There are a few ways to ask exploratory questions:</p>
 <ul>
-<li>The Ruby Discord chat server is active at <a href="https://discord.gg/UyQnKrT">https://discord.gg/UyQnKrT</a></li>
 <li>The Nokogiri mailing list is active at <a href="https://groups.google.com/group/nokogiri-talk">https://groups.google.com/group/nokogiri-talk</a></li>
 <li>Open an issue using the "Help Request" template at <a href="https://github.com/sparklemotion/nokogiri/issues">https://github.com/sparklemotion/nokogiri/issues</a></li>
 </ul>
@@ -1533,9 +1532,12 @@
 <h3 id="supported-platforms">Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permanent link">&para;</a></h3>
 <p>Nokogiri ships pre-compiled, "native" gems for the following platforms:</p>
 <ul>
-<li>Linux: <code>x86-linux</code> and <code>x86_64-linux</code> (req: <code>glibc &gt;= 2.17</code>), including musl platforms like Alpine</li>
+<li>Linux:</li>
+<li><code>x86-linux</code> and <code>x86_64-linux</code> (req: <code>glibc &gt;= 2.17</code>)</li>
+<li><code>aarch64-linux</code> and <code>arm-linux</code> (req: <code>glibc &gt;= 2.29</code>)</li>
+<li>Note that musl platforms like Alpine <strong>are</strong> supported</li>
 <li>Darwin/MacOS: <code>x86_64-darwin</code> and <code>arm64-darwin</code></li>
-<li>Windows: <code>x86-mingw32</code> and <code>x64-mingw32</code></li>
+<li>Windows: <code>x86-mingw32</code>, <code>x64-mingw32</code>, and <code>x64-mingw-ucrt</code></li>
 <li>Java: any platform running JRuby 9.3 or higher</li>
 </ul>
 <p>To determine whether your system supports one of these gems, look at the output of <code>bundle platform</code> or <code>ruby -e 'puts Gem::Platform.local.to_s'</code>.</p>
