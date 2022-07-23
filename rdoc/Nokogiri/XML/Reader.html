@@ -105,6 +105,9 @@
 <a href="#method-i-attribute_count">#attribute_count</a>
     </li>
 <li>
+<a href="#method-i-attribute_hash">#attribute_hash</a>
+    </li>
+<li>
 <a href="#method-i-attribute_nodes">#attribute_nodes</a>
     </li>
 <li>
@@ -573,6 +576,59 @@ attribute_count(VALUE self)
 
       </div>
 
+      <div id="method-i-attribute_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-callseq">
+            attribute_hash() → Hash&lt;String ⇒ String&gt;
+          </span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Get the attributes of the current node as a Hash of names and values.</p>
+
+<p>See related: <a href="Reader.html#method-i-attributes"><code>#attributes</code></a> and <a href="Reader.html#method-i-namespaces"><code>#namespaces</code></a></p>
+
+          <div class="method-source-code" id="attribute_hash-source">
+            <pre>static VALUE
+rb_xml_reader_attribute_hash(VALUE rb_reader)
+{
+  VALUE rb_attributes = rb_hash_new();
+  xmlTextReaderPtr c_reader;
+  xmlNodePtr c_node;
+  xmlAttrPtr c_property;
+
+  Data_Get_Struct(rb_reader, xmlTextReader, c_reader);
+
+  if (!has_attributes(c_reader)) {
+    return rb_attributes;
+  }
+
+  c_node = xmlTextReaderExpand(c_reader);
+  c_property = c_node-&gt;properties;
+  while (c_property != NULL) {
+    VALUE rb_name = NOKOGIRI_STR_NEW2(c_property-&gt;name);
+    VALUE rb_value = Qnil;
+    xmlChar *c_value = xmlNodeGetContent((xmlNode *)c_property);
+
+    if (c_value) {
+      rb_value = NOKOGIRI_STR_NEW2(c_value);
+      xmlFree(c_value);
+    }
+
+    rb_hash_aset(rb_attributes, rb_name, rb_value);
+
+    c_property = c_property-&gt;next;
+  }
+
+  return rb_attributes;
+}</pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-i-attribute_nodes" class="method-detail ">
         <div class="method-heading">
           <span class="method-callseq">
@@ -582,7 +638,11 @@ attribute_count(VALUE self)
         </div>
 
         <div class="method-description">
-          <p>Get the attributes of the current node as an Array of <a href="Attr.html"><code>Attr</code></a></p>
+          <p>Get the attributes of the current node as an Array of XML:Attr</p>
+
+<p>⚠ This method is deprecated and unsafe to use. It will be removed in a future version of <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.</p>
+
+<p>See related: <a href="Reader.html#method-i-attribute_hash"><code>#attribute_hash</code></a>, <a href="Reader.html#method-i-attributes"><code>#attributes</code></a></p>
 
           <div class="method-source-code" id="attribute_nodes-source">
             <pre>static VALUE
@@ -592,6 +652,10 @@ rb_xml_reader_attribute_nodes(VALUE rb_reader)
   xmlNodePtr c_node;
   VALUE attr_nodes;
   int j;
+
+  // TODO: deprecated, remove in Nokogiri v1.15, see https://github.com/sparklemotion/nokogiri/issues/2598
+  // After removal, we can also remove all the "node_has_a_document" special handling from xml_node.c
+  NOKO_WARN_DEPRECATION("Reader#attribute_nodes is deprecated and will be removed in a future version of Nokogiri. Please use Reader#attribute_hash instead.");
 
   Data_Get_Struct(rb_reader, xmlTextReader, c_reader);
 
@@ -626,24 +690,21 @@ rb_xml_reader_attribute_nodes(VALUE rb_reader)
         </div>
 
         <div class="method-description">
-          <p>Get the attributes of the current node as a Hash</p>
+          <p>Get the attributes and namespaces of the current node as a Hash.</p>
+
+<p>This is the union of <a href="Reader.html#method-i-attribute_hash"><code>Reader#attribute_hash</code></a> and <a href="Reader.html#method-i-namespaces"><code>Reader#namespaces</code></a></p>
 <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
 <dd>
-<p>(Hash&lt;String, String&gt;) Attribute names and values</p>
+<p>(Hash&lt;String, String&gt;) Attribute names and values, and namespace prefixes and hrefs.</p>
 </dd>
 </dl>
 
           <div class="method-source-code" id="attributes-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 89</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attributes</span>
-  <span class="ruby-identifier">attrs_hash</span> = <span class="ruby-identifier">attribute_nodes</span>.<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span>, <span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_s</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">ns</span> = <span class="ruby-identifier">namespaces</span>
-  <span class="ruby-identifier">attrs_hash</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">ns</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">ns</span>
-  <span class="ruby-identifier">attrs_hash</span>
+  <span class="ruby-identifier">attribute_hash</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">namespaces</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -790,7 +851,7 @@ depth(VALUE self)
           <p>Move the cursor through the document yielding the cursor to the block</p>
 
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 100</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
   <span class="ruby-keyword">while</span> (<span class="ruby-identifier">cursor</span> = <span class="ruby-identifier">read</span>)
     <span class="ruby-keyword">yield</span> <span class="ruby-identifier">cursor</span>
