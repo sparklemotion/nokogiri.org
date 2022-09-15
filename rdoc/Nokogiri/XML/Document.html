@@ -210,15 +210,17 @@
         <dt id="NCNAME_CHAR">NCNAME_CHAR
         </dt>
 <dd>
+          
         </dd>
 <dt id="NCNAME_RE">NCNAME_RE
         </dt>
 <dd>
+          
         </dd>
 <dt id="NCNAME_START_CHAR">NCNAME_START_CHAR
         </dt>
 <dd>
-<p>See <a href="http://www.w3.org/TR/REC-xml-names/#ns-decl">www.w3.org/TR/REC-xml-names/#ns-decl</a> for more details. Note that we’re not attempting to handle unicode characters partly because libxml2 doesn’t handle unicode characters in NCNAMEs.</p>
+          <p>See <a href="http://www.w3.org/TR/REC-xml-names/#ns-decl">www.w3.org/TR/REC-xml-names/#ns-decl</a> for more details. Note that we’re not attempting to handle unicode characters partly because libxml2 doesn’t handle unicode characters in NCNAMEs.</p>
       </dd>
 </dl>
     </section>
@@ -364,11 +366,11 @@ new (int argc, VALUE *argv, VALUE klass)
 
 <p>By default, <a href="../../Nokogiri.html"><code>Nokogiri</code></a> treats documents as untrusted, and so does not attempt to load DTDs or access the network. See <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> for a complete list of options; and that module’s DEFAULT_XML constant for what’s set (and not set) by default.</p>
 
-<p><a href="../../Nokogiri.html#method-c-XML"><code>Nokogiri.XML()</code></a> is a convenience method which will call this method.</p>
+<p><a href="../../Nokogiri.html"><code>Nokogiri</code></a>.XML() is a convenience method which will call this method.</p>
 
           <div class="method-source-code" id="parse-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 48</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Integer</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">options</span>
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
 
@@ -559,7 +561,7 @@ read_memory(VALUE klass,
 <p>See also #to_java</p>
 
           <div class="method-source-code" id="wrap-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 82</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 91</span>
       </pre>
           </div>
         </div>
@@ -604,7 +606,7 @@ read_memory(VALUE klass,
             </div>
 
           <div class="method-source-code" id="add_child-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 384</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 394</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_child</span>(<span class="ruby-identifier">node_or_tags</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-string">"A document may not have multiple root nodes."</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">root</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">!=</span> <span class="ruby-string">"nokogiri_text_wrapper"</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">comment?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">processing_instruction?</span>)
 
@@ -649,6 +651,7 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
   VALUE rb_mode;
   VALUE rb_namespaces;
   VALUE rb_comments_p;
+  int c_mode = 0;
   xmlChar **c_namespaces;
 
   xmlDocPtr c_doc;
@@ -660,8 +663,16 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
   VALUE rb_io;
 
   rb_scan_args(argc, argv, "03", &amp;rb_mode, &amp;rb_namespaces, &amp;rb_comments_p);
-  if (!NIL_P(rb_mode)) { Check_Type(rb_mode, T_FIXNUM); }
-  if (!NIL_P(rb_namespaces)) { Check_Type(rb_namespaces, T_ARRAY); }
+  if (!NIL_P(rb_mode)) {
+    Check_Type(rb_mode, T_FIXNUM);
+    c_mode = NUM2INT(rb_mode);
+  }
+  if (!NIL_P(rb_namespaces)) {
+    Check_Type(rb_namespaces, T_ARRAY);
+    if (c_mode == XML_C14N_1_0 || c_mode == XML_C14N_1_1) {
+      rb_raise(rb_eRuntimeError, "This canonicalizer does not support this operation");
+    }
+  }
 
   Data_Get_Struct(self, xmlDoc, c_doc);
 
@@ -682,7 +693,7 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
     c_namespaces = NULL;
   } else {
     long ns_len = RARRAY_LEN(rb_namespaces);
-    c_namespaces = calloc((size_t)ns_len + 1, sizeof(xmlChar *));
+    c_namespaces = ruby_xcalloc((size_t)ns_len + 1, sizeof(xmlChar *));
     for (int j = 0 ; j &lt; ns_len ; j++) {
       VALUE entry = rb_ary_entry(rb_namespaces, j);
       c_namespaces[j] = (xmlChar *)StringValueCStr(entry);
@@ -690,12 +701,12 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
   }
 
   xmlC14NExecute(c_doc, c_callback_wrapper, rb_callback,
-                 (int)(NIL_P(rb_mode) ? 0 : NUM2INT(rb_mode)),
+                 c_mode,
                  c_namespaces,
                  (int)RTEST(rb_comments_p),
                  c_obuf);
 
-  free(c_namespaces);
+  ruby_xfree(c_namespaces);
   xmlOutputBufferClose(c_obuf);
 
   return rb_funcall(rb_io, rb_intern("string"), 0);
@@ -764,7 +775,7 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
 </pre>
 
           <div class="method-source-code" id="collect_namespaces-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 307</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 317</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collect_namespaces</span>
   <span class="ruby-identifier">xpath</span>(<span class="ruby-string">"//namespace::*"</span>).<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ns</span>, <span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">hash</span>[[<span class="ruby-string">"xmlns"</span>, <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">":"</span>)] = <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">href</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span> <span class="ruby-operator">!=</span> <span class="ruby-string">"xml"</span>
@@ -786,7 +797,7 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
           <p>Create a <a href="CDATA.html"><code>CDATA</code></a> <a href="Node.html"><code>Node</code></a> containing <code>string</code></p>
 
           <div class="method-source-code" id="create_cdata-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 252</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 262</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_cdata</span>(<span class="ruby-identifier">string</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">CDATA</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -806,7 +817,7 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
           <p>Create a <a href="Comment.html"><code>Comment</code></a> <a href="Node.html"><code>Node</code></a> containing <code>string</code></p>
 
           <div class="method-source-code" id="create_comment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 257</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 267</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_comment</span>(<span class="ruby-identifier">string</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Comment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -896,7 +907,7 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
 </pre>
 
           <div class="method-source-code" id="create_element-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 222</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 232</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_element</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">contents_or_attrs</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">elm</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-keyword">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">contents_or_attrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
@@ -997,7 +1008,7 @@ create_entity(int argc, VALUE *argv, VALUE self)
           <p>Create a <a href="Text.html"><code>Text</code></a> <a href="Node.html"><code>Node</code></a> with <code>string</code></p>
 
           <div class="method-source-code" id="create_text_node-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 247</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 257</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_text_node</span>(<span class="ruby-identifier">string</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1017,7 +1028,7 @@ create_entity(int argc, VALUE *argv, VALUE self)
           <p>Apply any decorators to <code>node</code></p>
 
           <div class="method-source-code" id="decorate-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 355</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 365</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">decorate</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@decorators</span>
 
@@ -1043,7 +1054,7 @@ create_entity(int argc, VALUE *argv, VALUE self)
           <p>Get the list of decorators given <code>key</code></p>
 
           <div class="method-source-code" id="decorators-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 314</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 324</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">decorators</span>(<span class="ruby-identifier">key</span>)
   <span class="ruby-ivar">@decorators</span> <span class="ruby-operator">||=</span> {}
   <span class="ruby-ivar">@decorators</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">||=</span> []
@@ -1064,7 +1075,7 @@ create_entity(int argc, VALUE *argv, VALUE self)
           <p>A reference to <code>self</code></p>
 
           <div class="method-source-code" id="document-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 267</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 277</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">document</span>
   <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1186,7 +1197,7 @@ set_encoding(VALUE self, VALUE encoding)
           <p>Create a <a href="DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code> Returns an empty fragment if <code>tags</code> is nil.</p>
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 376</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 386</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">root</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1206,7 +1217,7 @@ set_encoding(VALUE self, VALUE encoding)
           <p>The name of this document.  Always returns “document”</p>
 
           <div class="method-source-code" id="name-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 262</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 272</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">name</span>
   <span class="ruby-string">"document"</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1226,7 +1237,7 @@ set_encoding(VALUE self, VALUE encoding)
           <p>Get the hash of namespaces on the root <a href="Node.html"><code>Nokogiri::XML::Node</code></a></p>
 
           <div class="method-source-code" id="namespaces-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 369</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 379</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">namespaces</span>
   <span class="ruby-identifier">root</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">:</span> {}
 <span class="ruby-keyword">end</span></pre>
@@ -1386,7 +1397,7 @@ rb_xml_document_root_set(VALUE self, VALUE rb_new_root)
         </div>
 
         <div class="method-description">
-          <p>Explore a document with shortcut methods. See <a href="../../Nokogiri.html#method-c-Slop"><code>Nokogiri::Slop</code></a> for details.</p>
+          <p>Explore a document with shortcut methods. See Nokogiri::Slop for details.</p>
 
 <p>Note that any nodes that have been instantiated before <a href="Document.html#method-i-slop-21"><code>#slop!</code></a> is called will not be decorated with sloppy behavior. So, if you’re in irb, the preferred idiom is:</p>
 
@@ -1400,7 +1411,7 @@ irb&gt; doc.slop!
 ... which does absolutely nothing.</pre>
 
           <div class="method-source-code" id="slop-21-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 344</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 354</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">slop!</span>
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>)
     <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>
@@ -1440,7 +1451,7 @@ irb&gt; doc.slop!
 <p>See also <a href="Document.html#method-c-wrap"><code>Document.wrap</code></a></p>
 
           <div class="method-source-code" id="to_java-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 100</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 109</span>
       </pre>
           </div>
         </div>
@@ -1486,7 +1497,7 @@ url(VALUE self)
           <p>Validate this <a href="Document.html"><code>Document</code></a> against it’s <a href="DTD.html"><code>DTD</code></a>.  Returns a list of errors on the document or <code>nil</code> when there is no <a href="DTD.html"><code>DTD</code></a>.</p>
 
           <div class="method-source-code" id="validate-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 322</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 332</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">internal_subset</span>
 
@@ -1545,7 +1556,7 @@ version(VALUE self)
 <p>See XPathVisitor for more information.</p>
 
           <div class="method-source-code" id="xpath_doctype-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 404</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 414</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1564,7 +1575,7 @@ version(VALUE self)
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

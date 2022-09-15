@@ -858,6 +858,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -872,7 +879,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deprecated" class="md-nav__link">
+  <a href="#deprecated_1" class="md-nav__link">
     Deprecated
   </a>
   
@@ -1116,7 +1123,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecated_1" class="md-nav__link">
+  <a href="#deprecated_2" class="md-nav__link">
     Deprecated
   </a>
   
@@ -1292,7 +1299,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecated_2" class="md-nav__link">
+  <a href="#deprecated_3" class="md-nav__link">
     Deprecated
   </a>
   
@@ -3875,6 +3882,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3889,7 +3903,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deprecated" class="md-nav__link">
+  <a href="#deprecated_1" class="md-nav__link">
     Deprecated
   </a>
   
@@ -4133,7 +4147,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecated_1" class="md-nav__link">
+  <a href="#deprecated_2" class="md-nav__link">
     Deprecated
   </a>
   
@@ -4309,7 +4323,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deprecated_2" class="md-nav__link">
+  <a href="#deprecated_3" class="md-nav__link">
     Deprecated
   </a>
   
@@ -6669,6 +6683,9 @@
 <p>This version of Nokogiri uses <a href="https://github.com/mkristian/jar-dependencies"><code>jar-dependencies</code></a> to manage most of the vendored Java dependencies. <code>nokogiri -v</code> now outputs maven metadata for all Java dependencies, and <code>Nokogiri::VERSION_INFO</code> also contains this metadata. [<a href="https://github.com/sparklemotion/nokogiri/issues/2432">#2432</a>]</p>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
 <ul>
+<li>[CRuby] Vendored libxml2 is updated to <a href="https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.10.2">v2.10.2</a></li>
+<li>[CRuby] Vendored libxslt is updated to <a href="https://gitlab.gnome.org/GNOME/libxslt/-/releases/v1.1.37">v1.1.37</a>.</li>
+<li>[CRuby] Vendored libiconv is updated to <a href="https://savannah.gnu.org/forum/forum.php?forum_id=10175">v1.17</a></li>
 <li>[JRuby] HTML parsing is now provided <code>net.sourceforge.htmlunit:neko-htmlunit:2.61.0</code> (previously was a fork of <code>org.cyberneko.html:nekohtml</code>)</li>
 <li>[JRuby] Vendored Jing is updated from <code>com.thaiopensource:jing:20091111</code> to <code>nu.validator:jing:20200702VNU</code>.</li>
 <li>[JRuby] New dependency on <code>net.sf.saxon:Saxon-HE:9.6.0-4</code> (via <code>nu.validator:jing:20200702VNU</code>).</li>
@@ -6676,18 +6693,22 @@
 <h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] The HTML5 parser handles the <a href="https://github.com/whatwg/html/pull/7320">new <code>search</code> element</a>. <a href="https://github.com/sparklemotion/nokogiri/issues/2566">#2566</a></li>
+<li>[CRuby] Invocation of custom XPath or CSS handler functions may now use the <code>nokogiri</code> namespace prefix. Historically, the JRuby implementation <em>required</em> this namespace but the CRuby implementation did not support it. It's recommended that all XPath and CSS queries use the <code>nokogiri</code> namespace going forward. Invocation without the namespace is planned for deprecation in v1.15.0 and removal in a future release. [<a href="https://github.com/sparklemotion/nokogiri/issues/2147">#2147</a>]</li>
 </ul>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
+<li><code>SAX::Parser</code>'s <code>encoding</code> attribute will not be clobbered when an alternative encoding is passed into <code>SAX::Parser#parse_io</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/1942">#1942</a>] (Thanks, <a href="https://github.com/kp666">@kp666</a>!)</li>
 <li>[CRuby] UTF-16-encoded documents longer than ~4000 code points now serialize properly. Previously the serialized document was corrupted when it exceeded the length of libxml2's internal string buffer. [<a href="https://github.com/sparklemotion/nokogiri/issues/752">#752</a>]</li>
 <li>[CRuby] The HTML5 parser now correctly handles text at the end of <code>form</code> elements.</li>
 <li>[CRuby] <code>HTML5::Document#fragment</code> now always uses <code>body</code> as the parsing context. Previously, fragments were parsed in the context of the associated document's root node, which allowed for inconsistent parsing. [<a href="https://github.com/sparklemotion/nokogiri/issues/2553">#2553</a>]</li>
 <li>[CRuby] <code>Nokogiri::HTML5::Document#url</code> now correctly returns the URL passed to the constructor method. Previously it always returned <code>nil</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/2583">#2583</a>]</li>
 <li>[JRuby] Fixed a bug with adding the same namespace to multiple nodes via <code>#add_namespace_definition</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/1247">#1247</a>]</li>
+<li>[JRuby] <code>NodeSet#[]</code> now raises a TypeError if passed an invalid parameter type. [<a href="https://github.com/sparklemotion/nokogiri/issues/2211">#2211</a>]</li>
 </ul>
 <h3 id="improved">Improved<a class="headerlink" href="#improved" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Serialization of HTML5 documents and fragments has been re-implemented and is ~10x faster than previous versions. [<a href="https://github.com/sparklemotion/nokogiri/issues/2596">#2596</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2569">#2569</a>]</li>
+<li>Parsing of HTML5 documents is ~90% faster thanks to additional compiler optimizations being applied. [<a href="https://github.com/sparklemotion/nokogiri/issues/2639">#2639</a>]</li>
 <li><code>Document#canonicalize</code> now raises an exception if <code>inclusive_namespaces</code> is non-nil and the mode is inclusive, i.e. XML_C14N_1_0 or XML_C14N_1_1. <code>inclusive_namespaces</code> can only be passed with exclusive modes, and previously this silently failed.</li>
 <li>Compare <code>Encoding</code> objects rather than compare their names. This is a slight performance improvement and is future-proof. [<a href="https://github.com/sparklemotion/nokogiri/issues/2454">#2454</a>] (Thanks, <a href="https://github.com/casperisfine">@casperisfine</a>!)</li>
 <li>Avoid compile-time conflict with system-installed <code>gumbo.h</code> on OpenBSD. [<a href="https://github.com/sparklemotion/nokogiri/issues/2464">#2464</a>]</li>
@@ -6695,8 +6716,12 @@
 <li>Prefer <code>ruby_xmalloc</code> to <code>malloc</code> within the C extension. [<a href="https://github.com/sparklemotion/nokogiri/issues/2480">#2480</a>] (Thanks, <a href="https://github.com/Garfield96">@Garfield96</a>!)</li>
 <li>Installation from source on systems missing libiconv will once again generate a helpful error message (broken since v1.11.0). [<a href="https://github.com/sparklemotion/nokogiri/issues/2505">#2505</a>]</li>
 </ul>
-<h2 id="1138-2022-07-23">1.13.8 / 2022-07-23<a class="headerlink" href="#1138-2022-07-23" title="Permanent link">&para;</a></h2>
 <h3 id="deprecated">Deprecated<a class="headerlink" href="#deprecated" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Nokogiri.install_default_aliases</code> is deprecated in favor of <code>Nokogiri::EncodingHandler.install_default_aliases</code>. This is part of a private API and is probably not called by anybody, but we'll go through a deprecation cycle before removal anyway. [<a href="https://github.com/sparklemotion/nokogiri/issues/2643">#2643</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2446">#2446</a>]</li>
+</ul>
+<h2 id="1138-2022-07-23">1.13.8 / 2022-07-23<a class="headerlink" href="#1138-2022-07-23" title="Permanent link">&para;</a></h2>
+<h3 id="deprecated_1">Deprecated<a class="headerlink" href="#deprecated_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>XML::Reader#attribute_nodes</code> is deprecated due to incompatibility between libxml2's <code>xmlReader</code> memory semantics and Ruby's garbage collector. Although this method continues to exist for backwards compatibility, it is unsafe to call and may segfault. This method will be removed in a future version of Nokogiri, and callers should use <code>#attribute_hash</code> instead. [<a href="https://github.com/sparklemotion/nokogiri/issues/2598">#2598</a>]</li>
 </ul>
@@ -6820,7 +6845,7 @@
 <li>[JRuby] Deleting a <code>Namespace</code> from a <code>NodeSet</code> no longer modifies the <code>href</code> to be the default namespace URL.</li>
 <li>[JRuby] Fix XHTML formatting of closing tags for non-container elements. [<a href="https://github.com/sparklemotion/nokogiri/issues/2355">#2355</a>]</li>
 </ul>
-<h3 id="deprecated_1">Deprecated<a class="headerlink" href="#deprecated_1" title="Permanent link">&para;</a></h3>
+<h3 id="deprecated_2">Deprecated<a class="headerlink" href="#deprecated_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Passing a <code>Nokogiri::XML::Node</code> as the second parameter to <code>Node.new</code> is deprecated and will generate a warning. This parameter should be a kind of <code>Nokogiri::XML::Document</code>. This will become an error in a future version of Nokogiri. [<a href="https://github.com/sparklemotion/nokogiri/issues/975">#975</a>]</li>
 <li><code>Nokogiri::CSS::Parser</code>, <code>Nokogiri::CSS::Tokenizer</code>, and <code>Nokogiri::CSS::Node</code> are now internal-only APIs that are no longer documented, and should not be considered stable. With the introduction of <code>XPathVisitor</code> injection into <code>Nokogiri::CSS.xpath_for</code> there should be no reason to rely on these internal APIs.</li>
@@ -6903,7 +6928,7 @@
 <ul>
 <li>[CRuby] Speed up (slightly) the compile time of packaged libraries <code>libiconv</code>, <code>libxml2</code>, and <code>libxslt</code> by using autoconf's <code>--disable-dependency-tracking</code> option. ("ruby" platform gem only.)</li>
 </ul>
-<h3 id="deprecated_2">Deprecated<a class="headerlink" href="#deprecated_2" title="Permanent link">&para;</a></h3>
+<h3 id="deprecated_3">Deprecated<a class="headerlink" href="#deprecated_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Deprecating Nokogumbo's <code>Nokogiri::HTML5.get</code>. This method will be removed in a future version of Nokogiri.</li>
 </ul>

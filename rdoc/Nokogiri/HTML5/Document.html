@@ -92,9 +92,6 @@
 <a href="#method-i-fragment">#fragment</a>
     </li>
 <li>
-<a href="#method-i-to_xml">#to_xml</a>
-    </li>
-<li>
 <a href="#method-i-xpath_doctype">#xpath_doctype</a>
   </li>
 </ul>
@@ -120,6 +117,21 @@
 
 
 
+    <section class="attribute-method-details">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">url</span><span class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Get the url name for this document, as passed into <a href="Document.html#method-c-parse"><code>Document.parse</code></a>, <a href="Document.html#method-c-read_io"><code>Document.read_io</code></a>, or <a href="Document.html#method-c-read_memory"><code>Document.read_memory</code></a></p>
+        </div>
+      </div>
+    </section>
 
 
      <section id="public-class-5Buntitled-5D-method-details" class="method-section">
@@ -129,20 +141,63 @@
 
       <div id="method-c-parse" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">parse</span><span class="method-args">(string_or_io, url = nil, encoding = nil, **options) { |options| ... }</span>
+          <span class="method-callseq">
+            parse(input)
+          </span>
           <span class="method-click-advice">click to toggle source</span>
+        </div>
+        <div class="method-heading">
+          <span class="method-callseq">
+            parse(input, url=nil, encoding=nil, **options)
+          </span>
+        </div>
+        <div class="method-heading">
+          <span class="method-callseq">
+            parse(input, url=nil, encoding=nil) { |options| ... }
+          </span>
         </div>
 
         <div class="method-description">
-          
+          <p>Parse <a href="../HTML5.html"><code>HTML5</code></a> input.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul>
+<li>
+<p><code>input</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO.</p>
+</li>
+<li>
+<p><code>url</code> (optional) is a String indicating the canonical URI where this document is located.</p>
+</li>
+<li>
+<p><code>encoding</code> (optional) is the encoding that should be used when processing the document.</p>
+</li>
+<li>
+<p><code>options</code> (optional) is a configuration Hash (or keyword arguments) to set options during parsing. The three currently supported options are <code>:max_errors</code>, <code>:max_tree_depth</code> and <code>:max_attributes</code>, described at <a href="../HTML5.html"><code>Nokogiri::HTML5</code></a>.</p>
+
+<p>⚠ Note that these options are different than those made available by <a href="../XML/Document.html"><code>Nokogiri::XML::Document</code></a> and <a href="../HTML4/Document.html"><code>Nokogiri::HTML4::Document</code></a>.</p>
+</li>
+<li>
+<p><code>block</code> (optional) is passed a configuration Hash on which parse options may be set. See <a href="../HTML5.html"><code>Nokogiri::HTML5</code></a> for more information and usage.</p>
+</li>
+</ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="Document.html"><code>Nokogiri::HTML5::Document</code></a></p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 28</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
   <span class="ruby-identifier">string_or_io</span> = <span class="ruby-string">""</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string_or_io</span>
 
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:encoding</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">!=</span> <span class="ruby-string">"ASCII-8BIT"</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:encoding</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">encoding</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">ASCII_8BIT</span>
     <span class="ruby-identifier">encoding</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span>
   <span class="ruby-keyword">end</span>
 
@@ -168,11 +223,13 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Create a new document from an IO object.</p>
+
+<p>💡 Most users should prefer <a href="Document.html#method-c-parse"><code>Document.parse</code></a> to this method.</p>
 
           <div class="method-source-code" id="read_io-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 46</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">read_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"io object doesn't respond to :read"</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>)
 
   <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
@@ -190,11 +247,13 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Create a new document from a String.</p>
+
+<p>💡 Most users should prefer <a href="Document.html#method-c-parse"><code>Document.parse</code></a> to this method.</p>
 
           <div class="method-source-code" id="read_memory-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 52</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">read_memory</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_memory</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"string object doesn't respond to :to_str"</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
 
   <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
@@ -214,39 +273,39 @@
 
       <div id="method-i-fragment" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">fragment</span><span class="method-args">(tags = nil)</span>
+          <span class="method-callseq">
+            fragment() → Nokogiri::HTML5::DocumentFragment
+          </span>
           <span class="method-click-advice">click to toggle source</span>
+        </div>
+        <div class="method-heading">
+          <span class="method-callseq">
+            fragment(markup) → Nokogiri::HTML5::DocumentFragment
+          </span>
         </div>
 
         <div class="method-description">
-          
+          <p>Parse a <a href="../HTML5.html"><code>HTML5</code></a> document fragment from <code>markup</code>, returning a <a href="DocumentFragment.html"><code>Nokogiri::HTML5::DocumentFragment</code></a>.</p>
+<dl class="rdoc-list label-list">
+<dt>Properties
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>markup</code> (String) The <a href="../HTML5.html"><code>HTML5</code></a> markup fragment to be parsed</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="DocumentFragment.html"><code>Nokogiri::HTML5::DocumentFragment</code></a>. This object’s children will be empty if ‘markup` is not passed, is empty, or is `nil`.</p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 58</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>)
-  <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">root</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-to_xml" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">to_xml</span><span class="method-args">(options = {}, &amp;block)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="to_xml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 62</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xml</span>(<span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-comment"># Bypass XML::Document#to_xml which doesn't add</span>
-  <span class="ruby-comment"># XML::Node::SaveOptions::AS_XML like XML::Node#to_xml does.</span>
-  <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">instance_method</span>(<span class="ruby-value">:to_xml</span>).<span class="ruby-identifier">bind</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">call</span>(<span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">markup</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">markup</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -271,10 +330,10 @@
 </dd>
 </dl>
 
-<p>See XPathVisitor for more information.</p>
+<p>See <a href="../CSS/XPathVisitor.html"><code>CSS::XPathVisitor</code></a> for more information.</p>
 
           <div class="method-source-code" id="xpath_doctype-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 74</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>
 <span class="ruby-keyword">end</span></pre>
@@ -293,7 +352,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

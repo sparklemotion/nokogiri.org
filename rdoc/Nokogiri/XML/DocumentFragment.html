@@ -270,7 +270,7 @@ new (int argc, VALUE *argv, VALUE klass)
 <p>For more information see <a href="Searchable.html#method-i-css"><code>Nokogiri::XML::Searchable#css</code></a></p>
 
           <div class="method-source-code" id="css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 105</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 101</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">any?</span>
     <span class="ruby-identifier">children</span>.<span class="ruby-identifier">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) <span class="ruby-comment"># 'children' is a smell here</span>
@@ -319,7 +319,7 @@ new (int argc, VALUE *argv, VALUE klass)
           <p>A list of <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> found when parsing a document</p>
 
           <div class="method-source-code" id="errors-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 139</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 135</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">errors</span>
   <span class="ruby-identifier">document</span>.<span class="ruby-identifier">errors</span>
 <span class="ruby-keyword">end</span></pre>
@@ -339,7 +339,7 @@ new (int argc, VALUE *argv, VALUE klass)
           
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 147</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">data</span>)
   <span class="ruby-identifier">document</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-identifier">data</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -383,7 +383,7 @@ new (int argc, VALUE *argv, VALUE klass)
 <p>For more information see <a href="Searchable.html#method-i-search"><code>Nokogiri::XML::Searchable#search</code></a></p>
 
           <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 124</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 120</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">rules</span>)
   <span class="ruby-identifier">rules</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">rules</span>)
 
@@ -431,9 +431,7 @@ new (int argc, VALUE *argv, VALUE klass)
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-constant">Nokogiri</span>.<span class="ruby-identifier">jruby?</span>
     <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> {}
-    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>]
-      <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] = <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_DECLARATION</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_EMPTY_TAGS</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">AS_HTML</span>
-    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>
     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">options</span>)
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -477,13 +475,11 @@ new (int argc, VALUE *argv, VALUE klass)
           <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to xhtml See <a href="NodeSet.html#method-i-to_xhtml"><code>Nokogiri::XML::NodeSet#to_xhtml</code></a></p>
 
           <div class="method-source-code" id="to_xhtml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 80</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-constant">Nokogiri</span>.<span class="ruby-identifier">jruby?</span>
     <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> {}
-    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>]
-      <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] = <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_DECLARATION</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_EMPTY_TAGS</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">AS_XHTML</span>
-    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XHTML</span>
     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">options</span>)
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -504,7 +500,7 @@ new (int argc, VALUE *argv, VALUE klass)
           <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to xml See <a href="NodeSet.html#method-i-to_xml"><code>Nokogiri::XML::NodeSet#to_xml</code></a></p>
 
           <div class="method-source-code" id="to_xml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 94</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -523,7 +519,7 @@ new (int argc, VALUE *argv, VALUE klass)
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>
