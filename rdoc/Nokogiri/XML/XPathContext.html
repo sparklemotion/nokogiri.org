@@ -151,7 +151,6 @@ new (VALUE klass, VALUE nodeobj)
   ctx = xmlXPathNewContext(node-&gt;doc);
   ctx-&gt;node = node;
 
-  xmlXPathRegisterNs(ctx, NOKOGIRI_PREFIX, NOKOGIRI_URI);
   xmlXPathRegisterNs(ctx, NOKOGIRI_BUILTIN_PREFIX, NOKOGIRI_BUILTIN_URI);
   xmlXPathRegisterFuncNS(ctx, (const xmlChar *)"css-class", NOKOGIRI_BUILTIN_URI,
                          xpath_builtin_css_class);

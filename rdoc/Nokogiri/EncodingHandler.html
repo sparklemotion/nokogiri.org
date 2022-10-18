@@ -92,9 +92,6 @@
 <a href="#method-c-delete">::delete</a>
     </li>
 <li>
-<a href="#method-c-install_default_aliases">::install_default_aliases</a>
-    </li>
-<li>
 <a href="#method-i-name">#name</a>
   </li>
 </ul>
@@ -115,18 +112,6 @@
   <section id="5Buntitled-5D" class="documentation-section">
 
 
-    <section class="constants-list">
-      <header>
-        <h3>Constants</h3>
-      </header>
-      <dl>
-        <dt id="USEFUL_ALIASES">USEFUL_ALIASES
-        </dt>
-<dd>
-          <p>Popular encoding aliases not known by all iconv implementations that <a href="../Nokogiri.html"><code>Nokogiri</code></a> should support.</p>
-      </dd>
-</dl>
-    </section>
 
 
 
@@ -168,13 +153,13 @@ rb_xml_encoding_handler_s_get(VALUE klass, VALUE key)
       <div id="method-c-alias" class="method-detail ">
         <div class="method-heading">
           <span class="method-callseq">
-            Nokogiri::EncodingHandler.alias(real_name, alias_name)
+            Nokogiri::EncodingHandler.alias(from, to)
           </span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
-          <p>Alias encoding handler with name <code>real_name</code> to name <code>alias_name</code></p>
+          <p>Alias encoding handler with name <code>from</code> to name <code>to</code></p>
 
           <div class="method-source-code" id="alias-source">
             <pre>static VALUE
@@ -234,28 +219,6 @@ rb_xml_encoding_handler_s_delete(VALUE klass, VALUE name)
 
   return Qtrue;
 }</pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-c-install_default_aliases" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">install_default_aliases</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="install_default_aliases-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/encoding_handler.rb, line 15</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">install_default_aliases</span>
-  <span class="ruby-constant">USEFUL_ALIASES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">alias_name</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
-    <span class="ruby-constant">EncodingHandler</span>.<span class="ruby-identifier">alias</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">alias_name</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">EncodingHandler</span>[<span class="ruby-identifier">alias_name</span>].<span class="ruby-identifier">nil?</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
           </div>
         </div>
 

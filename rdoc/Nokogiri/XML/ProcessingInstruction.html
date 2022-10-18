@@ -82,7 +82,7 @@
     <li>
 <a href="#method-c-new">::new</a>
     </li>
-<li class="calls-super">
+<li>
 <a href="#method-c-new">::new</a>
   </li>
 </ul>
@@ -169,15 +169,10 @@ new (int argc, VALUE *argv, VALUE klass)
 
         <div class="method-description">
           
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
 
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/processing_instruction.rb, line 6</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">content</span>)
-  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">content</span>) <span class="ruby-comment"># rubocop:disable Style/RedundantInitialize</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

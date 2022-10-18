@@ -120,7 +120,7 @@
 <p>To specify the type of document, use {Nokogiri.XML}, {Nokogiri.HTML4}, or {Nokogiri.HTML5}.</p>
 
           <div class="method-source-code" id="Nokogiri-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri.rb, line 100</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-constant">Nokogiri</span>(<span class="ruby-operator">*</span><span class="ruby-identifier ruby-title">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
     <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>).<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>
