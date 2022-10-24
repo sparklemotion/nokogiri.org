@@ -455,7 +455,7 @@ bundle lock --add-platform x86_64-linux
 bundle package --all-platforms
 ```
 
-For more information, please read [this wonderful blog post](https://blog.thegnar.co/caching-all-native-gem-platforms) written by Kevin Murphy explaining this approach.
+For more information, please read [this wonderful blog post](https://kevinjmurphy.com/posts/caching-all-native-gem-platforms/) written by Kevin Murphy explaining this approach.
 
 
 #### Fallback Solution
