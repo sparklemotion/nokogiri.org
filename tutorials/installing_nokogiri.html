@@ -1774,7 +1774,7 @@ gem install nokogiri -- <span class="se">\</span>
 bundle lock --add-platform x86_64-linux
 bundle package --all-platforms
 </code></pre></div>
-<p>For more information, please read <a href="https://blog.thegnar.co/caching-all-native-gem-platforms">this wonderful blog post</a> written by Kevin Murphy explaining this approach.</p>
+<p>For more information, please read <a href="https://kevinjmurphy.com/posts/caching-all-native-gem-platforms/">this wonderful blog post</a> written by Kevin Murphy explaining this approach.</p>
 <h4 id="fallback-solution">Fallback Solution<a class="headerlink" href="#fallback-solution" title="Permanent link">&para;</a></h4>
 <p>If you can't upgrade to Bundler <code>&gt;= 2.2</code>, you can force older versions to always use the <code>ruby</code> platform, which supports all platforms, but applies to <em>all</em> gems and comes with the installation challenges mentioned earlier in this guide.</p>
 <p>Here's how to do this with Bundler <code>&gt;= 2.1</code>:</p>
