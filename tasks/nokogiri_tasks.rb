@@ -31,11 +31,7 @@ def create_nokogiri_tasks(source_dir, dest_dir)
     end
 
     file(dest_path => source_path) do
-      if dest_file == "index.md"
-        inject_tidelift_cta(source_path, dest_path)
-      else
-        FileUtils.cp(source_path, dest_path, verbose: true)
-      end
+      FileUtils.cp(source_path, dest_path, verbose: true)
       modify_readme_links(dest_path)
     end
   end
@@ -141,21 +137,4 @@ def modify_readme_links(dest_path)
     puts "→ repointing a README.md link in #{dest_path}"
     File.open(dest_path, "w") { |f| f.write(modified_contents) }
   end
-end
-
-def inject_tidelift_cta(source_path, dest_path)
-  puts "→ adding tidelift cta into #{source_path} → #{dest_path}"
-  File.open(dest_path, "w") do |dest_fd|
-    dest_fd.write(tidelift_cta)
-    dest_fd.puts
-    dest_fd.write(File.read(source_path))
-  end
-end
-
-def tidelift_cta
-  <<~EOHTML
-    <a class="tidelift tidelift-top" href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=website" target="_blank">
-      Get support for Nokogiri with a Tidelift subscription
-    </a>
-  EOHTML
 end
