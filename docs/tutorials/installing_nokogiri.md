@@ -100,7 +100,7 @@ You may substitute `git` for `patch` (`mini_portile2` can use either for applyin
 #### Fedora, Red Hat, and CentOS
 
 ``` sh
-dnf install -y zlib-devel
+dnf install -y zlib-devel xz patch
 gem install nokogiri --platform=ruby
 ```
 
