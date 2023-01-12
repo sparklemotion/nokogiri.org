@@ -92,6 +92,9 @@
 <a href="#method-c-delete">::delete</a>
     </li>
 <li>
+<a href="#method-c-install_default_aliases">::install_default_aliases</a>
+    </li>
+<li>
 <a href="#method-i-name">#name</a>
   </li>
 </ul>
@@ -112,6 +115,18 @@
   <section id="5Buntitled-5D" class="documentation-section">
 
 
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="USEFUL_ALIASES">USEFUL_ALIASES
+        </dt>
+<dd>
+          <p>Popular encoding aliases not known by all iconv implementations that <a href="../Nokogiri.html"><code>Nokogiri</code></a> should support.</p>
+      </dd>
+</dl>
+    </section>
 
 
 
@@ -121,11 +136,13 @@
        </header>
 
       <div id="method-c-5B-5D" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            Nokogiri::EncodingHandler.[](name)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              Nokogiri::EncodingHandler.[](name)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -151,15 +168,17 @@ rb_xml_encoding_handler_s_get(VALUE klass, VALUE key)
       </div>
 
       <div id="method-c-alias" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            Nokogiri::EncodingHandler.alias(from, to)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              Nokogiri::EncodingHandler.alias(real_name, alias_name)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
-          <p>Alias encoding handler with name <code>from</code> to name <code>to</code></p>
+          <p>Alias encoding handler with name <code>real_name</code> to name <code>alias_name</code></p>
 
           <div class="method-source-code" id="alias-source">
             <pre>static VALUE
@@ -176,11 +195,13 @@ rb_xml_encoding_handler_s_alias(VALUE klass, VALUE from, VALUE to)
       </div>
 
       <div id="method-c-clear_aliases-21" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            Nokogiri::EncodingHandler.clear_aliases!
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              Nokogiri::EncodingHandler.clear_aliases!
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -201,11 +222,13 @@ rb_xml_encoding_handler_s_clear_aliases(VALUE klass)
       </div>
 
       <div id="method-c-delete" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            Nokogiri::EncodingHandler.delete(name)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              Nokogiri::EncodingHandler.delete(name)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -225,6 +248,30 @@ rb_xml_encoding_handler_s_delete(VALUE klass, VALUE name)
 
       </div>
 
+      <div id="method-c-install_default_aliases" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">install_default_aliases</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="install_default_aliases-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/encoding_handler.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">install_default_aliases</span>
+  <span class="ruby-constant">USEFUL_ALIASES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">alias_name</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">EncodingHandler</span>.<span class="ruby-identifier">alias</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">alias_name</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">EncodingHandler</span>[<span class="ruby-identifier">alias_name</span>].<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
     </section>
 
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
@@ -233,11 +280,13 @@ rb_xml_encoding_handler_s_delete(VALUE klass, VALUE name)
        </header>
 
       <div id="method-i-name" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            name
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              name
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -268,7 +317,7 @@ rb_xml_encoding_handler_name(VALUE self)
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

@@ -694,9 +694,11 @@
        </header>
 
       <div id="method-i-block-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">block?</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">block?</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -714,19 +716,20 @@
       </div>
 
       <div id="method-i-default_sub_element" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">default_sub_element</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">default_sub_element</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="default_sub_element-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 62</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_sub_element</span>
-  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
-  <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">defaultsubelt</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">default_desc</span>&amp;.<span class="ruby-identifier">defaultsubelt</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -735,19 +738,20 @@
       </div>
 
       <div id="method-i-deprecated-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">deprecated?</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">deprecated?</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="deprecated-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deprecated?</span>
-  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
-  <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">depr</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">default_desc</span>&amp;.<span class="ruby-identifier">depr</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -756,16 +760,18 @@
       </div>
 
       <div id="method-i-deprecated_attributes" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">deprecated_attributes</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">deprecated_attributes</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="deprecated_attributes-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 76</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deprecated_attributes</span>
   <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
   <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">attrs_depr</span> <span class="ruby-operator">:</span> []
@@ -777,19 +783,20 @@
       </div>
 
       <div id="method-i-description" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">description</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">description</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="description-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 55</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">description</span>
-  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
-  <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">desc</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">default_desc</span>&amp;.<span class="ruby-identifier">desc</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -798,19 +805,20 @@
       </div>
 
       <div id="method-i-implied_end_tag-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">implied_end_tag?</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">implied_end_tag?</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="implied_end_tag-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 34</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">implied_end_tag?</span>
-  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
-  <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">endTag</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">default_desc</span>&amp;.<span class="ruby-identifier">endTag</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -819,9 +827,11 @@
       </div>
 
       <div id="method-i-implied_start_tag-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">implied_start_tag?</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">implied_start_tag?</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -830,8 +840,7 @@
           <div class="method-source-code" id="implied_start_tag-3F-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">implied_start_tag?</span>
-  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
-  <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">startTag</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">default_desc</span>&amp;.<span class="ruby-identifier">startTag</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -840,9 +849,11 @@
       </div>
 
       <div id="method-i-inspect" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">inspect</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">inspect</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -860,16 +871,18 @@
       </div>
 
       <div id="method-i-optional_attributes" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">optional_attributes</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">optional_attributes</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="optional_attributes-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 69</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">optional_attributes</span>
   <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
   <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">attrs_opt</span> <span class="ruby-operator">:</span> []
@@ -881,16 +894,18 @@
       </div>
 
       <div id="method-i-required_attributes" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">required_attributes</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">required_attributes</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="required_attributes-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 83</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">required_attributes</span>
   <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
   <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">attrs_req</span> <span class="ruby-operator">:</span> []
@@ -902,19 +917,20 @@
       </div>
 
       <div id="method-i-save_end_tag-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">save_end_tag?</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">save_end_tag?</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="save_end_tag-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 41</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/element_description_defaults.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save_end_tag?</span>
-  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">default_desc</span>
-  <span class="ruby-identifier">d</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">saveEndTag</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">default_desc</span>&amp;.<span class="ruby-identifier">saveEndTag</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -923,9 +939,11 @@
       </div>
 
       <div id="method-i-to_s" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">to_s</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -951,7 +969,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

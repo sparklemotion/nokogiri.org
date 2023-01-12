@@ -1093,27 +1093,27 @@ doesn't bother to close tags. I'm talking about putting <code>&lt;p&gt;</code> t
 inside <code>&lt;p&gt;</code> tags, and putting content into an <code>&lt;img&gt;</code> tag.</p>
 <p>Nokogiri corrects bad markup <a href="http://knowyourmeme.com/memes/like-a-boss">like a boss</a>, similarly to how a browser
 would before rendering.</p>
-<div class="highlight"><pre><span></span><code><span class="n">badly_formed</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="dl">EOXML</span>
+<div class="highlight"><pre><span></span><code><span class="n">badly_formed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="dl">EOXML</span>
 <span class="sh">&lt;root&gt;</span>
 <span class="sh">  &lt;open&gt;foo</span>
 <span class="sh">    &lt;closed&gt;bar&lt;/closed&gt;</span>
 <span class="sh">&lt;/root&gt;</span>
 <span class="dl">EOXML</span>
 
-<span class="n">bad_doc</span>  <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span> <span class="n">badly_formed</span>
+<span class="n">bad_doc</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="w"> </span><span class="n">badly_formed</span>
 
-<span class="nb">puts</span> <span class="n">bad_doc</span>         <span class="c1"># =&gt; &lt;?xml version=&quot;1.0&quot;?&gt;</span>
-                     <span class="c1">#    &lt;root&gt;</span>
-                     <span class="c1">#      &lt;open&gt;foo</span>
-                     <span class="c1">#        &lt;closed&gt;bar&lt;/closed&gt;</span>
-                     <span class="c1">#    &lt;/open&gt;  </span>
-                     <span class="c1">#    &lt;/root&gt;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">bad_doc</span><span class="w">         </span><span class="c1"># =&gt; &lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="w">                     </span><span class="c1">#    &lt;root&gt;</span>
+<span class="w">                     </span><span class="c1">#      &lt;open&gt;foo</span>
+<span class="w">                     </span><span class="c1">#        &lt;closed&gt;bar&lt;/closed&gt;</span>
+<span class="w">                     </span><span class="c1">#    &lt;/open&gt;  </span>
+<span class="w">                     </span><span class="c1">#    &lt;/root&gt;</span>
 </code></pre></div>
 <p>And Nokogiri will even keep track of what the errors were, if the
 parse option NOERRORS and NOWARNINGS are turned off (the default for
 XML documents).</p>
-<div class="highlight"><pre><span></span><code><span class="nb">puts</span> <span class="n">bad_doc</span><span class="o">.</span><span class="n">errors</span>  <span class="c1"># =&gt; Opening and ending tag mismatch: open line 2 and root</span>
-                     <span class="c1">#    Premature end of data in tag root line 1</span>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">bad_doc</span><span class="o">.</span><span class="n">errors</span><span class="w">  </span><span class="c1"># =&gt; Opening and ending tag mismatch: open line 2 and root</span>
+<span class="w">                     </span><span class="c1">#    Premature end of data in tag root line 1</span>
 </code></pre></div>
 <p>Thus, you could use <code>errors.empty?</code> to determine whether the document was well-formed.</p>
 <h2 id="strict-well-formedness">Strict Well-Formedness<a class="headerlink" href="#strict-well-formedness" title="Permanent link">&para;</a></h2>
@@ -1123,9 +1123,9 @@ you need to be a <a href="http://en.wikipedia.org/wiki/The_Soup_Nazi">Markup Naz
 Nokogiri into "strict" parsing mode, in which it will raise an
 exception at the first sign of malformedness:</p>
 <div class="highlight"><pre><span></span><code><span class="k">begin</span>
-  <span class="n">bad_doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">badly_formed</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span> <span class="n">config</span><span class="o">.</span><span class="n">strict</span> <span class="p">}</span>
-<span class="k">rescue</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">SyntaxError</span> <span class="o">=&gt;</span> <span class="n">e</span>
-  <span class="nb">puts</span> <span class="s2">&quot;caught exception: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="n">bad_doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">badly_formed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">config</span><span class="o">|</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">strict</span><span class="w"> </span><span class="p">}</span>
+<span class="k">rescue</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">SyntaxError</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;caught exception: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span>
 <span class="c1"># =&gt; caught exception: Premature end of data in tag root line 1</span>
 </code></pre></div>

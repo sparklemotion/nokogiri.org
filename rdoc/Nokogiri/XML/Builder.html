@@ -63,33 +63,48 @@
 <div class="nav-section">
   <h3>Table of Contents</h3>
 
+
+
   <ul class="link-list" role="directory">
-    <li>
-<a href="#class-Nokogiri::XML::Builder-label-Synopsis-3A">Synopsis:</a>
-    </li>
+              <li>
+            <details open>
+              <summary>      <a href="#class-Nokogiri::XML::Builder-label-Synopsis-3A">Synopsis:</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#class-Nokogiri::XML::Builder-label-Builder+scope">Builder scope</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>      <a href="#class-Nokogiri::XML::Builder-label-Special+Tags">Special Tags</a>
+          </li>
 <li>
-<a href="#class-Nokogiri::XML::Builder-label-Builder+scope">Builder scope</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::Builder-label-Special+Tags">Special Tags</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::Builder-label-Tag+Attributes">Tag Attributes</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::Builder-label-Tag+Attribute+Short+Cuts">Tag Attribute Short Cuts</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::Builder-label-Namespaces">Namespaces</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::Builder-label-Referencing+declared+namespaces">Referencing declared namespaces</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::Builder-label-Namespace+inheritance">Namespace inheritance</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::Builder-label-Document+Types">Document Types</a>
+            <details open>
+              <summary>      <a href="#class-Nokogiri::XML::Builder-label-Tag+Attributes">Tag Attributes</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#class-Nokogiri::XML::Builder-label-Tag+Attribute+Short+Cuts">Tag Attribute Short Cuts</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>
+            <details open>
+              <summary>      <a href="#class-Nokogiri::XML::Builder-label-Namespaces">Namespaces</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#class-Nokogiri::XML::Builder-label-Referencing+declared+namespaces">Referencing declared namespaces</a>
+          </li>
+<li>      <a href="#class-Nokogiri::XML::Builder-label-Namespace+inheritance">Namespace inheritance</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>      <a href="#class-Nokogiri::XML::Builder-label-Document+Types">Document Types</a>
+
   </li>
 </ul>
 </div>
@@ -394,7 +409,7 @@
 <a href="Document.html"><code>Document</code></a> Types<span><a href="#class-Nokogiri::XML::Builder-label-Document+Types">¶</a> <a href="#top">↑</a></span>
 </h2>
 
-<p>To create a document type (<a href="DTD.html"><code>DTD</code></a>), access use the <a href="Builder.html#attribute-i-doc"><code>Builder#doc</code></a> method to get the current context document.  Then call <a href="Node.html#method-i-create_internal_subset"><code>Node#create_internal_subset</code></a> to create the <a href="DTD.html"><code>DTD</code></a> node.</p>
+<p>To create a document type (<a href="DTD.html"><code>DTD</code></a>), use the <a href="Builder.html#attribute-i-doc"><code>Builder#doc</code></a> method to get the current context document.  Then call <a href="Node.html#method-i-create_internal_subset"><code>Node#create_internal_subset</code></a> to create the <a href="DTD.html"><code>DTD</code></a> node.</p>
 
 <p>For example, this Ruby:</p>
 
@@ -487,9 +502,11 @@
        </header>
 
       <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">new</span><span class="method-args">(options = {}, root = nil) { |self| ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">new</span><span class="method-args">(options = {}, root = nil) { |self| ... }</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -539,9 +556,11 @@ end</pre>
       </div>
 
       <div id="method-c-with" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">with</span><span class="method-args">(root, &amp;block)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">with</span><span class="method-args">(root, &amp;block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -575,9 +594,11 @@ end</pre>
        </header>
 
       <div id="method-i-3C-3C" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">&lt;&lt;</span><span class="method-args">(string)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">&lt;&lt;</span><span class="method-args">(string)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -595,9 +616,11 @@ end</pre>
       </div>
 
       <div id="method-i-5B-5D" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">[]</span><span class="method-args">(ns)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">[]</span><span class="method-args">(ns)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -628,9 +651,11 @@ end</pre>
       </div>
 
       <div id="method-i-cdata" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">cdata</span><span class="method-args">(string)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">cdata</span><span class="method-args">(string)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -648,9 +673,11 @@ end</pre>
       </div>
 
       <div id="method-i-comment" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">comment</span><span class="method-args">(string)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">comment</span><span class="method-args">(string)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -668,11 +695,13 @@ end</pre>
       </div>
 
       <div id="method-i-related_class" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            related_class(class_name) → Class
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              related_class(class_name) → Class
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -731,9 +760,11 @@ end</pre>
       </div>
 
       <div id="method-i-text" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">text</span><span class="method-args">(string)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">text</span><span class="method-args">(string)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -751,9 +782,11 @@ end</pre>
       </div>
 
       <div id="method-i-to_xml" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">to_xml</span><span class="method-args">(*args)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">to_xml</span><span class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -786,7 +819,7 @@ end</pre>
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

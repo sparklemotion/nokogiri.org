@@ -84,9 +84,6 @@
     </li>
 <li>
 <a href="#method-c-parse">::parse</a>
-    </li>
-<li>
-<a href="#method-i-serialize">#serialize</a>
   </li>
 </ul>
 </div>
@@ -134,6 +131,19 @@
         
         </div>
       </div>
+      <div id="attribute-i-quirks_mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">quirks_mode</span><span class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <p>Get the parser’s quirks mode value. See <a href="QuirksMode.html"><code>HTML5::QuirksMode</code></a>.</p>
+
+<p>This method returns ‘nil` if the parser was not invoked (e.g., `Nokogiri::HTML5::DocumentFragment.new(doc)`).</p>
+
+<p>Since v1.14.0</p>
+        </div>
+      </div>
     </section>
 
 
@@ -143,16 +153,18 @@
        </header>
 
       <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">new</span><span class="method-args">(doc, tags = nil, ctx = nil, options = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">new</span><span class="method-args">(doc, tags = nil, ctx = nil, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           <p>Create a document fragment.</p>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 32</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ctx</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">document</span> = <span class="ruby-identifier">doc</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">errors</span> = []
@@ -171,50 +183,23 @@
       </div>
 
       <div id="method-c-parse" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">parse</span><span class="method-args">(tags, encoding = nil, options = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">parse</span><span class="method-args">(tags, encoding = nil, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           <p>Parse a document fragment from <code>tags</code>, returning a Nodeset.</p>
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 51</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">tags</span> = <span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">read_and_encode</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-    </section>
-
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
-
-      <div id="method-i-serialize" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">serialize</span><span class="method-args">(options = {}, &amp;block)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="serialize-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 44</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">serialize</span>(<span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-comment"># Bypass XML::Document.serialize which doesn't support options even</span>
-  <span class="ruby-comment"># though XML::Node.serialize does!</span>
-  <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">instance_method</span>(<span class="ruby-value">:serialize</span>).<span class="ruby-identifier">bind</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">call</span>(<span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -231,7 +216,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

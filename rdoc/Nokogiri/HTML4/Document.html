@@ -130,9 +130,11 @@
        </header>
 
       <div id="method-c-parse" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">parse</span><span class="method-args">(string_or_io, url = nil, encoding = nil, options = XML::ParseOptions::DEFAULT_HTML) { |options| ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">parse</span><span class="method-args">(string_or_io, url = nil, encoding = nil, options = XML::ParseOptions::DEFAULT_HTML) { |options| ... }</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -147,7 +149,7 @@
   <span class="ruby-identifier">url</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:path</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">path</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:encoding</span>)
-    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">"ASCII-8BIT"</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">encoding</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">ASCII_8BIT</span>
       <span class="ruby-identifier">encoding</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
@@ -160,21 +162,10 @@
     <span class="ruby-keyword">end</span>
 
     <span class="ruby-keyword">unless</span> <span class="ruby-identifier">encoding</span>
-      <span class="ruby-comment"># Libxml2's parser has poor support for encoding</span>
-      <span class="ruby-comment"># detection.  First, it does not recognize the HTML5</span>
-      <span class="ruby-comment"># style meta charset declaration.  Secondly, even if it</span>
-      <span class="ruby-comment"># successfully detects an encoding hint, it does not</span>
-      <span class="ruby-comment"># re-decode or re-parse the preceding part which may be</span>
-      <span class="ruby-comment"># garbled.</span>
-      <span class="ruby-comment">#</span>
-      <span class="ruby-comment"># EncodingReader aims to perform advanced encoding</span>
-      <span class="ruby-comment"># detection beyond what Libxml2 does, and to emulate</span>
-      <span class="ruby-comment"># rewinding of a stream and make Libxml2 redo parsing</span>
-      <span class="ruby-comment"># from the start when an encoding hint is found.</span>
       <span class="ruby-identifier">string_or_io</span> = <span class="ruby-constant">EncodingReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string_or_io</span>)
       <span class="ruby-keyword">begin</span>
         <span class="ruby-keyword">return</span> <span class="ruby-identifier">read_io</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_i</span>)
-      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">EncodingFound</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">EncodingReader</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingFound</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
         <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">found_encoding</span>
       <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">end</span>
@@ -204,9 +195,11 @@
        </header>
 
       <div id="method-i-fragment" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">fragment</span><span class="method-args">(tags = nil)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">fragment</span><span class="method-args">(tags = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -224,9 +217,11 @@
       </div>
 
       <div id="method-i-meta_encoding" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">meta_encoding</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">meta_encoding</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -248,9 +243,11 @@
       </div>
 
       <div id="method-i-meta_encoding-3D" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">meta_encoding=</span><span class="method-args">(encoding)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">meta_encoding=</span><span class="method-args">(encoding)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -296,9 +293,11 @@
       </div>
 
       <div id="method-i-serialize" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">serialize</span><span class="method-args">(options = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">serialize</span><span class="method-args">(options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -335,9 +334,11 @@
       </div>
 
       <div id="method-i-title" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">title</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">title</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -355,9 +356,11 @@
       </div>
 
       <div id="method-i-title-3D" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">title=</span><span class="method-args">(text)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">title=</span><span class="method-args">(text)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -393,11 +396,13 @@
       </div>
 
       <div id="method-i-xpath_doctype" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            xpath_doctype() → Nokogiri::CSS::XPathVisitor::DoctypeConfig
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              xpath_doctype() → Nokogiri::CSS::XPathVisitor::DoctypeConfig
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -431,7 +436,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

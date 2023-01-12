@@ -112,9 +112,11 @@
        </header>
 
       <div id="method-i-fragment" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">fragment</span><span class="method-args">(tags)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">fragment</span><span class="method-args">(tags)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -125,7 +127,7 @@
             </div>
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 67</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">tags</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
@@ -138,9 +140,11 @@
       </div>
 
       <div id="method-i-inner_html" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">inner_html</span><span class="method-args">(options = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">inner_html</span><span class="method-args">(options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -155,7 +159,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_html</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
-  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:preserve_newline</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">prepend_newline?</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">?</span> <span class="ruby-string">+"\n"</span> <span class="ruby-operator">:</span> <span class="ruby-string">+""</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:preserve_newline</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">prepend_newline?</span> <span class="ruby-operator">?</span> <span class="ruby-string">+"\n"</span> <span class="ruby-operator">:</span> <span class="ruby-string">+""</span>
   <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">options</span>) }.<span class="ruby-identifier">join</span>
   <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
@@ -166,9 +170,11 @@
       </div>
 
       <div id="method-i-write_to" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">write_to</span><span class="method-args">(io, *options) { |config| ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">write_to</span><span class="method-args">(io, *options) { |config| ... }</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -203,11 +209,9 @@
     <span class="ruby-identifier">native_write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">indent_string</span>, <span class="ruby-identifier">config_options</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-comment"># Serialize including the current node.</span>
+    <span class="ruby-identifier">html</span> = <span class="ruby-identifier">html_standard_serialize</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:preserve_newline</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>)
     <span class="ruby-identifier">encoding</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">encoding</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>
-    <span class="ruby-identifier">internal_ops</span> = {
-      <span class="ruby-value">preserve_newline:</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:preserve_newline</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>,
-    }
-    <span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">serialize_node_internal</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">internal_ops</span>)
+    <span class="ruby-identifier">io</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">html</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">encoding</span>, <span class="ruby-value">fallback:</span> <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-node">"&amp;#x#{c.ord.to_s(16)};"</span> })
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -225,7 +229,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

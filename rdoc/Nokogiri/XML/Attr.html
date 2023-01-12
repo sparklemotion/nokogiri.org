@@ -86,6 +86,9 @@
 <a href="#method-i-content-3D">#content=</a>
     </li>
 <li>
+<a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
+    </li>
+<li>
 <a href="#method-i-value-3D">#value=</a>
   </li>
 </ul>
@@ -117,11 +120,13 @@
        </header>
 
       <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            new(document, name)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              new(document, name)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -177,8 +182,10 @@ new (int argc, VALUE *argv, VALUE klass)
        </header>
 
       <div id="method-i-content-3D" class="method-detail method-alias">
-        <div class="method-heading">
-          <span class="method-name">content=</span><span class="method-args">(p1)</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">content=</span><span class="method-args">(p1)</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -192,12 +199,86 @@ new (int argc, VALUE *argv, VALUE klass)
         </div>
       </div>
 
+      <div id="method-i-deconstruct_keys" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              deconstruct_keys(array_of_names) → Hash
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>Returns a hash describing the <a href="Attr.html"><code>Attr</code></a>, to use in pattern matching.</p>
+
+<p>Valid keys and their values:</p>
+<ul>
+<li>
+<p><code>name</code> → (String) The name of the attribute.</p>
+</li>
+<li>
+<p><code>value</code> → (String) The value of the attribute.</p>
+</li>
+<li>
+<p><code>namespace</code> → (<a href="Namespace.html"><code>Namespace</code></a>, nil) The <a href="Namespace.html"><code>Namespace</code></a> of the attribute, or <code>nil</code> if there is no namespace.</p>
+</li>
+</ul>
+
+<p>⚡ This is an experimental feature, available since v1.14.0</p>
+
+<p><strong>Example</strong></p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">&lt;&lt;~XML</span>)
+<span class="ruby-value">  &lt;?xml version="1.0"?&gt;
+  &lt;root xmlns="http://nokogiri.org/ns/default" xmlns:noko="http://nokogiri.org/ns/noko"&gt;
+    &lt;child1 foo="abc" noko:bar="def"/&gt;
+  &lt;/root&gt;
+</span><span class="ruby-identifier">XML</span>
+
+<span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">attribute_nodes</span>
+<span class="ruby-comment"># =&gt; [#(Attr:0x35c { name = "foo", value = "abc" }),</span>
+<span class="ruby-comment">#     #(Attr:0x370 {</span>
+<span class="ruby-comment">#       name = "bar",</span>
+<span class="ruby-comment">#       namespace = #(Namespace:0x384 {</span>
+<span class="ruby-comment">#         prefix = "noko",</span>
+<span class="ruby-comment">#         href = "http://nokogiri.org/ns/noko"</span>
+<span class="ruby-comment">#         }),</span>
+<span class="ruby-comment">#       value = "def"</span>
+<span class="ruby-comment">#       })]</span>
+
+<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">deconstruct_keys</span>([<span class="ruby-value">:name</span>, <span class="ruby-value">:value</span>, <span class="ruby-value">:namespace</span>])
+<span class="ruby-comment"># =&gt; {:name=&gt;"foo", :value=&gt;"abc", :namespace=&gt;nil}</span>
+
+<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">deconstruct_keys</span>([<span class="ruby-value">:name</span>, <span class="ruby-value">:value</span>, <span class="ruby-value">:namespace</span>])
+<span class="ruby-comment"># =&gt; {:name=&gt;"bar",</span>
+<span class="ruby-comment">#     :value=&gt;"def",</span>
+<span class="ruby-comment">#     :namespace=&gt;</span>
+<span class="ruby-comment">#      #(Namespace:0x384 {</span>
+<span class="ruby-comment">#        prefix = "noko",</span>
+<span class="ruby-comment">#        href = "http://nokogiri.org/ns/noko"</span>
+<span class="ruby-comment">#        })}</span>
+</pre>
+
+          <div class="method-source-code" id="deconstruct_keys-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/attr.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+  { <span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">namespace:</span> <span class="ruby-identifier">namespace</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-i-value-3D" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            value=(content)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              value=(content)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -258,7 +339,7 @@ set_value(VALUE self, VALUE content)
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

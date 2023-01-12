@@ -60,19 +60,6 @@
   </div>
 
   
-<div class="nav-section">
-  <h3>Table of Contents</h3>
-
-  <ul class="link-list" role="directory">
-    <li>
-<a href="#class-Nokogiri::XML::ParseOptions-label-Building+combinations+of+parse+options">Building combinations of parse options</a>
-    </li>
-<li>
-<a href="#class-Nokogiri::XML::ParseOptions-label-Removing+particular+parse+options">Removing particular parse options</a>
-  </li>
-</ul>
-</div>
-
 
   <div id="class-metadata">
     
@@ -120,54 +107,67 @@
 
   <section class="description">
     
-<p>Parse options for passing to <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.XML or <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.HTML</p>
+<p>Options that control the parsing behavior for <a href="Document.html"><code>XML::Document</code></a>, <a href="DocumentFragment.html"><code>XML::DocumentFragment</code></a>, <a href="../HTML4/Document.html"><code>HTML4::Document</code></a>, <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a>, <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>, and <a href="Schema.html"><code>XML::Schema</code></a>.</p>
 
-<h2 id="class-Nokogiri::XML::ParseOptions-label-Building+combinations+of+parse+options">Building combinations of parse options<span><a href="#class-Nokogiri::XML::ParseOptions-label-Building+combinations+of+parse+options">¶</a> <a href="#top">↑</a></span>
+<p>These options directly expose libxml2’s parse options, which are all boolean in the sense that an option is “on” or “off”.</p>
+
+<p>💡 Note that <a href="../HTML5.html"><code>HTML5</code></a> parsing has a separate, orthogonal set of options due to the nature of the <a href="../HTML5.html"><code>HTML5</code></a> specification. See <a href="../HTML5.html"><code>Nokogiri::HTML5</code></a>.</p>
+
+<p>⚠ Not all parse options are supported on JRuby. <a href="../../Nokogiri.html"><code>Nokogiri</code></a> will attempt to invoke the equivalent behavior in Xerces/NekoHTML on JRuby when it’s possible.</p>
+
+<h2 id="class-Nokogiri::XML::ParseOptions-label-Setting+and+unsetting+parse+options">Setting and unsetting parse options<span><a href="#class-Nokogiri::XML::ParseOptions-label-Setting+and+unsetting+parse+options">¶</a> <a href="#top">↑</a></span>
 </h2>
 
-<p>You can build your own combinations of these parse options by using any of the following methods: <strong>Note</strong>: All examples attempt to set the <code>RECOVER</code> &amp; <code>NOENT</code> options.</p>
+<p>You can build your own combinations of parse options by using any of the following methods:</p>
 <dl class="rdoc-list label-list">
-<dt>Ruby’s bitwise operators
-</dt>
-<dd>
-<p>You can use the Ruby bitwise operators to set various combinations.</p>
-</dd>
-</dl>
-
-<pre class="ruby"><span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-string">'&lt;content&gt;Chapter 1&lt;/content'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>((<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span>) <span class="ruby-operator">|</span> (<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">1</span>)))
-</pre>
-<dl class="rdoc-list label-list">
-<dt>Method chaining
+<dt>
+<a href="ParseOptions.html"><code>ParseOptions</code></a> method chaining
 </dt>
 <dd>
 <p>Every option has an equivalent method in lowercase. You can chain these methods together to set various combinations.</p>
-</dd>
-</dl>
 
-<pre class="ruby"><span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-string">'&lt;content&gt;Chapter 1&lt;/content'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">recover</span>.<span class="ruby-identifier">noent</span>)
+<pre class="ruby"><span class="ruby-comment"># Set the HUGE &amp; PEDANTIC options</span>
+<span class="ruby-identifier">po</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">huge</span>.<span class="ruby-identifier">pedantic</span>
+<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">po</span>)
 </pre>
-<dl class="rdoc-list label-list">
+
+<p>Every option has an equivalent <code>no{option}</code> method in lowercase. You can call these methods on an instance of <a href="ParseOptions.html"><code>ParseOptions</code></a> to unset the option.</p>
+
+<pre class="ruby"><span class="ruby-comment"># Set the HUGE &amp; PEDANTIC options</span>
+<span class="ruby-identifier">po</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">huge</span>.<span class="ruby-identifier">pedantic</span>
+
+<span class="ruby-comment"># later we want to modify the options</span>
+<span class="ruby-identifier">po</span>.<span class="ruby-identifier">nohuge</span> <span class="ruby-comment"># Unset the HUGE option</span>
+<span class="ruby-identifier">po</span>.<span class="ruby-identifier">nopedantic</span> <span class="ruby-comment"># Unset the PEDANTIC option</span>
+</pre>
+
+<p>💡 Note that some options begin with “no” leading to the logical but perhaps unintuitive double negative:</p>
+
+<pre class="ruby"><span class="ruby-identifier">po</span>.<span class="ruby-identifier">nocdata</span> <span class="ruby-comment"># Set the NOCDATA parse option</span>
+<span class="ruby-identifier">po</span>.<span class="ruby-identifier">nonocdata</span> <span class="ruby-comment"># Unset the NOCDATA parse option</span>
+</pre>
+
+<p>💡 Note that negation is not available for <a href="ParseOptions.html#STRICT"><code>STRICT</code></a>, which is itself a negation of all other features.</p>
+</dd>
 <dt>Using Ruby Blocks
 </dt>
 <dd>
-<p>You can also setup parse combinations in the block passed to <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.XML or <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.HTML</p>
+<p>Most parsing methods will accept a block for configuration of parse options, and we recommend chaining the setter methods:</p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">huge</span>.<span class="ruby-identifier">pedantic</span> }
+</pre>
+</dd>
+<dt>
+<a href="ParseOptions.html"><code>ParseOptions</code></a> constants
+</dt>
+<dd>
+<p>You can also use the constants declared under <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> to set various combinations. They are bits in a bitmask, and so can be combined with bitwise operators:</p>
+
+<pre class="ruby"><span class="ruby-identifier">po</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">HUGE</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">PEDANTIC</span>)
+<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">po</span>)
+</pre>
 </dd>
 </dl>
-
-<pre class="ruby"><span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-string">'&lt;content&gt;Chapter 1&lt;/content'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">recover</span>.<span class="ruby-identifier">noent</span>}
-</pre>
-
-<h2 id="class-Nokogiri::XML::ParseOptions-label-Removing+particular+parse+options">Removing particular parse options<span><a href="#class-Nokogiri::XML::ParseOptions-label-Removing+particular+parse+options">¶</a> <a href="#top">↑</a></span>
-</h2>
-
-<p>You can also remove options from an instance of <code>ParseOptions</code> dynamically. Every option has an equivalent <code>no{option}</code> method in lowercase. You can call these methods on an instance of <code>ParseOptions</code> to remove the option. Note that this is not available for <code>STRICT</code>.</p>
-
-<pre class="ruby"><span class="ruby-comment"># Setting the RECOVER &amp; NOENT options...</span>
-<span class="ruby-identifier">options</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">recover</span>.<span class="ruby-identifier">noent</span>
-<span class="ruby-comment"># later...</span>
-<span class="ruby-identifier">options</span>.<span class="ruby-identifier">norecover</span> <span class="ruby-comment"># Removes the Nokogiri::XML::ParseOptions::RECOVER option</span>
-<span class="ruby-identifier">options</span>.<span class="ruby-identifier">nonoent</span> <span class="ruby-comment"># Removes the Nokogiri::XML::ParseOptions::NOENT option</span>
-</pre>
 
   </section>
 
@@ -182,122 +182,134 @@
         <dt id="BIG_LINES">BIG_LINES
         </dt>
 <dd>
-          <p>line numbers stored as long int (instead of a short int)</p>
+          <p>Support line numbers up to <code>long int</code> (default is a <code>short int</code>). On by default for for <a href="Document.html"><code>XML::Document</code></a>, <a href="DocumentFragment.html"><code>XML::DocumentFragment</code></a>, <a href="../HTML4/Document.html"><code>HTML4::Document</code></a>, <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a>, <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>, and <a href="Schema.html"><code>XML::Schema</code></a>.</p>
         </dd>
 <dt id="COMPACT">COMPACT
         </dt>
 <dd>
-          <p>compact small text nodes; no modification of the tree allowed afterwards (will possibly crash if you try to modify the tree)</p>
+          <p>Compact small text nodes. Off by default.</p>
+
+<p>⚠ No modification of the DOM tree is allowed after parsing. libxml2 may crash if you try to modify the tree.</p>
         </dd>
 <dt id="DEFAULT_HTML">DEFAULT_HTML
         </dt>
 <dd>
-          <p>the default options used for parsing <a href="../HTML4.html"><code>HTML</code></a> documents</p>
+          <p>The options mask used by default used for parsing <a href="../HTML4/Document.html"><code>HTML4::Document</code></a> and <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a></p>
         </dd>
 <dt id="DEFAULT_SCHEMA">DEFAULT_SCHEMA
         </dt>
 <dd>
-          <p>the default options used for parsing <a href="../XML.html"><code>XML</code></a> schemas</p>
+          <p>The options mask used by default used for parsing <a href="Schema.html"><code>XML::Schema</code></a></p>
         </dd>
 <dt id="DEFAULT_XML">DEFAULT_XML
         </dt>
 <dd>
-          <p>the default options used for parsing <a href="../XML.html"><code>XML</code></a> documents</p>
+          <p>The options mask used by default for parsing <a href="Document.html"><code>XML::Document</code></a> and <a href="DocumentFragment.html"><code>XML::DocumentFragment</code></a></p>
         </dd>
 <dt id="DEFAULT_XSLT">DEFAULT_XSLT
         </dt>
 <dd>
-          <p>the default options used for parsing <a href="../XSLT.html"><code>XSLT</code></a> stylesheets</p>
+          <p>The options mask used by default used for parsing <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a></p>
         </dd>
 <dt id="DTDATTR">DTDATTR
         </dt>
 <dd>
-          <p>Default <a href="DTD.html"><code>DTD</code></a> attributes</p>
+          <p>Default <a href="DTD.html"><code>DTD</code></a> attributes. On by default for <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>.</p>
         </dd>
 <dt id="DTDLOAD">DTDLOAD
         </dt>
 <dd>
-          <p>Load external subsets</p>
+          <p>Load external subsets. On by default for <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>.</p>
+
+<p>⚠ <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
         </dd>
 <dt id="DTDVALID">DTDVALID
         </dt>
 <dd>
-          <p>validate with the <a href="DTD.html"><code>DTD</code></a></p>
+          <p>Validate with the <a href="DTD.html"><code>DTD</code></a>. Off by default.</p>
         </dd>
 <dt id="HUGE">HUGE
         </dt>
 <dd>
-          <p>relax any hardcoded limit from the parser</p>
+          <p>Relax any hardcoded limit from the parser. Off by default.</p>
+
+<p>⚠ There may be a performance penalty when this option is set.</p>
         </dd>
 <dt id="NOBASEFIX">NOBASEFIX
         </dt>
 <dd>
-          <p>do not fixup <a href="ParseOptions.html#XINCLUDE"><code>XINCLUDE</code></a> xml:base uris</p>
+          <p>Do not fixup XInclude xml:base uris. Off by default</p>
         </dd>
 <dt id="NOBLANKS">NOBLANKS
         </dt>
 <dd>
-          <p>remove blank nodes</p>
+          <p>Remove blank nodes. Off by default.</p>
         </dd>
 <dt id="NOCDATA">NOCDATA
         </dt>
 <dd>
-          <p>merge <a href="CDATA.html"><code>CDATA</code></a> as text nodes</p>
+          <p>Merge <a href="CDATA.html"><code>CDATA</code></a> as text nodes. On by default for <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>.</p>
         </dd>
 <dt id="NODICT">NODICT
         </dt>
 <dd>
-          <p>Do not reuse the context dictionary</p>
+          <p>Do not reuse the context dictionary. Off by default.</p>
         </dd>
 <dt id="NOENT">NOENT
         </dt>
 <dd>
-          <p>Substitute entities</p>
+          <p>Substitute entities. Off by default.</p>
+
+<p>⚠ This option enables entity substitution, contrary to what the name implies.</p>
+
+<p>⚠ <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
         </dd>
 <dt id="NOERROR">NOERROR
         </dt>
 <dd>
-          <p>suppress error reports</p>
+          <p>Suppress error reports. On by default for <a href="../HTML4/Document.html"><code>HTML4::Document</code></a> and <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a></p>
         </dd>
 <dt id="NONET">NONET
         </dt>
 <dd>
-          <p>Forbid network access. Recommended for dealing with untrusted documents.</p>
+          <p>Forbid network access. On by default for <a href="Document.html"><code>XML::Document</code></a>, <a href="DocumentFragment.html"><code>XML::DocumentFragment</code></a>, <a href="../HTML4/Document.html"><code>HTML4::Document</code></a>, <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a>, <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>, and <a href="Schema.html"><code>XML::Schema</code></a>.</p>
+
+<p>⚠ <strong>It is UNSAFE to unset this option</strong> when parsing untrusted documents.</p>
         </dd>
 <dt id="NOWARNING">NOWARNING
         </dt>
 <dd>
-          <p>suppress warning reports</p>
+          <p>Suppress warning reports. On by default for <a href="../HTML4/Document.html"><code>HTML4::Document</code></a> and <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a></p>
         </dd>
 <dt id="NOXINCNODE">NOXINCNODE
         </dt>
 <dd>
-          <p>do not generate <a href="ParseOptions.html#XINCLUDE"><code>XINCLUDE</code></a> START/END nodes</p>
+          <p>Do not generate XInclude START/END nodes. Off by default.</p>
         </dd>
 <dt id="NSCLEAN">NSCLEAN
         </dt>
 <dd>
-          <p>remove redundant namespaces declarations</p>
+          <p>Remove redundant namespaces declarations. Off by default.</p>
         </dd>
 <dt id="OLD10">OLD10
         </dt>
 <dd>
-          <p>parse using XML-1.0 before update 5</p>
+          <p>Parse using XML-1.0 before update 5. Off by default</p>
         </dd>
 <dt id="PEDANTIC">PEDANTIC
         </dt>
 <dd>
-          <p>pedantic error reporting</p>
+          <p>Enable pedantic error reporting. Off by default.</p>
         </dd>
 <dt id="RECOVER">RECOVER
         </dt>
 <dd>
-          <p>Recover from errors</p>
+          <p>Recover from errors. On by default for <a href="Document.html"><code>XML::Document</code></a>, <a href="DocumentFragment.html"><code>XML::DocumentFragment</code></a>, <a href="../HTML4/Document.html"><code>HTML4::Document</code></a>, <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a>, <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>, and <a href="Schema.html"><code>XML::Schema</code></a>.</p>
         </dd>
 <dt id="SAX1">SAX1
         </dt>
 <dd>
-          <p>use the <a href="ParseOptions.html#SAX1"><code>SAX1</code></a> interface internally</p>
+          <p>Use the <a href="ParseOptions.html#SAX1"><code>SAX1</code></a> interface internally. Off by default.</p>
         </dd>
 <dt id="STRICT">STRICT
         </dt>
@@ -307,7 +319,7 @@
 <dt id="XINCLUDE">XINCLUDE
         </dt>
 <dd>
-          <p>Implement XInclude substitution</p>
+          <p>Implement XInclude substitution. Off by default.</p>
       </dd>
 </dl>
     </section>
@@ -344,16 +356,18 @@
        </header>
 
       <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">new</span><span class="method-args">(options = STRICT)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">new</span><span class="method-args">(options = STRICT)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 86</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 165</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = <span class="ruby-constant">STRICT</span>)
   <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
 <span class="ruby-keyword">end</span></pre>
@@ -371,16 +385,18 @@
        </header>
 
       <div id="method-i-3D-3D" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">==</span><span class="method-args">(other)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">==</span><span class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 119</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 198</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">to_i</span>
 <span class="ruby-keyword">end</span></pre>
@@ -391,9 +407,11 @@
       </div>
 
       <div id="method-i-inspect" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">inspect</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">inspect</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -404,7 +422,7 @@
             </div>
 
           <div class="method-source-code" id="inspect-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 125</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 204</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
   <span class="ruby-identifier">options</span> = []
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
@@ -419,16 +437,18 @@
       </div>
 
       <div id="method-i-strict" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">strict</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">strict</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="strict-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 110</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 189</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strict</span>
   <span class="ruby-ivar">@options</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-operator">~</span><span class="ruby-constant">RECOVER</span>
   <span class="ruby-keyword">self</span>
@@ -440,16 +460,18 @@
       </div>
 
       <div id="method-i-strict-3F" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">strict?</span><span class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">strict?</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="strict-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 115</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 194</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strict?</span>
   <span class="ruby-ivar">@options</span> <span class="ruby-operator">&amp;</span> <span class="ruby-constant">RECOVER</span> <span class="ruby-operator">==</span> <span class="ruby-constant">STRICT</span>
 <span class="ruby-keyword">end</span></pre>
@@ -468,7 +490,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

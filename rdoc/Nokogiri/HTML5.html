@@ -63,30 +63,32 @@
 <div class="nav-section">
   <h3>Table of Contents</h3>
 
+
+
   <ul class="link-list" role="directory">
-    <li>
-<a href="#module-Nokogiri::HTML5-label-Usage">Usage</a>
-    </li>
+              <li>      <a href="#module-Nokogiri::HTML5-label-Usage">Usage</a>
+          </li>
 <li>
-<a href="#module-Nokogiri::HTML5-label-Parsing+options">Parsing options</a>
-    </li>
-<li>
-<a href="#module-Nokogiri::HTML5-label-Error+reporting">Error reporting</a>
-    </li>
-<li>
-<a href="#module-Nokogiri::HTML5-label-Maximum+tree+depth">Maximum tree depth</a>
-    </li>
-<li>
-<a href="#module-Nokogiri::HTML5-label-Attribute+limit+per+element">Attribute limit per element</a>
-    </li>
-<li>
-<a href="#module-Nokogiri::HTML5-label-HTML+Serialization">HTML Serialization</a>
-    </li>
-<li>
-<a href="#module-Nokogiri::HTML5-label-Encodings">Encodings</a>
-    </li>
-<li>
-<a href="#module-Nokogiri::HTML5-label-Notes">Notes</a>
+            <details open>
+              <summary>      <a href="#module-Nokogiri::HTML5-label-Parsing+options">Parsing options</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#module-Nokogiri::HTML5-label-Error+reporting">Error reporting</a>
+          </li>
+<li>      <a href="#module-Nokogiri::HTML5-label-Maximum+tree+depth">Maximum tree depth</a>
+          </li>
+<li>      <a href="#module-Nokogiri::HTML5-label-Attribute+limit+per+element">Attribute limit per element</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>      <a href="#module-Nokogiri::HTML5-label-HTML+Serialization">HTML Serialization</a>
+          </li>
+<li>      <a href="#module-Nokogiri::HTML5-label-Encodings">Encodings</a>
+          </li>
+<li>      <a href="#module-Nokogiri::HTML5-label-Notes">Notes</a>
+
   </li>
 </ul>
 </div>
@@ -321,43 +323,6 @@ Content&lt;/listing&gt;
   <section id="5Buntitled-5D" class="documentation-section">
 
 
-    <section class="constants-list">
-      <header>
-        <h3>Constants</h3>
-      </header>
-      <dl>
-        <dt id="HTML_NAMESPACE">HTML_NAMESPACE
-        </dt>
-<dd>
-          <p><a href="HTML4.html"><code>HTML</code></a> uses the XHTML namespace.</p>
-        </dd>
-<dt id="MATHML_NAMESPACE">MATHML_NAMESPACE
-        </dt>
-<dd>
-          
-        </dd>
-<dt id="SVG_NAMESPACE">SVG_NAMESPACE
-        </dt>
-<dd>
-          
-        </dd>
-<dt id="XLINK_NAMESPACE">XLINK_NAMESPACE
-        </dt>
-<dd>
-          
-        </dd>
-<dt id="XMLNS_NAMESPACE">XMLNS_NAMESPACE
-        </dt>
-<dd>
-          
-        </dd>
-<dt id="XML_NAMESPACE">XML_NAMESPACE
-        </dt>
-<dd>
-          
-      </dd>
-</dl>
-    </section>
 
 
 
@@ -367,17 +332,19 @@ Content&lt;/listing&gt;
        </header>
 
       <div id="method-c-fragment" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">fragment</span><span class="method-args">(string, encoding = nil, **options)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">fragment</span><span class="method-args">(string, encoding = nil, **options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           <p>Parse a fragment from <code>string</code>. Convenience method for {Nokogiri::HTML5::DocumentFragment.parse}.</p>
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 245</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -387,9 +354,11 @@ Content&lt;/listing&gt;
       </div>
 
       <div id="method-c-get" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">get</span><span class="method-args">(uri, options = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">get</span><span class="method-args">(uri, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -399,8 +368,8 @@ Content&lt;/listing&gt;
 * :basic_auth =&gt; [username, password]</pre>
 
           <div class="method-source-code" id="get-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 256</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">get</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">options</span> = {})
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># TODO: deprecate</span>
   <span class="ruby-identifier">warn</span>(<span class="ruby-string">"Nokogiri::HTML5.get is deprecated and will be removed in a future version of Nokogiri."</span>,
     <span class="ruby-value">uplevel:</span> <span class="ruby-value">1</span>, <span class="ruby-value">category:</span> <span class="ruby-value">:deprecated</span>)
@@ -413,17 +382,19 @@ Content&lt;/listing&gt;
       </div>
 
       <div id="method-c-parse" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">parse</span><span class="method-args">(string, url = nil, encoding = nil, **options, &amp;block)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">parse</span><span class="method-args">(string, url = nil, encoding = nil, **options, &amp;block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           <p>Parse an <a href="HTML4.html"><code>HTML</code></a> 5 document. Convenience method for {Nokogiri::HTML5::Document.parse}</p>
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 239</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -441,7 +412,7 @@ Content&lt;/listing&gt;
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

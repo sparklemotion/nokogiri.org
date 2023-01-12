@@ -517,6 +517,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sponsorship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sponsorship
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1370,6 +1379,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sponsorship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sponsorship
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1558,13 +1576,10 @@
                   
 
 
-<p><a class="tidelift tidelift-top" href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=website" target="_blank">
-  Get support for Nokogiri with a Tidelift subscription
-</a></p>
 <div><img src="https://nokogiri.org/images/nokogiri-serif-black.png" align="right"/></div>
 
 <h1 id="nokogiri">Nokogiri<a class="headerlink" href="#nokogiri" title="Permanent link">&para;</a></h1>
-<p>Nokogiri (鋸) makes it easy and painless to work with XML and HTML from Ruby. It provides a sensible, easy-to-understand API for <a href="https://nokogiri.org/tutorials/parsing_an_html_xml_document.html">reading</a>, writing, <a href="https://nokogiri.org/tutorials/modifying_an_html_xml_document.html">modifying</a>, and <a href="https://nokogiri.org/tutorials/searching_a_xml_html_document.html">querying</a> documents. It is fast and standards-compliant by relying on native parsers like libxml2 (CRuby) and xerces (JRuby).</p>
+<p>Nokogiri (鋸) makes it easy and painless to work with XML and HTML from Ruby. It provides a sensible, easy-to-understand API for <a href="https://nokogiri.org/tutorials/parsing_an_html_xml_document.html">reading</a>, writing, <a href="https://nokogiri.org/tutorials/modifying_an_html_xml_document.html">modifying</a>, and <a href="https://nokogiri.org/tutorials/searching_a_xml_html_document.html">querying</a> documents. It is fast and standards-compliant by relying on native parsers like libxml2, libgumbo, and xerces.</p>
 <h2 id="guiding-principles">Guiding Principles<a class="headerlink" href="#guiding-principles" title="Permanent link">&para;</a></h2>
 <p>Some guiding principles Nokogiri tries to follow:</p>
 <ul>
@@ -1591,7 +1606,6 @@
 <a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme"><img alt="Tidelift dependencies" src="https://tidelift.com/badges/package/rubygems/nokogiri" /></a></p>
 <h2 id="support-getting-help-and-reporting-issues">Support, Getting Help, and Reporting Issues<a class="headerlink" href="#support-getting-help-and-reporting-issues" title="Permanent link">&para;</a></h2>
 <p>All official documentation is posted at <a href="https://nokogiri.org">https://nokogiri.org</a> (the source for which is at <a href="https://github.com/sparklemotion/nokogiri.org/">https://github.com/sparklemotion/nokogiri.org/</a>, and we welcome contributions).</p>
-<p>Consider subscribing to <a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme">Tidelift</a> which provides license assurances and timely security notifications for your open source dependencies, including Nokogiri. <a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme">Tidelift</a> subscriptions also help the Nokogiri maintainers fund our <a href="https://ci.nokogiri.org">automated testing</a> which in turn allows us to ship releases, bugfixes, and security updates more often.</p>
 <h3 id="reading">Reading<a class="headerlink" href="#reading" title="Permanent link">&para;</a></h3>
 <p>Your first stops for learning more about Nokogiri should be:</p>
 <ul>
@@ -1602,7 +1616,6 @@
 <h3 id="ask-for-help">Ask For Help<a class="headerlink" href="#ask-for-help" title="Permanent link">&para;</a></h3>
 <p>There are a few ways to ask exploratory questions:</p>
 <ul>
-<li>The Ruby Discord chat server is active at <a href="https://discord.gg/UyQnKrT">https://discord.gg/UyQnKrT</a></li>
 <li>The Nokogiri mailing list is active at <a href="https://groups.google.com/group/nokogiri-talk">https://groups.google.com/group/nokogiri-talk</a></li>
 <li>Open an issue using the "Help Request" template at <a href="https://github.com/sparklemotion/nokogiri/issues">https://github.com/sparklemotion/nokogiri/issues</a></li>
 </ul>
@@ -1634,33 +1647,43 @@
 <li>Security updates.</li>
 <li>Updating packaged libraries for security-related reasons.</li>
 </ul>
+<h3 id="sponsorship">Sponsorship<a class="headerlink" href="#sponsorship" title="Permanent link">&para;</a></h3>
+<p>You can help sponsor the maintainers of this software through one of these organizations:</p>
+<ul>
+<li><a href="https://github.com/sponsors/flavorjones">github.com/sponsors/flavorjones</a></li>
+<li><a href="https://opencollective.com/nokogiri">opencollective.com/nokogiri</a></li>
+<li><a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme">tidelift.com/subscription/pkg/rubygems-nokogiri</a></li>
+</ul>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Requirements:</p>
 <ul>
-<li>Ruby &gt;= 2.6</li>
-<li>JRuby &gt;= 9.3.0.0</li>
+<li>Ruby &gt;= 2.7</li>
+<li>JRuby &gt;= 9.4.0.0</li>
 </ul>
 <h3 id="native-gems-faster-more-reliable-installation">Native Gems: Faster, more reliable installation<a class="headerlink" href="#native-gems-faster-more-reliable-installation" title="Permanent link">&para;</a></h3>
 <p>"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or for system dependencies to exist. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know are the biggest headaches for Nokogiri users.</p>
 <h3 id="supported-platforms">Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permanent link">&para;</a></h3>
 <p>Nokogiri ships pre-compiled, "native" gems for the following platforms:</p>
 <ul>
-<li>Linux: <code>x86-linux</code> and <code>x86_64-linux</code> (req: <code>glibc &gt;= 2.17</code>), including musl platforms like Alpine</li>
+<li>Linux:</li>
+<li><code>x86-linux</code> and <code>x86_64-linux</code> (req: <code>glibc &gt;= 2.17</code>)</li>
+<li><code>aarch64-linux</code> and <code>arm-linux</code> (req: <code>glibc &gt;= 2.29</code>)</li>
+<li>Note that musl platforms like Alpine <strong>are</strong> supported</li>
 <li>Darwin/MacOS: <code>x86_64-darwin</code> and <code>arm64-darwin</code></li>
-<li>Windows: <code>x86-mingw32</code> and <code>x64-mingw32</code></li>
-<li>Java: any platform running JRuby 9.3 or higher</li>
+<li>Windows: <code>x86-mingw32</code>, <code>x64-mingw32</code>, and <code>x64-mingw-ucrt</code></li>
+<li>Java: any platform running JRuby 9.4 or higher</li>
 </ul>
 <p>To determine whether your system supports one of these gems, look at the output of <code>bundle platform</code> or <code>ruby -e 'puts Gem::Platform.local.to_s'</code>.</p>
 <p>If you're on a supported platform, either <code>gem install</code> or <code>bundle install</code> should install a native gem without any additional action on your part. This installation should only take a few seconds, and your output should look something like:</p>
-<div class="highlight"><pre><span></span><code>$ gem install nokogiri
-Fetching nokogiri-1.11.0-x86_64-linux.gem
-Successfully installed nokogiri-1.11.0-x86_64-linux
-<span class="m">1</span> gem installed
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>gem<span class="w"> </span>install<span class="w"> </span>nokogiri
+Fetching<span class="w"> </span>nokogiri-1.11.0-x86_64-linux.gem
+Successfully<span class="w"> </span>installed<span class="w"> </span>nokogiri-1.11.0-x86_64-linux
+<span class="m">1</span><span class="w"> </span>gem<span class="w"> </span>installed
 </code></pre></div>
 <h3 id="other-installation-options">Other Installation Options<a class="headerlink" href="#other-installation-options" title="Permanent link">&para;</a></h3>
 <p>Because Nokogiri is a C extension, it requires that you have a C compiler toolchain, Ruby development header files, and some system dependencies installed.</p>
 <p>The following may work for you if you have an appropriately-configured system:</p>
-<div class="highlight"><pre><span></span><code>gem install nokogiri
+<div class="highlight"><pre><span></span><code>gem<span class="w"> </span>install<span class="w"> </span>nokogiri
 </code></pre></div>
 <p>If you have any issues, please visit <a href="https://nokogiri.org/tutorials/installing_nokogiri.html">Installing Nokogiri</a> for more complete instructions and troubleshooting.</p>
 <h2 id="how-to-use-nokogiri">How To Use Nokogiri<a class="headerlink" href="#how-to-use-nokogiri" title="Permanent link">&para;</a></h2>
@@ -1669,25 +1692,25 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 <p>Here is example usage for parsing and querying a document:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#! /usr/bin/env ruby</span>
 
-<span class="nb">require</span> <span class="s1">&#39;nokogiri&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;open-uri&#39;</span>
+<span class="nb">require</span><span class="w"> </span><span class="s1">&#39;nokogiri&#39;</span>
+<span class="nb">require</span><span class="w"> </span><span class="s1">&#39;open-uri&#39;</span>
 
 <span class="c1"># Fetch and parse HTML document</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://nokogiri.org/tutorials/installing_nokogiri.html&#39;</span><span class="p">))</span>
+<span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://nokogiri.org/tutorials/installing_nokogiri.html&#39;</span><span class="p">))</span>
 
 <span class="c1"># Search for nodes by css</span>
-<span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;nav ul.menu li a&#39;</span><span class="p">,</span> <span class="s1">&#39;article h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="n">link</span><span class="o">.</span><span class="n">content</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;nav ul.menu li a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;article h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">link</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">link</span><span class="o">.</span><span class="n">content</span>
 <span class="k">end</span>
 
 <span class="c1"># Search for nodes by xpath</span>
-<span class="n">doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//nav//ul//li/a&#39;</span><span class="p">,</span> <span class="s1">&#39;//article//h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="n">link</span><span class="o">.</span><span class="n">content</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//nav//ul//li/a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;//article//h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">link</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">link</span><span class="o">.</span><span class="n">content</span>
 <span class="k">end</span>
 
 <span class="c1"># Or mix and match</span>
-<span class="n">doc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;nav ul.menu li a&#39;</span><span class="p">,</span> <span class="s1">&#39;//article//h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="n">link</span><span class="o">.</span><span class="n">content</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;nav ul.menu li a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;//article//h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">link</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">link</span><span class="o">.</span><span class="n">content</span>
 <span class="k">end</span>
 </code></pre></div>
 <h3 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h3>
@@ -1705,7 +1728,7 @@ possible. <code>libxml2</code> does its best, but it can't be right all the time
 <p>If you want Nokogiri to handle the document encoding properly, your
 best bet is to explicitly set the encoding.  Here is an example of
 explicitly setting the encoding to EUC-JP on the parser:</p>
-<div class="highlight"><pre><span></span><code>  <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;/foo&gt;&#39;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s1">&#39;&lt;foo&gt;&lt;bar /&gt;&lt;/foo&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="kp">nil</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EUC-JP&#39;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="technical-overview">Technical Overview<a class="headerlink" href="#technical-overview" title="Permanent link">&para;</a></h2>
 <h3 id="guiding-principles_1">Guiding Principles<a class="headerlink" href="#guiding-principles_1" title="Permanent link">&para;</a></h3>

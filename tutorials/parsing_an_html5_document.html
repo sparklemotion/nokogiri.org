@@ -1212,10 +1212,10 @@ implement this support, or would like to know more, please see
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Parse an HTML5 document:</p>
-<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </code></pre></div>
 <p>Parse an HTML5 fragment:</p>
-<div class="highlight"><pre><span></span><code><span class="n">fragment</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="o">.</span><span class="n">fragment</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">fragment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="o">.</span><span class="n">fragment</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="parsing-options">Parsing options<a class="headerlink" href="#parsing-options" title="Permanent link">&para;</a></h2>
 <p>The document and fragment parsing methods support options that are different from Nokogiri's.</p>
@@ -1234,9 +1234,9 @@ are reported but this can be configured by passing the <code>:max_errors</code> 
 <a href="/rdoc/Nokogiri/HTML5.html#parse-class_method">HTML5.parse</a> or
 <a href="/rdoc/Nokogiri/HTML5.html#fragment-class_method">HTML5.fragment</a>.</p>
 <p>For example, this script:</p>
-<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;&#39;</span><span class="p">,</span> <span class="ss">max_errors</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">doc</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">err</span><span class="o">|</span>
-  <span class="nb">puts</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">max_errors</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">err</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>Emits:</p>
@@ -1260,9 +1260,9 @@ parsing HTML. The parse errors in the "tree construction" stage do not have stan
 codes (yet).</p>
 <p>As a convenience to Nokogiri users, the defined error codes are available via
 <code>Nokogiri::XML::SyntaxError#str1</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;&#39;</span><span class="p">,</span> <span class="ss">max_errors</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">doc</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">err</span><span class="o">|</span>
-  <span class="nb">puts</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">err</span><span class="o">.</span><span class="n">line</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">err</span><span class="o">.</span><span class="n">column</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">err</span><span class="o">.</span><span class="n">str1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">max_errors</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">err</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">err</span><span class="o">.</span><span class="n">line</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">err</span><span class="o">.</span><span class="n">column</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">err</span><span class="o">.</span><span class="n">str1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">end</span>
 <span class="c1"># =&gt; 1:1: generic-parser</span>
 <span class="c1">#    1:1: non-void-html-element-start-tag-with-trailing-solidus</span>
@@ -1280,21 +1280,21 @@ major version number changing. These may be stabilized in the future.</p>
 <code>::ArgumentError</code> is thrown.</p>
 <p>This limit (which defaults to <code>Nokogiri::Gumbo::DEFAULT_MAX_TREE_DEPTH = 400</code>) can be removed
 by giving the option <code>max_tree_depth: -1</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">html</span> <span class="o">=</span> <span class="s1">&#39;&lt;!DOCTYPE html&gt;&#39;</span> <span class="o">+</span> <span class="s1">&#39;&lt;div&gt;&#39;</span> <span class="o">*</span> <span class="mi">1000</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;!DOCTYPE html&gt;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&lt;div&gt;&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span>
+<span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 <span class="c1"># raises ArgumentError: Document tree depth limit exceeded</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="ss">max_tree_depth</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">,</span><span class="w"> </span><span class="ss">max_tree_depth</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="attribute-limit-per-element">Attribute limit per element<a class="headerlink" href="#attribute-limit-per-element" title="Permanent link">&para;</a></h3>
 <p>The maximum number of attributes per DOM element is configurable by the <code>:max_attributes</code>
 option. If a given element would exceed this limit, then an <code>::ArgumentError</code> is thrown.</p>
 <p>This limit (which defaults to <code>Nokogiri::Gumbo::DEFAULT_MAX_ATTRIBUTES = 400</code>) can be removed
 by giving the option <code>max_attributes: -1</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">html</span> <span class="o">=</span> <span class="s1">&#39;&lt;!DOCTYPE html&gt;&lt;div &#39;</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="s2">&quot;attr-</span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;!DOCTYPE html&gt;&lt;div &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;attr-</span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">}</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&gt;&#39;</span>
 <span class="c1"># &quot;&lt;!DOCTYPE html&gt;&lt;div attr-1 attr-2 attr-3 ... attr-1000&gt;&quot;</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 <span class="c1"># raises ArgumentError: Attributes per element limit exceeded</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="ss">max_attributes</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">.</span><span class="n">HTML5</span><span class="p">(</span><span class="n">html</span><span class="p">,</span><span class="w"> </span><span class="ss">max_attributes</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="html-serialization">HTML Serialization<a class="headerlink" href="#html-serialization" title="Permanent link">&para;</a></h2>
 <p>After parsing HTML, it may be serialized using any of the <code>Nokogiri::XML::Node</code> serialization
@@ -1302,8 +1302,8 @@ methods. In particular, <code>XML::Node#serialize</code>, <code>#to_html</code>,
 serialize a given node and its children. (This is the equivalent of JavaScript's
 <code>Element.outerHTML</code>.) Similarly, <code>XML::Node#inner_html</code> will serialize the children of a given
 node. (This is the equivalent of JavaScript's <code>Element.innerHTML</code>.)</p>
-<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="p">(</span><span class="s2">&quot;&lt;!DOCTYPE html&gt;&lt;span&gt;Hello world!&lt;/span&gt;&quot;</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">doc</span><span class="o">.</span><span class="n">serialize</span>
+<div class="highlight"><pre><span></span><code><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML5</span><span class="p">(</span><span class="s2">&quot;&lt;!DOCTYPE html&gt;&lt;span&gt;Hello world!&lt;/span&gt;&quot;</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">doc</span><span class="o">.</span><span class="n">serialize</span>
 <span class="c1"># =&gt; &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;span&gt;Hello world!&lt;/span&gt;&lt;/body&gt;&lt;/html&gt;</span>
 </code></pre></div>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>

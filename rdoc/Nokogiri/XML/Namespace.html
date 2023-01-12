@@ -90,6 +90,9 @@
 
   <ul class="link-list" role="directory">
     <li>
+<a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
+    </li>
+<li>
 <a href="#method-i-href">#href</a>
     </li>
 <li>
@@ -136,16 +139,97 @@
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-href" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            href
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+      <div id="method-i-deconstruct_keys" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              deconstruct_keys(array_of_names) → Hash
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
-          <p>Get the href for this namespace</p>
+          <p>Returns a hash describing the <a href="Namespace.html"><code>Namespace</code></a>, to use in pattern matching.</p>
+
+<p>Valid keys and their values:</p>
+<ul>
+<li>
+<p><code>prefix</code> → (String, nil) The namespace’s prefix, or <code>nil</code> if there is no prefix (e.g., default namespace).</p>
+</li>
+<li>
+<p><code>href</code> → (String) The namespace’s URI</p>
+</li>
+</ul>
+
+<p>⚡ This is an experimental feature, available since v1.14.0</p>
+
+<p><strong>Example</strong></p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">&lt;&lt;~XML</span>)
+<span class="ruby-value">  &lt;?xml version="1.0"?&gt;
+  &lt;root xmlns="http://nokogiri.org/ns/default" xmlns:noko="http://nokogiri.org/ns/noko"&gt;
+    &lt;child1 foo="abc" noko:bar="def"/&gt;
+    &lt;noko:child2 foo="qwe" noko:bar="rty"/&gt;
+  &lt;/root&gt;
+</span><span class="ruby-identifier">XML</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">namespace</span>
+<span class="ruby-comment"># =&gt; #(Namespace:0x35c { href = "http://nokogiri.org/ns/default" })</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">deconstruct_keys</span>([<span class="ruby-value">:prefix</span>, <span class="ruby-value">:href</span>])
+<span class="ruby-comment"># =&gt; {:prefix=&gt;nil, :href=&gt;"http://nokogiri.org/ns/default"}</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">namespace</span>
+<span class="ruby-comment"># =&gt; #(Namespace:0x370 {</span>
+<span class="ruby-comment">#      prefix = "noko",</span>
+<span class="ruby-comment">#      href = "http://nokogiri.org/ns/noko"</span>
+<span class="ruby-comment">#      })</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">deconstruct_keys</span>([<span class="ruby-value">:prefix</span>, <span class="ruby-value">:href</span>])
+<span class="ruby-comment"># =&gt; {:prefix=&gt;"noko", :href=&gt;"http://nokogiri.org/ns/noko"}</span>
+</pre>
+
+          <div class="method-source-code" id="deconstruct_keys-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/namespace.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+  { <span class="ruby-value">prefix:</span> <span class="ruby-identifier">prefix</span>, <span class="ruby-value">href:</span> <span class="ruby-identifier">href</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-href" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              href() → String
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>Returns the URI reference for this <a href="Namespace.html"><code>Namespace</code></a>.</p>
+
+<p><strong>Example</strong></p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">&lt;&lt;~XML</span>)
+<span class="ruby-value">  &lt;?xml version="1.0"?&gt;
+  &lt;root xmlns="http://nokogiri.org/ns/default" xmlns:noko="http://nokogiri.org/ns/noko"&gt;
+    &lt;child1 foo="abc" noko:bar="def"/&gt;
+    &lt;noko:child2 foo="qwe" noko:bar="rty"/&gt;
+  &lt;/root&gt;
+</span><span class="ruby-identifier">XML</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">href</span>
+<span class="ruby-comment"># =&gt; "http://nokogiri.org/ns/default"</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">href</span>
+<span class="ruby-comment"># =&gt; "http://nokogiri.org/ns/noko"</span>
+</pre>
 
           <div class="method-source-code" id="href-source">
             <pre>static VALUE
@@ -165,15 +249,34 @@ href(VALUE self)
       </div>
 
       <div id="method-i-prefix" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            prefix
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              prefix() → String or nil
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
-          <p>Get the prefix for this namespace.  Returns <code>nil</code> if there is no prefix.</p>
+          <p>Return the prefix for this <a href="Namespace.html"><code>Namespace</code></a>, or <code>nil</code> if there is no prefix (e.g., default namespace).</p>
+
+<p><strong>Example</strong></p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">&lt;&lt;~XML</span>)
+<span class="ruby-value">  &lt;?xml version="1.0"?&gt;
+  &lt;root xmlns="http://nokogiri.org/ns/default" xmlns:noko="http://nokogiri.org/ns/noko"&gt;
+    &lt;child1 foo="abc" noko:bar="def"/&gt;
+    &lt;noko:child2 foo="qwe" noko:bar="rty"/&gt;
+  &lt;/root&gt;
+</span><span class="ruby-identifier">XML</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">prefix</span>
+<span class="ruby-comment"># =&gt; nil</span>
+
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">prefix</span>
+<span class="ruby-comment"># =&gt; "noko"</span>
+</pre>
 
           <div class="method-source-code" id="prefix-source">
             <pre>static VALUE
@@ -201,7 +304,7 @@ prefix(VALUE self)
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

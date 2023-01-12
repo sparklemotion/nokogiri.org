@@ -182,9 +182,11 @@
        </header>
 
       <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">new</span><span class="method-args">(doc = Nokogiri::XML::SAX::Document.new, encoding = "UTF-8")</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">new</span><span class="method-args">(doc = Nokogiri::XML::SAX::Document.new, encoding = "UTF-8")</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -211,9 +213,11 @@
        </header>
 
       <div id="method-i-parse" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">parse</span><span class="method-args">(thing, &amp;block)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">parse</span><span class="method-args">(thing, &amp;block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -235,16 +239,18 @@
       </div>
 
       <div id="method-i-parse_file" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">parse_file</span><span class="method-args">(filename) { |ctx| ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">parse_file</span><span class="method-args">(filename) { |ctx| ... }</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           <p>Parse a file with <code>filename</code></p>
 
           <div class="method-source-code" id="parse_file-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 100</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_file</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">filename</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">filename</span>)
@@ -261,9 +267,11 @@
       </div>
 
       <div id="method-i-parse_io" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">parse_io</span><span class="method-args">(io, encoding = "ASCII") { |ctx| ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">parse_io</span><span class="method-args">(io, encoding = @encoding) { |ctx| ... }</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -271,9 +279,8 @@
 
           <div class="method-source-code" id="parse_io-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 91</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"ASCII"</span>)
-  <span class="ruby-ivar">@encoding</span> = <span class="ruby-identifier">check_encoding</span>(<span class="ruby-identifier">encoding</span>)
-  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-constant">ENCODINGS</span>[<span class="ruby-ivar">@encoding</span>])
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-ivar">@encoding</span>)
+  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-constant">ENCODINGS</span>[<span class="ruby-identifier">check_encoding</span>(<span class="ruby-identifier">encoding</span>)])
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -284,16 +291,18 @@
       </div>
 
       <div id="method-i-parse_memory" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">parse_memory</span><span class="method-args">(data) { |ctx| ... }</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">parse_memory</span><span class="method-args">(data) { |ctx| ... }</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
           
 
           <div class="method-source-code" id="parse_memory-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 110</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_memory</span>(<span class="ruby-identifier">data</span>)
   <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">memory</span>(<span class="ruby-identifier">data</span>)
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
@@ -314,7 +323,7 @@
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>

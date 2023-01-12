@@ -123,11 +123,13 @@
        </header>
 
       <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            new(node)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              new(node)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -135,7 +137,7 @@
 
           <div class="method-source-code" id="new-source">
             <pre>static VALUE
-new (VALUE klass, VALUE nodeobj)
+rb_xml_xpath_context_new(VALUE klass, VALUE nodeobj)
 {
   xmlNodePtr node;
   xmlXPathContextPtr ctx;
@@ -151,13 +153,14 @@ new (VALUE klass, VALUE nodeobj)
   ctx = xmlXPathNewContext(node-&gt;doc);
   ctx-&gt;node = node;
 
+  xmlXPathRegisterNs(ctx, NOKOGIRI_PREFIX, NOKOGIRI_URI);
   xmlXPathRegisterNs(ctx, NOKOGIRI_BUILTIN_PREFIX, NOKOGIRI_BUILTIN_URI);
   xmlXPathRegisterFuncNS(ctx, (const xmlChar *)"css-class", NOKOGIRI_BUILTIN_URI,
                          xpath_builtin_css_class);
   xmlXPathRegisterFuncNS(ctx, (const xmlChar *)"local-name-is", NOKOGIRI_BUILTIN_URI,
                          xpath_builtin_local_name_is);
 
-  self = Data_Wrap_Struct(klass, 0, deallocate, ctx);
+  self = Data_Wrap_Struct(klass, 0, xml_xpath_context_deallocate, ctx);
   return self;
 }</pre>
           </div>
@@ -174,11 +177,13 @@ new (VALUE klass, VALUE nodeobj)
        </header>
 
       <div id="method-i-evaluate" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            evaluate(search_path, handler = nil)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              evaluate(search_path, handler = nil)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -186,13 +191,14 @@ new (VALUE klass, VALUE nodeobj)
 
           <div class="method-source-code" id="evaluate-source">
             <pre>static VALUE
-evaluate(int argc, VALUE *argv, VALUE self)
+rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE self)
 {
   VALUE search_path, xpath_handler;
   VALUE retval = Qnil;
   xmlXPathContextPtr ctx;
   xmlXPathObjectPtr xpath;
   xmlChar *query;
+  VALUE errors = rb_ary_new();
 
   Data_Get_Struct(self, xmlXPathContext, ctx);
 
@@ -205,23 +211,19 @@ evaluate(int argc, VALUE *argv, VALUE self)
   if (Qnil != xpath_handler) {
     /* FIXME: not sure if this is the correct place to shove private data. */
     ctx-&gt;userData = (void *)xpath_handler;
-    xmlXPathRegisterFuncLookup(ctx, lookup, (void *)xpath_handler);
+    xmlXPathRegisterFuncLookup(ctx, handler_lookup, (void *)xpath_handler);
   }
 
-  xmlResetLastError();
-  xmlSetStructuredErrorFunc(NULL, Nokogiri_error_raise);
-
-  /* For some reason, xmlXPathEvalExpression will blow up with a generic error */
-  /* when there is a non existent function. */
-  xmlSetGenericErrorFunc(NULL, xpath_generic_exception_handler);
+  xmlSetStructuredErrorFunc((void *)errors, Nokogiri_error_array_pusher);
+  xmlSetGenericErrorFunc((void *)errors, generic_exception_pusher);
 
   xpath = xmlXPathEvalExpression(query, ctx);
+
   xmlSetStructuredErrorFunc(NULL, NULL);
   xmlSetGenericErrorFunc(NULL, NULL);
 
   if (xpath == NULL) {
-    xmlErrorPtr error = xmlGetLastError();
-    rb_exc_raise(Nokogiri_wrap_xml_syntax_error(error));
+    rb_exc_raise(rb_ary_entry(errors, 0));
   }
 
   retval = xpath2ruby(xpath, ctx);
@@ -240,9 +242,11 @@ evaluate(int argc, VALUE *argv, VALUE self)
       </div>
 
       <div id="method-i-register_namespaces" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">register_namespaces</span><span class="method-args">(namespaces)</span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">register_namespaces</span><span class="method-args">(namespaces)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -263,11 +267,13 @@ evaluate(int argc, VALUE *argv, VALUE self)
       </div>
 
       <div id="method-i-register_ns" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            register_ns(prefix, uri)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              register_ns(prefix, uri)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -275,7 +281,7 @@ evaluate(int argc, VALUE *argv, VALUE self)
 
           <div class="method-source-code" id="register_ns-source">
             <pre>static VALUE
-register_ns(VALUE self, VALUE prefix, VALUE uri)
+rb_xml_xpath_context_register_ns(VALUE self, VALUE prefix, VALUE uri)
 {
   xmlXPathContextPtr ctx;
   Data_Get_Struct(self, xmlXPathContext, ctx);
@@ -293,11 +299,13 @@ register_ns(VALUE self, VALUE prefix, VALUE uri)
       </div>
 
       <div id="method-i-register_variable" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-callseq">
-            register_variable(name, value)
-          </span>
-          <span class="method-click-advice">click to toggle source</span>
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              register_variable(name, value)
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
 
         <div class="method-description">
@@ -305,7 +313,7 @@ register_ns(VALUE self, VALUE prefix, VALUE uri)
 
           <div class="method-source-code" id="register_variable-source">
             <pre>static VALUE
-register_variable(VALUE self, VALUE name, VALUE value)
+rb_xml_xpath_context_register_variable(VALUE self, VALUE name, VALUE value)
 {
   xmlXPathContextPtr ctx;
   xmlXPathObjectPtr xmlValue;
@@ -335,7 +343,7 @@ register_variable(VALUE self, VALUE name, VALUE value)
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.2.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>
