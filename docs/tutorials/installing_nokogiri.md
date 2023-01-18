@@ -190,7 +190,7 @@ If you're using macports and would like to contribute documentation, please open
 #### FreeBSD
 
 ``` sh
-sudo pkg install pkgconf
+sudo pkg install pkgconf libxml2 libxslt
 gem install nokogiri -- --use-system-libraries
 ```
 
