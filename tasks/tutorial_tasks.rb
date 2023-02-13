@@ -111,7 +111,7 @@ def sub_do(tag, content, &block)
     output = []
     output << "``` #{codetype(assets.first)}\n" # assume all are the same type
     assets.each do |asset_name|
-      raise "Could not find asset #{asset_name}" unless File.exists?(asset_name)
+      raise "Could not find asset #{asset_name}" unless File.exist?(asset_name)
       puts "  #{tag} file: #{asset_name}"
 
       output << yield(asset_name)
