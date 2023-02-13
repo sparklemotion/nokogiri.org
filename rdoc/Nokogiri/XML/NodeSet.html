@@ -513,7 +513,7 @@ minus(VALUE self, VALUE rb_other)
           <p>Equality – Two NodeSets are equal if the contain the same number of elements and if each element is equal to the corresponding element in the other <a href="NodeSet.html"><code>NodeSet</code></a></p>
 
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 392</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 393</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">NodeSet</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">length</span>
@@ -834,7 +834,7 @@ slice(int argc, VALUE *argv, VALUE self)
           <p>Returns a new <a href="NodeSet.html"><code>NodeSet</code></a> containing all the children of all the nodes in the <a href="NodeSet.html"><code>NodeSet</code></a></p>
 
           <div class="method-source-code" id="children-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 405</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 406</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">children</span>
   <span class="ruby-identifier">node_set</span> = <span class="ruby-constant">NodeSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>)
   <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
@@ -915,7 +915,7 @@ slice(int argc, VALUE *argv, VALUE self)
 <p>⚡ This is an experimental feature, available since v1.14.0</p>
 
           <div class="method-source-code" id="deconstruct-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 439</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 440</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span>
   <span class="ruby-identifier">to_a</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1227,7 +1227,7 @@ include_eh(VALUE self, VALUE rb_node)
           <p>Return a nicely formated string representation</p>
 
           <div class="method-source-code" id="inspect-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 426</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 427</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
   <span class="ruby-node">"[#{map(&amp;:inspect).join(", ")}]"</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1303,7 +1303,7 @@ length(VALUE self)
           <p>Removes the last element from set and returns it, or <code>nil</code> if the set is empty</p>
 
           <div class="method-source-code" id="pop-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 373</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 374</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
 
@@ -1456,7 +1456,7 @@ push(VALUE self, VALUE rb_node)
           <p>Returns a new <a href="NodeSet.html"><code>NodeSet</code></a> containing all the nodes in the <a href="NodeSet.html"><code>NodeSet</code></a> in reverse order</p>
 
           <div class="method-source-code" id="reverse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 416</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 417</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reverse</span>
   <span class="ruby-identifier">node_set</span> = <span class="ruby-constant">NodeSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>)
   (<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
@@ -1500,7 +1500,7 @@ push(VALUE self, VALUE rb_node)
           <p>Returns the first element of the <a href="NodeSet.html"><code>NodeSet</code></a> and removes it.  Returns <code>nil</code> if the set is empty.</p>
 
           <div class="method-source-code" id="shift-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 382</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 383</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">shift</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
 
@@ -1660,8 +1660,9 @@ to_array(VALUE self)
     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">options</span>)
   <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">empty?</span>
-    <span class="ruby-identifier">encoding</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">encoding</span>
-    <span class="ruby-string">""</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">encoding</span>)
+    <span class="ruby-identifier">encoding</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">encoding</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">encoding</span>
+    <span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-string">""</span> <span class="ruby-operator">:</span> <span class="ruby-string">""</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }.<span class="ruby-identifier">join</span>
   <span class="ruby-keyword">end</span>
@@ -1706,7 +1707,7 @@ to_array(VALUE self)
           <p>Convert this <a href="NodeSet.html"><code>NodeSet</code></a> to XHTML</p>
 
           <div class="method-source-code" id="to_xhtml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 357</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 358</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }.<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1728,7 +1729,7 @@ to_array(VALUE self)
           <p>Convert this <a href="NodeSet.html"><code>NodeSet</code></a> to <a href="../XML.html"><code>XML</code></a></p>
 
           <div class="method-source-code" id="to_xml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 363</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 364</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }.<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
