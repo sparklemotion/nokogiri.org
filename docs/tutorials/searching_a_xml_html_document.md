@@ -99,7 +99,7 @@ remove all namespaces. Of course, if the document had nodes with the
 same names but different namespaces, they will now be ambiguous. But
 you're lazy! You don't care!
 
-  [1]: http://tenderlovemaking.com/2009/04/23/namespaces-in-xml/
+  [1]: https://tenderlovemaking.com/2009/04/23/namespaces-in-xml.html
   [2]: http://groups.google.com/group/nokogiri-talk
   [remove_namespaces!]: https://nokogiri.org/rdoc/Nokogiri/XML/Document#remove_namespaces%21-instance_method
 
