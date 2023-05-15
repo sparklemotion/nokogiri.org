@@ -281,7 +281,7 @@
 </pre>
 
           <div class="method-source-code" id="Slop-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri.rb, line 83</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-constant">Slop</span>(<span class="ruby-operator">*</span><span class="ruby-identifier ruby-title">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Nokogiri</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>).<span class="ruby-identifier">slop!</span>
 <span class="ruby-keyword">end</span></pre>
@@ -352,7 +352,7 @@
           <p>Create a new <a href="Nokogiri/XML/DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a></p>
 
           <div class="method-source-code" id="make-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri.rb, line 60</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">make</span>(<span class="ruby-identifier">input</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">opts</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>
     <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-identifier">input</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">first</span>
@@ -385,11 +385,19 @@
     <span class="ruby-comment"># Expect an HTML indicator to appear within the first 512</span>
     <span class="ruby-comment"># characters of a document. (&lt;?xml ?&gt; + &lt;?xml-stylesheet ?&gt;</span>
     <span class="ruby-comment"># shouldn't be that long)</span>
-    <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">HTML4</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>,
-      <span class="ruby-identifier">options</span> <span class="ruby-operator">||</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>)
+    <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">HTML4</span>(
+      <span class="ruby-identifier">string</span>,
+      <span class="ruby-identifier">url</span>,
+      <span class="ruby-identifier">encoding</span>,
+      <span class="ruby-identifier">options</span> <span class="ruby-operator">||</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>,
+    )
   <span class="ruby-keyword">else</span>
-    <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>,
-      <span class="ruby-identifier">options</span> <span class="ruby-operator">||</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>)
+    <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(
+      <span class="ruby-identifier">string</span>,
+      <span class="ruby-identifier">url</span>,
+      <span class="ruby-identifier">encoding</span>,
+      <span class="ruby-identifier">options</span> <span class="ruby-operator">||</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>,
+    )
   <span class="ruby-keyword">end</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">yield</span> <span class="ruby-identifier">doc</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-keyword">end</span>

@@ -127,7 +127,7 @@
             </div>
 
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 65</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">tags</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
@@ -155,7 +155,7 @@
             </div>
 
           <div class="method-source-code" id="inner_html-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 28</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_html</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
@@ -185,7 +185,7 @@
             </div>
 
           <div class="method-source-code" id="write_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 36</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
@@ -202,6 +202,8 @@
 
   <span class="ruby-identifier">config</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">save_options</span>.<span class="ruby-identifier">to_i</span>)
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">config</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Encoding</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">encoding</span>
 
   <span class="ruby-identifier">config_options</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">options</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">config_options</span> <span class="ruby-operator">&amp;</span> (<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">AS_XML</span> <span class="ruby-operator">|</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">AS_XHTML</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>

@@ -1367,7 +1367,7 @@ duplicate_node(int argc, VALUE *argv, VALUE self)
   if (n_args &lt; 2) {
     new_parent_doc = node-&gt;doc;
   } else {
-    Data_Get_Struct(r_new_parent_doc, xmlDoc, new_parent_doc);
+    new_parent_doc = noko_xml_document_unwrap(r_new_parent_doc);
   }
 
   dup = xmlDocCopyNode(node, new_parent_doc, level);
@@ -3126,7 +3126,7 @@ unlink_node(VALUE self)
           
 
           <div class="method-source-code" id="coerce-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1473</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1482</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">coerce</span>(<span class="ruby-identifier">data</span>)
         <span class="ruby-keyword">case</span> <span class="ruby-identifier">data</span>
         <span class="ruby-keyword">when</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">NodeSet</span>
@@ -4078,7 +4078,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
           <p>Search this node’s immediate children using <a href="../CSS.html"><code>CSS</code></a> selector <code>selector</code></p>
 
           <div class="method-source-code" id="3E-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 196</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
   <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
   <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
@@ -4108,7 +4108,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Searchable.html#method-i-search"><code>Searchable#search</code></a> for more information.</p>
 
           <div class="method-source-code" id="at-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 71</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -4140,7 +4140,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 140</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -4169,7 +4169,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 188</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 193</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -4237,7 +4237,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>⚠ NOTE that the <a href="../CSS.html"><code>CSS</code></a> query string is case-sensitive with regards to your document type. <a href="../HTML4.html"><code>HTML</code></a> tags will match only lowercase <a href="../CSS.html"><code>CSS</code></a> queries, so if you search for “H1” in an <a href="../HTML4.html"><code>HTML</code></a> document, you’ll never find anything. However, “H1” might be found in an <a href="../XML.html"><code>XML</code></a> document, where tags names are case-sensitive (e.g., “H1” is distinct from “h1”).</p>
 
           <div class="method-source-code" id="css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 126</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">rules</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">_</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 
@@ -4279,20 +4279,22 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
 </pre>
 
-<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
+<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define, which will be in the ‘nokogiri` namespace in <a href="XPath.html"><code>XPath</code></a> queries.</p>
+
+<p>The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
 
 <pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span> <span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>
     <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
   <span class="ruby-keyword">end</span>
 }.<span class="ruby-identifier">new</span>
-<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[nokogiri:regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
 </pre>
 
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> and <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for further usage help.</p>
 
           <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 51</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 
@@ -4341,18 +4343,20 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
 </pre>
 
-<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
+<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions may also be defined. To define custom functions create a class and implement the function you want to define, which will be in the ‘nokogiri` namespace.</p>
+
+<p>The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
 
 <pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span>(<span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>)
     <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
   <span class="ruby-keyword">end</span>
 }.<span class="ruby-identifier">new</span>
-<span class="ruby-identifier">node</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-identifier">handler</span>)
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">'.//title[nokogiri:regex(., "\w+")]'</span>, <span class="ruby-identifier">handler</span>)
 </pre>
 
           <div class="method-source-code" id="xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 174</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 179</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 
@@ -4398,7 +4402,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
           
 
           <div class="method-source-code" id="canonicalize-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1398</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1407</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">canonicalize</span>(<span class="ruby-identifier">mode</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML_C14N_1_0</span>, <span class="ruby-identifier">inclusive_namespaces</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">with_comments</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">c14n_root</span> = <span class="ruby-keyword">self</span>
   <span class="ruby-identifier">document</span>.<span class="ruby-identifier">canonicalize</span>(<span class="ruby-identifier">mode</span>, <span class="ruby-identifier">inclusive_namespaces</span>, <span class="ruby-identifier">with_comments</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span>, <span class="ruby-identifier">parent</span><span class="ruby-operator">|</span>
@@ -4488,7 +4492,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 </pre>
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1459</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1468</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   <span class="ruby-identifier">requested_keys</span> = <span class="ruby-constant">DECONSTRUCT_KEYS</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">keys</span>
   {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">values</span><span class="ruby-operator">|</span>
@@ -4519,12 +4523,12 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 
 <p>These two statements are equivalent:</p>
 
-<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">serialize</span>(<span class="ruby-value">:encoding</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'UTF-8'</span>, <span class="ruby-value">:save_with</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">FORMAT</span> <span class="ruby-operator">|</span> <span class="ruby-constant">AS_XML</span>)
+<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">serialize</span>(<span class="ruby-value">encoding:</span> <span class="ruby-string">'UTF-8'</span>, <span class="ruby-value">save_with:</span> <span class="ruby-constant">FORMAT</span> <span class="ruby-operator">|</span> <span class="ruby-constant">AS_XML</span>)
 </pre>
 
 <p>or</p>
 
-<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">serialize</span>(<span class="ruby-value">:encoding</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'UTF-8'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">serialize</span>(<span class="ruby-value">encoding:</span> <span class="ruby-string">'UTF-8'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">config</span>.<span class="ruby-identifier">format</span>.<span class="ruby-identifier">as_xml</span>
 <span class="ruby-keyword">end</span>
 </pre>
@@ -4593,7 +4597,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
         <div class="method-description">
           <p>Serialize this <a href="Node.html"><code>Node</code></a> to XHTML using <code>options</code></p>
 
-<pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">to_xhtml</span>(<span class="ruby-value">:indent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">5</span>, <span class="ruby-value">:encoding</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'UTF-8'</span>)
+<pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">to_xhtml</span>(<span class="ruby-value">indent:</span> <span class="ruby-value">5</span>, <span class="ruby-value">encoding:</span> <span class="ruby-string">'UTF-8'</span>)
 </pre>
 
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
@@ -4620,7 +4624,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
         <div class="method-description">
           <p>Serialize this <a href="Node.html"><code>Node</code></a> to <a href="../XML.html"><code>XML</code></a> using <code>options</code></p>
 
-<pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">to_xml</span>(<span class="ruby-value">:indent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">5</span>, <span class="ruby-value">:encoding</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'UTF-8'</span>)
+<pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">to_xml</span>(<span class="ruby-value">indent:</span> <span class="ruby-value">5</span>, <span class="ruby-value">encoding:</span> <span class="ruby-string">'UTF-8'</span>)
 </pre>
 
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
@@ -4651,7 +4655,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
 
           <div class="method-source-code" id="write_html_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1375</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1384</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_html_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">write_format_to</span>(<span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>, <span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4664,43 +4668,63 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
       <div id="method-i-write_to" class="method-detail ">
         <div class="method-header">
           <div class="method-heading">
-            <span class="method-name">write_to</span><span class="method-args">(io, *options) { |config| ... }</span>
+            <span class="method-callseq">
+              write_to(io, *options)
+            </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>Write <a href="Node.html"><code>Node</code></a> to <code>io</code> with <code>options</code>. <code>options</code> modify the output of this method.  Valid options are:</p>
+          <p>Serialize this node or document to <code>io</code>.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
 <ul>
 <li>
-<p><code>:encoding</code> for changing the encoding</p>
+<p><code>io</code> (IO) An IO-like object to which the serialized content will be written.</p>
 </li>
 <li>
-<p><code>:indent_text</code> the indentation text, defaults to one space</p>
+<p><code>options</code> (Hash) See below</p>
+</li>
+</ul>
+<dl class="rdoc-list label-list">
+<dt>Options
+</dt>
+<dd></dd>
+</dl>
+<ul>
+<li>
+<p><code>:encoding</code> (String or Encoding) specify the encoding of the output (defaults to document encoding)</p>
 </li>
 <li>
-<p><code>:indent</code> the number of <code>:indent_text</code> to use, defaults to 2</p>
+<p><code>:indent_text</code> (String) the indentation text (defaults to <code>" "</code>)</p>
 </li>
 <li>
-<p><code>:save_with</code> a combination of <a href="Node/SaveOptions.html"><code>SaveOptions</code></a> constants.</p>
+<p><code>:indent</code> (Integer) the number of <code>:indent_text</code> to use (defaults to <code>2</code>)</p>
+</li>
+<li>
+<p><code>:save_with</code> (Integer) a combination of <a href="Node/SaveOptions.html"><code>SaveOptions</code></a> constants</p>
 </li>
 </ul>
 
 <p>To save with UTF-8 indented twice:</p>
 
-<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-value">:encoding</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'UTF-8'</span>, <span class="ruby-value">:indent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">2</span>)
+<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-value">encoding:</span> <span class="ruby-string">'UTF-8'</span>, <span class="ruby-value">indent:</span> <span class="ruby-value">2</span>)
 </pre>
 
 <p>To save indented with two dashes:</p>
 
-<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-value">:indent_text</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'-'</span>, <span class="ruby-value">:indent</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">2</span>)
+<pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-value">indent_text:</span> <span class="ruby-string">'-'</span>, <span class="ruby-value">indent:</span> <span class="ruby-value">2</span>)
 </pre>
 
           <div class="method-source-code" id="write_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1348</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1355</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> {}
-  <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">encoding</span>
   <span class="ruby-keyword">if</span> <span class="ruby-constant">Nokogiri</span>.<span class="ruby-identifier">jruby?</span>
     <span class="ruby-identifier">save_options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">1</span>]
     <span class="ruby-identifier">indent_times</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:indent</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
@@ -4717,6 +4741,8 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 
   <span class="ruby-identifier">config</span> = <span class="ruby-constant">SaveOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">save_options</span>.<span class="ruby-identifier">to_i</span>)
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">config</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Encoding</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">encoding</span>
 
   <span class="ruby-identifier">native_write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">indentation</span>, <span class="ruby-identifier">config</span>.<span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4740,7 +4766,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
 
           <div class="method-source-code" id="write_xhtml_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1383</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1392</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_xhtml_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">write_format_to</span>(<span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XHTML</span>, <span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4767,7 +4793,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of options</p>
 
           <div class="method-source-code" id="write_xml_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1393</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1402</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_xml_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>
   <span class="ruby-identifier">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span>)

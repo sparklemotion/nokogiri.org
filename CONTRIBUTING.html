@@ -1724,9 +1724,14 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>stress<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 <h3 id="libxml2-advanced-usage">libxml2 advanced usage<a class="headerlink" href="#libxml2-advanced-usage" title="Permanent link">&para;</a></h3>
-<p>If you want to build Nokogiri against a modified version of libxml2, clone libxml2 to <code>../libxml2</code> and then run <code>scripts/compile-against-libxml2-source</code>.</p>
-<p>That script also takes an optional command to run with the proper environment variables set to use the local libxml2 library, which can be useful when trying to <code>git bisect</code> against libxml2. So, for example:</p>
+<p>If you want to build Nokogiri against a modified version of libxml2 or libxslt, clone them both into sibling directories (<code>../libxml2</code> and <code>../libxslt</code>) then run <code>scripts/compile-against-libxml2-source</code>.</p>
+<p>That script also takes an optional command to run with the proper environment variables set to use the local libxml2 library, which can be useful when trying to <code>git bisect</code> against libxml2 or libxslt. So, for example:</p>
 <div class="highlight"><pre><span></span><code>scripts/compile-against-libxml2-source<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<p>An alternative, if you're not bisecting or hacking on libxml2 or libxslt, is:</p>
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span>--<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--with-xslt-source-dir<span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/../libxslt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--with-xml2-source-dir<span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/../libxml2
 </code></pre></div>
 <h3 id="gumbo-html5-parser">gumbo HTML5 parser<a class="headerlink" href="#gumbo-html5-parser" title="Permanent link">&para;</a></h3>
 <p>To run the test suite for the gumbo parser:</p>

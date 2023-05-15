@@ -215,7 +215,7 @@
           <p>Search this node’s immediate children using <a href="../CSS.html"><code>CSS</code></a> selector <code>selector</code></p>
 
           <div class="method-source-code" id="3E-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 196</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
   <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
   <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
@@ -242,7 +242,7 @@
 <p>See <a href="Searchable.html#method-i-search"><code>Searchable#search</code></a> for more information.</p>
 
           <div class="method-source-code" id="at-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 71</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -271,7 +271,7 @@
 <p>See <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 140</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -297,7 +297,7 @@
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 188</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 193</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -362,7 +362,7 @@
 <p>⚠ NOTE that the <a href="../CSS.html"><code>CSS</code></a> query string is case-sensitive with regards to your document type. <a href="../HTML4.html"><code>HTML</code></a> tags will match only lowercase <a href="../CSS.html"><code>CSS</code></a> queries, so if you search for “H1” in an <a href="../HTML4.html"><code>HTML</code></a> document, you’ll never find anything. However, “H1” might be found in an <a href="../XML.html"><code>XML</code></a> document, where tags names are case-sensitive (e.g., “H1” is distinct from “h1”).</p>
 
           <div class="method-source-code" id="css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 126</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">rules</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">_</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 
@@ -401,20 +401,22 @@
 <pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
 </pre>
 
-<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
+<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define, which will be in the ‘nokogiri` namespace in <a href="XPath.html"><code>XPath</code></a> queries.</p>
+
+<p>The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
 
 <pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span> <span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>
     <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
   <span class="ruby-keyword">end</span>
 }.<span class="ruby-identifier">new</span>
-<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[nokogiri:regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
 </pre>
 
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> and <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for further usage help.</p>
 
           <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 51</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 
@@ -460,18 +462,20 @@
 <pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
 </pre>
 
-<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
+<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions may also be defined. To define custom functions create a class and implement the function you want to define, which will be in the ‘nokogiri` namespace.</p>
+
+<p>The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
 
 <pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span>(<span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>)
     <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
   <span class="ruby-keyword">end</span>
 }.<span class="ruby-identifier">new</span>
-<span class="ruby-identifier">node</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-identifier">handler</span>)
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">'.//title[nokogiri:regex(., "\w+")]'</span>, <span class="ruby-identifier">handler</span>)
 </pre>
 
           <div class="method-source-code" id="xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 174</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 179</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 

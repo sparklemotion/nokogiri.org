@@ -403,20 +403,20 @@
 
           <div class="method-source-code" id="26-source">
             <pre>static VALUE
-intersection(VALUE self, VALUE rb_other)
+intersection(VALUE rb_self, VALUE rb_other)
 {
-  xmlNodeSetPtr node_set, other ;
+  xmlNodeSetPtr c_self, c_other ;
   xmlNodeSetPtr intersection;
 
   if (!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet)) {
     rb_raise(rb_eArgError, "node_set must be a Nokogiri::XML::NodeSet");
   }
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
-  Data_Get_Struct(rb_other, xmlNodeSet, other);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
+  TypedData_Get_Struct(rb_other, xmlNodeSet, &amp;xml_node_set_type, c_other);
 
-  intersection = xmlXPathIntersection(node_set, other);
-  return noko_xml_node_set_wrap(intersection, rb_iv_get(self, "@document"));
+  intersection = xmlXPathIntersection(c_self, c_other);
+  return noko_xml_node_set_wrap(intersection, rb_iv_get(rb_self, "@document"));
 }</pre>
           </div>
         </div>
@@ -457,9 +457,9 @@ intersection(VALUE self, VALUE rb_other)
 
           <div class="method-source-code" id="2D-source">
             <pre>static VALUE
-minus(VALUE self, VALUE rb_other)
+minus(VALUE rb_self, VALUE rb_other)
 {
-  xmlNodeSetPtr node_set, other;
+  xmlNodeSetPtr c_self, c_other;
   xmlNodeSetPtr new;
   int j ;
 
@@ -467,15 +467,15 @@ minus(VALUE self, VALUE rb_other)
     rb_raise(rb_eArgError, "node_set must be a Nokogiri::XML::NodeSet");
   }
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
-  Data_Get_Struct(rb_other, xmlNodeSet, other);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
+  TypedData_Get_Struct(rb_other, xmlNodeSet, &amp;xml_node_set_type, c_other);
 
-  new = xmlXPathNodeSetMerge(NULL, node_set);
-  for (j = 0 ; j &lt; other-&gt;nodeNr ; ++j) {
-    xpath_node_set_del(new, other-&gt;nodeTab[j]);
+  new = xmlXPathNodeSetMerge(NULL, c_self);
+  for (j = 0 ; j &lt; c_other-&gt;nodeNr ; ++j) {
+    xpath_node_set_del(new, c_other-&gt;nodeTab[j]);
   }
 
-  return noko_xml_node_set_wrap(new, rb_iv_get(self, "@document"));
+  return noko_xml_node_set_wrap(new, rb_iv_get(rb_self, "@document"));
 }</pre>
           </div>
         </div>
@@ -554,21 +554,21 @@ minus(VALUE self, VALUE rb_other)
 
           <div class="method-source-code" id="5B-5D-source">
             <pre>static VALUE
-slice(int argc, VALUE *argv, VALUE self)
+slice(int argc, VALUE *argv, VALUE rb_self)
 {
   VALUE arg ;
   long beg, len ;
-  xmlNodeSetPtr node_set;
+  xmlNodeSetPtr c_self;
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
 
   if (argc == 2) {
     beg = NUM2LONG(argv[0]);
     len = NUM2LONG(argv[1]);
     if (beg &lt; 0) {
-      beg += node_set-&gt;nodeNr ;
+      beg += c_self-&gt;nodeNr ;
     }
-    return subseq(self, beg, len);
+    return subseq(rb_self, beg, len);
   }
 
   if (argc != 1) {
@@ -577,20 +577,20 @@ slice(int argc, VALUE *argv, VALUE self)
   arg = argv[0];
 
   if (FIXNUM_P(arg)) {
-    return index_at(self, FIX2LONG(arg));
+    return index_at(rb_self, FIX2LONG(arg));
   }
 
   /* if arg is Range */
-  switch (rb_range_beg_len(arg, &amp;beg, &amp;len, (long)node_set-&gt;nodeNr, 0)) {
+  switch (rb_range_beg_len(arg, &amp;beg, &amp;len, (long)c_self-&gt;nodeNr, 0)) {
     case Qfalse:
       break;
     case Qnil:
       return Qnil;
     default:
-      return subseq(self, beg, len);
+      return subseq(rb_self, beg, len);
   }
 
-  return index_at(self, NUM2LONG(arg));
+  return index_at(rb_self, NUM2LONG(arg));
 }</pre>
           </div>
         </div>
@@ -940,18 +940,18 @@ slice(int argc, VALUE *argv, VALUE self)
 
           <div class="method-source-code" id="delete-source">
             <pre>static VALUE
-delete (VALUE self, VALUE rb_node)
+delete (VALUE rb_self, VALUE rb_node)
 {
-  xmlNodeSetPtr node_set;
+  xmlNodeSetPtr c_self;
   xmlNodePtr node;
 
   Check_Node_Set_Node_Type(rb_node);
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
   Noko_Node_Get_Struct(rb_node, xmlNode, node);
 
-  if (xmlXPathNodeSetContains(node_set, node)) {
-    xpath_node_set_del(node_set, node);
+  if (xmlXPathNodeSetContains(c_self, node)) {
+    xpath_node_set_del(c_self, node);
     return rb_node;
   }
   return Qnil ;
@@ -977,16 +977,16 @@ delete (VALUE self, VALUE rb_node)
 
           <div class="method-source-code" id="dup-source">
             <pre>static VALUE
-duplicate(VALUE self)
+duplicate(VALUE rb_self)
 {
-  xmlNodeSetPtr node_set;
+  xmlNodeSetPtr c_self;
   xmlNodeSetPtr dupl;
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
 
-  dupl = xmlXPathNodeSetMerge(NULL, node_set);
+  dupl = xmlXPathNodeSetMerge(NULL, c_self);
 
-  return noko_xml_node_set_wrap(dupl, rb_iv_get(self, "@document"));
+  return noko_xml_node_set_wrap(dupl, rb_iv_get(rb_self, "@document"));
 }</pre>
           </div>
         </div>
@@ -1109,17 +1109,17 @@ duplicate(VALUE self)
 
           <div class="method-source-code" id="include-3F-source">
             <pre>static VALUE
-include_eh(VALUE self, VALUE rb_node)
+include_eh(VALUE rb_self, VALUE rb_node)
 {
-  xmlNodeSetPtr node_set;
+  xmlNodeSetPtr c_self;
   xmlNodePtr node;
 
   Check_Node_Set_Node_Type(rb_node);
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
   Noko_Node_Get_Struct(rb_node, xmlNode, node);
 
-  return (xmlXPathNodeSetContains(node_set, node) ? Qtrue : Qfalse);
+  return (xmlXPathNodeSetContains(c_self, node) ? Qtrue : Qfalse);
 }</pre>
           </div>
         </div>
@@ -1274,13 +1274,13 @@ include_eh(VALUE self, VALUE rb_node)
 
           <div class="method-source-code" id="length-source">
             <pre>static VALUE
-length(VALUE self)
+length(VALUE rb_self)
 {
-  xmlNodeSetPtr node_set;
+  xmlNodeSetPtr c_self;
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
 
-  return node_set ? INT2NUM(node_set-&gt;nodeNr) : INT2NUM(0);
+  return c_self ? INT2NUM(c_self-&gt;nodeNr) : INT2NUM(0);
 }</pre>
           </div>
         </div>
@@ -1330,19 +1330,19 @@ length(VALUE self)
 
           <div class="method-source-code" id="push-source">
             <pre>static VALUE
-push(VALUE self, VALUE rb_node)
+push(VALUE rb_self, VALUE rb_node)
 {
-  xmlNodeSetPtr node_set;
+  xmlNodeSetPtr c_self;
   xmlNodePtr node;
 
   Check_Node_Set_Node_Type(rb_node);
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
   Noko_Node_Get_Struct(rb_node, xmlNode, node);
 
-  xmlXPathNodeSetAdd(node_set, node);
+  xmlXPathNodeSetAdd(c_self, node);
 
-  return self;
+  return rb_self;
 }</pre>
           </div>
         </div>
@@ -1595,17 +1595,17 @@ push(VALUE self, VALUE rb_node)
 
           <div class="method-source-code" id="to_a-source">
             <pre>static VALUE
-to_array(VALUE self)
+to_array(VALUE rb_self)
 {
-  xmlNodeSetPtr node_set ;
+  xmlNodeSetPtr c_self ;
   VALUE list;
   int i;
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
 
-  list = rb_ary_new2(node_set-&gt;nodeNr);
-  for (i = 0; i &lt; node_set-&gt;nodeNr; i++) {
-    VALUE elt = noko_xml_node_wrap_node_set_result(node_set-&gt;nodeTab[i], self);
+  list = rb_ary_new2(c_self-&gt;nodeNr);
+  for (i = 0; i &lt; c_self-&gt;nodeNr; i++) {
+    VALUE elt = noko_xml_node_wrap_node_set_result(c_self-&gt;nodeTab[i], rb_self);
     rb_ary_push(list, elt);
   }
 
@@ -1754,25 +1754,25 @@ to_array(VALUE self)
 
           <div class="method-source-code" id="unlink-source">
             <pre>static VALUE
-unlink_nodeset(VALUE self)
+unlink_nodeset(VALUE rb_self)
 {
-  xmlNodeSetPtr node_set;
+  xmlNodeSetPtr c_self;
   int j, nodeNr ;
 
-  Data_Get_Struct(self, xmlNodeSet, node_set);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
 
-  nodeNr = node_set-&gt;nodeNr ;
+  nodeNr = c_self-&gt;nodeNr ;
   for (j = 0 ; j &lt; nodeNr ; j++) {
-    if (! NOKOGIRI_NAMESPACE_EH(node_set-&gt;nodeTab[j])) {
+    if (! NOKOGIRI_NAMESPACE_EH(c_self-&gt;nodeTab[j])) {
       VALUE node ;
       xmlNodePtr node_ptr;
-      node = noko_xml_node_wrap(Qnil, node_set-&gt;nodeTab[j]);
+      node = noko_xml_node_wrap(Qnil, c_self-&gt;nodeTab[j]);
       rb_funcall(node, rb_intern("unlink"), 0); /* modifies the C struct out from under the object */
       Noko_Node_Get_Struct(node, xmlNode, node_ptr);
-      node_set-&gt;nodeTab[j] = node_ptr ;
+      c_self-&gt;nodeTab[j] = node_ptr ;
     }
   }
-  return self ;
+  return rb_self ;
 }</pre>
           </div>
         </div>
@@ -1924,22 +1924,22 @@ unlink_nodeset(VALUE self)
 
           <div class="method-source-code" id="7C-source">
             <pre>static VALUE
-rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
+rb_xml_node_set_union(VALUE rb_self, VALUE rb_other)
 {
-  xmlNodeSetPtr c_node_set, c_other;
+  xmlNodeSetPtr c_self, c_other;
   xmlNodeSetPtr c_new_node_set;
 
   if (!rb_obj_is_kind_of(rb_other, cNokogiriXmlNodeSet)) {
     rb_raise(rb_eArgError, "node_set must be a Nokogiri::XML::NodeSet");
   }
 
-  Data_Get_Struct(rb_node_set, xmlNodeSet, c_node_set);
-  Data_Get_Struct(rb_other, xmlNodeSet, c_other);
+  TypedData_Get_Struct(rb_self, xmlNodeSet, &amp;xml_node_set_type, c_self);
+  TypedData_Get_Struct(rb_other, xmlNodeSet, &amp;xml_node_set_type, c_other);
 
-  c_new_node_set = xmlXPathNodeSetMerge(NULL, c_node_set);
+  c_new_node_set = xmlXPathNodeSetMerge(NULL, c_self);
   c_new_node_set = xmlXPathNodeSetMerge(c_new_node_set, c_other);
 
-  return noko_xml_node_set_wrap(c_new_node_set, rb_iv_get(rb_node_set, "@document"));
+  return noko_xml_node_set_wrap(c_new_node_set, rb_iv_get(rb_self, "@document"));
 }</pre>
           </div>
         </div>
@@ -2010,7 +2010,7 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
           <p>Search this node’s immediate children using <a href="../CSS.html"><code>CSS</code></a> selector <code>selector</code></p>
 
           <div class="method-source-code" id="3E-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 196</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
   <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
   <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
@@ -2040,7 +2040,7 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 <p>See <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_css-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 140</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -2069,7 +2069,7 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> for more information.</p>
 
           <div class="method-source-code" id="at_xpath-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 188</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 193</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">xpath</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -2109,20 +2109,22 @@ rb_xml_node_set_union(VALUE rb_node_set, VALUE rb_other)
 <pre class="ruby"><span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//address[@domestic=$value]'</span>, <span class="ruby-keyword">nil</span>, {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'Yes'</span>})
 </pre>
 
-<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define. The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
+<p>💡 Custom <a href="XPath.html"><code>XPath</code></a> functions and <a href="../CSS.html"><code>CSS</code></a> pseudo-selectors may also be defined. To define custom functions create a class and implement the function you want to define, which will be in the ‘nokogiri` namespace in <a href="XPath.html"><code>XPath</code></a> queries.</p>
+
+<p>The first argument to the method will be the current matching <a href="NodeSet.html"><code>NodeSet</code></a>. Any other arguments are ones that you pass in. Note that this class may appear anywhere in the argument list. For example:</p>
 
 <pre class="ruby"><span class="ruby-identifier">handler</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regex</span> <span class="ruby-identifier">node_set</span>, <span class="ruby-identifier">regex</span>
     <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">'some_attribute'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/#{regex}/</span> }
   <span class="ruby-keyword">end</span>
 }.<span class="ruby-identifier">new</span>
-<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'.//title[nokogiri:regex(., "\w+")]'</span>, <span class="ruby-string">'div.employee:regex("[0-9]+")'</span>, <span class="ruby-identifier">handler</span>)
 </pre>
 
 <p>See <a href="Searchable.html#method-i-xpath"><code>Searchable#xpath</code></a> and <a href="Searchable.html#method-i-css"><code>Searchable#css</code></a> for further usage help.</p>
 
           <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 51</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">paths</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">binds</span> = <span class="ruby-identifier">extract_params</span>(<span class="ruby-identifier">args</span>)
 

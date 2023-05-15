@@ -583,7 +583,7 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
     }
   }
 
-  Data_Get_Struct(self, xmlDoc, c_doc);
+  c_doc = noko_xml_document_unwrap(self);
 
   rb_cStringIO = rb_const_get_at(rb_cObject, rb_intern("StringIO"));
   rb_io = rb_class_new_instance(0, 0, rb_cStringIO);
@@ -655,7 +655,7 @@ create_entity(int argc, VALUE *argv, VALUE self)
   xmlEntityPtr ptr;
   xmlDocPtr doc ;
 
-  Data_Get_Struct(self, xmlDoc, doc);
+  doc = noko_xml_document_unwrap(self);
 
   rb_scan_args(argc, argv, "14", &amp;name, &amp;type, &amp;external_id, &amp;system_id,
                &amp;content);
@@ -714,7 +714,7 @@ duplicate_document(int argc, VALUE *argv, VALUE self)
     level = INT2NUM((long)1);
   }
 
-  Data_Get_Struct(self, xmlDoc, doc);
+  doc = noko_xml_document_unwrap(self);
 
   dup = xmlCopyDoc(doc, (int)NUM2INT(level));
 
@@ -748,8 +748,7 @@ duplicate_document(int argc, VALUE *argv, VALUE self)
             <pre>static VALUE
 encoding(VALUE self)
 {
-  xmlDocPtr doc;
-  Data_Get_Struct(self, xmlDoc, doc);
+  xmlDocPtr doc = noko_xml_document_unwrap(self);
 
   if (!doc-&gt;encoding) { return Qnil; }
   return NOKOGIRI_STR_NEW2(doc-&gt;encoding);
@@ -777,8 +776,7 @@ encoding(VALUE self)
             <pre>static VALUE
 set_encoding(VALUE self, VALUE encoding)
 {
-  xmlDocPtr doc;
-  Data_Get_Struct(self, xmlDoc, doc);
+  xmlDocPtr doc = noko_xml_document_unwrap(self);
 
   if (doc-&gt;encoding) {
     xmlFree(DISCARD_CONST_QUAL_XMLCHAR(doc-&gt;encoding));
@@ -839,8 +837,7 @@ set_encoding(VALUE self, VALUE encoding)
             <pre>static VALUE
 remove_namespaces_bang(VALUE self)
 {
-  xmlDocPtr doc ;
-  Data_Get_Struct(self, xmlDoc, doc);
+  xmlDocPtr doc = noko_xml_document_unwrap(self);
 
   recursively_remove_namespaces_from_node((xmlNodePtr)doc);
   return self;
@@ -871,7 +868,7 @@ rb_xml_document_root(VALUE self)
   xmlDocPtr c_document;
   xmlNodePtr c_root;
 
-  Data_Get_Struct(self, xmlDoc, c_document);
+  c_document = noko_xml_document_unwrap(self);
 
   c_root = xmlDocGetRootElement(c_document);
   if (!c_root) {
@@ -906,7 +903,7 @@ rb_xml_document_root_set(VALUE self, VALUE rb_new_root)
   xmlDocPtr c_document;
   xmlNodePtr c_new_root = NULL, c_current_root;
 
-  Data_Get_Struct(self, xmlDoc, c_document);
+  c_document = noko_xml_document_unwrap(self);
 
   c_current_root = xmlDocGetRootElement(c_document);
   if (c_current_root) {
@@ -995,8 +992,7 @@ rb_xml_document_root_set(VALUE self, VALUE rb_new_root)
             <pre>static VALUE
 url(VALUE self)
 {
-  xmlDocPtr doc;
-  Data_Get_Struct(self, xmlDoc, doc);
+  xmlDocPtr doc = noko_xml_document_unwrap(self);
 
   if (doc-&gt;URL) { return NOKOGIRI_STR_NEW2(doc-&gt;URL); }
 
@@ -1025,8 +1021,7 @@ url(VALUE self)
             <pre>static VALUE
 version(VALUE self)
 {
-  xmlDocPtr doc;
-  Data_Get_Struct(self, xmlDoc, doc);
+  xmlDocPtr doc = noko_xml_document_unwrap(self);
 
   if (!doc-&gt;version) { return Qnil; }
   return NOKOGIRI_STR_NEW2(doc-&gt;version);

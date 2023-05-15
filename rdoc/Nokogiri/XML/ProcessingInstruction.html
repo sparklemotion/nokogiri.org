@@ -140,7 +140,7 @@ new (int argc, VALUE *argv, VALUE klass)
 
   rb_scan_args(argc, argv, "3*", &amp;document, &amp;name, &amp;content, &amp;rest);
 
-  Data_Get_Struct(document, xmlDoc, xml_doc);
+  xml_doc = noko_xml_document_unwrap(document);
 
   node = xmlNewDocPI(
            xml_doc,

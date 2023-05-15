@@ -81,6 +81,9 @@
   <ul class="link-list" role="directory">
     <li>
 <a href="#method-c-new">::new</a>
+    </li>
+<li class="calls-super">
+<a href="#method-i-inspect">#inspect</a>
   </li>
 </ul>
 </div>
@@ -211,6 +214,43 @@
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/node/save_options.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = <span class="ruby-value">0</span>)
   <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-inspect" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">inspect</span><span class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node/save_options.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-identifier">options</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">options</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">send</span>(<span class="ruby-value">:"#{k.downcase}?"</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/&gt;$/</span>, <span class="ruby-string">" "</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">", "</span>) <span class="ruby-operator">+</span> <span class="ruby-string">"&gt;"</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

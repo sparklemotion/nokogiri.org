@@ -86,9 +86,6 @@
 <a href="#method-i-element_type">#element_type</a>
     </li>
 <li>
-<a href="#method-i-inspect">#inspect</a>
-    </li>
-<li>
 <a href="#method-i-prefix">#prefix</a>
   </li>
 </ul>
@@ -121,14 +118,20 @@
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              content
+              content → Nokogiri::XML::ElementContent
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>The allowed content for this <a href="ElementDecl.html"><code>ElementDecl</code></a></p>
+          <dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>The root of this element declaration’s content tree.</p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="content-source">
             <pre>static VALUE
@@ -154,7 +157,7 @@ content(VALUE self)
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              element_type
+              element_type → Integer
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
@@ -177,40 +180,24 @@ element_type(VALUE self)
 
       </div>
 
-      <div id="method-i-inspect" class="method-detail ">
-        <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">inspect</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="inspect-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/element_decl.rb, line 10</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
-  <span class="ruby-node">"#&lt;#{self.class.name}:#{format("0x%x", object_id)} #{to_s.inspect}&gt;"</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
       <div id="method-i-prefix" class="method-detail ">
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              prefix
+              prefix → String
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>The namespace prefix for this <a href="ElementDecl.html"><code>ElementDecl</code></a></p>
+          <dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>The namespace <code>prefix</code> for this element declaration.</p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="prefix-source">
             <pre>static VALUE

@@ -165,7 +165,7 @@
 
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 39</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ctx</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ctx</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {}) <span class="ruby-comment"># rubocop:disable Lint/MissingSuper</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">document</span> = <span class="ruby-identifier">doc</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">errors</span> = []
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tags</span>

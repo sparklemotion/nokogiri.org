@@ -107,7 +107,7 @@
 
   <section class="description">
     
-<p><a href="XPathContext.html"><code>XPathContext</code></a> is the entry point for searching a <a href="Document.html"><code>Document</code></a> by using <a href="XPath.html"><code>XPath</code></a>.</p>
+<p><a href="XPathContext.html"><code>XPathContext</code></a> is the entry point for searching a <code>Document</code> by using <a href="XPath.html"><code>XPath</code></a>.</p>
 
   </section>
 
@@ -133,35 +133,47 @@
         </div>
 
         <div class="method-description">
-          <p>Create a new <a href="XPathContext.html"><code>XPathContext</code></a> with <code>node</code> as the reference point.</p>
+          <p>Create a new <a href="XPathContext.html"><code>XPathContext</code></a> with <code>node</code> as the context node.</p>
 
           <div class="method-source-code" id="new-source">
             <pre>static VALUE
-rb_xml_xpath_context_new(VALUE klass, VALUE nodeobj)
+rb_xml_xpath_context_new(VALUE klass, VALUE rb_node)
 {
   xmlNodePtr node;
-  xmlXPathContextPtr ctx;
-  VALUE self;
+  xmlXPathContextPtr c_context;
+  VALUE rb_context;
 
-  Noko_Node_Get_Struct(nodeobj, xmlNode, node);
+  Noko_Node_Get_Struct(rb_node, xmlNode, node);
 
 #if LIBXML_VERSION &lt; 21000
   /* deprecated in 40483d0 */
   xmlXPathInit();
 #endif
 
-  ctx = xmlXPathNewContext(node-&gt;doc);
-  ctx-&gt;node = node;
+  c_context = xmlXPathNewContext(node-&gt;doc);
+  c_context-&gt;node = node;
 
-  xmlXPathRegisterNs(ctx, NOKOGIRI_PREFIX, NOKOGIRI_URI);
-  xmlXPathRegisterNs(ctx, NOKOGIRI_BUILTIN_PREFIX, NOKOGIRI_BUILTIN_URI);
-  xmlXPathRegisterFuncNS(ctx, (const xmlChar *)"css-class", NOKOGIRI_BUILTIN_URI,
-                         xpath_builtin_css_class);
-  xmlXPathRegisterFuncNS(ctx, (const xmlChar *)"local-name-is", NOKOGIRI_BUILTIN_URI,
-                         xpath_builtin_local_name_is);
+  xmlXPathRegisterNs(c_context, NOKOGIRI_PREFIX, NOKOGIRI_URI);
+  xmlXPathRegisterNs(c_context, NOKOGIRI_BUILTIN_PREFIX, NOKOGIRI_BUILTIN_URI);
+  xmlXPathRegisterFuncNS(
+    c_context,
+    (const xmlChar *)"css-class",
+    NOKOGIRI_BUILTIN_URI,
+    xpath_builtin_css_class
+  );
+  xmlXPathRegisterFuncNS(
+    c_context,
+    (const xmlChar *)"local-name-is",
+    NOKOGIRI_BUILTIN_URI,
+    xpath_builtin_local_name_is
+  );
 
-  self = Data_Wrap_Struct(klass, 0, xml_xpath_context_deallocate, ctx);
-  return self;
+  rb_context = TypedData_Wrap_Struct(
+                 klass,
+                 &amp;xml_xpath_context_type,
+                 c_context
+               );
+  return rb_context;
 }</pre>
           </div>
         </div>
@@ -180,27 +192,41 @@ rb_xml_xpath_context_new(VALUE klass, VALUE nodeobj)
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              evaluate(search_path, handler = nil)
+              evaluate(search_path, handler = nil) → Object
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>Evaluate the <code>search_path</code> returning an <a href="XPath.html"><code>XML::XPath</code></a> object.</p>
+          <p>Evaluate the <code>search_path</code> query.</p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>an object of the appropriate type for the query, which could be <code>NodeSet</code>, a <code>String</code>,</p>
+</dd>
+</dl>
+
+<p>a <code>Float</code>, or a boolean.</p>
 
           <div class="method-source-code" id="evaluate-source">
             <pre>static VALUE
-rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE self)
+rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE rb_context)
 {
   VALUE search_path, xpath_handler;
   VALUE retval = Qnil;
-  xmlXPathContextPtr ctx;
+  xmlXPathContextPtr c_context;
   xmlXPathObjectPtr xpath;
   xmlChar *query;
   VALUE errors = rb_ary_new();
 
-  Data_Get_Struct(self, xmlXPathContext, ctx);
+  TypedData_Get_Struct(
+    rb_context,
+    xmlXPathContext,
+    &amp;xml_xpath_context_type,
+    c_context
+  );
 
   if (rb_scan_args(argc, argv, "11", &amp;search_path, &amp;xpath_handler) == 1) {
     xpath_handler = Qnil;
@@ -210,14 +236,18 @@ rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE self)
 
   if (Qnil != xpath_handler) {
     /* FIXME: not sure if this is the correct place to shove private data. */
-    ctx-&gt;userData = (void *)xpath_handler;
-    xmlXPathRegisterFuncLookup(ctx, handler_lookup, (void *)xpath_handler);
+    c_context-&gt;userData = (void *)xpath_handler;
+    xmlXPathRegisterFuncLookup(
+      c_context,
+      handler_lookup,
+      (void *)xpath_handler
+    );
   }
 
   xmlSetStructuredErrorFunc((void *)errors, Nokogiri_error_array_pusher);
   xmlSetGenericErrorFunc((void *)errors, generic_exception_pusher);
 
-  xpath = xmlXPathEvalExpression(query, ctx);
+  xpath = xmlXPathEvalExpression(query, c_context);
 
   xmlSetStructuredErrorFunc(NULL, NULL);
   xmlSetGenericErrorFunc(NULL, NULL);
@@ -226,9 +256,9 @@ rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE self)
     rb_exc_raise(rb_ary_entry(errors, 0));
   }
 
-  retval = xpath2ruby(xpath, ctx);
+  retval = xpath2ruby(xpath, c_context);
   if (retval == Qundef) {
-    retval = noko_xml_node_set_wrap(NULL, DOC_RUBY_OBJECT(ctx-&gt;doc));
+    retval = noko_xml_node_set_wrap(NULL, DOC_RUBY_OBJECT(c_context-&gt;doc));
   }
 
   xmlXPathFreeNodeSetList(xpath);
@@ -270,27 +300,40 @@ rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE self)
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              register_ns(prefix, uri)
+              register_ns(prefix, uri) → Nokogiri::XML::XPathContext
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>Register the namespace with <code>prefix</code> and <code>uri</code>.</p>
+          <p>Register the namespace with <code>prefix</code> and <code>uri</code> for use in future queries.</p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><code>self</code></p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="register_ns-source">
             <pre>static VALUE
-rb_xml_xpath_context_register_ns(VALUE self, VALUE prefix, VALUE uri)
+rb_xml_xpath_context_register_ns(VALUE rb_context, VALUE prefix, VALUE uri)
 {
-  xmlXPathContextPtr ctx;
-  Data_Get_Struct(self, xmlXPathContext, ctx);
+  xmlXPathContextPtr c_context;
 
-  xmlXPathRegisterNs(ctx,
+  TypedData_Get_Struct(
+    rb_context,
+    xmlXPathContext,
+    &amp;xml_xpath_context_type,
+    c_context
+  );
+
+  xmlXPathRegisterNs(c_context,
                      (const xmlChar *)StringValueCStr(prefix),
                      (const xmlChar *)StringValueCStr(uri)
                     );
-  return self;
+  return rb_context;
 }</pre>
           </div>
         </div>
@@ -302,31 +345,45 @@ rb_xml_xpath_context_register_ns(VALUE self, VALUE prefix, VALUE uri)
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              register_variable(name, value)
+              register_variable(name, value) → Nokogiri::XML::XPathContext
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>Register the variable <code>name</code> with <code>value</code>.</p>
+          <p>Register the variable <code>name</code> with <code>value</code> for use in future queries.</p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><code>self</code></p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="register_variable-source">
             <pre>static VALUE
-rb_xml_xpath_context_register_variable(VALUE self, VALUE name, VALUE value)
+rb_xml_xpath_context_register_variable(VALUE rb_context, VALUE name, VALUE value)
 {
-  xmlXPathContextPtr ctx;
+  xmlXPathContextPtr c_context;
   xmlXPathObjectPtr xmlValue;
-  Data_Get_Struct(self, xmlXPathContext, ctx);
+
+  TypedData_Get_Struct(
+    rb_context,
+    xmlXPathContext,
+    &amp;xml_xpath_context_type,
+    c_context
+  );
 
   xmlValue = xmlXPathNewCString(StringValueCStr(value));
 
-  xmlXPathRegisterVariable(ctx,
-                           (const xmlChar *)StringValueCStr(name),
-                           xmlValue
-                          );
+  xmlXPathRegisterVariable(
+    c_context,
+    (const xmlChar *)StringValueCStr(name),
+    xmlValue
+  );
 
-  return self;
+  return rb_context;
 }</pre>
           </div>
         </div>

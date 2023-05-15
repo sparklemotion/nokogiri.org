@@ -252,7 +252,8 @@
 get_options(VALUE self)
 {
   xmlParserCtxtPtr ctx;
-  Data_Get_Struct(self, xmlParserCtxt, ctx);
+
+  ctx = noko_xml_sax_push_parser_unwrap(self);
 
   return INT2NUM(ctx-&gt;options);
 }</pre>
@@ -278,7 +279,8 @@ get_options(VALUE self)
 set_options(VALUE self, VALUE options)
 {
   xmlParserCtxtPtr ctx;
-  Data_Get_Struct(self, xmlParserCtxt, ctx);
+
+  ctx = noko_xml_sax_push_parser_unwrap(self);
 
   if (xmlCtxtUseOptions(ctx, (int)NUM2INT(options)) != 0) {
     rb_raise(rb_eRuntimeError, "Cannot set XML parser context options");
@@ -310,7 +312,8 @@ set_options(VALUE self, VALUE options)
 get_replace_entities(VALUE self)
 {
   xmlParserCtxtPtr ctx;
-  Data_Get_Struct(self, xmlParserCtxt, ctx);
+
+  ctx = noko_xml_sax_push_parser_unwrap(self);
 
   if (0 == ctx-&gt;replaceEntities) {
     return Qfalse;
@@ -342,7 +345,8 @@ get_replace_entities(VALUE self)
 set_replace_entities(VALUE self, VALUE value)
 {
   xmlParserCtxtPtr ctx;
-  Data_Get_Struct(self, xmlParserCtxt, ctx);
+
+  ctx = noko_xml_sax_push_parser_unwrap(self);
 
   if (Qfalse == value) {
     ctx-&gt;replaceEntities = 0;

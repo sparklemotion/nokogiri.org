@@ -400,7 +400,7 @@
 
           <div class="method-source-code" id="start_element_namespace-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/document.rb, line 103</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element_namespace</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span> = [], <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ns</span> = [])
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element_namespace</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span> = [], <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ns</span> = []) <span class="ruby-comment"># rubocop:disable Metrics/ParameterLists</span>
   <span class="ruby-comment">###</span>
   <span class="ruby-comment"># Deal with SAX v1 interface</span>
   <span class="ruby-identifier">name</span> = [<span class="ruby-identifier">prefix</span>, <span class="ruby-identifier">name</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">":"</span>)

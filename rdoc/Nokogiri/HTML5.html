@@ -371,8 +371,11 @@ Content&lt;/listing&gt;
             <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 249</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># TODO: deprecate</span>
-  <span class="ruby-identifier">warn</span>(<span class="ruby-string">"Nokogiri::HTML5.get is deprecated and will be removed in a future version of Nokogiri."</span>,
-    <span class="ruby-value">uplevel:</span> <span class="ruby-value">1</span>, <span class="ruby-value">category:</span> <span class="ruby-value">:deprecated</span>)
+  <span class="ruby-identifier">warn</span>(
+    <span class="ruby-string">"Nokogiri::HTML5.get is deprecated and will be removed in a future version of Nokogiri."</span>,
+    <span class="ruby-value">uplevel:</span> <span class="ruby-value">1</span>,
+    <span class="ruby-value">category:</span> <span class="ruby-value">:deprecated</span>,
+  )
   <span class="ruby-identifier">get_impl</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
