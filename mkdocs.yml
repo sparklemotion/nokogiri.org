@@ -86,7 +86,10 @@ nav:
     - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
     - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
     - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
-  - Changelog: CHANGELOG.md
+  - Changelog:
+    - Changelog: CHANGELOG.md
+    - 2022-12 Darwin Symbol Resolution: adr/2022-12-darwin-symbol-resolution.md
+    - 2023-04 libxml Memory Management: adr/2023-04-libxml-memory-management.md
   - About:
     - Contributing: CONTRIBUTING.md
     - Code of Conduct: CODE_OF_CONDUCT.md

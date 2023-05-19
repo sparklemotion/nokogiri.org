@@ -19,6 +19,13 @@ def create_nokogiri_tasks(source_dir, dest_dir)
     "index.md" => "README.md",
   }
 
+  Dir.chdir(nokogiri_dir) do
+    Dir.glob(File.join("adr", "*.md")).each do |adr|
+      file_pairs[adr] = adr
+    end
+  end
+  FileUtils.mkdir_p(File.join(dest_dir, "adr"))
+
   dest_paths = []
 
   file_pairs.each do |dest_file, source_file|
