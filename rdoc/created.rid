@@ -1,4 +1,4 @@
-Mon, 15 May 2023 16:03:20 -0400
+Fri, 19 May 2023 10:07:26 -0400
 README.md	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri.rb	Thu, 11 May 2023 14:20:06 -0400
 lib/nokogiri/class_resolver.rb	Thu, 11 May 2023 11:16:43 -0400
@@ -33,7 +33,7 @@ lib/nokogiri/jruby/dependencies.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/jruby/nokogiri_jars.rb	Thu, 11 May 2023 14:26:20 -0400
 lib/nokogiri/syntax_error.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/version.rb	Thu, 11 May 2023 11:16:43 -0400
-lib/nokogiri/version/constant.rb	Mon, 15 May 2023 14:44:22 -0400
+lib/nokogiri/version/constant.rb	Fri, 19 May 2023 09:20:22 -0400
 lib/nokogiri/version/info.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/xml.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/xml/attr.rb	Thu, 11 May 2023 11:16:43 -0400
