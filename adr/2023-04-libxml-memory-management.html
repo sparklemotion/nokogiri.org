@@ -12,7 +12,7 @@
         <meta name="author" content="Mike Dalessio">
       
       
-        <link rel="canonical" href="https://nokogiri.org/tutorials/ensuring_well_formed_markup.html">
+        <link rel="canonical" href="https://nokogiri.org/adr/2023-04-libxml-memory-management.html">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Ensuring well-formed markup - Nokogiri</title>
+        <title>2023-04 libxml Memory Management - Nokogiri</title>
       
     
     
@@ -76,11 +76,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Ensuring well-formed markup - Nokogiri" >
+        <meta  property="og:title"  content="2023-04 libxml Memory Management - Nokogiri" >
       
         <meta  property="og:description"  content="The Official Tutorial Archive™ of Nokogiri®" >
       
-        <meta  property="og:image"  content="https://nokogiri.org/assets/images/social/tutorials/ensuring_well_formed_markup.png" >
+        <meta  property="og:image"  content="https://nokogiri.org/assets/images/social/adr/2023-04-libxml-memory-management.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -88,15 +88,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://nokogiri.org/tutorials/ensuring_well_formed_markup.html" >
+        <meta  property="og:url"  content="https://nokogiri.org/adr/2023-04-libxml-memory-management.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Ensuring well-formed markup - Nokogiri" >
+        <meta  name="twitter:title"  content="2023-04 libxml Memory Management - Nokogiri" >
       
         <meta  name="twitter:description"  content="The Official Tutorial Archive™ of Nokogiri®" >
       
-        <meta  name="twitter:image"  content="https://nokogiri.org/assets/images/social/tutorials/ensuring_well_formed_markup.png" >
+        <meta  name="twitter:image"  content="https://nokogiri.org/assets/images/social/adr/2023-04-libxml-memory-management.png" >
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ensuring-well-formed-markup" class="md-skip">
+        <a href="#2023-04-sticking-with-ruby_xmalloc-and-ruby_xfree-functions-in-libxml2" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ensuring well-formed markup
+              2023-04 libxml Memory Management
             
           </span>
         </div>
@@ -258,7 +258,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="installing_nokogiri.html" class="md-tabs__link">
+        <a href="../tutorials/installing_nokogiri.html" class="md-tabs__link">
           
   
   Support
@@ -271,8 +271,6 @@
       
         
 
-  
-
 
 
 
@@ -281,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="toc.html" class="md-tabs__link md-tabs__link--active">
+        <a href="../tutorials/toc.html" class="md-tabs__link">
           
   
   Tutorials
@@ -294,6 +292,8 @@
       
         
 
+  
+
 
 
 
@@ -302,7 +302,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../CHANGELOG.html" class="md-tabs__link">
+        <a href="../CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
           
   
   Changelog
@@ -467,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installing_nokogiri.html" class="md-nav__link">
+      <a href="../tutorials/installing_nokogiri.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting_help.html" class="md-nav__link">
+      <a href="../tutorials/getting_help.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -533,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security.html" class="md-nav__link">
+      <a href="../tutorials/security.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,11 +555,185 @@
   
   
     <li class="md-nav__item">
-      <a href="more_resources.html" class="md-nav__link">
+      <a href="../tutorials/more_resources.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     More Resources
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        
+        
+          <label class="md-nav__link" for="__nav_4">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/toc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of Contents
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/parsing_an_html_xml_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parsing an HTML/XML document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/parsing_an_html5_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parsing an HTML5 document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/searching_a_xml_html_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Searching a XML/HTML document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/modifying_an_html_xml_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modifying an HTML/XML document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/ensuring_well_formed_markup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ensuring well-formed markup
     
   </span>
   
@@ -592,241 +766,7 @@
       
         
         
-          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-        
-        
-          <label class="md-nav__link" for="__nav_4">
-            
-  
-  <span class="md-ellipsis">
-    Tutorials
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Tutorials
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="toc.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Table of Contents
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="parsing_an_html_xml_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Parsing an HTML/XML document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="parsing_an_html5_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Parsing an HTML5 document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="searching_a_xml_html_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Searching a XML/HTML document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="modifying_an_html_xml_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Modifying an HTML/XML document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Ensuring well-formed markup
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="ensuring_well_formed_markup.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Ensuring well-formed markup
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gentle-well-formedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gentle Well-Formedness
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strict-well-formedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Strict Well-Formedness
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
         
         
           <label class="md-nav__link" for="__nav_5">
@@ -877,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adr/2022-12-darwin-symbol-resolution.html" class="md-nav__link">
+      <a href="2022-12-darwin-symbol-resolution.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,9 +837,31 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../adr/2023-04-libxml-memory-management.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2023-04 libxml Memory Management
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2023-04-libxml-memory-management.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -910,6 +872,152 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-nokogiri-originally-configured-libxml2-with-ruby_xmalloc-and-ruby_xfree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Nokogiri originally configured libxml2 with ruby_xmalloc and ruby_xfree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-memory-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: Memory edge cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-libxml2-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: libxml2 performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternatives considered
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternatives considered">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-malloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      System malloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frankenstein-malloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frankenstein malloc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1145,18 +1253,126 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gentle-well-formedness" class="md-nav__link">
+  <a href="#status" class="md-nav__link">
     <span class="md-ellipsis">
-      Gentle Well-Formedness
+      Status
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#strict-well-formedness" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
-      Strict Well-Formedness
+      Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-nokogiri-originally-configured-libxml2-with-ruby_xmalloc-and-ruby_xfree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Nokogiri originally configured libxml2 with ruby_xmalloc and ruby_xfree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-memory-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: Memory edge cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-libxml2-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem: libxml2 performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternatives considered
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternatives considered">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-malloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      System malloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frankenstein-malloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frankenstein malloc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1177,49 +1393,77 @@
                   
 
 
-<h1 id="ensuring-well-formed-markup">Ensuring Well-Formed Markup<a class="headerlink" href="#ensuring-well-formed-markup" title="Permanent link">&para;</a></h1>
-<h2 id="gentle-well-formedness">Gentle Well-Formedness<a class="headerlink" href="#gentle-well-formedness" title="Permanent link">&para;</a></h2>
-<p>We've all seen bad markup in our day. I'm talking about markup that
-doesn't bother to close tags. I'm talking about putting <code>&lt;p&gt;</code> tags
-inside <code>&lt;p&gt;</code> tags, and putting content into an <code>&lt;img&gt;</code> tag.</p>
-<p>Nokogiri corrects bad markup <a href="http://knowyourmeme.com/memes/like-a-boss">like a boss</a>, similarly to how a browser
-would before rendering.</p>
-<div class="highlight"><pre><span></span><code><span class="n">badly_formed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="dl">EOXML</span>
-<span class="sh">&lt;root&gt;</span>
-<span class="sh">  &lt;open&gt;foo</span>
-<span class="sh">    &lt;closed&gt;bar&lt;/closed&gt;</span>
-<span class="sh">&lt;/root&gt;</span>
-<span class="dl">EOXML</span>
-
-<span class="n">bad_doc</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="w"> </span><span class="n">badly_formed</span>
-
-<span class="nb">puts</span><span class="w"> </span><span class="n">bad_doc</span><span class="w">         </span><span class="c1"># =&gt; &lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="w">                     </span><span class="c1">#    &lt;root&gt;</span>
-<span class="w">                     </span><span class="c1">#      &lt;open&gt;foo</span>
-<span class="w">                     </span><span class="c1">#        &lt;closed&gt;bar&lt;/closed&gt;</span>
-<span class="w">                     </span><span class="c1">#    &lt;/open&gt;  </span>
-<span class="w">                     </span><span class="c1">#    &lt;/root&gt;</span>
+<h1 id="2023-04-sticking-with-ruby_xmalloc-and-ruby_xfree-functions-in-libxml2">2023-04 Sticking with <code>ruby_xmalloc</code> and <code>ruby_xfree</code> functions in libxml2<a class="headerlink" href="#2023-04-sticking-with-ruby_xmalloc-and-ruby_xfree-functions-in-libxml2" title="Permanent link">&para;</a></h1>
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
+<p>Affirming the status quo since 2009 -- to use <code>ruby_xmalloc</code> et al -- but alternative behavior can be opted into by setting an environment variable:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># &quot;default&quot; here means &quot;libxml2&#39;s default&quot; which is system malloc</span>
+<span class="nv">NOKOGIRI_LIBXML_MEMORY_MANAGEMENT</span><span class="o">=</span>default
 </code></pre></div>
-<p>And Nokogiri will even keep track of what the errors were, if the
-parse option NOERRORS and NOWARNINGS are turned off (the default for
-XML documents).</p>
-<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">bad_doc</span><span class="o">.</span><span class="n">errors</span><span class="w">  </span><span class="c1"># =&gt; Opening and ending tag mismatch: open line 2 and root</span>
-<span class="w">                     </span><span class="c1">#    Premature end of data in tag root line 1</span>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<h3 id="why-nokogiri-originally-configured-libxml2-with-ruby_xmalloc-and-ruby_xfree">Why Nokogiri originally configured libxml2 with <code>ruby_xmalloc</code> and <code>ruby_xfree</code><a class="headerlink" href="#why-nokogiri-originally-configured-libxml2-with-ruby_xmalloc-and-ruby_xfree" title="Permanent link">&para;</a></h3>
+<p>Since 2009, (0dbe1f82), Nokogiri has configured libxml2 to use <code>ruby_xmalloc</code> et al for memory operations by making this call in <code>Init_nokogiri</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">xmlMemSetup</span><span class="p">(</span>
+<span class="w">    </span><span class="p">(</span><span class="n">xmlFreeFunc</span><span class="p">)</span><span class="n">ruby_xfree</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="n">xmlMallocFunc</span><span class="p">)</span><span class="n">ruby_xmalloc</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="n">xmlReallocFunc</span><span class="p">)</span><span class="n">ruby_xrealloc</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ruby_strdup</span><span class="p">);</span>
 </code></pre></div>
-<p>Thus, you could use <code>errors.empty?</code> to determine whether the document was well-formed.</p>
-<h2 id="strict-well-formedness">Strict Well-Formedness<a class="headerlink" href="#strict-well-formedness" title="Permanent link">&para;</a></h2>
-<p>Being friendly and fixing markup is all well and good, but sometimes
-you need to be a <a href="http://en.wikipedia.org/wiki/The_Soup_Nazi">Markup Nazi</a>.</p>
-<p>If you demand compliance from your XML, then you can configure
-Nokogiri into "strict" parsing mode, in which it will raise an
-exception at the first sign of malformedness:</p>
-<div class="highlight"><pre><span></span><code><span class="k">begin</span>
-<span class="w">  </span><span class="n">bad_doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">badly_formed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">config</span><span class="o">|</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">strict</span><span class="w"> </span><span class="p">}</span>
-<span class="k">rescue</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">SyntaxError</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span>
-<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;caught exception: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
-<span class="c1"># =&gt; caught exception: Premature end of data in tag root line 1</span>
-</code></pre></div>
+<p>The reason for doing this is so that Ruby's garbage collection ("GC") subsystem can track the total heap size, including <code>malloc</code> calls by C extensions, and is then able to trigger a GC cycle if the total amount of allocated memory exceeds a limit.</p>
+<p>@SamSaffron has a great post that explains how this works, and the antipatterns that can emerge if Ruby is not aware of large amount of allocated memory, and I highly recommend that you read it for context:</p>
+<blockquote>
+<p><a href="https://discuss.samsaffron.com/t/rubys-external-malloc-problem/431">Ruby's external malloc problem - ruby - Sam Saffron's Blog</a></p>
+</blockquote>
+<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h2>
+<h3 id="problem-memory-edge-cases">Problem: Memory edge cases<a class="headerlink" href="#problem-memory-edge-cases" title="Permanent link">&para;</a></h3>
+<p>We've recently run into a few situations where using <code>ruby_xmalloc</code> et al was problematic.</p>
+<ul>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/2059">https://github.com/sparklemotion/nokogiri/issues/2059</a> and <a href="https://github.com/sparklemotion/nokogiri/issues/2241">https://github.com/sparklemotion/nokogiri/issues/2241</a> describe situations where libxml2's <code>atexit</code> handler called <code>ruby_xfree</code> after ObjectSpace was torn down, causing a segfault</li>
+<li><a href="https://github.com/sparklemotion/nokogiri/pull/2807">https://github.com/sparklemotion/nokogiri/pull/2807</a> and <a href="https://github.com/sparklemotion/nokogiri/issues/2822">https://github.com/sparklemotion/nokogiri/issues/2822</a> describe a situation where Nokogiri's node lifecycle handling causes libxml2 to merge text nodes (calling <code>ruby_xmalloc</code> and <code>ruby_xfree</code>) while finalizing a Document, preventing the use of <code>RUBY_TYPED_FREE_IMMEDIATELY</code> for Documents</li>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/2785">https://github.com/sparklemotion/nokogiri/issues/2785</a> describes a situation where libxml2's pthread cleanup code can call <code>ruby_xfree</code> after ObjectSpace was torn down, causing a segfault</li>
+</ul>
+<p>All the issues have the same root cause: calling <code>ruby_xfree</code> in an inappropriate situation, either:</p>
+<ul>
+<li>during GC, or</li>
+<li>after Ruby's object space has been torn down</li>
+</ul>
+<p>These situations would not be inappropriate for using system <code>malloc</code> and <code>free</code>.</p>
+<h3 id="problem-libxml2-performance">Problem: libxml2 performance<a class="headerlink" href="#problem-libxml2-performance" title="Permanent link">&para;</a></h3>
+<p>Using <code>ruby_xmalloc</code> and <code>ruby_xfree</code> has a real performance penalty, as well. Benchmarks at <a href="https://github.com/sparklemotion/nokogiri/pull/2843">https://github.com/sparklemotion/nokogiri/pull/2843</a> indicate this penalty can make document parsing up to 34% slower than when the system <code>malloc</code> and <code>free</code> are used.</p>
+<h2 id="alternatives-considered">Alternatives considered<a class="headerlink" href="#alternatives-considered" title="Permanent link">&para;</a></h2>
+<h3 id="system-malloc">System <code>malloc</code><a class="headerlink" href="#system-malloc" title="Permanent link">&para;</a></h3>
+<p>The primary alternative considered is defaulting to using the system <code>malloc</code> and <code>free</code>.</p>
+<p>However, Sam's blog post (as well as other anecdotal data) makes a great case for being extremely careful about the choice of memory management functions.</p>
+<p>Without more data, we're declining to change this behavior. But we are introducing the ability to collect some data by providing a runtime option for selecting the memory management suite.</p>
+<h3 id="frankenstein-malloc">Frankenstein <code>malloc</code><a class="headerlink" href="#frankenstein-malloc" title="Permanent link">&para;</a></h3>
+<p>Maybe it's possible to build custom memory management functions that perform better but have some of the benefits of the ruby allocator? This feels well beyond the scope of a C extension.</p>
+<p>After an inspection of the ruby memory management functions, it wasn't obvious to the author that there's an obvious performance win by eliminating one or the other of a) conditionally invoking GC if <code>malloc</code> fails, or b) tracking the number of bytes allocated using <code>rb_gc_adjust_memory_usage</code>.</p>
+<p>We would welcome experimental results if other people are motivated to try something like this, though.</p>
+<h2 id="decision">Decision<a class="headerlink" href="#decision" title="Permanent link">&para;</a></h2>
+<p>We're sticking with <code>ruby_xmalloc</code> et al for now. But we're also introducing an environment variable to allow people to experiment with the system <code>malloc</code> if they wish.</p>
+<h2 id="consequences">Consequences<a class="headerlink" href="#consequences" title="Permanent link">&para;</a></h2>
+<p>No changes to the status quo.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>Memory-related issues:</p>
+<ul>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/2059">https://github.com/sparklemotion/nokogiri/issues/2059</a> (2020)</li>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/2241">https://github.com/sparklemotion/nokogiri/issues/2241</a> (2021)</li>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/2785">https://github.com/sparklemotion/nokogiri/issues/2785</a> (2023)</li>
+<li><a href="https://github.com/sparklemotion/nokogiri/pull/2807">https://github.com/sparklemotion/nokogiri/pull/2807</a> (2023)</li>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/2822">https://github.com/sparklemotion/nokogiri/issues/2822</a> (2023)</li>
+</ul>
+<p>Upstream libxml2 exit-time issues, commits, and discussion:</p>
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/66">Fix memory leak when shared libxml.dll is unloaded (!66)</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/153">dlclosing libxml2 with threads crashes (#153)</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/72">Call xmlCleanupParser on ELF destruction (!72)</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/commit/956534e02ef280795a187c16f6ac04e107f23c5d">Check for custom free function in global destructor (956534e0)</a></li>
+</ul>
+<p>Performance-related discussion:</p>
+<ul>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/2722">https://github.com/sparklemotion/nokogiri/issues/2722</a></li>
+<li><a href="https://github.com/sparklemotion/nokogiri/pull/2734">https://github.com/sparklemotion/nokogiri/pull/2734</a></li>
+<li><a href="https://github.com/sparklemotion/nokogiri/pull/2843">https://github.com/sparklemotion/nokogiri/pull/2843</a></li>
+</ul>
 
   
   
@@ -1252,7 +1496,7 @@ exception at the first sign of malformedness:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="modifying_an_html_xml_document.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Modifying an HTML/XML document" rel="prev">
+        <a href="2022-12-darwin-symbol-resolution.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2022-12 Darwin Symbol Resolution" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1261,20 +1505,20 @@ exception at the first sign of malformedness:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Modifying an HTML/XML document
+              2022-12 Darwin Symbol Resolution
             </div>
           </div>
         </a>
       
       
         
-        <a href="../CHANGELOG.html" class="md-footer__link md-footer__link--next" aria-label="Next: Changelog" rel="next">
+        <a href="../CONTRIBUTING.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Changelog
+              Contributing
             </div>
           </div>
           <div class="md-footer__button md-icon">

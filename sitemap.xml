@@ -51,6 +51,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nokogiri.org/adr/2022-12-darwin-symbol-resolution.html</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nokogiri.org/adr/2023-04-libxml-memory-management.html</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nokogiri.org/tutorials/ensuring_well_formed_markup.html</loc>
          <lastmod>2023-05-19</lastmod>
          <changefreq>daily</changefreq>

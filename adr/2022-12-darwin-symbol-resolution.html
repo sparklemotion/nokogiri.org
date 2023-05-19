@@ -12,7 +12,7 @@
         <meta name="author" content="Mike Dalessio">
       
       
-        <link rel="canonical" href="https://nokogiri.org/tutorials/ensuring_well_formed_markup.html">
+        <link rel="canonical" href="https://nokogiri.org/adr/2022-12-darwin-symbol-resolution.html">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Ensuring well-formed markup - Nokogiri</title>
+        <title>2022-12 Darwin Symbol Resolution - Nokogiri</title>
       
     
     
@@ -76,11 +76,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Ensuring well-formed markup - Nokogiri" >
+        <meta  property="og:title"  content="2022-12 Darwin Symbol Resolution - Nokogiri" >
       
         <meta  property="og:description"  content="The Official Tutorial Archive™ of Nokogiri®" >
       
-        <meta  property="og:image"  content="https://nokogiri.org/assets/images/social/tutorials/ensuring_well_formed_markup.png" >
+        <meta  property="og:image"  content="https://nokogiri.org/assets/images/social/adr/2022-12-darwin-symbol-resolution.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -88,15 +88,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://nokogiri.org/tutorials/ensuring_well_formed_markup.html" >
+        <meta  property="og:url"  content="https://nokogiri.org/adr/2022-12-darwin-symbol-resolution.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Ensuring well-formed markup - Nokogiri" >
+        <meta  name="twitter:title"  content="2022-12 Darwin Symbol Resolution - Nokogiri" >
       
         <meta  name="twitter:description"  content="The Official Tutorial Archive™ of Nokogiri®" >
       
-        <meta  name="twitter:image"  content="https://nokogiri.org/assets/images/social/tutorials/ensuring_well_formed_markup.png" >
+        <meta  name="twitter:image"  content="https://nokogiri.org/assets/images/social/adr/2022-12-darwin-symbol-resolution.png" >
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ensuring-well-formed-markup" class="md-skip">
+        <a href="#2022-12-hide-libxml2-and-libxslt-symbols-on-darwin-in-ruby-32-native-gem" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ensuring well-formed markup
+              2022-12 Darwin Symbol Resolution
             
           </span>
         </div>
@@ -258,7 +258,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="installing_nokogiri.html" class="md-tabs__link">
+        <a href="../tutorials/installing_nokogiri.html" class="md-tabs__link">
           
   
   Support
@@ -271,8 +271,6 @@
       
         
 
-  
-
 
 
 
@@ -281,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="toc.html" class="md-tabs__link md-tabs__link--active">
+        <a href="../tutorials/toc.html" class="md-tabs__link">
           
   
   Tutorials
@@ -294,6 +292,8 @@
       
         
 
+  
+
 
 
 
@@ -302,7 +302,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../CHANGELOG.html" class="md-tabs__link">
+        <a href="../CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
           
   
   Changelog
@@ -467,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installing_nokogiri.html" class="md-nav__link">
+      <a href="../tutorials/installing_nokogiri.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting_help.html" class="md-nav__link">
+      <a href="../tutorials/getting_help.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -533,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security.html" class="md-nav__link">
+      <a href="../tutorials/security.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,11 +555,185 @@
   
   
     <li class="md-nav__item">
-      <a href="more_resources.html" class="md-nav__link">
+      <a href="../tutorials/more_resources.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     More Resources
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        
+        
+          <label class="md-nav__link" for="__nav_4">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/toc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of Contents
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/parsing_an_html_xml_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parsing an HTML/XML document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/parsing_an_html5_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parsing an HTML5 document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/searching_a_xml_html_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Searching a XML/HTML document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/modifying_an_html_xml_document.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modifying an HTML/XML document
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/ensuring_well_formed_markup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ensuring well-formed markup
     
   </span>
   
@@ -592,241 +766,7 @@
       
         
         
-          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-        
-        
-          <label class="md-nav__link" for="__nav_4">
-            
-  
-  <span class="md-ellipsis">
-    Tutorials
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Tutorials
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="toc.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Table of Contents
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="parsing_an_html_xml_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Parsing an HTML/XML document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="parsing_an_html5_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Parsing an HTML5 document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="searching_a_xml_html_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Searching a XML/HTML document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="modifying_an_html_xml_document.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Modifying an HTML/XML document
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Ensuring well-formed markup
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="ensuring_well_formed_markup.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Ensuring well-formed markup
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gentle-well-formedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gentle Well-Formedness
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strict-well-formedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Strict Well-Formedness
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
         
         
           <label class="md-nav__link" for="__nav_5">
@@ -875,9 +815,31 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../adr/2022-12-darwin-symbol-resolution.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2022-12 Darwin Symbol Resolution
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2022-12-darwin-symbol-resolution.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -888,6 +850,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternatives considered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -899,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adr/2023-04-libxml-memory-management.html" class="md-nav__link">
+      <a href="2023-04-libxml-memory-management.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1145,18 +1181,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gentle-well-formedness" class="md-nav__link">
+  <a href="#status" class="md-nav__link">
     <span class="md-ellipsis">
-      Gentle Well-Formedness
+      Status
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#strict-well-formedness" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
-      Strict Well-Formedness
+      Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternatives considered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1177,49 +1249,38 @@
                   
 
 
-<h1 id="ensuring-well-formed-markup">Ensuring Well-Formed Markup<a class="headerlink" href="#ensuring-well-formed-markup" title="Permanent link">&para;</a></h1>
-<h2 id="gentle-well-formedness">Gentle Well-Formedness<a class="headerlink" href="#gentle-well-formedness" title="Permanent link">&para;</a></h2>
-<p>We've all seen bad markup in our day. I'm talking about markup that
-doesn't bother to close tags. I'm talking about putting <code>&lt;p&gt;</code> tags
-inside <code>&lt;p&gt;</code> tags, and putting content into an <code>&lt;img&gt;</code> tag.</p>
-<p>Nokogiri corrects bad markup <a href="http://knowyourmeme.com/memes/like-a-boss">like a boss</a>, similarly to how a browser
-would before rendering.</p>
-<div class="highlight"><pre><span></span><code><span class="n">badly_formed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="dl">EOXML</span>
-<span class="sh">&lt;root&gt;</span>
-<span class="sh">  &lt;open&gt;foo</span>
-<span class="sh">    &lt;closed&gt;bar&lt;/closed&gt;</span>
-<span class="sh">&lt;/root&gt;</span>
-<span class="dl">EOXML</span>
-
-<span class="n">bad_doc</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="w"> </span><span class="n">badly_formed</span>
-
-<span class="nb">puts</span><span class="w"> </span><span class="n">bad_doc</span><span class="w">         </span><span class="c1"># =&gt; &lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="w">                     </span><span class="c1">#    &lt;root&gt;</span>
-<span class="w">                     </span><span class="c1">#      &lt;open&gt;foo</span>
-<span class="w">                     </span><span class="c1">#        &lt;closed&gt;bar&lt;/closed&gt;</span>
-<span class="w">                     </span><span class="c1">#    &lt;/open&gt;  </span>
-<span class="w">                     </span><span class="c1">#    &lt;/root&gt;</span>
-</code></pre></div>
-<p>And Nokogiri will even keep track of what the errors were, if the
-parse option NOERRORS and NOWARNINGS are turned off (the default for
-XML documents).</p>
-<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">bad_doc</span><span class="o">.</span><span class="n">errors</span><span class="w">  </span><span class="c1"># =&gt; Opening and ending tag mismatch: open line 2 and root</span>
-<span class="w">                     </span><span class="c1">#    Premature end of data in tag root line 1</span>
-</code></pre></div>
-<p>Thus, you could use <code>errors.empty?</code> to determine whether the document was well-formed.</p>
-<h2 id="strict-well-formedness">Strict Well-Formedness<a class="headerlink" href="#strict-well-formedness" title="Permanent link">&para;</a></h2>
-<p>Being friendly and fixing markup is all well and good, but sometimes
-you need to be a <a href="http://en.wikipedia.org/wiki/The_Soup_Nazi">Markup Nazi</a>.</p>
-<p>If you demand compliance from your XML, then you can configure
-Nokogiri into "strict" parsing mode, in which it will raise an
-exception at the first sign of malformedness:</p>
-<div class="highlight"><pre><span></span><code><span class="k">begin</span>
-<span class="w">  </span><span class="n">bad_doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="n">badly_formed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">config</span><span class="o">|</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">strict</span><span class="w"> </span><span class="p">}</span>
-<span class="k">rescue</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="o">::</span><span class="no">SyntaxError</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span>
-<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;caught exception: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
-<span class="c1"># =&gt; caught exception: Premature end of data in tag root line 1</span>
-</code></pre></div>
+<h1 id="2022-12-hide-libxml2-and-libxslt-symbols-on-darwin-in-ruby-32-native-gem">2022-12 Hide libxml2 and libxslt symbols on Darwin in Ruby 3.2 native gem<a class="headerlink" href="#2022-12-hide-libxml2-and-libxslt-symbols-on-darwin-in-ruby-32-native-gem" title="Permanent link">&para;</a></h1>
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
+<p>Accepted, but reversible if an alternative technical solution can be found.</p>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p>In the final days of shipping Nokogiri v1.14.0 with native (precompiled) support for Ruby 3.2, we're struggling a bit with symbol resolution.</p>
+<p>Ruby 3.2, when compiling on Darwin, uses the <code>-bundle_loader</code> linker flag to resolve symbols against the Ruby executable as if it were a shared library. (This means that, when running a Ruby compiled with the <code>--enable-shared</code> flag, that the extension will fail to resolve Ruby symbols like <code>rb_cObject</code>.)</p>
+<p>We can work around that with the <code>-flat_namespace</code> linker flag, which mimics the behavior we already see on Linux and allows us to resolve these symbols at runtime. But for reasons I don't fully understand, many Rubies on Darwin seem to load the libxml2 and libxslt dylibs that ship with XCode commandline tools ("CLT"), and so <em>every</em> libxml2 symbol is a collision and resolves to the <em>wrong</em> libxml2 (not the version we've patched and statically linked into the extension).</p>
+<p>To work around this last problem, the best solution we know of right now seems to be to avoid exporting those symbols by using the <code>-load_hidden</code> flag (or a similar mechanism, there are several we could choose from).</p>
+<h2 id="decision">Decision<a class="headerlink" href="#decision" title="Permanent link">&para;</a></h2>
+<p>Nokogiri v1.14.0's precompiled native gem for Darwin (MacOS) Ruby 3.2 will be built with:</p>
+<ul>
+<li>the <code>-flat_namespace</code> flag to ensure the extension can be used by both <code>--enable-shared</code> and <code>--disable-shared</code> Rubies,</li>
+<li>and the <code>-load_hidden</code> flag for both <code>libxml2</code> and <code>libxslt</code> to avoid accidentally resolving to non-vendored versions of those libraries</li>
+</ul>
+<h2 id="consequences">Consequences<a class="headerlink" href="#consequences" title="Permanent link">&para;</a></h2>
+<p>This would prevent accidental symbol collisions such as the <a href="https://github.com/sparklemotion/nokogiri/pull/2106">https://github.com/sparklemotion/nokogiri/pull/2106</a> on Linux, and would ensure that we always pull in the desired version of libxml2, avoiding problems like the ones we're currently experiencing with Ruby 3.2 (see <a href="https://github.com/rake-compiler/rake-compiler-dock/issues/87">https://github.com/rake-compiler/rake-compiler-dock/issues/87</a> for extended discussion and more links).</p>
+<p>This would also, however, prevent a small but non-zero number of downstream gems from integrating with Nokogiri's C API, or the C API of libxml2, libxslt, or libgumbo. A notable gem that did this was <a href="https://github.com/rubys/nokogumbo">https://github.com/rubys/nokogumbo</a> (now merged into Nokogiri itself). Another notable gem that I know that does this is <code>nokogiri-xmlsec</code> (and the various forks of it, the most popular seems to be <a href="https://github.com/instructure/nokogiri-xmlsec-instructure">https://github.com/instructure/nokogiri-xmlsec-instructure</a>). So this may prevent experimentation and innovation (see Nokogumbo) as well as putting hurdles in front of useful integrations like xmlsec.</p>
+<h2 id="alternatives-considered">Alternatives considered<a class="headerlink" href="#alternatives-considered" title="Permanent link">&para;</a></h2>
+<p><strong>Remove the <code>-bundle_loader</code> flag from the link line.</strong> Although this works, it feels a bit like fighting the toolchain and the Ruby core team. It's a bit more complicated of a solution, it's harder for me to reason about, and I'm not positive we won't discover some weird side effect later on.</p>
+<p><strong>Fully hide all symbols everywhere</strong> is taking the chosen solution to the extreme, and may be what we decide to do in the future (see <a href="https://github.com/sparklemotion/nokogiri/discussions/2746">RFC: Stop exporting symbols · Discussion #2746 · sparklemotion/nokogiri</a>). For now, though, I'd like to keep our options open and not break compatibility completely in this v1.14.0 release. By only doing this where we're forced to, we have a chance to learn about how the API is being used, and also buy some time to hear feedback and to find an alternative solution.</p>
+<p><strong>Stop precompiling</strong> or <strong>Stop vendoring libraries</strong> should always be options we consider, because offering native gems and vendoring libraries introduces complexity. However, I covered many of the reasons I think it's good for Nokogiri to do this in <a href="https://www.youtube.com/watch?v=jtpOci5o50g">my RubyConf 2021 talk titled "Building Native Extensions. This Could Take A While..."</a> and those reasons are still valid, notably our ability to patch libxml2 for performance (see <a href="https://github.com/sparklemotion/nokogiri/pull/2144">#2144</a>), functional (see <a href="https://github.com/sparklemotion/nokogiri/pull/2403">#2403</a>), or security (see <a href="https://github.com/sparklemotion/nokogiri/pull/2294">#2294</a>) reasons.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ruby commit introducing <code>-bundle_loader</code>: <a href="https://github.com/ruby/ruby/commit/50d81bf">https://github.com/ruby/ruby/commit/50d81bf</a></li>
+<li>The PR implementing this decision is <a href="https://github.com/sparklemotion/nokogiri/pull/2732">dep: add ruby 3.2 support by flavorjones · Pull Request #2732 · sparklemotion/nokogiri</a></li>
+<li>Future symbol visibility decision will be made at <a href="https://github.com/sparklemotion/nokogiri/discussions/2746">RFC: Stop exporting symbols · Discussion #2746 · sparklemotion/nokogiri</a></li>
+<li>Background context and solution details at</li>
+<li><a href="https://github.com/rake-compiler/rake-compiler-dock/issues/87">[Ruby 3.2] having runtime issues on darwin · Issue #87 · rake-compiler/rake-compiler-dock</a></li>
+<li><a href="https://github.com/stevecheckoway/bundle_test">https://github.com/stevecheckoway/bundle_test</a></li>
+<li><a href="https://github.com/stevecheckoway/bundle_test/pull/1">explore whether `-load_hidden` will work around flat namespace by flavorjones · Pull Request #1 · stevecheckoway/bundle_test</a></li>
+<li><a href="https://developer.apple.com/videos/play/wwdc2022/110362/">Video from Apple explaining the Darwin toolchain changes</a></li>
+</ul>
 
   
   
@@ -1252,7 +1313,7 @@ exception at the first sign of malformedness:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="modifying_an_html_xml_document.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Modifying an HTML/XML document" rel="prev">
+        <a href="../CHANGELOG.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changelog" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1261,20 +1322,20 @@ exception at the first sign of malformedness:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Modifying an HTML/XML document
+              Changelog
             </div>
           </div>
         </a>
       
       
         
-        <a href="../CHANGELOG.html" class="md-footer__link md-footer__link--next" aria-label="Next: Changelog" rel="next">
+        <a href="2023-04-libxml-memory-management.html" class="md-footer__link md-footer__link--next" aria-label="Next: 2023-04 libxml Memory Management" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Changelog
+              2023-04 libxml Memory Management
             </div>
           </div>
           <div class="md-footer__button md-icon">

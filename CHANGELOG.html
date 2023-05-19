@@ -298,14 +298,18 @@
 
 
   
-    <li class="md-tabs__item">
-      <a href="CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
-        
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="CHANGELOG.html" class="md-tabs__link md-tabs__link--active">
+          
   
   Changelog
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -750,6 +754,43 @@
     
       
       
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        
+        
+          <label class="md-nav__link" for="__nav_5">
+            
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" aria-label="Changelog" data-md-level="1">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
     
@@ -4571,6 +4612,58 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adr/2022-12-darwin-symbol-resolution.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022-12 Darwin Symbol Resolution
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adr/2023-04-libxml-memory-management.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-04 libxml Memory Management
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -8599,7 +8692,7 @@
 <span class="nv">NOKOGIRI_LIBXML_MEMORY_MANAGEMENT</span><span class="o">=</span>default
 </code></pre></div>
 <p>Benchmarks show that this setting will significantly improve performance, but be aware that the tradeoff may involve poorer memory management including bloated heap sizes and/or OOM conditions.</p>
-<p>You can read more about this in the decision record at <a href="adr/2023-04-libxml-memory-management.md"><code>adr/2023-04-libxml-memory-management.md</code></a>.</p>
+<p>You can read more about this in the decision record at <a href="adr/2023-04-libxml-memory-management.html"><code>adr/2023-04-libxml-memory-management.md</code></a>.</p>
 <h3 id="dependencies_1">Dependencies<a class="headerlink" href="#dependencies_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] Vendored libxml2 is updated to v2.11.3 from v2.10.4. For details please see:</li>
@@ -8613,7 +8706,7 @@
 <h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>Encoding</code> objects may now be passed to serialization methods like <code>#to_xml</code>, <code>#to_html</code>, <code>#serialize</code>, and <code>#write_to</code> to specify the output encoding. Previously only encoding names (strings) were accepted. [<a href="https://github.com/sparklemotion/nokogiri/issues/2774">#2774</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/2798">#2798</a>] (Thanks, <a href="https://github.com/ellaklara">@ellaklara</a>!)</li>
-<li>[CRuby] Users may opt into using system <code>malloc</code> for libxml2 memory management. For more detail, see note above or <a href="adr/2023-04-libxml-memory-management.md"><code>adr/2023-04-libxml-memory-management.md</code></a>.</li>
+<li>[CRuby] Users may opt into using system <code>malloc</code> for libxml2 memory management. For more detail, see note above or <a href="adr/2023-04-libxml-memory-management.html"><code>adr/2023-04-libxml-memory-management.md</code></a>.</li>
 </ul>
 <h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10473,13 +10566,13 @@ mentioned in the notes for v1.5.10.</p>
       
       
         
-        <a href="CONTRIBUTING.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
+        <a href="adr/2022-12-darwin-symbol-resolution.html" class="md-footer__link md-footer__link--next" aria-label="Next: 2022-12 Darwin Symbol Resolution" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Contributing
+              2022-12 Darwin Symbol Resolution
             </div>
           </div>
           <div class="md-footer__button md-icon">
