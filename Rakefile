@@ -15,7 +15,7 @@ namespace :dev do
 
   desc "Set up system dependencies to develop this site."
   task :setup do
-    sh "pip3 install --upgrade --user pygments pymdown-extensions"
+    sh "pip3 install --upgrade --user pygments pymdown-extensions pillow cairosvg"
     sh "pip3 uninstall --yes mkdocs-material"
 
     if File.directory?(MKDOCS_MATERIAL_INSIDERS_DIR)
