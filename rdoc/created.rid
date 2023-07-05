@@ -1,5 +1,5 @@
-Wed, 24 May 2023 09:43:34 -0400
-README.md	Thu, 11 May 2023 11:16:43 -0400
+Tue, 30 May 2023 11:25:01 -0400
+README.md	Wed, 24 May 2023 11:05:40 -0400
 lib/nokogiri.rb	Wed, 24 May 2023 09:05:51 -0400
 lib/nokogiri/class_resolver.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/css.rb	Thu, 11 May 2023 11:16:43 -0400
@@ -58,7 +58,7 @@ lib/nokogiri/xml/pp.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/xml/pp/character_data.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/xml/pp/node.rb	Wed, 24 May 2023 09:05:51 -0400
 lib/nokogiri/xml/processing_instruction.rb	Thu, 11 May 2023 11:16:43 -0400
-lib/nokogiri/xml/reader.rb	Thu, 11 May 2023 11:16:43 -0400
+lib/nokogiri/xml/reader.rb	Fri, 26 May 2023 16:42:34 -0400
 lib/nokogiri/xml/relax_ng.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/xml/sax.rb	Thu, 11 May 2023 11:16:43 -0400
 lib/nokogiri/xml/sax/document.rb	Wed, 24 May 2023 09:05:51 -0400
@@ -87,7 +87,7 @@ ext/nokogiri/xml_attr.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_attribute_decl.c	Thu, 11 May 2023 11:16:43 -0400
 ext/nokogiri/xml_cdata.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_comment.c	Wed, 24 May 2023 09:05:51 -0400
-ext/nokogiri/xml_document.c	Wed, 24 May 2023 09:05:51 -0400
+ext/nokogiri/xml_document.c	Fri, 26 May 2023 13:40:04 -0400
 ext/nokogiri/xml_document_fragment.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_dtd.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_element_content.c	Wed, 24 May 2023 09:05:51 -0400
@@ -99,7 +99,7 @@ ext/nokogiri/xml_namespace.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_node.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_node_set.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_processing_instruction.c	Wed, 24 May 2023 09:05:51 -0400
-ext/nokogiri/xml_reader.c	Wed, 24 May 2023 09:05:51 -0400
+ext/nokogiri/xml_reader.c	Mon, 29 May 2023 13:59:11 -0400
 ext/nokogiri/xml_relax_ng.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_sax_parser.c	Wed, 24 May 2023 09:05:51 -0400
 ext/nokogiri/xml_sax_parser_context.c	Wed, 24 May 2023 09:05:51 -0400
