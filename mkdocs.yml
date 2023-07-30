@@ -6,7 +6,7 @@ repo_url: https://github.com/sparklemotion/nokogiri
 edit_uri: ""
 site_description: "The Official Tutorial Archive™ of Nokogiri®"
 site_author: "Mike Dalessio"
-copyright: "Copyright Ⓒ 2009-2021 Mike Dalessio"
+copyright: "Copyright Ⓒ 2009-2022 Mike Dalessio"
 
 docs_dir: staging
 use_directory_urls: false
@@ -39,7 +39,7 @@ extra:
       name: sparklemotion/nokogiri.org
   analytics:
     provider: google
-    property: UA-1260604-8
+    property: G-BZR5RZN084
   consent:
     title: Cookie consent
     description: |
@@ -86,7 +86,11 @@ nav:
     - Searching a XML/HTML document: tutorials/searching_a_xml_html_document.md
     - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
     - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
-  - Changelog: CHANGELOG.md
+  - Changelog:
+    - Changelog: CHANGELOG.md
+      # reverse chronological order!
+    - 2023-04 libxml Memory Management: adr/2023-04-libxml-memory-management.md
+    - 2022-12 Darwin Symbol Resolution: adr/2022-12-darwin-symbol-resolution.md
   - About:
     - Contributing: CONTRIBUTING.md
     - Code of Conduct: CODE_OF_CONDUCT.md

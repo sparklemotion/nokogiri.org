@@ -15,26 +15,34 @@ namespace :dev do
 
   desc "Set up system dependencies to develop this site."
   task :setup do
-    sh "pip3 install --upgrade --user pygments pymdown-extensions"
-    sh "pip3 uninstall --yes mkdocs mkdocs-material"
-
-    if File.directory?(MKDOCS_DIR)
-      Dir.chdir(File.join(MKDOCS_DIR, "..")) do
-        sh "pip3 install --user -e mkdocs"
-      end
-    else
-      puts "WARNING: you don't have a custom mkdocs installed, using OSS version which will not index rdocs"
-      sh "pip3 install --upgrade --user mkdocs"
-    end
+    sh "pip3 install --upgrade --user pygments pymdown-extensions pillow cairosvg"
+    sh "pip3 uninstall --yes mkdocs-material"
 
     if File.directory?(MKDOCS_MATERIAL_INSIDERS_DIR)
       Dir.chdir(MKDOCS_MATERIAL_INSIDERS_DIR) do
-        sh "git pull --rebase"
+        # https://squidfunk.github.io/mkdocs-material/customization/#environment-setup
+        sh "pip3 install --user -e ."
+        sh "pip install mkdocs-minify-plugin"
+        sh "pip install mkdocs-redirects"
+        sh "npm install"
       end
-      sh "pip3 install --user -e #{MKDOCS_MATERIAL_INSIDERS_DIR}"
     else
       puts "WARNING: you don't have mkdocs-material-insiders installed, using OSS version"
       sh "pip3 install --upgrade --user mkdocs-material"
+    end
+  end
+
+  # there is a patch of mkdocs-material search plugin to support rdoc pages here:
+  #  https://gist.github.com/flavorjones/a2ee50d94888537d561db53c837c4bbf
+
+  task :build do |_, args|
+    dirty_p = args.extras.include?("dirty")
+    Dir.chdir(MKDOCS_MATERIAL_INSIDERS_DIR) do
+      if dirty_p
+        sh "npm run build:dirty"
+      else
+        sh "npm run build"
+      end
     end
   end
 end

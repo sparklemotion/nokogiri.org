@@ -19,6 +19,13 @@ def create_nokogiri_tasks(source_dir, dest_dir)
     "index.md" => "README.md",
   }
 
+  Dir.chdir(nokogiri_dir) do
+    Dir.glob(File.join("adr", "*.md")).each do |adr|
+      file_pairs[adr] = adr
+    end
+  end
+  FileUtils.mkdir_p(File.join(dest_dir, "adr"))
+
   dest_paths = []
 
   file_pairs.each do |dest_file, source_file|
@@ -31,11 +38,7 @@ def create_nokogiri_tasks(source_dir, dest_dir)
     end
 
     file(dest_path => source_path) do
-      if dest_file == "index.md"
-        inject_tidelift_cta(source_path, dest_path)
-      else
-        FileUtils.cp(source_path, dest_path, verbose: true)
-      end
+      FileUtils.cp(source_path, dest_path, verbose: true)
       modify_readme_links(dest_path)
     end
   end
@@ -83,15 +86,15 @@ def nokogiri_add_ga_to_rdocs
   files = Dir[File.join(RDOC_STAGING_DIR, "/**/*.html")]
 
   snippet_tag = "Global site tag (gtag.js) - Google Analytics"
-  snippet = <<-EOJS
+  snippet = <<~EOJS
     <!-- #{snippet_tag} -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1260604-8"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZR5RZN084"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-1260604-8');
+      gtag('config', 'G-BZR5RZN084');
     </script>
   EOJS
 
@@ -141,21 +144,4 @@ def modify_readme_links(dest_path)
     puts "→ repointing a README.md link in #{dest_path}"
     File.open(dest_path, "w") { |f| f.write(modified_contents) }
   end
-end
-
-def inject_tidelift_cta(source_path, dest_path)
-  puts "→ adding tidelift cta into #{source_path} → #{dest_path}"
-  File.open(dest_path, "w") do |dest_fd|
-    dest_fd.write(tidelift_cta)
-    dest_fd.puts
-    dest_fd.write(File.read(source_path))
-  end
-end
-
-def tidelift_cta
-  <<~EOHTML
-    <a class="tidelift tidelift-top" href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&utm_medium=referral&utm_campaign=website" target="_blank">
-      Get support for Nokogiri with a Tidelift subscription
-    </a>
-  EOHTML
 end

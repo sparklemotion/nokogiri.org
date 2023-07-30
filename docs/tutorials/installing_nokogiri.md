@@ -1,10 +1,10 @@
 # Installing Nokogiri
 
-Welcome! We've spent quite a bit of time over the past year trying to make Nokogiri v1.11 easy and reliable to install. This page should hopefully get you on your way quickly.
+Welcome! We've worked hard to make Nokogiri easy and reliable to install. This page should hopefully get you on your way quickly.
 
 ## Meta
 
-The current version of this page focuses on the installation experience for Nokogiri v1.11.x. If you're trying to install an earlier version, please visit:
+The current version of this page focuses on the installation experience for Nokogiri v1.11 and later. If you're trying to install an earlier version, please visit:
 
 - [Nokogiri v1.10.x installation instructions](https://github.com/sparklemotion/nokogiri.org/blob/91e624fa8d6c918d7905954fd8da7ea40f237d88/docs/tutorials/installing_nokogiri.md)
 
@@ -17,7 +17,7 @@ If you'd like to contribute improvements to this document, please open a GitHub 
 
 ### Faster, more reliable installation
 
-"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or for system dependencies to exist. This results in **much faster installation** and **more reliable installation**, which as you probably know are the biggest headaches for Nokogiri users.
+"Native gems" contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or to install system dependencies. This results in **much faster installation** and **more reliable installation**, which as you probably know have historically been challenging topics for Nokogiri users.
 
 ### Supported Platforms
 
@@ -27,7 +27,7 @@ Nokogiri ships pre-compiled, "native" gems for the following platforms:
 - Linux `aarch64-linux` (req: `glibc >= 2.29`) including musl/Alpine
 - MacOS `x86_64-darwin` and `arm64-darwin`
 - Windows `x86-mingw32`, `x64-mingw32`, and `x64-mingw-ucrt`
-- Java any platform running JRuby 9.3 or higher
+- Java platforms running JRuby 9.3 or higher
 
 To determine whether your system supports one of these gems, look at the output of `bundle platform` or `ruby -e 'puts Gem::Platform.local.to_s'`.
 
@@ -40,7 +40,7 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 1 gem installed
 ```
 
-If you're using Bundler v2.2+, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:
+If you're using Bundler `>= 2.2`, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:
 
 ``` sh
 bundle lock --add-platform x86_64-linux
@@ -67,15 +67,15 @@ The Nokogiri maintainers strongly urge you to use a native gem if at all possibl
 
 If you're on a platform that supports a native gem but you want to avoid using it in your project, do one of the following:
 
-- If you're not using Bundler, then run `gem install nokogiri --platform=ruby`
-- If you are using Bundler
-  - version 2.1 or later, then you'll need to run `bundle config set force_ruby_platform true`,
-  - version 2.0 or earlier, then you'll need to run `bundle config force_ruby_platform true`
+- With Bundler `>= 2.3.18`, then update your Gemfile with `gem "nokogiri", force_ruby_platform: true`
+- Else with Bundler`>= 2.1`, then run `bundle config set force_ruby_platform true`,
+- Else with Bundler `< 2.1`, then run `bundle config force_ruby_platform true`
+- If you're not using Bundler, then run `gem install nokogiri --platform=ruby`.
 
 
 ## Installing the `ruby` platform gem
 
-Again, we recommend that you upgrade to v1.11.x and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.
+Again, we recommend that you upgrade to v1.11 or later and use a native gem whenever possible. If you're here, it should be because you're on an older version, or you're on an unsupported platform.
 
 **Before you begin, make sure you have the full compiler toolchain for compiling Ruby C Extensions.** See [Appendix A: The Compiler Toolchain](#appendix-a-the-compiler-toolchain).
 
@@ -100,7 +100,7 @@ You may substitute `git` for `patch` (`mini_portile2` can use either for applyin
 #### Fedora, Red Hat, and CentOS
 
 ``` sh
-dnf install -y zlib-devel
+dnf install -y zlib-devel xz patch
 gem install nokogiri --platform=ruby
 ```
 
@@ -126,7 +126,14 @@ gem install nokogiri
 
 #### Termux
 
-If you're using Bundler:
+If you're using Bundler `>= 2.3.18`:
+
+``` ruby
+# Gemfile
+gem "nokogiri", force_ruby_platform: true
+```
+
+else if you're using a version of Bundler `>= 2.1`:
 
 ``` sh
 pkg install ruby clang make binutils
@@ -134,7 +141,15 @@ bundle config set force_ruby_platform true
 bundle install
 ```
 
-If you're not using Bundler:
+else if you're using a version of Bundler `< 2.1`:
+
+``` sh
+pkg install ruby clang make binutils
+bundle config force_ruby_platform true
+bundle install
+```
+
+else if you're not using Bundler:
 
 ``` sh
 pkg install ruby clang make binutils
@@ -175,7 +190,7 @@ If you're using macports and would like to contribute documentation, please open
 #### FreeBSD
 
 ``` sh
-sudo pkg install pkgconf
+sudo pkg install pkgconf libxml2 libxslt
 gem install nokogiri -- --use-system-libraries
 ```
 
@@ -440,14 +455,14 @@ bundle lock --add-platform x86_64-linux
 bundle package --all-platforms
 ```
 
-For more information, please read [this wonderful blog post](https://blog.thegnar.co/caching-all-native-gem-platforms) written by Kevin Murphy explaining this approach.
+For more information, please read [this wonderful blog post](https://kevinjmurphy.com/posts/caching-all-native-gem-platforms/) written by Kevin Murphy explaining this approach.
 
 
 #### Fallback Solution
 
-If you can't upgrade to Bundler 2.2 (or later), you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide.
+If you can't upgrade to Bundler `>= 2.2`, you can force older versions to always use the `ruby` platform, which supports all platforms, but applies to *all* gems and comes with the installation challenges mentioned earlier in this guide.
 
-Here's how to do this with Bundler 2.1 or later:
+Here's how to do this with Bundler `>= 2.1`:
 
 ``` sh
 rm -rf vendor/cache
@@ -455,7 +470,7 @@ bundle config set force_ruby_platform true
 bundle install
 ```
 
-Or if you're on version 2.0 or earlier:
+Or if you're using Bundler `< 2.1`:
 
 ``` sh
 rm -rf vendor/cache
@@ -464,7 +479,7 @@ bundle install
 ```
 
 
-### `tar (child): xz: Cannot exec: No such file or directory`
+### `tar` and `xz` files
 
 Starting in v1.13.2, the source archive used for libxml2 and libxslt is compressed with `xz` (previous versions were compressed with `gzip`. As a result, when compiling from source, your system will need to have `xz` installed in order to extract the source code for these libraries.
 
@@ -480,6 +495,21 @@ tar (child): xz: Cannot exec: No such file or directory
 tar (child): Error is not recoverable: exiting now
 /bin/tar: Child returned status 2
 /bin/tar: Error is not recoverable: exiting now
+========================================================================
+*** extconf.rb failed ***
+```
+
+or
+
+``` text hl_lines="3"
+Extracting libxml2-2.9.14.tar.xz into tmp/x86_64-unknown-openbsd7.1/ports/libxml2/2.9.14... ERROR, review '/usr/local/lib/ruby/gems/3.0/gems/nokogiri-1.13.6/ext/nokogiri/tmp/x86_64-unknown-openbsd7.1/ports/libxml2/2.9.14/extract.log' to see what happened. Last lines are:
+========================================================================
+tar: unknown option J
+usage: tar {crtux}[014578befHhjLmNOoPpqsvwXZz]
+           [blocking-factor | archive | replstr] [-C directory] [-I file]
+           [file ...]
+       tar {-crtux} [-014578eHhjLmNOoPpqvwXZz] [-b blocking-factor]
+           [-C directory] [-f archive] [-I file] [-s replstr] [file ...]
 ========================================================================
 *** extconf.rb failed ***
 ```
@@ -604,7 +634,7 @@ Racc needs the same compiler toolchain to be present as any Gem with a C extensi
 
 Ruby 3.0 comes with Racc 1.5.x as a "builtin gem", so you could update to Ruby 3!
 
-Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like `gem "racc", "~> 1.4.0"` to prevent bundler from trying to upgrade.
+Ruby 2.7 comes with Racc 1.4.x as a "builtin gem", so you could use that version instead of trying to upgrade. Update to Ruby 2.7 and add a line like `gem "racc", "~> 1.4.0"` to prevent Bundler from trying to upgrade.
 
 
 
@@ -690,7 +720,7 @@ gem install nokogiri -- --use-system-libraries \
     --with-xml2-include=$(brew --prefix libxml2)/include/libxml2
 ```
 
-or if you're using bundler:
+or if you're using Bundler:
 
 ``` sh
 bundle config build.nokogiri --use-system-libraries \
