@@ -1256,16 +1256,24 @@ World Wide Web.</p>
 <p>Nokogiri offers quite a few options that affect how a document is
 parsed; you can read about them in the <a href="https://nokogiri.org/rdoc/Nokogiri/XML/ParseOptions">XML::ParseOptions docs</a>.</p>
 <p>Notably, Nokogiri will treat input as untrusted documents by default, thereby avoiding a class of vulnerabilities known as <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing">XXE</a> or "XML eXternal Entity" processing. What this means is that Nokogiri won't attempt to load external DTDs or access the network for any external resources.</p>
-<p>Some commonly-used <a href="https://nokogiri.org/rdoc/Nokogiri/XML/ParseOptions">parse options</a> are:</p>
+<p>Some commonly-used <a href="https://nokogiri.org/rdoc/Nokogiri/XML/ParseOptions">parse options</a> with security implications are:</p>
 <ul>
-<li><code>NONET</code> - Prevent any network connections during parsing. Recommended for parsing untrusted documents. <strong>This is set by default!</strong></li>
-<li><code>RECOVER</code> - Attempt to recover from errors. Recommended for parsing malformed or invalid documents. <strong>This is set by default!</strong></li>
-<li><code>NOBLANKS</code> - Remove blank nodes</li>
+<li><code>NONET</code> - Prevent any network connections during parsing. <strong>This is set by default!</strong></li>
+<li>⚠ It is UNSAFE to unset this option when parsing untrusted documents.</li>
 <li><code>NOENT</code> - Substitute entities</li>
+<li>⚠ It is UNSAFE to set this option when parsing untrusted documents.</li>
+<li><code>DTDLOAD</code>  <code>DTDVALID</code> - If you want DTD validation</li>
+<li>⚠ It is UNSAFE to set <code>DTDLOAD</code> when parsing untrusted documents.</li>
+<li><code>HUGE</code> - use to skip hardcoded limits around document size or DOM depth</li>
+<li>⚠ It is UNSAFE to set <code>DTDLOAD</code> when parsing untrusted documents.</li>
+</ul>
+<p>Some other commonly-used <a href="https://nokogiri.org/rdoc/Nokogiri/XML/ParseOptions">parse options</a> are:</p>
+<ul>
+<li><code>RECOVER</code> - Attempt to recover from errors. <strong>This is set by default!</strong></li>
+<li>Recommended for parsing malformed or invalid documents.</li>
+<li><code>NOBLANKS</code> - Remove blank nodes</li>
 <li><code>NOERROR</code> - Suppress error reports</li>
 <li><code>STRICT</code> - Strict parsing; raise an error when parsing malformed documents</li>
-<li><code>DTDLOAD</code> and <code>DTDVALID</code> - If you want DTD validation</li>
-<li><code>HUGE</code> - use to skip hardcoded limits around document size or DOM depth; comes with a performance penalty</li>
 </ul>
 <p>You <em>could</em> use them by handcrafting an artisanal bitmap (not recommended):</p>
 <div class="highlight"><pre><span></span><code><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Nokogiri</span><span class="o">::</span><span class="no">XML</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;blossom.xml&quot;</span><span class="p">))</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">config</span><span class="o">|</span>
