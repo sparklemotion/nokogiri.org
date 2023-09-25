@@ -45,19 +45,27 @@ parsed; you can read about them in the [XML::ParseOptions docs][read-parse-optio
 
 Notably, Nokogiri will treat input as untrusted documents by default, thereby avoiding a class of vulnerabilities known as [XXE][XXE] or "XML eXternal Entity" processing. What this means is that Nokogiri won't attempt to load external DTDs or access the network for any external resources.
 
-Some commonly-used [parse options][read-parse-options] are:
+Some commonly-used [parse options][read-parse-options] with security implications are:
 
   [read-parse-options]: https://nokogiri.org/rdoc/Nokogiri/XML/ParseOptions
   [XXE]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 
-* `NONET` - Prevent any network connections during parsing. Recommended for parsing untrusted documents. __This is set by default!__
-* `RECOVER` - Attempt to recover from errors. Recommended for parsing malformed or invalid documents. __This is set by default!__
-* `NOBLANKS` - Remove blank nodes
+* `NONET` - Prevent any network connections during parsing. __This is set by default!__
+  * ⚠ It is UNSAFE to unset this option when parsing untrusted documents.
 * `NOENT` - Substitute entities
+  * ⚠ It is UNSAFE to set this option when parsing untrusted documents.
+* `DTDLOAD`  `DTDVALID` - If you want DTD validation
+  * ⚠ It is UNSAFE to set `DTDLOAD` when parsing untrusted documents.
+* `HUGE` - use to skip hardcoded limits around document size or DOM depth
+  * ⚠ It is UNSAFE to set `DTDLOAD` when parsing untrusted documents.
+
+Some other commonly-used [parse options][read-parse-options] are:
+
+* `RECOVER` - Attempt to recover from errors. __This is set by default!__
+  * Recommended for parsing malformed or invalid documents.
+* `NOBLANKS` - Remove blank nodes
 * `NOERROR` - Suppress error reports
 * `STRICT` - Strict parsing; raise an error when parsing malformed documents
-* `DTDLOAD` and `DTDVALID` - If you want DTD validation
-* `HUGE` - use to skip hardcoded limits around document size or DOM depth; comes with a performance penalty
 
 You _could_ use them by handcrafting an artisanal bitmap (not recommended):
 
