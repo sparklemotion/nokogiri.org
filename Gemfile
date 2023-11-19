@@ -6,6 +6,7 @@ group :development do
   gem 'rcodetools'
   gem 'yard'
   gem 'nokogiri'
+  gem 'hoe-markdown', ">= 1.6.0"
 end
 
 group :test do

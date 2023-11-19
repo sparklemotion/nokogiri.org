@@ -19,6 +19,8 @@ def create_nokogiri_tasks(source_dir, dest_dir)
     "index.md" => "README.md",
   }
 
+  linkify_files = ["CHANGELOG.md"]
+
   Dir.chdir(nokogiri_dir) do
     Dir.glob(File.join("adr", "*.md")).each do |adr|
       file_pairs[adr] = adr
@@ -41,6 +43,7 @@ def create_nokogiri_tasks(source_dir, dest_dir)
       FileUtils.mkdir_p(target_dir, verbose: true) unless File.directory?(target_dir)
       FileUtils.cp(source_path, dest_path, verbose: true)
       modify_readme_links(dest_path)
+      github_linkify(dest_path) if linkify_files.include?(dest_file)
     end
   end
 
@@ -58,6 +61,14 @@ def create_nokogiri_tasks(source_dir, dest_dir)
   end
 
   dest_paths
+end
+
+def github_linkify(path)
+  require "hoe/markdown"
+  md = File.read(path)
+  md = Hoe::Markdown::Util.linkify_github_usernames(md)
+  md = Hoe::Markdown::Util.linkify_github_issues(md, "https://github.com/sparklemotion/nokogiri/issues")
+  File.write(path, md)
 end
 
 require "nokogiri"
