@@ -24,7 +24,6 @@ def create_nokogiri_tasks(source_dir, dest_dir)
       file_pairs[adr] = adr
     end
   end
-  FileUtils.mkdir_p(File.join(dest_dir, "adr"))
 
   dest_paths = []
 
@@ -38,6 +37,8 @@ def create_nokogiri_tasks(source_dir, dest_dir)
     end
 
     file(dest_path => source_path) do
+      target_dir = File.dirname(dest_path)
+      FileUtils.mkdir_p(target_dir, verbose: true) unless File.directory?(target_dir)
       FileUtils.cp(source_path, dest_path, verbose: true)
       modify_readme_links(dest_path)
     end
