@@ -1,6 +1,4 @@
-# nokogiri.org
-
-## The Official Tutorial Archive™ of Nokogiri®
+# The Official Tutorial Archive™ of Nokogiri®
 
 These documents and tutorials appear on [nokogiri.org][].
 
@@ -25,7 +23,7 @@ Take a look at the [open issues][]!
 4. `bundle exec rake preview` to spin up a mkdocs server to host the site locally.
 5. Submit a pull request.
 
-We use `[mkdocs][]` to generate the static files for the site, which are pretty fancy and include a search capability.
+We use [mkdocs][] to generate the static files for the site, which are pretty fancy and include a search capability.
 
 Note that files in `docs/` are preprocessed (see below) and placed into `staging/` along with some files from Nokogiri's repository, so editing files in `docs/` won't update live in the mkdocs server.
 
