@@ -109,9 +109,6 @@
 <a href="#method-c-fragment">::fragment</a>
     </li>
 <li>
-<a href="#method-c-get">::get</a>
-    </li>
-<li>
 <a href="#method-c-parse">::parse</a>
   </li>
 </ul>
@@ -346,37 +343,6 @@ Content&lt;/listing&gt;
             <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 238</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-c-get" class="method-detail ">
-        <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">get</span><span class="method-args">(uri, options = {})</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-        </div>
-
-        <div class="method-description">
-          <p>Fetch and parse a <a href="HTML4.html"><code>HTML</code></a> document from the web, following redirects, handling https, and determining the character encoding using <a href="HTML5.html"><code>HTML5</code></a> rules.  <code>uri</code> may be a <code>String</code> or a <code>URI</code>.  <code>options</code> contains http headers and special options.  Everything which is not a special option is considered a header.  Special options include:</p>
-
-<pre>* :follow_limit =&gt; number of redirects which are followed
-* :basic_auth =&gt; [username, password]</pre>
-
-          <div class="method-source-code" id="get-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 249</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">options</span> = {})
-  <span class="ruby-comment"># TODO: deprecate</span>
-  <span class="ruby-identifier">warn</span>(
-    <span class="ruby-string">"Nokogiri::HTML5.get is deprecated and will be removed in a future version of Nokogiri."</span>,
-    <span class="ruby-value">uplevel:</span> <span class="ruby-value">1</span>,
-    <span class="ruby-value">category:</span> <span class="ruby-value">:deprecated</span>,
-  )
-  <span class="ruby-identifier">get_impl</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

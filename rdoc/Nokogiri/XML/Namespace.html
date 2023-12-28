@@ -162,8 +162,6 @@
 </li>
 </ul>
 
-<p>⚡ This is an experimental feature, available since v1.14.0</p>
-
 <p><strong>Example</strong></p>
 
 <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">&lt;&lt;~XML</span>)
@@ -190,8 +188,10 @@
 <span class="ruby-comment"># =&gt; {:prefix=&gt;"noko", :href=&gt;"http://nokogiri.org/ns/noko"}</span>
 </pre>
 
+<p>Since v1.14.0</p>
+
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/namespace.rb, line 47</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/namespace.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">prefix:</span> <span class="ruby-identifier">prefix</span>, <span class="ruby-value">href:</span> <span class="ruby-identifier">href</span> }
 <span class="ruby-keyword">end</span></pre>

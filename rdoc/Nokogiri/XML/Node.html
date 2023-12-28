@@ -840,10 +840,10 @@
           <p>Compare two <a href="Node.html"><code>Node</code></a> objects with respect to their <a href="Document.html"><code>Document</code></a>.  Nodes from different documents cannot be compared.</p>
 
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1256</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1262</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">document</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">document</span>
 
   <span class="ruby-identifier">compare</span>(<span class="ruby-identifier">other</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -865,7 +865,7 @@
           <p>Test to see if this <a href="Node.html"><code>Node</code></a> is equal to <code>other</code></p>
 
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1246</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1252</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:pointer_id</span>)
@@ -890,7 +890,7 @@
           <p>Accept a visitor.  This method calls “visit” on <code>visitor</code> with self.</p>
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1240</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1246</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -912,7 +912,7 @@
           <p>Get a list of ancestor <a href="Node.html"><code>Node</code></a> for this <a href="Node.html"><code>Node</code></a>.  If <code>selector</code> is given, the ancestors must match <code>selector</code></p>
 
           <div class="method-source-code" id="ancestors-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1209</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1215</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ancestors</span>(<span class="ruby-identifier">selector</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-constant">NodeSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:parent</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-constant">NodeSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parent</span>
@@ -994,7 +994,7 @@ rb_xml_node_blank_eh(VALUE self)
           <p>Returns true if this is a <a href="CDATA.html"><code>CDATA</code></a></p>
 
           <div class="method-source-code" id="cdata-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1130</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cdata?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CDATA_SECTION_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1034,7 +1034,7 @@ rb_xml_node_blank_eh(VALUE self)
           <p>Returns true if this is a <a href="Comment.html"><code>Comment</code></a></p>
 
           <div class="method-source-code" id="comment-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1125</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comment?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">COMMENT_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1222,7 +1222,7 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
           <p>Get the path to this node as a <a href="../CSS.html"><code>CSS</code></a> expression</p>
 
           <div class="method-source-code" id="css_path-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1200</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1206</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">css_path</span>
   <span class="ruby-identifier">path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r{/}</span>).<span class="ruby-identifier">filter_map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">part</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[(\d+)\]/</span>, <span class="ruby-string">':nth-of-type(\1)'</span>)
@@ -1268,9 +1268,9 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
           <p>Fetch the <a href="../HTML4/ElementDescription.html"><code>Nokogiri::HTML4::ElementDescription</code></a> for this node.  Returns nil on <a href="../XML.html"><code>XML</code></a> documents and on unknown tags.</p>
 
           <div class="method-source-code" id="description-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1167</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1173</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">description</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">xml?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">xml?</span>
 
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">ElementDescription</span>[<span class="ruby-identifier">name</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -1292,7 +1292,7 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
           <p>Returns true if this is a <a href="Document.html"><code>Document</code></a></p>
 
           <div class="method-source-code" id="document-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1145</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1151</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">document?</span>
   <span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1341,7 +1341,7 @@ create_internal_subset(VALUE self, VALUE name, VALUE external_id, VALUE system_i
 <dt>Returns
 </dt>
 <dd>
-<p>The new Nokgiri::XML::Node</p>
+<p>The new <a href="Node.html"><code>Nokogiri::XML::Node</code></a></p>
 </dd>
 </dl>
 
@@ -1416,7 +1416,7 @@ duplicate_node(int argc, VALUE *argv, VALUE self)
           <p>Returns true if this is an <a href="Element.html"><code>Element</code></a> node</p>
 
           <div class="method-source-code" id="element-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1181</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1187</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">element?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">ELEMENT_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1674,7 +1674,7 @@ rb_xml_node_first_element_child(VALUE self)
           <p>Returns true if this is a <a href="DocumentFragment.html"><code>DocumentFragment</code></a></p>
 
           <div class="method-source-code" id="fragment-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1160</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1166</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">DOCUMENT_FRAG_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1696,7 +1696,7 @@ rb_xml_node_first_element_child(VALUE self)
           <p>Returns true if this is an <a href="../HTML4/Document.html"><code>HTML4::Document</code></a> or <a href="../HTML5/Document.html"><code>HTML5::Document</code></a> node</p>
 
           <div class="method-source-code" id="html-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1140</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1146</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">html?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">HTML_DOCUMENT_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1718,7 +1718,7 @@ rb_xml_node_first_element_child(VALUE self)
           <p>Get the <a href="Node.html#method-i-inner_html"><code>inner_html</code></a> for this node’s <a href="Node.html#method-i-children"><code>Node#children</code></a></p>
 
           <div class="method-source-code" id="inner_html-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1195</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }.<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
@@ -2361,7 +2361,7 @@ namespaced_key_eh(VALUE self, VALUE attribute, VALUE namespace)
 </pre>
 
           <div class="method-source-code" id="namespaces-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1116</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1122</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">namespaces</span>
   <span class="ruby-identifier">namespace_scopes</span>.<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ns</span>, <span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">prefix</span> = <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span>
@@ -2635,29 +2635,35 @@ get_parent(VALUE self)
 
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">NodeSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">empty?</span>
 
-  <span class="ruby-comment"># libxml2 does not obey the +recover+ option after encountering errors during +in_context+</span>
-  <span class="ruby-comment"># parsing, and so this horrible hack is here to try to emulate recovery behavior.</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-comment"># Unfortunately, this means we're no longer parsing "in context" and so namespaces that</span>
-  <span class="ruby-comment"># would have been inherited from the context node won't be handled correctly. This hack was</span>
-  <span class="ruby-comment"># written in 2010, and I regret it, because it's silently degrading functionality in a way</span>
-  <span class="ruby-comment"># that's not easily prevented (or even detected).</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-comment"># I think preferable behavior would be to either:</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-comment"># a. add an error noting that we "fell back" and pointing the user to turning off the +recover+ option</span>
-  <span class="ruby-comment"># b. don't recover, but raise a sensible exception</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-comment"># For context and background: https://github.com/sparklemotion/nokogiri/issues/313</span>
-  <span class="ruby-comment"># FIXME bug report: https://github.com/sparklemotion/nokogiri/issues/2092</span>
   <span class="ruby-identifier">error_count</span> = <span class="ruby-identifier">document</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">length</span>
   <span class="ruby-identifier">node_set</span> = <span class="ruby-identifier">in_context</span>(<span class="ruby-identifier">contents</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_i</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error_count</span>)
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">recover?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error_count</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">error_count</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">recover?</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_set</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-comment"># libxml2 &lt; 2.13 does not obey the +recover+ option after encountering errors during</span>
+      <span class="ruby-comment"># +in_context+ parsing, and so this horrible hack is here to try to emulate recovery</span>
+      <span class="ruby-comment"># behavior.</span>
+      <span class="ruby-comment">#</span>
+      <span class="ruby-comment"># (Note that HTML4 fragment parsing seems to have been fixed in abd74186, and XML</span>
+      <span class="ruby-comment"># fragment parsing is fixed in 1c106edf. Both are in 2.13.)</span>
+      <span class="ruby-comment">#</span>
+      <span class="ruby-comment"># Unfortunately, this means we're no longer parsing "in context" and so namespaces that</span>
+      <span class="ruby-comment"># would have been inherited from the context node won't be handled correctly. This hack</span>
+      <span class="ruby-comment"># was written in 2010, and I regret it, because it's silently degrading functionality in</span>
+      <span class="ruby-comment"># a way that's not easily prevented (or even detected).</span>
+      <span class="ruby-comment">#</span>
+      <span class="ruby-comment"># I think preferable behavior would be to either:</span>
+      <span class="ruby-comment">#</span>
+      <span class="ruby-comment"># a. add an error noting that we "fell back" and pointing the user to turning off the</span>
+      <span class="ruby-comment">#    +recover+ option</span>
+      <span class="ruby-comment"># b. don't recover, but raise a sensible exception</span>
+      <span class="ruby-comment">#</span>
+      <span class="ruby-comment"># For context and background:</span>
+      <span class="ruby-comment"># - https://github.com/sparklemotion/nokogiri/issues/313</span>
+      <span class="ruby-comment"># - https://github.com/sparklemotion/nokogiri/issues/2092</span>
       <span class="ruby-identifier">fragment</span> = <span class="ruby-identifier">document</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"DocumentFragment"</span>).<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">contents</span>)
       <span class="ruby-identifier">node_set</span> = <span class="ruby-identifier">fragment</span>.<span class="ruby-identifier">children</span>
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">error_count</span>]
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">node_set</span>
@@ -2828,7 +2834,7 @@ previous_sibling(VALUE self)
           <p>Returns true if this is a <a href="ProcessingInstruction.html"><code>ProcessingInstruction</code></a> node</p>
 
           <div class="method-source-code" id="processing_instruction-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1150</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1156</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">processing_instruction?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">PI_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -2850,7 +2856,7 @@ previous_sibling(VALUE self)
           <p>Is this a read only node?</p>
 
           <div class="method-source-code" id="read_only-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1175</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1181</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_only?</span>
   <span class="ruby-comment"># According to gdome2, these are read-only node types</span>
   [<span class="ruby-constant">NOTATION_NODE</span>, <span class="ruby-constant">ENTITY_NODE</span>, <span class="ruby-constant">ENTITY_DECL</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">type</span>)
@@ -2958,7 +2964,7 @@ previous_sibling(VALUE self)
           <p>Returns true if this is a <a href="Text.html"><code>Text</code></a> node</p>
 
           <div class="method-source-code" id="text-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1155</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1161</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">TEXT_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -2980,7 +2986,7 @@ previous_sibling(VALUE self)
           <p>Turn this node in to a string.  If the document is <a href="../HTML4.html"><code>HTML</code></a>, this method returns html.  If the document is <a href="../XML.html"><code>XML</code></a>, this method returns <a href="../XML.html"><code>XML</code></a>.</p>
 
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1190</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1196</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-identifier">document</span>.<span class="ruby-identifier">xml?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">to_xml</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">to_html</span>
 <span class="ruby-keyword">end</span></pre>
@@ -3022,7 +3028,7 @@ previous_sibling(VALUE self)
           <p>Yields self and all children to <code>block</code> recursively.</p>
 
           <div class="method-source-code" id="traverse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1233</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1239</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">j</span>.<span class="ruby-identifier">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) }
   <span class="ruby-keyword">yield</span>(<span class="ruby-keyword">self</span>)
@@ -3097,7 +3103,7 @@ unlink_node(VALUE self)
           <p>Returns true if this is an <a href="Document.html"><code>XML::Document</code></a> node</p>
 
           <div class="method-source-code" id="xml-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1135</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1141</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xml?</span>
   <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">DOCUMENT_NODE</span>
 <span class="ruby-keyword">end</span></pre>
@@ -3126,7 +3132,7 @@ unlink_node(VALUE self)
           
 
           <div class="method-source-code" id="coerce-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1482</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1489</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">coerce</span>(<span class="ruby-identifier">data</span>)
         <span class="ruby-keyword">case</span> <span class="ruby-identifier">data</span>
         <span class="ruby-keyword">when</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">NodeSet</span>
@@ -4080,7 +4086,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
           <div class="method-source-code" id="3E-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
-  <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
+  <span class="ruby-identifier">ns</span> = <span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {}
   <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -4402,7 +4408,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
           
 
           <div class="method-source-code" id="canonicalize-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1407</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1414</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">canonicalize</span>(<span class="ruby-identifier">mode</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML_C14N_1_0</span>, <span class="ruby-identifier">inclusive_namespaces</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">with_comments</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">c14n_root</span> = <span class="ruby-keyword">self</span>
   <span class="ruby-identifier">document</span>.<span class="ruby-identifier">canonicalize</span>(<span class="ruby-identifier">mode</span>, <span class="ruby-identifier">inclusive_namespaces</span>, <span class="ruby-identifier">with_comments</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span>, <span class="ruby-identifier">parent</span><span class="ruby-operator">|</span>
@@ -4454,8 +4460,6 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 </li>
 </ul>
 
-<p>⚡ This is an experimental feature, available since v1.14.0</p>
-
 <p><strong>Example</strong></p>
 
 <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">&lt;&lt;~XML</span>)
@@ -4491,8 +4495,10 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <span class="ruby-comment">#         })]}</span>
 </pre>
 
+<p>Since v1.14.0</p>
+
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1468</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1475</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   <span class="ruby-identifier">requested_keys</span> = <span class="ruby-constant">DECONSTRUCT_KEYS</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">keys</span>
   {}.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">values</span><span class="ruby-operator">|</span>
@@ -4534,8 +4540,9 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 </pre>
 
           <div class="method-source-code" id="serialize-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1280</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1286</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">serialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># TODO: deprecate non-hash options, see 46c68ed 2009-06-20 for context</span>
   <span class="ruby-identifier">options</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
   <span class="ruby-keyword">else</span>
@@ -4576,7 +4583,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code>.  For formatted output, use <a href="Node.html#method-i-to_xhtml"><code>Node#to_xhtml</code></a> instead.</p>
 
           <div class="method-source-code" id="to_html-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1306</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1313</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_html</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">to_format</span>(<span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4603,7 +4610,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
 
           <div class="method-source-code" id="to_xhtml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1327</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1334</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xhtml</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">to_format</span>(<span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XHTML</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4630,7 +4637,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
 
           <div class="method-source-code" id="to_xml-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1316</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1323</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xml</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>
   <span class="ruby-identifier">serialize</span>(<span class="ruby-identifier">options</span>)
@@ -4655,7 +4662,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
 
           <div class="method-source-code" id="write_html_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1384</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1391</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_html_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">write_format_to</span>(<span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>, <span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4721,7 +4728,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 </pre>
 
           <div class="method-source-code" id="write_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1355</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1362</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> {}
   <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">encoding</span>
@@ -4766,7 +4773,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of <code>options</code></p>
 
           <div class="method-source-code" id="write_xhtml_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1392</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1399</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_xhtml_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">write_format_to</span>(<span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XHTML</span>, <span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4793,7 +4800,7 @@ rb_xml_node_add_namespace_definition(VALUE rb_node, VALUE rb_prefix, VALUE rb_hr
 <p>See <a href="Node.html#method-i-write_to"><code>Node#write_to</code></a> for a list of options</p>
 
           <div class="method-source-code" id="write_xml_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1402</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/node.rb, line 1409</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_xml_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>
   <span class="ruby-identifier">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span>)

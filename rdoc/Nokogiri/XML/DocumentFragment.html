@@ -310,8 +310,6 @@ new (int argc, VALUE *argv, VALUE klass)
 
 <p>💡 Note that text nodes are returned as well as elements. If you wish to operate only on root elements, you should deconstruct the array returned by <code>DocumentFragment#elements</code>.</p>
 
-<p>⚡ This is an experimental feature, available since v1.14.0</p>
-
 <p><strong>Example</strong></p>
 
 <pre class="ruby"><span class="ruby-identifier">frag</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-identifier">&lt;&lt;~HTML</span>)
@@ -344,6 +342,8 @@ new (int argc, VALUE *argv, VALUE klass)
 <span class="ruby-comment">#       }),</span>
 <span class="ruby-comment">#     #(Element:0x398 { name = "div", children = [ #(Text "End")] })]</span>
 </pre>
+
+<p>Since v1.14.0</p>
 
           <div class="method-source-code" id="deconstruct-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 190</span>

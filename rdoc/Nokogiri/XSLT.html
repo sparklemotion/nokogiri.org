@@ -237,7 +237,7 @@
   <span class="ruby-identifier">params</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each_slice</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">with_object</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">kv</span>, <span class="ruby-identifier">quoted_params</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span> = <span class="ruby-identifier">kv</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>)
     <span class="ruby-identifier">value</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">"'"</span>)
-      <span class="ruby-node">"concat('#{value.gsub(/'/, %q{', "'", '})}')"</span>
+      <span class="ruby-node">"concat('#{value.gsub("'", %q{', "'", '})}')"</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-node">"'#{value}'"</span>
     <span class="ruby-keyword">end</span>

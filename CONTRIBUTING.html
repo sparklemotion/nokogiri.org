@@ -1094,6 +1094,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#fuzzing-your-gumbo-html5-parser-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fuzzing your gumbo HTML5 parser changes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1180,6 +1189,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-oss-fuzz-is-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      How OSS-Fuzz is configured
+    </span>
+  </a>
   
 </li>
       
@@ -1544,6 +1562,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#fuzzing-your-gumbo-html5-parser-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fuzzing your gumbo HTML5 parser changes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1634,6 +1661,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-oss-fuzz-is-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      How OSS-Fuzz is configured
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#packaging-releases" class="md-nav__link">
     <span class="md-ellipsis">
       Packaging releases
@@ -1712,6 +1748,7 @@
 <li><a href="#how-to-run-the-tests">How to run the tests</a></li>
 <li><a href="#style-guide">Style Guide</a></li>
 <li><a href="#how-continuous-integration-ci-is-configured">How Continuous Integration ("CI") is configured</a></li>
+<li><a href="#how-oss-fuzz-is-configured">How OSS-Fuzz is configured</a></li>
 <li><a href="#packaging-releases">Packaging releases</a></li>
 <li><a href="#other-utilities">Other utilities</a></li>
 <li><a href="#bumping-java-dependencies">Bumping Java dependencies</a></li>
@@ -1772,6 +1809,11 @@ bundle<span class="w"> </span>install
 <p>To run a focused test, use Minitest's <code>TESTOPTS</code>:</p>
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="nv">TESTOPTS</span><span class="o">=</span><span class="s2">&quot;-n/test_last_element_child/&quot;</span>
 </code></pre></div>
+<p>To run the test suite in parallel, set the <code>NCPU</code> environment variable; and to compile in parallel, set the <code>MAKEFLAGS</code> environment variable (you may want to set these in something like your .bashrc):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NCPU</span><span class="o">=</span><span class="m">8</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MAKEFLAGS</span><span class="o">=</span>-j8
+bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
 <h3 id="cruby-advanced-usage">CRuby advanced usage<a class="headerlink" href="#cruby-advanced-usage" title="Permanent link">&para;</a></h3>
 <p>Test using your system's libraries:</p>
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>clean<span class="w">  </span><span class="c1">#  blow away pre-existing libraries using packaged libs</span>
@@ -1792,10 +1834,7 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span>test:memcheck
 </code></pre></div>
 <p>Note that by you can run the test suite with a variety of GC behaviors. For example, running a major after each test completes has, on occasion, been useful for localizing some classes of memory bugs, but does slow the suite down. Some variations of the test suite behavior are available (see <code>test/helper.rb</code> for more info):</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># see failure messages immediately</span>
-<span class="nv">NOKOGIRI_TEST_FAIL_FAST</span><span class="o">=</span>t<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span>
-
-<span class="c1"># ordinary GC behavior</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># ordinary GC behavior</span>
 <span class="nv">NOKOGIRI_TEST_GC_LEVEL</span><span class="o">=</span>normal<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span>
 
 <span class="c1"># minor GC after each test</span>
@@ -1832,6 +1871,55 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w">  </span><span class="c1">#  test/html5lib-tests</span>
 bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
+<h3 id="fuzzing-your-gumbo-html5-parser-changes">Fuzzing your gumbo HTML5 parser changes<a class="headerlink" href="#fuzzing-your-gumbo-html5-parser-changes" title="Permanent link">&para;</a></h3>
+<p>When making changes or adding new features to <code>gumbo-parser</code>, it's recommended to run <a href="https://llvm.org/docs/LibFuzzer.html">libfuzzer</a> against <code>gumbo-parser</code> using various <a href="https://github.com/google/sanitizers/wiki">sanitizers</a>.</p>
+<p>Build the fuzzers by navigating to the <code>gumbo-parser</code> directory and running <code>make fuzzers</code>. Once built, navigate to the <code>gumbo-parser/fuzzer/build</code> directory and execute one of the following binaries in this directory:</p>
+<ul>
+<li>parse_fuzzer (standard fuzzer with no sanitizer)</li>
+<li>parse_fuzzer-asan (fuzzer built using <a href="https://clang.llvm.org/docs/AddressSanitizer.html">ASAN</a>)</li>
+<li>parse_fuzzer-msan (fuzzer built using <a href="https://clang.llvm.org/docs/MemorySanitizer.html">MSAN</a>)</li>
+<li>parse_fuzzer-ubsan (fuzzer built using <a href="https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html">UBSAN</a>)</li>
+</ul>
+<p>To fuzz more efficiently, use the dictionary (gumbo.dict) and corpus (gumbo_corpus) found in <code>gumbo-parser/fuzzer</code> using the following arguments (assuming parse_fuzzer is in use):</p>
+<div class="highlight"><pre><span></span><code>./parse_fuzzer -dict=../gumbo.dict ../gumbo_corpus
+</code></pre></div>
+<p>If the binary executed successfully you should now be seeing the following output filling up your terminal (see <a href="https://llvm.org/docs/LibFuzzer.html#output">https://llvm.org/docs/LibFuzzer.html#output</a> for more information):</p>
+<div class="highlight"><pre><span></span><code>INFO: Seed: 4156947595
+INFO: Loaded 1 modules   (7149 inline 8-bit counters): 7149 0x58a462, 0x58c04f, 
+INFO: Loaded 1 PC tables (7149 PCs): 7149 0x53beb0,0x557d80, 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2  INITED cov: 2 ft: 2 corp: 1/1b exec/s: 0 rss: 24Mb
+    NEW_FUNC[1/44]: 0x429840 in gumbo_parse_with_options (/home/user/nokogiri/gumbo-parser/fuzzer/build/parse_fuzzer+0x429840)
+    NEW_FUNC[2/44]: 0x42c0d0 in destroy_node (/home/user/nokogiri/gumbo-parser/fuzzer/build/parse_fuzzer+0x42c0d0)
+#721    NEW    cov: 180 ft: 181 corp: 2/12b lim: 11 exec/s: 0 rss: 27Mb L: 11/11 MS: 4 ChangeByte-ChangeByte-ChangeBit-InsertRepeatedBytes-
+#722    NEW    cov: 186 ft: 196 corp: 3/23b lim: 11 exec/s: 0 rss: 27Mb L: 11/11 MS: 1 ChangeBit-
+#723    NEW    cov: 186 ft: 228 corp: 4/34b lim: 11 exec/s: 0 rss: 27Mb L: 11/11 MS: 1 ChangeBinInt-
+#724    NEW    cov: 188 ft: 241 corp: 5/45b lim: 11 exec/s: 0 rss: 27Mb L: 11/11 MS: 1 ChangeBit-
+#725    NEW    cov: 188 ft: 254 corp: 6/56b lim: 11 exec/s: 0 rss: 27Mb L: 11/11 MS: 1 ChangeByte-
+#726    NEW    cov: 188 ft: 270 corp: 7/67b lim: 11 exec/s: 0 rss: 27Mb L: 11/11 MS: 1 CopyPart-
+#732    NEW    cov: 188 ft: 279 corp: 8/78b lim: 11 exec/s: 0 rss: 27Mb L: 11/11 MS: 1 ChangeBit-
+    NEW_FUNC[1/1]: 0x441de0 in gumbo_token_destroy (/home/user/nokogiri/gumbo-parser/fuzzer/build/parse_fuzzer+0x441de0)
+</code></pre></div>
+<p>However, if the fuzzer finds a "crash" (indicating that a bug has been found) it will stop fuzzing and the following output would be expected:</p>
+<div class="highlight"><pre><span></span><code>INFO: Seed: 1523017872
+INFO: Loaded 1 modules (16 guards): 0x744e60, 0x744ea0,
+INFO: -max_len is not provided, using 64
+INFO: A corpus is not provided, starting from an empty corpus
+#0    READ units: 1
+#1    INITED cov: 3 ft: 2 corp: 1/1b exec/s: 0 rss: 24Mb
+#3811 NEW    cov: 4 ft: 3 corp: 2/2b exec/s: 0 rss: 25Mb L: 1 MS: 5 ChangeBit-ChangeByte-ChangeBit-ShuffleBytes-ChangeByte-
+#3827 NEW    cov: 5 ft: 4 corp: 3/4b exec/s: 0 rss: 25Mb L: 2 MS: 1 CopyPart-
+#3963 NEW    cov: 6 ft: 5 corp: 4/6b exec/s: 0 rss: 25Mb L: 2 MS: 2 ShuffleBytes-ChangeBit-
+#4167 NEW    cov: 7 ft: 6 corp: 5/9b exec/s: 0 rss: 25Mb L: 3 MS: 1 InsertByte-
+==31511== ERROR: libFuzzer: deadly signal
+...
+artifact_prefix=&#39;./&#39;; Test unit written to ./crash-b13e8756b13a00cf168300179061fb4b91fefbed
+</code></pre></div>
+<p>The above indicates that a crash has been identified and it can be reproduced by feeding the <code>crash-b13e8756b13a00cf168300179061fb4b91fefbed</code> file back into the binary used for fuzzing (e.g. parse-fuzzer) using the following command:</p>
+<div class="highlight"><pre><span></span><code>parse_fuzzer crash-b13e8756b13a00cf168300179061fb4b91fefbed
+</code></pre></div>
+<p>If you'd like to learn more about libfuzzer please give <a href="https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md">https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md</a> a try.</p>
 <h2 id="style-guide">Style Guide<a class="headerlink" href="#style-guide" title="Permanent link">&para;</a></h2>
 <h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
 <p>We use <code>rdoc</code> to build Nokogiri's documentation. Run <code>rake rdoc</code> to build into the <code>./html</code> directory, and see the rdoc tasks in <a href="rakelib/rdoc.rake">rakelib/rdoc.rake</a>.</p>
@@ -1920,13 +2008,17 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <li>When testing packaged libraries (not system libraries), cache either <code>ports/</code> (for compiled libraries) or <code>ports/archives/</code> (for just tarballs)</li>
 <li>note that <code>libgumbo</code> is built outside of <code>ports/</code> to allow us to do this caching safely</li>
 </ul>
+<h2 id="how-oss-fuzz-is-configured">How OSS-Fuzz is configured<a class="headerlink" href="#how-oss-fuzz-is-configured" title="Permanent link">&para;</a></h2>
+<p><a href="https://oss-fuzz.com/">OSS-Fuzz</a> is a service that runs fuzzing against open-source libraries.</p>
+<p>OSS-Fuzz was configured to fuzz Nokogiri's libgumbo in <a href="https://github.com/google/oss-fuzz/pull/11004">https://github.com/google/oss-fuzz/pull/11004</a>. Updating the configuration should be done in that project.</p>
+<p>Notifications go to <code>nokogiri-oss-fuzz@googlegroups.com</code>.</p>
+<p>Some historical context can be found in <a href="https://github.com/sparklemotion/nokogiri/discussions/2992">discussion #2992</a> and <a href="https://github.com/sparklemotion/nokogiri/pull/3007">pull request #3007</a> by @fuzzy-boiii23a.</p>
 <h2 id="packaging-releases">Packaging releases<a class="headerlink" href="#packaging-releases" title="Permanent link">&para;</a></h2>
 <p>As a prerequisite please make sure you have <code>docker</code> correctly installed, to build native (precompiled) gems.</p>
 <p>Run <code>scripts/build-gems</code> which will package gems for all supported platforms, and run some basic sanity tests on those packages using <code>scripts/test-gem-set</code>, <code>scripts/test-gem-file-contents</code>, and <code>scripts/test-gem-installation</code>.</p>
 <p>See <a href="#making-a-release">Making a release</a> below for the checklist.</p>
 <h2 id="other-utilities">Other utilities<a class="headerlink" href="#other-utilities" title="Permanent link">&para;</a></h2>
 <p><code>scripts/test-exported-symbols</code> checks the compiled <code>nokogiri.so</code> library for surprising exported symbols. This script likely only works on Linux, sorry.</p>
-<p><code>scripts/test-nokogumbo-compatibility</code> is used by CI to ensure that Nokogumbo installs correctly against the currently-installed version of Nokogiri. Nokogumbo receives this extra care because it compiles against Nokogiri's and libxml2's header files, and makes assumptions about what symbols are exported by Nokogiri's extension library.</p>
 <p><code>scripts/files-modified-by-open-prs</code> is a hack to see what files are being proposed to change in the set of open pull requests. This might be useful if you're thinking about radically changing a file, to be aware of what merge conflicts might result. This could probably be a rake task.</p>
 <p>There's a <code>Vagrantfile</code> in the project root which I've used once or twice to try to reproduce problems non-Linux systems (like OpenBSD). It's not well-maintained so YMMV.</p>
 <h2 id="bumping-java-dependencies">Bumping Java dependencies<a class="headerlink" href="#bumping-java-dependencies" title="Permanent link">&para;</a></h2>

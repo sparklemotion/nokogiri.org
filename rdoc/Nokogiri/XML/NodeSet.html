@@ -912,7 +912,7 @@ slice(int argc, VALUE *argv, VALUE rb_self)
         <div class="method-description">
           <p>Returns the members of this <a href="NodeSet.html"><code>NodeSet</code></a> as an array, to use in pattern matching.</p>
 
-<p>⚡ This is an experimental feature, available since v1.14.0</p>
+<p>Since v1.14.0</p>
 
           <div class="method-source-code" id="deconstruct-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 440</span>
@@ -1305,7 +1305,7 @@ length(VALUE rb_self)
           <div class="method-source-code" id="pop-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 374</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
 
   <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">last</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1502,7 +1502,7 @@ push(VALUE rb_self, VALUE rb_node)
           <div class="method-source-code" id="shift-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/node_set.rb, line 383</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">shift</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
 
   <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">first</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2012,7 +2012,7 @@ rb_xml_node_set_union(VALUE rb_self, VALUE rb_other)
           <div class="method-source-code" id="3E-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/searchable.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&gt;</span>(<span class="ruby-identifier">selector</span>) <span class="ruby-comment"># rubocop:disable Naming/BinaryOperatorParameterName</span>
-  <span class="ruby-identifier">ns</span> = (<span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {})
+  <span class="ruby-identifier">ns</span> = <span class="ruby-identifier">document</span>.<span class="ruby-identifier">root</span>&amp;.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">||</span> {}
   <span class="ruby-identifier">xpath</span>(<span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-value">prefix:</span> <span class="ruby-string">"./"</span>, <span class="ruby-value">ns:</span> <span class="ruby-identifier">ns</span>).<span class="ruby-identifier">first</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>

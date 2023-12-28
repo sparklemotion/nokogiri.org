@@ -108,9 +108,6 @@
 <a href="#method-i-attribute_hash">#attribute_hash</a>
     </li>
 <li>
-<a href="#method-i-attribute_nodes">#attribute_nodes</a>
-    </li>
-<li>
 <a href="#method-i-attributes">#attributes</a>
     </li>
 <li>
@@ -650,62 +647,6 @@ rb_xml_reader_attribute_hash(VALUE rb_reader)
   }
 
   return rb_attributes;
-}</pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-attribute_nodes" class="method-detail ">
-        <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              attribute_nodes() → Array&lt;Nokogiri::XML::Attr&gt;
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-        </div>
-
-        <div class="method-description">
-          <p>Get the attributes of the current node as an Array of XML:Attr</p>
-
-<p>⚠ This method is deprecated and unsafe to use. It will be removed in a future version of <a href="../../Nokogiri.html"><code>Nokogiri</code></a>.</p>
-
-<p>See related: <a href="Reader.html#method-i-attribute_hash"><code>#attribute_hash</code></a>, <a href="Reader.html#method-i-attributes"><code>#attributes</code></a></p>
-
-          <div class="method-source-code" id="attribute_nodes-source">
-            <pre>static VALUE
-rb_xml_reader_attribute_nodes(VALUE rb_reader)
-{
-  xmlTextReaderPtr c_reader;
-  xmlNodePtr c_node;
-  VALUE attr_nodes;
-  int j;
-
-  // TODO: deprecated, remove in Nokogiri v1.15, see https://github.com/sparklemotion/nokogiri/issues/2598
-  // After removal, we can also remove all the "node_has_a_document" special handling from xml_node.c
-  NOKO_WARN_DEPRECATION("Reader#attribute_nodes is deprecated and will be removed in a future version of Nokogiri. Please use Reader#attribute_hash instead.");
-
-  TypedData_Get_Struct(rb_reader, xmlTextReader, &amp;xml_reader_type, c_reader);
-
-  if (! has_attributes(c_reader)) {
-    return rb_ary_new() ;
-  }
-
-  c_node = xmlTextReaderExpand(c_reader);
-  if (c_node == NULL) {
-    return Qnil;
-  }
-
-  attr_nodes = noko_xml_node_attrs(c_node);
-
-  /* ensure that the Reader won't be GCed as long as a node is referenced */
-  for (j = 0 ; j &lt; RARRAY_LEN(attr_nodes) ; j++) {
-    rb_iv_set(rb_ary_entry(attr_nodes, j), "@reader", rb_reader);
-  }
-
-  return attr_nodes;
 }</pre>
           </div>
         </div>
@@ -1310,7 +1251,7 @@ prefix(VALUE self)
 read_more(VALUE self)
 {
   xmlTextReaderPtr reader;
-  xmlErrorPtr error;
+  xmlErrorConstPtr error;
   VALUE error_list;
   int ret;
 

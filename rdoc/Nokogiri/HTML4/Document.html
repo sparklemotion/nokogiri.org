@@ -382,7 +382,7 @@
   <span class="ruby-identifier">title</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">"title"</span>, <span class="ruby-keyword">self</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tnode</span>
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">head</span> = <span class="ruby-identifier">at_xpath</span>(<span class="ruby-string">"//head"</span>))
     <span class="ruby-identifier">head</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">title</span>
-  <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">meta</span> = (<span class="ruby-identifier">at_xpath</span>(<span class="ruby-string">"//meta[@charset]"</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">meta_content_type</span>))
+  <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">meta</span> = <span class="ruby-identifier">at_xpath</span>(<span class="ruby-string">"//meta[@charset]"</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">meta_content_type</span>)
     <span class="ruby-comment"># better put after charset declaration</span>
     <span class="ruby-identifier">meta</span>.<span class="ruby-identifier">add_next_sibling</span>(<span class="ruby-identifier">title</span>)
   <span class="ruby-keyword">else</span>
