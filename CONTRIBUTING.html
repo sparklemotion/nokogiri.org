@@ -1830,8 +1830,11 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <span class="c1"># or</span>
 bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span>test:lldb
 </code></pre></div>
-<p>Run tests and look for new memory leaks:</p>
+<p>Run tests and look for memory leaks with valgrind and ruby_memcheck:</p>
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span>test:memcheck
+</code></pre></div>
+<p>Run test/test_memory_usage.rb and look for memory leaks using RSS size and linear interpolation:</p>
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span>test:memory_suite
 </code></pre></div>
 <p>Note that by you can run the test suite with a variety of GC behaviors. For example, running a major after each test completes has, on occasion, been useful for localizing some classes of memory bugs, but does slow the suite down. Some variations of the test suite behavior are available (see <code>test/helper.rb</code> for more info):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ordinary GC behavior</span>

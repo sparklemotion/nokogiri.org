@@ -191,7 +191,9 @@
     
 <p>The <a href="Reader.html"><code>Reader</code></a> parser allows you to effectively pull parse an <a href="../XML.html"><code>XML</code></a> document. Once instantiated, call <a href="Reader.html#method-i-each"><code>Nokogiri::XML::Reader#each</code></a> to iterate over each node.  Note that you may only iterate over the document once!</p>
 
-<p><a href="Reader.html"><code>Nokogiri::XML::Reader</code></a> parses an <a href="../XML.html"><code>XML</code></a> document similar to the way a cursor would move.  The <a href="Reader.html"><code>Reader</code></a> is given an <a href="../XML.html"><code>XML</code></a> document, and yields nodes to an each block.</p>
+<p><a href="Reader.html"><code>Nokogiri::XML::Reader</code></a> parses an <a href="../XML.html"><code>XML</code></a> document similar to the way a cursor would move. The <a href="Reader.html"><code>Reader</code></a> is given an <a href="../XML.html"><code>XML</code></a> document, and yields nodes to an each block.</p>
+
+<p>The <a href="Reader.html"><code>Reader</code></a> parser might be good for when you need the speed and low memory usage of the <a href="SAX.html"><code>SAX</code></a> parser, but do not want to write a <a href="Document.html"><code>Document</code></a> handler.</p>
 
 <p>Here is an example of usage:</p>
 
@@ -209,9 +211,9 @@
 <span class="ruby-keyword">end</span>
 </pre>
 
-<p>Note that <a href="Reader.html#method-i-each"><code>Nokogiri::XML::Reader#each</code></a> can only be called once!!  Once the cursor moves through the entire document, you must parse the document again.  So make sure that you capture any information you need during the first iteration.</p>
+<p>⚠ <a href="Reader.html#method-i-each"><code>Nokogiri::XML::Reader#each</code></a> can only be called once! Once the cursor moves through the entire document, you must parse the document again. It may be better to capture all information you need during a single iteration.</p>
 
-<p>The <a href="Reader.html"><code>Reader</code></a> parser is good for when you need the speed of a <a href="SAX.html"><code>SAX</code></a> parser, but do not want to write a <a href="Document.html"><code>Document</code></a> handler.</p>
+<p>⚠ libxml2 does not support error recovery in the <a href="Reader.html"><code>Reader</code></a> parser. The ‘RECOVER` ParseOption is ignored. If a syntax error is encountered during parsing, an exception will be raised.</p>
 
   </section>
 
@@ -675,7 +677,7 @@ rb_xml_reader_attribute_hash(VALUE rb_reader)
 </dl>
 
           <div class="method-source-code" id="attributes-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 92</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attributes</span>
   <span class="ruby-identifier">attribute_hash</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">namespaces</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -834,7 +836,7 @@ depth(VALUE self)
           <p>Move the cursor through the document yielding the cursor to the block</p>
 
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 98</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/reader.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
   <span class="ruby-keyword">while</span> (<span class="ruby-identifier">cursor</span> = <span class="ruby-identifier">read</span>)
     <span class="ruby-keyword">yield</span> <span class="ruby-identifier">cursor</span>
@@ -901,15 +903,18 @@ rb_xml_reader_encoding(VALUE rb_reader)
   const char *parser_encoding;
   VALUE constructor_encoding;
 
+  TypedData_Get_Struct(rb_reader, xmlTextReader, &amp;xml_reader_type, c_reader);
+  parser_encoding = (const char *)xmlTextReaderConstEncoding(c_reader);
+  if (parser_encoding) {
+    return NOKOGIRI_STR_NEW2(parser_encoding);
+  }
+
   constructor_encoding = rb_iv_get(rb_reader, "@encoding");
   if (RTEST(constructor_encoding)) {
     return constructor_encoding;
   }
 
-  TypedData_Get_Struct(rb_reader, xmlTextReader, &amp;xml_reader_type, c_reader);
-  parser_encoding = (const char *)xmlTextReaderConstEncoding(c_reader);
-  if (parser_encoding == NULL) { return Qnil; }
-  return NOKOGIRI_STR_NEW2(parser_encoding);
+  return Qnil;
 }</pre>
           </div>
         </div>
@@ -1254,6 +1259,7 @@ read_more(VALUE self)
   xmlErrorConstPtr error;
   VALUE error_list;
   int ret;
+  xmlDocPtr c_document;
 
   TypedData_Get_Struct(self, xmlTextReader, &amp;xml_reader_type, reader);
 
@@ -1262,6 +1268,16 @@ read_more(VALUE self)
   xmlSetStructuredErrorFunc((void *)error_list, Nokogiri_error_array_pusher);
   ret = xmlTextReaderRead(reader);
   xmlSetStructuredErrorFunc(NULL, NULL);
+
+  c_document = xmlTextReaderCurrentDoc(reader);
+  if (c_document &amp;&amp; c_document-&gt;encoding == NULL) {
+    VALUE constructor_encoding = rb_iv_get(self, "@encoding");
+    if (RTEST(constructor_encoding)) {
+      c_document-&gt;encoding = xmlStrdup(BAD_CAST StringValueCStr(constructor_encoding));
+    } else {
+      c_document-&gt;encoding = xmlStrdup(BAD_CAST "UTF-8");
+    }
+  }
 
   if (ret == 1) { return self; }
   if (ret == 0) { return Qnil; }

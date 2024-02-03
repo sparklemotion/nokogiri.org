@@ -109,10 +109,24 @@
 <pre class="ruby"><span class="ruby-identifier">doc</span>   = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'some_file.xml'</span>))
 <span class="ruby-identifier">xslt</span>  = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'some_transformer.xslt'</span>))
 
-<span class="ruby-identifier">puts</span> <span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>)
+<span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>) <span class="ruby-comment"># =&gt; Nokogiri::XML::Document</span>
 </pre>
 
-<p>See <a href="Stylesheet.html#method-i-transform"><code>Nokogiri::XSLT::Stylesheet#transform</code></a> for more transformation information.</p>
+<p>Many <a href="../XSLT.html"><code>XSLT</code></a> transformations include serialization behavior to emit a non-XML document. For these cases, please take care to invoke the <a href="Stylesheet.html#method-i-serialize"><code>#serialize</code></a> method on the result of the transformation:</p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span>   = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'some_file.xml'</span>))
+<span class="ruby-identifier">xslt</span>  = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'some_transformer.xslt'</span>))
+<span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">serialize</span>(<span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">doc</span>)) <span class="ruby-comment"># =&gt; String</span>
+</pre>
+
+<p>or use the <a href="Stylesheet.html#method-i-apply_to"><code>#apply_to</code></a> method, which is a shortcut for ‘serialize(transform(document))`:</p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span>   = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'some_file.xml'</span>))
+<span class="ruby-identifier">xslt</span>  = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'some_transformer.xslt'</span>))
+<span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">apply_to</span>(<span class="ruby-identifier">doc</span>) <span class="ruby-comment"># =&gt; String</span>
+</pre>
+
+<p>See <a href="Stylesheet.html#method-i-transform"><code>Nokogiri::XSLT::Stylesheet#transform</code></a> for more information and examples.</p>
 
   </section>
 
@@ -138,7 +152,22 @@
         </div>
 
         <div class="method-description">
-          <p>Parse a stylesheet from <code>document</code>.</p>
+          <p>Parse an <a href="Stylesheet.html"><code>XSLT::Stylesheet</code></a> from <code>document</code>.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>document</code> (<a href="../XML/Document.html"><code>Nokogiri::XML::Document</code></a>) the document to be parsed.</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="Stylesheet.html"><code>Nokogiri::XSLT::Stylesheet</code></a></p>
+</dd>
+</dl>
 
           <div class="method-source-code" id="parse_stylesheet_doc-source">
             <pre>static VALUE
@@ -182,16 +211,40 @@ parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
       <div id="method-i-apply_to" class="method-detail ">
         <div class="method-header">
           <div class="method-heading">
-            <span class="method-name">apply_to</span><span class="method-args">(document, params = [])</span>
+            <span class="method-callseq">
+              apply_to(document, params = []) → String
+            </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>Apply an <a href="../XSLT.html"><code>XSLT</code></a> stylesheet to an <a href="../XML/Document.html"><code>XML::Document</code></a>. <code>params</code> is an array of strings used as <a href="../XSLT.html"><code>XSLT</code></a> parameters. returns serialized document</p>
+          <p>Apply an <a href="../XSLT.html"><code>XSLT</code></a> stylesheet to an <a href="../XML/Document.html"><code>XML::Document</code></a> and serialize it properly. This method is equivalent to calling <a href="Stylesheet.html#method-i-serialize"><code>#serialize</code></a> on the result of <a href="Stylesheet.html#method-i-transform"><code>#transform</code></a>.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul>
+<li>
+<p><code>document</code> is an instance of <a href="../XML/Document.html"><code>XML::Document</code></a> to transform</p>
+</li>
+<li>
+<p><code>params</code> is an array of strings used as <a href="../XSLT.html"><code>XSLT</code></a> parameters, passed into <a href="Stylesheet.html#method-i-transform"><code>#transform</code></a></p>
+</li>
+</ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>A string containing the serialized result of the transformation.</p>
+</dd>
+</dl>
+
+<p>See <a href="Stylesheet.html#method-i-transform"><code>Nokogiri::XSLT::Stylesheet#transform</code></a> for more information and examples.</p>
 
           <div class="method-source-code" id="apply_to-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xslt/stylesheet.rb, line 22</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xslt/stylesheet.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">apply_to</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">params</span> = [])
   <span class="ruby-identifier">serialize</span>(<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">params</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -212,7 +265,7 @@ parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
         </div>
 
         <div class="method-description">
-          <p>Serialize <code>document</code> to an xml string.</p>
+          <p>Serialize <code>document</code> to an xml string, as specified by the <code>method</code> parameter in the <a href="Stylesheet.html"><code>Stylesheet</code></a>.</p>
 
           <div class="method-source-code" id="serialize-source">
             <pre>static VALUE
@@ -258,7 +311,7 @@ rb_xslt_stylesheet_serialize(VALUE self, VALUE xmlobj)
         </div>
 
         <div class="method-description">
-          <p>Apply an <a href="../XSLT.html"><code>XSLT</code></a> stylesheet to an <a href="../XML/Document.html"><code>XML::Document</code></a>.</p>
+          <p>Transform an <a href="../XML/Document.html"><code>XML::Document</code></a> as defined by an <a href="Stylesheet.html"><code>XSLT::Stylesheet</code></a>.</p>
 <dl class="rdoc-list label-list">
 <dt>Parameters
 </dt>
