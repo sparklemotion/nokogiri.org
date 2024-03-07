@@ -57,7 +57,7 @@ Some commonly-used [parse options][read-parse-options] with security implication
 * `DTDLOAD`  `DTDVALID` - If you want DTD validation
   * ⚠ It is UNSAFE to set `DTDLOAD` when parsing untrusted documents.
 * `HUGE` - use to skip hardcoded limits around document size or DOM depth
-  * ⚠ There may be a performance penalty when `HUGE` is set.
+  * ⚠ It is UNSAFE to set this option when parsing untrusted documents.
 
 Some other commonly-used [parse options][read-parse-options] are:
 
