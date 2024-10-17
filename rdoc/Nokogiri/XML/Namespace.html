@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::Namespace - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::Namespace">
+
+    <meta name="description" content="Documentation for the Nokogiri::XML::Namespace class">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -117,7 +121,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::Namespace">
-  <h1 id="class-Nokogiri::XML::Namespace" class="class">
+  <h1 id="class-Nokogiri::XML::Namespace" class="anchor-link class">
     class Nokogiri::XML::Namespace
   </h1>
 
@@ -125,7 +129,7 @@
     
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
@@ -134,9 +138,12 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-document" class="method-detail">
+      <div id="attribute-i-document" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">document</span><span class="attribute-access-type">[R]</span>
+          <a href="#attribute-i-document" title="Link to this attribute">
+            <span class="method-name">document</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -146,22 +153,35 @@
     </section>
 
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-deconstruct_keys" class="method-detail ">
+      <div id="method-i-deconstruct_keys" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              deconstruct_keys(array_of_names) → Hash
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-deconstruct_keys" title="Link to this method">
+                  <span class="method-callseq">
+                    deconstruct_keys(array_of_names) → Hash
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="deconstruct_keys-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/namespace.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+  { <span class="ruby-value">prefix:</span> <span class="ruby-identifier">prefix</span>, <span class="ruby-value">href:</span> <span class="ruby-identifier">href</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Returns a hash describing the <a href="Namespace.html"><code>Namespace</code></a>, to use in pattern matching.</p>
 
 <p>Valid keys and their values:</p>
@@ -201,29 +221,41 @@
 </pre>
 
 <p>Since v1.14.0</p>
-
-          <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/namespace.rb, line 46</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
-  { <span class="ruby-value">prefix:</span> <span class="ruby-identifier">prefix</span>, <span class="ruby-value">href:</span> <span class="ruby-identifier">href</span> }
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-href" class="method-detail ">
+      <div id="method-i-href" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              href() → String
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-href" title="Link to this method">
+                  <span class="method-callseq">
+                    href() → String
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="href-source">
+            <pre>static VALUE
+href(VALUE self)
+{
+  xmlNsPtr ns;
+
+  Noko_Namespace_Get_Struct(self, xmlNs, ns);
+  if (!ns-&gt;href) { return Qnil; }
+
+  return NOKOGIRI_STR_NEW2(ns-&gt;href);
+}</pre>
+          </div>
           <p>Returns the URI reference for this <a href="Namespace.html"><code>Namespace</code></a>.</p>
 
 <p><strong>Example</strong></p>
@@ -242,35 +274,41 @@
 <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">href</span>
 <span class="ruby-comment"># =&gt; "http://nokogiri.org/ns/noko"</span>
 </pre>
-
-          <div class="method-source-code" id="href-source">
-            <pre>static VALUE
-href(VALUE self)
-{
-  xmlNsPtr ns;
-
-  Noko_Namespace_Get_Struct(self, xmlNs, ns);
-  if (!ns-&gt;href) { return Qnil; }
-
-  return NOKOGIRI_STR_NEW2(ns-&gt;href);
-}</pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-prefix" class="method-detail ">
+      <div id="method-i-prefix" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              prefix() → String or nil
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-prefix" title="Link to this method">
+                  <span class="method-callseq">
+                    prefix() → String or nil
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="prefix-source">
+            <pre>static VALUE
+prefix(VALUE self)
+{
+  xmlNsPtr ns;
+
+  Noko_Namespace_Get_Struct(self, xmlNs, ns);
+  if (!ns-&gt;prefix) { return Qnil; }
+
+  return NOKOGIRI_STR_NEW2(ns-&gt;prefix);
+}</pre>
+          </div>
           <p>Return the prefix for this <a href="Namespace.html"><code>Namespace</code></a>, or <code>nil</code> if there is no prefix (e.g., default namespace).</p>
 
 <p><strong>Example</strong></p>
@@ -289,19 +327,6 @@ href(VALUE self)
 <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">prefix</span>
 <span class="ruby-comment"># =&gt; "noko"</span>
 </pre>
-
-          <div class="method-source-code" id="prefix-source">
-            <pre>static VALUE
-prefix(VALUE self)
-{
-  xmlNsPtr ns;
-
-  Noko_Namespace_Get_Struct(self, xmlNs, ns);
-  if (!ns-&gt;prefix) { return Qnil; }
-
-  return NOKOGIRI_STR_NEW2(ns-&gt;prefix);
-}</pre>
-          </div>
         </div>
 
 

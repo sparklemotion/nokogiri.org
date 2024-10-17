@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::EncodingHandler - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::EncodingHandler">
+
+    <meta name="description" content="Documentation for the Nokogiri::EncodingHandler class">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
   var index_rel_prefix = "../";
@@ -116,7 +120,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::EncodingHandler">
-  <h1 id="class-Nokogiri::EncodingHandler" class="class">
+  <h1 id="class-Nokogiri::EncodingHandler" class="anchor-link class">
     class Nokogiri::EncodingHandler
   </h1>
 
@@ -124,7 +128,7 @@
     
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
     <section class="constants-list">
@@ -142,24 +146,29 @@
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-5B-5D" class="method-detail ">
+      <div id="method-c-5B-5D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              Nokogiri::EncodingHandler.[](name)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-5B-5D" title="Link to this method">
+                  <span class="method-callseq">
+                    Nokogiri::EncodingHandler.[](name)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the encoding handler for <code>name</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="5B-5D-source">
             <pre>static VALUE
 rb_xml_encoding_handler_s_get(VALUE klass, VALUE key)
@@ -168,30 +177,36 @@ rb_xml_encoding_handler_s_get(VALUE klass, VALUE key)
 
   handler = xmlFindCharEncodingHandler(StringValueCStr(key));
   if (handler) {
-    return TypedData_Wrap_Struct(klass, &amp;xml_encoding_handler_type, handler);
+    return TypedData_Wrap_Struct(klass, &amp;xml_char_encoding_handler_type, handler);
   }
 
   return Qnil;
 }</pre>
           </div>
+          <p>Get the encoding handler for <code>name</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-alias" class="method-detail ">
+      <div id="method-c-alias" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              Nokogiri::EncodingHandler.alias(real_name, alias_name)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-alias" title="Link to this method">
+                  <span class="method-callseq">
+                    Nokogiri::EncodingHandler.alias(real_name, alias_name)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Alias encoding handler with name <code>real_name</code> to name <code>alias_name</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="alias-source">
             <pre>static VALUE
 rb_xml_encoding_handler_s_alias(VALUE klass, VALUE from, VALUE to)
@@ -201,24 +216,30 @@ rb_xml_encoding_handler_s_alias(VALUE klass, VALUE from, VALUE to)
   return to;
 }</pre>
           </div>
+          <p>Alias encoding handler with name <code>real_name</code> to name <code>alias_name</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-clear_aliases-21" class="method-detail ">
+      <div id="method-c-clear_aliases-21" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              Nokogiri::EncodingHandler.clear_aliases!
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-clear_aliases-21" title="Link to this method">
+                  <span class="method-callseq">
+                    Nokogiri::EncodingHandler.clear_aliases!
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Remove all encoding aliases.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="clear_aliases-21-source">
             <pre>static VALUE
 rb_xml_encoding_handler_s_clear_aliases(VALUE klass)
@@ -228,24 +249,30 @@ rb_xml_encoding_handler_s_clear_aliases(VALUE klass)
   return klass;
 }</pre>
           </div>
+          <p>Remove all encoding aliases.</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-delete" class="method-detail ">
+      <div id="method-c-delete" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              Nokogiri::EncodingHandler.delete(name)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-delete" title="Link to this method">
+                  <span class="method-callseq">
+                    Nokogiri::EncodingHandler.delete(name)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Delete the encoding alias named <code>name</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="delete-source">
             <pre>static VALUE
 rb_xml_encoding_handler_s_delete(VALUE klass, VALUE name)
@@ -255,22 +282,29 @@ rb_xml_encoding_handler_s_delete(VALUE klass, VALUE name)
   return Qtrue;
 }</pre>
           </div>
+          <p>Delete the encoding alias named <code>name</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-install_default_aliases" class="method-detail ">
+      <div id="method-c-install_default_aliases" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">install_default_aliases</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-install_default_aliases" title="Link to this method">
+                <span class="method-name">install_default_aliases</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="install_default_aliases-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/encoding_handler.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">install_default_aliases</span>
@@ -279,6 +313,7 @@ rb_xml_encoding_handler_s_delete(VALUE klass, VALUE name)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
         </div>
 
 
@@ -286,35 +321,41 @@ rb_xml_encoding_handler_s_delete(VALUE klass, VALUE name)
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-name" class="method-detail ">
+      <div id="method-i-name" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              name
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-name" title="Link to this method">
+                  <span class="method-callseq">
+                    name
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the name of this <a href="EncodingHandler.html"><code>EncodingHandler</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="name-source">
             <pre>static VALUE
 rb_xml_encoding_handler_name(VALUE self)
 {
   xmlCharEncodingHandlerPtr handler;
 
-  TypedData_Get_Struct(self, xmlCharEncodingHandler, &amp;xml_encoding_handler_type, handler);
+  TypedData_Get_Struct(self, xmlCharEncodingHandler, &amp;xml_char_encoding_handler_type, handler);
 
   return NOKOGIRI_STR_NEW2(handler-&gt;name);
 }</pre>
           </div>
+          <p>Get the name of this <a href="EncodingHandler.html"><code>EncodingHandler</code></a></p>
         </div>
 
 

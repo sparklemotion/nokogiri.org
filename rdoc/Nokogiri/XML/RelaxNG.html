@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::RelaxNG - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::RelaxNG">
+
+    <meta name="description" content="class Nokogiri::XML::RelaxNG: RelaxNG is used for validating XML against a RelaxNG schema. Synopsis Validate an XML document against a RelaxNG schema.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -104,7 +108,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::RelaxNG">
-  <h1 id="class-Nokogiri::XML::RelaxNG" class="class">
+  <h1 id="class-Nokogiri::XML::RelaxNG" class="anchor-link class">
     class Nokogiri::XML::RelaxNG
   </h1>
 
@@ -131,30 +135,35 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-from_document" class="method-detail ">
+      <div id="method-c-from_document" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              from_document(doc)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-from_document" title="Link to this method">
+                  <span class="method-callseq">
+                    from_document(doc)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="RelaxNG.html"><code>RelaxNG</code></a> schema from the <a href="Document.html"><code>Nokogiri::XML::Document</code></a> <code>doc</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="from_document-source">
             <pre>static VALUE
 from_document(int argc, VALUE *argv, VALUE klass)
@@ -174,24 +183,30 @@ from_document(int argc, VALUE *argv, VALUE klass)
   return xml_relax_ng_parse_schema(klass, c_parser_context, rb_parse_options);
 }</pre>
           </div>
+          <p>Create a new <a href="RelaxNG.html"><code>RelaxNG</code></a> schema from the <a href="Document.html"><code>Nokogiri::XML::Document</code></a> <code>doc</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-read_memory" class="method-detail ">
+      <div id="method-c-read_memory" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              read_memory(string)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-read_memory" title="Link to this method">
+                  <span class="method-callseq">
+                    read_memory(string)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="RelaxNG.html"><code>RelaxNG</code></a> from the contents of <code>string</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="read_memory-source">
             <pre>static VALUE
 read_memory(int argc, VALUE *argv, VALUE klass)
@@ -210,6 +225,7 @@ read_memory(int argc, VALUE *argv, VALUE klass)
   return xml_relax_ng_parse_schema(klass, c_parser_context, rb_parse_options);
 }</pre>
           </div>
+          <p>Create a new <a href="RelaxNG.html"><code>RelaxNG</code></a> from the contents of <code>string</code></p>
         </div>
 
 

@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::HTML5::DocumentFragment - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::HTML5::DocumentFragment">
+
+    <meta name="description" content="class Nokogiri::HTML5::DocumentFragment: Since v1. HTML5 functionality is not available when running JRuby.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -104,7 +108,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::HTML5::DocumentFragment">
-  <h1 id="class-Nokogiri::HTML5::DocumentFragment" class="class">
+  <h1 id="class-Nokogiri::HTML5::DocumentFragment" class="anchor-link class">
     class Nokogiri::HTML5::DocumentFragment
   </h1>
 
@@ -116,7 +120,7 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
@@ -125,27 +129,36 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-document" class="method-detail">
+      <div id="attribute-i-document" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">document</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-document" title="Link to this attribute">
+            <span class="method-name">document</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
         
         </div>
       </div>
-      <div id="attribute-i-errors" class="method-detail">
+      <div id="attribute-i-errors" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">errors</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-errors" title="Link to this attribute">
+            <span class="method-name">errors</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
         
         </div>
       </div>
-      <div id="attribute-i-quirks_mode" class="method-detail">
+      <div id="attribute-i-quirks_mode" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">quirks_mode</span><span class="attribute-access-type">[R]</span>
+          <a href="#attribute-i-quirks_mode" title="Link to this attribute">
+            <span class="method-name">quirks_mode</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -159,22 +172,28 @@
     </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(doc, tags = nil, ctx = nil, options = {})</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(doc, tags = nil, ctx = nil, options = {})</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a document fragment.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ctx</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {}) <span class="ruby-comment"># rubocop:disable Lint/MissingSuper</span>
@@ -182,31 +201,40 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">errors</span> = []
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tags</span>
 
-  <span class="ruby-identifier">max_attributes</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_attributes</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_MAX_ATTRIBUTES</span>
-  <span class="ruby-identifier">max_errors</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_errors</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_MAX_ERRORS</span>
-  <span class="ruby-identifier">max_depth</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_tree_depth</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_MAX_TREE_DEPTH</span>
   <span class="ruby-identifier">tags</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">read_and_encode</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-keyword">nil</span>)
-  <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">ctx</span>, <span class="ruby-identifier">max_attributes</span>, <span class="ruby-identifier">max_errors</span>, <span class="ruby-identifier">max_depth</span>)
+
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_attributes</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_MAX_ATTRIBUTES</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_errors</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:max_parse_errors</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_MAX_ERRORS</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_tree_depth</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_MAX_TREE_DEPTH</span>
+
+  <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Gumbo</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">ctx</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a document fragment.</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-parse" class="method-detail ">
+      <div id="method-c-parse" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse</span><span class="method-args">(tags, encoding = nil, options = {})</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(tags, encoding = nil, options = {})</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse a document fragment from <code>tags</code>, returning a Nodeset.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 58</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document_fragment.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">tags</span> = <span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">read_and_encode</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">encoding</span>)
@@ -214,6 +242,7 @@
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse a document fragment from <code>tags</code>, returning a Nodeset.</p>
         </div>
 
 

@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::SAX::Parser - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::SAX::Parser">
+
+    <meta name="description" content="class Nokogiri::XML::SAX::Parser: This parser is a SAX style parser that reads it's input as it deems necessary. Document.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
   var index_rel_prefix = "../../../";
@@ -113,7 +117,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::SAX::Parser">
-  <h1 id="class-Nokogiri::XML::SAX::Parser" class="class">
+  <h1 id="class-Nokogiri::XML::SAX::Parser" class="anchor-link class">
     class Nokogiri::XML::SAX::Parser
   </h1>
 
@@ -146,7 +150,7 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
     <section class="constants-list">
@@ -167,18 +171,24 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-document" class="method-detail">
+      <div id="attribute-i-document" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">document</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-document" title="Link to this attribute">
+            <span class="method-name">document</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
         <p>The <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a> where events will be sent.</p>
         </div>
       </div>
-      <div id="attribute-i-encoding" class="method-detail">
+      <div id="attribute-i-encoding" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">encoding</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-encoding" title="Link to this attribute">
+            <span class="method-name">encoding</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -188,22 +198,28 @@
     </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(doc = Nokogiri::XML::SAX::Document.new, encoding = "UTF-8")</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(doc = Nokogiri::XML::SAX::Document.new, encoding = "UTF-8")</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="Parser.html"><code>Parser</code></a> with <code>doc</code> and <code>encoding</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 72</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
@@ -212,6 +228,7 @@
   <span class="ruby-ivar">@warned</span>   = <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a new <a href="Parser.html"><code>Parser</code></a> with <code>doc</code> and <code>encoding</code></p>
         </div>
 
 
@@ -219,22 +236,28 @@
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-parse" class="method-detail ">
+      <div id="method-i-parse" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse</span><span class="method-args">(thing, &amp;block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(thing, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse given <code>thing</code> which may be a string containing xml, or an IO object.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">thing</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
@@ -245,22 +268,29 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse given <code>thing</code> which may be a string containing xml, or an IO object.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-parse_file" class="method-detail ">
+      <div id="method-i-parse_file" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse_file</span><span class="method-args">(filename) { |ctx| ... }</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-parse_file" title="Link to this method">
+                <span class="method-name">parse_file</span>
+                <span class="method-args">(filename) { |ctx| ... }</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse a file with <code>filename</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse_file-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_file</span>(<span class="ruby-identifier">filename</span>)
@@ -273,22 +303,29 @@
   <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse a file with <code>filename</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-parse_io" class="method-detail ">
+      <div id="method-i-parse_io" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse_io</span><span class="method-args">(io, encoding = @encoding) { |ctx| ... }</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-parse_io" title="Link to this method">
+                <span class="method-name">parse_io</span>
+                <span class="method-args">(io, encoding = @encoding) { |ctx| ... }</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse given <code>io</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse_io-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-ivar">@encoding</span>)
@@ -297,22 +334,29 @@
   <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse given <code>io</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-parse_memory" class="method-detail ">
+      <div id="method-i-parse_memory" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse_memory</span><span class="method-args">(data) { |ctx| ... }</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-parse_memory" title="Link to this method">
+                <span class="method-name">parse_memory</span>
+                <span class="method-args">(data) { |ctx| ... }</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse_memory-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_memory</span>(<span class="ruby-identifier">data</span>)
@@ -321,6 +365,7 @@
   <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
         </div>
 
 

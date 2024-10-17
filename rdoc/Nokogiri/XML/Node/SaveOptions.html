@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::Node::SaveOptions - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::Node::SaveOptions">
+
+    <meta name="description" content="class Nokogiri::XML::Node::SaveOptions: Save options for serializing nodes. See the method group entitled Node@Serialization+and+Generating+Output for usage.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
   var index_rel_prefix = "../../../";
@@ -104,7 +108,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::Node::SaveOptions">
-  <h1 id="class-Nokogiri::XML::Node::SaveOptions" class="class">
+  <h1 id="class-Nokogiri::XML::Node::SaveOptions" class="anchor-link class">
     class Nokogiri::XML::Node::SaveOptions
   </h1>
 
@@ -114,7 +118,7 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
     <section class="constants-list">
@@ -185,18 +189,24 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-options" class="method-detail">
+      <div id="attribute-i-options" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">options</span><span class="attribute-access-type">[R]</span>
+          <a href="#attribute-i-options" title="Link to this attribute">
+            <span class="method-name">options</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
         </div>
 
         <div class="method-description">
         <p>Integer representation of the <a href="SaveOptions.html"><code>SaveOptions</code></a></p>
         </div>
       </div>
-      <div id="attribute-i-to_i" class="method-detail">
+      <div id="attribute-i-to_i" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">to_i</span><span class="attribute-access-type">[R]</span>
+          <a href="#attribute-i-to_i" title="Link to this attribute">
+            <span class="method-name">to_i</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -206,28 +216,35 @@
     </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(options = 0)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(options = 0)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="SaveOptions.html"><code>SaveOptions</code></a> object with <code>options</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/node/save_options.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = <span class="ruby-value">0</span>)
   <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a new <a href="SaveOptions.html"><code>SaveOptions</code></a> object with <code>options</code></p>
         </div>
 
 
@@ -235,26 +252,28 @@
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-inspect" class="method-detail ">
+      <div id="method-i-inspect" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">inspect</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-inspect" title="Link to this method">
+                <span class="method-name">inspect</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="inspect-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/node/save_options.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
@@ -265,6 +284,11 @@
   <span class="ruby-keyword">super</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/&gt;$/</span>, <span class="ruby-string">" "</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">", "</span>) <span class="ruby-operator">+</span> <span class="ruby-string">"&gt;"</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
         </div>
 
 

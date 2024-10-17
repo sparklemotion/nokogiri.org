@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::EntityDecl - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::EntityDecl">
+
+    <meta name="description" content="Documentation for the Nokogiri::XML::EntityDecl class">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -116,7 +120,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::EntityDecl">
-  <h1 id="class-Nokogiri::XML::EntityDecl" class="class">
+  <h1 id="class-Nokogiri::XML::EntityDecl" class="anchor-link class">
     class Nokogiri::XML::EntityDecl
   </h1>
 
@@ -124,34 +128,41 @@
     
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(name, doc, *args)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(name, doc, *args)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/entity_decl.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">doc</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">create_entity</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
         </div>
 
 
@@ -159,24 +170,29 @@
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-content" class="method-detail ">
+      <div id="method-i-content" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              content
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-content" title="Link to this method">
+                  <span class="method-callseq">
+                    content
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the content</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="content-source">
             <pre>static VALUE
 get_content(VALUE self)
@@ -189,24 +205,30 @@ get_content(VALUE self)
   return NOKOGIRI_STR_NEW(node-&gt;content, node-&gt;length);
 }</pre>
           </div>
+          <p>Get the content</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-entity_type" class="method-detail ">
+      <div id="method-i-entity_type" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              entity_type
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-entity_type" title="Link to this method">
+                  <span class="method-callseq">
+                    entity_type
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the entity type</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="entity_type-source">
             <pre>static VALUE
 entity_type(VALUE self)
@@ -217,24 +239,30 @@ entity_type(VALUE self)
   return INT2NUM((int)node-&gt;etype);
 }</pre>
           </div>
+          <p>Get the entity type</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-external_id" class="method-detail ">
+      <div id="method-i-external_id" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              external_id
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-external_id" title="Link to this method">
+                  <span class="method-callseq">
+                    external_id
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the external identifier for PUBLIC</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="external_id-source">
             <pre>static VALUE
 external_id(VALUE self)
@@ -247,24 +275,30 @@ external_id(VALUE self)
   return NOKOGIRI_STR_NEW2(node-&gt;ExternalID);
 }</pre>
           </div>
+          <p>Get the external identifier for PUBLIC</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-original_content" class="method-detail ">
+      <div id="method-i-original_content" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              original_content
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-original_content" title="Link to this method">
+                  <span class="method-callseq">
+                    original_content
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the <a href="EntityDecl.html#method-i-original_content"><code>original_content</code></a> before ref substitution</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="original_content-source">
             <pre>static VALUE
 original_content(VALUE self)
@@ -277,24 +311,30 @@ original_content(VALUE self)
   return NOKOGIRI_STR_NEW2(node-&gt;orig);
 }</pre>
           </div>
+          <p>Get the <a href="EntityDecl.html#method-i-original_content"><code>original_content</code></a> before ref substitution</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-system_id" class="method-detail ">
+      <div id="method-i-system_id" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              system_id
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-system_id" title="Link to this method">
+                  <span class="method-callseq">
+                    system_id
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the URI for a SYSTEM or PUBLIC Entity</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="system_id-source">
             <pre>static VALUE
 system_id(VALUE self)
@@ -307,6 +347,7 @@ system_id(VALUE self)
   return NOKOGIRI_STR_NEW2(node-&gt;SystemID);
 }</pre>
           </div>
+          <p>Get the URI for a SYSTEM or PUBLIC Entity</p>
         </div>
 
 

@@ -2089,6 +2089,9 @@ bundle<span class="w"> </span>install
 <p>To run a focused test, use Minitest's <code>TESTOPTS</code>:</p>
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="nv">TESTOPTS</span><span class="o">=</span><span class="s2">&quot;-n/test_last_element_child/&quot;</span>
 </code></pre></div>
+<p>Or to run tests on specific files, use <code>TESTGLOB</code>:</p>
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="nv">TESTGLOB</span><span class="o">=</span><span class="s2">&quot;test/**/test_*node*rb&quot;</span>
+</code></pre></div>
 <p>To run the test suite in parallel, set the <code>NCPU</code> environment variable; and to compile in parallel, set the <code>MAKEFLAGS</code> environment variable (you may want to set these in something like your .bashrc):</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NCPU</span><span class="o">=</span><span class="m">8</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">MAKEFLAGS</span><span class="o">=</span>-j8
@@ -2153,6 +2156,11 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <p>Please note that additional html5lib tests for Nokogiri's HTML5 parser exist in a submodule. If you haven't checked that submodule out, here's how to do so:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w">  </span><span class="c1">#  test/html5lib-tests</span>
 bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<p>If you're actively working on the libgumbo source, you will probably want a faster feedback loop than <code>rake clean compile test</code> will give you. Here's how to get more immediate builds of libgumbo whenever you change a file:</p>
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>clean<span class="w"> </span>compile<span class="w"> </span>--<span class="w"> </span>--gumbo-dev
+<span class="c1"># change a gumbo file</span>
+bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>compile<span class="w"> </span><span class="c1"># immediate compilation of changed file and relinking of nokogiri.so</span>
 </code></pre></div>
 <h3 id="fuzzing-your-gumbo-html5-parser-changes">Fuzzing your gumbo HTML5 parser changes<a class="headerlink" href="#fuzzing-your-gumbo-html5-parser-changes" title="Permanent link">&para;</a></h3>
 <p>When making changes or adding new features to <code>gumbo-parser</code>, it's recommended to run <a href="https://llvm.org/docs/LibFuzzer.html">libfuzzer</a> against <code>gumbo-parser</code> using various <a href="https://github.com/google/sanitizers/wiki">sanitizers</a>.</p>

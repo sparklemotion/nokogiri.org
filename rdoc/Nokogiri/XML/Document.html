@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::Document - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::Document">
+
+    <meta name="description" content="class Nokogiri::XML::Document: Document wraps an xml document. Document is the main entry point for dealing with XML documents.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -200,7 +204,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::Document">
-  <h1 id="class-Nokogiri::XML::Document" class="class">
+  <h1 id="class-Nokogiri::XML::Document" class="anchor-link class">
     class Nokogiri::XML::Document
   </h1>
 
@@ -214,7 +218,7 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
     <section class="constants-list">
@@ -245,9 +249,12 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-errors" class="method-detail">
+      <div id="attribute-i-errors" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">errors</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-errors" title="Link to this attribute">
+            <span class="method-name">errors</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -261,9 +268,12 @@
 </dl>
         </div>
       </div>
-      <div id="attribute-i-namespace_inheritance" class="method-detail">
+      <div id="attribute-i-namespace_inheritance" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">namespace_inheritance</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-namespace_inheritance" title="Link to this attribute">
+            <span class="method-name">namespace_inheritance</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -323,24 +333,29 @@
     </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              new(version = default)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(version = default)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new document with <code>version</code> (defaults to “1.0”)</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre>static VALUE
 new (int argc, VALUE *argv, VALUE klass)
@@ -357,38 +372,31 @@ new (int argc, VALUE *argv, VALUE klass)
   return rb_doc ;
 }</pre>
           </div>
+          <p>Create a new document with <code>version</code> (defaults to “1.0”)</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-parse" class="method-detail ">
+      <div id="method-c-parse" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse</span><span class="method-args">(string_or_io, url = nil, encoding = nil, options = ParseOptions::DEFAULT_XML) { |options| ... }</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(string_or_io, url = nil, encoding = nil, options = ParseOptions::DEFAULT_XML) { |options| ... }</span>
+              </a>
+            </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Parse an <a href="../XML.html"><code>XML</code></a> file.</p>
-
-<p><code>string_or_io</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO.</p>
-
-<p><code>url</code> (optional) is the URI where this document is located.</p>
-
-<p><code>encoding</code> (optional) is the encoding that should be used when processing the document.</p>
-
-<p><code>options</code> (optional) is a configuration object that sets options during parsing, such as Nokogiri::XML::ParseOptions::RECOVER. See the <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> for more information.</p>
-
-<p><code>block</code> (optional) is passed a configuration object on which parse options may be set.</p>
-
-<p>By default, <a href="../../Nokogiri.html"><code>Nokogiri</code></a> treats documents as untrusted, and so does not attempt to load DTDs or access the network. See <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> for a complete list of options; and that module’s DEFAULT_XML constant for what’s set (and not set) by default.</p>
-
-<p><a href="../../Nokogiri.html#method-c-XML"><code>Nokogiri.XML()</code></a> is a convenience method which will call this method.</p>
-
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Integer</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">options</span>
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
@@ -422,24 +430,44 @@ new (int argc, VALUE *argv, VALUE klass)
   <span class="ruby-identifier">doc</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse an <a href="../XML.html"><code>XML</code></a> file.</p>
+
+<p><code>string_or_io</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO.</p>
+
+<p><code>url</code> (optional) is the URI where this document is located.</p>
+
+<p><code>encoding</code> (optional) is the encoding that should be used when processing the document.</p>
+
+<p><code>options</code> (optional) is a configuration object that sets options during parsing, such as Nokogiri::XML::ParseOptions::RECOVER. See the <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> for more information.</p>
+
+<p><code>block</code> (optional) is passed a configuration object on which parse options may be set.</p>
+
+<p>By default, <a href="../../Nokogiri.html"><code>Nokogiri</code></a> treats documents as untrusted, and so does not attempt to load DTDs or access the network. See <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> for a complete list of options; and that module’s DEFAULT_XML constant for what’s set (and not set) by default.</p>
+
+<p><a href="../../Nokogiri.html#method-c-XML"><code>Nokogiri.XML()</code></a> is a convenience method which will call this method.</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-read_io" class="method-detail ">
+      <div id="method-c-read_io" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              read_io(io, url, encoding, options)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-read_io" title="Link to this method">
+                  <span class="method-callseq">
+                    read_io(io, url, encoding, options)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new document from an IO object</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="read_io-source">
             <pre>static VALUE
 read_io(VALUE klass,
@@ -487,24 +515,30 @@ read_io(VALUE klass,
   return document;
 }</pre>
           </div>
+          <p>Create a new document from an IO object</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-read_memory" class="method-detail ">
+      <div id="method-c-read_memory" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              read_memory(string, url, encoding, options)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-read_memory" title="Link to this method">
+                  <span class="method-callseq">
+                    read_memory(string, url, encoding, options)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new document from a String</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="read_memory-source">
             <pre>static VALUE
 read_memory(VALUE klass,
@@ -546,22 +580,34 @@ read_memory(VALUE klass,
   return document;
 }</pre>
           </div>
+          <p>Create a new document from a String</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-wrap" class="method-detail ">
+      <div id="method-c-wrap" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              wrap(java_document) → Nokogiri::XML::Document
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-wrap" title="Link to this method">
+                  <span class="method-callseq">
+                    wrap(java_document) → Nokogiri::XML::Document
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="wrap-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 95</span>
+      </pre>
+          </div>
           <p>⚠ This method is only available when running JRuby.</p>
 
 <p>Create a <a href="Document.html"><code>Document</code></a> using an existing Java DOM document object.</p>
@@ -584,11 +630,6 @@ read_memory(VALUE klass,
 </dl>
 
 <p>See also #to_java</p>
-
-          <div class="method-source-code" id="wrap-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 91</span>
-      </pre>
-          </div>
         </div>
 
 
@@ -596,21 +637,24 @@ read_memory(VALUE klass,
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-3C-3C" class="method-detail method-alias">
+      <div id="method-i-3C-3C" class="method-detail anchor-link method-alias">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">&lt;&lt;</span><span class="method-args">(node_or_tags)</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-3C-3C" title="Link to this method">
+                <span class="method-name">&lt;&lt;</span>
+                <span class="method-args">(node_or_tags)</span>
+              </a>
+            </div>
         </div>
+
 
         <div class="method-description">
           
-
         </div>
 
 
@@ -619,23 +663,25 @@ read_memory(VALUE klass,
         </div>
       </div>
 
-      <div id="method-i-add_child" class="method-detail ">
+      <div id="method-i-add_child" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">add_child</span><span class="method-args">(node_or_tags)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-add_child" title="Link to this method">
+                <span class="method-name">add_child</span>
+                <span class="method-args">(node_or_tags)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="add_child-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 393</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 428</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_child</span>(<span class="ruby-identifier">node_or_tags</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-string">"A document may not have multiple root nodes."</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">root</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">!=</span> <span class="ruby-string">"nokogiri_text_wrapper"</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">comment?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node_or_tags</span>.<span class="ruby-identifier">processing_instruction?</span>)
 
@@ -649,6 +695,11 @@ read_memory(VALUE klass,
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
         </div>
 
         <div class="aliases">
@@ -657,24 +708,31 @@ read_memory(VALUE klass,
 
       </div>
 
-      <div id="method-i-canonicalize" class="method-detail ">
+      <div id="method-i-canonicalize" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              canonicalize(mode=XML_C14N_1_0,inclusive_namespaces=nil,with_comments=false)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          <div class="method-heading">
-            <span class="method-callseq">
-              canonicalize { |obj, parent| ... }
-            </span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-canonicalize" title="Link to this method">
+                  <span class="method-callseq">
+                    canonicalize(mode=XML_C14N_1_0,inclusive_namespaces=nil,with_comments=false)
+                  </span>
+                </a>
+              </div>
+              <div class="method-heading">
+                <a href="#method-i-canonicalize" title="Link to this method">
+                  <span class="method-callseq">
+                    canonicalize { |obj, parent| ... }
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Canonicalize a document and return the results.  Takes an optional block that takes two parameters: the <code>obj</code> and that node’s <code>parent</code>. The  <code>obj</code> will be either a <a href="Node.html"><code>Nokogiri::XML::Node</code></a>, or a <a href="Namespace.html"><code>Nokogiri::XML::Namespace</code></a> The block must return a non-nil, non-false value if the <code>obj</code> passed in should be included in the canonicalized document.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="canonicalize-source">
             <pre>static VALUE
 rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
@@ -743,42 +801,91 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
   return rb_funcall(rb_io, rb_intern("string"), 0);
 }</pre>
           </div>
+          <p>Canonicalize a document and return the results.  Takes an optional block that takes two parameters: the <code>obj</code> and that node’s <code>parent</code>. The  <code>obj</code> will be either a <a href="Node.html"><code>Nokogiri::XML::Node</code></a>, or a <a href="Namespace.html"><code>Nokogiri::XML::Namespace</code></a> The block must return a non-nil, non-false value if the <code>obj</code> passed in should be included in the canonicalized document.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-clone" class="method-detail method-alias">
+      <div id="method-i-clone" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              dup
-            </span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-clone" title="Link to this method">
+                  <span class="method-callseq">
+                    clone → Nokogiri::XML::Document
+                  </span>
+                </a>
+              </div>
+              <div class="method-heading">
+                <a href="#method-i-clone" title="Link to this method">
+                  <span class="method-callseq">
+                    clone(level) → Nokogiri::XML::Document
+                  </span>
+                </a>
+              </div>
         </div>
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
         <div class="method-description">
-          
-
+          <div class="method-source-code" id="clone-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clone</span>(<span class="ruby-identifier">level</span> = <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">copy</span> = <span class="ruby-constant">OBJECT_CLONE_METHOD</span>.<span class="ruby-identifier">bind_call</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">initialize_copy_with_args</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">level</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          <p>Clone this node.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>level</code> (optional Integer). 0 is a shallow copy, 1 (the default) is a deep copy.</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>The new <a href="Document.html"><code>Nokogiri::XML::Document</code></a></p>
+</dd>
+</dl>
         </div>
 
 
-        <div class="aliases">
-          Alias for: <a href="Document.html#method-i-dup">dup</a>
-        </div>
       </div>
 
-      <div id="method-i-collect_namespaces" class="method-detail ">
+      <div id="method-i-collect_namespaces" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              collect_namespaces() → Hash&lt;String(Namespace#prefix) ⇒ String(Namespace#href)&gt;
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-collect_namespaces" title="Link to this method">
+                  <span class="method-callseq">
+                    collect_namespaces() → Hash&lt;String(Namespace#prefix) ⇒ String(Namespace#href)&gt;
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="collect_namespaces-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collect_namespaces</span>
+  <span class="ruby-identifier">xpath</span>(<span class="ruby-string">"//namespace::*"</span>).<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ns</span>, <span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hash</span>[[<span class="ruby-string">"xmlns"</span>, <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">":"</span>)] = <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">href</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span> <span class="ruby-operator">!=</span> <span class="ruby-string">"xml"</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Recursively get all namespaces from this node and its subtree and return them as a hash.</p>
 
 <p>⚠ This method will not handle duplicate namespace prefixes, since the return value is a hash.</p>
@@ -810,75 +917,113 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
 
 <pre class="ruby">{<span class="ruby-string">"xmlns:foo"</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">"baz"</span>}
 </pre>
-
-          <div class="method-source-code" id="collect_namespaces-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 316</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collect_namespaces</span>
-  <span class="ruby-identifier">xpath</span>(<span class="ruby-string">"//namespace::*"</span>).<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ns</span>, <span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">hash</span>[[<span class="ruby-string">"xmlns"</span>, <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">":"</span>)] = <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">href</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span> <span class="ruby-operator">!=</span> <span class="ruby-string">"xml"</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-create_cdata" class="method-detail ">
+      <div id="method-i-create_cdata" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">create_cdata</span><span class="method-args">(string, &amp;block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-create_cdata" title="Link to this method">
+                <span class="method-name">create_cdata</span>
+                <span class="method-args">(string, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a <a href="CDATA.html"><code>CDATA</code></a> <a href="Node.html"><code>Node</code></a> containing <code>string</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="create_cdata-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 261</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 297</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_cdata</span>(<span class="ruby-identifier">string</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">CDATA</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a <a href="CDATA.html"><code>CDATA</code></a> <a href="Node.html"><code>Node</code></a> containing <code>string</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-create_comment" class="method-detail ">
+      <div id="method-i-create_comment" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">create_comment</span><span class="method-args">(string, &amp;block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-create_comment" title="Link to this method">
+                <span class="method-name">create_comment</span>
+                <span class="method-args">(string, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a <a href="Comment.html"><code>Comment</code></a> <a href="Node.html"><code>Node</code></a> containing <code>string</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="create_comment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 266</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 302</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_comment</span>(<span class="ruby-identifier">string</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Comment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a <a href="Comment.html"><code>Comment</code></a> <a href="Node.html"><code>Node</code></a> containing <code>string</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-create_element" class="method-detail ">
+      <div id="method-i-create_element" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              create_element(name, *contents_or_attrs, &amp;block) → Nokogiri::XML::Element
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-create_element" title="Link to this method">
+                  <span class="method-callseq">
+                    create_element(name, *contents_or_attrs, &amp;block) → Nokogiri::XML::Element
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="create_element-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_element</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">contents_or_attrs</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">elm</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-keyword">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">contents_or_attrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+      <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">key</span> = <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">NCNAME_RE</span>
+          <span class="ruby-identifier">ns_name</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>(<span class="ruby-value">1</span>)
+          <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">add_namespace_definition</span>(<span class="ruby-identifier">ns_name</span>, <span class="ruby-identifier">v</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">elm</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">arg</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">ns</span> = <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">namespace_definitions</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">prefix</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">n</span>.<span class="ruby-identifier">prefix</span> <span class="ruby-operator">==</span> <span class="ruby-string">""</span>) })
+    <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">namespace</span> = <span class="ruby-identifier">ns</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">elm</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Create a new <a href="Element.html"><code>Element</code></a> with ‘name` belonging to this document, optionally setting contents or attributes.</p>
 
 <p>This method is <em>not</em> the most user-friendly option if your intention is to add a node to the document tree. Prefer one of the <a href="Node.html"><code>Nokogiri::XML::Node</code></a> methods like <a href="Node.html#method-i-add_child"><code>Node#add_child</code></a>, <a href="Node.html#method-i-add_next_sibling"><code>Node#add_next_sibling</code></a>, <a href="Node.html#method-i-replace"><code>Node#replace</code></a>, etc. which will both create an element (or subtree) and place it in the document tree.</p>
@@ -948,55 +1093,29 @@ rb_xml_document_canonicalize(int argc, VALUE *argv, VALUE self)
 
 <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">create_element</span>(<span class="ruby-string">"div"</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>[<span class="ruby-string">"class"</span>] = <span class="ruby-string">"blue"</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">before_noon?</span> }
 </pre>
-
-          <div class="method-source-code" id="create_element-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 231</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_element</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">contents_or_attrs</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-identifier">elm</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Element</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-keyword">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-identifier">contents_or_attrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
-    <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
-      <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
-        <span class="ruby-identifier">key</span> = <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">NCNAME_RE</span>
-          <span class="ruby-identifier">ns_name</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>(<span class="ruby-value">1</span>)
-          <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">add_namespace_definition</span>(<span class="ruby-identifier">ns_name</span>, <span class="ruby-identifier">v</span>)
-        <span class="ruby-keyword">else</span>
-          <span class="ruby-identifier">elm</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">end</span>
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">arg</span>
-    <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">ns</span> = <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">namespace_definitions</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">prefix</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">n</span>.<span class="ruby-identifier">prefix</span> <span class="ruby-operator">==</span> <span class="ruby-string">""</span>) })
-    <span class="ruby-identifier">elm</span>.<span class="ruby-identifier">namespace</span> = <span class="ruby-identifier">ns</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">elm</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-create_entity" class="method-detail ">
+      <div id="method-i-create_entity" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              create_entity(name, type, external_id, system_id, content)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-create_entity" title="Link to this method">
+                  <span class="method-callseq">
+                    create_entity(name, type, external_id, system_id, content)
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Create a new entity named <code>name</code>.</p>
-
-<p><code>type</code> is an integer representing the type of entity to be created, and it defaults to Nokogiri::XML::EntityDecl::INTERNAL_GENERAL.  See the constants on <a href="EntityDecl.html"><code>Nokogiri::XML::EntityDecl</code></a> for more information.</p>
-
-<p><code>external_id</code>, <code>system_id</code>, and <code>content</code> set the External ID, System ID, and content respectively.  All of these parameters are optional.</p>
-
           <div class="method-source-code" id="create_entity-source">
             <pre>static VALUE
 create_entity(int argc, VALUE *argv, VALUE self)
@@ -1038,44 +1157,69 @@ create_entity(int argc, VALUE *argv, VALUE self)
   return noko_xml_node_wrap(cNokogiriXmlEntityDecl, (xmlNodePtr)ptr);
 }</pre>
           </div>
+          <p>Create a new entity named <code>name</code>.</p>
+
+<p><code>type</code> is an integer representing the type of entity to be created, and it defaults to Nokogiri::XML::EntityDecl::INTERNAL_GENERAL.  See the constants on <a href="EntityDecl.html"><code>Nokogiri::XML::EntityDecl</code></a> for more information.</p>
+
+<p><code>external_id</code>, <code>system_id</code>, and <code>content</code> set the External ID, System ID, and content respectively.  All of these parameters are optional.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-create_text_node" class="method-detail ">
+      <div id="method-i-create_text_node" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">create_text_node</span><span class="method-args">(string, &amp;block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-create_text_node" title="Link to this method">
+                <span class="method-name">create_text_node</span>
+                <span class="method-args">(string, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a <a href="Text.html"><code>Text</code></a> <a href="Node.html"><code>Node</code></a> with <code>string</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="create_text_node-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 256</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 292</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_text_node</span>(<span class="ruby-identifier">string</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a <a href="Text.html"><code>Text</code></a> <a href="Node.html"><code>Node</code></a> with <code>string</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-deconstruct_keys" class="method-detail ">
+      <div id="method-i-deconstruct_keys" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              deconstruct_keys(array_of_names) → Hash
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-deconstruct_keys" title="Link to this method">
+                  <span class="method-callseq">
+                    deconstruct_keys(array_of_names) → Hash
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="deconstruct_keys-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 492</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+  { <span class="ruby-value">root:</span> <span class="ruby-identifier">root</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Returns a hash describing the <a href="Document.html"><code>Document</code></a>, to use in pattern matching.</p>
 
 <p>Valid keys and their values:</p>
@@ -1114,149 +1258,176 @@ create_entity(int argc, VALUE *argv, VALUE self)
 </pre>
 
 <p>Since v1.14.0</p>
-
-          <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 457</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
-  { <span class="ruby-value">root:</span> <span class="ruby-identifier">root</span> }
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-decorate" class="method-detail ">
+      <div id="method-i-decorate" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">decorate</span><span class="method-args">(node)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-decorate" title="Link to this method">
+                <span class="method-name">decorate</span>
+                <span class="method-args">(node)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Apply any decorators to <code>node</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="decorate-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 364</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 400</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">decorate</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@decorators</span>
 
   <span class="ruby-ivar">@decorators</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>, <span class="ruby-identifier">list</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-identifier">klass</span>)
 
-    <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">moodule</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-identifier">moodule</span>) }
+    <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mod</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-identifier">mod</span>) }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Apply any decorators to <code>node</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-decorators" class="method-detail ">
+      <div id="method-i-decorators" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">decorators</span><span class="method-args">(key)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-decorators" title="Link to this method">
+                <span class="method-name">decorators</span>
+                <span class="method-args">(key)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the list of decorators given <code>key</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="decorators-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 323</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 359</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">decorators</span>(<span class="ruby-identifier">key</span>)
   <span class="ruby-ivar">@decorators</span> <span class="ruby-operator">||=</span> {}
   <span class="ruby-ivar">@decorators</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">||=</span> []
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Get the list of decorators given <code>key</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-document" class="method-detail ">
+      <div id="method-i-document" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">document</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-document" title="Link to this method">
+                <span class="method-name">document</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>A reference to <code>self</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="document-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 276</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 312</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">document</span>
   <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>A reference to <code>self</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-dup" class="method-detail ">
+      <div id="method-i-dup" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              dup
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-dup" title="Link to this method">
+                  <span class="method-callseq">
+                    dup → Nokogiri::XML::Document
+                  </span>
+                </a>
+              </div>
+              <div class="method-heading">
+                <a href="#method-i-dup" title="Link to this method">
+                  <span class="method-callseq">
+                    dup(level) → Nokogiri::XML::Document
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Copy this <a href="Document.html"><code>Document</code></a>.  An optional depth may be passed in, but it defaults to a deep copy.  0 is a shallow copy, 1 is a deep copy.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="dup-source">
-            <pre>static VALUE
-duplicate_document(int argc, VALUE *argv, VALUE self)
-{
-  xmlDocPtr doc, dup;
-  VALUE copy;
-  VALUE level;
-
-  if (rb_scan_args(argc, argv, "01", &amp;level) == 0) {
-    level = INT2NUM((long)1);
-  }
-
-  doc = noko_xml_document_unwrap(self);
-
-  dup = xmlCopyDoc(doc, (int)NUM2INT(level));
-
-  if (dup == NULL) { return Qnil; }
-
-  dup-&gt;type = doc-&gt;type;
-  copy = noko_xml_document_wrap(rb_obj_class(self), dup);
-  rb_iv_set(copy, "@errors", rb_iv_get(self, "@errors"));
-  return copy ;
-}</pre>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>(<span class="ruby-identifier">level</span> = <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">copy</span> = <span class="ruby-constant">OBJECT_DUP_METHOD</span>.<span class="ruby-identifier">bind_call</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">initialize_copy_with_args</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">level</span>)
+<span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Duplicate this node.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>level</code> (optional Integer). 0 is a shallow copy, 1 (the default) is a deep copy.</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>The new <a href="Document.html"><code>Nokogiri::XML::Document</code></a></p>
+</dd>
+</dl>
         </div>
 
-        <div class="aliases">
-          Also aliased as: <a href="Document.html#method-i-clone">clone</a>
-        </div>
 
       </div>
 
-      <div id="method-i-encoding" class="method-detail ">
+      <div id="method-i-encoding" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              encoding
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-encoding" title="Link to this method">
+                  <span class="method-callseq">
+                    encoding
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the encoding for this <a href="Document.html"><code>Document</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="encoding-source">
             <pre>static VALUE
 encoding(VALUE self)
@@ -1267,24 +1438,30 @@ encoding(VALUE self)
   return NOKOGIRI_STR_NEW2(doc-&gt;encoding);
 }</pre>
           </div>
+          <p>Get the encoding for this <a href="Document.html"><code>Document</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-encoding-3D" class="method-detail ">
+      <div id="method-i-encoding-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              encoding= encoding
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-encoding-3D" title="Link to this method">
+                  <span class="method-callseq">
+                    encoding= encoding
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Set the encoding string for this <a href="Document.html"><code>Document</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="encoding-3D-source">
             <pre>static VALUE
 set_encoding(VALUE self, VALUE encoding)
@@ -1300,88 +1477,127 @@ set_encoding(VALUE self, VALUE encoding)
   return encoding;
 }</pre>
           </div>
+          <p>Set the encoding string for this <a href="Document.html"><code>Document</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-fragment" class="method-detail ">
+      <div id="method-i-fragment" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">fragment</span><span class="method-args">(tags = nil)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-fragment" title="Link to this method">
+                <span class="method-name">fragment</span>
+                <span class="method-args">(tags = nil)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a <a href="DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code> Returns an empty fragment if <code>tags</code> is nil.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 385</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 420</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">root</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a <a href="DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code> Returns an empty fragment if <code>tags</code> is nil.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-name" class="method-detail ">
+      <div id="method-i-name" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">name</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-name" title="Link to this method">
+                <span class="method-name">name</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>The name of this document.  Always returns “document”</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="name-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 271</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 307</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">name</span>
   <span class="ruby-string">"document"</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>The name of this document.  Always returns “document”</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-namespaces" class="method-detail ">
+      <div id="method-i-namespaces" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">namespaces</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-namespaces" title="Link to this method">
+                <span class="method-name">namespaces</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the hash of namespaces on the root <a href="Node.html"><code>Nokogiri::XML::Node</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="namespaces-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 378</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 413</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">namespaces</span>
   <span class="ruby-identifier">root</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span> <span class="ruby-operator">:</span> {}
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Get the hash of namespaces on the root <a href="Node.html"><code>Nokogiri::XML::Node</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-remove_namespaces-21" class="method-detail ">
+      <div id="method-i-remove_namespaces-21" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              remove_namespaces!
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-remove_namespaces-21" title="Link to this method">
+                  <span class="method-callseq">
+                    remove_namespaces!
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="remove_namespaces-21-source">
+            <pre>static VALUE
+remove_namespaces_bang(VALUE self)
+{
+  xmlDocPtr doc = noko_xml_document_unwrap(self);
+
+  recursively_remove_namespaces_from_node((xmlNodePtr)doc);
+  return self;
+}</pre>
+          </div>
           <p>Remove all namespaces from all nodes in the document.</p>
 
 <p>This could be useful for developers who either don’t understand namespaces or don’t care about them.</p>
@@ -1411,35 +1627,29 @@ set_encoding(VALUE self, VALUE encoding)
 </pre>
 
 <p>For more information on why this probably is <strong>not</strong> a good thing in general, please direct your browser to <a href="http://tenderlovemaking.com/2009/04/23/namespaces-in-xml.html">tenderlovemaking.com/2009/04/23/namespaces-in-xml.html</a></p>
-
-          <div class="method-source-code" id="remove_namespaces-21-source">
-            <pre>static VALUE
-remove_namespaces_bang(VALUE self)
-{
-  xmlDocPtr doc = noko_xml_document_unwrap(self);
-
-  recursively_remove_namespaces_from_node((xmlNodePtr)doc);
-  return self;
-}</pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-root" class="method-detail ">
+      <div id="method-i-root" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              root
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-root" title="Link to this method">
+                  <span class="method-callseq">
+                    root
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the root node for this document.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="root-source">
             <pre>static VALUE
 rb_xml_document_root(VALUE self)
@@ -1457,24 +1667,30 @@ rb_xml_document_root(VALUE self)
   return noko_xml_node_wrap(Qnil, c_root) ;
 }</pre>
           </div>
+          <p>Get the root node for this document.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-root-3D" class="method-detail ">
+      <div id="method-i-root-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              root=
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-root-3D" title="Link to this method">
+                  <span class="method-callseq">
+                    root=
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Set the root element on this document</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="root-3D-source">
             <pre>static VALUE
 rb_xml_document_root_set(VALUE self, VALUE rb_new_root)
@@ -1514,20 +1730,40 @@ rb_xml_document_root_set(VALUE self, VALUE rb_new_root)
   return rb_new_root;
 }</pre>
           </div>
+          <p>Set the root element on this document</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-slop-21" class="method-detail ">
+      <div id="method-i-slop-21" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">slop!</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-slop-21" title="Link to this method">
+                <span class="method-name">slop!</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="slop-21-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 389</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">slop!</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>)
+    <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>
+    <span class="ruby-identifier">decorate!</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Explore a document with shortcut methods. See <a href="../../Nokogiri.html#method-c-Slop"><code>Nokogiri::Slop</code></a> for details.</p>
 
 <p>Note that any nodes that have been instantiated before <a href="Document.html#method-i-slop-21"><code>#slop!</code></a> is called will not be decorated with sloppy behavior. So, if you’re in irb, the preferred idiom is:</p>
@@ -1540,34 +1776,33 @@ rb_xml_document_root_set(VALUE self, VALUE rb_new_root)
 ... followed by irb's implicit inspect (and therefore instantiation of every node) ...
 irb&gt; doc.slop!
 ... which does absolutely nothing.</pre>
-
-          <div class="method-source-code" id="slop-21-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 353</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">slop!</span>
-  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>)
-    <span class="ruby-identifier">decorators</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">Decorators</span><span class="ruby-operator">::</span><span class="ruby-constant">Slop</span>
-    <span class="ruby-identifier">decorate!</span>
-  <span class="ruby-keyword">end</span>
-
-  <span class="ruby-keyword">self</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-to_java" class="method-detail ">
+      <div id="method-i-to_java" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              to_java() → Java::OrgW3cDom::Document
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-to_java" title="Link to this method">
+                  <span class="method-callseq">
+                    to_java() → Java::OrgW3cDom::Document
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="to_java-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 113</span>
+      </pre>
+          </div>
           <p>⚠ This method is only available when running JRuby.</p>
 
 <p>Returns the underlying Java DOM document object for this document.</p>
@@ -1582,29 +1817,29 @@ irb&gt; doc.slop!
 </dl>
 
 <p>See also <a href="Document.html#method-c-wrap"><code>Document.wrap</code></a></p>
-
-          <div class="method-source-code" id="to_java-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 109</span>
-      </pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-url" class="method-detail ">
+      <div id="method-i-url" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              url
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-url" title="Link to this method">
+                  <span class="method-callseq">
+                    url
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the url name for this document.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="url-source">
             <pre>static VALUE
 url(VALUE self)
@@ -1616,48 +1851,61 @@ url(VALUE self)
   return Qnil;
 }</pre>
           </div>
+          <p>Get the url name for this document.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-validate" class="method-detail ">
+      <div id="method-i-validate" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">validate</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-validate" title="Link to this method">
+                <span class="method-name">validate</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Validate this <a href="Document.html"><code>Document</code></a> against it’s <a href="DTD.html"><code>DTD</code></a>.  Returns a list of errors on the document or <code>nil</code> when there is no <a href="DTD.html"><code>DTD</code></a>.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="validate-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 331</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 367</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">internal_subset</span>
 
   <span class="ruby-identifier">internal_subset</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Validate this <a href="Document.html"><code>Document</code></a> against it’s <a href="DTD.html"><code>DTD</code></a>.  Returns a list of errors on the document or <code>nil</code> when there is no <a href="DTD.html"><code>DTD</code></a>.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-version" class="method-detail ">
+      <div id="method-i-version" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              version
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-version" title="Link to this method">
+                  <span class="method-callseq">
+                    version
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the <a href="../XML.html"><code>XML</code></a> version for this <a href="Document.html"><code>Document</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="version-source">
             <pre>static VALUE
 version(VALUE self)
@@ -1668,22 +1916,36 @@ version(VALUE self)
   return NOKOGIRI_STR_NEW2(doc-&gt;version);
 }</pre>
           </div>
+          <p>Get the <a href="../XML.html"><code>XML</code></a> version for this <a href="Document.html"><code>Document</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-xpath_doctype" class="method-detail ">
+      <div id="method-i-xpath_doctype" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              xpath_doctype() → Nokogiri::CSS::XPathVisitor::DoctypeConfig
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-xpath_doctype" title="Link to this method">
+                  <span class="method-callseq">
+                    xpath_doctype() → Nokogiri::CSS::XPathVisitor::DoctypeConfig
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="xpath_doctype-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 448</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
+  <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -1693,13 +1955,6 @@ version(VALUE self)
 </dl>
 
 <p>See XPathVisitor for more information.</p>
-
-          <div class="method-source-code" id="xpath_doctype-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document.rb, line 413</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
-  <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 

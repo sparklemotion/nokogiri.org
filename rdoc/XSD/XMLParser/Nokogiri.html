@@ -7,6 +7,10 @@
 
 <title>class XSD::XMLParser::Nokogiri - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,XSD::XMLParser::Nokogiri">
+
+    <meta name="description" content="class XSD::XMLParser::Nokogiri: Nokogiri XML parser for soap4r. Nokogiri may be used as the XML parser in soap4r.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -125,7 +129,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-XSD::XMLParser::Nokogiri">
-  <h1 id="class-XSD::XMLParser::Nokogiri" class="class">
+  <h1 id="class-XSD::XMLParser::Nokogiri" class="anchor-link class">
     class XSD::XMLParser::Nokogiri
   </h1>
 
@@ -151,32 +155,34 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(host, opt = {})</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(host, opt = {})</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="../../XSD.html"><code>XSD</code></a> parser with <code>host</code> and <code>opt</code></p>
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">opt</span> = {})
@@ -184,6 +190,11 @@
   <span class="ruby-ivar">@parser</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-ivar">@charset</span> <span class="ruby-operator">||</span> <span class="ruby-string">"UTF-8"</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a new <a href="../../XSD.html"><code>XSD</code></a> parser with <code>host</code> and <code>opt</code></p>
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
         </div>
 
 
@@ -191,92 +202,119 @@
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-cdata_block" class="method-detail ">
+      <div id="method-i-cdata_block" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">cdata_block</span><span class="method-args">(string)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-cdata_block" title="Link to this method">
+                <span class="method-name">cdata_block</span>
+                <span class="method-args">(string)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Handle cdata_blocks containing <code>string</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="cdata_block-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cdata_block</span>(<span class="ruby-identifier">string</span>)
   <span class="ruby-identifier">characters</span>(<span class="ruby-identifier">string</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Handle cdata_blocks containing <code>string</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-do_parse" class="method-detail ">
+      <div id="method-i-do_parse" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">do_parse</span><span class="method-args">(string_or_readable)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-do_parse" title="Link to this method">
+                <span class="method-name">do_parse</span>
+                <span class="method-args">(string_or_readable)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Start parsing <code>string_or_readable</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="do_parse-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">do_parse</span>(<span class="ruby-identifier">string_or_readable</span>)
   <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string_or_readable</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Start parsing <code>string_or_readable</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-end_element" class="method-detail ">
+      <div id="method-i-end_element" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">end_element</span><span class="method-args">(name)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-end_element" title="Link to this method">
+                <span class="method-name">end_element</span>
+                <span class="method-args">(name)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Handle the <a href="Nokogiri.html#method-i-end_element"><code>end_element</code></a> event with <code>name</code></p>
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="end_element-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_element</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-keyword">super</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Handle the <a href="Nokogiri.html#method-i-end_element"><code>end_element</code></a> event with <code>name</code></p>
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-end_element_namespace" class="method-detail ">
+      <div id="method-i-end_element_namespace" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">end_element_namespace</span><span class="method-args">(name, prefix = nil, uri = nil)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-end_element_namespace" title="Link to this method">
+                <span class="method-name">end_element_namespace</span>
+                <span class="method-args">(name, prefix = nil, uri = nil)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Called at the end of an element <code>name</code> is the element’s name <code>prefix</code> is the namespace prefix associated with the element <code>uri</code> is the associated namespace URI</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="end_element_namespace-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_element_namespace</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>)
@@ -285,28 +323,36 @@
   <span class="ruby-identifier">end_element</span>([<span class="ruby-identifier">prefix</span>, <span class="ruby-identifier">name</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">":"</span>))
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Called at the end of an element <code>name</code> is the element’s name <code>prefix</code> is the namespace prefix associated with the element <code>uri</code> is the associated namespace URI</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-error" class="method-detail ">
+      <div id="method-i-error" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">error</span><span class="method-args">(msg)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-error" title="Link to this method">
+                <span class="method-name">error</span>
+                <span class="method-args">(msg)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Handle errors with message <code>msg</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="error-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">error</span>(<span class="ruby-identifier">msg</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ParseError</span>, <span class="ruby-identifier">msg</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Handle errors with message <code>msg</code></p>
         </div>
 
         <div class="aliases">
@@ -315,43 +361,56 @@
 
       </div>
 
-      <div id="method-i-start_element" class="method-detail ">
+      <div id="method-i-start_element" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">start_element</span><span class="method-args">(name, attrs = [])</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-start_element" title="Link to this method">
+                <span class="method-name">start_element</span>
+                <span class="method-args">(name, attrs = [])</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Handle the <a href="Nokogiri.html#method-i-start_element"><code>start_element</code></a> event with <code>name</code> and <code>attrs</code></p>
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="start_element-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span> = [])
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">name</span>, <span class="ruby-constant">Hash</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">flatten</span>])
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Handle the <a href="Nokogiri.html#method-i-start_element"><code>start_element</code></a> event with <code>name</code> and <code>attrs</code></p>
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-start_element_namespace" class="method-detail ">
+      <div id="method-i-start_element_namespace" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">start_element_namespace</span><span class="method-args">(name, attrs = [], prefix = nil, uri = nil, ns = [])</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-start_element_namespace" title="Link to this method">
+                <span class="method-name">start_element_namespace</span>
+                <span class="method-args">(name, attrs = [], prefix = nil, uri = nil, ns = [])</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Called at the beginning of an element <code>name</code> is the element name <code>attrs</code> is a list of attributes <code>prefix</code> is the namespace prefix for the element <code>uri</code> is the associated namespace URI <code>ns</code> is a hash of namespace prefix:urls associated with the element</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="start_element_namespace-source">
             <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element_namespace</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span> = [], <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ns</span> = []) <span class="ruby-comment"># rubocop:disable Metrics/ParameterLists</span>
@@ -366,21 +425,25 @@
   <span class="ruby-identifier">start_element</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attributes</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Called at the beginning of an element <code>name</code> is the element name <code>attrs</code> is a list of attributes <code>prefix</code> is the namespace prefix for the element <code>uri</code> is the associated namespace URI <code>ns</code> is a hash of namespace prefix:urls associated with the element</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-warning" class="method-detail method-alias">
+      <div id="method-i-warning" class="method-detail anchor-link method-alias">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">warning</span><span class="method-args">(msg)</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-warning" title="Link to this method">
+                <span class="method-name">warning</span>
+                <span class="method-args">(msg)</span>
+              </a>
+            </div>
         </div>
+
 
         <div class="method-description">
           
-
         </div>
 
 

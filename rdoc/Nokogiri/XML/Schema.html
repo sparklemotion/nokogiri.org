@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::Schema - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::Schema">
+
+    <meta name="description" content="class Nokogiri::XML::Schema: Schema is used for validating XML against a schema (usually from an xsd file). Synopsis Validate an XML document against a Schema.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -113,7 +117,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::Schema">
-  <h1 id="class-Nokogiri::XML::Schema" class="class">
+  <h1 id="class-Nokogiri::XML::Schema" class="anchor-link class">
     class Nokogiri::XML::Schema
   </h1>
 
@@ -140,7 +144,7 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
@@ -149,18 +153,24 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-errors" class="method-detail">
+      <div id="attribute-i-errors" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">errors</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-errors" title="Link to this attribute">
+            <span class="method-name">errors</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
         <p>Errors while parsing the schema file</p>
         </div>
       </div>
-      <div id="attribute-i-parse_options" class="method-detail">
+      <div id="attribute-i-parse_options" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">parse_options</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-parse_options" title="Link to this attribute">
+            <span class="method-name">parse_options</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -170,39 +180,29 @@
     </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-from_document" class="method-detail ">
+      <div id="method-c-from_document" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              from_document(document) → Nokogiri::XML::Schema
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-from_document" title="Link to this method">
+                  <span class="method-callseq">
+                    from_document(document) → Nokogiri::XML::Schema
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new schema parsed from the <code>document</code>.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul><li>
-<p><code>document</code>: <a href="Document.html"><code>Nokogiri::XML::Document</code></a> to be parsed</p>
-</li></ul>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><a href="Schema.html"><code>Nokogiri::XML::Schema</code></a></p>
-</dd>
-</dl>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="from_document-source">
             <pre>static VALUE
 rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
@@ -248,52 +248,14 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
   return rb_schema;
 }</pre>
           </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-c-new" class="method-detail ">
-        <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-        </div>
-
-        <div class="method-description">
-          <p>Create a new <a href="Schema.html"><code>Nokogiri::XML::Schema</code></a> object using a <code>string_or_io</code> object.</p>
-
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 46</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
-  <span class="ruby-identifier">from_document</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">string_or_io</span>), <span class="ruby-identifier">options</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-c-read_memory" class="method-detail ">
-        <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              read_memory(string) → Nokogiri::XML::Schema
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-        </div>
-
-        <div class="method-description">
-          <p>Create a new schema parsed from the contents of <code>string</code></p>
+          <p>Create a new schema parsed from the <code>document</code>.</p>
 <dl class="rdoc-list label-list">
 <dt>Parameters
 </dt>
 <dd></dd>
 </dl>
 <ul><li>
-<p><code>string</code>: String containing <a href="../XML.html"><code>XML</code></a> to be parsed as a schema</p>
+<p><code>document</code>: <a href="Document.html"><code>Nokogiri::XML::Document</code></a> to be parsed</p>
 </li></ul>
 <dl class="rdoc-list label-list">
 <dt>Returns
@@ -302,7 +264,58 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
 <p><a href="Schema.html"><code>Nokogiri::XML::Schema</code></a></p>
 </dd>
 </dl>
+        </div>
 
+
+      </div>
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)</span>
+              </a>
+            </div>
+        </div>
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
+        <div class="method-description">
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
+  <span class="ruby-identifier">from_document</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">string_or_io</span>), <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          <p>Create a new <a href="Schema.html"><code>Nokogiri::XML::Schema</code></a> object using a <code>string_or_io</code> object.</p>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-read_memory" class="method-detail anchor-link ">
+        <div class="method-header">
+              <div class="method-heading">
+                <a href="#method-c-read_memory" title="Link to this method">
+                  <span class="method-callseq">
+                    read_memory(string) → Nokogiri::XML::Schema
+                  </span>
+                </a>
+              </div>
+        </div>
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
+        <div class="method-description">
           <div class="method-source-code" id="read_memory-source">
             <pre>static VALUE
 read_memory(int argc, VALUE *argv, VALUE klass)
@@ -321,6 +334,22 @@ read_memory(int argc, VALUE *argv, VALUE klass)
   return xml_schema_parse_schema(klass, c_parser_context, rb_parse_options);
 }</pre>
           </div>
+          <p>Create a new schema parsed from the contents of <code>string</code></p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>string</code>: String containing <a href="../XML.html"><code>XML</code></a> to be parsed as a schema</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="Schema.html"><code>Nokogiri::XML::Schema</code></a></p>
+</dd>
+</dl>
         </div>
 
 
@@ -328,44 +357,57 @@ read_memory(int argc, VALUE *argv, VALUE klass)
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-valid-3F" class="method-detail ">
+      <div id="method-i-valid-3F" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">valid?</span><span class="method-args">(thing)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-valid-3F" title="Link to this method">
+                <span class="method-name">valid?</span>
+                <span class="method-args">(thing)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Returns true if <code>thing</code> is a valid <a href="Document.html"><code>Nokogiri::XML::Document</code></a> or file.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="valid-3F-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>(<span class="ruby-identifier">thing</span>)
   <span class="ruby-identifier">validate</span>(<span class="ruby-identifier">thing</span>).<span class="ruby-identifier">empty?</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Returns true if <code>thing</code> is a valid <a href="Document.html"><code>Nokogiri::XML::Document</code></a> or file.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-validate" class="method-detail ">
+      <div id="method-i-validate" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">validate</span><span class="method-args">(thing)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-validate" title="Link to this method">
+                <span class="method-name">validate</span>
+                <span class="method-args">(thing)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Validate <code>thing</code> against this schema.  <code>thing</code> can be a <a href="Document.html"><code>Nokogiri::XML::Document</code></a> object, or a filename.  An Array of <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> objects found while validating the <code>thing</code> is returned.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="validate-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate</span>(<span class="ruby-identifier">thing</span>)
@@ -378,6 +420,7 @@ read_memory(int argc, VALUE *argv, VALUE klass)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Validate <code>thing</code> against this schema.  <code>thing</code> can be a <a href="Document.html"><code>Nokogiri::XML::Document</code></a> object, or a filename.  An Array of <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> objects found while validating the <code>thing</code> is returned.</p>
         </div>
 
 

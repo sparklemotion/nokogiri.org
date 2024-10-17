@@ -7,6 +7,10 @@
 
 <title>module Nokogiri::HTML5::Node - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,module,Nokogiri::HTML5::Node">
+
+    <meta name="description" content="module Nokogiri::HTML5::Node: Since v1. HTML5 functionality is not available when running JRuby.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -100,7 +104,7 @@
 </nav>
 
 <main role="main" aria-labelledby="module-Nokogiri::HTML5::Node">
-  <h1 id="module-Nokogiri::HTML5::Node" class="module">
+  <h1 id="module-Nokogiri::HTML5::Node" class="anchor-link module">
     module Nokogiri::HTML5::Node
   </h1>
 
@@ -112,94 +116,110 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-fragment" class="method-detail ">
+      <div id="method-i-fragment" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">fragment</span><span class="method-args">(tags)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-fragment" title="Link to this method">
+                <span class="method-name">fragment</span>
+                <span class="method-args">(tags)</span>
+              </a>
+            </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="fragment-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
+
+  <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
           
             <div class="method-calls-super">
               Calls superclass method
               
             </div>
-
-          <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 70</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">tags</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
-
-  <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-keyword">self</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-inner_html" class="method-detail ">
+      <div id="method-i-inner_html" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">inner_html</span><span class="method-args">(options = {})</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-inner_html" title="Link to this method">
+                <span class="method-name">inner_html</span>
+                <span class="method-args">(options = {})</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="inner_html-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_html</span>(<span class="ruby-identifier">options</span> = {})
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
   <span class="ruby-identifier">result</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:preserve_newline</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">prepend_newline?</span> <span class="ruby-operator">?</span> <span class="ruby-string">+"\n"</span> <span class="ruby-operator">:</span> <span class="ruby-string">+""</span>
   <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">options</span>) }.<span class="ruby-identifier">join</span>
   <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-write_to" class="method-detail ">
-        <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">write_to</span><span class="method-args">(io, *options) { |config| ... }</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-        </div>
-
-        <div class="method-description">
           
             <div class="method-calls-super">
               Calls superclass method
               
             </div>
+        </div>
 
+
+      </div>
+
+      <div id="method-i-write_to" class="method-detail anchor-link ">
+        <div class="method-header">
+            <div class="method-heading">
+              <a href="#method-i-write_to" title="Link to this method">
+                <span class="method-name">write_to</span>
+                <span class="method-args">(io, *options) { |config| ... }</span>
+              </a>
+            </div>
+        </div>
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
+        <div class="method-description">
           <div class="method-source-code" id="write_to-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> {}
   <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">0</span>]
@@ -229,6 +249,11 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
         </div>
 
 

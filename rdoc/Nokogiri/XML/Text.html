@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::Text - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::Text">
+
+    <meta name="description" content="class Nokogiri::XML::Text: Wraps Text nodes.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -104,7 +108,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::Text">
-  <h1 id="class-Nokogiri::XML::Text" class="class">
+  <h1 id="class-Nokogiri::XML::Text" class="anchor-link class">
     class Nokogiri::XML::Text
   </h1>
 
@@ -114,30 +118,35 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              new(content, document)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(content, document)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="Text.html"><code>Text</code></a> element on the <code>document</code> with <code>content</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre>static VALUE
 rb_xml_text_s_new(int argc, VALUE *argv, VALUE klass)
@@ -151,6 +160,7 @@ rb_xml_text_s_new(int argc, VALUE *argv, VALUE klass)
 
   rb_scan_args(argc, argv, "2*", &amp;rb_string, &amp;rb_document, &amp;rb_rest);
 
+  Check_Type(rb_string, T_STRING);
   if (!rb_obj_is_kind_of(rb_document, cNokogiriXmlNode)) {
     rb_raise(rb_eTypeError,
              "expected second parameter to be a Nokogiri::XML::Document, received %"PRIsVALUE,
@@ -166,11 +176,8 @@ rb_xml_text_s_new(int argc, VALUE *argv, VALUE klass)
     c_document = noko_xml_document_unwrap(rb_document);
   }
 
-  c_node = xmlNewText((xmlChar *)StringValueCStr(rb_string));
-  c_node-&gt;doc = c_document;
-
+  c_node = xmlNewDocText(c_document, (xmlChar *)StringValueCStr(rb_string));
   noko_xml_document_pin_node(c_node);
-
   rb_node = noko_xml_node_wrap(klass, c_node) ;
   rb_obj_call_init(rb_node, argc, argv);
 
@@ -179,6 +186,7 @@ rb_xml_text_s_new(int argc, VALUE *argv, VALUE klass)
   return rb_node;
 }</pre>
           </div>
+          <p>Create a new <a href="Text.html"><code>Text</code></a> element on the <code>document</code> with <code>content</code></p>
         </div>
 
 
@@ -186,28 +194,35 @@ rb_xml_text_s_new(int argc, VALUE *argv, VALUE klass)
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-content-3D" class="method-detail ">
+      <div id="method-i-content-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">content=</span><span class="method-args">(string)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-content-3D" title="Link to this method">
+                <span class="method-name">content=</span>
+                <span class="method-args">(string)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="content-3D-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/text.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">content=</span>(<span class="ruby-identifier">string</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">native_content</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
         </div>
 
 

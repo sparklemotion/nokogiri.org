@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::Attr - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::Attr">
+
+    <meta name="description" content="class Nokogiri::XML::Attr: Attr represents a Attr node in an xml document.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -110,7 +114,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::Attr">
-  <h1 id="class-Nokogiri::XML::Attr" class="class">
+  <h1 id="class-Nokogiri::XML::Attr" class="anchor-link class">
     class Nokogiri::XML::Attr
   </h1>
 
@@ -120,30 +124,35 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              new(document, name)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(document, name)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="Attr.html"><code>Attr</code></a> element on the <code>document</code> with <code>name</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre>static VALUE
 new (int argc, VALUE *argv, VALUE klass)
@@ -181,6 +190,7 @@ new (int argc, VALUE *argv, VALUE klass)
   return rb_node;
 }</pre>
           </div>
+          <p>Create a new <a href="Attr.html"><code>Attr</code></a> element on the <code>document</code> with <code>name</code></p>
         </div>
 
 
@@ -188,17 +198,20 @@ new (int argc, VALUE *argv, VALUE klass)
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-content-3D" class="method-detail method-alias">
+      <div id="method-i-content-3D" class="method-detail anchor-link method-alias">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">content=</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-content-3D" title="Link to this method">
+                <span class="method-name">content=</span>
+              </a>
+            </div>
         </div>
+
 
 
 
@@ -207,17 +220,30 @@ new (int argc, VALUE *argv, VALUE klass)
         </div>
       </div>
 
-      <div id="method-i-deconstruct_keys" class="method-detail ">
+      <div id="method-i-deconstruct_keys" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              deconstruct_keys(array_of_names) → Hash
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-deconstruct_keys" title="Link to this method">
+                  <span class="method-callseq">
+                    deconstruct_keys(array_of_names) → Hash
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="deconstruct_keys-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/attr.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+  { <span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">namespace:</span> <span class="ruby-identifier">namespace</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Returns a hash describing the <a href="Attr.html"><code>Attr</code></a>, to use in pattern matching.</p>
 
 <p>Valid keys and their values:</p>
@@ -267,31 +293,29 @@ new (int argc, VALUE *argv, VALUE klass)
 </pre>
 
 <p>Since v1.14.0</p>
-
-          <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/attr.rb, line 55</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
-  { <span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">namespace:</span> <span class="ruby-identifier">namespace</span> }
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-value-3D" class="method-detail ">
+      <div id="method-i-value-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              value=(content)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-value-3D" title="Link to this method">
+                  <span class="method-callseq">
+                    value=(content)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Set the value for this <a href="Attr.html"><code>Attr</code></a> to <code>content</code>. Use ‘nil` to remove the value (e.g., a <a href="../HTML4.html"><code>HTML</code></a> boolean attribute).</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="value-3D-source">
             <pre>static VALUE
 set_value(VALUE self, VALUE content)
@@ -330,6 +354,7 @@ set_value(VALUE self, VALUE content)
   return content;
 }</pre>
           </div>
+          <p>Set the value for this <a href="Attr.html"><code>Attr</code></a> to <code>content</code>. Use ‘nil` to remove the value (e.g., a <a href="../HTML4.html"><code>HTML</code></a> boolean attribute).</p>
         </div>
 
         <div class="aliases">

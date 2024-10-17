@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::DocumentFragment - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::DocumentFragment">
+
+    <meta name="description" content="class Nokogiri::XML::DocumentFragment: DocumentFragment represents a DocumentFragment node in an xml document.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -143,7 +147,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::DocumentFragment">
-  <h1 id="class-Nokogiri::XML::DocumentFragment" class="class">
+  <h1 id="class-Nokogiri::XML::DocumentFragment" class="anchor-link class">
     class Nokogiri::XML::DocumentFragment
   </h1>
 
@@ -153,30 +157,35 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              new(document)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(document)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="DocumentFragment.html"><code>DocumentFragment</code></a> element on the <code>document</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre>static VALUE
 new (int argc, VALUE *argv, VALUE klass)
@@ -201,24 +210,29 @@ new (int argc, VALUE *argv, VALUE klass)
   return rb_node;
 }</pre>
           </div>
+          <p>Create a new <a href="DocumentFragment.html"><code>DocumentFragment</code></a> element on the <code>document</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(document, tags = nil, ctx = nil, options = ParseOptions::DEFAULT_XML) { |options| ... }</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(document, tags = nil, ctx = nil, options = ParseOptions::DEFAULT_XML) { |options| ... }</span>
+              </a>
+            </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Create a new <a href="DocumentFragment.html"><code>DocumentFragment</code></a> from <code>tags</code>.</p>
-
-<p>If <code>ctx</code> is present, it is used as a context node for the subtree created, e.g., namespaces will be resolved relative to <code>ctx</code>.</p>
-
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ctx</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>) <span class="ruby-comment"># rubocop:disable Lint/MissingSuper</span>
@@ -243,28 +257,38 @@ new (int argc, VALUE *argv, VALUE klass)
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">parent</span> = <span class="ruby-keyword">self</span> }
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a new <a href="DocumentFragment.html"><code>DocumentFragment</code></a> from <code>tags</code>.</p>
+
+<p>If <code>ctx</code> is present, it is used as a context node for the subtree created, e.g., namespaces will be resolved relative to <code>ctx</code>.</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-parse" class="method-detail ">
+      <div id="method-c-parse" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse</span><span class="method-args">(tags, options = ParseOptions::DEFAULT_XML, &amp;block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(tags, options = ParseOptions::DEFAULT_XML, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a <a href="DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a <a href="DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code></p>
         </div>
 
 
@@ -272,26 +296,29 @@ new (int argc, VALUE *argv, VALUE klass)
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-css" class="method-detail ">
+      <div id="method-i-css" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              css *rules, [namespace-bindings, custom-pseudo-class]
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-css" title="Link to this method">
+                  <span class="method-callseq">
+                    css *rules, [namespace-bindings, custom-pseudo-class]
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Search this fragment for <a href="../CSS.html"><code>CSS</code></a> <code>rules</code>. <code>rules</code> must be one or more <a href="../CSS.html"><code>CSS</code></a> selectors. For example:</p>
-
-<p>For more information see <a href="Searchable.html#method-i-css"><code>Nokogiri::XML::Searchable#css</code></a></p>
-
           <div class="method-source-code" id="css-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">css</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -302,22 +329,38 @@ new (int argc, VALUE *argv, VALUE klass)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Search this fragment for <a href="../CSS.html"><code>CSS</code></a> <code>rules</code>. <code>rules</code> must be one or more <a href="../CSS.html"><code>CSS</code></a> selectors. For example:</p>
+
+<p>For more information see <a href="Searchable.html#method-i-css"><code>Nokogiri::XML::Searchable#css</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-deconstruct" class="method-detail ">
+      <div id="method-i-deconstruct" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              deconstruct() → Array
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-deconstruct" title="Link to this method">
+                  <span class="method-callseq">
+                    deconstruct() → Array
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="deconstruct-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span>
+  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Returns the root nodes of this document fragment as an array, to use in pattern matching.</p>
 
 <p>💡 Note that text nodes are returned as well as elements. If you wish to operate only on root elements, you should deconstruct the array returned by <code>DocumentFragment#elements</code>.</p>
@@ -356,29 +399,28 @@ new (int argc, VALUE *argv, VALUE klass)
 </pre>
 
 <p>Since v1.14.0</p>
-
-          <div class="method-source-code" id="deconstruct-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 190</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span>
-  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_a</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-dup" class="method-detail ">
+      <div id="method-i-dup" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">dup</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-dup" title="Link to this method">
+                <span class="method-name">dup</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="dup-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
@@ -390,92 +432,117 @@ new (int argc, VALUE *argv, VALUE klass)
   <span class="ruby-identifier">new_fragment</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
         </div>
 
 
       </div>
 
-      <div id="method-i-errors" class="method-detail ">
+      <div id="method-i-errors" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">errors</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-errors" title="Link to this method">
+                <span class="method-name">errors</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>A list of <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> found when parsing a document</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="errors-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">errors</span>
   <span class="ruby-identifier">document</span>.<span class="ruby-identifier">errors</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>A list of <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> found when parsing a document</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-fragment" class="method-detail ">
+      <div id="method-i-fragment" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">fragment</span><span class="method-args">(data)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-fragment" title="Link to this method">
+                <span class="method-name">fragment</span>
+                <span class="method-args">(data)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="fragment-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 144</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">data</span>)
   <span class="ruby-identifier">document</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-identifier">data</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
         </div>
 
 
       </div>
 
-      <div id="method-i-name" class="method-detail ">
+      <div id="method-i-name" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">name</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-name" title="Link to this method">
+                <span class="method-name">name</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>return the name for <a href="DocumentFragment.html"><code>DocumentFragment</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="name-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">name</span>
   <span class="ruby-string">"#document-fragment"</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>return the name for <a href="DocumentFragment.html"><code>DocumentFragment</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-search" class="method-detail ">
+      <div id="method-i-search" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              search *paths, [namespace-bindings, xpath-variable-bindings, custom-handler-class]
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-search" title="Link to this method">
+                  <span class="method-callseq">
+                    search *paths, [namespace-bindings, xpath-variable-bindings, custom-handler-class]
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Search this fragment for <code>paths</code>. <code>paths</code> must be one or more <a href="XPath.html"><code>XPath</code></a> or <a href="../CSS.html"><code>CSS</code></a> queries.</p>
-
-<p>For more information see <a href="Searchable.html#method-i-search"><code>Nokogiri::XML::Searchable#search</code></a></p>
-
           <div class="method-source-code" id="search-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 121</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">rules</span>)
@@ -490,21 +557,27 @@ new (int argc, VALUE *argv, VALUE klass)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Search this fragment for <code>paths</code>. <code>paths</code> must be one or more <a href="XPath.html"><code>XPath</code></a> or <a href="../CSS.html"><code>CSS</code></a> queries.</p>
+
+<p>For more information see <a href="Searchable.html#method-i-search"><code>Nokogiri::XML::Searchable#search</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-serialize" class="method-detail method-alias">
+      <div id="method-i-serialize" class="method-detail anchor-link method-alias">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">serialize</span><span class="method-args">()</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-serialize" title="Link to this method">
+                <span class="method-name">serialize</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
+
 
         <div class="method-description">
           
-
         </div>
 
 
@@ -513,17 +586,23 @@ new (int argc, VALUE *argv, VALUE klass)
         </div>
       </div>
 
-      <div id="method-i-to_html" class="method-detail ">
+      <div id="method-i-to_html" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">to_html</span><span class="method-args">(*args)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-to_html" title="Link to this method">
+                <span class="method-name">to_html</span>
+                <span class="method-args">(*args)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to html See <a href="NodeSet.html#method-i-to_html"><code>Nokogiri::XML::NodeSet#to_html</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="to_html-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -535,28 +614,36 @@ new (int argc, VALUE *argv, VALUE klass)
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to html See <a href="NodeSet.html#method-i-to_html"><code>Nokogiri::XML::NodeSet#to_html</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-to_s" class="method-detail ">
+      <div id="method-i-to_s" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">to_s</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-to_s" title="Link to this method">
+                <span class="method-name">to_s</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to a string</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="to_s-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to a string</p>
         </div>
 
         <div class="aliases">
@@ -565,17 +652,23 @@ new (int argc, VALUE *argv, VALUE klass)
 
       </div>
 
-      <div id="method-i-to_xhtml" class="method-detail ">
+      <div id="method-i-to_xhtml" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">to_xhtml</span><span class="method-args">(*args)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-to_xhtml" title="Link to this method">
+                <span class="method-name">to_xhtml</span>
+                <span class="method-args">(*args)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to xhtml See <a href="NodeSet.html#method-i-to_xhtml"><code>Nokogiri::XML::NodeSet#to_xhtml</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="to_xhtml-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -587,28 +680,36 @@ new (int argc, VALUE *argv, VALUE klass)
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_xhtml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to xhtml See <a href="NodeSet.html#method-i-to_xhtml"><code>Nokogiri::XML::NodeSet#to_xhtml</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-to_xml" class="method-detail ">
+      <div id="method-i-to_xml" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">to_xml</span><span class="method-args">(*args)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-to_xml" title="Link to this method">
+                <span class="method-name">to_xml</span>
+                <span class="method-args">(*args)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to xml See <a href="NodeSet.html#method-i-to_xml"><code>Nokogiri::XML::NodeSet#to_xml</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="to_xml-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/document_fragment.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">children</span>.<span class="ruby-identifier">to_xml</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Convert this <a href="DocumentFragment.html"><code>DocumentFragment</code></a> to xml See <a href="NodeSet.html#method-i-to_xml"><code>Nokogiri::XML::NodeSet#to_xml</code></a></p>
         </div>
 
 

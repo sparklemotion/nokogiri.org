@@ -7,6 +7,10 @@
 
 <title>module Nokogiri::HTML5 - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,module,Nokogiri::HTML5">
+
+    <meta name="description" content="module Nokogiri::HTML5: Usage ⚠ HTML5 functionality is not available when running JRuby. Nokogiri.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
   var index_rel_prefix = "../";
@@ -130,7 +134,7 @@
 </nav>
 
 <main role="main" aria-labelledby="module-Nokogiri::HTML5">
-  <h1 id="module-Nokogiri::HTML5" class="module">
+  <h1 id="module-Nokogiri::HTML5" class="anchor-link module">
     module Nokogiri::HTML5
   </h1>
 
@@ -329,56 +333,70 @@ Content&lt;/listing&gt;
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-fragment" class="method-detail ">
+      <div id="method-c-fragment" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">fragment</span><span class="method-args">(string, encoding = nil, **options)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-fragment" title="Link to this method">
+                <span class="method-name">fragment</span>
+                <span class="method-args">(string, encoding = nil, **options)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse a fragment from <code>string</code>. Convenience method for {Nokogiri::HTML5::DocumentFragment.parse}.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 238</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 239</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse a fragment from <code>string</code>. Convenience method for {Nokogiri::HTML5::DocumentFragment.parse}.</p>
         </div>
 
 
       </div>
 
-      <div id="method-c-parse" class="method-detail ">
+      <div id="method-c-parse" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse</span><span class="method-args">(string, url = nil, encoding = nil, **options, &amp;block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(string, url = nil, encoding = nil, **options, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse an <a href="HTML4.html"><code>HTML</code></a> 5 document. Convenience method for {Nokogiri::HTML5::Document.parse}</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 232</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 233</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse an <a href="HTML4.html"><code>HTML</code></a> 5 document. Convenience method for {Nokogiri::HTML5::Document.parse}</p>
         </div>
 
 

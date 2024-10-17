@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::SAX::ParserContext - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::SAX::ParserContext">
+
+    <meta name="description" content="class Nokogiri::XML::SAX::ParserContext: Context for XML SAX parsers. This class is usually not instantiated by the user.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
   var index_rel_prefix = "../../../";
@@ -131,7 +135,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::SAX::ParserContext">
-  <h1 id="class-Nokogiri::XML::SAX::ParserContext" class="class">
+  <h1 id="class-Nokogiri::XML::SAX::ParserContext" class="anchor-link class">
     class Nokogiri::XML::SAX::ParserContext
   </h1>
 
@@ -141,30 +145,35 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-file" class="method-detail ">
+      <div id="method-c-file" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              parse_file(filename)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-file" title="Link to this method">
+                  <span class="method-callseq">
+                    parse_file(filename)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse file given <code>filename</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="file-source">
             <pre>static VALUE
 parse_file(VALUE klass, VALUE filename)
@@ -179,24 +188,30 @@ parse_file(VALUE klass, VALUE filename)
   return noko_xml_sax_parser_context_wrap(klass, ctxt);
 }</pre>
           </div>
+          <p>Parse file given <code>filename</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-io" class="method-detail ">
+      <div id="method-c-io" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              parse_io(io, encoding)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-io" title="Link to this method">
+                  <span class="method-callseq">
+                    parse_io(io, encoding)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse <code>io</code> object with <code>encoding</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="io-source">
             <pre>static VALUE
 parse_io(VALUE klass, VALUE io, VALUE encoding)
@@ -224,24 +239,30 @@ parse_io(VALUE klass, VALUE io, VALUE encoding)
   return noko_xml_sax_parser_context_wrap(klass, ctxt);
 }</pre>
           </div>
+          <p>Parse <code>io</code> object with <code>encoding</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-memory" class="method-detail ">
+      <div id="method-c-memory" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              parse_memory(data)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-memory" title="Link to this method">
+                  <span class="method-callseq">
+                    parse_memory(data)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse the <a href="../../XML.html"><code>XML</code></a> stored in memory in <code>data</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="memory-source">
             <pre>static VALUE
 parse_memory(VALUE klass, VALUE data)
@@ -264,22 +285,29 @@ parse_memory(VALUE klass, VALUE data)
   return noko_xml_sax_parser_context_wrap(klass, ctxt);
 }</pre>
           </div>
+          <p>Parse the <a href="../../XML.html"><code>XML</code></a> stored in memory in <code>data</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(thing, encoding = "UTF-8")</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(thing, encoding = "UTF-8")</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser_context.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">thing</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
@@ -290,6 +318,7 @@ parse_memory(VALUE klass, VALUE data)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          
         </div>
 
 
@@ -297,24 +326,29 @@ parse_memory(VALUE klass, VALUE data)
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-column" class="method-detail ">
+      <div id="method-i-column" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              column
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-column" title="Link to this method">
+                  <span class="method-callseq">
+                    column
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the current column the parser context is processing.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="column-source">
             <pre>static VALUE
 column(VALUE self)
@@ -330,24 +364,30 @@ column(VALUE self)
   return Qnil;
 }</pre>
           </div>
+          <p>Get the current column the parser context is processing.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-line" class="method-detail ">
+      <div id="method-i-line" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              line
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-line" title="Link to this method">
+                  <span class="method-callseq">
+                    line
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the current line the parser context is processing.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="line-source">
             <pre>static VALUE
 line(VALUE self)
@@ -363,24 +403,30 @@ line(VALUE self)
   return Qnil;
 }</pre>
           </div>
+          <p>Get the current line the parser context is processing.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-parse_with" class="method-detail ">
+      <div id="method-i-parse_with" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              parse_with(sax_handler)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-parse_with" title="Link to this method">
+                  <span class="method-callseq">
+                    parse_with(sax_handler)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Use <code>sax_handler</code> and parse the current document</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse_with-source">
             <pre>static VALUE
 parse_with(VALUE self, VALUE sax_handler)
@@ -405,24 +451,30 @@ parse_with(VALUE self, VALUE sax_handler)
   return Qnil;
 }</pre>
           </div>
+          <p>Use <code>sax_handler</code> and parse the current document</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-recovery" class="method-detail ">
+      <div id="method-i-recovery" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              recovery
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-recovery" title="Link to this method">
+                  <span class="method-callseq">
+                    recovery
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Should this parser recover from structural errors? It will not stop processing file on structural errors if set to true</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="recovery-source">
             <pre>static VALUE
 get_recovery(VALUE self)
@@ -436,24 +488,30 @@ get_recovery(VALUE self)
   }
 }</pre>
           </div>
+          <p>Should this parser recover from structural errors? It will not stop processing file on structural errors if set to true</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-recovery-3D" class="method-detail ">
+      <div id="method-i-recovery-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              recovery=(boolean)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-recovery-3D" title="Link to this method">
+                  <span class="method-callseq">
+                    recovery=(boolean)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Should this parser recover from structural errors? It will not stop processing file on structural errors if set to true</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="recovery-3D-source">
             <pre>static VALUE
 set_recovery(VALUE self, VALUE value)
@@ -469,24 +527,30 @@ set_recovery(VALUE self, VALUE value)
   return value;
 }</pre>
           </div>
+          <p>Should this parser recover from structural errors? It will not stop processing file on structural errors if set to true</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-replace_entities" class="method-detail ">
+      <div id="method-i-replace_entities" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              replace_entities
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-replace_entities" title="Link to this method">
+                  <span class="method-callseq">
+                    replace_entities
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="replace_entities-source">
             <pre>static VALUE
 get_replace_entities(VALUE self)
@@ -500,24 +564,30 @@ get_replace_entities(VALUE self)
   }
 }</pre>
           </div>
+          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-replace_entities-3D" class="method-detail ">
+      <div id="method-i-replace_entities-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              replace_entities=(boolean)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-replace_entities-3D" title="Link to this method">
+                  <span class="method-callseq">
+                    replace_entities=(boolean)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="replace_entities-3D-source">
             <pre>static VALUE
 set_replace_entities(VALUE self, VALUE value)
@@ -533,6 +603,7 @@ set_replace_entities(VALUE self, VALUE value)
   return value;
 }</pre>
           </div>
+          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
         </div>
 
 

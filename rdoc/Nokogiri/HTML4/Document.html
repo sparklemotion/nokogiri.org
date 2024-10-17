@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::HTML4::Document - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::HTML4::Document">
+
+    <meta name="description" content="Documentation for the Nokogiri::HTML4::Document class">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -122,7 +126,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::HTML4::Document">
-  <h1 id="class-Nokogiri::HTML4::Document" class="class">
+  <h1 id="class-Nokogiri::HTML4::Document" class="anchor-link class">
     class Nokogiri::HTML4::Document
   </h1>
 
@@ -130,28 +134,34 @@
     
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-parse" class="method-detail ">
+      <div id="method-c-parse" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">parse</span><span class="method-args">(string_or_io, url = nil, encoding = nil, options = XML::ParseOptions::DEFAULT_HTML) { |options| ... }</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(string_or_io, url = nil, encoding = nil, options = XML::ParseOptions::DEFAULT_HTML) { |options| ... }</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Parse <a href="../HTML4.html"><code>HTML</code></a>.  <code>string_or_io</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO. <code>url</code> is resource where this document is located.  <code>encoding</code> is the encoding that should be used when processing the document. <code>options</code> is a number that sets options in the parser, such as Nokogiri::XML::ParseOptions::RECOVER.  See the constants in <a href="../XML/ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="parse-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 172</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>)
@@ -194,6 +204,7 @@
   <span class="ruby-identifier">read_memory</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_i</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Parse <a href="../HTML4.html"><code>HTML</code></a>.  <code>string_or_io</code> may be a String, or any object that responds to <em>read</em> and <em>close</em> such as an IO, or StringIO. <code>url</code> is resource where this document is located.  <code>encoding</code> is the encoding that should be used when processing the document. <code>options</code> is a number that sets options in the parser, such as Nokogiri::XML::ParseOptions::RECOVER.  See the constants in <a href="../XML/ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>.</p>
         </div>
 
 
@@ -201,44 +212,57 @@
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-fragment" class="method-detail ">
+      <div id="method-i-fragment" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">fragment</span><span class="method-args">(tags = nil)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-fragment" title="Link to this method">
+                <span class="method-name">fragment</span>
+                <span class="method-args">(tags = nil)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a <a href="../XML/DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="fragment-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 149</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-identifier">root</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a <a href="../XML/DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-meta_encoding" class="method-detail ">
+      <div id="method-i-meta_encoding" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">meta_encoding</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-meta_encoding" title="Link to this method">
+                <span class="method-name">meta_encoding</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the meta tag encoding for this document.  If there is no meta tag, then nil is returned.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="meta_encoding-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">meta_encoding</span>
@@ -249,30 +273,29 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Get the meta tag encoding for this document.  If there is no meta tag, then nil is returned.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-meta_encoding-3D" class="method-detail ">
+      <div id="method-i-meta_encoding-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">meta_encoding=</span><span class="method-args">(encoding)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-meta_encoding-3D" title="Link to this method">
+                <span class="method-name">meta_encoding=</span>
+                <span class="method-args">(encoding)</span>
+              </a>
+            </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Set the meta tag encoding for this document.</p>
-
-<p>If an meta encoding tag is already present, its content is replaced with the given text.</p>
-
-<p>Otherwise, this method tries to create one at an appropriate place supplying head and/or html elements as necessary, which is inside a head element if any, and before any text node or content element (typically &lt;body&gt;) if any.</p>
-
-<p>The result when trying to set an encoding that is different from the document encoding is undefined.</p>
-
-<p>Beware in CRuby, that libxml2 automatically inserts a meta tag into a head element.</p>
-
           <div class="method-source-code" id="meta_encoding-3D-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">meta_encoding=</span>(<span class="ruby-identifier">encoding</span>)
@@ -299,20 +322,44 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Set the meta tag encoding for this document.</p>
+
+<p>If an meta encoding tag is already present, its content is replaced with the given text.</p>
+
+<p>Otherwise, this method tries to create one at an appropriate place supplying head and/or html elements as necessary, which is inside a head element if any, and before any text node or content element (typically &lt;body&gt;) if any.</p>
+
+<p>The result when trying to set an encoding that is different from the document encoding is undefined.</p>
+
+<p>Beware in CRuby, that libxml2 automatically inserts a meta tag into a head element.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-serialize" class="method-detail ">
+      <div id="method-i-serialize" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">serialize</span><span class="method-args">(options = {})</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-serialize" title="Link to this method">
+                <span class="method-name">serialize</span>
+                <span class="method-args">(options = {})</span>
+              </a>
+            </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="serialize-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">serialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <p>Serialize Node using <code>options</code>. Save options can also be set using a block.</p>
 
 <p>See also <a href="../XML/Node/SaveOptions.html"><code>Nokogiri::XML::Node::SaveOptions</code></a> and Node.</p>
@@ -332,56 +379,57 @@
               Calls superclass method
               
             </div>
-
-          <div class="method-source-code" id="serialize-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 142</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">serialize</span>(<span class="ruby-identifier">options</span> = {})
-  <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_with</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">SaveOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>
-  <span class="ruby-keyword">super</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-title" class="method-detail ">
+      <div id="method-i-title" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">title</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-title" title="Link to this method">
+                <span class="method-name">title</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the title string of this document.  Return nil if there is no title tag.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="title-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">title</span>
   (<span class="ruby-identifier">title</span> = <span class="ruby-identifier">at_xpath</span>(<span class="ruby-string">"//title"</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">title</span>.<span class="ruby-identifier">inner_text</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Get the title string of this document.  Return nil if there is no title tag.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-title-3D" class="method-detail ">
+      <div id="method-i-title-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">title=</span><span class="method-args">(text)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-title-3D" title="Link to this method">
+                <span class="method-name">title=</span>
+                <span class="method-args">(text)</span>
+              </a>
+            </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Set the title string of this document.</p>
-
-<p>If a title element is already present, its content is replaced with the given text.</p>
-
-<p>Otherwise, this method tries to create one at an appropriate place supplying head and/or html elements as necessary, which is inside a head element if any, right after a meta encoding/charset tag if any, and before any text node or content element (typically &lt;body&gt;) if any.</p>
-
           <div class="method-source-code" id="title-3D-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">title=</span>(<span class="ruby-identifier">text</span>)
@@ -402,22 +450,40 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Set the title string of this document.</p>
+
+<p>If a title element is already present, its content is replaced with the given text.</p>
+
+<p>Otherwise, this method tries to create one at an appropriate place supplying head and/or html elements as necessary, which is inside a head element if any, right after a meta encoding/charset tag if any, and before any text node or content element (typically &lt;body&gt;) if any.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-xpath_doctype" class="method-detail ">
+      <div id="method-i-xpath_doctype" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              xpath_doctype() → Nokogiri::CSS::XPathVisitor::DoctypeConfig
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-xpath_doctype" title="Link to this method">
+                  <span class="method-callseq">
+                    xpath_doctype() → Nokogiri::CSS::XPathVisitor::DoctypeConfig
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="xpath_doctype-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
+  <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
           <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -427,13 +493,6 @@
 </dl>
 
 <p>See XPathVisitor for more information.</p>
-
-          <div class="method-source-code" id="xpath_doctype-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document.rb, line 159</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
-  <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
         </div>
 
 

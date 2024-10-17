@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::ElementContent - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::ElementContent">
+
+    <meta name="description" content='class Nokogiri::XML::ElementContent: TEST-STYLE PIDATA?&gt; &lt;!DOCTYPE staff SYSTEM "staff. ElementContent represents the binary tree inside the &lt;!ELEMENT&gt; tag shown above that lists the po'>
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -123,7 +127,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::ElementContent">
-  <h1 id="class-Nokogiri::XML::ElementContent" class="class">
+  <h1 id="class-Nokogiri::XML::ElementContent" class="anchor-link class">
     class Nokogiri::XML::ElementContent
   </h1>
 
@@ -141,7 +145,7 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
     <section class="constants-list">
@@ -197,9 +201,12 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-document" class="method-detail">
+      <div id="attribute-i-document" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">document</span><span class="attribute-access-type">[R]</span>
+          <a href="#attribute-i-document" title="Link to this attribute">
+            <span class="method-name">document</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -209,44 +216,69 @@
     </section>
 
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-children" class="method-detail ">
+      <div id="method-i-children" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">children</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-children" title="Link to this method">
+                <span class="method-name">children</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Get the children of this <a href="ElementContent.html"><code>ElementContent</code></a> node</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="children-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/element_content.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">children</span>
   [<span class="ruby-identifier">c1</span>, <span class="ruby-identifier">c2</span>].<span class="ruby-identifier">compact</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Get the children of this <a href="ElementContent.html"><code>ElementContent</code></a> node</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-name" class="method-detail ">
+      <div id="method-i-name" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              name → String
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-name" title="Link to this method">
+                  <span class="method-callseq">
+                    name → String
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="name-source">
+            <pre>static VALUE
+get_name(VALUE self)
+{
+  xmlElementContentPtr elem;
+  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+
+  if (!elem-&gt;name) { return Qnil; }
+  return NOKOGIRI_STR_NEW2(elem-&gt;name);
+}</pre>
+          </div>
           <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -254,34 +286,39 @@
 <p>The content element’s <code>name</code></p>
 </dd>
 </dl>
-
-          <div class="method-source-code" id="name-source">
-            <pre>static VALUE
-get_name(VALUE self)
-{
-  xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
-
-  if (!elem-&gt;name) { return Qnil; }
-  return NOKOGIRI_STR_NEW2(elem-&gt;name);
-}</pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-occur" class="method-detail ">
+      <div id="method-i-occur" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              occur → Integer
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-occur" title="Link to this method">
+                  <span class="method-callseq">
+                    occur → Integer
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="occur-source">
+            <pre>static VALUE
+get_occur(VALUE self)
+{
+  xmlElementContentPtr elem;
+  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+
+  return INT2NUM(elem-&gt;ocur);
+}</pre>
+          </div>
           <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -289,33 +326,41 @@ get_name(VALUE self)
 <p>The content element’s <code>occur</code> flag. Possible values are <code>ONCE</code>, <code>OPT</code>, <code>MULT</code> or <code>PLUS</code>.</p>
 </dd>
 </dl>
-
-          <div class="method-source-code" id="occur-source">
-            <pre>static VALUE
-get_occur(VALUE self)
-{
-  xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
-
-  return INT2NUM(elem-&gt;ocur);
-}</pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-prefix" class="method-detail ">
+      <div id="method-i-prefix" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              prefix → String
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-prefix" title="Link to this method">
+                  <span class="method-callseq">
+                    prefix → String
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="prefix-source">
+            <pre>static VALUE
+get_prefix(VALUE self)
+{
+  xmlElementContentPtr elem;
+  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+
+  if (!elem-&gt;prefix) { return Qnil; }
+
+  return NOKOGIRI_STR_NEW2(elem-&gt;prefix);
+}</pre>
+          </div>
           <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -323,35 +368,39 @@ get_occur(VALUE self)
 <p>The content element’s namespace <code>prefix</code>.</p>
 </dd>
 </dl>
-
-          <div class="method-source-code" id="prefix-source">
-            <pre>static VALUE
-get_prefix(VALUE self)
-{
-  xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
-
-  if (!elem-&gt;prefix) { return Qnil; }
-
-  return NOKOGIRI_STR_NEW2(elem-&gt;prefix);
-}</pre>
-          </div>
         </div>
 
 
       </div>
 
-      <div id="method-i-type" class="method-detail ">
+      <div id="method-i-type" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              type → Integer
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-type" title="Link to this method">
+                  <span class="method-callseq">
+                    type → Integer
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
+          <div class="method-source-code" id="type-source">
+            <pre>static VALUE
+get_type(VALUE self)
+{
+  xmlElementContentPtr elem;
+  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+
+  return INT2NUM(elem-&gt;type);
+}</pre>
+          </div>
           <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -359,17 +408,6 @@ get_prefix(VALUE self)
 <p>The content element’s <code>type</code>. Possible values are <code>PCDATA</code>, <code>ELEMENT</code>, <code>SEQ</code>, or <code>OR</code>.</p>
 </dd>
 </dl>
-
-          <div class="method-source-code" id="type-source">
-            <pre>static VALUE
-get_type(VALUE self)
-{
-  xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
-
-  return INT2NUM(elem-&gt;type);
-}</pre>
-          </div>
         </div>
 
 

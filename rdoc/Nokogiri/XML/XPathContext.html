@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::XPathContext - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::XPathContext">
+
+    <meta name="description" content="class Nokogiri::XML::XPathContext: XPathContext is the entry point for searching a +Document+ by using XPath.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -113,7 +117,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::XPathContext">
-  <h1 id="class-Nokogiri::XML::XPathContext" class="class">
+  <h1 id="class-Nokogiri::XML::XPathContext" class="anchor-link class">
     class Nokogiri::XML::XPathContext
   </h1>
 
@@ -123,30 +127,35 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              new(node)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(node)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="XPathContext.html"><code>XPathContext</code></a> with <code>node</code> as the context node.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre>static VALUE
 rb_xml_xpath_context_new(VALUE klass, VALUE rb_node)
@@ -188,6 +197,7 @@ rb_xml_xpath_context_new(VALUE klass, VALUE rb_node)
   return rb_context;
 }</pre>
           </div>
+          <p>Create a new <a href="XPathContext.html"><code>XPathContext</code></a> with <code>node</code> as the context node.</p>
         </div>
 
 
@@ -195,33 +205,29 @@ rb_xml_xpath_context_new(VALUE klass, VALUE rb_node)
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-evaluate" class="method-detail ">
+      <div id="method-i-evaluate" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              evaluate(search_path, handler = nil) → Object
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-evaluate" title="Link to this method">
+                  <span class="method-callseq">
+                    evaluate(search_path, handler = nil) → Object
+                  </span>
+                </a>
+              </div>
         </div>
 
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
         <div class="method-description">
-          <p>Evaluate the <code>search_path</code> query.</p>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p>an object of the appropriate type for the query, which could be <code>NodeSet</code>, a <code>String</code>,</p>
-</dd>
-</dl>
-
-<p>a <code>Float</code>, or a boolean.</p>
-
           <div class="method-source-code" id="evaluate-source">
             <pre>static VALUE
 rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE rb_context)
@@ -278,22 +284,38 @@ rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE rb_context)
   return retval;
 }</pre>
           </div>
+          <p>Evaluate the <code>search_path</code> query.</p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>an object of the appropriate type for the query, which could be <code>NodeSet</code>, a <code>String</code>,</p>
+</dd>
+</dl>
+
+<p>a <code>Float</code>, or a boolean.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-register_namespaces" class="method-detail ">
+      <div id="method-i-register_namespaces" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">register_namespaces</span><span class="method-args">(namespaces)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-register_namespaces" title="Link to this method">
+                <span class="method-name">register_namespaces</span>
+                <span class="method-args">(namespaces)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Register namespaces in <code>namespaces</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="register_namespaces-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/xpath_context.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">register_namespaces</span>(<span class="ruby-identifier">namespaces</span>)
@@ -303,31 +325,30 @@ rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE rb_context)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Register namespaces in <code>namespaces</code></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-register_ns" class="method-detail ">
+      <div id="method-i-register_ns" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              register_ns(prefix, uri) → Nokogiri::XML::XPathContext
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-register_ns" title="Link to this method">
+                  <span class="method-callseq">
+                    register_ns(prefix, uri) → Nokogiri::XML::XPathContext
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Register the namespace with <code>prefix</code> and <code>uri</code> for use in future queries.</p>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><code>self</code></p>
-</dd>
-</dl>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="register_ns-source">
             <pre>static VALUE
 rb_xml_xpath_context_register_ns(VALUE rb_context, VALUE prefix, VALUE uri)
@@ -348,23 +369,7 @@ rb_xml_xpath_context_register_ns(VALUE rb_context, VALUE prefix, VALUE uri)
   return rb_context;
 }</pre>
           </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-register_variable" class="method-detail ">
-        <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              register_variable(name, value) → Nokogiri::XML::XPathContext
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-        </div>
-
-        <div class="method-description">
-          <p>Register the variable <code>name</code> with <code>value</code> for use in future queries.</p>
+          <p>Register the namespace with <code>prefix</code> and <code>uri</code> for use in future queries.</p>
 <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -372,7 +377,29 @@ rb_xml_xpath_context_register_ns(VALUE rb_context, VALUE prefix, VALUE uri)
 <p><code>self</code></p>
 </dd>
 </dl>
+        </div>
 
+
+      </div>
+
+      <div id="method-i-register_variable" class="method-detail anchor-link ">
+        <div class="method-header">
+              <div class="method-heading">
+                <a href="#method-i-register_variable" title="Link to this method">
+                  <span class="method-callseq">
+                    register_variable(name, value) → Nokogiri::XML::XPathContext
+                  </span>
+                </a>
+              </div>
+        </div>
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
+        <div class="method-description">
           <div class="method-source-code" id="register_variable-source">
             <pre>static VALUE
 rb_xml_xpath_context_register_variable(VALUE rb_context, VALUE name, VALUE value)
@@ -398,6 +425,14 @@ rb_xml_xpath_context_register_variable(VALUE rb_context, VALUE name, VALUE value
   return rb_context;
 }</pre>
           </div>
+          <p>Register the variable <code>name</code> with <code>value</code> for use in future queries.</p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><code>self</code></p>
+</dd>
+</dl>
         </div>
 
 

@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::SAX::PushParser - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::SAX::PushParser">
+
+    <meta name="description" content="class Nokogiri::XML::SAX::PushParser: PushParser can parse a document that is fed to it manually. Document object which will be called with SAX events as the document is being parsed.">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
   var index_rel_prefix = "../../../";
@@ -122,7 +126,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::SAX::PushParser">
-  <h1 id="class-Nokogiri::XML::SAX::PushParser" class="class">
+  <h1 id="class-Nokogiri::XML::SAX::PushParser" class="anchor-link class">
     class Nokogiri::XML::SAX::PushParser
   </h1>
 
@@ -148,7 +152,7 @@
 
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
@@ -157,9 +161,12 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-document" class="method-detail">
+      <div id="attribute-i-document" class="method-detail anchor-link">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">document</span><span class="attribute-access-type">[RW]</span>
+          <a href="#attribute-i-document" title="Link to this attribute">
+            <span class="method-name">document</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
         </div>
 
         <div class="method-description">
@@ -169,22 +176,28 @@
     </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">new</span><span class="method-args">(doc = XML::SAX::Document.new, file_name = nil, encoding = "UTF-8")</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(doc = XML::SAX::Document.new, file_name = nil, encoding = "UTF-8")</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Create a new <a href="PushParser.html"><code>PushParser</code></a> with <code>doc</code> as the <a href="../SAX.html"><code>SAX</code></a> <a href="Document.html"><code>Document</code></a>, providing an optional <code>file_name</code> and <code>encoding</code></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/push_parser.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">file_name</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
@@ -196,6 +209,7 @@
   <span class="ruby-identifier">initialize_native</span>(<span class="ruby-ivar">@sax_parser</span>, <span class="ruby-identifier">file_name</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Create a new <a href="PushParser.html"><code>PushParser</code></a> with <code>doc</code> as the <a href="../SAX.html"><code>SAX</code></a> <a href="Document.html"><code>Document</code></a>, providing an optional <code>file_name</code> and <code>encoding</code></p>
         </div>
 
 
@@ -203,21 +217,24 @@
 
     </section>
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-3C-3C" class="method-detail method-alias">
+      <div id="method-i-3C-3C" class="method-detail anchor-link method-alias">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">&lt;&lt;</span><span class="method-args">(chunk, last_chunk = false)</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-3C-3C" title="Link to this method">
+                <span class="method-name">&lt;&lt;</span>
+                <span class="method-args">(chunk, last_chunk = false)</span>
+              </a>
+            </div>
         </div>
+
 
         <div class="method-description">
           
-
         </div>
 
 
@@ -226,39 +243,52 @@
         </div>
       </div>
 
-      <div id="method-i-finish" class="method-detail ">
+      <div id="method-i-finish" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">finish</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-finish" title="Link to this method">
+                <span class="method-name">finish</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Finish the parsing.  This method is only necessary for <a href="Document.html#method-i-end_document"><code>Nokogiri::XML::SAX::Document#end_document</code></a> to be called.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="finish-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/push_parser.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">finish</span>
   <span class="ruby-identifier">write</span>(<span class="ruby-string">""</span>, <span class="ruby-keyword">true</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Finish the parsing.  This method is only necessary for <a href="Document.html#method-i-end_document"><code>Nokogiri::XML::SAX::Document#end_document</code></a> to be called.</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-options" class="method-detail ">
+      <div id="method-i-options" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">options</span><span class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-options" title="Link to this method">
+                <span class="method-name">options</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="options-source">
             <pre>static VALUE
 get_options(VALUE self)
@@ -270,22 +300,29 @@ get_options(VALUE self)
   return INT2NUM(ctx-&gt;options);
 }</pre>
           </div>
+          
         </div>
 
 
       </div>
 
-      <div id="method-i-options-3D" class="method-detail ">
+      <div id="method-i-options-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">options=</span><span class="method-args">(p1)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-options-3D" title="Link to this method">
+                <span class="method-name">options=</span>
+                <span class="method-args">(p1)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="options-3D-source">
             <pre>static VALUE
 set_options(VALUE self, VALUE options)
@@ -301,24 +338,30 @@ set_options(VALUE self, VALUE options)
   return Qnil;
 }</pre>
           </div>
+          
         </div>
 
 
       </div>
 
-      <div id="method-i-replace_entities" class="method-detail ">
+      <div id="method-i-replace_entities" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              replace_entities
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-replace_entities" title="Link to this method">
+                  <span class="method-callseq">
+                    replace_entities
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="replace_entities-source">
             <pre>static VALUE
 get_replace_entities(VALUE self)
@@ -334,24 +377,30 @@ get_replace_entities(VALUE self)
   }
 }</pre>
           </div>
+          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-replace_entities-3D" class="method-detail ">
+      <div id="method-i-replace_entities-3D" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              replace_entities=(boolean)
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-replace_entities-3D" title="Link to this method">
+                  <span class="method-callseq">
+                    replace_entities=(boolean)
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="replace_entities-3D-source">
             <pre>static VALUE
 set_replace_entities(VALUE self, VALUE value)
@@ -369,28 +418,36 @@ set_replace_entities(VALUE self, VALUE value)
   return value;
 }</pre>
           </div>
+          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
         </div>
 
 
       </div>
 
-      <div id="method-i-write" class="method-detail ">
+      <div id="method-i-write" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-name">write</span><span class="method-args">(chunk, last_chunk = false)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+            <div class="method-heading">
+              <a href="#method-i-write" title="Link to this method">
+                <span class="method-name">write</span>
+                <span class="method-args">(chunk, last_chunk = false)</span>
+              </a>
+            </div>
         </div>
 
-        <div class="method-description">
-          <p>Write a <code>chunk</code> of <a href="../../XML.html"><code>XML</code></a> to the <a href="PushParser.html"><code>PushParser</code></a>.  Any callback methods that can be called will be called immediately.</p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="write-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/push_parser.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write</span>(<span class="ruby-identifier">chunk</span>, <span class="ruby-identifier">last_chunk</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">native_write</span>(<span class="ruby-identifier">chunk</span>, <span class="ruby-identifier">last_chunk</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+          <p>Write a <code>chunk</code> of <a href="../../XML.html"><code>XML</code></a> to the <a href="PushParser.html"><code>PushParser</code></a>.  Any callback methods that can be called will be called immediately.</p>
         </div>
 
         <div class="aliases">

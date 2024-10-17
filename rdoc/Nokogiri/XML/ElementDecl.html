@@ -7,6 +7,10 @@
 
 <title>class Nokogiri::XML::ElementDecl - RDoc Documentation</title>
 
+  <meta name="keywords" content="ruby,class,Nokogiri::XML::ElementDecl">
+
+    <meta name="description" content="Documentation for the Nokogiri::XML::ElementDecl class">
+
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
   var index_rel_prefix = "../../";
@@ -107,7 +111,7 @@
 </nav>
 
 <main role="main" aria-labelledby="class-Nokogiri::XML::ElementDecl">
-  <h1 id="class-Nokogiri::XML::ElementDecl" class="class">
+  <h1 id="class-Nokogiri::XML::ElementDecl" class="anchor-link class">
     class Nokogiri::XML::ElementDecl
   </h1>
 
@@ -115,36 +119,35 @@
     
   </section>
 
-  <section id="5Buntitled-5D" class="documentation-section">
+  <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
 
 
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-content" class="method-detail ">
+      <div id="method-i-content" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              content → Nokogiri::XML::ElementContent
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-content" title="Link to this method">
+                  <span class="method-callseq">
+                    content → Nokogiri::XML::ElementContent
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p>The root of this element declaration’s content tree.</p>
-</dd>
-</dl>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="content-source">
             <pre>static VALUE
 content(VALUE self)
@@ -160,24 +163,36 @@ content(VALUE self)
          );
 }</pre>
           </div>
+          <dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>The root of this element declaration’s content tree.</p>
+</dd>
+</dl>
         </div>
 
 
       </div>
 
-      <div id="method-i-element_type" class="method-detail ">
+      <div id="method-i-element_type" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              element_type → Integer
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-element_type" title="Link to this method">
+                  <span class="method-callseq">
+                    element_type → Integer
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <p>The <a href="ElementDecl.html#method-i-element_type"><code>element_type</code></a></p>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="element_type-source">
             <pre>static VALUE
 element_type(VALUE self)
@@ -187,30 +202,30 @@ element_type(VALUE self)
   return INT2NUM(node-&gt;etype);
 }</pre>
           </div>
+          <p>The <a href="ElementDecl.html#method-i-element_type"><code>element_type</code></a></p>
         </div>
 
 
       </div>
 
-      <div id="method-i-prefix" class="method-detail ">
+      <div id="method-i-prefix" class="method-detail anchor-link ">
         <div class="method-header">
-          <div class="method-heading">
-            <span class="method-callseq">
-              prefix → String
-            </span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+              <div class="method-heading">
+                <a href="#method-i-prefix" title="Link to this method">
+                  <span class="method-callseq">
+                    prefix → String
+                  </span>
+                </a>
+              </div>
         </div>
 
-        <div class="method-description">
-          <dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p>The namespace <code>prefix</code> for this element declaration.</p>
-</dd>
-</dl>
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
 
+        <div class="method-description">
           <div class="method-source-code" id="prefix-source">
             <pre>static VALUE
 prefix(VALUE self)
@@ -223,6 +238,13 @@ prefix(VALUE self)
   return NOKOGIRI_STR_NEW2(node-&gt;prefix);
 }</pre>
           </div>
+          <dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>The namespace <code>prefix</code> for this element declaration.</p>
+</dd>
+</dl>
         </div>
 
 
