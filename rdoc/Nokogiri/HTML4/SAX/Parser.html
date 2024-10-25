@@ -9,7 +9,7 @@
 
   <meta name="keywords" content="ruby,class,Nokogiri::HTML4::SAX::Parser">
 
-    <meta name="description" content="class Nokogiri::HTML4::SAX::Parser: Parser as of v1. This class lets you perform SAX style parsing on HTML with HTML error correction.">
+    <meta name="description" content="class Nokogiri::HTML4::SAX::Parser: Parser as of v1. This parser is a SAX style parser that reads its input as it deems necessary.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
@@ -82,23 +82,6 @@
   
   
   
-<!-- Method Quickref -->
-<div id="method-list-section" class="nav-section">
-  <h3>Methods</h3>
-
-  <ul class="link-list" role="directory">
-    <li>
-<a href="#method-i-parse_file">#parse_file</a>
-    </li>
-<li>
-<a href="#method-i-parse_io">#parse_io</a>
-    </li>
-<li>
-<a href="#method-i-parse_memory">#parse_memory</a>
-  </li>
-</ul>
-</div>
-
 
   <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
@@ -119,21 +102,29 @@
     
 <p>💡 This class is an alias for <a href="Parser.html"><code>Nokogiri::HTML4::SAX::Parser</code></a> as of v1.12.0.</p>
 
-<p>This class lets you perform <a href="../SAX.html"><code>SAX</code></a> style parsing on <a href="../../HTML4.html"><code>HTML</code></a> with <a href="../../HTML4.html"><code>HTML</code></a> error correction.</p>
+<p>This parser is a <a href="../SAX.html"><code>SAX</code></a> style parser that reads its input as it deems necessary. The parser takes a <a href="../../XML/SAX/Document.html"><code>Nokogiri::XML::SAX::Document</code></a>, an optional encoding, then given an <a href="../../HTML4.html"><code>HTML</code></a> input, sends messages to the <a href="../../XML/SAX/Document.html"><code>Nokogiri::XML::SAX::Document</code></a>.</p>
+
+<p>⚠ This is an <a href="../../HTML4.html"><code>HTML4</code></a> parser and so may not support some <a href="../../HTML5.html"><code>HTML5</code></a> features and behaviors.</p>
 
 <p>Here is a basic usage example:</p>
 
-<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyDoc</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyHandler</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">attributes</span> = []
     <span class="ruby-identifier">puts</span> <span class="ruby-node">"found a #{name}"</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span>
 
-<span class="ruby-identifier">parser</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">MyDoc</span>.<span class="ruby-identifier">new</span>)
-<span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">ARGV</span>[<span class="ruby-value">0</span>], <span class="ruby-value">mode:</span> <span class="ruby-string">'rb'</span>))
+<span class="ruby-identifier">parser</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">MyHandler</span>.<span class="ruby-identifier">new</span>)
+
+<span class="ruby-comment"># Hand an IO object to the parser, which will read the HTML from the IO.</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path_to_html</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">f</span>)
+<span class="ruby-keyword">end</span>
 </pre>
 
-<p>For more information on <a href="../SAX.html"><code>SAX</code></a> parsers, see <a href="../../XML/SAX.html"><code>Nokogiri::XML::SAX</code></a></p>
+<p>For more information on SAX parsers, see <a href="../../XML/SAX.html"><code>Nokogiri::XML::SAX</code></a> or the parent class <a href="../../XML/SAX/Parser.html"><code>Nokogiri::XML::SAX::Parser</code></a>.</p>
+
+<p>Also see <a href="../../XML/SAX/Document.html"><code>Nokogiri::XML::SAX::Document</code></a> for the available events.</p>
 
   </section>
 
@@ -142,115 +133,6 @@
 
 
 
-
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
-
-      <div id="method-i-parse_file" class="method-detail anchor-link ">
-        <div class="method-header">
-            <div class="method-heading">
-              <a href="#method-i-parse_file" title="Link to this method">
-                <span class="method-name">parse_file</span>
-                <span class="method-args">(filename, encoding = "UTF-8") { |ctx| ... }</span>
-              </a>
-            </div>
-        </div>
-
-          <div class="method-controls">
-            <details class="method-source-toggle">
-              <summary>Source</summary>
-            </details>
-          </div>
-
-        <div class="method-description">
-          <div class="method-source-code" id="parse_file-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/sax/parser.rb, line 51</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_file</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">filename</span>
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">filename</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EISDIR</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">filename</span>)
-
-  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">encoding</span>)
-  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
-  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          <p>Parse a file with <code>filename</code></p>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-parse_io" class="method-detail anchor-link ">
-        <div class="method-header">
-            <div class="method-heading">
-              <a href="#method-i-parse_io" title="Link to this method">
-                <span class="method-name">parse_io</span>
-                <span class="method-args">(io, encoding = "UTF-8") { |ctx| ... }</span>
-              </a>
-            </div>
-        </div>
-
-          <div class="method-controls">
-            <details class="method-source-toggle">
-              <summary>Source</summary>
-            </details>
-          </div>
-
-        <div class="method-description">
-          <div class="method-source-code" id="parse_io-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/sax/parser.rb, line 41</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
-  <span class="ruby-identifier">check_encoding</span>(<span class="ruby-identifier">encoding</span>)
-  <span class="ruby-ivar">@encoding</span> = <span class="ruby-identifier">encoding</span>
-  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-constant">ENCODINGS</span>[<span class="ruby-identifier">encoding</span>])
-  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
-  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          <p>Parse given <code>io</code></p>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-parse_memory" class="method-detail anchor-link ">
-        <div class="method-header">
-            <div class="method-heading">
-              <a href="#method-i-parse_memory" title="Link to this method">
-                <span class="method-name">parse_memory</span>
-                <span class="method-args">(data, encoding = "UTF-8") { |ctx| ... }</span>
-              </a>
-            </div>
-        </div>
-
-          <div class="method-controls">
-            <details class="method-source-toggle">
-              <summary>Source</summary>
-            </details>
-          </div>
-
-        <div class="method-description">
-          <div class="method-source-code" id="parse_memory-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/sax/parser.rb, line 30</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_memory</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">data</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">empty?</span>
-
-  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">memory</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">encoding</span>)
-  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
-  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          <p>Parse html stored in <code>data</code> using <code>encoding</code></p>
-        </div>
-
-
-      </div>
-
-    </section>
 
   </section>
 </main>

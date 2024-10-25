@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class Nokogiri::CSS::Selectors::ComplexSelector - RDoc Documentation</title>
+<title>module Nokogiri::CSS::XPathVisitor::DoctypeConfig - RDoc Documentation</title>
 
-  <meta name="keywords" content="ruby,class,Nokogiri::CSS::Selectors::ComplexSelector">
+  <meta name="keywords" content="ruby,module,Nokogiri::CSS::XPathVisitor::DoctypeConfig">
 
-    <meta name="description" content="Documentation for the Nokogiri::CSS::Selectors::ComplexSelector class">
+    <meta name="description" content="module Nokogiri::CSS::XPathVisitor::DoctypeConfig: Enum to direct XPathVisitor when to tweak the XPath query to suit the nature of the document being searched. Note that searches for CSS selectors from">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
@@ -37,7 +37,7 @@
   gtag('config', 'G-BZR5RZN084');
 </script>
 </head>
-<body id="top" role="document" class="class">
+<body id="top" role="document" class="module">
 <div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
   <span aria-hidden="true">☰</span>
 </div>
@@ -72,13 +72,6 @@
   
   
   
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link">Nokogiri::CSS::Node
-</p>
-</div>
-
   
   
   
@@ -93,18 +86,42 @@
 
 </nav>
 
-<main role="main" aria-labelledby="class-Nokogiri::CSS::Selectors::ComplexSelector">
-  <h1 id="class-Nokogiri::CSS::Selectors::ComplexSelector" class="anchor-link class">
-    class Nokogiri::CSS::Selectors::ComplexSelector
+<main role="main" aria-labelledby="module-Nokogiri::CSS::XPathVisitor::DoctypeConfig">
+  <h1 id="module-Nokogiri::CSS::XPathVisitor::DoctypeConfig" class="anchor-link module">
+    module Nokogiri::CSS::XPathVisitor::DoctypeConfig
   </h1>
 
   <section class="description">
     
+<p>Enum to direct <a href="../XPathVisitor.html"><code>XPathVisitor</code></a> when to tweak the XPath query to suit the nature of the document being searched. Note that searches for <a href="../../CSS.html"><code>CSS</code></a> selectors from a <a href="../../../Nokogiri.html"><code>Nokogiri</code></a> document, fragment, or node will choose the correct option automatically.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="HTML4">HTML4
+        </dt>
+<dd>
+          <p>The document being searched is an <a href="../../HTML4.html"><code>HTML4</code></a> document.</p>
+        </dd>
+<dt id="HTML5">HTML5
+        </dt>
+<dd>
+          <p>The document being searched is an <a href="../../HTML5.html"><code>HTML5</code></a> document.</p>
+        </dd>
+<dt id="XML">XML
+        </dt>
+<dd>
+          <p>The document being searched is an <a href="../../XML.html"><code>XML</code></a> document. This is the default.</p>
+      </dd>
+</dl>
+    </section>
 
 
 

@@ -9,7 +9,7 @@
 
   <meta name="keywords" content="ruby,class,Nokogiri::XML::Schema">
 
-    <meta name="description" content="class Nokogiri::XML::Schema: Schema is used for validating XML against a schema (usually from an xsd file). Synopsis Validate an XML document against a Schema.">
+    <meta name="description" content="class Nokogiri::XML::Schema: Schema is used for validating XML against an XSD schema definition. Determine whether an XML document is valid.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -123,24 +123,25 @@
 
   <section class="description">
     
-<p><a href="Schema.html"><code>Nokogiri::XML::Schema</code></a> is used for validating <a href="../XML.html"><code>XML</code></a> against a schema (usually from an xsd file).</p>
+<p><a href="Schema.html"><code>Nokogiri::XML::Schema</code></a> is used for validating <a href="../XML.html"><code>XML</code></a> against an <a href="../../XSD.html"><code>XSD</code></a> schema definition.</p>
 
-<h2 id="class-Nokogiri::XML::Schema-label-Synopsis">Synopsis<span><a href="#class-Nokogiri::XML::Schema-label-Synopsis">¶</a> <a href="#top">↑</a></span>
-</h2>
+<p><strong>Example:</strong> Determine whether an <a href="../XML.html"><code>XML</code></a> document is valid.</p>
 
-<p>Validate an <a href="../XML.html"><code>XML</code></a> document against a <a href="Schema.html"><code>Schema</code></a>.  Loop over the errors that are returned and print them out:</p>
-
-<pre class="ruby"><span class="ruby-identifier">xsd</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">PO_SCHEMA_FILE</span>))
-<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">PO_XML_FILE</span>))
-
-<span class="ruby-identifier">xsd</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-identifier">doc</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>
-<span class="ruby-keyword">end</span>
+<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XSD_FILE</span>))
+<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XML_FILE</span>))
+<span class="ruby-identifier">schema</span>.<span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">doc</span>) <span class="ruby-comment"># Boolean</span>
 </pre>
 
-<p>The list of errors are <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> objects.</p>
+<p><strong>Example:</strong> Validate an <a href="../XML.html"><code>XML</code></a> document against a <a href="Schema.html"><code>Schema</code></a>, and capture any errors that are found.</p>
 
-<p>NOTE: As of v1.11.0, <a href="Schema.html"><code>Schema</code></a> treats inputs as UNTRUSTED by default, and so external entities are not resolved from the network (‘http://` or `ftp://`). Previously, parsing treated documents as “trusted” by default which was counter to Nokogiri’s “untrusted by default” security policy. If a document is trusted, then the caller may turn off the NONET option via the <a href="ParseOptions.html"><code>ParseOptions</code></a> to re-enable external entity resolution over a network connection.</p>
+<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XSD_FILE</span>))
+<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XML_FILE</span>))
+<span class="ruby-identifier">errors</span> = <span class="ruby-identifier">schema</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-identifier">doc</span>) <span class="ruby-comment"># Array&lt;SyntaxError&gt;</span>
+</pre>
+
+<p>⚠ As of v1.11.0, <a href="Schema.html"><code>Schema</code></a> treats inputs as <strong>untrusted</strong> by default, and so external entities are not resolved from the network (<code>http://</code> or <code>ftp://</code>). When parsing a trusted document, the caller may turn off the <code>NONET</code> option via the <a href="ParseOptions.html"><code>ParseOptions</code></a> to (re-)enable external entity resolution over a network connection.</p>
+
+<p>Previously, documents were “trusted” by default during schema parsing which was counter to Nokogiri’s “untrusted by default” security policy.</p>
 
   </section>
 
@@ -162,7 +163,14 @@
         </div>
 
         <div class="method-description">
-        <p>Errors while parsing the schema file</p>
+        <p>The errors found while parsing the <a href="../../XSD.html"><code>XSD</code></a></p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>Array&lt;Nokogiri::XML::SyntaxError&gt;</p>
+</dd>
+</dl>
         </div>
       </div>
       <div id="attribute-i-parse_options" class="method-detail anchor-link">
@@ -174,7 +182,14 @@
         </div>
 
         <div class="method-description">
-        <p>The <a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> used to parse the schema</p>
+        <p>The options used to parse the schema</p>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a></p>
+</dd>
+</dl>
         </div>
       </div>
     </section>
@@ -194,6 +209,13 @@
                   </span>
                 </a>
               </div>
+              <div class="method-heading">
+                <a href="#method-c-from_document" title="Link to this method">
+                  <span class="method-callseq">
+                    from_document(document, parse_options) → Nokogiri::XML::Schema
+                  </span>
+                </a>
+              </div>
         </div>
 
           <div class="method-controls">
@@ -205,7 +227,7 @@
         <div class="method-description">
           <div class="method-source-code" id="from_document-source">
             <pre>static VALUE
-rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
+noko_xml_schema_s_from_document(int argc, VALUE *argv, VALUE rb_class)
 {
   VALUE rb_document;
   VALUE rb_parse_options;
@@ -238,7 +260,7 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
   }
 
   c_parser_context = xmlSchemaNewDocParserCtxt(c_document);
-  rb_schema = xml_schema_parse_schema(klass, c_parser_context, rb_parse_options);
+  rb_schema = xml_schema_parse_schema(rb_class, c_parser_context, rb_parse_options);
 
   if (defensive_copy_p) {
     xmlFreeDoc(c_document);
@@ -248,15 +270,20 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
   return rb_schema;
 }</pre>
           </div>
-          <p>Create a new schema parsed from the <code>document</code>.</p>
+          <p>Create a <a href="Schema.html"><code>Schema</code></a> from an already-parsed <a href="../../XSD.html"><code>XSD</code></a> schema definition document.</p>
 <dl class="rdoc-list label-list">
 <dt>Parameters
 </dt>
 <dd></dd>
 </dl>
-<ul><li>
-<p><code>document</code>: <a href="Document.html"><code>Nokogiri::XML::Document</code></a> to be parsed</p>
-</li></ul>
+<ul>
+<li>
+<p><code>document</code> (<a href="Document.html"><code>XML::Document</code></a>) A document object representing the parsed <a href="../../XSD.html"><code>XSD</code></a></p>
+</li>
+<li>
+<p><code>parse_options</code> (<a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>) Defaults to Nokogiri::XML::ParseOptions::DEFAULT_SCHEMA</p>
+</li>
+</ul>
 <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -271,12 +298,20 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
 
       <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-            <div class="method-heading">
-              <a href="#method-c-new" title="Link to this method">
-                <span class="method-name">new</span>
-                <span class="method-args">(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)</span>
-              </a>
-            </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(input) → Nokogiri::XML::Schema
+                  </span>
+                </a>
+              </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(input, parse_options) → Nokogiri::XML::Schema
+                  </span>
+                </a>
+              </div>
         </div>
 
           <div class="method-controls">
@@ -287,12 +322,32 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
 
         <div class="method-description">
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 46</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
-  <span class="ruby-identifier">from_document</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">string_or_io</span>), <span class="ruby-identifier">options</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
+  <span class="ruby-identifier">read_memory</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Create a new <a href="Schema.html"><code>Nokogiri::XML::Schema</code></a> object using a <code>string_or_io</code> object.</p>
+          <p>Parse an <a href="../../XSD.html"><code>XSD</code></a> schema definition and create a new <a href="../XML.html"><code>Nokogiri::XML</code></a>:Schema object.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul>
+<li>
+<p><code>input</code> (String, IO) <a href="../../XSD.html"><code>XSD</code></a> schema definition</p>
+</li>
+<li>
+<p><code>parse_options</code> (<a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>) Defaults to Nokogiri::XML::ParseOptions::DEFAULT_SCHEMA</p>
+</li>
+</ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="Schema.html"><code>Nokogiri::XML::Schema</code></a></p>
+</dd>
+</dl>
         </div>
 
 
@@ -303,7 +358,14 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
               <div class="method-heading">
                 <a href="#method-c-read_memory" title="Link to this method">
                   <span class="method-callseq">
-                    read_memory(string) → Nokogiri::XML::Schema
+                    read_memory(input) → Nokogiri::XML::Schema
+                  </span>
+                </a>
+              </div>
+              <div class="method-heading">
+                <a href="#method-c-read_memory" title="Link to this method">
+                  <span class="method-callseq">
+                    read_memory(input, parse_options) → Nokogiri::XML::Schema
                   </span>
                 </a>
               </div>
@@ -317,32 +379,27 @@ rb_xml_schema_s_from_document(int argc, VALUE *argv, VALUE klass)
 
         <div class="method-description">
           <div class="method-source-code" id="read_memory-source">
-            <pre>static VALUE
-read_memory(int argc, VALUE *argv, VALUE klass)
-{
-  VALUE rb_content;
-  VALUE rb_parse_options;
-  xmlSchemaParserCtxtPtr c_parser_context;
-
-  rb_scan_args(argc, argv, "11", &amp;rb_content, &amp;rb_parse_options);
-
-  c_parser_context = xmlSchemaNewMemParserCtxt(
-                       (const char *)StringValuePtr(rb_content),
-                       (int)RSTRING_LEN(rb_content)
-                     );
-
-  return xml_schema_parse_schema(klass, c_parser_context, rb_parse_options);
-}</pre>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">read_memory</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
+  <span class="ruby-identifier">from_document</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">input</span>), <span class="ruby-identifier">parse_options</span>)
+<span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Create a new schema parsed from the contents of <code>string</code></p>
+          <p>Parse an <a href="../../XSD.html"><code>XSD</code></a> schema definition and create a new <a href="Schema.html"><code>Schema</code></a> object.</p>
+
+<p>💡 Note that the limitation of this method relative to <a href="Schema.html#method-c-new"><code>Schema.new</code></a> is that <code>input</code> must be type String, whereas <a href="Schema.html#method-c-new"><code>Schema.new</code></a> also supports IO types.</p>
 <dl class="rdoc-list label-list">
-<dt>Parameters
+<dt>parameters
 </dt>
 <dd></dd>
 </dl>
-<ul><li>
-<p><code>string</code>: String containing <a href="../XML.html"><code>XML</code></a> to be parsed as a schema</p>
-</li></ul>
+<ul>
+<li>
+<p><code>input</code> (String) <a href="../../XSD.html"><code>XSD</code></a> schema definition</p>
+</li>
+<li>
+<p><code>parse_options</code> (<a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>) Defaults to Nokogiri::XML::ParseOptions::DEFAULT_SCHEMA</p>
+</li>
+</ul>
 <dl class="rdoc-list label-list">
 <dt>Returns
 </dt>
@@ -364,12 +421,13 @@ read_memory(int argc, VALUE *argv, VALUE klass)
 
       <div id="method-i-valid-3F" class="method-detail anchor-link ">
         <div class="method-header">
-            <div class="method-heading">
-              <a href="#method-i-valid-3F" title="Link to this method">
-                <span class="method-name">valid?</span>
-                <span class="method-args">(thing)</span>
-              </a>
-            </div>
+              <div class="method-heading">
+                <a href="#method-i-valid-3F" title="Link to this method">
+                  <span class="method-callseq">
+                    valid?(input) → Boolean
+                  </span>
+                </a>
+              </div>
         </div>
 
           <div class="method-controls">
@@ -380,12 +438,41 @@ read_memory(int argc, VALUE *argv, VALUE klass)
 
         <div class="method-description">
           <div class="method-source-code" id="valid-3F-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 68</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>(<span class="ruby-identifier">thing</span>)
-  <span class="ruby-identifier">validate</span>(<span class="ruby-identifier">thing</span>).<span class="ruby-identifier">empty?</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-identifier">validate</span>(<span class="ruby-identifier">input</span>).<span class="ruby-identifier">empty?</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Returns true if <code>thing</code> is a valid <a href="Document.html"><code>Nokogiri::XML::Document</code></a> or file.</p>
+          <p>Validate <code>input</code> and return a Boolean indicating whether the document is valid</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>input</code> (<a href="Document.html"><code>Nokogiri::XML::Document</code></a>, String)</p>
+
+<p>A parsed document, or a string containing a local filename.</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>Boolean</p>
+</dd>
+</dl>
+
+<p><strong>Example:</strong> Validate an existing <a href="Document.html"><code>XML::Document</code></a> <code>document</code></p>
+
+<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XSD_FILE</span>))
+<span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">schema</span>.<span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">document</span>)
+</pre>
+
+<p><strong>Example:</strong> Validate an <a href="../XML.html"><code>XML</code></a> document on disk</p>
+
+<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XSD_FILE</span>))
+<span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">schema</span>.<span class="ruby-identifier">valid?</span>(<span class="ruby-string">"/path/to/file.xml"</span>)
+</pre>
         </div>
 
 
@@ -393,12 +480,13 @@ read_memory(int argc, VALUE *argv, VALUE klass)
 
       <div id="method-i-validate" class="method-detail anchor-link ">
         <div class="method-header">
-            <div class="method-heading">
-              <a href="#method-i-validate" title="Link to this method">
-                <span class="method-name">validate</span>
-                <span class="method-args">(thing)</span>
-              </a>
-            </div>
+              <div class="method-heading">
+                <a href="#method-i-validate" title="Link to this method">
+                  <span class="method-callseq">
+                    validate(input) → Array&lt;SyntaxError&gt;
+                  </span>
+                </a>
+              </div>
         </div>
 
           <div class="method-controls">
@@ -409,18 +497,47 @@ read_memory(int argc, VALUE *argv, VALUE klass)
 
         <div class="method-description">
           <div class="method-source-code" id="validate-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 55</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate</span>(<span class="ruby-identifier">thing</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">thing</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
-    <span class="ruby-identifier">validate_document</span>(<span class="ruby-identifier">thing</span>)
-  <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">thing</span>)
-    <span class="ruby-identifier">validate_file</span>(<span class="ruby-identifier">thing</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
+    <span class="ruby-identifier">validate_document</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">input</span>)
+    <span class="ruby-identifier">validate_file</span>(<span class="ruby-identifier">input</span>)
   <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"Must provide Nokogiri::Xml::Document or the name of an existing file"</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"Must provide Nokogiri::XML::Document or the name of an existing file"</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Validate <code>thing</code> against this schema.  <code>thing</code> can be a <a href="Document.html"><code>Nokogiri::XML::Document</code></a> object, or a filename.  An Array of <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> objects found while validating the <code>thing</code> is returned.</p>
+          <p>Validate <code>input</code> and return any errors that are found.</p>
+<dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul><li>
+<p><code>input</code> (<a href="Document.html"><code>Nokogiri::XML::Document</code></a>, String)</p>
+
+<p>A parsed document, or a string containing a local filename.</p>
+</li></ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>Array&lt;SyntaxError&gt;</p>
+</dd>
+</dl>
+
+<p><strong>Example:</strong> Validate an existing <a href="Document.html"><code>Document</code></a> <code>document</code>, and capture any errors that are found.</p>
+
+<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XSD_FILE</span>))
+<span class="ruby-identifier">errors</span> = <span class="ruby-identifier">schema</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-identifier">document</span>)
+</pre>
+
+<p><strong>Example:</strong> Validate an <a href="../XML.html"><code>XML</code></a> document on disk, and capture any errors that are found.</p>
+
+<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XSD_FILE</span>))
+<span class="ruby-identifier">errors</span> = <span class="ruby-identifier">schema</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-string">"/path/to/file.xml"</span>)
+</pre>
         </div>
 
 

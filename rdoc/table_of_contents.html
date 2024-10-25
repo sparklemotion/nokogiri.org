@@ -188,14 +188,11 @@
   <li class="class">
     <a href="Nokogiri/CSS/XPathVisitor.html">Nokogiri::CSS::XPathVisitor</a>
   </li>
-  <li class="class">
-    <a href="Nokogiri/CSS/XPathVisitorBase.html">Nokogiri::CSS::XPathVisitorBase</a>
+  <li class="module">
+    <a href="Nokogiri/CSS/XPathVisitor/BuiltinsConfig.html">Nokogiri::CSS::XPathVisitor::BuiltinsConfig</a>
   </li>
   <li class="module">
-    <a href="Nokogiri/CSS/XPathVisitorBase/BuiltinsConfig.html">Nokogiri::CSS::XPathVisitorBase::BuiltinsConfig</a>
-  </li>
-  <li class="module">
-    <a href="Nokogiri/CSS/XPathVisitorBase/DoctypeConfig.html">Nokogiri::CSS::XPathVisitorBase::DoctypeConfig</a>
+    <a href="Nokogiri/CSS/XPathVisitor/DoctypeConfig.html">Nokogiri::CSS::XPathVisitor::DoctypeConfig</a>
   </li>
   <li class="module">
     <a href="Nokogiri/ClassResolver.html">Nokogiri::ClassResolver</a>
@@ -272,6 +269,9 @@
       </li>
 <li>
 <a href="Nokogiri/HTML5.html#module-Nokogiri::HTML5-label-Attribute+limit+per+element">Attribute limit per element</a>
+      </li>
+<li>
+<a href="Nokogiri/HTML5.html#module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text">Parse <code>noscript</code> elements’ content as text</a>
       </li>
 <li>
 <a href="Nokogiri/HTML5.html#module-Nokogiri::HTML5-label-HTML+Serialization">HTML Serialization</a>
@@ -466,18 +466,18 @@
   </li>
   <li class="class">
     <a href="Nokogiri/XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a>
-
-    <ul>
-      <li>
-<a href="Nokogiri/XML/RelaxNG.html#class-Nokogiri::XML::RelaxNG-label-Synopsis">Synopsis</a>
-    </li>
-</ul>
   </li>
   <li class="module">
     <a href="Nokogiri/XML/SAX.html">Nokogiri::XML::SAX</a>
   </li>
   <li class="class">
     <a href="Nokogiri/XML/SAX/Document.html">Nokogiri::XML::SAX::Document</a>
+
+    <ul>
+      <li>
+<a href="Nokogiri/XML/SAX/Document.html#class-Nokogiri::XML::SAX::Document-label-Entity+Handling">Entity Handling</a>
+    </li>
+</ul>
   </li>
   <li class="class">
     <a href="Nokogiri/XML/SAX/Parser.html">Nokogiri::XML::SAX::Parser</a>
@@ -493,12 +493,6 @@
   </li>
   <li class="class">
     <a href="Nokogiri/XML/Schema.html">Nokogiri::XML::Schema</a>
-
-    <ul>
-      <li>
-<a href="Nokogiri/XML/Schema.html#class-Nokogiri::XML::Schema-label-Synopsis">Synopsis</a>
-    </li>
-</ul>
   </li>
   <li class="module">
     <a href="Nokogiri/XML/Searchable.html">Nokogiri::XML::Searchable</a>
@@ -605,6 +599,12 @@
     <a href="Nokogiri/EncodingHandler.html#method-c-5B-5D">::[]</a>
     —
     <span class="container">Nokogiri::EncodingHandler</span>
+
+  </li>
+<li class="method">
+    <a href="Nokogiri/XML/SyntaxError.html#method-c-aggregate">::aggregate</a>
+    —
+    <span class="container">Nokogiri::XML::SyntaxError</span>
 
   </li>
 <li class="method">
@@ -776,6 +776,12 @@
 
   </li>
 <li class="method">
+    <a href="Nokogiri/XML/RelaxNG.html#method-c-new">::new</a>
+    —
+    <span class="container">Nokogiri::XML::RelaxNG</span>
+
+  </li>
+<li class="method">
     <a href="Nokogiri/XML/SAX/Parser.html#method-c-new">::new</a>
     —
     <span class="container">Nokogiri::XML::SAX::Parser</span>
@@ -812,15 +818,9 @@
 
   </li>
 <li class="method">
-    <a href="Nokogiri/CSS/XPathVisitorBase.html#method-c-new">::new</a>
+    <a href="Nokogiri/CSS/XPathVisitor.html#method-c-new">::new</a>
     —
-    <span class="container">Nokogiri::CSS::XPathVisitorBase</span>
-
-  </li>
-<li class="method">
-    <a href="Nokogiri/HTML4/SAX/ParserContext.html#method-c-new">::new</a>
-    —
-    <span class="container">Nokogiri::HTML4::SAX::ParserContext</span>
+    <span class="container">Nokogiri::CSS::XPathVisitor</span>
 
   </li>
 <li class="method">
@@ -1181,12 +1181,6 @@
     <a href="Nokogiri/XML/Node.html#method-i-accept">#accept</a>
     —
     <span class="container">Nokogiri::XML::Node</span>
-
-  </li>
-<li class="method">
-    <a href="Nokogiri/CSS/XPathVisitorBase.html#method-i-accept">#accept</a>
-    —
-    <span class="container">Nokogiri::CSS::XPathVisitorBase</span>
 
   </li>
 <li class="method">
@@ -1580,9 +1574,9 @@
 
   </li>
 <li class="method">
-    <a href="Nokogiri/CSS/XPathVisitorBase.html#method-i-config">#config</a>
+    <a href="Nokogiri/CSS/XPathVisitor.html#method-i-config">#config</a>
     —
-    <span class="container">Nokogiri::CSS::XPathVisitorBase</span>
+    <span class="container">Nokogiri::CSS::XPathVisitor</span>
 
   </li>
 <li class="method">
@@ -2630,33 +2624,15 @@
 
   </li>
 <li class="method">
-    <a href="Nokogiri/HTML4/SAX/Parser.html#method-i-parse_file">#parse_file</a>
-    —
-    <span class="container">Nokogiri::HTML4::SAX::Parser</span>
-
-  </li>
-<li class="method">
     <a href="Nokogiri/XML/SAX/Parser.html#method-i-parse_io">#parse_io</a>
     —
     <span class="container">Nokogiri::XML::SAX::Parser</span>
 
   </li>
 <li class="method">
-    <a href="Nokogiri/HTML4/SAX/Parser.html#method-i-parse_io">#parse_io</a>
-    —
-    <span class="container">Nokogiri::HTML4::SAX::Parser</span>
-
-  </li>
-<li class="method">
     <a href="Nokogiri/XML/SAX/Parser.html#method-i-parse_memory">#parse_memory</a>
     —
     <span class="container">Nokogiri::XML::SAX::Parser</span>
-
-  </li>
-<li class="method">
-    <a href="Nokogiri/HTML4/SAX/Parser.html#method-i-parse_memory">#parse_memory</a>
-    —
-    <span class="container">Nokogiri::HTML4::SAX::Parser</span>
 
   </li>
 <li class="method">
@@ -2780,6 +2756,12 @@
 
   </li>
 <li class="method">
+    <a href="Nokogiri/XML/SAX/Document.html#method-i-reference">#reference</a>
+    —
+    <span class="container">Nokogiri::XML::SAX::Document</span>
+
+  </li>
+<li class="method">
     <a href="Nokogiri/XML/XPathContext.html#method-i-register_namespaces">#register_namespaces</a>
     —
     <span class="container">Nokogiri::XML::XPathContext</span>
@@ -2801,6 +2783,12 @@
     <a href="Nokogiri/XML/Node.html#method-i-related_class">#related_class</a>
     —
     <span class="container">Nokogiri::XML::Node</span>
+
+  </li>
+<li class="method">
+    <a href="Nokogiri/XML/SAX/Parser.html#method-i-related_class">#related_class</a>
+    —
+    <span class="container">Nokogiri::XML::SAX::Parser</span>
 
   </li>
 <li class="method">

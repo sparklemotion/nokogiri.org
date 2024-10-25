@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class Nokogiri::CSS::Selectors::Base - RDoc Documentation</title>
+<title>module Nokogiri::CSS::XPathVisitor::BuiltinsConfig - RDoc Documentation</title>
 
-  <meta name="keywords" content="ruby,class,Nokogiri::CSS::Selectors::Base">
+  <meta name="keywords" content="ruby,module,Nokogiri::CSS::XPathVisitor::BuiltinsConfig">
 
-    <meta name="description" content="Documentation for the Nokogiri::CSS::Selectors::Base class">
+    <meta name="description" content="module Nokogiri::CSS::XPathVisitor::BuiltinsConfig: Enum to direct XPathVisitor when to use Nokogiri builtin XPath functions.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
@@ -37,7 +37,7 @@
   gtag('config', 'G-BZR5RZN084');
 </script>
 </head>
-<body id="top" role="document" class="class">
+<body id="top" role="document" class="module">
 <div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
   <span aria-hidden="true">☰</span>
 </div>
@@ -72,13 +72,6 @@
   
   
   
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../../../Object.html">Object</a>
-</p>
-</div>
-
   
   
   
@@ -93,18 +86,42 @@
 
 </nav>
 
-<main role="main" aria-labelledby="class-Nokogiri::CSS::Selectors::Base">
-  <h1 id="class-Nokogiri::CSS::Selectors::Base" class="anchor-link class">
-    class Nokogiri::CSS::Selectors::Base
+<main role="main" aria-labelledby="module-Nokogiri::CSS::XPathVisitor::BuiltinsConfig">
+  <h1 id="module-Nokogiri::CSS::XPathVisitor::BuiltinsConfig" class="anchor-link module">
+    module Nokogiri::CSS::XPathVisitor::BuiltinsConfig
   </h1>
 
   <section class="description">
     
+<p>Enum to direct <a href="../XPathVisitor.html"><code>XPathVisitor</code></a> when to use <a href="../../../Nokogiri.html"><code>Nokogiri</code></a> builtin XPath functions.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="ALWAYS">ALWAYS
+        </dt>
+<dd>
+          <p>Always use <a href="../../../Nokogiri.html"><code>Nokogiri</code></a> builtin functions whenever possible. This is probably only useful for testing.</p>
+        </dd>
+<dt id="NEVER">NEVER
+        </dt>
+<dd>
+          <p>Never use <a href="../../../Nokogiri.html"><code>Nokogiri</code></a> builtin functions, always generate vanilla XPath 1.0 queries. This is the default when calling <a href="../../CSS.html#method-c-xpath_for"><code>Nokogiri::CSS.xpath_for</code></a> directly.</p>
+        </dd>
+<dt id="OPTIMAL">OPTIMAL
+        </dt>
+<dd>
+          <p>Only use <a href="../../../Nokogiri.html"><code>Nokogiri</code></a> builtin functions when they will be faster than vanilla XPath. This is the behavior chosen when searching for <a href="../../CSS.html"><code>CSS</code></a> selectors on a <a href="../../../Nokogiri.html"><code>Nokogiri</code></a> document, fragment, or node.</p>
+      </dd>
+</dl>
+    </section>
 
 
 

@@ -75,13 +75,27 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link"><a href="XPathVisitorBase.html">Nokogiri::CSS::XPathVisitorBase</a>
+  <p class="link"><a href="../../Object.html">Object</a>
 </p>
 </div>
 
   
   
   
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li>
+<a href="#method-c-new">::new</a>
+    </li>
+<li>
+<a href="#method-i-config">#config</a>
+  </li>
+</ul>
+</div>
+
 
   <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
@@ -108,7 +122,182 @@
 
 
 
+    <section class="attribute-method-details">
+      <header>
+        <h3>Attributes</h3>
+      </header>
 
+      <div id="attribute-i-builtins" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-builtins" title="Link to this attribute">
+            <span class="method-name">builtins</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+        <p>The visitor configuration set via the <code>builtins:</code> keyword argument to <a href="XPathVisitor.html#method-c-new"><code>XPathVisitor.new</code></a>.</p>
+        </div>
+      </div>
+      <div id="attribute-i-doctype" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-doctype" title="Link to this attribute">
+            <span class="method-name">doctype</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+        <p>The visitor configuration set via the <code>doctype:</code> keyword argument to <a href="XPathVisitor.html#method-c-new"><code>XPathVisitor.new</code></a>.</p>
+        </div>
+      </div>
+      <div id="attribute-i-namespaces" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-namespaces" title="Link to this attribute">
+            <span class="method-name">namespaces</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+        <p>The visitor configuration set via the <code>namespaces:</code> keyword argument to <a href="XPathVisitor.html#method-c-new"><code>XPathVisitor.new</code></a>.</p>
+        </div>
+      </div>
+      <div id="attribute-i-prefix" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-prefix" title="Link to this attribute">
+            <span class="method-name">prefix</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+        <p>The visitor configuration set via the <code>prefix:</code> keyword argument to <a href="XPathVisitor.html#method-c-new"><code>XPathVisitor.new</code></a>.</p>
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new() → XPathVisitor
+                  </span>
+                </a>
+              </div>
+              <div class="method-heading">
+                <a href="#method-c-new" title="Link to this method">
+                  <span class="method-callseq">
+                    new(builtins:, doctype:) → XPathVisitor
+                  </span>
+                </a>
+              </div>
+        </div>
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
+        <div class="method-description">
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/xpath_visitor.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
+  <span class="ruby-value">builtins:</span> <span class="ruby-constant">BuiltinsConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">NEVER</span>,
+  <span class="ruby-value">doctype:</span> <span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>,
+  <span class="ruby-value">prefix:</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">GLOBAL_SEARCH_PREFIX</span>,
+  <span class="ruby-value">namespaces:</span> <span class="ruby-keyword">nil</span>
+)
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">BuiltinsConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">VALUES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">builtins</span>)
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">"Invalid values #{builtins.inspect} for builtins: keyword parameter"</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">VALUES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">doctype</span>)
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">"Invalid values #{doctype.inspect} for doctype: keyword parameter"</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@builtins</span> = <span class="ruby-identifier">builtins</span>
+  <span class="ruby-ivar">@doctype</span> = <span class="ruby-identifier">doctype</span>
+  <span class="ruby-ivar">@prefix</span> = <span class="ruby-identifier">prefix</span>
+  <span class="ruby-ivar">@namespaces</span> = <span class="ruby-identifier">namespaces</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          <dl class="rdoc-list label-list">
+<dt>Parameters
+</dt>
+<dd></dd>
+</dl>
+<ul>
+<li>
+<p><code>builtins:</code> (<a href="XPathVisitor/BuiltinsConfig.html"><code>BuiltinsConfig</code></a>) Determine when to use Nokogiri’s built-in xpath functions for performance improvements.</p>
+</li>
+<li>
+<p><code>doctype:</code> (<a href="XPathVisitor/DoctypeConfig.html"><code>DoctypeConfig</code></a>) Make document-type-specific accommodations for <a href="../CSS.html"><code>CSS</code></a> queries.</p>
+</li>
+</ul>
+<dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p><a href="XPathVisitor.html"><code>XPathVisitor</code></a></p>
+</dd>
+</dl>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-config" class="method-detail anchor-link ">
+        <div class="method-header">
+              <div class="method-heading">
+                <a href="#method-i-config" title="Link to this method">
+                  <span class="method-callseq">
+                    config() → Hash
+                  </span>
+                </a>
+              </div>
+        </div>
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+
+        <div class="method-description">
+          <div class="method-source-code" id="config-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/xpath_visitor.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">config</span>
+  { <span class="ruby-value">builtins:</span> <span class="ruby-ivar">@builtins</span>, <span class="ruby-value">doctype:</span> <span class="ruby-ivar">@doctype</span>, <span class="ruby-value">prefix:</span> <span class="ruby-ivar">@prefix</span>, <span class="ruby-value">namespaces:</span> <span class="ruby-ivar">@namespaces</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          <dl class="rdoc-list label-list">
+<dt>Returns
+</dt>
+<dd>
+<p>a Hash representing the configuration of the <a href="XPathVisitor.html"><code>XPathVisitor</code></a>, suitable for use as part of the <a href="../CSS.html"><code>CSS</code></a> cache key.</p>
+</dd>
+</dl>
+        </div>
+
+
+      </div>
+
+    </section>
 
   </section>
 </main>

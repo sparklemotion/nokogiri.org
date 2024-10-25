@@ -2234,10 +2234,22 @@ artifact_prefix=&#39;./&#39;; Test unit written to ./crash-b13e8756b13a00cf16830
 <li>Prefer to <strong>show</strong> nuanced behavior in code examples, rather than try to explain it in prose.</li>
 </ul>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
-<p>I don't feel very strongly about code style, but this project follows <a href="https://shopify.github.io/ruby-style-guide/">Shopify's Ruby Style Guide</a>, and for C and Java code the project uses the <code>astyle</code> configuration laid out in <code>./rakelib/format.rake</code>.</p>
-<p>You can auto-format the C, Java, and Ruby code with <code>rake format</code>.</p>
+<p>I don't feel very strongly about code style, but this project uses <a href="https://github.com/standardrb/standard">Standard</a> for Ruby, and uses the <code>astyle</code> configuration laid out in <code>./rakelib/format.rake</code> for C and Java.</p>
+<p>You can auto-format everything with <code>rake format</code>.</p>
 <p>There are some pending Rubocop rules in <code>.rubocop_todo.yml</code>. If you'd like to fix them up, I will happily merge your pull request.</p>
-<p>No, I don't want to debate any of the style choices.</p>
+<p>For C code, naming is currently inconsistent, but I am generally moving towards some guidelines that will make stack traces more readable and usable:</p>
+<ul>
+<li>Public functions and functions bound to Ruby methods should start with <code>noko_</code> followed by the snake case class name.</li>
+<li>e.g., <code>noko_xml_sax_parser_context_...</code></li>
+<li>Static functions (file scope) do not need the "noko" prefix, but should be named with the snake case class name.</li>
+<li>e.g., <code>xml_sax_parser_context_...</code></li>
+<li>Ruby singleton methods should have <code>_s_</code> before the method name</li>
+<li>e.g., <code>noko_xml_sax_parser_context_s_io</code> for <code>Nokogiri::XML::SAX::ParserContext.io</code></li>
+<li>Ruby instance methods should have <code>__</code> before the method name</li>
+<li>e.g., <code>noko_xml_sax_parser_context__line</code> for <code>Nokogiri::XML::SAX::ParserContext#line</code></li>
+<li>Ruby attribute getters and setters should have <code>_get</code> or <code>_set</code> as a suffix</li>
+<li>e.g., <code>noko_xml_sax_parser_context__recovery_set</code> for <code>Nokogiri::XML::SAX::ParserContext#recovery=</code></li>
+</ul>
 <h2 id="how-continuous-integration-ci-is-configured">How Continuous Integration ("CI") is configured<a class="headerlink" href="#how-continuous-integration-ci-is-configured" title="Permanent link">&para;</a></h2>
 <p>The bulk of CI is running in Github Actions since May 2021: <a href="https://github.com/sparklemotion/nokogiri/actions">https://github.com/sparklemotion/nokogiri/actions</a></p>
 <p>However, we also run tests against 32-bit windows (which aren't supported by GA as of this writing) in Appveyor: <a href="https://ci.appveyor.com/project/flavorjones/nokogiri">https://ci.appveyor.com/project/flavorjones/nokogiri</a></p>
