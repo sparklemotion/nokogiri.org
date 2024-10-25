@@ -208,7 +208,7 @@ gem install nokogiri -- --use-system-libraries
 We recommend installing Nokogiri against the MSYS2 system libraries:
 
 ``` sh
-ridk exec pacman -S mingw-w64-x86_64-libxslt
+ridk exec pacman -S mingw-w64-ucrt-x86_64-libxslt
 gem install nokogiri --platform=ruby -- --use-system-libraries
 ```
 
