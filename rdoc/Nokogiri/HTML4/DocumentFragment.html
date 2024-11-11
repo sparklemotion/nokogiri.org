@@ -71,12 +71,11 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../XML/DocumentFragment.html">Nokogiri::XML::DocumentFragment</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../XML/DocumentFragment.html">Nokogiri::XML::DocumentFragment</a><ul><li>cNokogiriXmlNode</li></ul>
+</li></ul>
 </div>
 
   
@@ -145,12 +144,11 @@
 
         <div class="method-description">
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document_fragment.rb, line 90</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document_fragment.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ctx</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>) <span class="ruby-comment"># rubocop:disable Lint/MissingSuper</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tags</span>
 
   <span class="ruby-identifier">options</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Integer</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">options</span>
-  <span class="ruby-ivar">@parse_options</span> = <span class="ruby-identifier">options</span>
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">ctx</span>
@@ -173,7 +171,7 @@
   <span class="ruby-identifier">children</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>It’s recommended to use either <a href="DocumentFragment.html#method-c-parse"><code>DocumentFragment.parse</code></a> or <a href="../XML/Node.html#method-i-parse"><code>XML::Node#parse</code></a> rather than call this method directly.</p>
+          
         </div>
 
 
@@ -181,34 +179,12 @@
 
       <div id="method-c-parse" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-c-parse" title="Link to this method">
-                  <span class="method-callseq">
-                    parse(tags) → DocumentFragment
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-parse" title="Link to this method">
-                  <span class="method-callseq">
-                    parse(tags, encoding) → DocumentFragment
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-parse" title="Link to this method">
-                  <span class="method-callseq">
-                    parse(tags, encoding, options) → DocumentFragment
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-parse" title="Link to this method">
-                  <span class="method-callseq">
-                    parse(tags, encoding) { |options| ... } → DocumentFragment
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-c-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(tags, encoding = nil, options = XML::ParseOptions::DEFAULT_HTML, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -219,29 +195,9 @@
 
         <div class="method-description">
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document_fragment.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html4/document_fragment.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_HTML</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>
-
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>)
-    <span class="ruby-comment"># Handle IO-like objects (IO, File, StringIO, etc.)</span>
-    <span class="ruby-comment"># The _read_ method of these objects doesn't accept an +encoding+ parameter.</span>
-    <span class="ruby-comment"># Encoding is usually set when the IO object is created or opened,</span>
-    <span class="ruby-comment"># or by using the _set_encoding_ method.</span>
-    <span class="ruby-comment">#</span>
-    <span class="ruby-comment"># 1. If +encoding+ is provided and the object supports _set_encoding_,</span>
-    <span class="ruby-comment">#    set the encoding before reading.</span>
-    <span class="ruby-comment"># 2. Read the content from the IO-like object.</span>
-    <span class="ruby-comment">#</span>
-    <span class="ruby-comment"># Note: After reading, the content's encoding will be:</span>
-    <span class="ruby-comment"># - The encoding set by _set_encoding_ if it was called</span>
-    <span class="ruby-comment"># - The default encoding of the IO object otherwise</span>
-    <span class="ruby-comment">#</span>
-    <span class="ruby-comment"># For StringIO specifically, _set_encoding_ affects only the internal string,</span>
-    <span class="ruby-comment"># not how the data is read out.</span>
-    <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">set_encoding</span>(<span class="ruby-identifier">encoding</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:set_encoding</span>)
-    <span class="ruby-identifier">tags</span> = <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">read</span>
-  <span class="ruby-keyword">end</span>
 
   <span class="ruby-identifier">encoding</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:encoding</span>)
     <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">encoding</span>
@@ -259,63 +215,7 @@
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse an <a href="../HTML4.html"><code>HTML4</code></a> fragment.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>tags</code> (optional String, or any object that responds to <code>#read</code> such as an IO, or StringIO)</p>
-</li>
-<li>
-<p><code>encoding</code> (optional String) the name of the encoding that should be used when processing the document.  (default <code>nil</code> for auto-detection)</p>
-</li>
-<li>
-<p><code>options</code> (optional) configuration object that sets options during parsing, such as Nokogiri::XML::ParseOptions::RECOVER. See <a href="../XML/ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> for more information.</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Yields
-</dt>
-<dd>
-<p>If present, the block will be passed a <a href="../XML/ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a> object to modify</p>
-</dd>
-</dl>
-
-<pre>before the fragment is parsed. See Nokogiri::XML::ParseOptions for more information.</pre>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><a href="DocumentFragment.html"><code>DocumentFragment</code></a></p>
-</dd>
-</dl>
-
-<p><strong>Example:</strong> Parsing a string</p>
-
-<pre class="ruby"><span class="ruby-identifier">fragment</span> = <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">"&lt;div&gt;Hello World&lt;/div&gt;"</span>)
-</pre>
-
-<p><strong>Example:</strong> Parsing an IO</p>
-
-<pre class="ruby"><span class="ruby-identifier">fragment</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">"fragment.html"</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
-  <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">file</span>)
-<span class="ruby-keyword">end</span>
-</pre>
-
-<p><strong>Example:</strong> Specifying encoding</p>
-
-<pre class="ruby"><span class="ruby-identifier">fragment</span> = <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">input</span>, <span class="ruby-string">"EUC-JP"</span>)
-</pre>
-
-<p><strong>Example:</strong> Setting parse options dynamically</p>
-
-<pre class="ruby"><span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">"&lt;div&gt;Hello World"</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
-  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">huge</span>.<span class="ruby-identifier">pedantic</span>
-<span class="ruby-keyword">end</span>
-</pre>
+          <p>Create a <a href="../XML/DocumentFragment.html"><code>Nokogiri::XML::DocumentFragment</code></a> from <code>tags</code>, using <code>encoding</code></p>
         </div>
 
 

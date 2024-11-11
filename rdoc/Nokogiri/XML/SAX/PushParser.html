@@ -71,12 +71,11 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../../../Object.html">Object</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../../../Object.html">Object</a><ul><li>BasicObject</li></ul>
+</li></ul>
 </div>
 
   
@@ -261,14 +260,12 @@
 
         <div class="method-description">
           <div class="method-source-code" id="finish-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/push_parser.rb, line 58</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/push_parser.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">finish</span>
   <span class="ruby-identifier">write</span>(<span class="ruby-string">""</span>, <span class="ruby-keyword">true</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           <p>Finish the parsing.  This method is only necessary for <a href="Document.html#method-i-end_document"><code>Nokogiri::XML::SAX::Document#end_document</code></a> to be called.</p>
-
-<p>⚠ Note that empty documents are treated as an error when using the libxml2-based implementation (CRuby), but are fine when using the Xerces-based implementation (JRuby).</p>
         </div>
 
 
@@ -293,13 +290,13 @@
         <div class="method-description">
           <div class="method-source-code" id="options-source">
             <pre>static VALUE
-noko_xml_sax_push_parser__options_get(VALUE self)
+get_options(VALUE self)
 {
   xmlParserCtxtPtr ctx;
 
   ctx = noko_xml_sax_push_parser_unwrap(self);
 
-  return INT2NUM(xmlCtxtGetOptions(ctx));
+  return INT2NUM(ctx-&gt;options);
 }</pre>
           </div>
           
@@ -327,16 +324,14 @@ noko_xml_sax_push_parser__options_get(VALUE self)
         <div class="method-description">
           <div class="method-source-code" id="options-3D-source">
             <pre>static VALUE
-noko_xml_sax_push_parser__options_set(VALUE self, VALUE options)
+set_options(VALUE self, VALUE options)
 {
-  int error;
   xmlParserCtxtPtr ctx;
 
   ctx = noko_xml_sax_push_parser_unwrap(self);
 
-  error = xmlCtxtSetOptions(ctx, (int)NUM2INT(options));
-  if (error) {
-    rb_raise(rb_eRuntimeError, "Cannot set XML parser context options (%x)", error);
+  if (xmlCtxtUseOptions(ctx, (int)NUM2INT(options)) != 0) {
+    rb_raise(rb_eRuntimeError, "Cannot set XML parser context options");
   }
 
   return Qnil;
@@ -368,27 +363,20 @@ noko_xml_sax_push_parser__options_set(VALUE self, VALUE options)
         <div class="method-description">
           <div class="method-source-code" id="replace_entities-source">
             <pre>static VALUE
-noko_xml_sax_push_parser__replace_entities_get(VALUE self)
+get_replace_entities(VALUE self)
 {
-  xmlParserCtxtPtr ctxt = noko_xml_sax_push_parser_unwrap(self);
+  xmlParserCtxtPtr ctx;
 
-  if (xmlCtxtGetOptions(ctxt) &amp; XML_PARSE_NOENT) {
-    return Qtrue;
-  } else {
+  ctx = noko_xml_sax_push_parser_unwrap(self);
+
+  if (0 == ctx-&gt;replaceEntities) {
     return Qfalse;
+  } else {
+    return Qtrue;
   }
 }</pre>
           </div>
-          <p>See <a href="Document.html#class-Nokogiri::XML::SAX::Document-label-Entity+Handling">Entity Handling at <code>Document</code></a> for an explanation of the behavior controlled by this flag.</p>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p>(Boolean) Value of the parse option. (Default <code>false</code>)</p>
-</dd>
-</dl>
-
-<p>This option is perhaps misnamed by the libxml2 author, since it controls resolution and not replacement.</p>
+          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
         </div>
 
 
@@ -399,7 +387,7 @@ noko_xml_sax_push_parser__replace_entities_get(VALUE self)
               <div class="method-heading">
                 <a href="#method-i-replace_entities-3D" title="Link to this method">
                   <span class="method-callseq">
-                    replace_entities=(value)
+                    replace_entities=(boolean)
                   </span>
                 </a>
               </div>
@@ -414,37 +402,22 @@ noko_xml_sax_push_parser__replace_entities_get(VALUE self)
         <div class="method-description">
           <div class="method-source-code" id="replace_entities-3D-source">
             <pre>static VALUE
-noko_xml_sax_push_parser__replace_entities_set(VALUE self, VALUE value)
+set_replace_entities(VALUE self, VALUE value)
 {
-  int error;
-  xmlParserCtxtPtr ctxt = noko_xml_sax_push_parser_unwrap(self);
+  xmlParserCtxtPtr ctx;
 
-  if (RB_TEST(value)) {
-    error = xmlCtxtSetOptions(ctxt, xmlCtxtGetOptions(ctxt) | XML_PARSE_NOENT);
+  ctx = noko_xml_sax_push_parser_unwrap(self);
+
+  if (Qfalse == value) {
+    ctx-&gt;replaceEntities = 0;
   } else {
-    error = xmlCtxtSetOptions(ctxt, xmlCtxtGetOptions(ctxt) &amp; ~XML_PARSE_NOENT);
-  }
-
-  if (error) {
-    rb_raise(rb_eRuntimeError, "failed to set parser context options (%x)", error);
+    ctx-&gt;replaceEntities = 1;
   }
 
   return value;
 }</pre>
           </div>
-          <p>See <a href="Document.html#class-Nokogiri::XML::SAX::Document-label-Entity+Handling">Entity Handling at <code>Document</code></a> for an explanation of the behavior controlled by this flag.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul><li>
-<p><code>value</code> (Boolean) Whether external parsed entities will be resolved.</p>
-</li></ul>
-
-<p>⚠ <strong>It is UNSAFE to set this option to <code>true</code></strong> when parsing untrusted documents. The option defaults to <code>false</code> for this reason.</p>
-
-<p>This option is perhaps misnamed by the libxml2 author, since it controls resolution and not replacement.</p>
+          <p>Should this parser replace entities?  &amp;amp; will get converted to ‘&amp;’ if set to true</p>
         </div>
 
 

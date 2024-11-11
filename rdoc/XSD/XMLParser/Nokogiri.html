@@ -71,12 +71,9 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link">XSD::XMLParser::Parser
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>XSD::XMLParser::Parser</li></ul>
 </div>
 
   
@@ -137,7 +134,7 @@
     
 <p><a href="Nokogiri.html"><code>Nokogiri</code></a> XML parser for soap4r.</p>
 
-<p><a href="Nokogiri.html"><code>Nokogiri</code></a> may be used as the XML parser in soap4r. Require ‘xsd/xmlparser/nokogiri’ in your soap4r applications, and soap4r will use <a href="Nokogiri.html"><code>Nokogiri</code></a> as its XML parser. No other changes should be required to use <a href="Nokogiri.html"><code>Nokogiri</code></a> as the XML parser.</p>
+<p><a href="Nokogiri.html"><code>Nokogiri</code></a> may be used as the XML parser in soap4r.  Simply require ‘xsd/xmlparser/nokogiri’ in your soap4r applications, and soap4r will use <a href="Nokogiri.html"><code>Nokogiri</code></a> as it’s XML parser.  No other changes should be required to use <a href="Nokogiri.html"><code>Nokogiri</code></a> as the XML parser.</p>
 
 <p>Example (using UW ITS Web Services):</p>
 
@@ -184,7 +181,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 30</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">opt</span> = {})
   <span class="ruby-keyword">super</span>
   <span class="ruby-ivar">@parser</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-ivar">@charset</span> <span class="ruby-operator">||</span> <span class="ruby-string">"UTF-8"</span>)
@@ -225,7 +222,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="cdata_block-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 62</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cdata_block</span>(<span class="ruby-identifier">string</span>)
   <span class="ruby-identifier">characters</span>(<span class="ruby-identifier">string</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -254,7 +251,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="do_parse-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 37</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">do_parse</span>(<span class="ruby-identifier">string_or_readable</span>)
   <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string_or_readable</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -283,7 +280,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="end_element-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_element</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-keyword">super</span>
 <span class="ruby-keyword">end</span></pre>
@@ -316,7 +313,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="end_element_namespace-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 90</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_element_namespace</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-comment">###</span>
   <span class="ruby-comment"># Deal with SAX v1 interface</span>
@@ -347,7 +344,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="error-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 55</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">error</span>(<span class="ruby-identifier">msg</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ParseError</span>, <span class="ruby-identifier">msg</span>
 <span class="ruby-keyword">end</span></pre>
@@ -379,7 +376,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="start_element-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 43</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span> = [])
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">name</span>, <span class="ruby-constant">Hash</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">flatten</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -412,7 +409,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="start_element_namespace-source">
-            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 73</span>
+            <pre><span class="ruby-comment"># File lib/xsd/xmlparser/nokogiri.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element_namespace</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span> = [], <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ns</span> = []) <span class="ruby-comment"># rubocop:disable Metrics/ParameterLists</span>
   <span class="ruby-comment">###</span>
   <span class="ruby-comment"># Deal with SAX v1 interface</span>

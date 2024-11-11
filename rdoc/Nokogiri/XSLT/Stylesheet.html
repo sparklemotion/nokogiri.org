@@ -71,12 +71,11 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../../Object.html">Object</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../../Object.html">Object</a><ul><li>BasicObject</li></ul>
+</li></ul>
 </div>
 
   
@@ -314,7 +313,7 @@ rb_xslt_stylesheet_serialize(VALUE self, VALUE xmlobj)
   TypedData_Get_Struct(
     self,
     nokogiriXsltStylesheetTuple,
-    &amp;nokogiri_xslt_stylesheet_tuple_type,
+    &amp;xslt_stylesheet_type,
     wrapper
   );
   xsltSaveResultToString(&amp;doc_ptr, &amp;doc_len, xml, wrapper-&gt;ss);
@@ -382,7 +381,7 @@ rb_xslt_stylesheet_transform(int argc, VALUE *argv, VALUE self)
   Check_Type(rb_param, T_ARRAY);
 
   c_document = noko_xml_document_unwrap(rb_document);
-  TypedData_Get_Struct(self, nokogiriXsltStylesheetTuple, &amp;nokogiri_xslt_stylesheet_tuple_type, wrapper);
+  TypedData_Get_Struct(self, nokogiriXsltStylesheetTuple, &amp;xslt_stylesheet_type, wrapper);
 
   param_len = RARRAY_LEN(rb_param);
   params = ruby_xcalloc((size_t)param_len + 1, sizeof(char *));

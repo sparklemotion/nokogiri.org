@@ -9,7 +9,7 @@
 
   <meta name="keywords" content="ruby,module,Nokogiri::XML::SAX">
 
-    <meta name="description" content="module Nokogiri::XML::SAX: SAX Parsers are event-driven parsers. Two SAX parsers for XML are available, a parser that reads from a string or IO object as it feels necessary, and">
+    <meta name="description" content="module Nokogiri::XML::SAX: SAX Parsers are event driven parsers. Nokogiri provides two different event based parsers when dealing with XML.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -93,19 +93,15 @@
 
   <section class="description">
     
-<p><a href="SAX.html"><code>SAX</code></a> Parsers are event-driven parsers.</p>
-
-<p>Two <a href="SAX.html"><code>SAX</code></a> parsers for <a href="../XML.html"><code>XML</code></a> are available, a parser that reads from a string or IO object as it feels necessary, and a parser that you explicitly feed <a href="../XML.html"><code>XML</code></a> in chunks. If you want to let <a href="../../Nokogiri.html"><code>Nokogiri</code></a> deal with reading your <a href="../XML.html"><code>XML</code></a>, use the <a href="SAX/Parser.html"><code>Nokogiri::XML::SAX::Parser</code></a>. If you want to have fine grain control over the <a href="../XML.html"><code>XML</code></a> input, use the <a href="SAX/PushParser.html"><code>Nokogiri::XML::SAX::PushParser</code></a>.</p>
-
-<p>If you want to do <a href="SAX.html"><code>SAX</code></a> style parsing of <a href="../HTML4.html"><code>HTML</code></a>, check out <a href="../HTML4/SAX.html"><code>Nokogiri::HTML4::SAX</code></a>.</p>
+<p><a href="SAX.html"><code>SAX</code></a> Parsers are event driven parsers. <a href="../../Nokogiri.html"><code>Nokogiri</code></a> provides two different event based parsers when dealing with <a href="../XML.html"><code>XML</code></a>. If you want to do <a href="SAX.html"><code>SAX</code></a> style parsing using <a href="../HTML4.html"><code>HTML</code></a>, check out <a href="../HTML4/SAX.html"><code>Nokogiri::HTML4::SAX</code></a>.</p>
 
 <p>The basic way a <a href="SAX.html"><code>SAX</code></a> style parser works is by creating a parser, telling the parser about the events we’re interested in, then giving the parser some <a href="../XML.html"><code>XML</code></a> to process. The parser will notify you when it encounters events you said you would like to know about.</p>
 
-<p>To register for events, subclass <a href="SAX/Document.html"><code>Nokogiri::XML::SAX::Document</code></a> and implement the methods for which you would like notification.</p>
+<p>To register for events, you simply subclass <a href="SAX/Document.html"><code>Nokogiri::XML::SAX::Document</code></a>, and implement the methods for which you would like notification.</p>
 
 <p>For example, if I want to be notified when a document ends, and when an element starts, I would write a class like this:</p>
 
-<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyHandler</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyDocument</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_document</span>
     <span class="ruby-identifier">puts</span> <span class="ruby-string">"the document has ended"</span>
   <span class="ruby-keyword">end</span>
@@ -119,13 +115,15 @@
 <p>Then I would instantiate a <a href="SAX.html"><code>SAX</code></a> parser with this document, and feed the parser some <a href="../XML.html"><code>XML</code></a></p>
 
 <pre class="ruby"><span class="ruby-comment"># Create a new parser</span>
-<span class="ruby-identifier">parser</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">MyHandler</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-identifier">parser</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">MyDocument</span>.<span class="ruby-identifier">new</span>)
 
 <span class="ruby-comment"># Feed the parser some XML</span>
 <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">ARGV</span>[<span class="ruby-value">0</span>]))
 </pre>
 
 <p>Now my document handler will be called when each node starts, and when then document ends. To see what kinds of events are available, take a look at <a href="SAX/Document.html"><code>Nokogiri::XML::SAX::Document</code></a>.</p>
+
+<p>Two <a href="SAX.html"><code>SAX</code></a> parsers for <a href="../XML.html"><code>XML</code></a> are available, a parser that reads from a string or IO object as it feels necessary, and a parser that lets you spoon feed it <a href="../XML.html"><code>XML</code></a>. If you want to let <a href="../../Nokogiri.html"><code>Nokogiri</code></a> deal with reading your <a href="../XML.html"><code>XML</code></a>, use the <a href="SAX/Parser.html"><code>Nokogiri::XML::SAX::Parser</code></a>. If you want to have fine grain control over the <a href="../XML.html"><code>XML</code></a> input, use the <a href="SAX/PushParser.html"><code>Nokogiri::XML::SAX::PushParser</code></a>.</p>
 
   </section>
 

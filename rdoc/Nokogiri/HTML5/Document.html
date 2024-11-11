@@ -71,12 +71,13 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../HTML4/Document.html">Nokogiri::HTML4::Document</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../HTML4/Document.html">Nokogiri::HTML4::Document</a><ul><li>
+<a href="../XML/Document.html">Nokogiri::XML::Document</a><ul><li>cNokogiriXmlNode</li></ul>
+</li></ul>
+</li></ul>
 </div>
 
   
@@ -223,7 +224,7 @@
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"not a string or IO object"</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           <p>Parse <a href="../HTML5.html"><code>HTML5</code></a> input.</p>
@@ -285,7 +286,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"io object doesn't respond to :read"</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>)
 
-  <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           <p>Create a new document from an IO object.</p>
@@ -318,7 +319,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_memory</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"string object doesn't respond to :to_str"</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
 
-  <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">do_parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           <p>Create a new document from a String.</p>
@@ -362,7 +363,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 149</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 147</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">markup</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">markup</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -407,7 +408,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="xpath_doctype-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 165</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/document.rb, line 163</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xpath_doctype</span>
   <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span><span class="ruby-operator">::</span><span class="ruby-constant">XPathVisitor</span><span class="ruby-operator">::</span><span class="ruby-constant">DoctypeConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>
 <span class="ruby-keyword">end</span></pre>

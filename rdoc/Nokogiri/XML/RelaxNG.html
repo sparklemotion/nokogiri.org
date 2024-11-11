@@ -9,7 +9,7 @@
 
   <meta name="keywords" content="ruby,class,Nokogiri::XML::RelaxNG">
 
-    <meta name="description" content="class Nokogiri::XML::RelaxNG: RelaxNG is used for validating XML against a RELAX NG schema definition. Determine whether an XML document is valid.">
+    <meta name="description" content="class Nokogiri::XML::RelaxNG: RelaxNG is used for validating XML against a RelaxNG schema. Synopsis Validate an XML document against a RelaxNG schema.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -71,12 +71,9 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link">cNokogiriXmlSchema
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>cNokogiriXmlSchema</li></ul>
 </div>
 
   
@@ -89,9 +86,6 @@
   <ul class="link-list" role="directory">
     <li>
 <a href="#method-c-from_document">::from_document</a>
-    </li>
-<li>
-<a href="#method-c-new">::new</a>
     </li>
 <li>
 <a href="#method-c-read_memory">::read_memory</a>
@@ -117,23 +111,24 @@
 
   <section class="description">
     
-<p><a href="RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a> is used for validating <a href="../XML.html"><code>XML</code></a> against a RELAX NG schema definition.</p>
+<p><a href="RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a> is used for validating <a href="../XML.html"><code>XML</code></a> against a <a href="RelaxNG.html"><code>RelaxNG</code></a> schema.</p>
 
-<p><strong>Example:</strong> Determine whether an <a href="../XML.html"><code>XML</code></a> document is valid.</p>
+<h2 id="class-Nokogiri::XML::RelaxNG-label-Synopsis">Synopsis<span><a href="#class-Nokogiri::XML::RelaxNG-label-Synopsis">¶</a> <a href="#top">↑</a></span>
+</h2>
 
-<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">RelaxNG</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">RELAX_NG_FILE</span>))
-<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">XML_FILE</span>))
-<span class="ruby-identifier">schema</span>.<span class="ruby-identifier">valid?</span>(<span class="ruby-identifier">doc</span>) <span class="ruby-comment"># Boolean</span>
+<p>Validate an <a href="../XML.html"><code>XML</code></a> document against a <a href="RelaxNG.html"><code>RelaxNG</code></a> schema.  Loop over the errors that are returned and print them out:</p>
+
+<pre class="ruby"><span class="ruby-identifier">schema</span>  = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">RelaxNG</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">ADDRESS_SCHEMA_FILE</span>))
+<span class="ruby-identifier">doc</span>     = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">ADDRESS_XML_FILE</span>))
+
+<span class="ruby-identifier">schema</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-identifier">doc</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span>
 </pre>
 
-<p><strong>Example:</strong> Validate an <a href="../XML.html"><code>XML</code></a> document against a <a href="RelaxNG.html"><code>RelaxNG</code></a> schema, and capture any errors that are found.</p>
+<p>The list of errors are <a href="SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a> objects.</p>
 
-<pre class="ruby"><span class="ruby-identifier">schema</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">RelaxNG</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">RELAX_NG_FILE</span>))
-<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">XML_FILE</span>))
-<span class="ruby-identifier">errors</span> = <span class="ruby-identifier">schema</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-identifier">doc</span>) <span class="ruby-comment"># Array&lt;SyntaxError&gt;</span>
-</pre>
-
-<p>⚠ RELAX NG input is always treated as <strong>trusted</strong>, meaning that the underlying parsing libraries *will access network resources*. This is counter to Nokogiri’s “untrusted by default” security policy, but is an unfortunate limitation of the underlying libraries. Please do not use this class for untrusted schema documents.</p>
+<p>NOTE: <a href="RelaxNG.html"><code>RelaxNG</code></a> input is always treated as TRUSTED documents, meaning that they will cause the underlying parsing libraries to access network resources. This is counter to Nokogiri’s “untrusted by default” security policy, but is a limitation of the underlying libraries.</p>
 
   </section>
 
@@ -153,14 +148,7 @@
               <div class="method-heading">
                 <a href="#method-c-from_document" title="Link to this method">
                   <span class="method-callseq">
-                    from_document(document) → Nokogiri::XML::RelaxNG
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-from_document" title="Link to this method">
-                  <span class="method-callseq">
-                    from_document(document, parse_options) → Nokogiri::XML::RelaxNG
+                    from_document(doc)
                   </span>
                 </a>
               </div>
@@ -175,7 +163,7 @@
         <div class="method-description">
           <div class="method-source-code" id="from_document-source">
             <pre>static VALUE
-noko_xml_relax_ng_s_from_document(int argc, VALUE *argv, VALUE rb_class)
+from_document(int argc, VALUE *argv, VALUE klass)
 {
   VALUE rb_document;
   VALUE rb_parse_options;
@@ -189,91 +177,10 @@ noko_xml_relax_ng_s_from_document(int argc, VALUE *argv, VALUE rb_class)
 
   c_parser_context = xmlRelaxNGNewDocParserCtxt(c_document);
 
-  return xml_relax_ng_parse_schema(rb_class, c_parser_context, rb_parse_options);
+  return xml_relax_ng_parse_schema(klass, c_parser_context, rb_parse_options);
 }</pre>
           </div>
-          <p>Create a <a href="Schema.html"><code>Schema</code></a> from an already-parsed RELAX NG schema definition document.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>document</code> (<a href="Document.html"><code>XML::Document</code></a>) A <a href="Document.html"><code>XML::Document</code></a> object representing the parsed RELAX NG</p>
-</li>
-<li>
-<p><code>parse_options</code> (<a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>) ⚠ Unused</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><a href="RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a></p>
-</dd>
-</dl>
-
-<p>⚠ <code>parse_options</code> is currently unused by this method and is present only as a placeholder for future functionality.</p>
-        </div>
-
-
-      </div>
-
-      <div id="method-c-new" class="method-detail anchor-link ">
-        <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-c-new" title="Link to this method">
-                  <span class="method-callseq">
-                    new(input) → Nokogiri::XML::RelaxNG
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-new" title="Link to this method">
-                  <span class="method-callseq">
-                    new(input, parse_options) → Nokogiri::XML::RelaxNG
-                  </span>
-                </a>
-              </div>
-        </div>
-
-          <div class="method-controls">
-            <details class="method-source-toggle">
-              <summary>Source</summary>
-            </details>
-          </div>
-
-        <div class="method-description">
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/relax_ng.rb, line 61</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
-  <span class="ruby-identifier">read_memory</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          <p>Parse a RELAX NG schema definition and create a new <a href="Schema.html"><code>Schema</code></a> object.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>input</code> (String, IO) RELAX NG schema definition</p>
-</li>
-<li>
-<p><code>parse_options</code> (<a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>) Defaults to ParseOptions::DEFAULT_SCHEMA  ⚠ Unused</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><a href="RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a></p>
-</dd>
-</dl>
-
-<p>⚠ <code>parse_options</code> is currently unused by this method and is present only as a placeholder for future functionality.</p>
+          <p>Create a new <a href="RelaxNG.html"><code>RelaxNG</code></a> schema from the <a href="Document.html"><code>Nokogiri::XML::Document</code></a> <code>doc</code></p>
         </div>
 
 
@@ -284,14 +191,7 @@ noko_xml_relax_ng_s_from_document(int argc, VALUE *argv, VALUE rb_class)
               <div class="method-heading">
                 <a href="#method-c-read_memory" title="Link to this method">
                   <span class="method-callseq">
-                    read_memory(input) → Nokogiri::XML::RelaxNG
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-read_memory" title="Link to this method">
-                  <span class="method-callseq">
-                    read_memory(input, parse_options) → Nokogiri::XML::RelaxNG
+                    read_memory(string)
                   </span>
                 </a>
               </div>
@@ -305,34 +205,24 @@ noko_xml_relax_ng_s_from_document(int argc, VALUE *argv, VALUE rb_class)
 
         <div class="method-description">
           <div class="method-source-code" id="read_memory-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/relax_ng.rb, line 80</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">read_memory</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
-  <span class="ruby-identifier">from_document</span>(<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">input</span>), <span class="ruby-identifier">parse_options</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          <p>Parse a RELAX NG schema definition and create a new <a href="Schema.html"><code>Schema</code></a> object.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>input</code> (String) RELAX NG schema definition</p>
-</li>
-<li>
-<p><code>parse_options</code> (<a href="ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>) Defaults to ParseOptions::DEFAULT_SCHEMA  ⚠ Unused</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><a href="RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a></p>
-</dd>
-</dl>
+            <pre>static VALUE
+read_memory(int argc, VALUE *argv, VALUE klass)
+{
+  VALUE rb_content;
+  VALUE rb_parse_options;
+  xmlRelaxNGParserCtxtPtr c_parser_context;
 
-<p>⚠ <code>parse_options</code> is currently unused by this method and is present only as a placeholder for future functionality.</p>
+  rb_scan_args(argc, argv, "11", &amp;rb_content, &amp;rb_parse_options);
+
+  c_parser_context = xmlRelaxNGNewMemParserCtxt(
+                       (const char *)StringValuePtr(rb_content),
+                       (int)RSTRING_LEN(rb_content)
+                     );
+
+  return xml_relax_ng_parse_schema(klass, c_parser_context, rb_parse_options);
+}</pre>
+          </div>
+          <p>Create a new <a href="RelaxNG.html"><code>RelaxNG</code></a> from the contents of <code>string</code></p>
         </div>
 
 

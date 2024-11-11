@@ -88,8 +88,6 @@
 <li>      <a href="#module-Nokogiri::HTML5-label-Maximum+tree+depth">Maximum tree depth</a>
           </li>
 <li>      <a href="#module-Nokogiri::HTML5-label-Attribute+limit+per+element">Attribute limit per element</a>
-          </li>
-<li>      <a href="#module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text">Parse <code>noscript</code> elements’ content as text</a>
 
               </li>
 </ul>
@@ -163,28 +161,28 @@
 <p>The document and fragment parsing methods support options that are different from Nokogiri’s.</p>
 <ul>
 <li>
-<p><code>Nokogiri.HTML5(html, url = nil, encoding = nil, **options)</code></p>
+<p><code>Nokogiri.HTML5(html, url = nil, encoding = nil, options = {})</code></p>
 </li>
 <li>
-<p><code>Nokogiri::HTML5.parse(html, url = nil, encoding = nil, **options)</code></p>
+<p><code>Nokogiri::HTML5.parse(html, url = nil, encoding = nil, options = {})</code></p>
 </li>
 <li>
-<p><code>Nokogiri::HTML5::Document.parse(html, url = nil, encoding = nil, **options)</code></p>
+<p><code>Nokogiri::HTML5::Document.parse(html, url = nil, encoding = nil, options = {})</code></p>
 </li>
 <li>
-<p><code>Nokogiri::HTML5.fragment(html, encoding = nil, **options)</code></p>
+<p><code>Nokogiri::HTML5.fragment(html, encoding = nil, options = {})</code></p>
 </li>
 <li>
-<p><code>Nokogiri::HTML5::DocumentFragment.parse(html, encoding = nil, **options)</code></p>
+<p><code>Nokogiri::HTML5::DocumentFragment.parse(html, encoding = nil, options = {})</code></p>
 </li>
 </ul>
 
-<p>The four currently supported options are <code>:max_errors</code>, <code>:max_tree_depth</code>, <code>:max_attributes</code>, and <code>:parse_noscript_content_as_text</code> described below.</p>
+<p>The three currently supported options are <code>:max_errors</code>, <code>:max_tree_depth</code> and <code>:max_attributes</code>, described below.</p>
 
 <h3 id="module-Nokogiri::HTML5-label-Error+reporting">Error reporting<span><a href="#module-Nokogiri::HTML5-label-Error+reporting">¶</a> <a href="#top">↑</a></span>
 </h3>
 
-<p><a href="../Nokogiri.html"><code>Nokogiri</code></a> contains an experimental <a href="HTML5.html"><code>HTML5</code></a> parse error reporting facility. By default, no parse errors are reported but this can be configured by passing the <code>:max_errors</code> option to <a href="HTML5.html#method-c-parse"><code>HTML5.parse</code></a> or <a href="HTML5.html#method-c-fragment"><code>HTML5.fragment</code></a>.</p>
+<p><a href="../Nokogiri.html"><code>Nokogiri</code></a> contains an experimental <a href="HTML5.html"><code>HTML5</code></a> parse error reporting facility. By default, no parse errors are reported but this can be configured by passing the <code>:max_errors</code> option to {HTML5.parse} or {HTML5.fragment}.</p>
 
 <p>For example, this script:</p>
 
@@ -211,21 +209,21 @@
 
 <p>Using <code>max_errors: -1</code> results in an unlimited number of errors being returned.</p>
 
-<p>The errors returned by <a href="XML/Document.html#attribute-i-errors"><code>HTML5::Document#errors</code></a> are instances of <a href="XML/SyntaxError.html"><code>Nokogiri::XML::SyntaxError</code></a>.</p>
+<p>The errors returned by {HTML5::Document#errors} are instances of {Nokogiri::XML::SyntaxError}.</p>
 
-<p>The <a href="https://html.spec.whatwg.org/multipage/parsing.html#parse-errors">HTML standard</a> defines a number of standard parse error codes. These error codes only cover the “tokenization” stage of parsing <a href="HTML4.html"><code>HTML</code></a>. The parse errors in the “tree construction” stage do not have standardized error codes (yet).</p>
+<p>The {<a href="https://html.spec.whatwg.org/multipage/parsing.html#parse-errors">html.spec.whatwg.org/multipage/parsing.html#parse-errors</a> <a href="HTML4.html"><code>HTML</code></a> standard} defines a number of standard parse error codes. These error codes only cover the “tokenization” stage of parsing <a href="HTML4.html"><code>HTML</code></a>. The parse errors in the “tree construction” stage do not have standardized error codes (yet).</p>
 
-<p>As a convenience to <a href="../Nokogiri.html"><code>Nokogiri</code></a> users, the defined error codes are available via <a href="XML/SyntaxError.html#attribute-i-str1"><code>Nokogiri::XML::SyntaxError#str1</code></a> method.</p>
+<p>As a convenience to <a href="../Nokogiri.html"><code>Nokogiri</code></a> users, the defined error codes are available via {Nokogiri::XML::SyntaxError#str1} method.</p>
 
-<pre>doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;', max_errors: 10)
-doc.errors.each do |err|
-  puts("#{err.line}:#{err.column}: #{err.str1}")
-end
-doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;',
-# =&gt; 1:1: generic-parser
-#    1:1: non-void-html-element-start-tag-with-trailing-solidus
-#    1:17: end-tag-with-trailing-solidus
-#    1:17: end-tag-with-attributes</pre>
+<pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">'&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;'</span>, <span class="ruby-value">max_errors:</span> <span class="ruby-value">10</span>)
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">err</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span>(<span class="ruby-node">"#{err.line}:#{err.column}: #{err.str1}"</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment"># =&gt; 1:1: generic-parser</span>
+<span class="ruby-comment">#    1:1: non-void-html-element-start-tag-with-trailing-solidus</span>
+<span class="ruby-comment">#    1:17: end-tag-with-trailing-solidus</span>
+<span class="ruby-comment">#    1:17: end-tag-with-attributes</span>
+</pre>
 
 <p>Note that the first error is <code>generic-parser</code> because it’s an error from the tree construction stage and doesn’t have a standardized error code.</p>
 
@@ -234,9 +232,9 @@ doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;',
 <h3 id="module-Nokogiri::HTML5-label-Maximum+tree+depth">Maximum tree depth<span><a href="#module-Nokogiri::HTML5-label-Maximum+tree+depth">¶</a> <a href="#top">↑</a></span>
 </h3>
 
-<p>The maximum depth of the DOM tree parsed by the various parsing methods is configurable by the <code>:max_tree_depth</code> option. If the depth of the tree would exceed this limit, then an <code>ArgumentError</code> is thrown.</p>
+<p>The maximum depth of the DOM tree parsed by the various parsing methods is configurable by the <code>:max_tree_depth</code> option. If the depth of the tree would exceed this limit, then an {::ArgumentError} is thrown.</p>
 
-<p>This limit (which defaults to <code>Nokogiri::Gumbo::DEFAULT_MAX_TREE_DEPTH</code>) can be removed by giving the option <code>max_tree_depth: -1</code>.</p>
+<p>This limit (which defaults to <code>Nokogiri::Gumbo::DEFAULT_MAX_TREE_DEPTH = 400</code>) can be removed by giving the option <code>max_tree_depth: -1</code>.</p>
 
 <pre class="ruby"><span class="ruby-identifier">html</span> = <span class="ruby-string">'&lt;!DOCTYPE html&gt;'</span> <span class="ruby-operator">+</span> <span class="ruby-string">'&lt;div&gt;'</span> <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>
 <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">HTML5</span>(<span class="ruby-identifier">html</span>)
@@ -247,64 +245,29 @@ doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;',
 <h3 id="module-Nokogiri::HTML5-label-Attribute+limit+per+element">Attribute limit per element<span><a href="#module-Nokogiri::HTML5-label-Attribute+limit+per+element">¶</a> <a href="#top">↑</a></span>
 </h3>
 
-<p>The maximum number of attributes per DOM element is configurable by the <code>:max_attributes</code> option. If a given element would exceed this limit, then an <code>ArgumentError</code> is thrown.</p>
+<p>The maximum number of attributes per DOM element is configurable by the <code>:max_attributes</code> option. If a given element would exceed this limit, then an {::ArgumentError} is thrown.</p>
 
-<p>This limit (which defaults to <code>Nokogiri::Gumbo::DEFAULT_MAX_ATTRIBUTES</code>) can be removed by giving the option <code>max_attributes: -1</code>.</p>
+<p>This limit (which defaults to <code>Nokogiri::Gumbo::DEFAULT_MAX_ATTRIBUTES = 400</code>) can be removed by giving the option <code>max_attributes: -1</code>.</p>
 
-<pre class="ruby"><span class="ruby-identifier">html</span> = <span class="ruby-string">'&lt;!DOCTYPE html&gt;&lt;div '</span> <span class="ruby-operator">+</span> (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">1000</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-node">"attr-#{x}"</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">' # '</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'&gt;'</span>
+<pre class="ruby"><span class="ruby-identifier">html</span> = <span class="ruby-string">'&lt;!DOCTYPE html&gt;&lt;div '</span> <span class="ruby-operator">+</span> (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">1000</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-node">"attr-#{x}"</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'&gt;'</span>
 <span class="ruby-comment"># "&lt;!DOCTYPE html&gt;&lt;div attr-1 attr-2 attr-3 ... attr-1000&gt;"</span>
 <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">HTML5</span>(<span class="ruby-identifier">html</span>)
 <span class="ruby-comment"># raises ArgumentError: Attributes per element limit exceeded</span>
-
 <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">HTML5</span>(<span class="ruby-identifier">html</span>, <span class="ruby-value">max_attributes:</span> <span class="ruby-value">-1</span>)
-<span class="ruby-comment"># parses successfully</span>
-</pre>
-
-<h3 id="module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text">Parse <code>noscript</code> elements’ content as text<span><a href="#module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text">¶</a> <a href="#top">↑</a></span>
-</h3>
-
-<p>By default, the content of <code>noscript</code> elements is parsed as <a href="HTML4.html"><code>HTML</code></a> elements. Browsers that support scripting parse the content of <code>noscript</code> elements as raw text.</p>
-
-<p>The <code>:parse_noscript_content_as_text</code> option causes <a href="../Nokogiri.html"><code>Nokogiri</code></a> to parse the content of <code>noscript</code> elements as a single text node.</p>
-
-<pre class="ruby"><span class="ruby-identifier">html</span> = <span class="ruby-string">"&lt;!DOCTYPE html&gt;&lt;noscript&gt;&lt;meta charset='UTF-8'&gt;&lt;link rel=stylesheet href=!&gt;&lt;/noscript&gt;"</span>
-<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">html</span>, <span class="ruby-value">parse_noscript_content_as_text:</span> <span class="ruby-keyword">true</span>)
-<span class="ruby-identifier">pp</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">at_xpath</span>(<span class="ruby-string">"/html/head/noscript"</span>)
-<span class="ruby-comment"># =&gt; #(Element:0x878c {</span>
-<span class="ruby-comment">#        name = "noscript",</span>
-<span class="ruby-comment">#        children = [ #(Text "&lt;meta charset='UTF-8'&gt;&lt;link rel=stylesheet href=!&gt;")]</span>
-<span class="ruby-comment">#      })</span>
-</pre>
-
-<p>In contrast, <code>parse_noscript_content_as_text: false</code> (the default) causes the <code>noscript</code> element in the previous example to have two children, a <code>meta</code> element and a <code>link</code> element.</p>
-
-<pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">html</span>)
-<span class="ruby-identifier">puts</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">at_xpath</span>(<span class="ruby-string">"/html/head/noscript"</span>)
-<span class="ruby-comment"># =&gt; #(Element:0x96b4 {</span>
-<span class="ruby-comment">#      name = "noscript",</span>
-<span class="ruby-comment">#      children = [</span>
-<span class="ruby-comment">#        #(Element:0x97e0 { name = "meta", attribute_nodes = [ #(Attr:0x990c { name = "charset", value = "UTF-8" })] }),</span>
-<span class="ruby-comment">#        #(Element:0x9b00 {</span>
-<span class="ruby-comment">#          name = "link",</span>
-<span class="ruby-comment">#          attribute_nodes = [</span>
-<span class="ruby-comment">#            #(Attr:0x9c2c { name = "rel", value = "stylesheet" }),</span>
-<span class="ruby-comment">#            #(Attr:0x9dd0 { name = "href", value = "!" })]</span>
-<span class="ruby-comment">#          })]</span>
-<span class="ruby-comment">#      })</span>
 </pre>
 
 <h2 id="module-Nokogiri::HTML5-label-HTML+Serialization">
 <a href="HTML4.html"><code>HTML</code></a> Serialization<span><a href="#module-Nokogiri::HTML5-label-HTML+Serialization">¶</a> <a href="#top">↑</a></span>
 </h2>
 
-<p>After parsing <a href="HTML4.html"><code>HTML</code></a>, it may be serialized using any of the <a href="XML/Node.html"><code>Nokogiri::XML::Node</code></a> serialization methods. In particular, <a href="XML/Node.html#method-i-serialize"><code>XML::Node#serialize</code></a>, <a href="XML/Node.html#method-i-to_html"><code>XML::Node#to_html</code></a>, and <a href="XML/Node.html#method-i-to_s"><code>XML::Node#to_s</code></a> will serialize a given node and its children. (This is the equivalent of JavaScript’s <code>Element.outerHTML</code>.) Similarly, <a href="XML/Node.html#method-i-inner_html"><code>XML::Node#inner_html</code></a> will serialize the children of a given node. (This is the equivalent of JavaScript’s <code>Element.innerHTML</code>.)</p>
+<p>After parsing <a href="HTML4.html"><code>HTML</code></a>, it may be serialized using any of the {Nokogiri::XML::Node} serialization methods. In particular, {XML::Node#serialize}, {XML::Node#to_html}, and {XML::Node#to_s} will serialize a given node and its children. (This is the equivalent of JavaScript’s <code>Element.outerHTML</code>.) Similarly, {XML::Node#inner_html} will serialize the children of a given node. (This is the equivalent of JavaScript’s <code>Element.innerHTML</code>.)</p>
 
 <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>(<span class="ruby-string">"&lt;!DOCTYPE html&gt;&lt;span&gt;Hello world!&lt;/span&gt;"</span>)
 <span class="ruby-identifier">puts</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">serialize</span>
 <span class="ruby-comment"># =&gt; &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;span&gt;Hello world!&lt;/span&gt;&lt;/body&gt;&lt;/html&gt;</span>
 </pre>
 
-<p>Due to quirks in how <a href="HTML4.html"><code>HTML</code></a> is parsed and serialized, it’s possible for a DOM tree to be serialized and then re-parsed, resulting in a different DOM. Mostly, this happens with DOMs produced from invalid <a href="HTML4.html"><code>HTML</code></a>. Unfortunately, even valid <a href="HTML4.html"><code>HTML</code></a> may not survive serialization and re-parsing.</p>
+<p>Due to quirks in how <a href="HTML4.html"><code>HTML</code></a> is parsed and serialized, it’s possible for a DOM tree to be serialized and then re-parsed, resulting in a different DOM.  Mostly, this happens with DOMs produced from invalid <a href="HTML4.html"><code>HTML</code></a>. Unfortunately, even valid <a href="HTML4.html"><code>HTML</code></a> may not survive serialization and re-parsing.</p>
 
 <p>In particular, a newline at the start of <code>pre</code>, <code>listing</code>, and <code>textarea</code> elements is ignored by the parser.</p>
 
@@ -334,30 +297,29 @@ Content&lt;/listing&gt;
 <h2 id="module-Nokogiri::HTML5-label-Encodings">Encodings<span><a href="#module-Nokogiri::HTML5-label-Encodings">¶</a> <a href="#top">↑</a></span>
 </h2>
 
-<p><a href="../Nokogiri.html"><code>Nokogiri</code></a> always parses <a href="HTML5.html"><code>HTML5</code></a> using <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>; however, the encoding of the input can be explicitly selected via the optional <code>encoding</code> parameter. This is most useful when the input comes not from a string but from an IO object.</p>
+<p><a href="../Nokogiri.html"><code>Nokogiri</code></a> always parses <a href="HTML5.html"><code>HTML5</code></a> using {<a href="https://en.wikipedia.org/wiki/UTF-8">en.wikipedia.org/wiki/UTF-8</a> UTF-8}; however, the encoding of the input can be explicitly selected via the optional <code>encoding</code> parameter. This is most useful when the input comes not from a string but from an IO object.</p>
 
-<p>When serializing a document or node, the encoding of the output string can be specified via the <code>:encoding</code> options. Characters that cannot be encoded in the selected encoding will be encoded as <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references">HTML numeric entities</a>.</p>
+<p>When serializing a document or node, the encoding of the output string can be specified via the <code>:encoding</code> options. Characters that cannot be encoded in the selected encoding will be encoded as {<a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references">en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references</a> <a href="HTML4.html"><code>HTML</code></a> numeric entities}.</p>
 
 <pre class="ruby"><span class="ruby-identifier">frag</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-string">'&lt;span&gt;아는 길도 물어가라&lt;/span&gt;'</span>)
 <span class="ruby-identifier">html</span> = <span class="ruby-identifier">frag</span>.<span class="ruby-identifier">serialize</span>(<span class="ruby-value">encoding:</span> <span class="ruby-string">'US-ASCII'</span>)
 <span class="ruby-identifier">puts</span> <span class="ruby-identifier">html</span>
 <span class="ruby-comment"># =&gt; &lt;span&gt;&amp;#xc544;&amp;#xb294; &amp;#xae38;&amp;#xb3c4; &amp;#xbb3c;&amp;#xc5b4;&amp;#xac00;&amp;#xb77c;&lt;/span&gt;</span>
-
 <span class="ruby-identifier">frag</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span>.<span class="ruby-identifier">fragment</span>(<span class="ruby-identifier">html</span>)
 <span class="ruby-identifier">puts</span> <span class="ruby-identifier">frag</span>.<span class="ruby-identifier">serialize</span>
 <span class="ruby-comment"># =&gt; &lt;span&gt;아는 길도 물어가라&lt;/span&gt;</span>
 </pre>
 
-<p>(There’s a <a href="https://bugs.ruby-lang.org/issues/15033">bug</a> in all current versions of Ruby that can cause the entity encoding to fail. Of the mandated supported encodings for <a href="HTML4.html"><code>HTML</code></a>, the only encoding I’m aware of that has this bug is <code>'ISO-2022-JP'</code>. We recommend avoiding this encoding.)</p>
+<p>(There’s a {<a href="https://bugs.ruby-lang.org/issues/15033">bugs.ruby-lang.org/issues/15033</a> bug} in all current versions of Ruby that can cause the entity encoding to fail. Of the mandated supported encodings for <a href="HTML4.html"><code>HTML</code></a>, the only encoding I’m aware of that has this bug is <code>'ISO-2022-JP'</code>. We recommend avoiding this encoding.)</p>
 
 <h2 id="module-Nokogiri::HTML5-label-Notes">Notes<span><a href="#module-Nokogiri::HTML5-label-Notes">¶</a> <a href="#top">↑</a></span>
 </h2>
 <ul>
 <li>
-<p>The <a href="HTML5.html#method-c-fragment"><code>Nokogiri::HTML5.fragment</code></a> function takes a String or IO and parses it as a <a href="HTML5.html"><code>HTML5</code></a> document in a <code>body</code> context. As a result, the <code>html</code>, <code>head</code>, and <code>body</code> elements are removed from this document, and any children of these elements that remain are returned as a <a href="HTML5/DocumentFragment.html"><code>Nokogiri::HTML5::DocumentFragment</code></a>; but you can pass in a different context (e.g., “html” to get <code>head</code> and <code>body</code> tags in the result).</p>
+<p>The {Nokogiri::HTML5.fragment} function takes a string and parses it as a <a href="HTML5.html"><code>HTML5</code></a> document.  The +&lt;html&gt;+, +&lt;head&gt;+, and +&lt;body&gt;+ elements are removed from this document, and any children of these elements that remain are returned as a {Nokogiri::HTML5::DocumentFragment}.</p>
 </li>
 <li>
-<p>The <a href="HTML5.html#method-c-parse"><code>Nokogiri::HTML5.parse</code></a> function takes a String or IO and passes it to the <code>gumbo_parse_with_options</code> method, using the default options.  The resulting <a href="Gumbo.html"><code>Gumbo</code></a> parse tree is then walked.</p>
+<p>The {Nokogiri::HTML5.parse} function takes a string and passes it to the <code>gumbo_parse_with_options</code> method, using the default options. The resulting <a href="Gumbo.html"><code>Gumbo</code></a> parse tree is then walked.</p>
 </li>
 <li>
 <p>Instead of uppercase element names, lowercase element names are produced.</p>
@@ -400,12 +362,12 @@ Content&lt;/listing&gt;
 
         <div class="method-description">
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 277</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 238</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
-  <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse a fragment from <code>string</code>. Convenience method for <a href="HTML5/DocumentFragment.html#method-c-parse"><code>Nokogiri::HTML5::DocumentFragment.parse</code></a>.</p>
+          <p>Parse a fragment from <code>string</code>. Convenience method for {Nokogiri::HTML5::DocumentFragment.parse}.</p>
         </div>
 
 
@@ -429,12 +391,12 @@ Content&lt;/listing&gt;
 
         <div class="method-description">
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 271</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 232</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse an <a href="HTML4.html"><code>HTML</code></a> 5 document. Convenience method for <a href="HTML5/Document.html#method-c-parse"><code>Nokogiri::HTML5::Document.parse</code></a></p>
+          <p>Parse an <a href="HTML4.html"><code>HTML</code></a> 5 document. Convenience method for {Nokogiri::HTML5::Document.parse}</p>
         </div>
 
 

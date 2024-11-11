@@ -71,12 +71,11 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../../Object.html">Object</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../../Object.html">Object</a><ul><li>BasicObject</li></ul>
+</li></ul>
 </div>
 
   
@@ -262,7 +261,7 @@ rb_xml_xpath_context_evaluate(int argc, VALUE *argv, VALUE rb_context)
     );
   }
 
-  xmlSetStructuredErrorFunc((void *)errors, noko__error_array_pusher);
+  xmlSetStructuredErrorFunc((void *)errors, Nokogiri_error_array_pusher);
   xmlSetGenericErrorFunc((void *)errors, generic_exception_pusher);
 
   xpath = xmlXPathEvalExpression(query, c_context);

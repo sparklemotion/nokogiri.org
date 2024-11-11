@@ -71,12 +71,11 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../Object.html">Object</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../Object.html">Object</a><ul><li>BasicObject</li></ul>
+</li></ul>
 </div>
 
   
@@ -177,7 +176,7 @@ rb_xml_encoding_handler_s_get(VALUE klass, VALUE key)
 
   handler = xmlFindCharEncodingHandler(StringValueCStr(key));
   if (handler) {
-    return TypedData_Wrap_Struct(klass, &amp;xml_char_encoding_handler_type, handler);
+    return TypedData_Wrap_Struct(klass, &amp;xml_encoding_handler_type, handler);
   }
 
   return Qnil;
@@ -350,7 +349,7 @@ rb_xml_encoding_handler_name(VALUE self)
 {
   xmlCharEncodingHandlerPtr handler;
 
-  TypedData_Get_Struct(self, xmlCharEncodingHandler, &amp;xml_char_encoding_handler_type, handler);
+  TypedData_Get_Struct(self, xmlCharEncodingHandler, &amp;xml_encoding_handler_type, handler);
 
   return NOKOGIRI_STR_NEW2(handler-&gt;name);
 }</pre>

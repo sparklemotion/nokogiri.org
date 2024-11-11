@@ -71,12 +71,11 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../../Object.html">Object</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../../Object.html">Object</a><ul><li>BasicObject</li></ul>
+</li></ul>
 </div>
 
   
@@ -273,7 +272,7 @@
 get_name(VALUE self)
 {
   xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
 
   if (!elem-&gt;name) { return Qnil; }
   return NOKOGIRI_STR_NEW2(elem-&gt;name);
@@ -314,7 +313,7 @@ get_name(VALUE self)
 get_occur(VALUE self)
 {
   xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
 
   return INT2NUM(elem-&gt;ocur);
 }</pre>
@@ -354,7 +353,7 @@ get_occur(VALUE self)
 get_prefix(VALUE self)
 {
   xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
 
   if (!elem-&gt;prefix) { return Qnil; }
 
@@ -396,7 +395,7 @@ get_prefix(VALUE self)
 get_type(VALUE self)
 {
   xmlElementContentPtr elem;
-  TypedData_Get_Struct(self, xmlElementContent, &amp;xml_element_content_type, elem);
+  TypedData_Get_Struct(self, xmlElementContent, &amp;element_content_data_type, elem);
 
   return INT2NUM(elem-&gt;type);
 }</pre>

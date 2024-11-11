@@ -181,7 +181,7 @@
   <span class="ruby-constant">Reader</span>.<span class="ruby-identifier">from_memory</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_i</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse an <a href="XML.html"><code>XML</code></a> document using the <a href="XML/Reader.html"><code>Nokogiri::XML::Reader</code></a> API.  See <a href="XML/Reader.html"><code>Nokogiri::XML::Reader</code></a> for more information</p>
+          <p>Parse an <a href="XML.html"><code>XML</code></a> document using the <a href="XML/Reader.html"><code>Nokogiri::XML::Reader</code></a> API.  See <a href="XML/Reader.html"><code>Nokogiri::XML::Reader</code></a> for mor information</p>
         </div>
 
 
@@ -189,20 +189,12 @@
 
       <div id="method-c-RelaxNG" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-c-RelaxNG" title="Link to this method">
-                  <span class="method-callseq">
-                    RelaxNg(input) → Nokogiri::XML::RelaxNG
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-RelaxNG" title="Link to this method">
-                  <span class="method-callseq">
-                    RelaxNg(input, parse_options) → Nokogiri::XML::RelaxNG
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-c-RelaxNG" title="Link to this method">
+                <span class="method-name">RelaxNG</span>
+                <span class="method-args">(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -213,34 +205,12 @@
 
         <div class="method-description">
           <div class="method-source-code" id="RelaxNG-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/relax_ng.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-constant">RelaxNG</span>(<span class="ruby-identifier ruby-title">input</span>, <span class="ruby-identifier">parse_options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
-  <span class="ruby-constant">RelaxNG</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/relax_ng.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">RelaxNG</span>(<span class="ruby-identifier ruby-title">string_or_io</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
+  <span class="ruby-constant">RelaxNG</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse a RELAX NG schema definition and create a new <a href="XML/Schema.html"><code>Schema</code></a> object. This is a convenience method for <a href="XML/RelaxNG.html#method-c-new"><code>Nokogiri::XML::RelaxNG.new</code></a></p>
-
-<p>See related: <a href="XML/RelaxNG.html#method-c-new"><code>Nokogiri::XML::RelaxNG.new</code></a></p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>input</code> (String, IO) RELAX NG schema definition</p>
-</li>
-<li>
-<p><code>parse_options</code> (<a href="XML/ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>) Defaults to ParseOptions::DEFAULT_SCHEMA</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><a href="XML/RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a></p>
-</dd>
-</dl>
+          <p>Create a new <a href="XML/RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a> document from <code>string_or_io</code>. See <a href="XML/RelaxNG.html"><code>Nokogiri::XML::RelaxNG</code></a> for an example.</p>
         </div>
 
 
@@ -248,20 +218,12 @@
 
       <div id="method-c-Schema" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-c-Schema" title="Link to this method">
-                  <span class="method-callseq">
-                    Schema(input) → Nokogiri::XML::Schema
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-Schema" title="Link to this method">
-                  <span class="method-callseq">
-                    Schema(input, parse_options) → Nokogiri::XML::Schema
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-c-Schema" title="Link to this method">
+                <span class="method-name">Schema</span>
+                <span class="method-args">(string_or_io, options = ParseOptions::DEFAULT_SCHEMA)</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -272,34 +234,12 @@
 
         <div class="method-description">
           <div class="method-source-code" id="Schema-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 20</span>
-<span class="ruby-keyword">def</span> <span class="ruby-constant">Schema</span>(<span class="ruby-identifier ruby-title">input</span>, <span class="ruby-identifier">parse_options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
-  <span class="ruby-constant">Schema</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">parse_options</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Schema</span>(<span class="ruby-identifier ruby-title">string_or_io</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SCHEMA</span>)
+  <span class="ruby-constant">Schema</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse an <a href="../XSD.html"><code>XSD</code></a> schema definition and create a new {Schema} object. This is a convenience method for <a href="XML/Schema.html#method-c-new"><code>Nokogiri::XML::Schema.new</code></a></p>
-
-<p>See related: <a href="XML/Schema.html#method-c-new"><code>Nokogiri::XML::Schema.new</code></a></p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>input</code> (String, IO) <a href="../XSD.html"><code>XSD</code></a> schema definition</p>
-</li>
-<li>
-<p><code>parse_options</code> (<a href="XML/ParseOptions.html"><code>Nokogiri::XML::ParseOptions</code></a>)</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Returns
-</dt>
-<dd>
-<p><a href="XML/Schema.html"><code>Nokogiri::XML::Schema</code></a></p>
-</dd>
-</dl>
+          <p>Create a new <a href="XML/Schema.html"><code>Nokogiri::XML::Schema</code></a> object using a <code>string_or_io</code> object.</p>
         </div>
 
 

@@ -147,7 +147,7 @@
           <div class="method-source-code" id="fragment-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-identifier">tags</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">tags</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">tags</span>, <span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -182,7 +182,7 @@
           <div class="method-source-code" id="inner_html-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_html</span>(<span class="ruby-identifier">options</span> = {})
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
   <span class="ruby-identifier">result</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:preserve_newline</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">prepend_newline?</span> <span class="ruby-operator">?</span> <span class="ruby-string">+"\n"</span> <span class="ruby-operator">:</span> <span class="ruby-string">+""</span>
   <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">to_html</span>(<span class="ruby-identifier">options</span>) }.<span class="ruby-identifier">join</span>
@@ -219,7 +219,7 @@
           <div class="method-source-code" id="write_to-source">
             <pre><span class="ruby-comment"># File lib/nokogiri/html5/node.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_to</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">io</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">document</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>)
 
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> {}
   <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">0</span>]

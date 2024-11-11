@@ -9,7 +9,7 @@
 
   <meta name="keywords" content="ruby,class,Nokogiri::XML::SAX::Parser">
 
-    <meta name="description" content="class Nokogiri::XML::SAX::Parser: This parser is a SAX style parser that reads its input as it deems necessary. Document.">
+    <meta name="description" content="class Nokogiri::XML::SAX::Parser: This parser is a SAX style parser that reads it's input as it deems necessary. Document.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../";
@@ -71,25 +71,14 @@
 
   
   
-  
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link"><a href="../../../Object.html">Object</a>
-</p>
+  <div id="parent-class-section" class="nav-section">
+  <h3>Ancestors</h3>
+  <ul><li>
+<a href="../../../Object.html">Object</a><ul><li>BasicObject</li></ul>
+</li></ul>
 </div>
 
   
-<div id="includes-section" class="nav-section">
-  <h3>Included Modules</h3>
-
-  <ul class="link-list">
-    <li>
-<a class="include" href="../../ClassResolver.html">Nokogiri::ClassResolver</a>
-  </li>
-</ul>
-</div>
-
   
   
 <!-- Method Quickref -->
@@ -111,9 +100,6 @@
     </li>
 <li>
 <a href="#method-i-parse_memory">#parse_memory</a>
-    </li>
-<li>
-<a href="#method-i-related_class">#related_class</a>
   </li>
 </ul>
 </div>
@@ -136,13 +122,13 @@
 
   <section class="description">
     
-<p>This parser is a <a href="../SAX.html"><code>SAX</code></a> style parser that reads its input as it deems necessary. The parser takes a <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a>, an optional encoding, then given an <a href="../../XML.html"><code>XML</code></a> input, sends messages to the <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a>.</p>
+<p>This parser is a <a href="../SAX.html"><code>SAX</code></a> style parser that reads it’s input as it deems necessary.  The parser takes a <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a>, an optional encoding, then given an <a href="../../XML.html"><code>XML</code></a> input, sends messages to the <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a>.</p>
 
 <p>Here is an example of using this parser:</p>
 
 <pre class="ruby"><span class="ruby-comment"># Create a subclass of Nokogiri::XML::SAX::Document and implement</span>
 <span class="ruby-comment"># the events we care about:</span>
-<span class="ruby-keyword">class</span> <span class="ruby-constant">MyHandler</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MyDoc</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_element</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span> = []
     <span class="ruby-identifier">puts</span> <span class="ruby-node">"starting: #{name}"</span>
   <span class="ruby-keyword">end</span>
@@ -152,19 +138,14 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span>
 
-<span class="ruby-identifier">parser</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">MyHandler</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-comment"># Create our parser</span>
+<span class="ruby-identifier">parser</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">MyDoc</span>.<span class="ruby-identifier">new</span>)
 
-<span class="ruby-comment"># Hand an IO object to the parser, which will read the XML from the IO.</span>
-<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path_to_xml</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
-  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">f</span>)
-<span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Send some XML to the parser</span>
+<span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">ARGV</span>[<span class="ruby-value">0</span>]))
 </pre>
 
-<p>For more information about SAX parsers, see <a href="../SAX.html"><code>Nokogiri::XML::SAX</code></a>.</p>
-
-<p>Also see <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a> for the available events.</p>
-
-<p>For HTML documents, use the subclass <a href="../../HTML4/SAX/Parser.html"><code>Nokogiri::HTML4::SAX::Parser</code></a>.</p>
+<p>For more information about <a href="../SAX.html"><code>SAX</code></a> parsers, see <a href="../SAX.html"><code>Nokogiri::XML::SAX</code></a>.  Also see <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a> for the available events.</p>
 
   </section>
 
@@ -176,13 +157,10 @@
         <h3>Constants</h3>
       </header>
       <dl>
-        <dt id="VALID_NAMESPACES">VALID_NAMESPACES
+        <dt id="ENCODINGS">ENCODINGS
         </dt>
 <dd>
-            <div class="mixin-from">
-              Included from <a href="../../ClassResolver.html">Nokogiri::ClassResolver</a>
-            </div>
-          <p><a href="Parser.html#method-i-related_class"><code>related_class</code></a> restricts matching namespaces to those matching this set.</p>
+          <p>Encodinds this parser supports</p>
       </dd>
 </dl>
     </section>
@@ -226,27 +204,12 @@
 
       <div id="method-c-new" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-c-new" title="Link to this method">
-                  <span class="method-callseq">
-                    new ⇒ SAX::Parser
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-new" title="Link to this method">
-                  <span class="method-callseq">
-                    new(handler) ⇒ SAX::Parser
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-c-new" title="Link to this method">
-                  <span class="method-callseq">
-                    new(handler, encoding) ⇒ SAX::Parser
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(doc = Nokogiri::XML::SAX::Document.new, encoding = "UTF-8")</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -257,29 +220,14 @@
 
         <div class="method-description">
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 95</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>)
-  <span class="ruby-ivar">@encoding</span> = <span class="ruby-identifier">encoding</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">SAX</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">"UTF-8"</span>)
+  <span class="ruby-ivar">@encoding</span> = <span class="ruby-identifier">check_encoding</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-ivar">@document</span> = <span class="ruby-identifier">doc</span>
   <span class="ruby-ivar">@warned</span>   = <span class="ruby-keyword">false</span>
-
-  <span class="ruby-identifier">initialize_native</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Nokogiri</span>.<span class="ruby-identifier">jruby?</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Create a new <a href="Parser.html"><code>Parser</code></a>.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>handler</code> (optional <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a>) The document that will receive events. Will create a new <a href="Document.html"><code>Nokogiri::XML::SAX::Document</code></a> if not given, which is accessible through the <a href="Parser.html#attribute-i-document"><code>#document</code></a> attribute.</p>
-</li>
-<li>
-<p><code>encoding</code> (optional Encoding, String, nil) An Encoding or encoding name to use when parsing the input. (default <code>nil</code> for auto-detection)</p>
-</li>
-</ul>
+          <p>Create a new <a href="Parser.html"><code>Parser</code></a> with <code>doc</code> and <code>encoding</code></p>
         </div>
 
 
@@ -294,13 +242,12 @@
 
       <div id="method-i-parse" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-i-parse" title="Link to this method">
-                  <span class="method-callseq">
-                    parse(input) { |parser_context| ... }
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-i-parse" title="Link to this method">
+                <span class="method-name">parse</span>
+                <span class="method-args">(thing, &amp;block)</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -311,33 +258,16 @@
 
         <div class="method-description">
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 119</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">input</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:close</span>)
-    <span class="ruby-identifier">parse_io</span>(<span class="ruby-identifier">input</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">thing</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">thing</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">thing</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:close</span>)
+    <span class="ruby-identifier">parse_io</span>(<span class="ruby-identifier">thing</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">parse_memory</span>(<span class="ruby-identifier">input</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">parse_memory</span>(<span class="ruby-identifier">thing</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse the input, sending events to the <a href="Document.html"><code>SAX::Document</code></a> at <a href="Parser.html#attribute-i-document"><code>#document</code></a>.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul><li>
-<p><code>input</code> (String, IO) The input to parse.</p>
-</li></ul>
-
-<p>If <code>input</code> quacks like a readable IO object, this method forwards to <a href="Parser.html#method-i-parse_io"><code>Parser.parse_io</code></a>, otherwise it forwards to <a href="Parser.html#method-i-parse_memory"><code>Parser.parse_memory</code></a>.</p>
-<dl class="rdoc-list label-list">
-<dt>Yields
-</dt>
-<dd>
-<p>If a block is given, the underlying <a href="ParserContext.html"><code>ParserContext</code></a> object will be yielded. This can be used to set options on the parser context before parsing begins.</p>
-</dd>
-</dl>
+          <p>Parse given <code>thing</code> which may be a string containing xml, or an IO object.</p>
         </div>
 
 
@@ -345,20 +275,12 @@
 
       <div id="method-i-parse_file" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-i-parse_file" title="Link to this method">
-                  <span class="method-callseq">
-                    parse_file(filename) { |parser_context| ... }
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-i-parse_file" title="Link to this method">
-                  <span class="method-callseq">
-                    parse_file(filename, encoding) { |parser_context| ... }
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-i-parse_file" title="Link to this method">
+                <span class="method-name">parse_file</span>
+                <span class="method-args">(filename) { |ctx| ... }</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -369,38 +291,18 @@
 
         <div class="method-description">
           <div class="method-source-code" id="parse_file-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 187</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_file</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-ivar">@encoding</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">"no filename provided"</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">filename</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">filename</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EISDIR</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">filename</span>)
 
-  <span class="ruby-identifier">ctx</span> = <span class="ruby-identifier">related_class</span>(<span class="ruby-string">"ParserContext"</span>).<span class="ruby-identifier">file</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">encoding</span>)
+  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse a file.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>filename</code> (String) The path to the file to be parsed.</p>
-</li>
-<li>
-<p><code>encoding</code> (optional Encoding, String, nil) An Encoding or encoding name to use when parsing the input, or <code>nil</code> for auto-detection. (default <a href="Parser.html#attribute-i-encoding"><code>#encoding</code></a>)</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Yields
-</dt>
-<dd>
-<p>If a block is given, the underlying <a href="ParserContext.html"><code>ParserContext</code></a> object will be yielded. This can be used to set options on the parser context before parsing begins.</p>
-</dd>
-</dl>
+          <p>Parse a file with <code>filename</code></p>
         </div>
 
 
@@ -408,20 +310,12 @@
 
       <div id="method-i-parse_io" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-i-parse_io" title="Link to this method">
-                  <span class="method-callseq">
-                    parse_io(io) { |parser_context| ... }
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-i-parse_io" title="Link to this method">
-                  <span class="method-callseq">
-                    parse_io(io, encoding) { |parser_context| ... }
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-i-parse_io" title="Link to this method">
+                <span class="method-name">parse_io</span>
+                <span class="method-args">(io, encoding = @encoding) { |ctx| ... }</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -432,34 +326,14 @@
 
         <div class="method-description">
           <div class="method-source-code" id="parse_io-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 143</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-ivar">@encoding</span>)
-  <span class="ruby-identifier">ctx</span> = <span class="ruby-identifier">related_class</span>(<span class="ruby-string">"ParserContext"</span>).<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">encoding</span>)
+  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-constant">ENCODINGS</span>[<span class="ruby-identifier">check_encoding</span>(<span class="ruby-identifier">encoding</span>)])
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse an input stream.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>io</code> (IO) The readable IO object from which to read input</p>
-</li>
-<li>
-<p><code>encoding</code> (optional Encoding, String, nil) An Encoding or encoding name to use when parsing the input, or <code>nil</code> for auto-detection. (default <a href="Parser.html#attribute-i-encoding"><code>#encoding</code></a>)</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Yields
-</dt>
-<dd>
-<p>If a block is given, the underlying <a href="ParserContext.html"><code>ParserContext</code></a> object will be yielded. This can be used to set options on the parser context before parsing begins.</p>
-</dd>
-</dl>
+          <p>Parse given <code>io</code></p>
         </div>
 
 
@@ -467,20 +341,12 @@
 
       <div id="method-i-parse_memory" class="method-detail anchor-link ">
         <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-i-parse_memory" title="Link to this method">
-                  <span class="method-callseq">
-                    parse_memory(input) { |parser_context| ... }
-                  </span>
-                </a>
-              </div>
-              <div class="method-heading">
-                <a href="#method-i-parse_memory" title="Link to this method">
-                  <span class="method-callseq">
-                    parse_memory(input, encoding) { |parser_context| ... }
-                  </span>
-                </a>
-              </div>
+            <div class="method-heading">
+              <a href="#method-i-parse_memory" title="Link to this method">
+                <span class="method-name">parse_memory</span>
+                <span class="method-args">(data) { |ctx| ... }</span>
+              </a>
+            </div>
         </div>
 
           <div class="method-controls">
@@ -491,105 +357,14 @@
 
         <div class="method-description">
           <div class="method-source-code" id="parse_memory-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 165</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_memory</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-ivar">@encoding</span>)
-  <span class="ruby-identifier">ctx</span> = <span class="ruby-identifier">related_class</span>(<span class="ruby-string">"ParserContext"</span>).<span class="ruby-identifier">memory</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">encoding</span>)
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/sax/parser.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_memory</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">ctx</span> = <span class="ruby-constant">ParserContext</span>.<span class="ruby-identifier">memory</span>(<span class="ruby-identifier">data</span>)
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">ctx</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">parse_with</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          <p>Parse an input string.</p>
-<dl class="rdoc-list label-list">
-<dt>Parameters
-</dt>
-<dd></dd>
-</dl>
-<ul>
-<li>
-<p><code>input</code> (String) The input string to be parsed.</p>
-</li>
-<li>
-<p><code>encoding</code> (optional Encoding, String, nil) An Encoding or encoding name to use when parsing the input, or <code>nil</code> for auto-detection. (default <a href="Parser.html#attribute-i-encoding"><code>#encoding</code></a>)</p>
-</li>
-</ul>
-<dl class="rdoc-list label-list">
-<dt>Yields
-</dt>
-<dd>
-<p>If a block is given, the underlying <a href="ParserContext.html"><code>ParserContext</code></a> object will be yielded. This can be used to set options on the parser context before parsing begins.</p>
-</dd>
-</dl>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-related_class" class="method-detail anchor-link ">
-        <div class="method-header">
-              <div class="method-heading">
-                <a href="#method-i-related_class" title="Link to this method">
-                  <span class="method-callseq">
-                    related_class(class_name) → Class
-                  </span>
-                </a>
-              </div>
-        </div>
-
-          <div class="method-controls">
-            <details class="method-source-toggle">
-              <summary>Source</summary>
-            </details>
-          </div>
-
-        <div class="method-description">
-          <div class="method-source-code" id="related_class-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/class_resolver.rb, line 46</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">related_class</span>(<span class="ruby-identifier">class_name</span>)
-  <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>
-  <span class="ruby-identifier">inspecting</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>
-
-  <span class="ruby-keyword">while</span> <span class="ruby-identifier">inspecting</span>
-    <span class="ruby-identifier">namespace_path</span> = <span class="ruby-identifier">inspecting</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">"::"</span>)[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>]
-    <span class="ruby-identifier">inspecting</span> = <span class="ruby-identifier">inspecting</span>.<span class="ruby-identifier">superclass</span>
-
-    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">VALID_NAMESPACES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">namespace_path</span>.<span class="ruby-identifier">last</span>)
-
-    <span class="ruby-identifier">related_class_name</span> = (<span class="ruby-identifier">namespace_path</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">class_name</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">"::"</span>)
-    <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">begin</span>
-      <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">related_class_name</span>)
-    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>
-      <span class="ruby-keyword">nil</span>
-    <span class="ruby-keyword">end</span>
-    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">klass</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-            <div class="mixin-from">
-              Included from <a href="../../ClassResolver.html">Nokogiri::ClassResolver</a>
-            </div>
-          <p>Find a class constant within the</p>
-
-<p>Some examples:</p>
-
-<pre class="ruby"><span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"DocumentFragment"</span>)
-<span class="ruby-comment"># =&gt; Nokogiri::XML::DocumentFragment</span>
-<span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"DocumentFragment"</span>)
-<span class="ruby-comment"># =&gt; Nokogiri::HTML4::DocumentFragment</span>
-</pre>
-
-<p>Note this will also work for subclasses that follow the same convention, e.g.:</p>
-
-<pre class="ruby"><span class="ruby-constant">Loofah</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"DocumentFragment"</span>)
-<span class="ruby-comment"># =&gt; Loofah::HTML::DocumentFragment</span>
-</pre>
-
-<p>And even if it’s a subclass, this will iterate through the superclasses:</p>
-
-<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ThisIsATopLevelClass</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span> ; <span class="ruby-keyword">end</span>
-<span class="ruby-constant">ThisIsATopLevelClass</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">related_class</span>(<span class="ruby-string">"Document"</span>)
-<span class="ruby-comment"># =&gt; Nokogiri::HTML4::Document</span>
-</pre>
+          
         </div>
 
 
