@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class Nokogiri::HTML4::Builder - RDoc Documentation</title>
+<title>class Nokogiri::HTML5::Builder - RDoc Documentation</title>
 
-  <meta name="keywords" content="ruby,class,Nokogiri::HTML4::Builder">
+  <meta name="keywords" content="ruby,class,Nokogiri::HTML5::Builder">
 
-    <meta name="description" content="class Nokogiri::HTML4::Builder: Nokogiri HTML builder is used for building HTML documents. Builder.">
+    <meta name="description" content="class Nokogiri::HTML5::Builder: Nokogiri HTML5 builder is used for building HTML documents. Builder.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -104,21 +104,23 @@
 
 </nav>
 
-<main role="main" aria-labelledby="class-Nokogiri::HTML4::Builder">
-  <h1 id="class-Nokogiri::HTML4::Builder" class="anchor-link class">
-    class Nokogiri::HTML4::Builder
+<main role="main" aria-labelledby="class-Nokogiri::HTML5::Builder">
+  <h1 id="class-Nokogiri::HTML5::Builder" class="anchor-link class">
+    class Nokogiri::HTML5::Builder
   </h1>
 
   <section class="description">
     
-<p><a href="../../Nokogiri.html"><code>Nokogiri</code></a> <a href="../HTML4.html"><code>HTML</code></a> builder is used for building <a href="../HTML4.html"><code>HTML</code></a> documents.  It is very similar to the <a href="../XML/Builder.html"><code>Nokogiri::XML::Builder</code></a>.  In fact, you should go read the documentation for <a href="../XML/Builder.html"><code>Nokogiri::XML::Builder</code></a> before reading this documentation.</p>
+<p><a href="../../Nokogiri.html"><code>Nokogiri</code></a> <a href="../HTML5.html"><code>HTML5</code></a> builder is used for building <a href="../HTML4.html"><code>HTML</code></a> documents. It is very similar to the <a href="../XML/Builder.html"><code>Nokogiri::XML::Builder</code></a>.  In fact, you should go read the documentation for <a href="../XML/Builder.html"><code>Nokogiri::XML::Builder</code></a> before reading this documentation.</p>
 
-<h2 id="class-Nokogiri::HTML4::Builder-label-Synopsis-3A">Synopsis:<span><a href="#class-Nokogiri::HTML4::Builder-label-Synopsis-3A">¶</a> <a href="#top">↑</a></span>
+<p>The construction behavior is identical to <a href="../HTML4/Builder.html"><code>HTML4::Builder</code></a>, but <a href="../HTML5.html"><code>HTML5</code></a> documents implement the [HTML5 standard’s serialization algorithm](<a href="https://www.w3.org/TR/2008/WD-html5-20080610/serializing.html">www.w3.org/TR/2008/WD-html5-20080610/serializing.html</a>).</p>
+
+<h2 id="class-Nokogiri::HTML5::Builder-label-Synopsis-3A">Synopsis:<span><a href="#class-Nokogiri::HTML5::Builder-label-Synopsis-3A">¶</a> <a href="#top">↑</a></span>
 </h2>
 
-<p>Create an <a href="../HTML4.html"><code>HTML</code></a> document with a body that has an onload attribute, and a span tag with a class of “bold” that has content of “Hello world”.</p>
+<p>Create an <a href="../HTML5.html"><code>HTML5</code></a> document with a body that has an onload attribute, and a span tag with a class of “bold” that has content of “Hello world”.</p>
 
-<pre class="ruby"><span class="ruby-identifier">builder</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML4</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
+<pre class="ruby"><span class="ruby-identifier">builder</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML5</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">html</span> {
     <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">body</span>(<span class="ruby-value">:onload</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">'some_func();'</span>) {
       <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">span</span>.<span class="ruby-identifier">bold</span> {
@@ -130,7 +132,7 @@
 <span class="ruby-identifier">puts</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">to_html</span>
 </pre>
 
-<p>The <a href="../HTML4.html"><code>HTML</code></a> builder inherits from the <a href="../XML.html"><code>XML</code></a> builder, so make sure to read the <a href="../XML/Builder.html"><code>Nokogiri::XML::Builder</code></a> documentation.</p>
+<p>The <a href="../HTML5.html"><code>HTML5</code></a> builder inherits from the <a href="../XML.html"><code>XML</code></a> builder, so make sure to read the <a href="../XML/Builder.html"><code>Nokogiri::XML::Builder</code></a> documentation.</p>
 
   </section>
 
@@ -163,7 +165,7 @@
 
         <div class="method-description">
           <div class="method-source-code" id="to_html-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html4/builder.rb, line 32</span>
+            <pre><span class="ruby-comment"># File lib/nokogiri/html5/builder.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_html</span>
   <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">to_html</span>
 <span class="ruby-keyword">end</span></pre>
