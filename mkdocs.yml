@@ -87,7 +87,8 @@ nav:
     - Modifying an HTML/XML document: tutorials/modifying_an_html_xml_document.md
     - Ensuring well-formed markup: tutorials/ensuring_well_formed_markup.md
   - Changelog:
-    - Changelog: CHANGELOG.md
+    - Current: CHANGELOG.md
+    - Older: misc/CHANGELOG-archive.md
       # reverse chronological order!
     - 2023-04 libxml Memory Management: adr/2023-04-libxml-memory-management.md
     - 2022-12 Darwin Symbol Resolution: adr/2022-12-darwin-symbol-resolution.md

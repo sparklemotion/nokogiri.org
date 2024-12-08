@@ -14,6 +14,7 @@ def create_nokogiri_tasks(source_dir, dest_dir)
     "CODE_OF_CONDUCT.md" => "CODE_OF_CONDUCT.md",
     "tutorials/security.md" => "SECURITY.md",
     "CHANGELOG.md" => "CHANGELOG.md",
+    "misc/CHANGELOG-archive.md" => "misc/CHANGELOG-archive.md",
     "CONTRIBUTING.md" => "CONTRIBUTING.md",
     "ROADMAP.md" => "ROADMAP.md",
     "index.md" => "README.md",
