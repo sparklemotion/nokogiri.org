@@ -2294,10 +2294,12 @@
 <h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] <code>Nokogiri::XML::CData.new</code> no longer accepts <code>nil</code> as the content argument, making <code>CData</code> behave like other character data classes (like <code>Comment</code> and <code>Text</code>). This change was necessitated by behavioral changes in libxml2 v2.13.0. If you wish to create an empty CDATA node, pass an empty string. [<a href="https://github.com/sparklemotion/nokogiri/issues/3156">#3156</a>] <a href="https://github.com/flavorjones">@flavorjones</a></li>
-<li>Internals:</li>
+<li>Internals:<ul>
 <li>The internal <code>CSS::XPathVisitor</code> class now accepts the xpath prefix and the context namespaces as constructor arguments. The <code>prefix:</code> and <code>ns:</code> keyword arguments to <code>CSS.xpath_for</code> cannot be specified if the <code>visitor:</code> keyword argument is also used. <code>CSS::XPathVisitor</code> now exposes <code>#builtins</code>, <code>#doctype</code>, <code>#prefix</code>, and <code>#namespaces</code> attributes. [<a href="https://github.com/sparklemotion/nokogiri/issues/3225">#3225</a>] <a href="https://github.com/flavorjones">@flavorjones</a></li>
 <li>The internal CSS selector cache has been extracted into a distinct class, <code>CSS::SelectorCache</code>. Previously it was part of the <code>CSS::Parser</code> class. [<a href="https://github.com/sparklemotion/nokogiri/issues/3226">#3226</a>] <a href="https://github.com/flavorjones">@flavorjones</a></li>
 <li>The internal <code>Gumbo.parse</code> and <code>Gumbo.fragment</code> methods now take keyword arguments instead of positional arguments. [<a href="https://github.com/sparklemotion/nokogiri/issues/3199">#3199</a>] <a href="https://github.com/flavorjones">@flavorjones</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="deprecated">Deprecated<a class="headerlink" href="#deprecated" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2308,7 +2310,7 @@
 <h3 id="thank-you">Thank you!<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h3>
 <p>The following people and organizations were kind enough to sponsor <a href="https://github.com/flavorjones">@flavorjones</a> or the Nokogiri project during the development of v1.17.0:</p>
 <ul>
-<li>via Github sponsors</li>
+<li>via Github sponsors<ul>
 <li>renuo <a href="https://github.com/renuo">@renuo</a></li>
 <li>Ajaya Agrawalla <a href="https://github.com/ajaya">@ajaya</a></li>
 <li>Rob Stringer <a href="https://github.com/Mycobee">@Mycobee</a></li>
@@ -2334,17 +2336,23 @@
 <li>Mr. Henry <a href="https://github.com/mrhenry">@mrhenry</a></li>
 <li>Götz Görisch <a href="https://github.com/GoetzGoerisch">@GoetzGoerisch</a></li>
 <li>Andrew Nesbitt <a href="https://github.com/andrew">@andrew</a></li>
-<li>via Thanks.dev</li>
+</ul>
+</li>
+<li>via Thanks.dev<ul>
 <li>Sentry <a href="https://github.com/getsentry">@getsentry</a></li>
 <li>Codecov <a href="https://github.com/codecov">@codecov</a></li>
 <li>Keygen <a href="https://github.com/keygen-sh">@keygen-sh</a></li>
 <li>Keith Bauson <a href="https://github.com/kwbauson">@kwbauson</a></li>
 <li>Nicco Kunzmann <a href="https://github.com/niccokunzmann">@niccokunzmann</a></li>
 <li>timhaynes <a href="https://github.com/timhaynes">@timhaynes</a></li>
-<li>via Open Collective</li>
+</ul>
+</li>
+<li>via Open Collective<ul>
 <li>Airbnb <a href="https://github.com/airbnb">@airbnb</a></li>
 <li>Nemo <a href="https://github.com/captn3m0">@captn3m0</a></li>
 <li>Velocity Labs <a href="https://github.com/velocity-labs">@velocity-labs</a></li>
+</ul>
+</li>
 </ul>
 <p>We'd also like to thank <a href="https://github.com/github">@github</a> who donate a ton of compute time for our CI pipelines!</p>
 <h2 id="v1168-2024-12-02">v1.16.8 / 2024-12-02<a class="headerlink" href="#v1168-2024-12-02" title="Permanent link">&para;</a></h2>
@@ -2424,11 +2432,13 @@
 </ul>
 <h3 id="dependencies_8">Dependencies<a class="headerlink" href="#dependencies_8" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[CRuby] Vendored libxml2 is updated to v2.12.3 from v2.11.6. (<a href="https://github.com/flavorjones">@flavorjones</a>)</li>
+<li>[CRuby] Vendored libxml2 is updated to v2.12.3 from v2.11.6. (<a href="https://github.com/flavorjones">@flavorjones</a>)<ul>
 <li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.0">https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.0</a></li>
 <li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.1">https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.1</a></li>
 <li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.2">https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.2</a></li>
 <li><a href="https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.3">https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.3</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
 <ul>
