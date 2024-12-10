@@ -1,4 +1,4 @@
-Sun, 08 Dec 2024 16:22:52 -0500
+Tue, 10 Dec 2024 09:44:46 -0500
 README.md	Fri, 06 Dec 2024 10:34:15 -0500
 lib/nokogiri.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/class_resolver.rb	Fri, 06 Dec 2024 10:34:15 -0500
@@ -35,7 +35,7 @@ lib/nokogiri/jruby/dependencies.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/jruby/nokogiri_jars.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/syntax_error.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/version.rb	Thu, 05 Dec 2024 15:20:01 -0500
-lib/nokogiri/version/constant.rb	Sun, 08 Dec 2024 15:17:10 -0500
+lib/nokogiri/version/constant.rb	Tue, 10 Dec 2024 09:27:04 -0500
 lib/nokogiri/version/info.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml.rb	Sun, 08 Dec 2024 13:25:13 -0500
 lib/nokogiri/xml/attr.rb	Thu, 05 Dec 2024 15:20:01 -0500
@@ -44,14 +44,14 @@ lib/nokogiri/xml/builder.rb	Fri, 06 Dec 2024 10:34:15 -0500
 lib/nokogiri/xml/cdata.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/character_data.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/document.rb	Sun, 08 Dec 2024 11:24:56 -0500
-lib/nokogiri/xml/document_fragment.rb	Sun, 08 Dec 2024 11:24:56 -0500
+lib/nokogiri/xml/document_fragment.rb	Tue, 10 Dec 2024 08:00:56 -0500
 lib/nokogiri/xml/dtd.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/element_content.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/element_decl.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/entity_decl.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/entity_reference.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/namespace.rb	Thu, 05 Dec 2024 15:20:01 -0500
-lib/nokogiri/xml/node.rb	Fri, 06 Dec 2024 10:34:15 -0500
+lib/nokogiri/xml/node.rb	Tue, 10 Dec 2024 08:00:26 -0500
 lib/nokogiri/xml/node/save_options.rb	Thu, 05 Dec 2024 15:20:01 -0500
 lib/nokogiri/xml/node_set.rb	Fri, 06 Dec 2024 10:34:15 -0500
 lib/nokogiri/xml/notation.rb	Thu, 05 Dec 2024 15:20:01 -0500
@@ -99,8 +99,8 @@ ext/nokogiri/xml_encoding_handler.c	Fri, 06 Dec 2024 10:34:15 -0500
 ext/nokogiri/xml_entity_decl.c	Thu, 05 Dec 2024 15:20:01 -0500
 ext/nokogiri/xml_entity_reference.c	Thu, 05 Dec 2024 15:20:01 -0500
 ext/nokogiri/xml_namespace.c	Fri, 06 Dec 2024 10:34:15 -0500
-ext/nokogiri/xml_node.c	Sun, 08 Dec 2024 10:55:27 -0500
-ext/nokogiri/xml_node_set.c	Fri, 06 Dec 2024 10:34:15 -0500
+ext/nokogiri/xml_node.c	Tue, 10 Dec 2024 09:26:35 -0500
+ext/nokogiri/xml_node_set.c	Tue, 10 Dec 2024 08:00:35 -0500
 ext/nokogiri/xml_processing_instruction.c	Thu, 05 Dec 2024 15:20:01 -0500
 ext/nokogiri/xml_reader.c	Sun, 08 Dec 2024 10:55:27 -0500
 ext/nokogiri/xml_relax_ng.c	Sun, 08 Dec 2024 10:55:27 -0500

@@ -945,6 +945,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v1171-2024-12-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.17.1 / 2024-12-10
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.17.1 / 2024-12-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1170-2024-12-08" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1001,7 +1029,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -1062,7 +1090,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_1" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -1290,7 +1318,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_2" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -1340,7 +1368,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_3" class="md-nav__link">
+  <a href="#fixed_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -1756,6 +1784,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v1171-2024-12-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.17.1 / 2024-12-10
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.17.1 / 2024-12-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1170-2024-12-08" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1812,7 +1868,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed" class="md-nav__link">
+  <a href="#fixed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -1873,7 +1929,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed_1" class="md-nav__link">
+  <a href="#fixed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -2101,7 +2157,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_2" class="md-nav__link">
+  <a href="#fixed_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -2151,7 +2207,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixed_3" class="md-nav__link">
+  <a href="#fixed_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixed
@@ -2219,6 +2275,12 @@
 <h1 id="nokogiri-changelog">Nokogiri Changelog<a class="headerlink" href="#nokogiri-changelog" title="Permanent link">&para;</a></h1>
 <p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a>, please see the <a href="index.html">README.md</a> for details.</p>
 <hr />
+<h2 id="v1171-2024-12-10">v1.17.1 / 2024-12-10<a class="headerlink" href="#v1171-2024-12-10" title="Permanent link">&para;</a></h2>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixed a potential segfault when using <code>Node#dup</code> and <code>DocumentFragment#dup</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/3359">#3359</a>] <a href="https://github.com/byroot">@byroot</a> <a href="https://github.com/flavorjones">@flavorjones</a></li>
+<li><code>Node#dup</code> and <code>Node#clone</code> now correctly decorate the new node with the document's <code>Node</code> decorators. [<a href="https://github.com/sparklemotion/nokogiri/issues/3363">#3363</a>] <a href="https://github.com/flavorjones">@flavorjones</a></li>
+</ul>
 <h2 id="v1170-2024-12-08">v1.17.0 / 2024-12-08<a class="headerlink" href="#v1170-2024-12-08" title="Permanent link">&para;</a></h2>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2271,7 +2333,7 @@
 <li>[CRuby] When compiling packaged libraries from source, allow users' <code>AR</code> and <code>LD</code> environment variables to set the archiver and linker commands, respectively. This augments the existing <code>CC</code> environment variable to set the compiler command. [<a href="https://github.com/sparklemotion/nokogiri/issues/3165">#3165</a>] <a href="https://github.com/ziggythehamster">@ziggythehamster</a></li>
 <li>[CRuby] When building from source on MacOS, environment variables <code>AR</code> and <code>RANLIB</code> are now respected when set instead of being overridden to /usr/bin/{ar,ranlib} (which is still the default). [<a href="https://github.com/sparklemotion/nokogiri/issues/3338">#3338</a>] <a href="https://github.com/joshheinrichs-shopify">@joshheinrichs-shopify</a></li>
 </ul>
-<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>Node#clone</code>, <code>NodeSet#clone</code>, and <code>*::Document#clone</code> all properly copy the metaclass of the original as expected. Previously, <code>#clone</code> had been aliased to <code>#dup</code> for these classes (since v1.3.0 in 2009). [<a href="https://github.com/sparklemotion/nokogiri/issues/316">#316</a>, <a href="https://github.com/sparklemotion/nokogiri/issues/3117">#3117</a>] <a href="https://github.com/flavorjones">@flavorjones</a></li>
 <li>CSS queries for pseudo-selectors that cannot be translated into XPath expressions now raise a more descriptive <code>Nokogiri::CSS::SyntaxError</code> when they are parsed. Previously, an invalid XPath expression was evaluated and a hard-to-understand XPath error was raised by the query engine. [<a href="https://github.com/sparklemotion/nokogiri/issues/3193">#3193</a>] <a href="https://github.com/flavorjones">@flavorjones</a></li>
@@ -2356,7 +2418,7 @@
 </ul>
 <p>We'd also like to thank <a href="https://github.com/github">@github</a> who donate a ton of compute time for our CI pipelines!</p>
 <h2 id="v1168-2024-12-02">v1.16.8 / 2024-12-02<a class="headerlink" href="#v1168-2024-12-02" title="Permanent link">&para;</a></h2>
-<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] When serializing HTML5 documents, properly escape foreign content "style" elements. Normally, a "style" tag contains  raw text that does not need entity-escaping, but when it appears in either SVG or MathML foreign content, the "style" tag is now correctly escaped when serialized. <a href="https://github.com/flavorjones">@flavorjones</a></li>
 </ul>
@@ -2407,7 +2469,7 @@
 <ul>
 <li>[CRuby] Vendored libxml2 is updated to <a href="https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.12.4">v2.12.4</a> from v2.12.3. (<a href="https://github.com/flavorjones">@flavorjones</a>)</li>
 </ul>
-<h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CRuby] <code>XML::Reader</code> defaults the encoding to UTF-8 if it's not specified in either the document or as a method parameter. Previously non-ASCII characters were serialized as NCRs in this case. [<a href="https://github.com/sparklemotion/nokogiri/issues/2891">#2891</a>] (<a href="https://github.com/flavorjones">@flavorjones</a>)</li>
 <li>[CRuby] Restored support for compilation by GCC versions earlier than 4.6, which was broken in v1.15.0 (540e9aee). [<a href="https://github.com/sparklemotion/nokogiri/issues/3090">#3090</a>] (<a href="https://github.com/adfoster-r7">@adfoster-r7</a>)</li>
@@ -2440,7 +2502,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_4">Fixed<a class="headerlink" href="#fixed_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>CSS <code>nth</code> pseudo-classes now handle spaces, e.g. <code>"2n + 1"</code>. [<a href="https://github.com/sparklemotion/nokogiri/issues/3018">#3018</a>] (<a href="https://github.com/fusion2004">@fusion2004</a>)</li>
 <li>[CRuby] <code>libgumbo</code> no longer leaks memory when an incomplete tag is abandoned by the HTML5 parser. [<a href="https://github.com/sparklemotion/nokogiri/issues/3036">#3036</a>] (<a href="https://github.com/flavorjones">@flavorjones</a>)</li>
