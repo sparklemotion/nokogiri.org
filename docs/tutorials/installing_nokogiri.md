@@ -24,8 +24,8 @@ If you'd like to contribute improvements to this document, please open a GitHub 
 Nokogiri ships pre-compiled, "native" gems for the following platforms:
 
 - Linux:
-  - `x86_64-linux-gnu`, `aarch64-linux-gnu`, and `arm-linux-gnu` (req: `glibc >= 2.29`)
-  - `x86_64-linux-musl`, `aarch64-linux-musl`, and `arm-linux-musl`
+    - `x86_64-linux-gnu`, `aarch64-linux-gnu`, and `arm-linux-gnu` (req: `glibc >= 2.29`)
+    - `x86_64-linux-musl`, `aarch64-linux-musl`, and `arm-linux-musl`
 - Darwin/MacOS: `x86_64-darwin` and `arm64-darwin`
 - Windows: `x64-mingw-ucrt`
 - Java: any platform running JRuby 9.4 or higher
