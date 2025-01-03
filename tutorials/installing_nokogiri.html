@@ -2063,13 +2063,13 @@
 <p>To determine whether your system supports one of these gems, look at the output of <code>bundle platform</code> or <code>ruby -e 'puts Gem::Platform.local.to_s'</code>.</p>
 <p>If you're on a supported platform, either <code>gem install</code> or <code>bundle install</code> should install a native gem without any additional action on your part. This installation should only take a few seconds, and your output should look something like:</p>
 <div class="highlight"><pre><span></span><code>$ gem install nokogiri
-Fetching nokogiri-1.11.0-x86_64-linux.gem
-Successfully installed nokogiri-1.11.0-x86_64-linux
+Fetching nokogiri-1.18.1-x86_64-linux-gnu.gem
+Successfully installed nokogiri-1.18.1-x86_64-linux-gnu
 1 gem installed
 </code></pre></div>
 <p>If you're using Bundler <code>&gt;= 2.2</code>, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:</p>
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>lock<span class="w"> </span>--add-platform<span class="w"> </span>x86_64-linux
-bundle<span class="w"> </span>install<span class="w">    </span><span class="c1"># resolve dependencies for platform-specific gems</span>
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>lock<span class="w"> </span>--add-platform<span class="w"> </span>x86_64-linux-gnu<span class="w"> </span><span class="c1"># or whatever your platform happens to be</span>
+bundle<span class="w"> </span>install<span class="w">                              </span><span class="c1"># then resolve dependencies for platform-specific gems</span>
 </code></pre></div>
 <p>See <code>man bundle-lock</code> for details.</p>
 <h3 id="why-would-i-not-want-to-use-a-native-gem">Why would I not want to use a native gem?<a class="headerlink" href="#why-would-i-not-want-to-use-a-native-gem" title="Permanent link">&para;</a></h3>
@@ -2304,7 +2304,7 @@ gem<span class="w"> </span>install<span class="w"> </span>nokogiri<span class="w
 <h4 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">&para;</a></h4>
 <p>Bundler 2.2 and later has <em>great</em> multiplatform support and allows you to cache gems for multiple platforms. You can run commands like these to cause Bundler to fetch and cache gems for all the named platforms:</p>
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>lock<span class="w"> </span>--add-platform<span class="w"> </span>x86_64-darwin
-bundle<span class="w"> </span>lock<span class="w"> </span>--add-platform<span class="w"> </span>x86_64-linux
+bundle<span class="w"> </span>lock<span class="w"> </span>--add-platform<span class="w"> </span>x86_64-linux-gnu
 bundle<span class="w"> </span>package<span class="w"> </span>--all-platforms
 </code></pre></div>
 <p>For more information, please read <a href="https://kevinjmurphy.com/posts/caching-all-native-gem-platforms/">this wonderful blog post</a> written by Kevin Murphy explaining this approach.</p>
