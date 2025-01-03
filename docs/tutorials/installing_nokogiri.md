@@ -36,16 +36,16 @@ If you're on a supported platform, either `gem install` or `bundle install` shou
 
 ``` text
 $ gem install nokogiri
-Fetching nokogiri-1.11.0-x86_64-linux.gem
-Successfully installed nokogiri-1.11.0-x86_64-linux
+Fetching nokogiri-1.18.1-x86_64-linux-gnu.gem
+Successfully installed nokogiri-1.18.1-x86_64-linux-gnu
 1 gem installed
 ```
 
 If you're using Bundler `>= 2.2`, check that your lockfile knows about your platform(s). For example, if you develop on macOS and deploy to Linux you will need to run these commands in your development environment:
 
 ``` sh
-bundle lock --add-platform x86_64-linux
-bundle install    # resolve dependencies for platform-specific gems
+bundle lock --add-platform x86_64-linux-gnu # or whatever your platform happens to be
+bundle install                              # then resolve dependencies for platform-specific gems
 ```
 
 See `man bundle-lock` for details.
@@ -452,7 +452,7 @@ Bundler 2.2 and later has *great* multiplatform support and allows you to cache 
 
 ``` sh
 bundle lock --add-platform x86_64-darwin
-bundle lock --add-platform x86_64-linux
+bundle lock --add-platform x86_64-linux-gnu
 bundle package --all-platforms
 ```
 
