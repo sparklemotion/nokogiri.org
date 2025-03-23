@@ -10,7 +10,7 @@
   <meta name="keywords" content="ruby,documentation,RDoc Documentation">
 
 
-    <meta name="description" content="RDoc Documentation: Nokogiri Nokogiri (鋸) makes it easy and painless to work with XML and HTML from Ruby. It is fast and standards-compliant by relying on native parsers">
+    <meta name="description" content="RDoc Documentation: nokogiri. nokogiri-serif-black.">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -71,6 +71,113 @@
   </div>
 
   
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+
+
+  <ul class="link-list" role="directory">
+              <li>
+            <details open>
+              <summary>      <a href="#label-Nokogiri">Nokogiri</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Guiding+Principles">Guiding Principles</a>
+          </li>
+<li>      <a href="#label-Features+Overview">Features Overview</a>
+          </li>
+<li>      <a href="#label-Status">Status</a>
+          </li>
+<li>
+            <details open>
+              <summary>      <a href="#label-Support-2C+Getting+Help-2C+and+Reporting+Issues">Support, Getting Help, and Reporting Issues</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Reading">Reading</a>
+          </li>
+<li>      <a href="#label-Ask+For+Help">Ask For Help</a>
+          </li>
+<li>      <a href="#label-Report+A+Bug">Report A Bug</a>
+          </li>
+<li>      <a href="#label-Security+and+Vulnerability+Reporting">Security and Vulnerability Reporting</a>
+          </li>
+<li>      <a href="#label-Semantic+Versioning+Policy">Semantic Versioning Policy</a>
+          </li>
+<li>      <a href="#label-Sponsorship">Sponsorship</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>
+            <details open>
+              <summary>      <a href="#label-Installation">Installation</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Native+Gems-3A+Faster-2C+more+reliable+installation">Native Gems: Faster, more reliable installation</a>
+          </li>
+<li>      <a href="#label-Supported+Platforms">Supported Platforms</a>
+          </li>
+<li>      <a href="#label-Other+Installation+Options">Other Installation Options</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>
+            <details open>
+              <summary>      <a href="#label-How+To+Use+Nokogiri">How To Use Nokogiri</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Parsing+and+Querying">Parsing and Querying</a>
+          </li>
+<li>      <a href="#label-Encoding">Encoding</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>
+            <details open>
+              <summary>      <a href="#label-Technical+Overview">Technical Overview</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Guiding+Principles">Guiding Principles</a>
+          </li>
+<li>      <a href="#label-CRuby">CRuby</a>
+          </li>
+<li>      <a href="#label-JRuby">JRuby</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>      <a href="#label-Contributing">Contributing</a>
+          </li>
+<li>      <a href="#label-Code+of+Conduct">Code of Conduct</a>
+          </li>
+<li>
+            <details open>
+              <summary>      <a href="#label-License">License</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Dependencies">Dependencies</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+          <li>      <a href="#label-Authors">Authors</a>
+
+              </li>
+</ul>
+            </details>
+          </li>
+
+  </ul>
+</div>
+
+  
 <div id="fileindex-section" class="nav-section">
   <h3>Pages</h3>
 
@@ -85,266 +192,84 @@
   <h3>Class and Module Index</h3>
 
   <ul class="link-list">
-  <li>
-<details><summary><code><a href="./Nokogiri.html">Nokogiri</a></code></summary>
-  <ul class="link-list">
-  <li>
-<details><summary><code><a href="./Nokogiri/CSS.html">CSS</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/CSS/SyntaxError.html">SyntaxError</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/CSS/XPathVisitor.html">XPathVisitor</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/CSS/XPathVisitor/BuiltinsConfig.html">BuiltinsConfig</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/CSS/XPathVisitor/DoctypeConfig.html">DoctypeConfig</a></code>
-  </li>
-</ul></details>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Nokogiri/ClassResolver.html">ClassResolver</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/Decorators.html">Decorators</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/Decorators/Slop.html">Slop</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Nokogiri/EncodingHandler.html">EncodingHandler</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/Gumbo.html">Gumbo</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/HTML4.html">HTML</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/HTML/Builder.html">Builder</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML/Document.html">Document</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML/DocumentFragment.html">DocumentFragment</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/HTML4.html">HTML4</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/HTML4/Builder.html">Builder</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML4/Document.html">Document</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML4/DocumentFragment.html">DocumentFragment</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML4/ElementDescription.html">ElementDescription</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML4/EntityDescription.html">EntityDescription</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML4/EntityLookup.html">EntityLookup</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/HTML4/SAX.html">SAX</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/HTML4/SAX/Parser.html">Parser</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML4/SAX/ParserContext.html">ParserContext</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML4/SAX/PushParser.html">PushParser</a></code>
-  </li>
-</ul></details>
-  </li>
-</ul></details>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/HTML5.html">HTML5</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/HTML5/Builder.html">Builder</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML5/Document.html">Document</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML5/DocumentFragment.html">DocumentFragment</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML5/Node.html">Node</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/HTML5/QuirksMode.html">QuirksMode</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Nokogiri/SyntaxError.html">SyntaxError</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/XML.html">XML</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/XML/Attr.html">Attr</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/AttributeDecl.html">AttributeDecl</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Builder.html">Builder</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/CDATA.html">CDATA</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/CharacterData.html">CharacterData</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Comment.html">Comment</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/DTD.html">DTD</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Document.html">Document</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/DocumentFragment.html">DocumentFragment</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Element.html">Element</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/ElementContent.html">ElementContent</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/ElementDecl.html">ElementDecl</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/EntityDecl.html">EntityDecl</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/EntityReference.html">EntityReference</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Namespace.html">Namespace</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/XML/Node.html">Node</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/XML/Node/SaveOptions.html">SaveOptions</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/NodeSet.html">NodeSet</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Notation.html">Notation</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/ParseOptions.html">ParseOptions</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/ProcessingInstruction.html">ProcessingInstruction</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Reader.html">Reader</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/RelaxNG.html">RelaxNG</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/XML/SAX.html">SAX</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/XML/SAX/Document.html">Document</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/XML/SAX/Parser.html">Parser</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/XML/SAX/Parser/Attribute.html">Attribute</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/SAX/ParserContext.html">ParserContext</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/SAX/PushParser.html">PushParser</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Schema.html">Schema</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Searchable.html">Searchable</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/SyntaxError.html">SyntaxError</a></code>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/Text.html">Text</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/XML/XPath.html">XPath</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/XML/XPath/SyntaxError.html">SyntaxError</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Nokogiri/XML/XPathContext.html">XPathContext</a></code>
-  </li>
-</ul></details>
-  </li>
-<li>
-<details><summary><code><a href="./Nokogiri/XSLT.html">XSLT</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./Nokogiri/XSLT/Stylesheet.html">Stylesheet</a></code>
-  </li>
-</ul></details>
-  </li>
-</ul></details>
-  </li>
-<li>
-<code><a href="./Object.html">Object</a></code>
-  </li>
-<li>
-<details><summary><code><a href="./XSD.html">XSD</a></code></summary>
-  <ul class="link-list">
-  <li>
-<details><summary><code><a href="./XSD/XMLParser.html">XMLParser</a></code></summary>
-  <ul class="link-list">
-  <li>
-<code><a href="./XSD/XMLParser/Nokogiri.html">Nokogiri</a></code>
-  </li>
-</ul></details>
-  </li>
-</ul></details>
-</li>
+<li><details><summary><code><a href="./Nokogiri.html">Nokogiri</a></code></summary><ul class="link-list">
+<li><details><summary><code><a href="./Nokogiri/CSS.html">CSS</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/CSS/SyntaxError.html">SyntaxError</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/CSS/XPathVisitor.html">XPathVisitor</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/CSS/XPathVisitor/BuiltinsConfig.html">BuiltinsConfig</a></code></li>
+<li><code><a href="./Nokogiri/CSS/XPathVisitor/DoctypeConfig.html">DoctypeConfig</a></code></li>
+</ul></details></li>
+</ul></details></li>
+<li><code><a href="./Nokogiri/ClassResolver.html">ClassResolver</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/Decorators.html">Decorators</a></code></summary><ul class="link-list"><li><code><a href="./Nokogiri/Decorators/Slop.html">Slop</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/EncodingHandler.html">EncodingHandler</a></code></li>
+<li><code><a href="./Nokogiri/Gumbo.html">Gumbo</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/HTML4.html">HTML</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/HTML/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/HTML/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/HTML/DocumentFragment.html">DocumentFragment</a></code></li>
+</ul></details></li>
+<li><details><summary><code><a href="./Nokogiri/HTML4.html">HTML4</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/HTML4/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/ElementDescription.html">ElementDescription</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/EntityDescription.html">EntityDescription</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/EntityLookup.html">EntityLookup</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/HTML4/SAX.html">SAX</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/HTML4/SAX/Parser.html">Parser</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/SAX/ParserContext.html">ParserContext</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/SAX/PushParser.html">PushParser</a></code></li>
+</ul></details></li>
+</ul></details></li>
+<li><details><summary><code><a href="./Nokogiri/HTML5.html">HTML5</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/HTML5/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/Node.html">Node</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/QuirksMode.html">QuirksMode</a></code></li>
+</ul></details></li>
+<li><code><a href="./Nokogiri/SyntaxError.html">SyntaxError</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML.html">XML</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/XML/Attr.html">Attr</a></code></li>
+<li><code><a href="./Nokogiri/XML/AttributeDecl.html">AttributeDecl</a></code></li>
+<li><code><a href="./Nokogiri/XML/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/XML/CDATA.html">CDATA</a></code></li>
+<li><code><a href="./Nokogiri/XML/CharacterData.html">CharacterData</a></code></li>
+<li><code><a href="./Nokogiri/XML/Comment.html">Comment</a></code></li>
+<li><code><a href="./Nokogiri/XML/DTD.html">DTD</a></code></li>
+<li><code><a href="./Nokogiri/XML/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/XML/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="./Nokogiri/XML/Element.html">Element</a></code></li>
+<li><code><a href="./Nokogiri/XML/ElementContent.html">ElementContent</a></code></li>
+<li><code><a href="./Nokogiri/XML/ElementDecl.html">ElementDecl</a></code></li>
+<li><code><a href="./Nokogiri/XML/EntityDecl.html">EntityDecl</a></code></li>
+<li><code><a href="./Nokogiri/XML/EntityReference.html">EntityReference</a></code></li>
+<li><code><a href="./Nokogiri/XML/Namespace.html">Namespace</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/Node.html">Node</a></code></summary><ul class="link-list"><li><code><a href="./Nokogiri/XML/Node/SaveOptions.html">SaveOptions</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/XML/NodeSet.html">NodeSet</a></code></li>
+<li><code><a href="./Nokogiri/XML/Notation.html">Notation</a></code></li>
+<li><code><a href="./Nokogiri/XML/ParseOptions.html">ParseOptions</a></code></li>
+<li><code><a href="./Nokogiri/XML/ProcessingInstruction.html">ProcessingInstruction</a></code></li>
+<li><code><a href="./Nokogiri/XML/Reader.html">Reader</a></code></li>
+<li><code><a href="./Nokogiri/XML/RelaxNG.html">RelaxNG</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/SAX.html">SAX</a></code></summary><ul class="link-list">
+<li><code><a href="./Nokogiri/XML/SAX/Document.html">Document</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/SAX/Parser.html">Parser</a></code></summary><ul class="link-list"><li><code><a href="./Nokogiri/XML/SAX/Parser/Attribute.html">Attribute</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/XML/SAX/ParserContext.html">ParserContext</a></code></li>
+<li><code><a href="./Nokogiri/XML/SAX/PushParser.html">PushParser</a></code></li>
+</ul></details></li>
+<li><code><a href="./Nokogiri/XML/Schema.html">Schema</a></code></li>
+<li><code><a href="./Nokogiri/XML/Searchable.html">Searchable</a></code></li>
+<li><code><a href="./Nokogiri/XML/SyntaxError.html">SyntaxError</a></code></li>
+<li><code><a href="./Nokogiri/XML/Text.html">Text</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/XPath.html">XPath</a></code></summary><ul class="link-list"><li><code><a href="./Nokogiri/XML/XPath/SyntaxError.html">SyntaxError</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/XML/XPathContext.html">XPathContext</a></code></li>
+</ul></details></li>
+<li><details><summary><code><a href="./Nokogiri/XSLT.html">XSLT</a></code></summary><ul class="link-list"><li><code><a href="./Nokogiri/XSLT/Stylesheet.html">Stylesheet</a></code></li></ul></details></li>
+</ul></details></li>
+<li><code><a href="./Object.html">Object</a></code></li>
+<li><details><summary><code><a href="./XSD.html">XSD</a></code></summary><ul class="link-list"><li><details><summary><code><a href="./XSD/XMLParser.html">XMLParser</a></code></summary><ul class="link-list"><li><code><a href="./XSD/XMLParser/Nokogiri.html">Nokogiri</a></code></li></ul></details></li></ul></details></li>
 </ul>
 </div>
 
@@ -352,7 +277,7 @@
   <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
   </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.10.0.
+<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.13.0.
   </p>
 <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </p></footer>
@@ -361,7 +286,7 @@
 
 <main role="main">
 
-<div><img src="https://nokogiri.org/images/nokogiri-serif-black.png" align="right"></div>
+  <div><img src="https://nokogiri.org/images/nokogiri-serif-black.png" align="right"></div>
 <h1 id="label-Nokogiri">
 <a href="Nokogiri.html"><code>Nokogiri</code></a><span><a href="#label-Nokogiri">¶</a> <a href="#top">↑</a></span>
 </h1>
@@ -413,11 +338,11 @@
 <h2 id="label-Status">Status<span><a href="#label-Status">¶</a> <a href="#top">↑</a></span>
 </h2>
 
-<p><a href="https://github.com/sparklemotion/nokogiri/actions/workflows/ci.yml"><img src="https://github.com/sparklemotion/nokogiri/actions/workflows/ci.yml/badge.svg?branch=main"></a> <a href="https://ci.appveyor.com/project/flavorjones/nokogiri/branch/main"><img src="https://ci.appveyor.com/api/projects/status/xj2pqwvlxwuwgr06/branch/main?svg=true"></a></p>
+<p><a href="https://github.com/sparklemotion/nokogiri/actions/workflows/ci.yml"><img src="https" alt="//github.com/sparklemotion/nokogiri/actions/workflows/ci.yml/badge.svg?branch=main:Github Actions CI"></a> <a href="https://ci.appveyor.com/project/flavorjones/nokogiri/branch/main"><img src="https" alt="//ci.appveyor.com/api/projects/status/xj2pqwvlxwuwgr06/branch/main?svg=true:Appveyor CI"></a></p>
 
-<p><a href="https://rubygems.org/gems/nokogiri"><img src="https://badge.fury.io/rb/nokogiri.svg"></a> <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5"></a></p>
+<p><a href="https://rubygems.org/gems/nokogiri"><img src="https" alt="//badge.fury.io/rb/nokogiri.svg:Gem Version"></a> <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https" alt="//dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5:SemVer compatibility"></a></p>
 
-<p><a href="https://bestpractices.coreinfrastructure.org/projects/5344"><img src="https://bestpractices.coreinfrastructure.org/projects/5344/badge"></a> <a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme"><img src="https://tidelift.com/badges/package/rubygems/nokogiri"></a></p>
+<p><a href="https://bestpractices.coreinfrastructure.org/projects/5344"><img src="https" alt="//bestpractices.coreinfrastructure.org/projects/5344/badge:CII Best Practices"></a> <a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme"><img src="https" alt="//tidelift.com/badges/package/rubygems/nokogiri:Tidelift dependencies"></a></p>
 
 <h2 id="label-Support-2C+Getting+Help-2C+and+Reporting+Issues">Support, Getting Help, and Reporting Issues<span><a href="#label-Support-2C+Getting+Help-2C+and+Reporting+Issues">¶</a> <a href="#top">↑</a></span>
 </h2>
@@ -475,7 +400,7 @@
 <h3 id="label-Semantic+Versioning+Policy">Semantic Versioning Policy<span><a href="#label-Semantic+Versioning+Policy">¶</a> <a href="#top">↑</a></span>
 </h3>
 
-<p><a href="Nokogiri.html"><code>Nokogiri</code></a> follows <a href="https://semver.org/">Semantic Versioning</a> (since 2017 or so). <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5"></a></p>
+<p><a href="Nokogiri.html"><code>Nokogiri</code></a> follows <a href="https://semver.org/">Semantic Versioning</a> (since 2017 or so). <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https" alt="//dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5:Dependabot's SemVer compatibility score for Nokogiri"></a></p>
 
 <p>We bump <code>Major.Minor.Patch</code> versions following this guidance:</p>
 
