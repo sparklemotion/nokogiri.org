@@ -51,18 +51,18 @@ Some commonly-used [parse options][read-parse-options] with security implication
   [XXE]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 
 * `NONET` - Prevent any network connections during parsing. __This is set by default!__
-  * ⚠ It is UNSAFE to unset this option when parsing untrusted documents.
+    * ⚠ It is UNSAFE to unset this option when parsing untrusted documents.
 * `NOENT` - Substitute entities
-  * ⚠ It is UNSAFE to set this option when parsing untrusted documents.
+    * ⚠ It is UNSAFE to set this option when parsing untrusted documents.
 * `DTDLOAD`  `DTDVALID` - If you want DTD validation
-  * ⚠ It is UNSAFE to set `DTDLOAD` when parsing untrusted documents.
+    * ⚠ It is UNSAFE to set `DTDLOAD` when parsing untrusted documents.
 * `HUGE` - use to skip hardcoded limits around document size or DOM depth
-  * ⚠ It is UNSAFE to set this option when parsing untrusted documents.
+    * ⚠ It is UNSAFE to set this option when parsing untrusted documents.
 
 Some other commonly-used [parse options][read-parse-options] are:
 
 * `RECOVER` - Attempt to recover from errors. __This is set by default!__
-  * Recommended for parsing malformed or invalid documents.
+    * Recommended for parsing malformed or invalid documents.
 * `NOBLANKS` - Remove blank nodes
 * `NOERROR` - Suppress error reports
 * `STRICT` - Strict parsing; raise an error when parsing malformed documents
