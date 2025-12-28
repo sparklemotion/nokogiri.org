@@ -83,7 +83,7 @@ def nokogiri_generate_rdocs
 
   pwd = Dir.pwd
   Dir.chdir(nokogiri_dir) do
-    Bundler.with_clean_env do
+    Bundler.with_unbundled_env do
       sh("RDOC_DIR=#{File.join(pwd, RDOC_STAGING_DIR)} bundle exec rake rdoc")
     end
   end
