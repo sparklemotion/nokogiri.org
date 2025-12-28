@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
@@ -7,24 +7,61 @@
 
 <title>module Nokogiri::HTML5 - RDoc Documentation</title>
 
+
   <meta name="keywords" content="ruby,module,Nokogiri::HTML5">
 
-    <meta name="description" content="module Nokogiri::HTML5: Nokogiri. HTML5.">
+    <meta name="description" content="module Nokogiri::HTML5: doc = Nokogiri. HTML5.">
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="module Nokogiri::HTML5 - RDoc Documentation">
+
+
+
+    <meta property="og:description" content="doc = Nokogiri. HTML5.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="module Nokogiri::HTML5 - RDoc Documentation">
+
+
+
+    <meta name="twitter:description" content="doc = Nokogiri. HTML5.">
+
+
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
   var index_rel_prefix = "../";
 </script>
 
-<script src="../js/navigation.js" defer></script>
-<script src="../js/search.js" defer></script>
-<script src="../js/search_index.js" defer></script>
-<script src="../js/searcher.js" defer></script>
-<script src="../js/darkfish.js" defer></script>
+<script src="../js/theme-toggle.js?v=7.0.3"></script>
 
-<link href="../css/fonts.css" rel="stylesheet">
-<link href="../css/rdoc.css" rel="stylesheet">
-<link href="../rdoc-tweaks.css" rel="stylesheet">
+<script src="../js/search_navigation.js?v=7.0.3" defer></script>
+
+<script src="../js/search_data.js?v=7.0.3" defer></script>
+
+<script src="../js/search_ranker.js?v=7.0.3" defer></script>
+
+<script src="../js/search_controller.js?v=7.0.3" defer></script>
+
+<script src="../js/c_highlighter.js?v=7.0.3" defer></script>
+
+<script src="../js/aliki.js?v=7.0.3" defer></script>
+
+<link href="../css/rdoc.css?v=7.0.3" rel="stylesheet">
+
+
+  <link href="../rdoc-tweaks.css?v=7.0.3" rel="stylesheet">
+
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -37,110 +74,336 @@
   gtag('config', 'G-BZR5RZN084');
 </script>
 </head>
-<body id="top" role="document" class="module">
+<body role="document" class="module has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol id="icon-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol id="icon-file" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol id="icon-layers" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol id="icon-class-methods" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text x="12" y="17" text-anchor="middle" font-size="13" font-weight="bold" fill="currentColor" stroke="none">
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol id="icon-instance-methods" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text x="12" y="17" text-anchor="middle" font-size="13" font-weight="bold" fill="currentColor" stroke="none">
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol id="icon-ancestors" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol id="icon-includes" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line x1="20" y1="8" x2="20" y2="14"></line>
+
+    <line x1="23" y1="11" x2="17" y2="11"></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol id="icon-extends" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol id="icon-list" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="8" y1="6" x2="21" y2="6"></line>
+
+    <line x1="8" y1="12" x2="21" y2="12"></line>
+
+    <line x1="8" y1="18" x2="21" y2="18"></line>
+
+    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+
+    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+
+    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    RDoc Documentation
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results-desktop" type="text" name="search" placeholder="Search (/) for a class, method..." spellcheck="false" autocomplete="off" title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results-mobile" type="text" name="search" placeholder="Search documentation" spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
   <span aria-hidden="true">☰</span>
 </div>
 
 
-<nav id="navigation" role="navigation">
-  <div id="project-navigation">
-    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
-  <h2>
-    <a href="../index.html" rel="home">Home</a>
-  </h2>
+<nav id="navigation" role="navigation" hidden>
+  
 
-  <div id="table-of-contents-navigation">
-    <a href="../table_of_contents.html#pages">Pages</a>
-    <a href="../table_of_contents.html#classes">Classes</a>
-    <a href="../table_of_contents.html#methods">Methods</a>
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible">
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+      </ul>
+    </details>
   </div>
-</div>
 
-    <div id="search-section" role="search" class="project-section initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <div id="search-field-wrapper">
-      <input id="search-field" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results" type="text" name="search" placeholder="Search (/) for a class, method, ..." spellcheck="false" title="Type to search, Up and Down to navigate, Enter to load">
-    </div>
-
-    <ul id="search-results" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="initially-hidden"></ul>
-  </form>
-</div>
-
-  </div>
 
   
-<div class="nav-section">
-  <h3>Table of Contents</h3>
-
-
-
-  <ul class="link-list" role="directory">
-              <li>      <a href="#module-Nokogiri::HTML5-label-Usage">Usage</a>
-          </li>
-<li>
-            <details open>
-              <summary>      <a href="#module-Nokogiri::HTML5-label-Parsing+options">Parsing options</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#module-Nokogiri::HTML5-label-Error+reporting-3A+max_errors-3A">Error reporting: <code>max_errors:</code></a>
-          </li>
-<li>      <a href="#module-Nokogiri::HTML5-label-Maximum+tree+depth-3A+max_tree_depth-3A">Maximum tree depth: <code>max_tree_depth:</code></a>
-          </li>
-<li>      <a href="#module-Nokogiri::HTML5-label-Attribute+limit+per+element-3A+max_attributes-3A">Attribute limit per element: <code>max_attributes:</code></a>
-          </li>
-<li>      <a href="#module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text-3A+parse_noscript_content_as_text-3A">Parse <code>noscript</code> elements’ content as text: <code>parse_noscript_content_as_text:</code></a>
-
-              </li>
-</ul>
-            </details>
-          </li>
-          <li>      <a href="#module-Nokogiri::HTML5-label-HTML+Serialization">HTML Serialization</a>
-          </li>
-<li>      <a href="#module-Nokogiri::HTML5-label-Encodings">Encodings</a>
-          </li>
-<li>      <a href="#module-Nokogiri::HTML5-label-Notes">Notes</a>
-
-  </li>
-</ul>
-</div>
 
   
+
   
+
   
-  
+
   
   <div class="nav-section">
-    <h3>Class Methods</h3>
-    <ul class="link-list" role="directory">
-      <li><a href="#method-c-fragment">fragment</a></li>
-      <li><a href="#method-c-parse">parse</a></li>
-    </ul>
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li><a href="#method-c-fragment">fragment</a></li>
+
+        <li><a href="#method-c-parse">parse</a></li>
+
+      </ul>
+    </details>
   </div>
 
 
 
 
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
 
-  <footer id="validator-badges" role="contentinfo">
-  <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.10.0.
-  </p>
-<p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
-</p></footer>
+    <ul class="link-list nav-list">
+<li><details><summary><code><a href="../Nokogiri.html">Nokogiri</a></code></summary><ul class="link-list nav-list">
+<li><details><summary><code><a href="../Nokogiri/CSS.html">CSS</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/CSS/SyntaxError.html">SyntaxError</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/CSS/XPathVisitor.html">XPathVisitor</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/CSS/XPathVisitor/BuiltinsConfig.html">BuiltinsConfig</a></code></li>
+<li><code><a href="../Nokogiri/CSS/XPathVisitor/DoctypeConfig.html">DoctypeConfig</a></code></li>
+</ul></details></li>
+</ul></details></li>
+<li><code><a href="../Nokogiri/ClassResolver.html">ClassResolver</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/Decorators.html">Decorators</a></code></summary><ul class="link-list nav-list"><li><code><a href="../Nokogiri/Decorators/Slop.html">Slop</a></code></li></ul></details></li>
+<li><code><a href="../Nokogiri/EncodingHandler.html">EncodingHandler</a></code></li>
+<li><code><a href="../Nokogiri/Gumbo.html">Gumbo</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/HTML4.html">HTML</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/HTML/Builder.html">Builder</a></code></li>
+<li><code><a href="../Nokogiri/HTML/Document.html">Document</a></code></li>
+<li><code><a href="../Nokogiri/HTML/DocumentFragment.html">DocumentFragment</a></code></li>
+</ul></details></li>
+<li><details><summary><code><a href="../Nokogiri/HTML4.html">HTML4</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/HTML4/Builder.html">Builder</a></code></li>
+<li><code><a href="../Nokogiri/HTML4/Document.html">Document</a></code></li>
+<li><code><a href="../Nokogiri/HTML4/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="../Nokogiri/HTML4/ElementDescription.html">ElementDescription</a></code></li>
+<li><code><a href="../Nokogiri/HTML4/EntityDescription.html">EntityDescription</a></code></li>
+<li><code><a href="../Nokogiri/HTML4/EntityLookup.html">EntityLookup</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/HTML4/SAX.html">SAX</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/HTML4/SAX/Parser.html">Parser</a></code></li>
+<li><code><a href="../Nokogiri/HTML4/SAX/ParserContext.html">ParserContext</a></code></li>
+<li><code><a href="../Nokogiri/HTML4/SAX/PushParser.html">PushParser</a></code></li>
+</ul></details></li>
+</ul></details></li>
+<li><details><summary><code><a href="../Nokogiri/HTML5.html">HTML5</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/HTML5/Builder.html">Builder</a></code></li>
+<li><code><a href="../Nokogiri/HTML5/Document.html">Document</a></code></li>
+<li><code><a href="../Nokogiri/HTML5/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="../Nokogiri/HTML5/Node.html">Node</a></code></li>
+<li><code><a href="../Nokogiri/HTML5/QuirksMode.html">QuirksMode</a></code></li>
+</ul></details></li>
+<li><code><a href="../Nokogiri/SyntaxError.html">SyntaxError</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/XML.html">XML</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/XML/Attr.html">Attr</a></code></li>
+<li><code><a href="../Nokogiri/XML/AttributeDecl.html">AttributeDecl</a></code></li>
+<li><code><a href="../Nokogiri/XML/Builder.html">Builder</a></code></li>
+<li><code><a href="../Nokogiri/XML/CDATA.html">CDATA</a></code></li>
+<li><code><a href="../Nokogiri/XML/CharacterData.html">CharacterData</a></code></li>
+<li><code><a href="../Nokogiri/XML/Comment.html">Comment</a></code></li>
+<li><code><a href="../Nokogiri/XML/DTD.html">DTD</a></code></li>
+<li><code><a href="../Nokogiri/XML/Document.html">Document</a></code></li>
+<li><code><a href="../Nokogiri/XML/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="../Nokogiri/XML/Element.html">Element</a></code></li>
+<li><code><a href="../Nokogiri/XML/ElementContent.html">ElementContent</a></code></li>
+<li><code><a href="../Nokogiri/XML/ElementDecl.html">ElementDecl</a></code></li>
+<li><code><a href="../Nokogiri/XML/EntityDecl.html">EntityDecl</a></code></li>
+<li><code><a href="../Nokogiri/XML/EntityReference.html">EntityReference</a></code></li>
+<li><code><a href="../Nokogiri/XML/Namespace.html">Namespace</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/XML/Node.html">Node</a></code></summary><ul class="link-list nav-list"><li><code><a href="../Nokogiri/XML/Node/SaveOptions.html">SaveOptions</a></code></li></ul></details></li>
+<li><code><a href="../Nokogiri/XML/NodeSet.html">NodeSet</a></code></li>
+<li><code><a href="../Nokogiri/XML/Notation.html">Notation</a></code></li>
+<li><code><a href="../Nokogiri/XML/ParseOptions.html">ParseOptions</a></code></li>
+<li><code><a href="../Nokogiri/XML/ProcessingInstruction.html">ProcessingInstruction</a></code></li>
+<li><code><a href="../Nokogiri/XML/Reader.html">Reader</a></code></li>
+<li><code><a href="../Nokogiri/XML/RelaxNG.html">RelaxNG</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/XML/SAX.html">SAX</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="../Nokogiri/XML/SAX/Document.html">Document</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/XML/SAX/Parser.html">Parser</a></code></summary><ul class="link-list nav-list"><li><code><a href="../Nokogiri/XML/SAX/Parser/Attribute.html">Attribute</a></code></li></ul></details></li>
+<li><code><a href="../Nokogiri/XML/SAX/ParserContext.html">ParserContext</a></code></li>
+<li><code><a href="../Nokogiri/XML/SAX/PushParser.html">PushParser</a></code></li>
+</ul></details></li>
+<li><code><a href="../Nokogiri/XML/Schema.html">Schema</a></code></li>
+<li><code><a href="../Nokogiri/XML/Searchable.html">Searchable</a></code></li>
+<li><code><a href="../Nokogiri/XML/SyntaxError.html">SyntaxError</a></code></li>
+<li><code><a href="../Nokogiri/XML/Text.html">Text</a></code></li>
+<li><details><summary><code><a href="../Nokogiri/XML/XPath.html">XPath</a></code></summary><ul class="link-list nav-list"><li><code><a href="../Nokogiri/XML/XPath/SyntaxError.html">SyntaxError</a></code></li></ul></details></li>
+<li><code><a href="../Nokogiri/XML/XPathContext.html">XPathContext</a></code></li>
+</ul></details></li>
+<li><details><summary><code><a href="../Nokogiri/XSLT.html">XSLT</a></code></summary><ul class="link-list nav-list"><li><code><a href="../Nokogiri/XSLT/Stylesheet.html">Stylesheet</a></code></li></ul></details></li>
+</ul></details></li>
+<li><code><a href="../Object.html">Object</a></code></li>
+<li><details><summary><code><a href="../XSD.html">XSD</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../XSD/XMLParser.html">XMLParser</a></code></summary><ul class="link-list nav-list"><li><code><a href="../XSD/XMLParser/Nokogiri.html">Nokogiri</a></code></li></ul></details></li></ul></details></li>
+</ul>
+  </details>
+</div>
 
 </nav>
 
 <main role="main" aria-labelledby="module-Nokogiri::HTML5">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../Nokogiri.html">Nokogiri</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>HTML5</span>
+        
+      </li>
+      
+    </ol>
+  
+
   <h1 id="module-Nokogiri::HTML5" class="anchor-link module">
     module Nokogiri::HTML5
   </h1>
 
   <section class="description">
     
-<h2 id="module-Nokogiri::HTML5-label-Usage">Usage<span><a href="#module-Nokogiri::HTML5-label-Usage">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="module-Nokogiri::HTML5-label-Usage"><a href="#module-Nokogiri::HTML5-label-Usage">Usage</a></h2>
 
 <p>Parse an <a href="HTML5.html"><code>HTML5</code></a> document:</p>
 
@@ -154,25 +417,24 @@
 
 <p>⚠ <a href="HTML5.html"><code>HTML5</code></a> functionality is not available when running JRuby.</p>
 
-<h2 id="module-Nokogiri::HTML5-label-Parsing+options">Parsing options<span><a href="#module-Nokogiri::HTML5-label-Parsing+options">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="module-Nokogiri::HTML5-label-Parsing+options"><a href="#module-Nokogiri::HTML5-label-Parsing+options">Parsing options</a></h2>
 
 <p>The document and fragment parsing methods support options that are different from <a href="HTML4/Document.html"><code>Nokogiri::HTML4::Document</code></a> or <a href="XML/Document.html"><code>Nokogiri::XML::Document</code></a>.</p>
 <ul>
 <li>
-<p><a href="../Nokogiri.html#method-c-HTML5"><code>Nokogiri.HTML5(input, url:, encoding:, **parse_options)</code></a></p>
+<p><code>Nokogiri.HTML5(input, url:, encoding:, **parse_options)</code></p>
 </li>
 <li>
-<p><a href="HTML5.html#method-c-parse"><code>Nokogiri::HTML5.parse(input, url:, encoding:, **parse_options)</code></a></p>
+<p><code>Nokogiri::HTML5.parse(input, url:, encoding:, **parse_options)</code></p>
 </li>
 <li>
-<p><a href="HTML5/Document.html#method-c-parse"><code>Nokogiri::HTML5::Document.parse(input, url:, encoding:, **parse_options)</code></a></p>
+<p><code>Nokogiri::HTML5::Document.parse(input, url:, encoding:, **parse_options)</code></p>
 </li>
 <li>
-<p><a href="HTML5.html#method-c-fragment"><code>Nokogiri::HTML5.fragment(input, encoding:, **parse_options)</code></a></p>
+<p><code>Nokogiri::HTML5.fragment(input, encoding:, **parse_options)</code></p>
 </li>
 <li>
-<p><a href="HTML5/DocumentFragment.html#method-c-parse"><code>Nokogiri::HTML5::DocumentFragment.parse(input, encoding:, **parse_options)</code></a></p>
+<p><code>Nokogiri::HTML5::DocumentFragment.parse(input, encoding:, **parse_options)</code></p>
 </li>
 </ul>
 
@@ -194,8 +456,7 @@
 
 <p>These options are explained in the following sections.</p>
 
-<h3 id="module-Nokogiri::HTML5-label-Error+reporting-3A+max_errors-3A">Error reporting: <code>max_errors:</code><span><a href="#module-Nokogiri::HTML5-label-Error+reporting-3A+max_errors-3A">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="module-Nokogiri::HTML5-label-Error+reporting-3A+max_errors-3A"><a href="#module-Nokogiri::HTML5-label-Error+reporting-3A+max_errors-3A">Error reporting: <code>max_errors:</code></a></h3>
 
 <p><a href="../Nokogiri.html"><code>Nokogiri</code></a> contains an experimental <a href="HTML5.html"><code>HTML5</code></a> parse error reporting facility. By default, no parse errors are reported but this can be configured by passing the <code>:max_errors</code> option to <a href="HTML5.html#method-c-parse"><code>HTML5.parse</code></a> or <a href="HTML5.html#method-c-fragment"><code>HTML5.fragment</code></a>.</p>
 
@@ -244,8 +505,7 @@ doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;',
 
 <p>For the purposes of semantic versioning, the error messages, error locations, and error codes are not part of Nokogiri’s public API. That is, these are subject to change without Nokogiri’s major version number changing. These may be stabilized in the future.</p>
 
-<h3 id="module-Nokogiri::HTML5-label-Maximum+tree+depth-3A+max_tree_depth-3A">Maximum tree depth: <code>max_tree_depth:</code><span><a href="#module-Nokogiri::HTML5-label-Maximum+tree+depth-3A+max_tree_depth-3A">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="module-Nokogiri::HTML5-label-Maximum+tree+depth-3A+max_tree_depth-3A"><a href="#module-Nokogiri::HTML5-label-Maximum+tree+depth-3A+max_tree_depth-3A">Maximum tree depth: <code>max_tree_depth:</code></a></h3>
 
 <p>The maximum depth of the DOM tree parsed by the various parsing methods is configurable by the <code>:max_tree_depth</code> option. If the depth of the tree would exceed this limit, then an <code>ArgumentError</code> is thrown.</p>
 
@@ -257,8 +517,7 @@ doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;',
 <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">HTML5</span>(<span class="ruby-identifier">html</span>, <span class="ruby-value">max_tree_depth:</span> <span class="ruby-value">-1</span>)
 </pre>
 
-<h3 id="module-Nokogiri::HTML5-label-Attribute+limit+per+element-3A+max_attributes-3A">Attribute limit per element: <code>max_attributes:</code><span><a href="#module-Nokogiri::HTML5-label-Attribute+limit+per+element-3A+max_attributes-3A">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="module-Nokogiri::HTML5-label-Attribute+limit+per+element-3A+max_attributes-3A"><a href="#module-Nokogiri::HTML5-label-Attribute+limit+per+element-3A+max_attributes-3A">Attribute limit per element: <code>max_attributes:</code></a></h3>
 
 <p>The maximum number of attributes per DOM element is configurable by the <code>:max_attributes</code> option. If a given element would exceed this limit, then an <code>ArgumentError</code> is thrown.</p>
 
@@ -273,8 +532,7 @@ doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;',
 <span class="ruby-comment"># parses successfully</span>
 </pre>
 
-<h3 id="module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text-3A+parse_noscript_content_as_text-3A">Parse <code>noscript</code> elements’ content as text: <code>parse_noscript_content_as_text:</code><span><a href="#module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text-3A+parse_noscript_content_as_text-3A">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text-3A+parse_noscript_content_as_text-3A"><a href="#module-Nokogiri::HTML5-label-Parse+noscript+elements-27+content+as+text-3A+parse_noscript_content_as_text-3A">Parse <code>noscript</code> elements’ content as text: <code>parse_noscript_content_as_text:</code></a></h3>
 
 <p>By default, the content of <code>noscript</code> elements is parsed as <a href="HTML4.html"><code>HTML</code></a> elements. Browsers that support scripting parse the content of <code>noscript</code> elements as raw text.</p>
 
@@ -307,8 +565,7 @@ doc = Nokogiri::HTML5.parse('&lt;span/&gt;Hi there!&lt;/span foo=bar /&gt;',
 </pre>
 
 <h2 id="module-Nokogiri::HTML5-label-HTML+Serialization">
-<a href="HTML4.html"><code>HTML</code></a> Serialization<span><a href="#module-Nokogiri::HTML5-label-HTML+Serialization">¶</a> <a href="#top">↑</a></span>
-</h2>
+<a href="#module-Nokogiri::HTML5-label-HTML+Serialization"></a><a href="HTML4.html"><code>HTML</code></a> Serialization</h2>
 
 <p>After parsing <a href="HTML4.html"><code>HTML</code></a>, it may be serialized using any of the <a href="XML/Node.html"><code>Nokogiri::XML::Node</code></a> serialization methods. In particular, <a href="XML/Node.html#method-i-serialize"><code>XML::Node#serialize</code></a>, <a href="XML/Node.html#method-i-to_html"><code>XML::Node#to_html</code></a>, and <a href="XML/Node.html#method-i-to_s"><code>XML::Node#to_s</code></a> will serialize a given node and its children. (This is the equivalent of JavaScript’s <code>Element.outerHTML</code>.) Similarly, <a href="XML/Node.html#method-i-inner_html"><code>XML::Node#inner_html</code></a> will serialize the children of a given node. (This is the equivalent of JavaScript’s <code>Element.innerHTML</code>.)</p>
 
@@ -344,8 +601,7 @@ Content&lt;/listing&gt;
 <span class="ruby-comment">#    Content&lt;/listing&gt;</span>
 </pre>
 
-<h2 id="module-Nokogiri::HTML5-label-Encodings">Encodings<span><a href="#module-Nokogiri::HTML5-label-Encodings">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="module-Nokogiri::HTML5-label-Encodings"><a href="#module-Nokogiri::HTML5-label-Encodings">Encodings</a></h2>
 
 <p><a href="../Nokogiri.html"><code>Nokogiri</code></a> always parses <a href="HTML5.html"><code>HTML5</code></a> using <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>; however, the encoding of the input can be explicitly selected via the optional <code>encoding</code> parameter. This is most useful when the input comes not from a string but from an IO object.</p>
 
@@ -363,8 +619,7 @@ Content&lt;/listing&gt;
 
 <p>(There’s a <a href="https://bugs.ruby-lang.org/issues/15033">bug</a> in all current versions of Ruby that can cause the entity encoding to fail. Of the mandated supported encodings for <a href="HTML4.html"><code>HTML</code></a>, the only encoding I’m aware of that has this bug is <code>'ISO-2022-JP'</code>. We recommend avoiding this encoding.)</p>
 
-<h2 id="module-Nokogiri::HTML5-label-Notes">Notes<span><a href="#module-Nokogiri::HTML5-label-Notes">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="module-Nokogiri::HTML5-label-Notes"><a href="#module-Nokogiri::HTML5-label-Notes">Notes</a></h2>
 <ul>
 <li>
 <p>The <a href="HTML5.html#method-c-fragment"><code>Nokogiri::HTML5.fragment</code></a> function takes a String or IO and parses it as a <a href="HTML5.html"><code>HTML5</code></a> document in a <code>body</code> context. As a result, the <code>html</code>, <code>head</code>, and <code>body</code> elements are removed from this document, and any children of these elements that remain are returned as a <a href="HTML5/DocumentFragment.html"><code>Nokogiri::HTML5::DocumentFragment</code></a>; but you can pass in a different context (e.g., “html” to get <code>head</code> and <code>body</code> tags in the result).</p>
@@ -384,7 +639,15 @@ Content&lt;/listing&gt;
 
   </section>
 
+
   <section id="5Buntitled-5D" class="documentation-section anchor-link">
+
+
+
+
+
+
+
 
 
 
@@ -392,71 +655,130 @@ Content&lt;/listing&gt;
 
      <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
-         <h3>Public Class Methods</h3>
+         <h3 id="public-class-methods"><a href="#public-class-methods">Public Class Methods</a></h3>
        </header>
+
 
       <div id="method-c-fragment" class="method-detail anchor-link ">
         <div class="method-header">
+
             <div class="method-heading">
               <a href="#method-c-fragment" title="Link to this method">
                 <span class="method-name">fragment</span>
                 <span class="method-args">(...)</span>
               </a>
             </div>
+
         </div>
+
 
           <div class="method-controls">
             <details class="method-source-toggle">
               <summary>Source</summary>
             </details>
           </div>
-
-        <div class="method-description">
           <div class="method-source-code" id="fragment-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 280</span>
+            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 280</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fragment</span>(<span class="ruby-operator">...</span>)
   <span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-operator">...</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+
+
+
+        <div class="method-description">
+
+
           <p>Convenience method for <a href="HTML5/DocumentFragment.html#method-c-parse"><code>Nokogiri::HTML5::DocumentFragment.parse</code></a></p>
+
+
         </div>
+
+
+
 
 
       </div>
 
+
       <div id="method-c-parse" class="method-detail anchor-link ">
         <div class="method-header">
+
             <div class="method-heading">
               <a href="#method-c-parse" title="Link to this method">
                 <span class="method-name">parse</span>
                 <span class="method-args">(...)</span>
               </a>
             </div>
+
         </div>
+
 
           <div class="method-controls">
             <details class="method-source-toggle">
               <summary>Source</summary>
             </details>
           </div>
-
-        <div class="method-description">
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 275</span>
+            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/html5.rb, line 275</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-operator">...</span>)
   <span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-operator">...</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
+
+
+
+        <div class="method-description">
+
+
           <p>Convenience method for <a href="HTML5/Document.html#method-c-parse"><code>Nokogiri::HTML5::Document.parse</code></a></p>
+
+
         </div>
+
+
+
 
 
       </div>
 
+
     </section>
 
+
+
+
+
+
+
+
+
+
   </section>
+
 </main>
 
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.0.3</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
 </body>
+
 </html>

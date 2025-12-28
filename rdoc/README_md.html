@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
@@ -7,23 +7,59 @@
 
 <title>README - RDoc Documentation</title>
 
+
   <meta name="keywords" content="ruby,documentation,README">
-  <meta name="description" content="README: Nokogiri Nokogiri (鋸) makes it easy and painless to work with XML and HTML from Ruby. It is fast and standards-compliant by relying on native parsers">
+  <meta name="description" content="README: nokogiri. nokogiri-serif-black.">
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="README - RDoc Documentation">
+
+
+
+    <meta property="og:description" content="nokogiri. nokogiri-serif-black.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="README - RDoc Documentation">
+
+
+
+    <meta name="twitter:description" content="nokogiri. nokogiri-serif-black.">
+
+
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
   var index_rel_prefix = "./";
 </script>
 
-<script src="./js/navigation.js" defer></script>
-<script src="./js/search.js" defer></script>
-<script src="./js/search_index.js" defer></script>
-<script src="./js/searcher.js" defer></script>
-<script src="./js/darkfish.js" defer></script>
+<script src="./js/theme-toggle.js?v=7.0.3"></script>
 
-<link href="./css/fonts.css" rel="stylesheet">
-<link href="./css/rdoc.css" rel="stylesheet">
-<link href="./rdoc-tweaks.css" rel="stylesheet">
+<script src="./js/search_navigation.js?v=7.0.3" defer></script>
+
+<script src="./js/search_data.js?v=7.0.3" defer></script>
+
+<script src="./js/search_ranker.js?v=7.0.3" defer></script>
+
+<script src="./js/search_controller.js?v=7.0.3" defer></script>
+
+<script src="./js/c_highlighter.js?v=7.0.3" defer></script>
+
+<script src="./js/aliki.js?v=7.0.3" defer></script>
+
+<link href="./css/rdoc.css?v=7.0.3" rel="stylesheet">
+
+
+  <link href="./rdoc-tweaks.css?v=7.0.3" rel="stylesheet">
+
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -36,177 +72,287 @@
   gtag('config', 'G-BZR5RZN084');
 </script>
 </head>
-<body id="top" role="document" class="file">
+<body role="document" class="file has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol id="icon-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol id="icon-file" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol id="icon-layers" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol id="icon-class-methods" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text x="12" y="17" text-anchor="middle" font-size="13" font-weight="bold" fill="currentColor" stroke="none">
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol id="icon-instance-methods" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text x="12" y="17" text-anchor="middle" font-size="13" font-weight="bold" fill="currentColor" stroke="none">
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol id="icon-ancestors" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol id="icon-includes" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line x1="20" y1="8" x2="20" y2="14"></line>
+
+    <line x1="23" y1="11" x2="17" y2="11"></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol id="icon-extends" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol id="icon-list" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="8" y1="6" x2="21" y2="6"></line>
+
+    <line x1="8" y1="12" x2="21" y2="12"></line>
+
+    <line x1="8" y1="18" x2="21" y2="18"></line>
+
+    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+
+    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+
+    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="./index.html" class="navbar-brand">
+    RDoc Documentation
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results-desktop" type="text" name="search" placeholder="Search (/) for a class, method..." spellcheck="false" autocomplete="off" title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results-mobile" type="text" name="search" placeholder="Search documentation" spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
   <span aria-hidden="true">☰</span>
 </div>
 
 
-<nav id="navigation" role="navigation">
-  <div id="project-navigation">
-    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
-  <h2>
-    <a href="./index.html" rel="home">Home</a>
-  </h2>
-
-  <div id="table-of-contents-navigation">
-    <a href="./table_of_contents.html#pages">Pages</a>
-    <a href="./table_of_contents.html#classes">Classes</a>
-    <a href="./table_of_contents.html#methods">Methods</a>
-  </div>
-</div>
-
-    <div id="search-section" role="search" class="project-section initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <div id="search-field-wrapper">
-      <input id="search-field" role="combobox" aria-label="Search" aria-autocomplete="list" aria-controls="search-results" type="text" name="search" placeholder="Search (/) for a class, method, ..." spellcheck="false" title="Type to search, Up and Down to navigate, Enter to load">
-    </div>
-
-    <ul id="search-results" aria-label="Search Results" aria-busy="false" aria-expanded="false" aria-atomic="false" class="initially-hidden"></ul>
-  </form>
-</div>
-
-  </div>
-
+<nav id="navigation" role="navigation" hidden>
   
-<div class="nav-section">
-  <h3>Table of Contents</h3>
 
 
 
-  <ul class="link-list" role="directory">
-              <li>
-            <details open>
-              <summary>      <a href="#label-Nokogiri">Nokogiri</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#label-Guiding+Principles">Guiding Principles</a>
-          </li>
-<li>      <a href="#label-Features+Overview">Features Overview</a>
-          </li>
-<li>      <a href="#label-Status">Status</a>
-          </li>
-<li>
-            <details open>
-              <summary>      <a href="#label-Support-2C+Getting+Help-2C+and+Reporting+Issues">Support, Getting Help, and Reporting Issues</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#label-Reading">Reading</a>
-          </li>
-<li>      <a href="#label-Ask+For+Help">Ask For Help</a>
-          </li>
-<li>      <a href="#label-Report+A+Bug">Report A Bug</a>
-          </li>
-<li>      <a href="#label-Security+and+Vulnerability+Reporting">Security and Vulnerability Reporting</a>
-          </li>
-<li>      <a href="#label-Semantic+Versioning+Policy">Semantic Versioning Policy</a>
-          </li>
-<li>      <a href="#label-Sponsorship">Sponsorship</a>
 
-              </li>
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="./README_md.html">
+                README
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list">
+<li><details><summary><code><a href="./Nokogiri.html">Nokogiri</a></code></summary><ul class="link-list nav-list">
+<li><details><summary><code><a href="./Nokogiri/CSS.html">CSS</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/CSS/SyntaxError.html">SyntaxError</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/CSS/XPathVisitor.html">XPathVisitor</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/CSS/XPathVisitor/BuiltinsConfig.html">BuiltinsConfig</a></code></li>
+<li><code><a href="./Nokogiri/CSS/XPathVisitor/DoctypeConfig.html">DoctypeConfig</a></code></li>
+</ul></details></li>
+</ul></details></li>
+<li><code><a href="./Nokogiri/ClassResolver.html">ClassResolver</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/Decorators.html">Decorators</a></code></summary><ul class="link-list nav-list"><li><code><a href="./Nokogiri/Decorators/Slop.html">Slop</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/EncodingHandler.html">EncodingHandler</a></code></li>
+<li><code><a href="./Nokogiri/Gumbo.html">Gumbo</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/HTML4.html">HTML</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/HTML/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/HTML/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/HTML/DocumentFragment.html">DocumentFragment</a></code></li>
+</ul></details></li>
+<li><details><summary><code><a href="./Nokogiri/HTML4.html">HTML4</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/HTML4/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/ElementDescription.html">ElementDescription</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/EntityDescription.html">EntityDescription</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/EntityLookup.html">EntityLookup</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/HTML4/SAX.html">SAX</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/HTML4/SAX/Parser.html">Parser</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/SAX/ParserContext.html">ParserContext</a></code></li>
+<li><code><a href="./Nokogiri/HTML4/SAX/PushParser.html">PushParser</a></code></li>
+</ul></details></li>
+</ul></details></li>
+<li><details><summary><code><a href="./Nokogiri/HTML5.html">HTML5</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/HTML5/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/Node.html">Node</a></code></li>
+<li><code><a href="./Nokogiri/HTML5/QuirksMode.html">QuirksMode</a></code></li>
+</ul></details></li>
+<li><code><a href="./Nokogiri/SyntaxError.html">SyntaxError</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML.html">XML</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/XML/Attr.html">Attr</a></code></li>
+<li><code><a href="./Nokogiri/XML/AttributeDecl.html">AttributeDecl</a></code></li>
+<li><code><a href="./Nokogiri/XML/Builder.html">Builder</a></code></li>
+<li><code><a href="./Nokogiri/XML/CDATA.html">CDATA</a></code></li>
+<li><code><a href="./Nokogiri/XML/CharacterData.html">CharacterData</a></code></li>
+<li><code><a href="./Nokogiri/XML/Comment.html">Comment</a></code></li>
+<li><code><a href="./Nokogiri/XML/DTD.html">DTD</a></code></li>
+<li><code><a href="./Nokogiri/XML/Document.html">Document</a></code></li>
+<li><code><a href="./Nokogiri/XML/DocumentFragment.html">DocumentFragment</a></code></li>
+<li><code><a href="./Nokogiri/XML/Element.html">Element</a></code></li>
+<li><code><a href="./Nokogiri/XML/ElementContent.html">ElementContent</a></code></li>
+<li><code><a href="./Nokogiri/XML/ElementDecl.html">ElementDecl</a></code></li>
+<li><code><a href="./Nokogiri/XML/EntityDecl.html">EntityDecl</a></code></li>
+<li><code><a href="./Nokogiri/XML/EntityReference.html">EntityReference</a></code></li>
+<li><code><a href="./Nokogiri/XML/Namespace.html">Namespace</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/Node.html">Node</a></code></summary><ul class="link-list nav-list"><li><code><a href="./Nokogiri/XML/Node/SaveOptions.html">SaveOptions</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/XML/NodeSet.html">NodeSet</a></code></li>
+<li><code><a href="./Nokogiri/XML/Notation.html">Notation</a></code></li>
+<li><code><a href="./Nokogiri/XML/ParseOptions.html">ParseOptions</a></code></li>
+<li><code><a href="./Nokogiri/XML/ProcessingInstruction.html">ProcessingInstruction</a></code></li>
+<li><code><a href="./Nokogiri/XML/Reader.html">Reader</a></code></li>
+<li><code><a href="./Nokogiri/XML/RelaxNG.html">RelaxNG</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/SAX.html">SAX</a></code></summary><ul class="link-list nav-list">
+<li><code><a href="./Nokogiri/XML/SAX/Document.html">Document</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/SAX/Parser.html">Parser</a></code></summary><ul class="link-list nav-list"><li><code><a href="./Nokogiri/XML/SAX/Parser/Attribute.html">Attribute</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/XML/SAX/ParserContext.html">ParserContext</a></code></li>
+<li><code><a href="./Nokogiri/XML/SAX/PushParser.html">PushParser</a></code></li>
+</ul></details></li>
+<li><code><a href="./Nokogiri/XML/Schema.html">Schema</a></code></li>
+<li><code><a href="./Nokogiri/XML/Searchable.html">Searchable</a></code></li>
+<li><code><a href="./Nokogiri/XML/SyntaxError.html">SyntaxError</a></code></li>
+<li><code><a href="./Nokogiri/XML/Text.html">Text</a></code></li>
+<li><details><summary><code><a href="./Nokogiri/XML/XPath.html">XPath</a></code></summary><ul class="link-list nav-list"><li><code><a href="./Nokogiri/XML/XPath/SyntaxError.html">SyntaxError</a></code></li></ul></details></li>
+<li><code><a href="./Nokogiri/XML/XPathContext.html">XPathContext</a></code></li>
+</ul></details></li>
+<li><details><summary><code><a href="./Nokogiri/XSLT.html">XSLT</a></code></summary><ul class="link-list nav-list"><li><code><a href="./Nokogiri/XSLT/Stylesheet.html">Stylesheet</a></code></li></ul></details></li>
+</ul></details></li>
+<li><code><a href="./Object.html">Object</a></code></li>
+<li><details><summary><code><a href="./XSD.html">XSD</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="./XSD/XMLParser.html">XMLParser</a></code></summary><ul class="link-list nav-list"><li><code><a href="./XSD/XMLParser/Nokogiri.html">Nokogiri</a></code></li></ul></details></li></ul></details></li>
 </ul>
-            </details>
-          </li>
-          <li>
-            <details open>
-              <summary>      <a href="#label-Installation">Installation</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#label-Native+Gems-3A+Faster-2C+more+reliable+installation">Native Gems: Faster, more reliable installation</a>
-          </li>
-<li>      <a href="#label-Supported+Platforms">Supported Platforms</a>
-          </li>
-<li>      <a href="#label-Other+Installation+Options">Other Installation Options</a>
-
-              </li>
-</ul>
-            </details>
-          </li>
-          <li>
-            <details open>
-              <summary>      <a href="#label-How+To+Use+Nokogiri">How To Use Nokogiri</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#label-Parsing+and+Querying">Parsing and Querying</a>
-          </li>
-<li>      <a href="#label-Encoding">Encoding</a>
-
-              </li>
-</ul>
-            </details>
-          </li>
-          <li>
-            <details open>
-              <summary>      <a href="#label-Technical+Overview">Technical Overview</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#label-Guiding+Principles">Guiding Principles</a>
-          </li>
-<li>      <a href="#label-CRuby">CRuby</a>
-          </li>
-<li>      <a href="#label-JRuby">JRuby</a>
-
-              </li>
-</ul>
-            </details>
-          </li>
-          <li>      <a href="#label-Contributing">Contributing</a>
-          </li>
-<li>      <a href="#label-Code+of+Conduct">Code of Conduct</a>
-          </li>
-<li>
-            <details open>
-              <summary>      <a href="#label-License">License</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#label-Dependencies">Dependencies</a>
-
-              </li>
-</ul>
-            </details>
-          </li>
-          <li>      <a href="#label-Authors">Authors</a>
-
-              </li>
-</ul>
-            </details>
-          </li>
-
-  </ul>
+  </details>
 </div>
-
-  
-<div id="fileindex-section" class="nav-section">
-  <h3>Pages</h3>
-
-  <ul class="link-list">
-    <li>
-<a href="./README_md.html">README</a>
-  </li>
-</ul>
-</div>
-
-
-  <footer id="validator-badges" role="contentinfo">
-  <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  </p>
-<p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.10.0.
-  </p>
-<p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
-</p></footer>
 
 </nav>
 
 <main role="main" aria-label="Page README.md">
 <div><img src="https://nokogiri.org/images/nokogiri-serif-black.png" align="right"></div>
 <h1 id="label-Nokogiri">
-<a href="Nokogiri.html"><code>Nokogiri</code></a><span><a href="#label-Nokogiri">¶</a> <a href="#top">↑</a></span>
+<a href="#label-Nokogiri"></a><a href="Nokogiri.html"><code>Nokogiri</code></a>
 </h1>
 
 <p><a href="Nokogiri.html"><code>Nokogiri</code></a> (鋸) makes it easy and painless to work with XML and HTML from Ruby. It provides a sensible, easy-to-understand API for <a href="https://nokogiri.org/tutorials/parsing_an_html_xml_document.html">reading</a>, writing, <a href="https://nokogiri.org/tutorials/modifying_an_html_xml_document.html">modifying</a>, and <a href="https://nokogiri.org/tutorials/searching_a_xml_html_document.html">querying</a> documents. It is fast and standards-compliant by relying on native parsers like libxml2, libgumbo, and xerces.</p>
 
-<h2 id="label-Guiding+Principles">Guiding Principles<span><a href="#label-Guiding+Principles">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Guiding+Principles"><a href="#label-Guiding+Principles">Guiding Principles</a></h2>
 
 <p>Some guiding principles <a href="Nokogiri.html"><code>Nokogiri</code></a> tries to follow:</p>
 <ul>
@@ -218,8 +364,7 @@
 </li>
 </ul>
 
-<h2 id="label-Features+Overview">Features Overview<span><a href="#label-Features+Overview">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Features+Overview"><a href="#label-Features+Overview">Features Overview</a></h2>
 <ul>
 <li>
 <p>DOM Parser for XML, HTML4, and HTML5</p>
@@ -247,22 +392,19 @@
 </li>
 </ul>
 
-<h2 id="label-Status">Status<span><a href="#label-Status">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Status"><a href="#label-Status">Status</a></h2>
 
-<p><a href="https://github.com/sparklemotion/nokogiri/actions/workflows/ci.yml"><img src="https://github.com/sparklemotion/nokogiri/actions/workflows/ci.yml/badge.svg?branch=main"></a> <a href="https://ci.appveyor.com/project/flavorjones/nokogiri/branch/main"><img src="https://ci.appveyor.com/api/projects/status/xj2pqwvlxwuwgr06/branch/main?svg=true"></a></p>
+<p><a href="https://github.com/sparklemotion/nokogiri/actions/workflows/ci.yml"><img src="https://github.com/sparklemotion/nokogiri/actions/workflows/ci.yml/badge.svg?branch=main" alt="Github Actions CI"></a> <a href="https://ci.appveyor.com/project/flavorjones/nokogiri/branch/main"><img src="https://ci.appveyor.com/api/projects/status/xj2pqwvlxwuwgr06/branch/main?svg=true" alt="Appveyor CI"></a></p>
 
-<p><a href="https://rubygems.org/gems/nokogiri"><img src="https://badge.fury.io/rb/nokogiri.svg"></a> <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5"></a></p>
+<p><a href="https://rubygems.org/gems/nokogiri"><img src="https://badge.fury.io/rb/nokogiri.svg" alt="Gem Version"></a> <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5" alt="SemVer compatibility"></a></p>
 
-<p><a href="https://bestpractices.coreinfrastructure.org/projects/5344"><img src="https://bestpractices.coreinfrastructure.org/projects/5344/badge"></a> <a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme"><img src="https://tidelift.com/badges/package/rubygems/nokogiri"></a></p>
+<p><a href="https://bestpractices.coreinfrastructure.org/projects/5344"><img src="https://bestpractices.coreinfrastructure.org/projects/5344/badge" alt="CII Best Practices"></a> <a href="https://tidelift.com/subscription/pkg/rubygems-nokogiri?utm_source=rubygems-nokogiri&amp;utm_medium=referral&amp;utm_campaign=readme"><img src="https://tidelift.com/badges/package/rubygems/nokogiri" alt="Tidelift dependencies"></a></p>
 
-<h2 id="label-Support-2C+Getting+Help-2C+and+Reporting+Issues">Support, Getting Help, and Reporting Issues<span><a href="#label-Support-2C+Getting+Help-2C+and+Reporting+Issues">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Support-2C+Getting+Help-2C+and+Reporting+Issues"><a href="#label-Support-2C+Getting+Help-2C+and+Reporting+Issues">Support, Getting Help, and Reporting Issues</a></h2>
 
 <p>All official documentation is posted at <a href="https://nokogiri.org">nokogiri.org</a> (the source for which is at <a href="https://github.com/sparklemotion/nokogiri.org">github.com/sparklemotion/nokogiri.org</a>/, and we welcome contributions).</p>
 
-<h3 id="label-Reading">Reading<span><a href="#label-Reading">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Reading"><a href="#label-Reading">Reading</a></h3>
 
 <p>Your first stops for learning more about <a href="Nokogiri.html"><code>Nokogiri</code></a> should be:</p>
 <ul>
@@ -277,8 +419,7 @@
 </li>
 </ul>
 
-<h3 id="label-Ask+For+Help">Ask For Help<span><a href="#label-Ask+For+Help">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Ask+For+Help"><a href="#label-Ask+For+Help">Ask For Help</a></h3>
 
 <p>There are a few ways to ask exploratory questions:</p>
 <ul>
@@ -295,24 +436,21 @@
 
 <p>Please do not mail the maintainers at their personal addresses.</p>
 
-<h3 id="label-Report+A+Bug">Report A Bug<span><a href="#label-Report+A+Bug">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Report+A+Bug"><a href="#label-Report+A+Bug">Report A Bug</a></h3>
 
 <p>The <a href="Nokogiri.html"><code>Nokogiri</code></a> bug tracker is at <a href="https://github.com/sparklemotion/nokogiri/issues">github.com/sparklemotion/nokogiri/issues</a></p>
 
 <p>Please use the “Bug Report” or “Installation Difficulties” templates.</p>
 
-<h3 id="label-Security+and+Vulnerability+Reporting">Security and Vulnerability Reporting<span><a href="#label-Security+and+Vulnerability+Reporting">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Security+and+Vulnerability+Reporting"><a href="#label-Security+and+Vulnerability+Reporting">Security and Vulnerability Reporting</a></h3>
 
 <p>Please report vulnerabilities at <a href="https://hackerone.com/nokogiri">hackerone.com/nokogiri</a></p>
 
-<p>Full information and description of our security policy is in {<code>SECURITY.md</code><a href="SECURITY_md.html">}</a></p>
+<p>Full information and description of our security policy is in <a href="SECURITY_md.html"><code>SECURITY.md</code></a></p>
 
-<h3 id="label-Semantic+Versioning+Policy">Semantic Versioning Policy<span><a href="#label-Semantic+Versioning+Policy">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Semantic+Versioning+Policy"><a href="#label-Semantic+Versioning+Policy">Semantic Versioning Policy</a></h3>
 
-<p><a href="Nokogiri.html"><code>Nokogiri</code></a> follows <a href="https://semver.org/">Semantic Versioning</a> (since 2017 or so). <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5"></a></p>
+<p><a href="Nokogiri.html"><code>Nokogiri</code></a> follows <a href="https://semver.org/">Semantic Versioning</a> (since 2017 or so). <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img src="https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5" alt="Dependabot's SemVer compatibility score for Nokogiri"></a></p>
 
 <p>We bump <code>Major.Minor.Patch</code> versions following this guidance:</p>
 
@@ -322,7 +460,7 @@
 <p>Significant backwards-incompatible changes to the public API that would require rewriting existing application code.</p>
 </li>
 <li>
-<p>Some examples of backwards-incompatible changes we might someday consider for a Major release are at {<code>ROADMAP.md</code><a href="ROADMAP_md.html">}</a>.</p>
+<p>Some examples of backwards-incompatible changes we might someday consider for a Major release are at <a href="ROADMAP_md.html"><code>ROADMAP.md</code></a>.</p>
 </li>
 </ul>
 
@@ -358,8 +496,7 @@
 </li>
 </ul>
 
-<h3 id="label-Sponsorship">Sponsorship<span><a href="#label-Sponsorship">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Sponsorship"><a href="#label-Sponsorship">Sponsorship</a></h3>
 
 <p>You can help sponsor the maintainers of this software through one of these organizations:</p>
 <ul>
@@ -374,16 +511,15 @@
 </li>
 </ul>
 
-<h2 id="label-Installation">Installation<span><a href="#label-Installation">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Installation"><a href="#label-Installation">Installation</a></h2>
 
 <p>Requirements:</p>
 <ul>
 <li>
-<p>Ruby &gt;= 3.1</p>
+<p>Ruby &gt;= 3.2</p>
 </li>
 <li>
-<p>JRuby &gt;= 9.4.0.0</p>
+<p>JRuby &gt;= 10.0</p>
 </li>
 </ul>
 
@@ -392,13 +528,11 @@
 <p>libxml2 &gt;= 2.9.2 (recommended &gt;= 2.12.0)</p>
 </li></ul>
 
-<h3 id="label-Native+Gems-3A+Faster-2C+more+reliable+installation">Native Gems: Faster, more reliable installation<span><a href="#label-Native+Gems-3A+Faster-2C+more+reliable+installation">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Native+Gems-3A+Faster-2C+more+reliable+installation"><a href="#label-Native+Gems-3A+Faster-2C+more+reliable+installation">Native Gems: Faster, more reliable installation</a></h3>
 
 <p>“Native gems” contain pre-compiled libraries for a specific machine architecture. On supported platforms, this removes the need for compiling the C extension and the packaged libraries, or for system dependencies to exist. This results in <strong>much faster installation</strong> and <strong>more reliable installation</strong>, which as you probably know are the biggest headaches for <a href="Nokogiri.html"><code>Nokogiri</code></a> users.</p>
 
-<h3 id="label-Supported+Platforms">Supported Platforms<span><a href="#label-Supported+Platforms">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Supported+Platforms"><a href="#label-Supported+Platforms">Supported Platforms</a></h3>
 
 <p><a href="Nokogiri.html"><code>Nokogiri</code></a> ships pre-compiled, “native” gems for the following platforms:</p>
 <ul>
@@ -418,7 +552,7 @@
 <p>Windows: <code>x64-mingw-ucrt</code></p>
 </li>
 <li>
-<p>Java: any platform running JRuby 9.4 or higher</p>
+<p>Java: any platform running JRuby 10.0 or higher</p>
 </li>
 </ul>
 
@@ -431,8 +565,7 @@ Fetching nokogiri-1.11.0-x86_64-linux.gem
 Successfully installed nokogiri-1.11.0-x86_64-linux
 1 gem installed</pre>
 
-<h3 id="label-Other+Installation+Options">Other Installation Options<span><a href="#label-Other+Installation+Options">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Other+Installation+Options"><a href="#label-Other+Installation+Options">Other Installation Options</a></h3>
 
 <p>Because <a href="Nokogiri.html"><code>Nokogiri</code></a> is a C extension, it requires that you have a C compiler toolchain, Ruby development header files, and some system dependencies installed.</p>
 
@@ -443,13 +576,13 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 
 <p>If you have any issues, please visit <a href="https://nokogiri.org/tutorials/installing_nokogiri.html">Installing Nokogiri</a> for more complete instructions and troubleshooting.</p>
 
-<h2 id="label-How+To+Use+Nokogiri">How To Use <a href="Nokogiri.html"><code>Nokogiri</code></a><span><a href="#label-How+To+Use+Nokogiri">¶</a> <a href="#top">↑</a></span>
+<h2 id="label-How+To+Use+Nokogiri">
+<a href="#label-How+To+Use+Nokogiri">How To Use </a><a href="Nokogiri.html"><code>Nokogiri</code></a>
 </h2>
 
 <p><a href="Nokogiri.html"><code>Nokogiri</code></a> is a large library, and so it’s challenging to briefly summarize it. We’ve tried to provide long, real-world examples at <a href="https://nokogiri.org/tutorials/toc.html">Tutorials</a>.</p>
 
-<h3 id="label-Parsing+and+Querying">Parsing and Querying<span><a href="#label-Parsing+and+Querying">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Parsing+and+Querying"><a href="#label-Parsing+and+Querying">Parsing and Querying</a></h3>
 
 <p>Here is example usage for parsing and querying a document:</p>
 
@@ -477,8 +610,7 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 <span class="ruby-keyword">end</span>
 </pre>
 
-<h3 id="label-Encoding">Encoding<span><a href="#label-Encoding">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Encoding"><a href="#label-Encoding">Encoding</a></h3>
 
 <p>Strings are always stored as UTF-8 internally. Methods that return text values will always return UTF-8 encoded strings. Methods that return a string containing markup (like <code>to_xml</code>, <code>to_html</code> and <code>inner_html</code>) will return a string encoded like the source document.</p>
 
@@ -493,11 +625,9 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span>.<span class="ruby-constant">XML</span>(<span class="ruby-string">'&lt;foo&gt;&lt;bar /&gt;&lt;/foo&gt;'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">'EUC-JP'</span>)
 </pre>
 
-<h2 id="label-Technical+Overview">Technical Overview<span><a href="#label-Technical+Overview">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Technical+Overview"><a href="#label-Technical+Overview">Technical Overview</a></h2>
 
-<h3 id="label-Guiding+Principles">Guiding Principles<span><a href="#label-Guiding+Principles">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Guiding+Principles"><a href="#label-Guiding+Principles">Guiding Principles</a></h3>
 
 <p>As noted above, two guiding principles of the software are:</p>
 <ul>
@@ -511,8 +641,7 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 
 <p>Notably, despite all parsers being standards-compliant, there are behavioral inconsistencies between the parsers used in the CRuby and JRuby implementations, and <a href="Nokogiri.html"><code>Nokogiri</code></a> does not and should not attempt to remove these inconsistencies. Instead, we surface these differences in the test suite when they are important/semantic; or we intentionally write tests to depend only on the important/semantic bits (omitting whitespace from regex matchers on results, for example).</p>
 
-<h3 id="label-CRuby">CRuby<span><a href="#label-CRuby">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-CRuby"><a href="#label-CRuby">CRuby</a></h3>
 
 <p>The Ruby (a.k.a., CRuby, MRI, YARV) implementation is a C extension that depends on libxml2 and libxslt (which in turn depend on zlib and possibly libiconv).</p>
 
@@ -520,41 +649,35 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 
 <p>We provide native gems by pre-compiling libxml2 and libxslt (and potentially zlib and libiconv) and packaging them into the gem file. In this case, no compilation is necessary at installation time, which leads to faster and more reliable installation.</p>
 
-<p>See {<code>LICENSE-DEPENDENCIES.md</code><a href="LICENSE-DEPENDENCIES_md.html">}</a> for more information on which dependencies are provided in which native and source gems.</p>
+<p>See <a href="LICENSE-DEPENDENCIES_md.html"><code>LICENSE-DEPENDENCIES.md</code></a> for more information on which dependencies are provided in which native and source gems.</p>
 
-<h3 id="label-JRuby">JRuby<span><a href="#label-JRuby">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-JRuby"><a href="#label-JRuby">JRuby</a></h3>
 
 <p>The Java (a.k.a. JRuby) implementation is a Java extension that depends primarily on Xerces and NekoHTML for parsing, though additional dependencies are on <code>isorelax</code>, <code>nekodtd</code>, <code>jing</code>, <code>serializer</code>, <code>xalan-j</code>, and <code>xml-apis</code>.</p>
 
 <p>These dependencies are provided by pre-compiled jar files packaged in the <code>java</code> platform gem.</p>
 
-<p>See {<code>LICENSE-DEPENDENCIES.md</code><a href="LICENSE-DEPENDENCIES_md.html">}</a> for more information on which dependencies are provided in which native and source gems.</p>
+<p>See <a href="LICENSE-DEPENDENCIES_md.html"><code>LICENSE-DEPENDENCIES.md</code></a> for more information on which dependencies are provided in which native and source gems.</p>
 
-<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Contributing"><a href="#label-Contributing">Contributing</a></h2>
 
-<p>See {<code>CONTRIBUTING.md</code><a href="CONTRIBUTING_md.html">}</a> for an intro guide to developing <a href="Nokogiri.html"><code>Nokogiri</code></a>.</p>
+<p>See <a href="CONTRIBUTING_md.html"><code>CONTRIBUTING.md</code></a> for an intro guide to developing <a href="Nokogiri.html"><code>Nokogiri</code></a>.</p>
 
-<h2 id="label-Code+of+Conduct">Code of Conduct<span><a href="#label-Code+of+Conduct">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Code+of+Conduct"><a href="#label-Code+of+Conduct">Code of Conduct</a></h2>
 
-<p>We’ve adopted the Contributor Covenant code of conduct, which you can read in full in {<code>CODE_OF_CONDUCT.md</code><a href="CODE_OF_CONDUCT_md.html">}</a>.</p>
+<p>We’ve adopted the Contributor Covenant code of conduct, which you can read in full in <a href="CODE_OF_CONDUCT_md.html"><code>CODE_OF_CONDUCT.md</code></a>.</p>
 
-<h2 id="label-License">License<span><a href="#label-License">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-License"><a href="#label-License">License</a></h2>
 
 <p>This project is licensed under the terms of the MIT license.</p>
 
-<p>See this license at {<code>LICENSE.md</code><a href="LICENSE_md.html">}</a>.</p>
+<p>See this license at <a href="LICENSE_md.html"><code>LICENSE.md</code></a>.</p>
 
-<h3 id="label-Dependencies">Dependencies<span><a href="#label-Dependencies">¶</a> <a href="#top">↑</a></span>
-</h3>
+<h3 id="label-Dependencies"><a href="#label-Dependencies">Dependencies</a></h3>
 
-<p>Some additional libraries may be distributed with your version of <a href="Nokogiri.html"><code>Nokogiri</code></a>. Please see {<code>LICENSE-DEPENDENCIES.md</code><a href="LICENSE-DEPENDENCIES_md.html">}</a> for a discussion of the variations as well as the licenses thereof.</p>
+<p>Some additional libraries may be distributed with your version of <a href="Nokogiri.html"><code>Nokogiri</code></a>. Please see <a href="LICENSE-DEPENDENCIES_md.html"><code>LICENSE-DEPENDENCIES.md</code></a> for a discussion of the variations as well as the licenses thereof.</p>
 
-<h2 id="label-Authors">Authors<span><a href="#label-Authors">¶</a> <a href="#top">↑</a></span>
-</h2>
+<h2 id="label-Authors"><a href="#label-Authors">Authors</a></h2>
 <ul>
 <li>
 <p>Mike Dalessio</p>
@@ -599,5 +722,27 @@ Successfully installed nokogiri-1.11.0-x86_64-linux
 
 </main>
 
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.0.3</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
 </body>
+
 </html>
