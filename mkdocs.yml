@@ -13,6 +13,7 @@ use_directory_urls: false
 
 theme:
   name: material
+  variant: modern
   font:
     text: "Ubuntu"
     code: "Menlo"
@@ -27,7 +28,25 @@ theme:
     - search.highlight
 #    - toc.integrate
   palette:
-    primary: black
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: lucide/sun-moon
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: lucide/sun
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: lucide/moon
+        name: Switch to system preference
   icon:
     repo: fontawesome/brands/github
 
@@ -40,12 +59,6 @@ extra:
   analytics:
     provider: google
     property: G-BZR5RZN084
-  consent:
-    title: Cookie consent
-    description: |
-      This site uses cookies to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to make our
-      documentation better.
 
 plugins:
   - search:
