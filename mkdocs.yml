@@ -18,7 +18,7 @@ theme:
     code: "Menlo"
   logo: "images/nokogiri-serif-white.svg"
   favicon: "images/nokogiri-serif-black.png"
-  features: # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#configuration
+  features:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs

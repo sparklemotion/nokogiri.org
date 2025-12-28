@@ -36,12 +36,12 @@ def create_tutorial_tasks(source_dir, dest_dir)
 end
 
 def create_tutorial_toc_task(source_dir, dest_dir)
-  mkdocs_yml_path = File.join(File.dirname(__FILE__), "../mkdocs.yml")
+  site_config = File.join(File.dirname(__FILE__), "../mkdocs.yml")
   toc_path = File.join(dest_dir, TUTORIALS_DIR, "toc.md")
 
   toc_md = ["# Nokogiri Tutorials\n"]
 
-  nav = YAML.load_file(mkdocs_yml_path)["nav"]
+  nav = YAML.load_file(site_config)["nav"]
   tutorials = nav.find { |x| x["Tutorials"] }.first.last
   tutorials.each do |tutorial|
     tutorial_title, tutorial_path = *(tutorial.flatten)
@@ -50,7 +50,7 @@ def create_tutorial_toc_task(source_dir, dest_dir)
     toc_md << "* [#{tutorial_title}](#{File.basename(tutorial_path)})"
   end
 
-  file toc_path => mkdocs_yml_path do
+  file toc_path => site_config do
     puts "generating tutorials' table of contents"
     File.open(toc_path, "w") do |f|
       f.write toc_md.join("\n")

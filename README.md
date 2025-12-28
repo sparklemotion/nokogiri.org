@@ -20,12 +20,12 @@ Take a look at the [open issues][]!
 1. Fork this repository.
 2. `bundle install` and `bundle exec rake dev:setup`
 3. Edit the files in `docs/` (and note that some files exist in subdirectories like `docs/tutorials/`.
-4. `bundle exec rake preview` to spin up a mkdocs server to host the site locally.
+4. `bundle exec rake preview` to spin up a zensical server to host the site locally.
 5. Submit a pull request.
 
-We use [mkdocs][] to generate the static files for the site, which are pretty fancy and include a search capability.
+We use [zensical][] to generate the static files for the site, which are pretty fancy and include a search capability.
 
-Note that files in `docs/` are preprocessed (see below) and placed into `staging/` along with some files from Nokogiri's repository, so editing files in `docs/` won't update live in the mkdocs server.
+Note that files in `docs/` are preprocessed (see below) and placed into `staging/` along with some files from Nokogiri's repository, so editing files in `docs/` won't update live in the zensical server.
 
 
 ### Inline Code or Files
@@ -103,7 +103,7 @@ Thank you!
   [nokogiri-talk]: http://groups.google.com/group/nokogiri-talk
   [Github Issue]: https://github.com/sparklemotion/nokogiri.org/issues
   [open issues]: https://github.com/sparklemotion/nokogiri.org/issues
-  [mkdocs]: https://www.mkdocs.org/
+  [zensical]: https://zensical.org/
   [classy editor]: http://www.gnu.org/software/emacs/
   [example doc]: http://nokogiri.org/tutorials/searching_a_xml_html_document.html
   [xmpfilter]: https://github.com/rcodetools/rcodetools
