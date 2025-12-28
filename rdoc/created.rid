@@ -1,5 +1,5 @@
-Sun, 28 Dec 2025 13:37:23 -0500
-README.md	Sun, 28 Dec 2025 13:32:48 -0500
+Sun, 28 Dec 2025 14:09:32 -0500
+README.md	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/class_resolver.rb	Sun, 28 Dec 2025 13:30:28 -0500
 lib/nokogiri/css.rb	Sat, 27 Dec 2025 17:22:04 -0500
@@ -12,7 +12,7 @@ lib/nokogiri/css/tokenizer.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/css/xpath_visitor.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/decorators/slop.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/encoding_handler.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/extension.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/extension.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/gumbo.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/html.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/html4.rb	Sat, 27 Dec 2025 17:22:04 -0500
@@ -20,8 +20,8 @@ lib/nokogiri/html4/builder.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/html4/document.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/html4/document_fragment.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/html4/element_description.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/html4/element_description_defaults.rb	Sun, 28 Dec 2025 13:32:48 -0500
-lib/nokogiri/html4/encoding_reader.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/html4/element_description_defaults.rb	Sun, 28 Dec 2025 14:09:19 -0500
+lib/nokogiri/html4/encoding_reader.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/html4/entity_lookup.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/html4/sax/parser.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/html4/sax/parser_context.rb	Sat, 27 Dec 2025 17:22:04 -0500
@@ -35,15 +35,15 @@ lib/nokogiri/jruby/dependencies.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/jruby/nokogiri_jars.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/syntax_error.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/version.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/version/constant.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/version/constant.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/version/info.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/attr.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/attribute_decl.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/xml/builder.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/xml/builder.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/xml/cdata.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/character_data.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/xml/document.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/xml/document.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/xml/document_fragment.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/dtd.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/element_content.rb	Sat, 27 Dec 2025 17:22:04 -0500
@@ -51,11 +51,11 @@ lib/nokogiri/xml/element_decl.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/entity_decl.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/entity_reference.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/namespace.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/xml/node.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/xml/node.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/xml/node/save_options.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/node_set.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/notation.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/xml/parse_options.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/xml/parse_options.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/xml/pp.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/pp/character_data.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/pp/node.rb	Sat, 27 Dec 2025 17:22:04 -0500
@@ -68,7 +68,7 @@ lib/nokogiri/xml/sax/parser.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/sax/parser_context.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/sax/push_parser.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/schema.rb	Sat, 27 Dec 2025 17:22:04 -0500
-lib/nokogiri/xml/searchable.rb	Sun, 28 Dec 2025 13:32:48 -0500
+lib/nokogiri/xml/searchable.rb	Sun, 28 Dec 2025 14:09:19 -0500
 lib/nokogiri/xml/syntax_error.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/text.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xml/xpath.rb	Sat, 27 Dec 2025 17:22:04 -0500
@@ -77,14 +77,14 @@ lib/nokogiri/xml/xpath_context.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xslt.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/nokogiri/xslt/stylesheet.rb	Sat, 27 Dec 2025 17:22:04 -0500
 lib/xsd/xmlparser/nokogiri.rb	Sat, 27 Dec 2025 17:22:04 -0500
-ext/nokogiri/gumbo.c	Sun, 28 Dec 2025 13:32:48 -0500
+ext/nokogiri/gumbo.c	Sun, 28 Dec 2025 14:09:19 -0500
 ext/nokogiri/html4_document.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/html4_element_description.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/html4_entity_lookup.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/html4_sax_parser.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/html4_sax_parser_context.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/html4_sax_push_parser.c	Sat, 27 Dec 2025 17:22:04 -0500
-ext/nokogiri/libxml2_polyfill.c	Sun, 28 Dec 2025 13:32:48 -0500
+ext/nokogiri/libxml2_polyfill.c	Sun, 28 Dec 2025 14:09:19 -0500
 ext/nokogiri/nokogiri.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/xml_attr.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/xml_attribute_decl.c	Sat, 27 Dec 2025 17:22:04 -0500
@@ -102,7 +102,7 @@ ext/nokogiri/xml_namespace.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/xml_node.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/xml_node_set.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/xml_processing_instruction.c	Sat, 27 Dec 2025 17:22:04 -0500
-ext/nokogiri/xml_reader.c	Sun, 28 Dec 2025 13:32:48 -0500
+ext/nokogiri/xml_reader.c	Sun, 28 Dec 2025 14:09:19 -0500
 ext/nokogiri/xml_relax_ng.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/xml_sax_parser.c	Sat, 27 Dec 2025 17:22:04 -0500
 ext/nokogiri/xml_sax_parser_context.c	Sat, 27 Dec 2025 17:22:04 -0500
