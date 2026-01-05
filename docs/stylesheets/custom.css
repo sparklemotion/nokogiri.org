@@ -6,3 +6,17 @@ div.md-content img[align="right"],
 div.md-content img[align="right"]:only-child {
   margin: 1em ;
 }
+
+/*
+ *  Invert header logo in light mode (logo is white, invert to black)
+ */
+[data-md-color-scheme="default"] .md-logo img {
+  filter: invert(1);
+}
+
+/*
+ *  Invert content logo in dark mode (logo is black, invert to white)
+ */
+[data-md-color-scheme="slate"] .md-content img[src*="nokogiri-serif-black"] {
+  filter: invert(1);
+}
