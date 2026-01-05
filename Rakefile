@@ -38,7 +38,7 @@ end
 namespace :zensical do
   desc "Use zensical to generate a static site"
   task :generate do
-    sh "zensical build"
+    sh "uvx zensical build"
   end
 
   desc "Use zensical to generate a static site"
@@ -47,7 +47,7 @@ namespace :zensical do
       sleep 1
       Launchy.open "http://localhost:8000"
     end
-    sh "zensical serve"
+    sh "uvx zensical serve"
   end
 end
 
