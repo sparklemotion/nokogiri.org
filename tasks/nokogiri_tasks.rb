@@ -124,6 +124,7 @@ def nokogiri_add_ga_to_rdocs
   end
 end
 
+#  TODO:SEARCH: IS THIS STILL NEEDED?
 #  for mkdocs indexing to work properly, headers need ids (for section urls)
 #  note that yardoc adds ids to h3, but we need to do this for h1 and h2
 def nokogiri_add_header_ids_to_rdocs

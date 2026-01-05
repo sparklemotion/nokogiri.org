@@ -10,46 +10,15 @@ require_relative "tasks/tutorial_tasks"
 require_relative "tasks/nokogiri_tasks"
 
 namespace :dev do
-  MKDOCS_DIR = "../mkdocs"
-  MKDOCS_MATERIAL_INSIDERS_DIR = "mkdocs-material"
-
   desc "Set up system dependencies to develop this site."
   task :setup do
-    sh "pip3 install --upgrade --user pygments pymdown-extensions pillow cairosvg"
-    sh "pip3 uninstall --yes mkdocs-material"
-
-    if File.directory?(MKDOCS_MATERIAL_INSIDERS_DIR)
-      Dir.chdir(MKDOCS_MATERIAL_INSIDERS_DIR) do
-        # https://squidfunk.github.io/mkdocs-material/customization/#environment-setup
-        sh "pip3 install --user -e ."
-        sh "pip install mkdocs-minify-plugin"
-        sh "pip install mkdocs-redirects"
-        sh "npm install"
-      end
-    else
-      puts "WARNING: you don't have mkdocs-material-insiders installed, using OSS version"
-      sh "pip3 install --upgrade --user mkdocs-material"
-    end
-  end
-
-  # there is a patch of mkdocs-material search plugin to support rdoc pages here:
-  #  https://gist.github.com/flavorjones/a2ee50d94888537d561db53c837c4bbf
-
-  task :build do |_, args|
-    dirty_p = args.extras.include?("dirty")
-    Dir.chdir(MKDOCS_MATERIAL_INSIDERS_DIR) do
-      if dirty_p
-        sh "npm run build:dirty"
-      else
-        sh "npm run build"
-      end
-    end
+    sh "uv sync"
   end
 end
 
 desc "Push everything to Github Pages"
 task :deploy => :generate do
-  sh "mkdocs gh-deploy"
+  sh "uv run ghp-import --push --no-jekyll #{SITE_DIR}"
 end
 
 namespace :tutorials do
@@ -66,19 +35,42 @@ namespace :nokogiri do
   task :generate => tasks
 end
 
-namespace :mkdocs do
-  desc "Use mkdocs to generate a static site"
+namespace :zensical do
+  desc "Use zensical to generate a static site"
   task :generate do
-    sh "mkdocs build"
+    sh "uv run zensical build"
+    sh "uv run python scripts/index_rdoc.py"
   end
 
-  desc "Use mkdocs to generate a static site"
+  desc "Use zensical to preview with live reload"
   task :preview do
-    Thread.new do
-      sleep 1
+    search_json = File.expand_path(File.join(SITE_DIR, "search.json"))
+    initial_mtime = File.exist?(search_json) ? File.mtime(search_json) : nil
+
+    queue = Queue.new
+
+    # Watcher thread - detects when search.json is created/updated
+    watcher = Thread.new do
+      loop do
+        if File.exist?(search_json)
+          current_mtime = File.mtime(search_json)
+          if current_mtime != initial_mtime
+            queue.push(:ready)
+            break
+          end
+        end
+        sleep 0.1
+      end
+    end
+
+    # Consumer thread - waits for signal, then indexes and opens browser
+    consumer = Thread.new do
+      queue.pop  # blocks until watcher pushes
+      system "uv run python scripts/index_rdoc.py"
       Launchy.open "http://localhost:8000"
     end
-    sh "mkdocs serve"
+
+    sh "uv run zensical serve"
   end
 end
 
@@ -88,10 +80,10 @@ task :clean do
 end
 
 desc "generate a static site"
-task :generate => ["tutorials:generate", "nokogiri:generate", "mkdocs:generate"]
+task :generate => ["tutorials:generate", "nokogiri:generate", "zensical:generate"]
 
 desc "preview the site"
-task :preview => ["tutorials:generate", "nokogiri:generate", "mkdocs:preview"]
+task :preview => ["tutorials:generate", "nokogiri:generate", "zensical:preview"]
 
 RSpec::Core::RakeTask.new(:spec)
 task :spec => :generate
