@@ -20,3 +20,24 @@ div.md-content img[align="right"]:only-child {
 [data-md-color-scheme="slate"] .md-content img[src*="nokogiri-serif-black"] {
   filter: invert(1);
 }
+
+/*
+ *  Solarized background colors
+ *
+ *  Light: base3 #fdf6e3, base2 #eee8d5
+ *  Dark:  base03 #002b36, base02 #073642
+ */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #fdf6e3;        /* base3 */
+  --md-default-bg-color--light: #eee8d5; /* base2 */
+  --md-code-bg-color: #eee8d5;           /* base2 */
+  --md-code-bg-color--light: #eee8d5;    /* base2 */
+  --md-accent-fg-color: #268bd2;         /* solarized blue */
+}
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #002b36;        /* base03 */
+  --md-default-bg-color--light: #073642; /* base02 */
+  --md-code-bg-color: #073642;           /* base02 */
+  --md-code-bg-color--light: #073642;    /* base02 */
+  --md-accent-fg-color: #268bd2;         /* solarized blue */
+}
