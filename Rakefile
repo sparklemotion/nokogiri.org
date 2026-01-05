@@ -18,7 +18,7 @@ end
 
 desc "Push everything to Github Pages"
 task :deploy => :generate do
-  sh "mkdocs gh-deploy" # TODO
+  sh "uv run ghp-import --push --no-jekyll #{SITE_DIR}"
 end
 
 namespace :tutorials do

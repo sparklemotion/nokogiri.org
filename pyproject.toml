@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "beautifulsoup4>=4.12",
+    "ghp-import>=2.1",
     "zensical>=0.0.15",
 ]
