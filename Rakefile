@@ -38,16 +38,39 @@ end
 namespace :zensical do
   desc "Use zensical to generate a static site"
   task :generate do
-    sh "uvx zensical build"
+    sh "uv run zensical build"
+    sh "uv run python scripts/index_rdoc.py"
   end
 
-  desc "Use zensical to generate a static site"
+  desc "Use zensical to preview with live reload"
   task :preview do
-    Thread.new do
-      sleep 1
+    search_json = File.expand_path(File.join(SITE_DIR, "search.json"))
+    initial_mtime = File.exist?(search_json) ? File.mtime(search_json) : nil
+
+    queue = Queue.new
+
+    # Watcher thread - detects when search.json is created/updated
+    watcher = Thread.new do
+      loop do
+        if File.exist?(search_json)
+          current_mtime = File.mtime(search_json)
+          if current_mtime != initial_mtime
+            queue.push(:ready)
+            break
+          end
+        end
+        sleep 0.1
+      end
+    end
+
+    # Consumer thread - waits for signal, then indexes and opens browser
+    consumer = Thread.new do
+      queue.pop  # blocks until watcher pushes
+      system "uv run python scripts/index_rdoc.py"
       Launchy.open "http://localhost:8000"
     end
-    sh "uvx zensical serve"
+
+    sh "uv run zensical serve"
   end
 end
 
