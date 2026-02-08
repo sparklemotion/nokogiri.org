@@ -41,3 +41,10 @@ div.md-content img[align="right"]:only-child {
   --md-code-bg-color--light: #073642;    /* base02 */
   --md-accent-fg-color: #268bd2;         /* solarized blue */
 }
+
+/*
+ *  Sponsor logos
+ */
+p.sponsors img {
+  height: 2.75rem;
+}
