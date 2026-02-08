@@ -786,6 +786,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sponsors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sponsors
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1980,6 +1991,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sponsors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sponsors
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2048,14 +2070,13 @@
 <p>Please use the "Bug Report" or "Installation Difficulties" templates.</p>
 <h3 id="security-and-vulnerability-reporting">Security and Vulnerability Reporting<a class="headerlink" href="#security-and-vulnerability-reporting" title="Permanent link">&para;</a></h3>
 <p>Please report vulnerabilities at <a href="https://hackerone.com/nokogiri">https://hackerone.com/nokogiri</a></p>
-<p>Full information and description of our security policy is in <a href="SECURITY.html"><code>SECURITY.md</code></a></p>
+<p>See <a href="SECURITY.html">SECURITY.md</a> for full information and description of our security policy.</p>
 <h3 id="semantic-versioning-policy">Semantic Versioning Policy<a class="headerlink" href="#semantic-versioning-policy" title="Permanent link">&para;</a></h3>
 <p>Nokogiri follows <a href="https://semver.org/">Semantic Versioning</a> (since 2017 or so). <a href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates#about-compatibility-scores"><img alt="Dependabot's SemVer compatibility score for Nokogiri" src="https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=nokogiri&amp;package-manager=bundler&amp;previous-version=1.11.7&amp;new-version=1.12.5" /></a></p>
 <p>We bump <code>Major.Minor.Patch</code> versions following this guidance:</p>
 <p><code>Major</code>: (we've never done this)</p>
 <ul>
 <li>Significant backwards-incompatible changes to the public API that would require rewriting existing application code.</li>
-<li>Some examples of backwards-incompatible changes we might someday consider for a Major release are at <a href="ROADMAP.html"><code>ROADMAP.md</code></a>.</li>
 </ul>
 <p><code>Minor</code>:</p>
 <ul>
@@ -2169,20 +2190,22 @@ explicitly setting the encoding to EUC-JP on the parser:</p>
 <p>The Ruby (a.k.a., CRuby, MRI, YARV) implementation is a C extension that depends on libxml2 and libxslt (which in turn depend on zlib and possibly libiconv).</p>
 <p>These dependencies are met by default by Nokogiri's packaged versions of the libxml2 and libxslt source code, but a configuration option <code>--use-system-libraries</code> is provided to allow specification of alternative library locations. See <a href="https://nokogiri.org/tutorials/installing_nokogiri.html">Installing Nokogiri</a> for full documentation.</p>
 <p>We provide native gems by pre-compiling libxml2 and libxslt (and potentially zlib and libiconv) and packaging them into the gem file. In this case, no compilation is necessary at installation time, which leads to faster and more reliable installation.</p>
-<p>See <a href="LICENSE-DEPENDENCIES.html"><code>LICENSE-DEPENDENCIES.md</code></a> for more information on which dependencies are provided in which native and source gems.</p>
+<p>See <a href="LICENSE-DEPENDENCIES.html">LICENSE-DEPENDENCIES.md</a> for more information on which dependencies are provided in which native and source gems.</p>
 <h3 id="jruby">JRuby<a class="headerlink" href="#jruby" title="Permanent link">&para;</a></h3>
 <p>The Java (a.k.a. JRuby) implementation is a Java extension that depends primarily on Xerces and NekoHTML for parsing, though additional dependencies are on <code>isorelax</code>, <code>nekodtd</code>, <code>jing</code>, <code>serializer</code>, <code>xalan-j</code>, and <code>xml-apis</code>.</p>
 <p>These dependencies are provided by pre-compiled jar files packaged in the <code>java</code> platform gem.</p>
-<p>See <a href="LICENSE-DEPENDENCIES.html"><code>LICENSE-DEPENDENCIES.md</code></a> for more information on which dependencies are provided in which native and source gems.</p>
+<p>See <a href="LICENSE-DEPENDENCIES.html">LICENSE-DEPENDENCIES.md</a>
+for more information on which dependencies are provided in which native and source gems.</p>
 <h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
-<p>See <a href="CONTRIBUTING.html"><code>CONTRIBUTING.md</code></a> for an intro guide to developing Nokogiri.</p>
+<p>See <a href="CONTRIBUTING.html">CONTRIBUTING.md</a> for an intro guide to developing Nokogiri.</p>
 <h2 id="code-of-conduct">Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permanent link">&para;</a></h2>
-<p>We've adopted the Contributor Covenant code of conduct, which you can read in full in <a href="CODE_OF_CONDUCT.html"><code>CODE_OF_CONDUCT.md</code></a>.</p>
+<p>See the <a href="CODE_OF_CONDUCT.html">CODE_OF_CONDUCT.md</a>.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <p>This project is licensed under the terms of the MIT license.</p>
-<p>See this license at <a href="LICENSE.html"><code>LICENSE.md</code></a>.</p>
+<p>See <a href="LICENSE.html">LICENSE.md</a>.</p>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
-<p>Some additional libraries may be distributed with your version of Nokogiri. Please see <a href="LICENSE-DEPENDENCIES.html"><code>LICENSE-DEPENDENCIES.md</code></a> for a discussion of the variations as well as the licenses thereof.</p>
+<p>Some additional libraries may be distributed with your version of Nokogiri.
+See <a href="LICENSE-DEPENDENCIES.html">LICENSE-DEPENDENCIES.md</a> for a discussion of the variations as well as the licenses thereof.</p>
 <h2 id="authors">Authors<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Mike Dalessio</li>
@@ -2199,6 +2222,17 @@ explicitly setting the encoding to EUC-JP on the parser:</p>
 <li>Timothy Elliott</li>
 <li>Nobuyoshi Nakada</li>
 </ul>
+<h2 id="sponsors">Sponsors<a class="headerlink" href="#sponsors" title="Permanent link">&para;</a></h2>
+<p>These companies sponsor Nokogiri's maintainers. Thank you for your support!</p>
+<p>
+  <a href="https://sentry.io"><img src="https://nokogiri.org/images/sponsors/sentry-icon.png" alt="Sentry" height="44" style="vertical-align: middle;"></a>&nbsp;<b>Sentry</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://codecov.io"><img src="https://nokogiri.org/images/sponsors/codecov-icon.png" alt="Codecov" height="44" style="vertical-align: middle;"></a>&nbsp;<b>Codecov</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://gusto.com"><img src="https://nokogiri.org/images/sponsors/gusto-icon.png" alt="Gusto" height="44" style="vertical-align: middle;"></a>&nbsp;<b>Gusto</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://hasdata.com"><img src="https://nokogiri.org/images/sponsors/hasdata-icon.png" alt="HasData" height="44" style="vertical-align: middle;"></a>&nbsp;<b>HasData</b>
+</p>
 
 
 
