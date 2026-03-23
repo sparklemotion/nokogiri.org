@@ -489,7 +489,7 @@
 
 <p>Entities will be reported to the user via callbacks to <a href="Document.html#method-i-characters"><code>#characters</code></a>, to <a href="Document.html#method-i-reference"><code>#reference</code></a>, or possibly to both. The behavior is determined by a combination of <em>entity type</em> and the value of <a href="ParserContext.html#method-i-replace_entities"><code>ParserContext#replace_entities</code></a>. (Recall that the default value of <a href="ParserContext.html#method-i-replace_entities"><code>ParserContext#replace_entities</code></a> is <code>false</code>.)</p>
 
-<p>⚠ <strong>It is UNSAFE to set ParserContext#replace_entities to <code>true</code></strong> when parsing untrusted documents.</p>
+<p>🛡 <strong>It is UNSAFE to set ParserContext#replace_entities to <code>true</code></strong> when parsing untrusted documents.</p>
 
 <p>💡 For more information on entity types, see <a href="https://en.wikipedia.org/wiki/Document_type_definition#Entity_declarations">Wikipedia’s page on DTDs</a>.</p>
 

@@ -536,7 +536,7 @@
 
           <p>Compact small text nodes. Off by default.</p>
 
-<p>⚠ No modification of the DOM tree is allowed after parsing. libxml2 may crash if you try to modify the tree.</p>
+<p>⚠ No modification of the DOM tree is allowed after parsing.</p>
         </dd>
 
 
@@ -568,7 +568,9 @@
 
         <dd>
 
-          <p>The options mask used by default used for parsing <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a></p>
+          <p>Shorthand options mask useful for parsing <a href="../XSLT.html"><code>XSLT</code></a> stylesheets: sets <a href="ParseOptions.html#RECOVER"><code>RECOVER</code></a>, <a href="ParseOptions.html#NONET"><code>NONET</code></a>, <a href="ParseOptions.html#NOENT"><code>NOENT</code></a>, <a href="ParseOptions.html#DTDLOAD"><code>DTDLOAD</code></a>, <a href="ParseOptions.html#DTDATTR"><code>DTDATTR</code></a>, <a href="ParseOptions.html#NOCDATA"><code>NOCDATA</code></a>, <a href="ParseOptions.html#BIG_LINES"><code>BIG_LINES</code></a>.</p>
+
+<p>🛡 This option set includes ‘NOENT` and `DTDLOAD` which are unsafe for untrusted documents. <strong>Do not parse untrusted XSLT stylesheets.</strong> See <a href="../XSLT.html"><code>Nokogiri::XSLT</code></a> for more information.</p>
         </dd>
 
 
@@ -586,7 +588,7 @@
 
           <p>Load external subsets. On by default for <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>.</p>
 
-<p>⚠ <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
+<p>🛡 <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
         </dd>
 
 
@@ -604,7 +606,7 @@
 
           <p>Relax any hardcoded limit from the parser. Off by default.</p>
 
-<p>⚠ <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
+<p>🛡 <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
         </dd>
 
 
@@ -648,7 +650,7 @@
 
 <p>⚠ This option enables entity substitution, contrary to what the name implies.</p>
 
-<p>⚠ <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
+<p>🛡 <strong>It is UNSAFE to set this option</strong> when parsing untrusted documents.</p>
         </dd>
 
 
@@ -666,7 +668,7 @@
 
           <p>Forbid network access. On by default for <a href="Document.html"><code>XML::Document</code></a>, <a href="DocumentFragment.html"><code>XML::DocumentFragment</code></a>, <a href="../HTML4/Document.html"><code>HTML4::Document</code></a>, <a href="../HTML4/DocumentFragment.html"><code>HTML4::DocumentFragment</code></a>, <a href="../XSLT/Stylesheet.html"><code>XSLT::Stylesheet</code></a>, and <a href="Schema.html"><code>XML::Schema</code></a>.</p>
 
-<p>⚠ <strong>It is UNSAFE to unset this option</strong> when parsing untrusted documents.</p>
+<p>🛡 <strong>It is UNSAFE to unset this option</strong> when parsing untrusted documents.</p>
         </dd>
 
 
@@ -817,7 +819,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 165</span>
+            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 169</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = <span class="ruby-constant">STRICT</span>)
   <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
 <span class="ruby-keyword">end</span></pre>
@@ -873,7 +875,7 @@
             </details>
           </div>
           <div class="method-source-code" id="3D-3D-source">
-            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 198</span>
+            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 202</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">to_i</span>
 <span class="ruby-keyword">end</span></pre>
@@ -915,7 +917,7 @@
             </details>
           </div>
           <div class="method-source-code" id="inspect-source">
-            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 204</span>
+            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 208</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
   <span class="ruby-identifier">options</span> = []
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
@@ -966,7 +968,7 @@
             </details>
           </div>
           <div class="method-source-code" id="strict-source">
-            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 189</span>
+            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 193</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strict</span>
   <span class="ruby-ivar">@options</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-operator">~</span><span class="ruby-constant">RECOVER</span>
   <span class="ruby-keyword">self</span>
@@ -1009,7 +1011,7 @@
             </details>
           </div>
           <div class="method-source-code" id="strict-3F-source">
-            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 194</span>
+            <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/nokogiri/xml/parse_options.rb, line 198</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strict?</span>
   <span class="ruby-ivar">@options</span> <span class="ruby-operator">&amp;</span> <span class="ruby-constant">RECOVER</span> <span class="ruby-operator">==</span> <span class="ruby-constant">STRICT</span>
 <span class="ruby-keyword">end</span></pre>
