@@ -753,7 +753,7 @@ rb_xslt_stylesheet_transform(int argc, VALUE *argv, VALUE self)
   xmlDocPtr c_result_document ;
   nokogiriXsltStylesheetTuple *wrapper;
   const char **params ;
-  long param_len, j ;
+  long param_len ;
   int parse_error_occurred ;
   int defensive_copy_p = 0;
 
@@ -776,10 +776,17 @@ rb_xslt_stylesheet_transform(int argc, VALUE *argv, VALUE self)
 
   param_len = RARRAY_LEN(rb_param);
   params = ruby_xcalloc((size_t)param_len + 1, sizeof(char *));
-  for (j = 0 ; j &lt; param_len ; j++) {
-    VALUE entry = rb_ary_entry(rb_param, j);
-    const char *ptr = StringValueCStr(entry);
-    params[j] = ptr;
+  {
+    // populate params under rb_protect so that a raise from StringValueCStr
+    // (e.g. on a null byte) does not leak the params allocation.
+    build_xslt_params_args_t args = { rb_param, param_len, params };
+    int state = 0;
+
+    rb_protect(build_xslt_params, (VALUE)&amp;args, &amp;state);
+    if (state) {
+      ruby_xfree(params);
+      rb_jump_tag(state);
+    }
   }
   params[param_len] = 0 ;
 
